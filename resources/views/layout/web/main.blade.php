@@ -11,7 +11,50 @@
 <!--end header-->
 
 <!--start Navigation-->
-    
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#"><img class="col-auto" src="{{asset('/img/logo.svg')}} "></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-dark" href="#">Trang chủ
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link text-dark" href="#">Giới thiệu</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Xây nhà thô</a>
+                    <a class="dropdown-item" href="#">Xây hầm</a>
+                    <a class="dropdown-item" href="#">Nội thất</a>
+                </div>
+            </li>
+            {{--project items--}}
+            <li class="nav-item dropdown">
+                <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Dự án</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
+                    <a class="dropdown-item" href="#">Đang thi công</a>
+                    <a class="dropdown-item" href="#">Đã thi công</a>
+                </div>
+            </li>
+            <li>
+                <a class="nav-link text-dark" href="#">Liên hệ</a>
+            </li>
+        </ul>
+        <span class="navbar-text text-dark">
+        HOTLINE  0347220480
+    </span>
+    </div>
+</nav>
 <!--end Navigation-->
 
 <!--start content-->
