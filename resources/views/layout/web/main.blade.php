@@ -19,13 +19,15 @@
                     <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
                         Gig</h5>
                 </div>
-
+                {{-- search--}}
                 <div class="col-md-4">
                     <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
                         <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"/>
                         <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"> </i></span>
                     </form>
                 </div>
+                {{-- end search--}}
+
 
                 <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
                     <div class="d-flex">
@@ -53,25 +55,46 @@
         </div>
     </div>
     <!-- Jumbotron -->
-
-    <!-- Background image -->
-    <div id="intro" class="bg-image shadow-1-strong" style="height: 500px;">
-        <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
-            <div class="container d-flex align-items-center justify-content-center text-center h-100">
-                <div class="text-white">
-                    <h1 class="mb-3">bla bla</h1>
-                    <h4 class="mb-4">bla bla bla</h4>
-                    <a class="btn btn-outline-light btn-lg mb-3" href="#!" role="button">bla bla bla bla</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Background image -->
 </header>
 <!--end header-->
 
 <!--start Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark" >
+    <div class="collapse navbar-collapse" id="navbarText" style="justify-content: center; align-content: center;" >
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link text-dark" href="#">Trang chủ
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link text-dark " href="#">
+                    Giới thiệu
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Xây nhà thô</a>
+                    <a class="dropdown-item" href="#">Xây hầm</a>
+                    <a class="dropdown-item" href="#">Nội thất</a>
+                </div>
+            </li>
+            {{--project items--}}
+            <li class="nav-item dropdown">
+                <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Dự án</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
+                    <a class="dropdown-item" href="#">Đang thi công</a>
+                    <a class="dropdown-item" href="#">Đã thi công</a>
+                </div>
+            </li>
+        </ul>
+    </div>
 
+</nav>
 <!--end Navigation-->
 
 <!--start content-->
