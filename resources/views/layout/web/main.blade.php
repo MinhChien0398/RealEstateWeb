@@ -7,7 +7,7 @@
 </head>
 <body>
 <!--start header-->
-<header class="mb-7">
+<header class="mb-7" id="00001">
     <!-- Jumbotron -->
     <div class="p-3 text-center bg-white border-bottom">
         <div class="container">
@@ -59,8 +59,8 @@
 <!--end header-->
 
 <!--start Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark" >
-    <div class="collapse navbar-collapse" id="navbarText" style="justify-content: center; align-content: center;" >
+<nav class="navbar navbar-expand-lg navbar-dark" id="00000">
+    <div class="collapse navbar-collapse" id="navbarText" style="justify-content: center; align-content: center;">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="#">Trang chủ
@@ -99,117 +99,151 @@
 
 <!--start content-->
 @yield('content')
-<!--end content-->
 
-<!--start footer-->
-<footer class="page-footer font-small pt-2">
-
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left" style="max-width: 90%">
-
-        <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
-                <div class="row ">
-                    <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
-                        Gig</h5>
-                </div>
-                <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội
-                    ngoại thất công trình với nhiều năm kinh nghiệm.</p>
-                <!-- Social buttons -->
-                <div class="text-center text-md-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <a class="btn-floating btn-fb mx-1">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a class="hoverable btn-floating btn-email mx-1">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}"
-                                 style="width: 50px">
-                            {{--                                <i  class="fab fa-google-plus-g"></i>--}}
-                        </li>
-                    </ul>
-                </div>
-                <!-- end Social Buttons -->
-            </div>
-            <!-- Grid column -->
-
-            <hr class="w-100 clearfix d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
-                    <hệ></hệ>
-                </h6>
-                <p>
-                    <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
-                </p>
-                <p>
-                    <span style="color: #656565">Số Điện Thoại: 0935 671 886</span>
-                </p>
-                <p>
-                    <span style="color: #656565">Email: RealEstateGig@gmail.com</span>
-                </p>
-                <p>
-                    <span style="color: #656565">Website: RealEstateGig.com</span>
-                </p>
-            </div>
-            <!-- Grid column -->
-
-            <hr class="w-100 clearfix d-md-none">
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
-                <p class="f-link">
-                    <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
-                </p>
-                <p class="f-link">
-                    <a class="f-link" href="#!">Xây nhà thô</a>
-                </p>
-                <p class="f-link">
-                    <a class="f-link" href="#!">Xây biệt thự</a>
-                </p>
-                <p class="f-link">
-                    <a class="f-link " href="#!">Xây hầm</a>
-                </p>
-            </div>
-
-            <!-- Grid column -->
-            <hr class="w-100 clearfix d-md-none">
-
-            <!-- Grid column -->
-            {{--            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">--}}
-            {{--                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>--}}
-            {{--            </div>--}}
-            <!-- Grid column -->
+<div id="intro" class="bg-image shadow-1-strong" style="
+                                                          background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
+                                                          height: 500px;
+                                                          ">
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
 
         </div>
-        <!-- Footer links -->
-
-
     </div>
-    <!-- Footer Links -->
+</div>
+<div id="intro" class="bg-image shadow-1-strong" style="
+                                                          background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
+                                                          height: 500px;
+                                                          ">
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
 
-</footer>
-<!--end footer-->
+        </div>
+    </div>
+</div>
+<div id="intro" class="bg-image shadow-1-strong" style="
+                                                          background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
+                                                          height: 500px;
+                                                          ">
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+
+        </div>
+    </div>
+</div>
+
+
+    <!--end content-->
+
+    <!--start footer-->
+    <footer class="page-footer font-small pt-2">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left" style="max-width: 90%">
+
+            <!-- Footer links -->
+            <div class="row text-center text-md-left mt-3 pb-3">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
+                    <div class="row ">
+                        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
+                        <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
+                            Estate
+                            Gig</h5>
+                    </div>
+                    <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội
+                        ngoại thất công trình với nhiều năm kinh nghiệm.</p>
+                    <!-- Social buttons -->
+                    <div class="text-center text-md-right">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a class="btn-floating btn-fb mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="hoverable btn-floating btn-email mx-1">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}"
+                                     style="width: 50px">
+                                {{--                                <i  class="fab fa-google-plus-g"></i>--}}
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end Social Buttons -->
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
+                        <hệ></hệ>
+                    </h6>
+                    <p>
+                        <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
+                    </p>
+                    <p>
+                        <span style="color: #656565">Số Điện Thoại: 0935 671 886</span>
+                    </p>
+                    <p>
+                        <span style="color: #656565">Email: RealEstateGig@gmail.com</span>
+                    </p>
+                    <p>
+                        <span style="color: #656565">Website: RealEstateGig.com</span>
+                    </p>
+                </div>
+                <!-- Grid column -->
+
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
+                    <p class="f-link">
+                        <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
+                    </p>
+                    <p class="f-link">
+                        <a class="f-link" href="#!">Xây nhà thô</a>
+                    </p>
+                    <p class="f-link">
+                        <a class="f-link" href="#!">Xây biệt thự</a>
+                    </p>
+                    <p class="f-link">
+                        <a class="f-link " href="#!">Xây hầm</a>
+                    </p>
+                </div>
+
+                <!-- Grid column -->
+                <hr class="w-100 clearfix d-md-none">
+
+                <!-- Grid column -->
+                {{--            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">--}}
+                {{--                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>--}}
+                {{--                <p>--}}
+                {{--                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>--}}
+                {{--                <p>--}}
+                {{--                    <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>--}}
+                {{--                <p>--}}
+                {{--                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>--}}
+                {{--                <p>--}}
+                {{--                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>--}}
+                {{--            </div>--}}
+                <!-- Grid column -->
+
+            </div>
+            <!-- Footer links -->
+
+
+        </div>
+        <!-- Footer Links -->
+
+    </footer>
+    <!--end footer-->
 
 @include('layout.web.footer')
 @yield('script')
