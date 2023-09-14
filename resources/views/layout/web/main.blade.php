@@ -12,7 +12,10 @@
 
 <!--start Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#"><img class="col-auto" src="{{asset('/img/logo.svg')}} "></a>
+    {{--  brand of website  --}}
+    <a class="navbar-brand" href="#">
+        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,7 +28,9 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link text-dark" href="#">Giới thiệu</a>
+                <a class="nav-link text-dark " href="#">
+                   Giới thiệu
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
@@ -38,7 +43,7 @@
             </li>
             {{--project items--}}
             <li class="nav-item dropdown">
-                <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">Dự án</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
@@ -51,7 +56,7 @@
             </li>
         </ul>
         <span class="navbar-text text-dark">
-        HOTLINE  0347220480
+        TỔNG ĐÀI CSKH: 0347220480
     </span>
     </div>
 </nav>
