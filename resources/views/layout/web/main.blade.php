@@ -11,7 +11,7 @@
 <!--end header-->
 
 <!--start Navigation-->
-
+    
 <!--end Navigation-->
 
 <!--start content-->
@@ -31,9 +31,11 @@
             <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
                     <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold"  style="color: #E90808" >Real Estate Gig</h5>
+                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
+                        Gig</h5>
                 </div>
-                <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội ngoại thất công trình với nhiều năm kinh nghiệm.</p>
+                <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội
+                    ngoại thất công trình với nhiều năm kinh nghiệm.</p>
                 <!-- Social buttons -->
                 <div class="text-center text-md-right">
                     <ul class="list-unstyled list-inline">
@@ -48,8 +50,9 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                                <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}" style="width: 50px">
-{{--                                <i  class="fab fa-google-plus-g"></i>--}}
+                            <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}"
+                                 style="width: 50px">
+                            {{--                                <i  class="fab fa-google-plus-g"></i>--}}
                         </li>
                     </ul>
                 </div>
@@ -61,8 +64,8 @@
 
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
-                    <hệ></hệ>
+                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">
+                    Thông tin liên hệ
                 </h6>
                 <p>
                     <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
@@ -84,17 +87,17 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
-                <p class="f-link" >
-                    <a class="f-link"  href="#!">Thiết kế, xây dựng nội thất</a>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
                 </p>
-                <p class="f-link" >
-                    <a class="f-link"  href="#!">Xây nhà thô</a>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Xây nhà thô</a>
                 </p>
-                <p class="f-link" >
-                    <a class="f-link"  href="#!">Xây biệt thự</a>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Xây biệt thự</a>
                 </p>
-                <p class="f-link" >
-                    <a class="f-link "  href="#!">Xây hầm</a>
+                <p class="f-link">
+                    <a class="f-link " href="#!">Xây hầm</a>
                 </p>
             </div>
 
@@ -117,8 +120,6 @@
 
         </div>
         <!-- Footer links -->
-
-
 
 
     </div>
