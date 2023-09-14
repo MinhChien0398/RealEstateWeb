@@ -7,7 +7,67 @@
 </head>
 <body>
 <!--start header-->
+<header class="mb-7">
+    <!-- Jumbotron -->
+    <div class="p-3 text-center bg-white border-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
+                    <a href="#!" class="ms-md-2">
+                        <img src="{{asset('/img/logo.svg')}}" height="35"/>
+                    </a>
+                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
+                        Gig</h5>
+                </div>
 
+                <div class="col-md-4">
+                    <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
+                        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"/>
+                        <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"> </i></span>
+                    </form>
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+                    <div class="d-flex">
+                        <div class="section-header__hotline d-flex align-items-center justify-content-end"
+                             style="align-items: center !important; justify-content: end !important;">
+                            <div class="icons mr15" style="font-size: 24px; margin-right: 15px;">
+                                <i class="fa-solid fa-phone" style="color: #E90808"></i>
+                            </div>
+                            <div class="detail flex-cl-1" style="">
+                                <div class="title" style="font-size: 10px;
+                                                    margin-bottom: 5px;
+                                                    text-transform: uppercase;">
+                                    Hotline tư vấn 24/7
+                                </div>
+                                <div class="phone" style="color: #E90808;
+                                        font-size: 22px;
+                                        font-family: Arial, Helvetica, sans-serif;">
+                                    0935 671 886
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-1-strong" style="height: 500px;">
+        <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">bla bla</h1>
+                    <h4 class="mb-4">bla bla bla</h4>
+                    <a class="btn btn-outline-light btn-lg mb-3" href="#!" role="button">bla bla bla bla</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
 <!--end header-->
 
 <!--start Navigation-->
@@ -31,9 +91,11 @@
             <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
                     <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold"  style="color: #E90808" >Real Estate Gig</h5>
+                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
+                        Gig</h5>
                 </div>
-                <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội ngoại thất công trình với nhiều năm kinh nghiệm.</p>
+                <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội
+                    ngoại thất công trình với nhiều năm kinh nghiệm.</p>
                 <!-- Social buttons -->
                 <div class="text-center text-md-right">
                     <ul class="list-unstyled list-inline">
@@ -48,8 +110,9 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                                <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}" style="width: 50px">
-{{--                                <i  class="fab fa-google-plus-g"></i>--}}
+                            <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}"
+                                 style="width: 50px">
+                            {{--                                <i  class="fab fa-google-plus-g"></i>--}}
                         </li>
                     </ul>
                 </div>
@@ -84,17 +147,17 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
-                <p class="f-link" >
-                    <a class="f-link"  href="#!">Thiết kế, xây dựng nội thất</a>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
                 </p>
-                <p class="f-link" >
-                    <a class="f-link"  href="#!">Xây nhà thô</a>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Xây nhà thô</a>
                 </p>
-                <p class="f-link" >
-                    <a class="f-link"  href="#!">Xây biệt thự</a>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Xây biệt thự</a>
                 </p>
-                <p class="f-link" >
-                    <a class="f-link "  href="#!">Xây hầm</a>
+                <p class="f-link">
+                    <a class="f-link " href="#!">Xây hầm</a>
                 </p>
             </div>
 
@@ -117,8 +180,6 @@
 
         </div>
         <!-- Footer links -->
-
-
 
 
     </div>
