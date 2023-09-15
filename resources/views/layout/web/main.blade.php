@@ -11,7 +11,7 @@
 <!--end header-->
 
 <!--start Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark" style="">
     {{--  brand of website  --}}
     <a class="navbar-brand" href="#">
         <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
