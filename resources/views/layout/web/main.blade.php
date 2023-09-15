@@ -7,7 +7,9 @@
 </head>
 <body>
 <!--start header-->
-<header class="mb-7" id="00001">
+
+<header class="mb-7">
+
     <!-- Jumbotron -->
     <div class="p-3 text-center bg-white border-bottom">
         <div class="container">
@@ -19,16 +21,13 @@
                     <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
                         Gig</h5>
                 </div>
-                {{-- search--}}
+
                 <div class="col-md-4">
                     <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
                         <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"/>
                         <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"> </i></span>
                     </form>
                 </div>
-                {{-- end search--}}
-
-
                 <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
                     <div class="d-flex">
                         <div class="section-header__hotline d-flex align-items-center justify-content-end"
@@ -56,25 +55,37 @@
     </div>
     <!-- Jumbotron -->
 </header>
+
+
 <!--end header-->
 
 <!--start Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark" id="00000">
-    <div class="collapse navbar-collapse" id="navbarText" style="justify-content: center; align-content: center;">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="#">Trang chủ
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+    {{--  brand of website  --}}
+{{--    <a class="navbar-brand" href="#">--}}
+{{--        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">--}}
+{{--    </a>--}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto" style="margin: auto;">
+            <li class="nav-item active nav-link-hover nav-link-auto-font">
+                <a class="nav-link text-dark" href="#">TRANG CHỦ
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link text-dark " href="#">
-                    Giới thiệu
+            <li class="nav-item nav-link-hover nav-link-auto-font">
+                <a class="nav-link text-dark " href="#" style="">
+                    GIỚI THIỆU
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
+                   aria-haspopup="true" aria-expanded="false">DỊCH VỤ & BÁO GIÁ</a>
+
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Xây nhà thô</a>
                     <a class="dropdown-item" href="#">Xây hầm</a>
@@ -82,16 +93,23 @@
                 </div>
             </li>
             {{--project items--}}
-            <li class="nav-item dropdown">
+
+
+            <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dự án</a>
+                   aria-haspopup="true" aria-expanded="false">DỰ ÁN</a>
+
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
                     <a class="dropdown-item" href="#">Đang thi công</a>
                     <a class="dropdown-item" href="#">Đã thi công</a>
                 </div>
             </li>
+            <li>
+                <a class="nav-link text-dark nav-link-hover nav-link-auto-font" href="#">LIÊN HỆ</a>
+            </li>
         </ul>
+{{--        <span class="navbar-text text-dark">TỔNG ĐÀI CSKH: 0347220480</span>--}}
     </div>
 
 </nav>
@@ -130,6 +148,7 @@
         </div>
     </div>
 </div>
+
 
 
     <!--end content-->
@@ -244,6 +263,7 @@
 
     </footer>
     <!--end footer-->
+
 
 @include('layout.web.footer')
 @yield('script')
