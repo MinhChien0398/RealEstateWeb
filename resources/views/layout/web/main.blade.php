@@ -7,6 +7,7 @@
 </head>
 <body>
 <!--start header-->
+
 <header class="mb-7">
     <!-- Jumbotron -->
     <div class="p-3 text-center bg-white border-bottom">
@@ -56,25 +57,35 @@
     </div>
     <!-- Jumbotron -->
 </header>
+
 <!--end header-->
 
 <!--start Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="collapse navbar-collapse" id="navbarText" style="justify-content: center; align-content: center;">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="#">Trang chủ
+
+    {{--  brand of website  --}}
+{{--    <a class="navbar-brand" href="#">--}}
+{{--        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">--}}
+{{--    </a>--}}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto" style="margin: auto;">
+            <li class="nav-item active nav-link-hover nav-link-auto-font">
+                <a class="nav-link text-dark" href="#">TRANG CHỦ
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link text-dark " href="#">
-                    Giới thiệu
+            <li class="nav-item nav-link-hover nav-link-auto-font">
+                <a class="nav-link text-dark " href="#" style="">
+                    GIỚI THIỆU
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
+                   aria-haspopup="true" aria-expanded="false">DỊCH VỤ & BÁO GIÁ</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Xây nhà thô</a>
                     <a class="dropdown-item" href="#">Xây hầm</a>
@@ -82,18 +93,23 @@
                 </div>
             </li>
             {{--project items--}}
-            <li class="nav-item dropdown">
+
+            <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dự án</a>
+                   aria-haspopup="true" aria-expanded="false">DỰ ÁN</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
                     <a class="dropdown-item" href="#">Đang thi công</a>
                     <a class="dropdown-item" href="#">Đã thi công</a>
                 </div>
             </li>
-        </ul>
-    </div>
 
+            <li>
+                <a class="nav-link text-dark nav-link-hover nav-link-auto-font" href="#">LIÊN HỆ</a>
+            </li>
+        </ul>
+{{--        <span class="navbar-text text-dark">TỔNG ĐÀI CSKH: 0347220480</span>--}}
+    </div>
 </nav>
 <!--end Navigation-->
 
@@ -132,6 +148,7 @@
 </div>
 
 
+
 <!--end content-->
 
 <!--start footer-->
@@ -147,8 +164,10 @@
             <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
                     <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
+
                     <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
                         Estate
+
                         Gig</h5>
                 </div>
                 <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội
@@ -181,8 +200,9 @@
 
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
-                    <hệ></hệ>
+
+                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">
+                    Thông tin liên hệ
                 </h6>
                 <p>
                     <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
