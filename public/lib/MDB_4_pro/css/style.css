@@ -23,6 +23,7 @@
     padding: 10px;
     backdrop-filter: brightness(1000);
 }
+
 .navbar {
     position: fixed;
     margin-top: 85px;
@@ -35,26 +36,29 @@
 
 #intro {
     margin-top: 60px;
+}
 
-.footer-text{
-    color:#8D8D8D;
+.footer-text {
+    color: #8D8D8D;
     font-size: 14px;
 }
-.f-link{
-    color: #656565!important;
-}
-.f-link:hover{
-    font-size: 16px;
-    font-weight: bold;
-    padding-left:20px ;
-    color:#800000!important;
+
+.f-link {
+    color: #656565 !important;
 }
 
-.nav-link-hover:hover{
+.f-link:hover {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #800000 !important;
+}
+
+.nav-link-hover:hover {
     text-decoration: underline;
 }
 
-.nav-link-auto-font{
+.nav-link-auto-font {
     margin-left: 3vw;
     margin-right: 3vw;
     font-size: 1.5vw;
