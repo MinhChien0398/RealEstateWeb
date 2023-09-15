@@ -21,18 +21,18 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item active nav-link-hover">
                 <a class="nav-link text-dark" href="#">Trang chủ
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link text-dark " href="#">
-                   Giới thiệu
+            <li class="nav-item nav-link-hover">
+                <a class="nav-link text-dark " href="#" style="">
+                    Giới thiệu
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown nav-link-hover">
                 <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -42,7 +42,7 @@
                 </div>
             </li>
             {{--project items--}}
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown nav-link-hover">
                 <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">Dự án</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
@@ -52,7 +52,7 @@
                 </div>
             </li>
             <li>
-                <a class="nav-link text-dark" href="#">Liên hệ</a>
+                <a class="nav-link text-dark nav-link-hover" href="#">Liên hệ</a>
             </li>
         </ul>
         <span class="navbar-text text-dark">

@@ -11,3 +11,9 @@
     padding-left:20px ;
     color:#800000!important;
 }
+
+.nav-link-hover:hover{
+    background: rgba(#ff4400, 0);
+    font-weight: 900;
+    letter-spacing: 1px;
+}
