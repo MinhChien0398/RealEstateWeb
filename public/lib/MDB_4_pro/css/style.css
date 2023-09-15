@@ -13,7 +13,11 @@
 }
 
 .nav-link-hover:hover{
-    background: rgba(#ff4400, 0);
-    font-weight: 900;
-    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+.nav-link-auto-font{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    font-size: 1.5vw;
 }

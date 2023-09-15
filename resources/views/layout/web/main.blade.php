@@ -11,7 +11,7 @@
 <!--end header-->
 
 <!--start Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark" style="">
+<nav class="navbar navbar-expand-lg navbar-dark">
     {{--  brand of website  --}}
 {{--    <a class="navbar-brand" href="#">--}}
 {{--        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">--}}
@@ -21,20 +21,20 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto " style="margin: auto">
-            <li class="nav-item active nav-link-hover">
-                <a class="nav-link text-dark" href="#">Trang chủ
+        <ul class="navbar-nav mr-auto" style="margin: auto;">
+            <li class="nav-item active nav-link-hover nav-link-auto-font">
+                <a class="nav-link text-dark" href="#">TRANG CHỦ
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
-            <li class="nav-item nav-link-hover">
+            <li class="nav-item nav-link-hover nav-link-auto-font">
                 <a class="nav-link text-dark " href="#" style="">
-                    Giới thiệu
+                    GIỚI THIỆU
                 </a>
             </li>
-            <li class="nav-item dropdown nav-link-hover">
+            <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
+                   aria-haspopup="true" aria-expanded="false">DỊCH VỤ & BÁO GIÁ</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Xây nhà thô</a>
                     <a class="dropdown-item" href="#">Xây hầm</a>
@@ -42,9 +42,9 @@
                 </div>
             </li>
             {{--project items--}}
-            <li class="nav-item dropdown nav-link-hover">
+            <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dự án</a>
+                   aria-haspopup="true" aria-expanded="false">DỰ ÁN</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
                     <a class="dropdown-item" href="#">Đang thi công</a>
@@ -52,7 +52,7 @@
                 </div>
             </li>
             <li>
-                <a class="nav-link text-dark nav-link-hover" href="#">Liên hệ</a>
+                <a class="nav-link text-dark nav-link-hover nav-link-auto-font" href="#">LIÊN HỆ</a>
             </li>
         </ul>
 {{--        <span class="navbar-text text-dark">TỔNG ĐÀI CSKH: 0347220480</span>--}}
