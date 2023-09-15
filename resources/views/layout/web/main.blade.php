@@ -55,9 +55,7 @@
                 <a class="nav-link text-dark nav-link-hover" href="#">Liên hệ</a>
             </li>
         </ul>
-        <span class="navbar-text text-dark">
-        TỔNG ĐÀI CSKH: 0347220480
-    </span>
+{{--        <span class="navbar-text text-dark">TỔNG ĐÀI CSKH: 0347220480</span>--}}
     </div>
 </nav>
 <!--end Navigation-->
