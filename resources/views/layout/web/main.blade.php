@@ -13,15 +13,15 @@
 <!--start Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark" style="">
     {{--  brand of website  --}}
-    <a class="navbar-brand" href="#">
-        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
-    </a>
+{{--    <a class="navbar-brand" href="#">--}}
+{{--        <img class="col-auto" src="{{asset('/img/logo.svg')}} ">--}}
+{{--    </a>--}}
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto ">
+        <ul class="navbar-nav mr-auto " style="margin: auto">
             <li class="nav-item active nav-link-hover">
                 <a class="nav-link text-dark" href="#">Trang chủ
                     <span class="sr-only">(current)</span>
