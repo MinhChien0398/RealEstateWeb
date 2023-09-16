@@ -55,8 +55,6 @@
     </div>
     <!-- Jumbotron -->
 </header>
-
-
 <!--end header-->
 
 <!--start Navigation-->
@@ -93,8 +91,6 @@
                 </div>
             </li>
             {{--project items--}}
-
-
             <li class="nav-item dropdown nav-link-hover nav-link-auto-font">
                 <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">DỰ ÁN</a>
@@ -105,6 +101,7 @@
                     <a class="dropdown-item" href="#">Đã thi công</a>
                 </div>
             </li>
+
             <li>
                 <a class="nav-link text-dark nav-link-hover nav-link-auto-font" href="#">LIÊN HỆ</a>
             </li>
@@ -118,6 +115,7 @@
 <!--start content-->
 @yield('content')
 
+
 <div id="intro" class="bg-image shadow-1-strong" style="
                                                           background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
                                                           height: 500px;
@@ -144,6 +142,43 @@
                                                           ">
     <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
         <div class="container d-flex align-items-center justify-content-center text-center h-100">
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--end content-->
+
+
+<div id="intro" class="bg-image shadow-1-strong" style="
+                                                          background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
+                                                          height: 500px;
+                                                          ">
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+
+        </div>
+    </div>
+</div>
+<div id="intro" class="bg-image shadow-1-strong" style="
+                                                          background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
+                                                          height: 500px;
+                                                          ">
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+
+        </div>
+    </div>
+</div>
+<div id="intro" class="bg-image shadow-1-strong" style="
+                                                          background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
+                                                          height: 500px;
+                                                          ">
+    <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.6)">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+
 
         </div>
     </div>
@@ -215,6 +250,7 @@
                     <p>
                         <span style="color: #656565">Website: RealEstateGig.com</span>
                     </p>
+
                 </div>
                 <!-- Grid column -->
 
@@ -236,24 +272,50 @@
                         <a class="f-link " href="#!">Xây hầm</a>
                     </p>
                 </div>
+                <!-- end Social Buttons -->
+            </div>
+            <!-- Grid column -->
 
-                <!-- Grid column -->
-                <hr class="w-100 clearfix d-md-none">
+            <hr class="w-100 clearfix d-md-none">
 
-                <!-- Grid column -->
-                {{--            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">--}}
-                {{--                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>--}}
-                {{--                <p>--}}
-                {{--                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>--}}
-                {{--                <p>--}}
-                {{--                    <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>--}}
-                {{--                <p>--}}
-                {{--                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>--}}
-                {{--                <p>--}}
-                {{--                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>--}}
-                {{--            </div>--}}
-                <!-- Grid column -->
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
 
+                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">
+                    Thông tin liên hệ
+                </h6>
+                <p>
+                    <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
+                </p>
+                <p>
+                    <span style="color: #656565">Số Điện Thoại: 0935 671 886</span>
+                </p>
+                <p>
+                    <span style="color: #656565">Email: RealEstateGig@gmail.com</span>
+                </p>
+                <p>
+                    <span style="color: #656565">Website: RealEstateGig.com</span>
+                </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="w-100 clearfix d-md-none">
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
+                </p>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Xây nhà thô</a>
+                </p>
+                <p class="f-link">
+                    <a class="f-link" href="#!">Xây biệt thự</a>
+                </p>
+                <p class="f-link">
+                    <a class="f-link " href="#!">Xây hầm</a>
+                </p>
             </div>
             <!-- Footer links -->
 
