@@ -1,3 +1,5 @@
+
+
 .footer-text {
     color: #8D8D8D;
     font-size: 14px;
@@ -8,10 +10,13 @@
 }
 
 .f-link:hover {
+    color: #E90808 !important;
     font-size: 16px;
+
+    padding-left: 20px;
     font-weight: bold;
     padding-left: 20px;
-    color: #800000 !important;
+    color: #E90808 !important;
 }
 
 .mb-7 {
@@ -34,4 +39,54 @@
 
 #intro {
     margin-top: 60px;
+
+.footer-text{
+    color:#8D8D8D;
+
+    font-size: 14px;
 }
+
+.f-link {
+    color: #656565 !important;
+}
+
+.f-link:hover {
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    color: #800000 !important;
+}
+
+.mb-7 {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    backdrop-filter: brightness(1000);
+}
+
+.navbar {
+    position: fixed;
+    margin-top: 85px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    backdrop-filter: brightness(1000);
+}
+
+#intro {
+    margin-top: 60px;
+}
+
+.nav-link-hover:hover {
+    text-decoration: underline;
+}
+
+.nav-link-auto-font {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    font-size: 1.5vw;
+}
+
