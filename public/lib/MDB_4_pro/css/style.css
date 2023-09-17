@@ -10,10 +10,13 @@
 }
 
 .f-link:hover {
+    color: #E90808 !important;
     font-size: 16px;
+
+    padding-left: 20px;
     font-weight: bold;
     padding-left: 20px;
-    color: #800000 !important;
+    color: #E90808 !important;
 }
 
 .mb-7 {
