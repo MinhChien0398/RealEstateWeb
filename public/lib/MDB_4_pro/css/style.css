@@ -1,48 +1,5 @@
-
-
 .footer-text {
     color: #8D8D8D;
-    font-size: 14px;
-}
-
-.f-link {
-    color: #656565 !important;
-}
-
-.f-link:hover {
-    color: #E90808 !important;
-    font-size: 16px;
-
-    padding-left: 20px;
-    font-weight: bold;
-    padding-left: 20px;
-    color: #E90808 !important;
-}
-
-.mb-7 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 10px;
-    backdrop-filter: brightness(1000);
-}
-.navbar {
-    position: fixed;
-    margin-top: 85px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 10px;
-    backdrop-filter: brightness(1000);
-}
-
-#intro {
-    margin-top: 60px;
-
-.footer-text{
-    color:#8D8D8D;
-
     font-size: 14px;
 }
 
@@ -57,36 +14,65 @@
     color: #800000 !important;
 }
 
-.mb-7 {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 10px;
-    backdrop-filter: brightness(1000);
+/*.navbar {*/
+/*    display: flex;*/
+/*    justify-content: space-evenly;*/
+/*    width: 100%;*/
+/*    padding-top: 5px;*/
+/*    padding-bottom: 5px;*/
+/*    backdrop-filter: brightness(1000);*/
+/*}*/
+
+/*#navbarExample01 {*/
+/*    justify-content: right;*/
+/*    align-content: flex-end;*/
+/*}*/
+
+/*.header {*/
+/*    padding: 36px;*/
+/*}*/
+
+
+/*.header001 {*/
+/*    width: 100%;*/
+/*    padding-top: 5px;*/
+/*    padding-bottom: 5px;*/
+/*    backdrop-filter: brightness(1000);*/
+/*    position: fixed;*/
+/*    z-index: 1030;*/
+/*    flex-flow: row nowrap;*/
+/*    justify-content: flex-start;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.nameCompany {*/
+/*    justify-content: space-evenly;*/
+/*}*/
+
+.container {
+    display: flex;
+
+    margin-: 50px;
 }
 
-.navbar {
-    position: fixed;
-    margin-top: 85px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    padding: 10px;
-    backdrop-filter: brightness(1000);
+#navbarSupportedContent {
+    display: flex;
+    justify-content: space-evenly;
 }
+/*#navbarExample01 {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
 
-#intro {
-    margin-top: 60px;
-}
+/*#navbarList {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
 
-.nav-link-hover:hover {
-    text-decoration: underline;
-}
+/*}*/
 
-.nav-link-auto-font {
-    margin-left: 3vw;
-    margin-right: 3vw;
-    font-size: 1.5vw;
-}
+/*.header123 {*/
+/*    display: flex;*/
+/*    justify-content: space-evenly;*/
+/*}*/
 
