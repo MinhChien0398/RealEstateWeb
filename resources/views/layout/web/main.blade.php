@@ -22,7 +22,7 @@
     </div>
     <div class="container nav-con" style="padding: 10px; margin: 0">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase" id="navbar000">
+            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Trang chủ</a>
                 </li>
@@ -61,7 +61,8 @@
 
     </div>
 
-    <div class="icon-phone"><i class="fa fa-volume-control-phone"></i></div>
+    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>
+    </div>
 </nav>
 <!--end Navigation-->
 

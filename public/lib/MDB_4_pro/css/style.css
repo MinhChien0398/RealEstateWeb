@@ -35,37 +35,36 @@
     justify-content: space-evenly;
 }
 
-#navbar000 > li > a {
-    padding: 0 20px;
+.navbar-nav > li > a {
+    padding: 0 20px !important;
     text-decoration: none; /* Loại bỏ gạch chân mặc định */
     border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
     transition: border-color 0.5s;
     line-height: 50px;
-    /*display: inline-block;*/
 }
 
-#navbar000 li:hover a {
+.navbar-nav li:hover a {
     border-color: #992900;
 }
 
-#navbar000 li:hover .subNav {
+.navbar-nav li:hover .subNav {
     display: block;
     border-radius: 10px;
 }
 
-#navbar000 li {
+.navbar-nav li {
     position: relative;
     list-style: none;
 }
 
-#navbar000 .subNav {
+.navbar-nav .subNav {
     position: absolute;
     display: none;
     background-color: white;
     padding: 10px;
 }
 
-#navbar000 .subNav li:hover {
+.navbar-nav .subNav li:hover {
     text-decoration: none; /* Loại bỏ gạch chân mặc định */
     border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
     transition: border-color 0.1s;
@@ -102,11 +101,13 @@
 .icon-phone {
     display: flex;
     justify-content: center;
-    width: 20px; /* Độ rộng của biểu tượng */
-    height: 20px; /* Chiều cao của biểu tượng */
-    color: red;
+    align-items: center;
+    width: 5px; /* Độ rộng của biểu tượng */
+    height: 30px; /* Chiều cao của biểu tượng */
+    color: whitesmoke;
     border-radius: 50%; /* Bo góc để tạo hình tròn */
-    /*margin: 50px auto; !* Canh giữa *!*/
+    padding: 1.5%;
+    background-color: red;
     animation: shakeIcon 1s infinite;
 }
 
