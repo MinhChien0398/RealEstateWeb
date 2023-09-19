@@ -14,65 +14,100 @@
     color: #800000 !important;
 }
 
-/*.navbar {*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*    width: 100%;*/
-/*    padding-top: 5px;*/
-/*    padding-bottom: 5px;*/
-/*    backdrop-filter: brightness(1000);*/
-/*}*/
+.img {
+    color: transparent;
+}
 
-/*#navbarExample01 {*/
-/*    justify-content: right;*/
-/*    align-content: flex-end;*/
-/*}*/
-
-/*.header {*/
-/*    padding: 36px;*/
-/*}*/
-
-
-/*.header001 {*/
-/*    width: 100%;*/
-/*    padding-top: 5px;*/
-/*    padding-bottom: 5px;*/
-/*    backdrop-filter: brightness(1000);*/
-/*    position: fixed;*/
-/*    z-index: 1030;*/
-/*    flex-flow: row nowrap;*/
-/*    justify-content: flex-start;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.nameCompany {*/
-/*    justify-content: space-evenly;*/
-/*}*/
-
-.container {
+.navbar-con-logo {
     display: flex;
+    justify-content: space-between;
+}
 
-    margin-: 50px;
+
+.nav-con {
+    display: flex;
+    margin: auto;
+
 }
 
 #navbarSupportedContent {
     display: flex;
     justify-content: space-evenly;
 }
-/*#navbarExample01 {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
 
-/*#navbarList {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
+.navbar-nav > li > a {
+    padding: 0 20px !important;
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
+    transition: border-color 0.5s;
+    line-height: 50px;
+}
 
-/*}*/
+.navbar-nav li:hover a {
+    border-color: #992900;
+}
 
-/*.header123 {*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*}*/
+.navbar-nav li:hover .subNav {
+    display: block;
+    border-radius: 10px;
+}
+
+.navbar-nav li {
+    position: relative;
+    list-style: none;
+}
+
+.navbar-nav .subNav {
+    position: absolute;
+    display: none;
+    background-color: white;
+    padding: 10px;
+}
+
+.navbar-nav .subNav li:hover {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
+    transition: border-color 0.1s;
+    border-color: #992900;
+}
+
+@keyframes shakeIcon {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    75% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(3px);
+    }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+.icon-phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5px; /* Độ rộng của biểu tượng */
+    height: 30px; /* Chiều cao của biểu tượng */
+    color: whitesmoke;
+    border-radius: 50%; /* Bo góc để tạo hình tròn */
+    padding: 1.5%;
+    background-color: red;
+    animation: shakeIcon 1s infinite;
+}
 

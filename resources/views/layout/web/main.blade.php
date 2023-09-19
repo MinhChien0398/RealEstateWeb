@@ -7,56 +7,65 @@
 </head>
 <body>
 <!--start header-->
-
-<!--start Navigation-->
-
-<!--end Navigation-->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <a class="navbar-brand text-secondary" style="letter-spacing: 3px;" href="#">
-                <p class="mb-0 small font-weight-bold">BOOK</p>
-                <i class="fas fa-book-open fa-lg mx-2"></i>
-                <p class="mb-0 small font-weight-bold">STORE</p>
-            </a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {{--                <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">--}}
-                <p class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Buy the books</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">Faq</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">Shipment</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">Returns</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">Rules</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">Newsletter</a>
-                </p>
-                <p class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </p>
-                {{--                </ul>--}}
-            </div>
-        </div>
-    </nav>
+
 
 </header>
+<!--start Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light white sticky-top"
+     style="padding-bottom: 0; padding-top: 0; display: flex; justify-content: center">
+    <div class="navbar-con-logo">
+        <img class="col-auto" src="{{asset('/img/logo.svg')}} " style="padding: 0">
+        <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
+            Estate
+            Gig</h5>
+    </div>
+    <div class="container nav-con" style="padding: 10px; margin: 0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>
+                    <ul class="subNav">
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Dự án</a>
+                        </li>
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Bài viết dự án</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dự án</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết dự án</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết dịch vụ</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>
+    </div>
+</nav>
+<!--end Navigation-->
+
 <!--end header-->
 
 
@@ -130,8 +139,11 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}"
-                                 style="width: 50px">
+                            <a class="hoverable btn-floating mx-1">
+                                <img class="hoverable mx-1" src="{{asset('/img/icons8-zalo-96.png')}}"
+                                     style="width: 40px; margin-top: 4px">
+                            </a>
+
                             {{--                                <i  class="fab fa-google-plus-g"></i>--}}
                         </li>
                     </ul>
