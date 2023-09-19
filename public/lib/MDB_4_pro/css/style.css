@@ -1,113 +1,105 @@
-.footer-text {
-    color: #8D8D8D;
-    font-size: 14px;
-}
-
-.f-link {
-    color: #656565 !important;
-}
-
-.f-link:hover {
-    font-size: 16px;
-    font-weight: bold;
-    padding-left: 20px;
-    color: #800000 !important;
-}
-
-.img {
-    color: transparent;
-}
-
-.navbar-con-logo {
-    display: flex;
-    justify-content: space-between;
-}
 
 
-.nav-con {
-    display: flex;
-    margin: auto;
-
-}
-
-#navbarSupportedContent {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.navbar-nav > li > a {
-    padding: 0 20px !important;
-    text-decoration: none; /* Loại bỏ gạch chân mặc định */
-    border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
-    transition: border-color 0.5s;
-    line-height: 50px;
-}
-
-.navbar-nav li:hover a {
-    border-color: #992900;
-}
-
-.navbar-nav li:hover .subNav {
-    display: block;
-    border-radius: 10px;
-}
-
-.navbar-nav li {
-    position: relative;
-    list-style: none;
-}
-
-.navbar-nav .subNav {
-    position: absolute;
-    display: none;
-    background-color: white;
-    padding: 10px;
-}
-
-.navbar-nav .subNav li:hover {
-    text-decoration: none; /* Loại bỏ gạch chân mặc định */
-    border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
-    transition: border-color 0.1s;
-    border-color: #992900;
-}
-
-@keyframes shakeIcon {
-    0% {
-        transform: translateX(0);
+    .f-link {
+        color: #656565 !important;
     }
-    25% {
-        transform: translateX(-3px);
-    }
-    50% {
-        transform: translateX(3px);
-    }
-    75% {
-        transform: translateX(-3px);
-    }
-    100% {
-        transform: translateX(3px);
-    }
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
-    100% {
-        transform: translateY(3px);
-    }
-}
 
-.icon-phone {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 5px; /* Độ rộng của biểu tượng */
-    height: 30px; /* Chiều cao của biểu tượng */
-    color: whitesmoke;
-    border-radius: 50%; /* Bo góc để tạo hình tròn */
-    padding: 1.5%;
-    background-color: red;
-    animation: shakeIcon 1s infinite;
-}
+    .f-link:hover {
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 20px;
+        color: #800000 !important;
+    }
 
+    /*.img {*/
+    /*    color: transparent;*/
+    /*}*/
+
+    /*.navbar-con-logo {*/
+    /*    display: flex;*/
+    /*    justify-content: space-between; */
+    /*}*/
+
+
+    /*.nav-con {*/
+    /*    display: flex;*/
+    /*    margin: auto;*/
+
+    /*}*/
+
+
+    /*.navbar-nav > li > a {*/
+    /*    padding: 0 20px !important;*/
+    /*    text-decoration: none; !* Loại bỏ gạch chân mặc định *!*/
+    /*    border-bottom: 4px solid transparent; !* Tạo một đường kẻ dưới *!*/
+    /*    transition: border-color 0.5s;*/
+    /*    line-height: 50px;*/
+    /*}*/
+
+    /*.navbar-nav li:hover a {*/
+    /*    border-color: #992900;*/
+    /*}*/
+
+    /*.navbar-nav li:hover .subNav {*/
+    /*    display: block;*/
+    /*    border-radius: 10px;*/
+    /*}*/
+
+    /*.navbar-nav li {*/
+    /*    position: relative;*/
+    /*    list-style: none;*/
+    /*}*/
+
+    /*.navbar-nav .subNav {*/
+    /*    position: absolute;*/
+    /*    display: none;*/
+    /*    background-color: white;*/
+    /*    padding: 10px;*/
+    /*}*/
+
+    /*.navbar-nav .subNav li:hover {*/
+    /*    text-decoration: none; !* Loại bỏ gạch chân mặc định *!*/
+    /*    border-bottom: 4px solid transparent; !* Tạo một đường kẻ dưới *!*/
+    /*    transition: border-color 0.1s;*/
+    /*    border-color: #992900;*/
+    /*}*/
+
+    /*@keyframes shakeIcon {*/
+    /*    0% {*/
+    /*        transform: translateX(0);*/
+    /*    }*/
+    /*    25% {*/
+    /*        transform: translateX(-3px);*/
+    /*    }*/
+    /*    50% {*/
+    /*        transform: translateX(3px);*/
+    /*    }*/
+    /*    75% {*/
+    /*        transform: translateX(-3px);*/
+    /*    }*/
+    /*    100% {*/
+    /*        transform: translateX(3px);*/
+    /*    }*/
+    /*    0% {*/
+    /*        transform: translateY(0);*/
+    /*    }*/
+    /*    50% {*/
+    /*        transform: translateY(-3px);*/
+    /*    }*/
+    /*    100% {*/
+    /*        transform: translateY(3px);*/
+    /*    }*/
+    /*}*/
+
+    /*.icon-phone {*/
+    /*    display: flex;*/
+    /*    justify-content: center;*/
+    /*    align-items: center;*/
+    /*    width: 5px; !* Độ rộng của biểu tượng *!*/
+    /*    height: 30px; !* Chiều cao của biểu tượng *!*/
+    /*    color: whitesmoke;*/
+    /*    border-radius: 50%; !* Bo góc để tạo hình tròn *!*/
+    /*    padding: 1.5%;*/
+    /*    background-color: red;*/
+    /*    animation: shakeIcon 1s infinite;*/
+    /*}*/
