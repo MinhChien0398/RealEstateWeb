@@ -7,95 +7,67 @@
 </head>
 <body>
 <!--start header-->
-<header class="mb-7">
-    <!-- Jumbotron -->
-    <div class="p-3 text-center bg-white border-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
-                    <a href="#!" class="ms-md-2">
-                        <img src="{{asset('/img/logo.svg')}}" height="35"/>
-                    </a>
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real Estate
-                        Gig</h5>
-                </div>
-                {{--                 search--}}
-                <div class="col-md-4">
-                    <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
-                        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search"/>
-                        <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"> </i></span>
-                    </form>
-                </div>
-                {{--                 end search--}}
+<header>
 
 
-                <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
-                    <div class="d-flex">
-                        <div class="section-header__hotline d-flex align-items-center justify-content-end"
-                             style="align-items: center !important; justify-content: end !important;">
-                            <div class="icons mr15" style="font-size: 24px; margin-right: 15px;">
-                                <i class="fa-solid fa-phone" style="color: #E90808"></i>
-                            </div>
-                            <div class="detail flex-cl-1" style="">
-                                <div class="title" style="font-size: 10px;
-                                                    margin-bottom: 5px;
-                                                    text-transform: uppercase;">
-                                    Hotline tư vấn 24/7
-                                </div>
-                                <div class="phone" style="color: #E90808;
-                                        font-size: 22px;
-                                        font-family: Arial, Helvetica, sans-serif;">
-                                    0935 671 886
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Jumbotron -->
 </header>
-<!--end header-->
-
 <!--start Navigation-->
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="collapse navbar-collapse" id="navbarText" style="justify-content: center; align-content: center;">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="#">Trang chủ
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link text-dark " href="#">
-                    Giới thiệu
-                </a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link  text-dark" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dịch vụ & Báo giá</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Xây nhà thô</a>
-                    <a class="dropdown-item" href="#">Xây hầm</a>
-                    <a class="dropdown-item" href="#">Nội thất</a>
-                </div>
-            </li>
-            {{--project items--}}
-            <li class="nav-item dropdown">
-                <a class="nav-link text-dark dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dự án</a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Chuẩn bị thi công</a>
-                    <a class="dropdown-item" href="#">Đang thi công</a>
-                    <a class="dropdown-item" href="#">Đã thi công</a>
-                </div>
-            </li>
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light white sticky-top"
+     style="padding-bottom: 0; padding-top: 0; display: flex; justify-content: center">
+    <div class="navbar-con-logo">
+        <img class="col-auto" src="{{asset('/img/logo.svg')}} " style="padding: 0">
+        <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
+            Estate
+            Gig</h5>
+    </div>
+    <div class="container nav-con" style="padding: 10px; margin: 0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>
+                    <ul class="subNav">
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Dự án</a>
+                        </li>
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Bài viết dự án</a>
+                        </li>
+                    </ul>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dự án</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết dự án</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết dịch vụ</a>
+                </li>
+            </ul>
+        </div>
+
     </div>
 
+    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>
+    </div>
 </nav>
 <!--end Navigation-->
+
+<!--end header-->
+
 
 <!--start content-->
 @yield('content')
@@ -167,8 +139,11 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <img class="hoverable mx-1" src="{{asset('/img/snapedit_1694631625483.png')}}"
-                                 style="width: 50px">
+                            <a class="hoverable btn-floating mx-1">
+                                <img class="hoverable mx-1" src="{{asset('/img/icons8-zalo-96.png')}}"
+                                     style="width: 40px; margin-top: 4px">
+                            </a>
+
                             {{--                                <i  class="fab fa-google-plus-g"></i>--}}
                         </li>
                     </ul>
