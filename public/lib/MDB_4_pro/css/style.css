@@ -14,65 +14,99 @@
     color: #800000 !important;
 }
 
-/*.navbar {*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*    width: 100%;*/
-/*    padding-top: 5px;*/
-/*    padding-bottom: 5px;*/
-/*    backdrop-filter: brightness(1000);*/
-/*}*/
+.img {
+    color: transparent;
+}
 
-/*#navbarExample01 {*/
-/*    justify-content: right;*/
-/*    align-content: flex-end;*/
-/*}*/
-
-/*.header {*/
-/*    padding: 36px;*/
-/*}*/
-
-
-/*.header001 {*/
-/*    width: 100%;*/
-/*    padding-top: 5px;*/
-/*    padding-bottom: 5px;*/
-/*    backdrop-filter: brightness(1000);*/
-/*    position: fixed;*/
-/*    z-index: 1030;*/
-/*    flex-flow: row nowrap;*/
-/*    justify-content: flex-start;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.nameCompany {*/
-/*    justify-content: space-evenly;*/
-/*}*/
-
-.container {
+.navbar-con-logo {
     display: flex;
+    justify-content: space-between;
+}
 
-    margin-: 50px;
+
+.nav-con {
+    display: flex;
+    margin: auto;
+
 }
 
 #navbarSupportedContent {
     display: flex;
     justify-content: space-evenly;
 }
-/*#navbarExample01 {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
 
-/*#navbarList {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
+#navbar000 > li > a {
+    padding: 0 20px;
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
+    transition: border-color 0.5s;
+    line-height: 50px;
+    /*display: inline-block;*/
+}
 
-/*}*/
+#navbar000 li:hover a {
+    border-color: #992900;
+}
 
-/*.header123 {*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*}*/
+#navbar000 li:hover .subNav {
+    display: block;
+    border-radius: 10px;
+}
+
+#navbar000 li {
+    position: relative;
+    list-style: none;
+}
+
+#navbar000 .subNav {
+    position: absolute;
+    display: none;
+    background-color: white;
+    padding: 10px;
+}
+
+#navbar000 .subNav li:hover {
+    text-decoration: none; /* Loại bỏ gạch chân mặc định */
+    border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
+    transition: border-color 0.1s;
+    border-color: #992900;
+}
+
+@keyframes shakeIcon {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    75% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(3px);
+    }
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+.icon-phone {
+    display: flex;
+    justify-content: center;
+    width: 20px; /* Độ rộng của biểu tượng */
+    height: 20px; /* Chiều cao của biểu tượng */
+    color: red;
+    border-radius: 50%; /* Bo góc để tạo hình tròn */
+    /*margin: 50px auto; !* Canh giữa *!*/
+    animation: shakeIcon 1s infinite;
+}
 
