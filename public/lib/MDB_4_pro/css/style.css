@@ -4,7 +4,7 @@
 }
 
 .f-link {
-    color: #656565 !important;
+    color: #656565!important;
 }
 
 .f-link:hover {
@@ -110,4 +110,4 @@
     background-color: red;
     animation: shakeIcon 1s infinite;
 }
-
+}
