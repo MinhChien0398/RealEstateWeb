@@ -14,55 +14,61 @@
 <!--start Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light white sticky-top"
      style="padding-bottom: 0; padding-top: 0; display: flex; justify-content: center">
-    <div class="navbar-con-logo">
+    <div class="row">
+    <div class="row navbar-con-logo">
         <img class="col-auto" src="{{asset('/img/logo.svg')}} " style="padding: 0">
-        <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
+        <h5 class="col-lg-auto text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
             Estate
             Gig</h5>
     </div>
-    <div class="container nav-con" style="padding: 10px; margin: 0">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Trang chủ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Giới thiệu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>
-                    <ul class="subNav">
-                        <li class="nav-item-sub">
-                            <a class="nav-link" href="#">Dự án</a>
-                        </li>
-                        <li class="nav-item-sub">
-                            <a class="nav-link" href="#">Liên hệ</a>
-                        </li>
-                        <li class="nav-item-sub">
-                            <a class="nav-link" href="#">Bài viết dự án</a>
-                        </li>
-                    </ul>
 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Dự án</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Liên hệ</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bài viết dự án</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Bài viết dịch vụ</a>
-                </li>
-            </ul>
+        <div class="collapse navbar-collapse">
+
         </div>
+        </div>
+{{--    <div class="container nav-con" style="padding: 10px; margin: 0">--}}
+{{--        <div class="collapse navbar-collapse">--}}
+{{--            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Trang chủ</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Giới thiệu</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>--}}
+{{--                    <ul class="subNav">--}}
+{{--                        <li class="nav-item-sub">--}}
+{{--                            <a class="nav-link" href="#">Dự án</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item-sub">--}}
+{{--                            <a class="nav-link" href="#">Liên hệ</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item-sub">--}}
+{{--                            <a class="nav-link" href="#">Bài viết dự án</a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
 
-    </div>
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Dự án</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Liên hệ</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Bài viết dự án</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" href="#">Bài viết dịch vụ</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </div>--}}
 
-    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>
-    </div>
+{{--    </div>--}}
+
+{{--    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>--}}
+{{--    </div>--}}
 </nav>
 <!--end Navigation-->
 
@@ -197,17 +203,7 @@
             <hr class="w-100 clearfix d-md-none">
 
             <!-- Grid column -->
-            {{--            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">--}}
-            {{--                <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-envelope mr-3"></i> info@gmail.com</p>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>--}}
-            {{--                <p>--}}
-            {{--                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>--}}
-            {{--            </div>--}}
+
             <!-- Grid column -->
 
         </div>
