@@ -1,16 +1,9 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
-    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">-->
+    @include('layout.web.header')
 </head>
 <body>
 <!--start header-->
@@ -18,75 +11,67 @@
 
 
 </header>
-<!--end header-->
-
 <!--start Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light white sticky-top"
+     style="padding-bottom: 0; padding-top: 0; display: flex; justify-content: center">
+    <div class="navbar-con-logo">
+        <img class="col-auto" src="{{asset('/img/logo.svg')}} " style="padding: 0">
+        <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
+            Estate
+            Gig</h5>
+    </div>
+    <div class="container nav-con" style="padding: 10px; margin: 0">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>
+                    <ul class="subNav">
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Dự án</a>
+                        </li>
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                        <li class="nav-item-sub">
+                            <a class="nav-link" href="#">Bài viết dự án</a>
+                        </li>
+                    </ul>
 
-<nav class="navbar navbar-expand-lg navbar-light white sticky-top nav-property">
-    <a class="navbar-brand ml-5 mr-0 pl-5 pr-2 pt-1 pb-1 "
-       href="http://localhost/RealEstateWeb/template_main">
-        <div class="navbar-brand flex-center justify-content-between ">
-            <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.svg" style="width: 60px">
-
-            <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
-                Estate
-                Gig</h4>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Dự án</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết dự án</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bài viết dịch vụ</a>
+                </li>
+            </ul>
         </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-        <ul class="navbar-nav border-left border-right">
-            <li class="nav-item font-weight-bolder">
-                <a class="nav-link nav-menuItem " id="nav-menuItem-active" href="#">Trang Chủ
-                </a>
-            </li>
-            <li class="nav-item font-weight-bolder">
-                <a class="nav-link nav-menuItem " href="#">Giới Thiệu</a>
-            </li>
-            <li class="nav-item dropdown nav-dropdownItem font-weight-bolder">
-                <a class="nav-link nav-menuItem dropdown-toggle dropdown-submenu" id="navbarDropdownMenuLink-444"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dịch vụ
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown nav-dropdownItem font-weight-bolder">
-                <a class="nav-link nav-menuItem dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dự án
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-555">
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Biệt Thự</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Nhà Phố</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Văn Phòng</a>
-                </div>
-            </li>
-            <li class="nav-item font-weight-bolder">
-                <a class="nav-link nav-menuItem " href="#">Liên Hệ</a>
-            </li>
-        </ul>
-        <!--icon font ring-->
-        <div class="phone-contain flex-center justify-content-between ">
-
-            <div class="icon-phone-ring">
-                <i class="fa-solid fa-phone"></i>
-                <div class="circle-1"></div>
-                <!--            <div class="circle-2"></div>-->
-            </div>
-            <p class="mt-1 ml-5 pl-3" >0352033199</p></div>
 
     </div>
 
+    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>
+    </div>
 </nav>
 <!--end Navigation-->
 
+<!--end header-->
+
+
 <!--start content-->
+@yield('content')
+
 <div id="intro" class="bg-image shadow-1-strong" style="
                                                           background-image: url(https://mdbootstrap.com/img/new/slides/310.jpg);
                                                           height: 500px;
@@ -117,6 +102,8 @@
         </div>
     </div>
 </div>
+
+
 <!--end content-->
 
 <!--start footer-->
@@ -131,14 +118,12 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
-                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.svg">
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold main-color">Real
+                    <img class="col-auto" src="{{asset('/img/logo.svg')}} ">
+                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
                         Estate
                         Gig</h5>
                 </div>
-                <p style="color: #656565; margin-top: 2%">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng,
-                    trang trí nội
-
+                <p style="color: #656565">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng, trang trí nội
                     ngoại thất công trình với nhiều năm kinh nghiệm.</p>
                 <!-- Social buttons -->
                 <div class="text-center text-md-right">
@@ -154,8 +139,12 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <img class="hoverable mx-1" src="/RealEstateWeb/public/img/snapedit_1694631625483.png"
-                                 style="width: 50px">
+                            <a class="hoverable btn-floating mx-1">
+                                <img class="hoverable mx-1" src="{{asset('/img/icons8-zalo-96.png')}}"
+                                     style="width: 40px; margin-top: 4px">
+                            </a>
+
+                            {{--                                <i  class="fab fa-google-plus-g"></i>--}}
                         </li>
                     </ul>
                 </div>
@@ -190,16 +179,16 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
-                <p>
+                <p class="f-link">
                     <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
                 </p>
-                <p>
+                <p class="f-link">
                     <a class="f-link" href="#!">Xây nhà thô</a>
                 </p>
-                <p>
+                <p class="f-link">
                     <a class="f-link" href="#!">Xây biệt thự</a>
                 </p>
-                <p>
+                <p class="f-link">
                     <a class="f-link " href="#!">Xây hầm</a>
                 </p>
             </div>
@@ -221,17 +210,7 @@
 </footer>
 <!--end footer-->
 
-
-<!--start script -->
-<!-- end script-->
-
-
-<script src="resources/views/template/js/main.js"></script>
-<script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/mdb.lite.min.js"></script>
-
+@include('layout.web.footer')
+@yield('script')
 </body>
 </html>
