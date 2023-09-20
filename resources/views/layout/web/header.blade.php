@@ -5,3 +5,4 @@
 {{--<link href="{{asset('/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css')}}" rel="stylesheet">--}}
 <link href="{{asset('/lib/fontawesome-free-6.4.2-web/css/all.min.css')}}" rel="stylesheet">
 
+
