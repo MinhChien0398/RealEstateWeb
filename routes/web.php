@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/intro', function (){
-   return view('layout.web.intro');
+   return view('template.intro');
 });
