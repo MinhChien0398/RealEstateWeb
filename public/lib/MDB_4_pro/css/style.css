@@ -36,7 +36,7 @@
 }
 
 .navbar-nav > li > a {
-    padding: 0 20px !important;
+    padding: 0 16px !important;
     text-decoration: none; /* Loại bỏ gạch chân mặc định */
     border-bottom: 4px solid transparent; /* Tạo một đường kẻ dưới */
     transition: border-color 0.5s;
