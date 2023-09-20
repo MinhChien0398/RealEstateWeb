@@ -14,61 +14,69 @@
 <!--start Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light white sticky-top"
      style="padding-bottom: 0; padding-top: 0; display: flex; justify-content: center">
-    <div class="row">
-    <div class="row navbar-con-logo">
-        <img class="col-auto" src="{{asset('/img/logo.svg')}} " style="padding: 0">
-        <h5 class="col-lg-auto text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
+    <div class="flex-center justify-content-between navbar-con-logo pl-3 pr-2 pt-1 pb-1 border-right">
+        <img class="mr-3" src="{{asset('/img/logo.svg')}}" style="width: 60px">
+
+        <h3 class=" text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
             Estate
-            Gig</h5>
+            Gig</h3>
     </div>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-light-blue form-check-label active">
+            <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked>
+            Preselected
+        </label>
+        <label class="btn btn-light-blue form-check-label">
+            <input class="form-check-input" type="radio" name="options" id="option2" autocomplete="off"> Radio
+        </label>
+        <label class="btn btn-light-blue form-check-label">
+            <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off"> Radio
+        </label>
+    </div>
+    </div>
+    {{--    <div class="container nav-con" style="padding: 10px; margin: 0">--}}
+    {{--        <div class="collapse navbar-collapse">--}}
+    {{--            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Trang chủ</a>--}}
+    {{--                </li>--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Giới thiệu</a>--}}
+    {{--                </li>--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>--}}
+    {{--                    <ul class="subNav">--}}
+    {{--                        <li class="nav-item-sub">--}}
+    {{--                            <a class="nav-link" href="#">Dự án</a>--}}
+    {{--                        </li>--}}
+    {{--                        <li class="nav-item-sub">--}}
+    {{--                            <a class="nav-link" href="#">Liên hệ</a>--}}
+    {{--                        </li>--}}
+    {{--                        <li class="nav-item-sub">--}}
+    {{--                            <a class="nav-link" href="#">Bài viết dự án</a>--}}
+    {{--                        </li>--}}
+    {{--                    </ul>--}}
 
-        <div class="collapse navbar-collapse">
+    {{--                </li>--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Dự án</a>--}}
+    {{--                </li>--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Liên hệ</a>--}}
+    {{--                </li>--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Bài viết dự án</a>--}}
+    {{--                </li>--}}
+    {{--                <li class="nav-item">--}}
+    {{--                    <a class="nav-link" href="#">Bài viết dịch vụ</a>--}}
+    {{--                </li>--}}
+    {{--            </ul>--}}
+    {{--        </div>--}}
 
-        </div>
-        </div>
-{{--    <div class="container nav-con" style="padding: 10px; margin: 0">--}}
-{{--        <div class="collapse navbar-collapse">--}}
-{{--            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Trang chủ</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Giới thiệu</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>--}}
-{{--                    <ul class="subNav">--}}
-{{--                        <li class="nav-item-sub">--}}
-{{--                            <a class="nav-link" href="#">Dự án</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item-sub">--}}
-{{--                            <a class="nav-link" href="#">Liên hệ</a>--}}
-{{--                        </li>--}}
-{{--                        <li class="nav-item-sub">--}}
-{{--                            <a class="nav-link" href="#">Bài viết dự án</a>--}}
-{{--                        </li>--}}
-{{--                    </ul>--}}
+    {{--    </div>--}}
 
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Dự án</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Liên hệ</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Bài viết dự án</a>--}}
-{{--                </li>--}}
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Bài viết dịch vụ</a>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-
-{{--    </div>--}}
-
-{{--    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>--}}
-{{--    </div>--}}
+    {{--    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>--}}
+    {{--    </div>--}}
 </nav>
 <!--end Navigation-->
 
@@ -185,16 +193,16 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
                 <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
-                <p class="f-link">
+                <p class="">
                     <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
                 </p>
-                <p class="f-link">
+                <p class="">
                     <a class="f-link" href="#!">Xây nhà thô</a>
                 </p>
-                <p class="f-link">
+                <p class="">
                     <a class="f-link" href="#!">Xây biệt thự</a>
                 </p>
-                <p class="f-link">
+                <p class="">
                     <a class="f-link " href="#!">Xây hầm</a>
                 </p>
             </div>
