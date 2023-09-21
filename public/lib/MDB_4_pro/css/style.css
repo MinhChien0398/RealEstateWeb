@@ -141,6 +141,10 @@
 .bc-icons-2 .breadcrumb-item.active {
     color: #455a64;
 }
+
+p{
+    font-family: Inter;
+}
 /*.img {*/
 /*    color: transparent;*/
 /*}*/
