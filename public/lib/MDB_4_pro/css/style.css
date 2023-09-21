@@ -132,7 +132,13 @@
 .circle-2 {
     animation-delay: .5s;
 }
+.bc-icons-2 .breadcrumb-item + .breadcrumb-item::before {
+    content: none;
+}
 
+.bc-icons-2 .breadcrumb-item.active {
+    color: #455a64;
+}
 /*.img {*/
 /*    color: transparent;*/
 /*}*/
