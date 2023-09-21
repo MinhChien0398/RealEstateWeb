@@ -40,7 +40,7 @@
 
 .display-none {
     display: none;
-
+}
 
 .nav-dropdownItem:hover .nav-menuItem {
     font-size: 18px;
@@ -72,6 +72,7 @@
     justify-content: center !important;
     align-items: center !important;
 }
+
 
 .fa-phone {
     height: 30px;
@@ -127,6 +128,7 @@
 
 .circle-1 {
     animation-delay: 0s;
+
 }
 
 .circle-2 {
