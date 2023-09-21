@@ -21,6 +21,7 @@
             Estate
             Gig</h3>
     </div>
+
     <div class="btn-group" data-toggle="buttons">
         <label class="btn btn-light-blue form-check-label active">
             <input class="form-check-input" type="radio" name="options" id="option1" autocomplete="off" checked>
@@ -32,6 +33,7 @@
         <label class="btn btn-light-blue form-check-label">
             <input class="form-check-input" type="radio" name="options" id="option3" autocomplete="off"> Radio
         </label>
+
     </div>
     </div>
     {{--    <div class="container nav-con" style="padding: 10px; margin: 0">--}}
