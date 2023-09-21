@@ -37,9 +37,10 @@
     font-weight: bold !important;
 }
 
+
 .display-none {
     display: none;
-}
+
 
 .nav-dropdownItem:hover .nav-menuItem {
     font-size: 18px;
@@ -224,3 +225,4 @@
 /*    background-color: red;*/
 /*    animation: shakeIcon 1s infinite;*/
 /*}*/
+

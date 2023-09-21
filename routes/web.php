@@ -19,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('template.main');
 });
+
+Route::get('/intro', function (){
+   return view('template.intro');
+});
