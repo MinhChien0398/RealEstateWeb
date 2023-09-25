@@ -11,8 +11,22 @@
     });
 }
 
-    var toggler = document.getElementsByClassName("navbar-toggler");
-    if(toggler[0].getAttribute("aria-expanded").endsWith("true")){
+    // var toggler = document.getElementsByClassName("navbar-toggler");
+    // if(toggler[0].getAttribute("aria-expanded").endsWith("true")){
+    //
+    // }
 
-    }
-    console.log();
+    // $('carousel').carousel({
+    //     interval: 2000
+    // })
+    // import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
+    // import Swiper from './swiper-bundle.min';
+    var swiper = new Swiper(".slide-content", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
