@@ -15,9 +15,13 @@ html, body {
 }
 
 .main-color {
-    color: #E90808;
+    color: #E90808!important;
 }
+nav .container{
+    max-width: 1440px;
+    margin: 0;
 
+}
 .nav-property {
     padding-bottom: 0;
     padding-top: 0;
@@ -171,7 +175,8 @@ p {
 }
 
 .section-about {
-
+    padding-bottom: 100px;
+    padding-top: 100px;
 }
 
 .box-name {
@@ -258,7 +263,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .slide-container {
@@ -268,15 +274,17 @@ p {
 
     cursor: pointer;
 }
-.slide-container .title{
+
+.slide-container .title {
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: 700;
 }
-.card {
-    width: calc(100% /3 - 20px)!important;
-    height: 100%!important;
+
+.card-home {
+    width: calc(100% / 3 - 20px) !important;
+    height: 100% !important;
     box-shadow: none;
     background-color: white;
 }
@@ -300,22 +308,25 @@ p {
     width: 240px;
     border-radius: 50%;
     background-color: #F1F1F1;
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.2s;
 }
 
-.card:hover .card-image {
+.card-home:hover .card-image {
     background-color: #E90808;
 }
-.card:hover .card-content h3 {
+
+.card-home:hover .card-content h4 {
     color: #E90808;
 }
-.card:hover img {
+
+.card-home:hover img {
     transform: scale(1.1);
     /*vertical-align: middle;*/
 }
+
 .img-container img {
     height: 100%;
     width: 100%;
@@ -337,14 +348,107 @@ p {
     display: block;
     overflow: hidden;
 }
-.img-wrapper{
+
+.img-wrapper {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.swiper-pagination{
+
+.swiper-pagination {
     user-select: none;
+
 }
 
+.swiper-pagination-bullet-active {
+    background-color: #E90808 !important;
+}
+
+.home-project {
+    background: url("/RealEstateWeb/public/img/main-bg-project/bgda14401111-5952.png") center;
+    margin: 0 auto;
+}
+
+.home-project .title h3 {
+    font-weight: 700;
+}
+.project-category .project-category{
+    gap: 10px;
+}
+
+.project-category .category-menu .category-item {
+    list-style: none;
+}
+.project-category .category-menu .category-item:not(:last-child){
+    margin-right: 5px;
+}
+.project-category .category-menu .category-item a {
+    background-color: #fff;
+    padding: 15px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    color: #646464;
+    display: inline-block;
+    min-width: 170px;
+}
+
+ .category-menu .category-item:hover a,  .category-menu .category-item.active a {
+    color: #fff;
+    background-color: #E90808;
+    font-weight: 700;
+    font-family: Inter-Medium,Arial,Helvetica,sans-serif;
+}
+
+.category-menu .category-item a::before {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 12px solid transparent;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+ .category-menu .category-item.active a::before{
+    border-top: 12px solid #E90808;
+}
+ .outstanding-projects{
+     width: 1220px;
+
+ }
+.post-img .img-responsive{
+     max-width: 100%;
+    height: auto;
+    display: block;
+}
+.mini-post{
+    height: fit-content ;
+}
+.mini-post .img-responsive{
+    height: 100%;
+    width: auto;
+
+}
+
+.mini-post .img{
+   height: calc(100% / 4 - 20px);
+    width: auto ;
+    display: block;
+}
+.mini-post:not(:last-child){
+    margin-bottom: 20px;
+}
+ .mini-post:hover .tilte-mini-post, .biggest-post:hover .title-of-big-post{
+    color: #E90808!important;
+}
+ .biggest-post .post-excerpt{
+     color: black;
+ }
+.mini-post, .biggest-post{
+ color: black;
+}

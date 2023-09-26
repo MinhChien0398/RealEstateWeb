@@ -24,9 +24,23 @@
     var swiper = new Swiper(".slide-content", {
         slidesPerView: 3,
         spaceBetween: 30,
-
         pagination: {
             el: ".swiper-pagination",
             clickable: true,
         },
     });
+
+
+    var categorylist = document.getElementById("HomeProjectCategory");
+    var btns = categorylist.getElementsByClassName("category-item");
+
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            for (var j = 0; j < btns.length; j++) {
+                if(btns[j].classList.contains("active")){
+                    btns[j].classList.remove(["active"]);
+                }
+            }
+            this.classList.add(["active"]);
+        });
+    }
