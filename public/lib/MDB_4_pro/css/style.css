@@ -240,5 +240,29 @@ p {
 /*    animation: shakeIcon 1s infinite;*/
 /*}*/
 
+.intro-card-content {
+    height: 150px;
+    text-align: justify;
+}
+
+.map-container-6 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-container-6 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.bg-red-dock {
+    background-color: #E90808;
+    color: #E90808;
+}
 
 
