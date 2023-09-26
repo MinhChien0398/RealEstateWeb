@@ -27,3 +27,7 @@ Route::get('/intro', function (){
 Route::get('/contact', function(){
    return view('template.contact');
 });
+
+Route::get('/contact-2', function(){
+    return view('template.contact2');
+});
