@@ -15,13 +15,15 @@ html, body {
 }
 
 .main-color {
-    color: #E90808!important;
+    color: #E90808 !important;
 }
-nav .container{
+
+nav .container {
     max-width: 1440px;
     margin: 0;
 
 }
+
 .nav-property {
     padding-bottom: 0;
     padding-top: 0;
@@ -231,7 +233,7 @@ p {
 }
 
 .hover-image:hover:before {
-    animation: shine 1s;
+    animation: shine-1 1s;
 }
 
 .hover-image:before {
@@ -249,7 +251,7 @@ p {
     transform: skewX(-25deg);
 }
 
-@keyframes shine {
+@keyframes shine-1 {
     from {
         left: -75%;
     }
@@ -271,7 +273,6 @@ p {
     margin: 0 40px;
     width: 100%;
     height: 400px;
-
     cursor: pointer;
 }
 
@@ -369,21 +370,29 @@ p {
 .home-project {
     background: url("/RealEstateWeb/public/img/main-bg-project/bgda14401111-5952.png") center;
     margin: 0 auto;
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
 }
 
 .home-project .title h3 {
     font-weight: 700;
 }
-.project-category .project-category{
+
+.project-category .project-category {
     gap: 10px;
 }
 
 .project-category .category-menu .category-item {
     list-style: none;
 }
-.project-category .category-menu .category-item:not(:last-child){
+
+.project-category .category-menu .category-item:not(:last-child) {
     margin-right: 5px;
 }
+
 .project-category .category-menu .category-item a {
     background-color: #fff;
     padding: 15px 20px;
@@ -396,11 +405,11 @@ p {
     min-width: 170px;
 }
 
- .category-menu .category-item:hover a,  .category-menu .category-item.active a {
+.category-menu .category-item:hover a, .category-menu .category-item.active a {
     color: #fff;
     background-color: #E90808;
     font-weight: 700;
-    font-family: Inter-Medium,Arial,Helvetica,sans-serif;
+    font-family: Inter-Medium, Arial, Helvetica, sans-serif;
 }
 
 .category-menu .category-item a::before {
@@ -414,41 +423,72 @@ p {
     border-right: 8px solid transparent;
 }
 
- .category-menu .category-item.active a::before{
+.category-menu .category-item.active a::before {
     border-top: 12px solid #E90808;
 }
- .outstanding-projects{
-     width: 1220px;
 
- }
-.post-img .img-responsive{
-     max-width: 100%;
-    height: auto;
+.highlight-project {
+}
+
+.highlight-project .projects-wrapper {
+    display: grid;
+    gap: 5px;
+}
+
+.projects-wrapper {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: auto auto auto auto;
+}
+.project{
+    margin-bottom: 10px;
+}
+.project .project-img .img-responsive {
+    width: 100%;
+    height: 300px;
     display: block;
 }
-.mini-post{
-    height: fit-content ;
-}
-.mini-post .img-responsive{
+
+.project .project-content {
+    width: 100%;
     height: 100%;
-    width: auto;
-
+    background: rgba(48, 48, 48, 0.72);
+    transition: all 0.4s;
+    z-index: 1;
 }
 
-.mini-post .img{
-   height: calc(100% / 4 - 20px);
-    width: auto ;
-    display: block;
+.project .project-content a {
+    color: white !important;
 }
-.mini-post:not(:last-child){
-    margin-bottom: 20px;
+
+.project:hover .project-content {
+    transform: translateY(-100%);
 }
- .mini-post:hover .tilte-mini-post, .biggest-post:hover .title-of-big-post{
-    color: #E90808!important;
+
+.project .project-content div {
+    position: relative;
+    top: 50%;
 }
- .biggest-post .post-excerpt{
-     color: black;
- }
-.mini-post, .biggest-post{
- color: black;
+
+.project-title {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.project-content .project-title::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    margin-top: 5px;
+    border: #FFFFFF 1px solid;
+    bottom: 0;
+    translate: 50px;
+}
+
+.project.hover-image:before {
+    left: 150%;
+}
+
+.project.hover-image:hover:before {
+    animation: shine-1 1s;
 }
