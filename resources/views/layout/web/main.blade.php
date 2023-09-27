@@ -36,49 +36,6 @@
 
     </div>
     </div>
-    {{--    <div class="container nav-con" style="padding: 10px; margin: 0">--}}
-    {{--        <div class="collapse navbar-collapse">--}}
-    {{--            <ul class="navbar-nav align-items-center ms-5 mb-2 mb-lg-0 text-uppercase">--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Trang chủ</a>--}}
-    {{--                </li>--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Giới thiệu</a>--}}
-    {{--                </li>--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Dịch vụ và báo giá</a>--}}
-    {{--                    <ul class="subNav">--}}
-    {{--                        <li class="nav-item-sub">--}}
-    {{--                            <a class="nav-link" href="#">Dự án</a>--}}
-    {{--                        </li>--}}
-    {{--                        <li class="nav-item-sub">--}}
-    {{--                            <a class="nav-link" href="#">Liên hệ</a>--}}
-    {{--                        </li>--}}
-    {{--                        <li class="nav-item-sub">--}}
-    {{--                            <a class="nav-link" href="#">Bài viết dự án</a>--}}
-    {{--                        </li>--}}
-    {{--                    </ul>--}}
-
-    {{--                </li>--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Dự án</a>--}}
-    {{--                </li>--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Liên hệ</a>--}}
-    {{--                </li>--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Bài viết dự án</a>--}}
-    {{--                </li>--}}
-    {{--                <li class="nav-item">--}}
-    {{--                    <a class="nav-link" href="#">Bài viết dịch vụ</a>--}}
-    {{--                </li>--}}
-    {{--            </ul>--}}
-    {{--        </div>--}}
-
-    {{--    </div>--}}
-
-    {{--    <div class="icon-phone"><a class="phone-link text-white" href="#"><i class="fa fa-volume-control-phone"></i></a>--}}
-    {{--    </div>--}}
 </nav>
 <!--end Navigation-->
 
