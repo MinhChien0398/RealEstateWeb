@@ -23,3 +23,11 @@ Route::get('/', function () {
 Route::get('/intro', function (){
    return view('template.intro');
 });
+
+Route::get('/contact', function(){
+   return view('template.contact');
+});
+
+Route::get('/contact-2', function(){
+    return view('template.contact2');
+});
