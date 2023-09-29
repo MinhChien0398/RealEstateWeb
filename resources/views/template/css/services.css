@@ -40,6 +40,7 @@ img {
     color: white !important;
     font-weight: bold !important;
 }
+
 .display-none {
     display: none;
 }
@@ -140,7 +141,7 @@ img {
 .card-body .btn {
     color: white;
     background-color: #E90808 !important;
-    font-family: "Segoe UI Semibold";
+    font-family: "Inter Semi Bold", Arial, Helvetica, sans-serif !important;
     border: 1px solid #E90808 !important;
 
 }
@@ -154,11 +155,11 @@ img {
 .card {
     border-radius: 2%;
     transition: transform 0.3s ease;
+    margin-bottom: 10% !important;
 }
 
 .card:hover {
     transform: scale(1.05);
-
 }
 
 .hover-img {
@@ -171,9 +172,11 @@ img {
 .hover-img:hover:before {
     animation: shine 1s;
 }
-.hover-img .img-fluid{
+
+.hover-img .img-fluid {
     transition: all 0.4s;
 }
+
 .hover-img:hover .img-fluid {
     transform: scale(1.2);
 
@@ -205,7 +208,12 @@ img {
 }
 
 .card-body {
-    font-family: "Segoe UI Semibold";
+    font-family: Inter, Arial, Helvetica, sans-serif !important;
+}
+
+.bc-icons-2 {
+    margin-left: 15%;
+    margin-top: 30px;
 }
 
 

@@ -229,13 +229,19 @@ img {
     opacity: 2;
 }
 
-
 .bg-image:hover .text {
     bottom: 0; /* Hiển thị nội dung khi hover */
 }
-
 
 .text p {
     font-size: 14px; /* Kích thước cho nội dung */
 }
 
+.overlay {
+    font-family: Inter, Arial, Helvetica, sans-serif !important;
+}
+
+.bc-icons-2 {
+    margin-left: 15%;
+    margin-top: 30px;
+}
