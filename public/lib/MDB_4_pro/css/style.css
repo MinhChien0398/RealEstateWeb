@@ -148,6 +148,8 @@ nav .container {
     position: absolute;
     animation: scaling 2s linear infinite;
 }
+/*slide*/
+
 
 @keyframes scaling {
     0% {
@@ -433,70 +435,20 @@ p {
     border-top: 12px solid #E90808;
 }
 
-.highlight-project {
+.my-5 .hover-image:before {
+    left: -80%;
 }
-
-.highlight-project .projects-wrapper {
-    display: grid;
-    gap: 5px;
-}
-
-.projects-wrapper {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: auto auto auto auto;
-}
-.project{
-    margin-bottom: 10px;
-}
-.project .project-img .img-responsive {
-    width: 100%;
-    height: 300px;
-    display: block;
-}
-
-.project .project-content {
-    width: 100%;
-    height: 100%;
-    background: rgba(48, 48, 48, 0.72);
-    transition: all 0.4s;
-    z-index: 1;
-}
-
-.project .project-content a {
-    color: white !important;
-}
-
-.project:hover .project-content {
+.my-5 .projectCard-container:hover .projectCard-content{
     transform: translateY(-100%);
 }
-
-.project .project-content div {
-    position: relative;
-    top: 50%;
+.my-5 .projectCard-content{
+    top: 100%;
+    left: 0;
+    height: 100%;
+    transition: all 1s ease-in-out;
 }
-
-.project-title {
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.project-content .project-title::before {
-    content: "";
-    position: absolute;
-    width: 60px;
-    margin-top: 5px;
-    border: #FFFFFF 1px solid;
-    bottom: 0;
-    translate: 50px;
-}
-
-.project.hover-image:before {
-    left: 150%;
-}
-
-.project.hover-image:hover:before {
-    animation: shine-1 1s;
+.projectCard-content img{
+object-fit: cover;
 }
 .intro-card-content {
     height: 150px;
