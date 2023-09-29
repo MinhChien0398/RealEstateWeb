@@ -6,6 +6,10 @@ html, body {
     color: #656565 !important;
 }
 
+img {
+    color: transparent;
+}
+
 .f-link:hover {
     font-size: 16px;
     font-weight: bold;
@@ -103,6 +107,7 @@ nav .container {
     align-items: center !important;
 }
 
+
 .fa-phone {
     height: 30px;
     width: 30px;
@@ -165,6 +170,7 @@ nav .container {
 .circle-2 {
     animation-delay: .5s;
 }
+
 
 .bc-icons-2 .breadcrumb-item + .breadcrumb-item::before {
     content: none;
@@ -444,3 +450,28 @@ p {
 .projectCard-content img{
 object-fit: cover;
 }
+.intro-card-content {
+    height: 150px;
+    text-align: justify;
+}
+
+.map-container-6 {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-container-6 iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.bg-red-dock {
+    background-color: #E90808;
+    color: #E90808;
+}
+
