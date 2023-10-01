@@ -148,8 +148,12 @@ nav .container {
     position: absolute;
     animation: scaling 2s linear infinite;
 }
-/*slide*/
 
+/*slide*/
+.carousel img{
+   width: 100%;
+    height: 500px;
+}
 
 @keyframes scaling {
     0% {
@@ -382,7 +386,7 @@ p {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1440px;
 }
 
 .home-project .title h3 {
@@ -401,11 +405,12 @@ p {
     margin-right: 5px;
 }
 
-.project-category .category-menu .category-item a {
+.project-category .category-menu .category-item button {
+    border: 0px;
     background-color: #fff;
     padding: 15px 20px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     position: relative;
     color: #646464;
@@ -413,14 +418,14 @@ p {
     min-width: 170px;
 }
 
-.category-menu .category-item:hover a, .category-menu .category-item.active a {
+.category-menu .category-item:hover button, .category-menu .category-item.active button {
     color: #fff;
     background-color: #E90808;
     font-weight: 700;
     font-family: Inter-Medium, Arial, Helvetica, sans-serif;
 }
 
-.category-menu .category-item a::before {
+.category-menu .category-item button::before {
     content: "";
     position: absolute;
     bottom: -12px;
@@ -431,25 +436,48 @@ p {
     border-right: 8px solid transparent;
 }
 
-.category-menu .category-item.active a::before {
+.category-menu .category-item.active button::before {
     border-top: 12px solid #E90808;
 }
 
 .my-5 .hover-image:before {
-    left: -80%;
+    left: -82%;
 }
-.my-5 .projectCard-container:hover .projectCard-content{
+
+.my-5 .projectCard-container:hover .projectCard-content {
     transform: translateY(-100%);
 }
-.my-5 .projectCard-content{
+.my-5 img {
+    height: 370px;
+}
+.my-5 .projectCard-content {
     top: 100%;
     left: 0;
     height: 100%;
     transition: all 1s ease-in-out;
 }
-.projectCard-content img{
-object-fit: cover;
+
+.projectCard-content img {
+    object-fit: cover;
 }
+.projectCard-content .projectTitle-center {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.projectCard-content .projectTitle-center::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 2px;
+    border-bottom: 2px solid #fff;
+    margin: 12px auto 0px auto !important;
+}
+.projectCard-content p{
+    font-size: 13px;
+}
+
+
 .intro-card-content {
     height: 150px;
     text-align: justify;
