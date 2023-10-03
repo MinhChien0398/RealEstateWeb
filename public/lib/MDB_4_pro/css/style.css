@@ -150,8 +150,8 @@ nav .container {
 }
 
 /*slide*/
-.carousel img{
-   width: 100%;
+.carousel img {
+    width: 100%;
     height: 500px;
 }
 
@@ -386,7 +386,7 @@ p {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1220px;
 }
 
 .home-project .title h3 {
@@ -447,9 +447,11 @@ p {
 .my-5 .projectCard-container:hover .projectCard-content {
     transform: translateY(-100%);
 }
+
 .my-5 img {
     height: 370px;
 }
+
 .my-5 .projectCard-content {
     top: 100%;
     left: 0;
@@ -460,11 +462,13 @@ p {
 .projectCard-content img {
     object-fit: cover;
 }
+
 .projectCard-content .projectTitle-center {
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 10px;
 }
+
 .projectCard-content .projectTitle-center::after {
     content: "";
     display: block;
@@ -473,7 +477,8 @@ p {
     border-bottom: 2px solid #fff;
     margin: 12px auto 0px auto !important;
 }
-.projectCard-content p{
+
+.projectCard-content p {
     font-size: 13px;
 }
 
@@ -503,3 +508,99 @@ p {
     color: #E90808;
 }
 
+#PostContent .breadcrumb-font {
+    font-size: 13px;
+    color: #656565;
+    font-family: Inter-Regular, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+#PostContent .breadcrumb-font .active a {
+    font-weight: 600;
+}
+
+#PostContent .post-title {
+    color: #E90808;
+    font-weight: 700;
+    font-size: 2.1rem;
+}
+
+#PostContent .post-content p {
+    margin: 0;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#PostContent .post-content h6 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#PostContent .menu {
+    background: #eeeeee;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    display: table;
+    max-width: 40%;
+    margin-bottom: 1em;
+    padding: 10px;
+    position: relative;
+}
+
+#PostContent .menu .menu-content {
+    display: table;
+    width: 100%;
+}
+
+#PostContent .menu .menu-content > div {
+    margin: 7px 0;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Inter-Bold, Arial, Helvetica, sans-serif;
+}
+
+#PostContent .menu .menu-content .menu-button {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+#PostContent .menu .menu-content .menu-button>a {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    margin-left: 10px;
+    background-image: linear-gradient(to bottom, #fff 0, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    border-color: #ccc;
+    color: #444;
+    cursor: pointer;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%), 0 1px 1px rgb(0 0 0 / 8%);
+}
+
+#PostContent .menu .menu-content .menu-button fa-outdent:before {
+    content: "\f03b";
+
+}
+#PostContent .menu .menu-show{
+    display: block;
+}
+#PostContent .menu .menu-close{
+    display: none;
+}
+#PostContent .menu .menu-listItem ol li a{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 13px;
+    font-weight: 400;
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+}
