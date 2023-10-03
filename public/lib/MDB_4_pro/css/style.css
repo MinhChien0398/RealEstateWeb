@@ -149,6 +149,12 @@ nav .container {
     animation: scaling 2s linear infinite;
 }
 
+/*slide*/
+.carousel img {
+    width: 100%;
+    height: 500px;
+}
+
 @keyframes scaling {
     0% {
         transform: scale(2);
@@ -380,7 +386,7 @@ p {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1220px;
 }
 
 .home-project .title h3 {
@@ -399,11 +405,12 @@ p {
     margin-right: 5px;
 }
 
-.project-category .category-menu .category-item a {
+.project-category .category-menu .category-item button {
+    border: 0px;
     background-color: #fff;
     padding: 15px 20px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     position: relative;
     color: #646464;
@@ -411,14 +418,14 @@ p {
     min-width: 170px;
 }
 
-.category-menu .category-item:hover a, .category-menu .category-item.active a {
+.category-menu .category-item:hover button, .category-menu .category-item.active button {
     color: #fff;
     background-color: #E90808;
     font-weight: 700;
     font-family: Inter-Medium, Arial, Helvetica, sans-serif;
 }
 
-.category-menu .category-item a::before {
+.category-menu .category-item button::before {
     content: "";
     position: absolute;
     bottom: -12px;
@@ -429,75 +436,53 @@ p {
     border-right: 8px solid transparent;
 }
 
-.category-menu .category-item.active a::before {
+.category-menu .category-item.active button::before {
     border-top: 12px solid #E90808;
 }
 
-.highlight-project {
+.my-5 .hover-image:before {
+    left: -82%;
 }
 
-.highlight-project .projects-wrapper {
-    display: grid;
-    gap: 5px;
-}
-
-.projects-wrapper {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: auto auto auto auto;
-}
-.project{
-    margin-bottom: 10px;
-}
-.project .project-img .img-responsive {
-    width: 100%;
-    height: 300px;
-    display: block;
-}
-
-.project .project-content {
-    width: 100%;
-    height: 100%;
-    background: rgba(48, 48, 48, 0.72);
-    transition: all 0.4s;
-    z-index: 1;
-}
-
-.project .project-content a {
-    color: white !important;
-}
-
-.project:hover .project-content {
+.my-5 .projectCard-container:hover .projectCard-content {
     transform: translateY(-100%);
 }
 
-.project .project-content div {
-    position: relative;
-    top: 50%;
+.my-5 img {
+    height: 370px;
 }
 
-.project-title {
-    position: relative;
-    padding-bottom: 10px;
+.my-5 .projectCard-content {
+    top: 100%;
+    left: 0;
+    height: 100%;
+    transition: all 1s ease-in-out;
 }
 
-.project-content .project-title::before {
+.projectCard-content img {
+    object-fit: cover;
+}
+
+.projectCard-content .projectTitle-center {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.projectCard-content .projectTitle-center::after {
     content: "";
-    position: absolute;
-    width: 60px;
-    margin-top: 5px;
-    border: #FFFFFF 1px solid;
-    bottom: 0;
-    translate: 50px;
+    display: block;
+    width: 65px;
+    height: 2px;
+    border-bottom: 2px solid #fff;
+    margin: 12px auto 0px auto !important;
 }
 
-.project.hover-image:before {
-    left: 150%;
+.projectCard-content p {
+    font-size: 13px;
 }
 
-.project.hover-image:hover:before {
-    animation: shine-1 1s;
-}
+
 .intro-card-content {
     height: 150px;
     text-align: justify;
@@ -523,3 +508,99 @@ p {
     color: #E90808;
 }
 
+#PostContent .breadcrumb-font {
+    font-size: 13px;
+    color: #656565;
+    font-family: Inter-Regular, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+#PostContent .breadcrumb-font .active a {
+    font-weight: 600;
+}
+
+#PostContent .post-title {
+    color: #E90808;
+    font-weight: 700;
+    font-size: 2.1rem;
+}
+
+#PostContent .post-content p {
+    margin: 0;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#PostContent .post-content h6 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#PostContent .menu {
+    background: #eeeeee;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    display: table;
+    max-width: 40%;
+    margin-bottom: 1em;
+    padding: 10px;
+    position: relative;
+}
+
+#PostContent .menu .menu-content {
+    display: table;
+    width: 100%;
+}
+
+#PostContent .menu .menu-content > div {
+    margin: 7px 0;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Inter-Bold, Arial, Helvetica, sans-serif;
+}
+
+#PostContent .menu .menu-content .menu-button {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+#PostContent .menu .menu-content .menu-button>a {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    margin-left: 10px;
+    background-image: linear-gradient(to bottom, #fff 0, #e0e0e0 100%);
+    background-repeat: repeat-x;
+    border-color: #ccc;
+    color: #444;
+    cursor: pointer;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%), 0 1px 1px rgb(0 0 0 / 8%);
+}
+
+#PostContent .menu .menu-content .menu-button fa-outdent:before {
+    content: "\f03b";
+
+}
+#PostContent .menu .menu-show{
+    display: block;
+}
+#PostContent .menu .menu-close{
+    display: none;
+}
+#PostContent .menu .menu-listItem ol li a{
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 13px;
+    font-weight: 400;
+    position: relative;
+    z-index: 0;
+    overflow-x: hidden;
+}

@@ -34,3 +34,6 @@ Route::get('/contact', function(){
 Route::get('/contact-2', function(){
     return view('template.contact2');
 });
+Route::get('/post', function(){
+    return view('template.posts');
+});
