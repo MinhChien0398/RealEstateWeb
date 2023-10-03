@@ -8,7 +8,7 @@ var listProjects = [
         img: "public/img/project-img/screenshot-20230819-165117-8274.png",
         type: "villa", href: "#",
         detail: "Là một không gian làm việc đẳng cấp, tạo môi trường khuyến khích " +
-            "   sự sáng tạo và đổi mới."
+            " sự sáng tạo và đổi mới."
     }, {
         id: 2,
         title: "NHÀ ANH HƯNG GÒ VẤP",
@@ -53,7 +53,6 @@ listButton.forEach(item => {
         event.preventDefault();
         let type = item.getAttribute("type");
         projectFilter = listProjects.filter(project => {
-            console.log(project.type + " " + type + " " + (project.type == type));
             if (project.type != type) {
                 // console.log(project.type);
                 return false;
