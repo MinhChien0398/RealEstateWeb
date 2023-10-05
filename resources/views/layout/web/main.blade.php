@@ -117,7 +117,6 @@
                                      style="width: 40px; margin-top: 4px">
                             </a>
 
-                            {{--                                <i  class="fab fa-google-plus-g"></i>--}}
                         </li>
                     </ul>
                 </div>
