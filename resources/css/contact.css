@@ -12,6 +12,7 @@ body {
 }
 
 
+
 .logo {
     width: 60px
 }
@@ -27,5 +28,5 @@ body {
 }
 
 .black-brown-text {
-    color: red!important;
+    color: #656565!important;
 }
