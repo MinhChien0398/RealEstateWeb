@@ -1,26 +1,15 @@
 // Add active class to the current button (highlight it)
-var header = document.getElementById("navbarSupportedContent-555");
-var btns = header.getElementsByClassName("nav-menuItem");
-for (var i = 0; i < btns.length; i++) {
+let header = document.getElementById("navbarSupportedContent-555");
+let btns = header.getElementsByClassName("nav-menuItem");
+for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
-        var current = document.getElementById("nav-menuItem-active");
+        let current = document.getElementById("nav-menuItem-active");
         current.removeAttribute('id');
         this.setAttribute('id', 'nav-menuItem-active');
-        var checkingElement = document.getElementById("nav-menuItem-active").parentElement;
     });
 }
 
-// var toggler = document.getElementsByClassName("navbar-toggler");
-// if(toggler[0].getAttribute("aria-expanded").endsWith("true")){
-//
-// }
-
-// $('carousel').carousel({
-//     interval: 2000
-// })
-// import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
-// import Swiper from './swiper-bundle.min';
-var swiper = new Swiper(".slide-content", {
+let swiper = new Swiper(".slide-content", {
     slidesPerView: 3,
     spaceBetween: 30,
     pagination: {
@@ -30,16 +19,37 @@ var swiper = new Swiper(".slide-content", {
 });
 
 
-var categorylist = document.getElementById("HomeProjectCategory");
-var btns = categorylist.getElementsByClassName("category-item");
+let categorylist = document.getElementById("HomeProjectCategory");
+let categoryBtns = categorylist.getElementsByClassName("category-item");
 
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function () {
-        for (var j = 0; j < btns.length; j++) {
-            if (btns[j].classList.contains("active")) {
-                btns[j].classList.remove(["active"]);
+for (let i = 0; i < categoryBtns.length; i++) {
+    categoryBtns[i].addEventListener("click", function () {
+        for (let j = 0; j < categoryBtns.length; j++) {
+            if (categoryBtns[j].classList.contains("active")) {
+                categoryBtns[j].classList.remove(["active"]);
             }
         }
         this.classList.add(["active"]);
     });
 }
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+        let drBtns = document.querySelectorAll(".nav-dropdownItem");
+        console.log(drBtns);
+        for (let i = 0; i < drBtns.length; i++) {
+            drBtns[i].addEventListener("click", function () {
+                for (let j = 0; j < drBtns.length; j++) {
+                    if (drBtns[j].children[2].classList.contains("d-block")) {
+                        drBtns[j].children[2].classList.remove("d-block");
+                    } ;
+                    drBtns[i].children[2].classList.add("d-block");
+                }
+            });
+        }
+    }
+}
+
+var x = window.matchMedia("(max-width: 992px)")
+myFunction(x) // Call listener function at run time
+
