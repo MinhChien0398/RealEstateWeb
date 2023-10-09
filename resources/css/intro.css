@@ -1,11 +1,12 @@
 
 body {
-    font-family: Inter-Regular, Arial, Helvetica, sans-serif
+    background-color: red;
+    font-family: Inter, Arial, Helvetica, sans-serif
 }
 
 #section-1 {
     margin-left: 10px;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 #section-2 {
@@ -23,12 +24,29 @@ body {
     margin-left: 10px;
     padding-top: 20px;
 }
+#section-3 h4{
+    font-weight: 600;
 
+}
 
-.bockdoor {
-    color: #E90808;
+#section-3 h6 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#section-3 p {
+    color: black;
+    font-size: 16px;
+    font-weight: 300;
+
 }
 
 .black-brown-text {
     color: #656565;
 }
+
+.bockdoor {
+    color: #E90808;
+}
+
+
