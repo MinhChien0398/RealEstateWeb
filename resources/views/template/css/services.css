@@ -1,148 +1,10 @@
 
-.f-link {
-    color: #656565 !important;
-}
-
-img {
-    color: transparent;
-}
-
-.f-link:hover {
-    font-size: 16px;
-    font-weight: bold;
-    padding-left: 20px;
-    color: #E90808 !important;
-}
-
-.main-color {
-    color: #E90808 !important;
-}
-
-.nav-property {
-    padding-bottom: 0;
-    padding-top: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.nav-menuItem {
-    font-size: 18px;
-    margin: 5px 5px 5px 5px;
-    padding: 15px 15px 10px 15px !important;
-}
-
-.nav-dropdownItem:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown-item:hover {
-    background-color: #E90808 !important;
-    color: white !important;
-    font-weight: bold !important;
-}
-
-.display-none {
-    display: none;
-}
-
-.nav-dropdownItem:hover .nav-menuItem {
-    font-size: 18px;
-    border-bottom: 3px solid #E90808;
-}
-
-.nav-menuItem:hover {
-    font-size: 18px;
-    border-bottom: 3px solid #E90808;
-}
-
-#nav-menuItem-active {
-    color: #E90808 !important;
-    font-size: 18px;
-    border-bottom: 3px solid #E90808;
-    font-weight: bold !important;
-}
-
-#nav-menuItem-active .dropdown-menu {
-    display: none;
-}
-
-.icon-phone-ring {
-    margin-left: 25px;
-    margin-top: 0px;
-    height: 20px;
-    display: grid;
-    position: relative;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-
-.fa-phone {
-    height: 30px;
-    width: 30px;
-    z-index: 2;
-    color: white;
-    background-color: #E90808;
-    animation: phone 1s cubic-bezier(0.12, 0.7, 0.74, 0.71) infinite alternate-reverse;
-    display: grid !important;
-    border-radius: 50%;
-    border: 0.5px white solid;
-    position: absolute;
-    justify-content: center !important;
-    align-items: center !important;
-}
-
-@keyframes phone {
-    0% {
-        transform: scale(0.75);
-    }
-    100% {
-        transform: scale(1.25);
-    }
-
-}
-
-.phone-contain {
-    width: 75px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.circle-1, .circle-2 {
-    height: 20px;
-    width: 20px;
-    margin-left: 4.5px;
-    border-radius: 50%;
-    background: #E90808;
-    position: absolute;
-    animation: scaling 2s linear infinite;
-}
-
-@keyframes scaling {
-    0% {
-        transform: scale(2);
-        background-color: #E90808;
-    }
-    100% {
-        transform: scale(4);
-        background-color: rgba(245, 0, 182, 0);
-    }
-}
-
-.circle-1 {
-    animation-delay: 0s;
-
-}
-
-.circle-2 {
-    animation-delay: .5s;
-}
-
 .card-body .btn {
     color: white;
     background-color: #E90808 !important;
-    font-family: "Inter Semi Bold", Arial, Helvetica, sans-serif !important;
+    font-family: Inter, Arial, Helvetica, sans-serif;
     border: 1px solid #E90808 !important;
+    margin-top: auto !important;
 
 }
 
@@ -156,15 +18,32 @@ img {
     border-radius: 2%;
     transition: transform 0.3s ease;
     margin-bottom: 10% !important;
+
+    display: flex;
+    flex-direction: column !important;
+    height: 100%;
+    width: 100%;
 }
+
 
 .card:hover {
     transform: scale(1.05);
 }
 
+/*-----------------------------------------*/
+
+.hover-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hiển thị hình ảnh mà không bị méo */
+}
+
 .hover-img {
     overflow: hidden;
     position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%; /* Tỉ lệ khung hình ( 4:3) */
     border-top-left-radius: 2%;
     border-top-right-radius: 2%;
 }
@@ -208,12 +87,28 @@ img {
 }
 
 .card-body {
-    font-family: Inter, Arial, Helvetica, sans-serif !important;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    flex: 1;
 }
 
 .bc-icons-2 {
     margin-left: 15%;
     margin-top: 30px;
+}
+
+.bg-image {
+    position: relative !important;
+}
+
+.bg-image img {
+    width: auto !important;
+    height: auto !important;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    height: 80%; /* Đảm bảo chiều cao của card-content không thay đổi */
 }
 
 

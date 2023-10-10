@@ -24,63 +24,77 @@
 
 <!--start Navigation-->
 
-<nav class="navbar navbar-expand-lg navbar-light white sticky-top  nav-property justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top nav-property ">
     <div class="container">
         <a class="navbar-brand "
            href="http://localhost/RealEstateWeb/template_main">
             <div class="navbar-brand flex-center justify-content-between ">
                 <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.jpg" style="width: 60px">
-                <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">XÂY DỰNG NHÀ ĐẸP</h4>
-
+                <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h4>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
                 aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse border-left row" id="navbarSupportedContent-555">
-            <ul class="navbar-nav  justify-content-between col-9 border-right">
+        <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
+            <ul class="navbar-nav  col-9 border-right">
                 <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
-                    <a class="nav-link " href="#">Trang Chủ
+                    <a class="nav-link " href="http://localhost/RealEstateWeb/">Trang Chủ
                     </a>
                 </li>
                 <li class="nav-item nav-menuItem  font-weight-bolder">
-                    <a class="nav-link " href="#">Giới Thiệu</a>
+                    <a class="nav-link " href="http://localhost/RealEstateWeb/intro">Giới Thiệu</a>
                 </li>
-                <li class="nav-item dropdown nav-menuItem nav-dropdownItem font-weight-bolder">
-                    <a class="nav-link dropdown-toggle dropdown-submenu" id="navbarDropdownMenuLink-444"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dịch vụ
+                <li class="d-flex align-items-center nav-item
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+                >
+                    <a class="nav-link "
+                       href="http://localhost/RealEstateWeb/services"
+                       role="link"
+                    >Dịch vụ
                     </a>
-                    <div class="dropdown-menu">
+                    <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                    <div class="dropdown-menu mt-1 w-100">
                         <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
                         <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
                         <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
                     </div>
+
                 </li>
-                <li class="nav-item dropdown nav-menuItem nav-dropdownItem font-weight-bolder">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dự án
+                <li class="d-flex align-items-center nav-item
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+                >
+                    <a class="nav-link"
+                       href="http://localhost/RealEstateWeb/project"
+                       role="link"
+                    >Dự án
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-555">
+                    <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                    <div class="dropdown-menu mt-1 w-100">
                         <a class="dropdown-item" style="font-size: 16px" href="#">Biệt Thự</a>
                         <a class="dropdown-item" style="font-size: 16px" href="#">Nhà Phố</a>
                         <a class="dropdown-item" style="font-size: 16px" href="#">Văn Phòng</a>
                     </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="#">Liên Hệ</a>
+                    <a class="nav-link" href="http://localhost/RealEstateWeb/contact">Liên Hệ</a>
                 </li>
             </ul>
             <!--icon font ring-->
-            <div class="phone-contain flex-center justify-content-between col-2">
+            <div class="phone-contain flex-center justify-content-center col-3">
 
-                <div class="icon-phone-ring">
-                    <i class="fa-solid fa-phone"></i>
-                    <div class="circle-1"></div>
-                    <!--            <div class="circle-2"></div>-->
+                <div class="icon-phone-ring col-lg-6 col-md-6 col-sm-12 ">
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-phone"></i>
+                        <i class="circle-1"></i>
+                        <!--            <div class="circle-2"></div>-->
+                    </div>
                 </div>
-                <p class="mt-1 ml-5 pl-3">0352033199</p></div>
+                <div>
+                    <a class=" col-lg-6 col-md-6">0352033199</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -275,21 +289,22 @@
 <footer class="page-footer font-small pt-2">
 
     <!-- Footer Links -->
-    <div class="container-fluid text-center text-md-left" style="max-width: 90%">
+    <div class="container text-center text-md-left" style="max-width: 90%">
 
         <!-- Footer links -->
-        <div class="row text-center text-md-left mt-3 pb-3 justify-content-between">
+        <div class="row text-center text-md-left mt-3 pb-3">
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3 justify-content-center">
+            <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
-                    <img class="col-auto" src="public/img/logo.jpg">
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ
-                        ĐẸP</h5>
+                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.svg">
+                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold main-color">Real
+                        Estate
+                        Gig</h5>
                 </div>
-                <p style="color: #656565; margin-top: 2%; font-family: Inter SemiBold,Arial,Helvetica,sans-serif">
-                    NHÀ ĐẸP là đơn vị chuyên thi công thiết kế xây dựng,
-                    trang trí nộingoại thất công trình với nhiều năm kinh nghiệm.</p>
+                <p style="color: #656565; margin-top: 2%">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng,
+                    trang trí nội
+                    ngoại thất công trình với nhiều năm kinh nghiệm.</p>
                 <!-- Social buttons -->
                 <div class="text-center text-md-right">
                     <ul class="list-unstyled list-inline">
@@ -304,8 +319,11 @@
                             </a>
                         </li>
                         <li class="list-inline-item">
-                            <img class="hoverable mx-1" src="public/img/snapedit_1694631625483.png"
-                                 style="width: 50px">
+                            <a class="hoverable btn-floating mx-1">
+                                <img class="hoverable-img mx-0 "
+                                     src="/RealEstateWeb/public/img/snapedit_1694631625483.png"
+                                     style="width: 45px">
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -316,12 +334,12 @@
             <hr class="w-100 clearfix d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3 justify-content-center">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên hệ
+            <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
+                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
+                    <hệ></hệ>
                 </h6>
                 <p>
-                                <span
-                                    style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
+                    <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
                 </p>
                 <p>
                     <span style="color: #656565">Số Điện Thoại: 0935 671 886</span>
@@ -339,8 +357,7 @@
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch
-                    vụ</h6>
+                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
                 <p>
                     <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
                 </p>
