@@ -272,7 +272,7 @@ filter.addEventListener('submit', function (event) {
 
 function showProduct(subProductFilter) {
     // count.innerText = productFilter.length;
-    list.innerHTML = '';
+    list.innerHTML = "";
 
     subProductFilter.forEach(item => {
         // let row = document.createElement('div');
@@ -285,10 +285,6 @@ function showProduct(subProductFilter) {
         // create bg-image
         let bg = document.createElement("div");
         bg.classList.add('bg-image', 'hover-zoom', 'ripple', 'shadow-1-strong', 'rounded-5', 'bg-img');
-        // bg.style.position = "relative";
-        // bg.style.overflow = "hidden";
-        // bg.style.height = "100%";
-        // bg.style.width = "100%";
 
         // create a
         let a = document.createElement("a");
@@ -297,56 +293,27 @@ function showProduct(subProductFilter) {
         // create hover
         let hover = document.createElement("div");
         hover.classList.add('hover-img', 'position-relative', 'w-100', 'h-100', 'overflow-hidden');
-        // hover.style.overflow = "hidden";
-        // hover.style.position = "relative";
-        // hover.style.width = "100%";
-        // hover.style.height = "100%";
 
 
         // create image
         let newImage = new Image();
         newImage.src = item.img;
         newImage.classList.add('w-100', 'h-100', 'object-fit-cover', 'transition-0-8s', 'imgProduct');
-        // newImage.style.transition = "all 0.8s";
-        // newImage.style.width = "100%";
-        // newImage.style.height = "100%";
-        // newImage.style.objectFit = "cover";
 
 
         // create overplay
         let overplay = document.createElement("div");
         overplay.classList.add('overplay');
-        // overplay.style.position = "absolute";
-        // overplay.style.top = "100%";
-        // overplay.style.left = "0";
-        // overplay.style.width = "100%";
-        // overplay.style.height = "100%";
-        // overplay.style.background = "rgba(0, 0, 0, 0.6)";
-        // overplay.style.transition = "top 0.5s ease";
 
 
         //create text
         let text = document.createElement("div");
         text.classList.add('text');
-        // text.style.position = "absolute";
-        // text.style.top = "50%";
-        // text.style.left = "50%";
-        // text.style.transform = "translate(-50%, -50%)";
-        // text.style.textAlign = "center";
-        // text.style.width = "100%";
-        // text.style.color = "white";
-        // text.style.transition = "top 0.3s ease";
-        // text.style.padding = "20px";
-        // text.style.boxSizing = "border-box";
-        // text.style.opacity = "0";
 
         // create h2
         let h2 = document.createElement("h2");
         h2.innerHTML = item.title;
         h2.classList.add('titleProduct');
-        // h2.style.fontSize = "20px";
-        // h2.style.marginBottom = "10px";
-        // h2.style.transform = "translateY(1%)";
 
         // create p
         let p = document.createElement("p");

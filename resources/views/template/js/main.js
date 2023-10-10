@@ -43,8 +43,9 @@ function myFunction(x) {
                         drBtns[j].children[2].classList.remove("d-block");
                         if(drBtns[i].body===drBtns[j].body)
                             return;
-                    }; }
+                    };
 
+                }
                     drBtns[i].children[2].classList.add("d-block");
 
             });
