@@ -1,8 +1,8 @@
 
-body {
-    background-color: red;
-    font-family: Inter, Arial, Helvetica, sans-serif
-}
+/*body {*/
+/*    !*background-color: red;*!*/
+/*    font-family: Inter, Arial, Helvetica, sans-serif*/
+/*}*/
 
 #section-1 {
     margin-left: 10px;
@@ -24,10 +24,7 @@ body {
     margin-left: 10px;
     padding-top: 20px;
 }
-#section-3 h4{
-    font-weight: 600;
 
-}
 
 #section-3 h6 {
     font-weight: 600;
@@ -48,5 +45,7 @@ body {
 .bockdoor {
     color: #E90808;
 }
+
+
 
 
