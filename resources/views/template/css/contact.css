@@ -11,7 +11,15 @@ body {
     margin-top: 10px;
 }
 
+#section-1 a:hover{
+    color: #E90808;
+    text-decoration: none;
+}
 
+#section-1 a .fa-home:hover{
+    color: #E90808;
+    text-decoration: none;
+}
 
 .logo {
     width: 60px
@@ -22,6 +30,7 @@ body {
 }
 
 
+
 .listContent li {
     list-style: none;
     font-size: 14px;
@@ -30,3 +39,7 @@ body {
 .black-brown-text {
     color: #656565!important;
 }
+
+
+
+

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
@@ -22,64 +22,77 @@
 <!--end header-->
 
 <!--start Navigation-->
-
-<nav class="navbar navbar-expand-lg navbar-light white sticky-top  nav-property justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top nav-property ">
     <div class="container">
         <a class="navbar-brand "
            href="http://localhost/RealEstateWeb/template_main">
             <div class="navbar-brand flex-center justify-content-between ">
                 <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.jpg" style="width: 60px">
-                <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">XÂY DỰNG NHÀ ĐẸP</h4>
-
+                <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h4>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
                 aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse border-left row" id="navbarSupportedContent-555">
-            <ul class="navbar-nav  justify-content-between col-9 border-right">
+        <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
+            <ul class="navbar-nav  col-9 border-right">
                 <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
-                    <a class="nav-link " href="#">Trang Chủ
+                    <a class="nav-link " href="http://localhost/RealEstateWeb/">Trang Chủ
                     </a>
                 </li>
                 <li class="nav-item nav-menuItem  font-weight-bolder">
-                    <a class="nav-link " href="#">Giới Thiệu</a>
+                    <a class="nav-link " href="http://localhost/RealEstateWeb/intro">Giới Thiệu</a>
                 </li>
-                <li class="nav-item dropdown nav-menuItem nav-dropdownItem font-weight-bolder">
-                    <a class="nav-link dropdown-toggle dropdown-submenu" id="navbarDropdownMenuLink-444"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dịch vụ
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
-                    </div>
+                <li class="d-flex align-items-center nav-item
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+                >
+                        <a class="nav-link "
+                           href="http://localhost/RealEstateWeb/services"
+                           role="link"
+                          >Dịch vụ
+                        </a>
+                        <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                        <div class="dropdown-menu mt-1 w-100">
+                            <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
+                            <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
+                            <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
+                        </div>
+
                 </li>
-                <li class="nav-item dropdown nav-menuItem nav-dropdownItem font-weight-bolder">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Dự án
+                <li class="d-flex align-items-center nav-item
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+                >
+                    <a class="nav-link"
+                       href="http://localhost/RealEstateWeb/project"
+                       role="link"
+                    >Dự án
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-555">
+                    <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                    <div class="dropdown-menu mt-1 w-100">
                         <a class="dropdown-item" style="font-size: 16px" href="#">Biệt Thự</a>
                         <a class="dropdown-item" style="font-size: 16px" href="#">Nhà Phố</a>
                         <a class="dropdown-item" style="font-size: 16px" href="#">Văn Phòng</a>
                     </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="#">Liên Hệ</a>
+                    <a class="nav-link" href="http://localhost/RealEstateWeb/contact">Liên Hệ</a>
                 </li>
             </ul>
             <!--icon font ring-->
-            <div class="phone-contain flex-center justify-content-between col-2">
+            <div class="phone-contain flex-center justify-content-center col-3">
 
-                <div class="icon-phone-ring">
-                    <i class="fa-solid fa-phone"></i>
-                    <div class="circle-1"></div>
-                    <!--            <div class="circle-2"></div>-->
+                <div class="icon-phone-ring col-lg-6 col-md-6 col-sm-12 ">
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-phone"></i>
+                        <i class="circle-1"></i>
+                        <!--            <div class="circle-2"></div>-->
+                    </div>
                 </div>
-                <p class="mt-1 ml-5 pl-3">0352033199</p></div>
+                <div>
+                    <a class=" col-lg-6 col-md-6">0352033199</a>
+                </div>
+            </div>
         </div>
     </div>
 </nav>
@@ -117,6 +130,7 @@
 <!--end slide-->
 
 <!--start introdution-->
+<!--start introdution-->
 <div class="section-about justify-content-between">
     <div class="container">
         <div class="row" style="margin: 0">
@@ -125,7 +139,7 @@
                     CONSTRUCTION
                 </div>
                 <div class="box-slogan font-weight-bold pb-4 border-bottom">
-                    CÔNG TY TNHH XÂY DỰNG <br> THƯƠNG MẠI ĐẦU TƯ
+                    CÔNG TY TNHH XÂY DỰNG THƯƠNG MẠI ĐẦU TƯ
                     <span style="color: #E90808">NHÀ XINH</span>
                 </div>
                 <div class="section-abouts__box-content">
@@ -137,7 +151,7 @@
                     </p>
                 </div>
                 <div class="box-btn d-flex align-items-center justify-content-center">
-                    <a class="box-btn-left" href="" title="XEM CHI TIẾT">
+                    <a class="box-btn-left" href="http://localhost/RealEstateWeb/intro" title="XEM CHI TIẾT">
                         XEM CHI TIẾT
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -158,6 +172,53 @@
 
 <!--end introdution-->
 
+
+<!--start project-->
+<section class="home-project">
+    <div class="container">
+        <div class="col wrapper-project " id="HomeProjectCategory">
+            <div class="title flex-center ">
+                <h3 class="text-uppercase mb-54">Dự án tiêu biểu</h3>
+            </div>
+            <div class="project-category">
+                <ul class="category-menu d-flex align-items-center justify-content-center">
+                    <li class="category-item active">
+                        <button class="item-selector" type="villa" title="XÂY DỰNG BIỆT THỰ">
+                            XÂY DỰNG BIỆT THỰ
+                        </button>
+                    </li>
+                    <li class="category-item">
+                        <button class="item-selector" type="townhouse" title="XÂY DỰNG NHÀ PHÔ">
+                            XÂY DỰNG NHÀ PHỐ
+                        </button>
+                    </li>
+                    <li class="category-item">
+                        <button class="item-selector" type="factory" title="XÂY DỰNG NHÀ XƯỞNG">
+                            XÂY DỰNG NHÀ XƯỞNG
+                        </button>
+                    </li>
+                    <li class="category-item">
+                        <button class="item-selector" type="office" title="XÂY DỰNG VĂN PHÒNG">
+                            XÂY DỰNG VĂN PHÒNG
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <main class="my-5">
+                <div class="container">
+                    <!--Section: Design Block-->
+                    <section>
+                        <div class="row" id="imageProjects">
+
+                        </div>
+                    </section>
+                    <!--Section: Design Block-->
+                </div>
+            </main>
+        </div>
+    </div>
+</section>
+<!-- end project -->
 <!--start service-->
 <section class="service">
     <div class="slide-container swiper">
@@ -168,7 +229,7 @@
                     <!--start image-->
                     <div class="image-content">
                         <div class="card-image ">
-                            <div href="#" class="img-container  ">
+                            <div href="http://localhost/RealEstateWeb/service" class="img-container  ">
                                 <div class="img-wrapper hover-image">
                                     <img src="public/img/main-service/xaydungphantho1e57-4555.jpg" alt=""
                                          class="card-img  ">
@@ -232,56 +293,10 @@
     </div>
 </section>
 <!--end service-->
-<!--start project-->
-<section class="home-project">
-    <div class="container">
-        <div class="col wrapper-project " id="HomeProjectCategory">
-            <div class="title flex-center ">
-                <h3 class="text-uppercase mb-54">Dự án tiêu biểu</h3>
-            </div>
-            <div class="project-category">
-                <ul class="category-menu d-flex align-items-center justify-content-center">
-                    <li class="category-item active">
-                        <button class="item-selector" type="villa" title="XÂY DỰNG BIỆT THỰ">
-                            XÂY DỰNG BIỆT THỰ
-                        </button>
-                    </li>
-                    <li class="category-item">
-                        <button class="item-selector" type="townhouse" title="XÂY DỰNG NHÀ PHÔ">
-                            XÂY DỰNG NHÀ PHỐ
-                        </button>
-                    </li>
-                    <li class="category-item">
-                        <button class="item-selector" type="factory" title="XÂY DỰNG NHÀ XƯỞNG">
-                            XÂY DỰNG NHÀ XƯỞNG
-                        </button>
-                    </li>
-                    <li class="category-item">
-                        <button class="item-selector" type="office" title="XÂY DỰNG VĂN PHÒNG">
-                            XÂY DỰNG VĂN PHÒNG
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <main class="my-5">
-                <div class="container">
-                    <!--Section: Design Block-->
-                    <section>
-                        <div class="row" id="imageProjects">
-
-                        </div>
-                    </section>
-                    <!--Section: Design Block-->
-                </div>
-            </main>
-        </div>
-    </div>
-</section>
-<!-- end project -->
 <!-- contact us-->
-<div class="" style="margin-top: 40px">
+<div class="home-contact" style="margin-top: 40px">
     <!--Section: Contact v.1-->
-    <section class="section pb-5 container">
+    <section class="section pt-5 pb-5 container">
         <!--Section heading-->
 
         <!--Section description-->
@@ -346,6 +361,7 @@
     <!--Section: Contact v.1-->
 </div>
 <!--end content-->
+
 <!--start footer-->
 <footer class="page-footer font-small pt-2">
 

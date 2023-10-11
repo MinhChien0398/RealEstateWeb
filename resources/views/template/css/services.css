@@ -2,7 +2,7 @@
 .card-body .btn {
     color: white;
     background-color: #E90808 !important;
-    font-family: Inter-Medium, Arial, Helvetica, sans-serif;
+    font-family: Inter, Arial, Helvetica, sans-serif;
     border: 1px solid #E90808 !important;
     margin-top: auto !important;
 
@@ -87,7 +87,7 @@
 }
 
 .card-body {
-    font-family: Inter-Medium, Arial, Helvetica, sans-serif;
+    font-family: Inter, Arial, Helvetica, sans-serif;
     flex: 1;
 }
 
