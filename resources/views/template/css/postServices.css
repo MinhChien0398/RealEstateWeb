@@ -2,7 +2,7 @@
 #PostContent .breadcrumb-font {
     font-size: 13px;
     color: #656565;
-    font-family: Inter-Regular, Arial, Helvetica, sans-serif;
+    font-family: Inter, Arial, Helvetica, sans-serif;
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -53,7 +53,7 @@
     margin: 7px 0;
     font-size: 15px;
     font-weight: bold;
-    font-family: Inter-Bold, Arial, Helvetica, sans-serif;
+    font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 #PostContent .menu .menu-content .menu-button {
@@ -61,7 +61,8 @@
     text-align: right;
     vertical-align: middle;
 }
-#PostContent .menu .menu-content .menu-button>a {
+
+#PostContent .menu .menu-content .menu-button > a {
     padding: 5px 10px;
     font-size: 12px;
     line-height: 1.5;
@@ -80,13 +81,16 @@
     content: "\f03b";
 
 }
-#PostContent .menu .menu-show{
+
+#PostContent .menu .menu-show {
     display: block;
 }
-#PostContent .menu .menu-close{
+
+#PostContent .menu .menu-close {
     display: none;
 }
-#PostContent .menu .menu-listItem ol li a{
+
+#PostContent .menu .menu-listItem ol li a {
     font-family: 'Roboto', sans-serif;
     color: #333;
     font-size: 13px;

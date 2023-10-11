@@ -1,0 +1,84 @@
+.post-content>h6{
+    font-weight: 600;
+    font-size: 20px;
+}
+.post-content>p{
+font-size: 16px;
+    font-weight: 400;
+}
+.post-content>div>img{
+    width: 100%;
+    height:auto;
+    object-fit: cover;
+}
+.post-content>div>p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+#PostContent .gallery {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2vh;
+    grid-auto-flow: dense;
+}
+.gallery .img{
+}
+.gallery img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9) grayscale(100);
+    transition: all 0.3s ease-in-out;
+}
+.gallery .img:hover img{
+    filter: brightness(1) grayscale(0);
+    transform: scale(1.1);
+}
+.gallery .img:first-child{
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+
+}
+.gallery .img:nth-child(2n+3){
+    grid-row-start: span 2;
+}
+.gallery .img:nth-child(4n+5){
+    grid-row-start: span 2;
+    grid-column-start: span 2;
+}
+.gallery .img:nth-child(6n+7){
+    grid-row-start: span 1;
+}
+.gallery .img:nth-child(8n+9){
+    grid-row-start: span 1;
+    grid-column-start: span 1;
+}
+@media only screen and (max-width: 992px) {
+    .gallery {
+        grid-template-columns: auto auto auto!important;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .gallery {
+        grid-template-columns: auto auto!important;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .gallery {
+        display: block!important;
+    }
+    .gallery .img{
+        width: 100%;
+        height: 100%;
+        display: block;
+        margin: 2% 0;
+    }
+    .gallery .img img{
+        filter: brightness(1) grayscale(0);
+        display: block;
+    }
+}
