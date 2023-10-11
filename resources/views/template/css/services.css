@@ -1,4 +1,6 @@
-
+#section-1{
+    margin: 0;
+}
 .card-body .btn {
     color: white;
     background-color: #E90808 !important;

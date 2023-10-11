@@ -169,34 +169,34 @@ listButton.forEach(item => {
 function showList(projectFilter) {
     listImgProject.innerHTML = "";
     projectFilter.forEach(item => {
-
+        //createCol
         let col = document.createElement("div");
         col.classList.add('col-lg-3', 'col-md-4', 'col-sm-6', 'mb-4',
             'overflow-hidden', 'position-relative', 'projectCard-container');
-
+        //createA
         let a = document.createElement("a");
         a.classList.add('bg-image', 'position-relative', 'hover-image', 'hover-zoom'
             , 'ripple', 'shadow-1-strong', 'rounded-5', 'w-100', 'd-block');
         a.href = item.href;
-
+        //createImage
         let newImage = new Image();
         newImage.src = item.img;
         newImage.classList.add('w-100');
-
+        //createDiv
         let newDiv = document.createElement("div");
         newDiv.classList.add('w-100', 'position-absolute', 'projectCard-content');
-
+        //createMask
         let mask = document.createElement("div");
         mask.classList.add('mask', 'justify-content-center', 'd-flex', 'h-100');
         mask.style.backgroundColor = "rgba(48, 48, 48, 0.72)";
-
+        //createDiv3
         let newDiv3 = document.createElement("div");
         newDiv3.classList.add('align-items-center', 'flex-column', 'd-flex', 'w-100');
-
+        //createH6
         let h6 = document.createElement("h6");
         h6.innerHTML = item.title;
         h6.classList.add('text-white', 'text-center', 'pt-4', 'projectTitle-center', 'text-uppercase');
-
+        //createP
         let p = document.createElement("p");
         p.innerHTML = item.detail;
         p.classList.add('text-white', 'p-4');
@@ -229,7 +229,7 @@ let filter = document.querySelector('.filter');
 
 let subProductFilter = listProjects;
 
-showProduct(subProductFilter);
+showList(subProductFilter);
 
 filter.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -241,102 +241,7 @@ filter.addEventListener('submit', function (event) {
                 return false;
             }
         }
-        // // check color
-        // if (valueFilter.color.value != '') {
-        //     if (!item.nature.color.includes(valueFilter.color.value)) {
-        //         return false;
-        //     }
-        // }
-        // // check name
-        // if (valueFilter.name.value != '') {
-        //     if (!item.name.includes(valueFilter.name.value)) {
-        //         return false;
-        //     }
-        // }
-        // // check min price
-        // if (valueFilter.minPrice.value != '') {
-        //     if (item.price < valueFilter.minPrice.value) {
-        //         return false;
-        //     }
-        // }
-        // //  check max price
-        // if (valueFilter.maxPrice.value != '') {
-        //     if (item.price > valueFilter.maxPrice.value) {
-        //         return false;
-        //     }
-        // }
         return true;
     })
-    showProduct(subProductFilter);
+    showList(subProductFilter);
 })
-
-function showProduct(subProductFilter) {
-    // count.innerText = productFilter.length;
-    list.innerHTML = "";
-
-    subProductFilter.forEach(item => {
-        // let row = document.createElement('div');
-        // row.list.add('row');
-
-        // create col
-        let col = document.createElement("div");
-        col.classList.add('col-lg-3', 'col-md-6', 'mb-4');
-
-        // create bg-image
-        let bg = document.createElement("div");
-        bg.classList.add('bg-image', 'hover-zoom', 'ripple', 'shadow-1-strong', 'rounded-5', 'bg-img');
-
-        // create a
-        let a = document.createElement("a");
-        a.href = item.href;
-
-        // create hover
-        let hover = document.createElement("div");
-        hover.classList.add('hover-img', 'position-relative', 'w-100', 'h-100', 'overflow-hidden');
-
-
-        // create image
-        let newImage = new Image();
-        newImage.src = item.img;
-        newImage.classList.add('w-100', 'h-100', 'object-fit-cover', 'transition-0-8s', 'imgProduct');
-
-
-        // create overplay
-        let overplay = document.createElement("div");
-        overplay.classList.add('overplay');
-
-
-        //create text
-        let text = document.createElement("div");
-        text.classList.add('text');
-
-        // create h2
-        let h2 = document.createElement("h2");
-        h2.innerHTML = item.title;
-        h2.classList.add('titleProduct');
-
-        // create p
-        let p = document.createElement("p");
-        p.innerHTML = item.detail;
-        p.classList.add('contentProduct');
-
-        // p.style.fontSize = "14px";
-
-
-        text.appendChild(h2);
-        text.appendChild(p);
-
-        hover.appendChild(newImage);
-        overplay.appendChild(text);
-
-        a.appendChild(hover);
-        a.appendChild(overplay);
-
-        bg.appendChild(a);
-        col.appendChild(bg);
-        // row.appendChild(col);
-
-        list.appendChild(col);
-
-    });
-}
