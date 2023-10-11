@@ -18,8 +18,7 @@
 <!--end header-->
 
 <!--start Navigation-->
-
-<nav class="navbar navbar-expand-lg navbar-light fixed-top nav-property ">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top nav-property ">
     <div class="container">
         <a class="navbar-brand "
            href="http://localhost/RealEstateWeb/template_main">
@@ -96,29 +95,27 @@
 <!--end Navigation-->
 
 <!--start content-->
-
-<!--Thanh điều hướng-->
-<div>
-    <div class="bc-icons-2">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-white breadcrumb-font">
-                <li class="breadcrumb-item p-0"><a class="black-text breadcrumb-size" href="/"><i
-                    class="fas fa-home"></i></a>
-                    <i class="fas fa-caret-right mx-2" aria-hidden="true"></i></li>
-                <li class="breadcrumb-item breadcrumb-size p-0">
-                    <a class="black-text text-uppercase" href="#">Dự án</a>
-                    <!--                    <i class="fas fa-caret-right mx-2" aria-hidden="true"></i>-->
-                </li>
-                <!--                <li class="breadcrumb-item active breadcrumb-size p-0">-->
-                <!--                    <a class="black-text text-uppercase" href="#">Dịch vụ xây nhà phân thô - Nhà Đẹp</a></li>-->
-            </ol>
-        </nav>
-    </div>
-</div>
-<!-- End Thanh điều hướng-->
-
 <main class="my-5">
     <div class="container">
+        <!--        breadcrumb -->
+        <div id="section-1" class="bc-icons-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white small">
+                    <li class="breadcrumb-item">
+                        <a class="black-brown-text breadcrumb-size" href="/">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item active breadcrumb-size">
+                        <a class="black-text text-uppercase font-weight-bolder" href="#">GIỚI THIỆU CHUNG</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!--    end breadcrumb-->
         <div class="sub-container">
             <section>
                 <h1 class="text-center mb-5"
@@ -131,6 +128,7 @@
                             <option value="villa">villa</option>
                             <option value="factory">factory</option>
                             <option value="office">office</option>
+                            <option value="office">townhouse</option>
                         </select>
                     </div>
                     <div class="item">
@@ -183,7 +181,7 @@
                     <!--                        </div>-->
                     <!--                    </div>-->
                 </div>
-                <div class="row" id="list">
+                <div class="row" id="imageProjects">
 
                 </div>
 
@@ -210,7 +208,7 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
-                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.svg">
+                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.jpg">
                     <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold main-color">Real
                         Estate
                         Gig</h5>
