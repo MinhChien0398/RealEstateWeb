@@ -1,6 +1,11 @@
-#section-1{
+#section-1 {
     margin: 0;
 }
+
+.fa-house:hover {
+    color: #E90808;
+}
+
 .card-body .btn {
     color: white;
     background-color: #E90808 !important;
