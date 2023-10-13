@@ -1,4 +1,3 @@
-
 /*body {*/
 /*    !*background-color: red;*!*/
 /*    font-family: Inter, Arial, Helvetica, sans-serif*/
@@ -14,9 +13,6 @@
     margin-bottom: 20px;
 }
 
-#section-2 .background {
-    width: 100%;
-}
 
 #section-3 {
     text-align: justify;
@@ -45,3 +41,15 @@
 .bockdoor {
     color: #E90808;
 }
+
+.background {
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.fa-house:hover {
+    color: #E90808;
+}
+
+
+
