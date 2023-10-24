@@ -31,9 +31,9 @@ Route::get('/contact', function(){
    return view('template.contact');
 });
 
-Route::get('/contact-2', function(){
-    return view('template.contact2');
+Route::get('/servicePost', function(){
+    return view('template.servicePost');
 });
-Route::get('/post', function(){
-    return view('template.posts');
+Route::get('/projectPost', function(){
+    return view('template.projectPost');
 });

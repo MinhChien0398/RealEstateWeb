@@ -5,7 +5,10 @@
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
+
+    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="resources/views/template/css/services.css" rel="stylesheet">
+
     <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
 
@@ -16,99 +19,111 @@
 <!--end header-->
 
 <!--start Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light white sticky-top nav-property">
-    <a class="navbar-brand ml-5 mr-0 pl-5 pr-2 pt-1 pb-1 "
-       href="http://localhost/RealEstateWeb/template_main">
-        <div class="navbar-brand flex-center justify-content-between ">
-            <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.svg" style="width: 60px">
-
-            <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold" style="color: #E90808">Real
-                Estate
-                Gig</h4>
-        </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-        <ul class="navbar-nav border-left border-right">
-            <li class="nav-item font-weight-bolder">
-                <a class="nav-link nav-menuItem " id="nav-menuItem-active" href="/RealEstateWeb">Trang Chủ
-                </a>
-            </li>
-            <li class="nav-item font-weight-bolder">
-                <a class="nav-link nav-menuItem " href="#">Giới Thiệu</a>
-            </li>
-            <li class="nav-item dropdown nav-dropdownItem font-weight-bolder">
-                <a class="nav-link nav-menuItem dropdown-toggle dropdown-submenu" id="navbarDropdownMenuLink-444"
-                   data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dịch vụ
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
-                </div>
-            </li>
-            <li class="nav-item dropdown nav-dropdownItem font-weight-bolder">
-                <a class="nav-link nav-menuItem dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">Dự án
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-555">
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Biệt Thự</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Nhà Phố</a>
-                    <a class="dropdown-item" style="font-size: 16px" href="#">Văn Phòng</a>
-                </div>
-            </li>
-            <li class="nav-item font-weight-bolder">
-                <a class="nav-link nav-menuItem " href="#">Liên Hệ</a>
-            </li>
-        </ul>
-        <!--icon font ring-->
-        <div class="phone-contain flex-center justify-content-between ">
-
-            <div class="icon-phone-ring">
-                <i class="fa-solid fa-phone"></i>
-                <div class="circle-1"></div>
-                <!--            <div class="circle-2"></div>-->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top nav-property ">
+    <div class="container">
+        <a class="navbar-brand "
+           href="http://localhost/RealEstateWeb/template_main">
+            <div class="navbar-brand flex-center justify-content-between ">
+                <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.jpg" style="width: 60px">
+                <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h4>
             </div>
-            <p class="mt-1 ml-5 pl-3">0352033199</p></div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+                aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
+            <ul class="navbar-nav  col-9 border-right">
+                <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
+                    <a class="nav-link " href="http://localhost/RealEstateWeb/">Trang Chủ
+                    </a>
+                </li>
+                <li class="nav-item nav-menuItem  font-weight-bolder">
+                    <a class="nav-link " href="http://localhost/RealEstateWeb/intro">Giới Thiệu</a>
+                </li>
+                <li class="d-flex align-items-center nav-item
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+                >
+                    <a class="nav-link "
+                       href="http://localhost/RealEstateWeb/services"
+                       role="link"
+                    >Dịch vụ
+                    </a>
+                    <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                    <div class="dropdown-menu mt-1 w-100">
+                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
+                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
+                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
+                    </div>
 
+                </li>
+                <li class="d-flex align-items-center nav-item
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+                >
+                    <a class="nav-link"
+                       href="http://localhost/RealEstateWeb/project"
+                       role="link"
+                    >Dự án
+                    </a>
+                    <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                    <div class="dropdown-menu mt-1 w-100">
+                        <a class="dropdown-item" style="font-size: 16px" href="#">Biệt Thự</a>
+                        <a class="dropdown-item" style="font-size: 16px" href="#">Nhà Phố</a>
+                        <a class="dropdown-item" style="font-size: 16px" href="#">Văn Phòng</a>
+                    </div>
+                </li>
+                <li class="nav-item nav-menuItem font-weight-bolder">
+                    <a class="nav-link" href="http://localhost/RealEstateWeb/contact">Liên Hệ</a>
+                </li>
+            </ul>
+            <!--icon font ring-->
+            <div class="phone-contain flex-center justify-content-center col-3">
+
+                <div class="icon-phone-ring col-lg-6 col-md-6 col-sm-12 ">
+                    <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-phone"></i>
+                        <i class="circle-1"></i>
+                        <!--            <div class="circle-2"></div>-->
+                    </div>
+                </div>
+                <div>
+                    <a class=" col-lg-6 col-md-6">0352033199</a>
+                </div>
+            </div>
+        </div>
     </div>
-
 </nav>
 <!--end Navigation-->
 
 <!--start content-->
-
-<!--Thanh điều hướng-->
-<div>
-    <div class="bc-icons-2">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb bg-white">
-                <li class="breadcrumb-item"><a class="black-text breadcrumb-size" href="/"><i
-                    class="fas fa-home"></i></a><i
-                    class="fas fa-caret-right mx-2"
-                    aria-hidden="true"></i></li>
-                <li class="breadcrumb-item active breadcrumb-size"><a class="black-text text-uppercase" href="#"> Dịch
-                    vụ và báo giá</a></li>
-            </ol>
-        </nav>
-
-    </div>
-</div>
-<!-- End Thanh điều hướng-->
-
 <main class="my-5">
     <div class="container">
+        <!--        breadcrumb -->
+        <div id="section-1" class="bc-icons-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-white small">
+                    <li class="breadcrumb-item">
+                        <a class="black-brown-text breadcrumb-size" href="/">
+                            <i class="fa-solid fa-house"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item active breadcrumb-size">
+                        <a class="black-text text-uppercase font-weight-bolder" href="#">GIỚI THIỆU CHUNG</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <!--    end breadcrumb-->
         <!--Section: Posts-->
         <section class="text-center">
             <h1 class="mb-5" style="color:#E90808; font-family: Inter,Arial, Helvetica, sans-serif; font-weight: 700;">
                 Dịch vụ và báo giá</h1>
 
             <div class="row g-4 g-lg-5">
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div
                             class="bg-image hover-overlay ripple"
@@ -126,82 +141,21 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">Dịch vụ thi công nhà xưởng</h3>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
-                            <a href="#" class="btn btn-rounded">Xem thêm</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div
-                            class="bg-image hover-overlay ripple"
-                            data-mdb-ripple-color="light">
-                            <a href="#">
-                                <div
-                                    class="mask"
-                                    style="background-color: rgba(251, 251, 251, 0.15)"
-                                ></div>
-                                <div class="hover-img">
-                                    <img src="https://nhaxinh.asia/upload/baiviet/nhamaysanxuatgangtay-7223.jpg"
-                                         class="img-fluid"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Dịch vụ xây nhà phần thô</h3>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
+                            <div class="card-content">
+                                <h3 class="card-title">Dịch vụ thi công nhà phần thô</h3>
+                                <p class="card-text">
+                                    Để xây dựng một tổ ấm hoàn mỹ, lựa chọn được một đơn vị thi công phần thô nhà phố là
+                                    yêu
+                                    cầu tiên quyết. Một đơn vị thi công phù hợp sẽ đảm bảo chất lượng công trình tốt
+                                    nhất và
+                                    giúp gia chủ cân đối được nguồn tài chính khi xây nhà.
+                                </p>
+                            </div>
                             <a href="#" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div
-                            class="bg-image hover-overlay ripple"
-                            data-mdb-ripple-color="light">
-                            <a href="#">
-                                <div
-                                    class="mask"
-                                    style="background-color: rgba(251, 251, 251, 0.15)"
-                                ></div>
-                                <div class="hover-img">
-                                    <img src="https://nhaxinh.asia/upload/baiviet/nhamaysanxuatgangtay-7223.jpg"
-                                         class="img-fluid"/>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h3 class="card-title">Dịch vụ xây nhà phần thô</h3>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
-                            <a href="#" class="btn btn-rounded">Xem thêm</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-12">
                     <div class="card">
                         <div
                             class="bg-image hover-overlay ripple"
@@ -213,25 +167,88 @@
                                 ></div>
                                 <div class="hover-img">
                                     <img
-                                        src="https://nhaxinh.asia/upload/baiviet/untitled-3-8307.png"
+                                        src="https://nhaxinh.asia/upload/baiviet/dichvuxaydungnhaotrongoi-2589.jpg"
                                         class="img-fluid"/>
                                 </div>
                             </a>
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title">Dịch vụ thi công nhà xưởng</h3>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                                Some quick example text to build on the card title and make
-                                up the bulk of the card's content.
-                            </p>
+                            <div class="card-content">
+                                <h3 class="card-title">Dịch vụ xây nhà trọn gói</h3>
+                                <p class="card-text">
+                                    Dịch vụ xây nhà trọn gói là một giải pháp toàn diện và tiện lợi cho việc xây dựng
+                                    ngôi nhà mơ ước của bạn. Thay vì bạn phải tự mình quản lý từng khía cạnh của quá
+                                    trình xây dựng, dịch vụ xây nhà trọn gói sẽ đảm nhiệm toàn bộ công việc, từ thiết kế
+                                    ban đầu đến hoàn thiện cuối cùng.
+                                </p>
+                            </div>
                             <a href="#" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div
+                            class="bg-image hover-overlay ripple"
+                            data-mdb-ripple-color="light">
+                            <a href="#">
+                                <div
+                                    class="mask"
+                                    style="background-color: rgba(251, 251, 251, 0.15)"
+                                ></div>
+                                <div class="hover-img">
+                                    <img
+                                        src="https://nhaxinh.asia/upload/baiviet/nhamaysanxuatgangtay-7223.jpg"
+                                        class="img-fluid"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-content">
+                                <h3 class="card-title">Dịch vụ thi công nhà xưởng</h3>
+                                <p class="card-text">
+                                    Dịch vụ thi công nhà xưởng là quá trình tổ chức, quản lý và thực hiện xây dựng hoặc
+                                    cải tạo các cơ sở sản xuất, nhà máy, hoặc nhà xưởng để đáp ứng nhu cầu sản xuất và
+                                    kinh doanh của khách hàng.
+                                </p>
+                            </div>
+                            <a href="#" class="btn btn-rounded">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--                <div class="col-lg-4 col-md-12">-->
+                <!--                    <div class="card">-->
+                <!--                        <div-->
+                <!--                            class="bg-image hover-overlay ripple"-->
+                <!--                            data-mdb-ripple-color="light">-->
+                <!--                            <a href="#">-->
+                <!--                                <div-->
+                <!--                                    class="mask"-->
+                <!--                                    style="background-color: rgba(251, 251, 251, 0.15)"-->
+                <!--                                ></div>-->
+                <!--                                <div class="hover-img">-->
+                <!--                                    <img-->
+                <!--                                        src="https://nhaxinh.asia/upload/baiviet/untitled-3-8307.png"-->
+                <!--                                        class="img-fluid"/>-->
+                <!--                                </div>-->
+                <!--                            </a>-->
+                <!--                        </div>-->
+                <!--                        <div class="card-body">-->
+                <!--                            <h3 class="card-title">Dịch vụ thi công nhà xưởng</h3>-->
+                <!--                            <p class="card-text">-->
+                <!--                                Some quick example text to build on the card title and make-->
+                <!--                                up the bulk of the card's content.-->
+                <!--                                Some quick example text to build on the card title and make-->
+                <!--                                up the bulk of the card's content.-->
+                <!--                                Some quick example text to build on the card title and make-->
+                <!--                                up the bulk of the card's content.-->
+                <!--                            </p>-->
+                <!--                            <a href="#" class="btn btn-rounded">Xem thêm</a>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
 
             </div>
         </section>
@@ -253,7 +270,7 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
                 <div class="row ">
-                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.svg">
+                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.jpg">
                     <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold main-color">Real
                         Estate
                         Gig</h5>
