@@ -11,14 +11,20 @@ body {
     margin-top: 10px;
 }
 
-#section-1 a:hover{
+#section-1 a:hover {
     color: #E90808;
     text-decoration: none;
 }
 
-#section-1 a .fa-home:hover{
+#section-1 a .fa-home:hover {
     color: #E90808;
     text-decoration: none;
+}
+
+
+
+#form-text {
+
 }
 
 .logo {
@@ -30,14 +36,13 @@ body {
 }
 
 
-
 .listContent li {
     list-style: none;
     font-size: 14px;
 }
 
 .black-brown-text {
-    color: #656565!important;
+    color: #656565 !important;
 }
 
 
