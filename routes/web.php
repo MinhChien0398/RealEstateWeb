@@ -45,3 +45,7 @@ Route::get( '/usermanage', function () {
 Route::get('/projectsmanage', function(){
     return view('template.projectsmanage');
 });
+
+Route::get('/servicesManager', function(){
+    return view('template.servicesManager');
+});
