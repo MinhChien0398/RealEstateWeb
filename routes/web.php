@@ -41,3 +41,7 @@ Route::get( '/projectPost', function () {
 Route::get( '/usermanage', function () {
     return view( 'template.usermanage' );
 } );
+
+Route::get('/projectsmanage', function(){
+    return view('template.projectsmanage');
+});
