@@ -13,27 +13,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template.main');
-});
-Route::get('/services', function () {
-    return view('template.services');
-});
-Route::get('/project', function () {
-    return view('template.project');
-});
+Route::get( '/', function () {
+    return view( 'template.main' );
+} );
+Route::get( '/services', function () {
+    return view( 'template.services' );
+} );
+Route::get( '/project', function () {
+    return view( 'template.project' );
+} );
 
-Route::get('/intro', function () {
-    return view('template.intro');
-});
+Route::get( '/intro', function () {
+    return view( 'template.intro' );
+} );
 
-Route::get('/contact', function(){
-   return view('template.contact');
-});
+Route::get( '/contact', function () {
+    return view( 'template.contact' );
+} );
 
-Route::get('/servicePost', function(){
-    return view('template.servicePost');
-});
-Route::get('/projectPost', function(){
-    return view('template.projectPost');
-});
+Route::get( '/servicePost', function () {
+    return view( 'template.servicePost' );
+} );
+Route::get( '/projectPost', function () {
+    return view( 'template.projectPost' );
+} );
+
+Route::get( '/usermanage', function () {
+    return view( 'template.usermanage' );
+} );
