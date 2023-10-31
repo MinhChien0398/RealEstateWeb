@@ -13,6 +13,9 @@
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <title>Quản lý User</title>
 </head>
 <body class="fixed-sn white-skin">
@@ -403,14 +406,10 @@
                         <div class="col-md-9">
                             <h4 class="h4-responsive mt-1">Người dùng</h4>
                         </div>
-                        <div class="col-md-3">
-                            <div class="md-form">
-                                <input placeholder="Tìm kiếm..." type="text" id="form5" class="form-control">
-                            </div>
-                        </div>
+
                     </div>
 
-                    <table id="dtMaterialDesignExample" class="table" cellspacing="0" width="100%">
+                    <table id="example" class="display" style="width:100%">
                         <thead>
                         <tr>
                             <th class="th-sm">#
@@ -428,7 +427,8 @@
 
                             <th class="th-sm">Vai trò</th>
                             <th class="th-sm">Ngày tạo</th>
-                            <th class="th-sm">Ngày cập nhật</th>
+<!--                            <th class="th-sm">Ngày cập nhật</th>-->
+<!--                            <th class="th-sm">Hành động</th>-->
 
                         </tr>
                         </thead>
@@ -441,8 +441,8 @@
                             <td>18/01/2003</td>
                             <td>Kích hoạt</td>
                             <td>Admin</td>
-                            <td>30/10/2023</td>
-                            <td>31/10/2023</td>
+<!--                            <td>30/10/2023</td>-->
+<!--                            <td>31/10/2023</td>-->
                             <td>
                                 <i class="fa-solid fa-eye p-1"></i>
                                 <i class="fa-solid fa-pen p-1"></i>
@@ -457,8 +457,8 @@
                             <td>18/01/2003</td>
                             <td>Kích hoạt</td>
                             <td>Admin</td>
-                            <td>30/10/2023</td>
-                            <td>31/10/2023</td>
+<!--                            <td>30/10/2023</td>-->
+<!--                            <td>31/10/2023</td>-->
                             <td>
                                 <i class="fa-solid fa-eye p-1"></i>
                                 <i class="fa-solid fa-pen p-1"></i>
@@ -474,8 +474,8 @@
                             <td>18/01/2003</td>
                             <td>Kích hoạt</td>
                             <td>Người dùng</td>
-                            <td>30/10/2023</td>
-                            <td>31/10/2023</td>
+<!--                            <td>30/10/2023</td>-->
+<!--                            <td>31/10/2023</td>-->
                             <td>
                                 <i class="fa-solid fa-eye p-1"></i>
                                 <i class="fa-solid fa-pen p-1"></i>
@@ -487,6 +487,7 @@
                         <tfoot>
 
                         </tfoot>
+
                     </table>
                 </div>
                 <!-- First column -->
@@ -505,19 +506,7 @@
 <script>
 
     // SideNav Initialization
-    $(".button-collapse").sideNav();
-
-    var container = document.querySelector('.custom-scrollbar');
-    var ps = new PerfectScrollbar(container, {
-        wheelSpeed: 2,
-        wheelPropagation: true,
-        minScrollbarLength: 20
-    });
-
-    // Tooltips Initialization
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+    new DataTable('#example');
 
 </script>
 </body>
