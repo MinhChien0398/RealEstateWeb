@@ -30,35 +30,29 @@
     color: white;
     font-size: 15px;
     font-weight: 500;
-    padding: 13px 30px;
+    padding: 9px 30px ;
     border-radius: 4px;
-    margin-right: 10px;
+    border: 5px solid #E90808;
 }
 
 .box-btn-left:hover {
     background-color: white;
     color: #E90808;
-    border: 4px solid #E90808;
-}
 
-.box-btn-right {
-    color: #00385E;
-    font-weight: 500;
-    text-decoration: none;
 }
 
 .service {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 .slide-container {
     margin: 0 40px;
     width: 100%;
-    height: 400px;
+    height: 410px;
     cursor: pointer;
 }
 
@@ -146,7 +140,6 @@
 
 .swiper-pagination {
     user-select: none;
-
 }
 
 .swiper-pagination-bullet-active {
@@ -187,11 +180,13 @@
     display: inline-block;
     min-width: 170px;
 }
-
+.md-pills li {
+    padding: 0;
+}
 .category-menu .category-item:hover button, .category-menu .category-item.active button {
     color: #fff;
     background-color: #E90808;
-    font-weight: 700;
+    font-weight: 600;
     font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
@@ -217,6 +212,7 @@
 
 .my-5 {
     margin-bottom: 0px !important;
+    margin-top: 2rem!important;
 }
 
 .my-5 .hover-image:before {
@@ -231,12 +227,15 @@
     transform: translateY(-75%);
 
 }
-.my-5 .projectCard-container:hover .projectCard-content div div{
+
+.my-5 .projectCard-container:hover .projectCard-content div div {
     justify-content: center;
 }
+
 .my-5 .projectCard-container:hover .projectCard-content p {
-    padding: 1.5rem!important;
+    padding: 1.5rem !important;
 }
+
 .my-5 img {
     object-fit: cover;
     height: 370px;
@@ -271,6 +270,9 @@
     height: 2px;
     border-bottom: 2px solid #fff;
     margin: 12px auto 0px auto !important;
+}
+#section-3{
+    background: url("/RealEstateWeb/public/img/main-bg-project/bgda14401111-5952.png") center;
 }
 
 .projectCard-content p {
@@ -335,9 +337,6 @@
         padding: 10px 20px !important;
     }
 
-    .box-btn-right img {
-        width: 60px;
-    }
 }
 
 
