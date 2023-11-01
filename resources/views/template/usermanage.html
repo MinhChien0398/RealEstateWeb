@@ -1,19 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="resources/views/template/css/usermanage.css">
+    <!--    <link rel="stylesheet" href="resources/views/template/css/projectsmanage.css">-->
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <!--    <link href="public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">-->
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <!--    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">-->
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <!---->
     <title>Quản lý User</title>
 </head>
 <body class="fixed-sn white-skin">
@@ -389,104 +393,25 @@
 
 <!-- Main layout -->
 <main>
-    <div class="">
+    <div class="container">
 
         <!-- Section: Customers -->
         <section class="section team-section">
 
             <!-- First row -->
             <div class="row">
-
+                <div class="col-md-9">
+                    <h4 class="h4-responsive mt-1 text-lg-center">Người dùng</h4>
+                </div>
                 <!-- First column -->
                 <div class="col-md-14">
 
                     <div class="row mb-1">
-                        <div class="col-md-9">
-                            <h4 class="h4-responsive mt-1">Người dùng</h4>
-                        </div>
+
 
                     </div>
 
-                    <table id="example" class="display" style="width:100%">
-                        <thead>
-                        <tr>
-                            <th class="th-sm">#
-                            </th>
-                            <th class="th-sm">Họ tên
-                            </th>
-                            <th class="th-sm">Email
-                            </th>
-                            <th class="th-sm">SĐT
-                            </th>
-                            <th class="th-sm">Ngày sinh
-                            </th>
-                            <th class="th-sm">Trạng thái
-                            </th>
 
-                            <th class="th-sm">Vai trò</th>
-                            <th class="th-sm">Ngày tạo</th>
-<!--                            <th class="th-sm">Ngày cập nhật</th>-->
-<!--                            <th class="th-sm">Hành động</th>-->
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Đặng Minh Tấn</td>
-                            <td>21130298@st.hcmuaf.edu.vn</td>
-                            <td>0347220490</td>
-                            <td>18/01/2003</td>
-                            <td>Kích hoạt</td>
-                            <td>Admin</td>
-<!--                            <td>30/10/2023</td>-->
-<!--                            <td>31/10/2023</td>-->
-                            <td>
-
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Vũ Xuân Chiến</td>
-                            <td>21130298@st.hcmuaf.edu.vn</td>
-                            <td>0347220490</td>
-                            <td>18/01/2003</td>
-                            <td>Kích hoạt</td>
-                            <td>Admin</td>
-<!--                            <td>30/10/2023</td>-->
-<!--                            <td>31/10/2023</td>-->
-                            <td>
-
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Bùi Minh Chiến</td>
-                            <td>21130298@st.hcmuaf.edu.vn</td>
-                            <td>0347220490</td>
-                            <td>18/01/2003</td>
-                            <td>Kích hoạt</td>
-                            <td>Người dùng</td>
-<!--                            <td>30/10/2023</td>-->
-<!--                            <td>31/10/2023</td>-->
-                            <td>
-
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-
-                        </tbody>
-                        <tfoot>
-
-                        </tfoot>
-
-                    </table>
                 </div>
                 <!-- First column -->
 
@@ -496,6 +421,86 @@
 
         </section>
         <!-- Section: Customers -->
+        <table id="example" class="display" style="width:100%">
+            <thead>
+            <tr>
+                <th class="">#
+                </th>
+                <th class="">Họ tên
+                </th>
+                <th class="">Email
+                </th>
+                <th class="">SĐT
+                </th>
+                <th class="">Ngày sinh
+                </th>
+                <th class="">Trạng thái
+                </th>
+
+                <th class="">Vai trò</th>
+                <th class="">Hành động</th>
+                <!--                            <th class="">Ngày cập nhật</th>-->
+                <!--                            <th class="">Hành động</th>-->
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Đặng Minh Tấn</td>
+                <td>21130298@st.hcmuaf.edu.vn</td>
+                <td>0347220490</td>
+                <td>18/01/2003</td>
+                <td>Kích hoạt</td>
+                <td>Admin</td>
+                <!--                            <td>30/10/2023</td>-->
+                <!--                            <td>31/10/2023</td>-->
+                <td>
+
+                    <i class="fa-solid fa-pen p-1"></i>
+                    <i class="fa-solid fa-trash-can p-1"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Vũ Xuân Chiến</td>
+                <td>21130298@st.hcmuaf.edu.vn</td>
+                <td>0347220490</td>
+                <td>18/01/2003</td>
+                <td>Kích hoạt</td>
+                <td>Admin</td>
+                <!--                            <td>30/10/2023</td>-->
+                <!--                            <td>31/10/2023</td>-->
+                <td>
+
+                    <i class="fa-solid fa-pen p-1"></i>
+                    <i class="fa-solid fa-trash-can p-1"></i>
+                </td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Bùi Minh Chiến</td>
+                <td>21130298@st.hcmuaf.edu.vn</td>
+                <td>0347220490</td>
+                <td>18/01/2003</td>
+                <td>Kích hoạt</td>
+                <td>Người dùng</td>
+                <!--                            <td>30/10/2023</td>-->
+                <!--                            <td>31/10/2023</td>-->
+                <td>
+
+                    <i class="fa-solid fa-pen p-1"></i>
+                    <i class="fa-solid fa-trash-can p-1"></i>
+                </td>
+            </tr>
+
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+
+        </table>
 
     </div>
 </main>
@@ -507,12 +512,16 @@
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/mdb.lite.min.js"></script>
 <script src="public/lib/DataTables/datatables.min.js"></script>
+<script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
 
     // SideNav Initialization
     $('#example').dataTable({
         "columnDefs": [
-            {"width": "10px", "targets": [0]}
+            {"width": "15px", "targets": [0]},
+            {"width": "25%", "targets": [1]},
+            {"width": "25%", "targets": [2]},
+            {"className": "text-center", "targets": "_all"}
         ]
     });
 
