@@ -44,7 +44,7 @@ nav .container {
 
 .nav-menuItem {
     font-size: 18px;
-    padding: 15px 13px 10px 13px !important;
+    padding: 10px 13px 10px 13px !important;
     margin: auto 2px;
 }
 
@@ -235,7 +235,11 @@ p {
     background-color: #E90808;
     color: #E90808;
 }
-
+@media only screen and (max-width: 1212px) {
+    .nav-link{
+        padding: unset!important;
+    }
+}
 
 @media only screen and (max-width: 1080px) {
     .nav-link, .nav-menuItem:hover .nav-link, #nav-menuItem-active a, .phone-contain:last-child {
