@@ -307,21 +307,7 @@ var listProjects = [
 let projectFilter = listProjects;
 
 
-listButton.forEach(item => {
-    item.addEventListener("click", function () {
-        event.preventDefault();
-        let type = item.getAttribute("type");
-        projectFilter = listProjects.filter(project => {
-            if (project.type != type) {
-                // console.log(project.type);
-                return false;
-            }
-            return true;
-        })
-        showList(projectFilter);
-    })
 
-});
 
 function showList(projectFilter) {
     listImgProject.innerHTML = "";
@@ -374,9 +360,6 @@ function showList(projectFilter) {
     });
 }
 
-window.onload = function () {
-    listButton[0].click();
-}
 
 // ---------------------------------------------------------------------------------------------------------------------
 
