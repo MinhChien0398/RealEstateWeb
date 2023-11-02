@@ -49,3 +49,7 @@ Route::get('/projectsmanage', function(){
 Route::get('/servicesManager', function(){
     return view('template.servicesManager');
 });
+
+Route::get('/addUser', function (){
+   return view('template.addUserPage');
+});
