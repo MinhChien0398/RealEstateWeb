@@ -7,17 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/resources/views/template/css/projectsmanage.css">
+    <!--    <link rel="stylesheet" href="resources/views/template/css/projectsmanage.css">-->
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <!--    <link href="public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">-->
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <!--    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">-->
+    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!---->
     <title>Quản lí dịch vụ</title>
 </head>
 <body class="fixed-sn white-skin">
 
-<!-- Main Navigation -->
+<!--Main Navigation-->
 <header>
 
     <!-- Sidebar navigation -->
@@ -327,49 +330,21 @@
 
         <!-- Breadcrumb -->
         <div class="breadcrumb-dn mr-auto">
-            <p>Admin</p>
+
         </div>
+
 
         <!-- Navbar links -->
         <ul class="nav navbar-nav nav-flex-icons ml-auto">
 
             <!-- Dropdown -->
-            <li class="nav-item dropdown notifications-nav">
-                <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    <span class="badge red">3</span> <i class="fas fa-bell"></i>
-                    <span class="d-none d-md-inline-block">Thông báo</span>
-                </a>
-                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">
-                        <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
-                        <span>New order received</span>
-                        <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 13 min</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="far fa-money-bill-alt mr-2" aria-hidden="true"></i>
-                        <span>New order received</span>
-                        <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 33 min</span>
-                    </a>
-                    <a class="dropdown-item" href="#">
-                        <i class="fas fa-chart-line mr-2" aria-hidden="true"></i>
-                        <span>Your campaign is about to end</span>
-                        <span class="float-right"><i class="far fa-clock" aria-hidden="true"></i> 53 min</span>
-                    </a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-effect"><i class="fas fa-envelope"></i> <span
-                    class="clearfix d-none d-sm-inline-block">Liên hệ</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-effect"><i class="far fa-comments"></i> <span
-                    class="clearfix d-none d-sm-inline-block">Hỗ trợ</span></a>
-            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Cá nhân</span>
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" class="rounded-circle z-depth-0"
+                         alt="avatar image" height="35">
+                    <span class="clearfix d-none d-sm-inline-block">Supper user</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">Log Out</a>
@@ -387,80 +362,69 @@
 <!-- Main Navigation -->
 
 <!-- Main layout -->
-<main>
+<main class="">
     <div class="">
-
         <!-- Section: Customers -->
-        <section class="section team-section">
-
+        <section>
             <!-- First row -->
-            <div class="row">
-
+            <div class="">
+                <div class="row w-100 main-color container mb-3 d-flex justify-content-center align-items-center">
+                    <!--                    <h4 class="h4-responsive mt-1 align-content-center text-lg-center" style="height: 60px;">Dự án</h4>-->
+                    <h4 class="col-9 p-0 m-0 font-weight-bold text-uppercase "> quản lí dịch vụ </h4>
+                    <button class="col-2 btn btn-sm btn-red text-uppercase">thêm dịch vụ</button>
+                </div>
                 <!-- First column -->
-                <div class="col-md-14">
-
-                    <div class="row mb-1">
-                        <div class="col-md-9">
-                            <h4 class="h4-responsive mt-1">Dịch vụ</h4>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="md-form">
-                                <input placeholder="Tìm kiếm..." type="text" id="form5" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-                    <table id="dtMaterialDesignExample" class="table" cellspacing="0" width="100%">
+                <div class="pt-5 pb-5 ">
+                    <table id="example" class="display border text-smaller" style="width:100%">
                         <thead>
                         <tr>
-                            <th class="th-sm">#
+                            <th>#
                             </th>
-                            <th class="th-sm">Tên dịch vụ
+                            <th class="">Tên dịch vụ
                             </th>
-                            <th class="th-sm">Rút gọn
+                            <th>Rút gọn
                             </th>
-                            <th class="th-sm">Avatar
+                            <!--                            <th>Avatar-->
+                            <!--                            </th>-->
+                            <!--                            <th>Bài đăng-->
                             </th>
-                            <th class="th-sm">Bài đăng
-                            </th>
-                            <th class="th-sm">Hành động</th>
-
+                            <th>Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="small">1</td>
-                            <td class="small">Thi công nhà thô 100 triệu</td>
-                            <td class="small">TCNT100T</td>
-                            <td class="small">public/img/project-img/screenshot-20230819-165117-8274.png</td>
-                            <td class="small">http://localhost/RealEstateWeb/services#</td>
-                            <td class="small">
-                                <i class="fa-solid fa-eye p-1"></i>
+                            <td>1</td>
+                            <td>Thi công nhà thô 100 triệu</td>
+                            <td>TCNT100T</td>
+                            <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                            <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                            <td>
+
                                 <i class="fa-solid fa-pen p-1"></i>
                                 <i class="fa-solid fa-trash-can p-1"></i>
                             </td>
                         </tr>
 
                         <tr>
-                            <td class="small">2</td>
-                            <td class="small">Xây nhà trọn gói 300 triệu</td>
-                            <td class="small">XNTG300T</td>
-                            <td class="small">public/img/project-img/screenshot-20230819-165117-8274.png</td>
-                            <td class="small">http://localhost/RealEstateWeb/services#</td>
-                            <td class="small">
-                                <i class="fa-solid fa-eye p-1"></i>
+                            <td>2</td>
+                            <td>Xây nhà trọn gói 300 triệu</td>
+                            <td>XNTG300T</td>
+                            <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                            <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                            <td>
+
                                 <i class="fa-solid fa-pen p-1"></i>
                                 <i class="fa-solid fa-trash-can p-1"></i>
                             </td>
                         </tr>
                         <tr>
-                            <td class="small">3</td>
-                            <td class="small">Thi công nhà xưởng 100 triệu</td>
-                            <td class="small">TCNT100T</td>
-                            <td class="small">public/img/project-img/screenshot-20230819-165117-8274.png</td>
-                            <td class="small">http://localhost/RealEstateWeb/services#</td>
-                            <td class="small">
-                                <i class="fa-solid fa-eye p-1"></i>
+                            <td>3</td>
+                            <td>Thi công nhà xưởng 100 triệu</td>
+                            <td>TCNT100T</td>
+                            <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                            <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                            <td>
+
                                 <i class="fa-solid fa-pen p-1"></i>
                                 <i class="fa-solid fa-trash-can p-1"></i>
                             </td>
@@ -470,36 +434,39 @@
 
                         </tfoot>
                     </table>
+
                 </div>
                 <!-- First column -->
 
 
-            </div>
-            <!-- First row -->
+                <!-- First row -->
 
         </section>
         <!-- Section: Customers -->
 
     </div>
+
 </main>
+
 <!-- Main layout -->
 <!-- Custom scripts -->
+<script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
+<script src="public/lib/DataTables/datatables.min.js"></script>
+<script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
-
+    // new DataTable('#example');
     // SideNav Initialization
-    $(".button-collapse").sideNav();
-
-    var container = document.querySelector('.custom-scrollbar');
-    var ps = new PerfectScrollbar(container, {
-        wheelSpeed: 2,
-        wheelPropagation: true,
-        minScrollbarLength: 20
+    $('#example').dataTable({
+        "columnDefs": [
+            {"width": "15px", "targets": [0]},
+            // {"width": "200px", "targets": [1]},
+            // {"width": "300px", "targets": [2]},
+            {"className": "text-center", "targets": "_all"}
+        ]
     });
-
-    // Tooltips Initialization
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
 
 </script>
 </body>
