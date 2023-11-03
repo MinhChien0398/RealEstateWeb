@@ -5,11 +5,22 @@ body {
 }
 
 #section-1 {
-    margin: 0 !important;
+    margin-left: 10px;
+    margin-top: 10px;
 }
-.mb-5{
+
+.fa-house {
+    color: #000000 !important;
+}
+
+.fa-house:hover {
+    color: #E90808 !important;
+}
+
+.mb-5 {
     margin-bottom: 0 !important;
 }
+
 .container .sub-container {
     background-color: white;
     width: auto;
@@ -19,9 +30,9 @@ body {
 }
 
 .filter {
-    padding: 50px;
+    padding: 20px;
     display: grid;
-    grid-template-columns: 32.666% 32.666% 32.666%;
+    grid-template-columns: 33% 33% 33%;
     column-gap: 1%;
     row-gap: 10px;
 }
@@ -31,6 +42,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70%;
+    width: 70%;
 }
 
 .filter .item select,
@@ -46,13 +59,19 @@ body {
 
 .filter .item label {
     display: block;
-    width: 40%;
-    padding: 0 10px;
+    width: 50%;
+    padding: 0;
 }
 
 .filter .item.submit button {
     background-color: #E90808;
     color: #fff;
+}
+
+#animationReset {
+    height: 10%;
+    width: 12%;
+
 }
 
 /* end filter */
@@ -169,7 +188,7 @@ body {
 
 /*---------------------------------------------------------------------------------*/
 
-.my-5 .hover-image:before {
+.my-body .hover-image:before {
     left: -92%;
 }
 
@@ -177,27 +196,30 @@ body {
     padding: 0 1.5rem !important;
 }
 
-.my-5 .projectCard-container:hover .projectCard-content {
+.my-body .projectCard-container:hover .projectCard-content {
     transform: translateY(-75%);
 
 }
-.my-5 .projectCard-container:hover .projectCard-content div div{
+
+.my-body .projectCard-container:hover .projectCard-content div div {
     justify-content: center;
 }
-.my-5 .projectCard-container:hover .projectCard-content p {
-    padding: 1.5rem!important;
+
+.my-body .projectCard-container:hover .projectCard-content p {
+    padding: 1.5rem !important;
 }
-.my-5 img {
+
+.my-body img {
     object-fit: cover;
     height: 370px;
     transition: all 0.4s cubic-bezier(0.2, 0.3, 0.8, 0.7);
 }
 
-.my-5 .projectCard-container:hover img {
+.my-body .projectCard-container:hover img {
     transform: scale(1.1);
 }
 
-.my-5 .projectCard-content {
+.my-body .projectCard-content {
     top: 75%;
     left: 0;
     height: 100%;
