@@ -22,3 +22,6 @@ tbody td i.inactive-icon {
 table.dataTable td {
     font-size: 13px;
 }
+.container{
+    max-width: 100%;
+}

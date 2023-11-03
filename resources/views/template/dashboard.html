@@ -32,19 +32,19 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="public/img/logo.svg" alt="logo" style="width: 100px">
+                <img src="public/img/logo.svg" alt="logo" style="">
             </center>
-            <li class="item">
+            <li class="sidebar-item">
                 <a href="#" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
-            <li class="item" id="user">
+            <li class="sidebar-item" id="user">
                 <a href="#user" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="item" id="project">
+            <li class="sidebar-item" id="project">
                 <a href="#project" class="menu-btn">
                     <i class="fa-solid fa-building"></i><span>QL Dự án <i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
@@ -59,7 +59,7 @@
                 </div>
             </li>
 
-            <li class="item" id="type-project">
+            <li class="sidebar-item" id="type-project">
                 <a href="#type-project" class="menu-btn">
                     <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
@@ -70,7 +70,7 @@
                     </a>
                 </div>
             </li>
-            <li class="item" id="contact">
+            <li class="sidebar-item" id="contact">
                 <a href="#contact" class="menu-btn">
                     <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
@@ -81,7 +81,7 @@
                     </a>
                 </div>
             </li>
-            <li class="item" id="slide">
+            <li class="sidebar-item" id="slide">
                 <a href="#slide" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
@@ -90,7 +90,9 @@
     </div>
     <div class="main-container">
         <div class="container">
-
+            <div id="section-1" class="bc-icons-2">
+               <h3 class="text-center font-weight-bold main-color mb-4">Thống kê hoạt động</h3>
+            </div>
 
             <!--Section: Content-->
             <section class="p-2 z-depth-1">
@@ -236,23 +238,26 @@
 <script src="public/lib/DataTables/dataTables.min.js"></script>
 <script>
 
-$('#table1').DataTable({
-    "columnDefs": [
-        { "width": "5%", "targets": 0 },
-        { "width": "5%", "targets": 3 },
-        {className: "text-center font-weight-bold", targets: "_all"},
-    ]
-});
-$('#table2').DataTable({
-    "columnDefs": [
-        { "width": "5%", "targets": 0 },
-        { "width": "5%", "targets": 3 },
-        {className: "text-center font-weight-bold", targets: "_all"},
-    ]
-});
-document.querySelectorAll('.paginate_button ').forEach(function (e) {
- e.preventDefault();
-})
+    $('#table1').DataTable({
+        "columnDefs": [
+            {"width": "5%", "targets": 0},
+            {"width": "5%", "targets": 3},
+            {className: "text-center font-weight-bold", targets: "_all"},
+        ]
+    });
+    $('#table2').DataTable({
+        "columnDefs": [
+            {"width": "5%", "targets": 0},
+            {"width": "5%", "targets": 3},
+            {className: "text-center font-weight-bold", targets: "_all"},
+        ]
+    });
+    document.querySelectorAll('.paginate_button ').forEach(function (e) {
+        e.preventDefault();
+    })
+</script>
+<script>
+
 </script>
 <script>
     (function ($) {
