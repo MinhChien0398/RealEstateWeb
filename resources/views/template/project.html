@@ -23,8 +23,8 @@
         <a class="navbar-brand "
            href="http://localhost/RealEstateWeb/template_main">
             <div class="navbar-brand flex-center justify-content-between ">
-                <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.jpg" style="width: 60px">
-                <h4 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h4>
+                <img class="mr-3 ml-4 " src="/RealEstateWeb/public/img/logo.jpg" style="width: 50px">
+                <h5 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h5>
             </div>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
@@ -33,46 +33,49 @@
         </button>
         <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
             <ul class="navbar-nav  col-9 border-right">
-                <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
-                    <a class="nav-link " href="http://localhost/RealEstateWeb/">Trang Chủ
+                <li class="nav-item nav-menuItem font-weight-bolder ">
+                    <a class="nav-link text-center" href="http://localhost/RealEstateWeb/">Trang Chủ
                     </a>
                 </li>
-                <li class="nav-item nav-menuItem  font-weight-bolder">
-                    <a class="nav-link " href="http://localhost/RealEstateWeb/intro">Giới Thiệu</a>
+                <li class="nav-item nav-menuItem font-weight-bolder">
+                    <a class="nav-link text-center" href="http://localhost/RealEstateWeb/intro">Giới Thiệu</a>
                 </li>
                 <li class="d-flex align-items-center nav-item
                 nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
                 >
-                    <a class="nav-link "
+                    <a class="nav-link text-center"
+
                        href="http://localhost/RealEstateWeb/services"
-                       role="link"
-                    >Dịch vụ
-                    </a>
+                       role="link">Dịch vụ</a>
                     <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
                     <div class="dropdown-menu mt-1 w-100">
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Thô</a>
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Biệt Thự</a>
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Trọn Gói</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Thô</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Biệt Thự</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
                     </div>
-
                 </li>
                 <li class="d-flex align-items-center nav-item
-                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
+
+                nav-menuItem position-relative font-weight-bolder nav-dropdownItem" id="nav-menuItem-active"
                 >
-                    <a class="nav-link"
+                    <a class="nav-link text-center"
                        href="http://localhost/RealEstateWeb/project"
                        role="link"
                     >Dự án
                     </a>
                     <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
                     <div class="dropdown-menu mt-1 w-100">
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Biệt Thự</a>
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Nhà Phố</a>
-                        <a class="dropdown-item" style="font-size: 16px" href="#">Văn Phòng</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Biệt Thự</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Nhà Phố</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Văn Phòng</a>
                     </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="http://localhost/RealEstateWeb/contact">Liên Hệ</a>
+                    <a class="nav-link text-center" href="http://localhost/RealEstateWeb/contact">Liên Hệ</a>
+                </li>
+                <li class="nav-item nav-menuItem font-weight-bolder">
+                    <a class="nav-link text-center" href="http://localhost/RealEstateWeb/login">Đăng nhập</a>
                 </li>
             </ul>
             <!--icon font ring-->
@@ -82,7 +85,6 @@
                     <div class="w-100 h-100 d-flex justify-content-center align-items-center">
                         <i class="fa-solid fa-phone"></i>
                         <i class="circle-1"></i>
-                        <!--            <div class="circle-2"></div>-->
                     </div>
                 </div>
                 <div>
@@ -92,10 +94,11 @@
         </div>
     </div>
 </nav>
+
 <!--end Navigation-->
 
 <!--start content-->
-<main class="my-5">
+<main class="my-body">
     <div class="container">
         <!--        breadcrumb -->
         <div id="section-1" class="bc-icons-2">
@@ -120,70 +123,555 @@
             <section>
                 <h1 class="text-center mb-5"
                     style="color:#E90808; font-family: Inter,Arial, Helvetica, sans-serif; font-weight: 700;">Dự án</h1>
-                <form class="filter">
-                    <div class="item">
-                        <label>Category</label>
-                        <select name="category">
-                            <option value="">---</option>
-                            <option value="villa">villa</option>
-                            <option value="factory">factory</option>
-                            <option value="office">office</option>
-                            <option value="office">townhouse</option>
-                        </select>
-                    </div>
-                    <div class="item">
-                        <label>Color</label>
-                        <select name="color">
-                            <option value="">---</option>
-                            <option value="white">white</option>
-                            <option value="black">black</option>
-                            <option value="grey">grey</option>
-                            <option value="blue">blue</option>
-                            <option value="brown">brown</option>
-                        </select>
-                    </div>
-                    <!--                <div class="item">-->
-                    <!--                    <label>Name</label>-->
-                    <!--                    <input name="name" type="text">-->
-                    <!--                </div>-->
-                    <!--                <div class="item">-->
-                    <!--                    <label>Min Price</label>-->
-                    <!--                    <input name="minPrice" type="number">-->
-                    <!--                </div>-->
-                    <!--                <div class="item">-->
-                    <!--                    <label>Max Price</label>-->
-                    <!--                    <input name="maxPrice" type="number">-->
-                    <!--                </div>-->
-                    <div class="item submit">
-                        <button>Search</button>
-                    </div>
-                </form>
+                <!--choose price-->
+                <div class="row justify-content-center mb-5" id="spinner-filters">
 
-                <div class="row">
-                    <!--                    <div class="col-lg-3 col-md-6 mb-4">-->
-                    <!--                        <div class="bg-image hover-zoom ripple shadow-1-strong rounded-5 bg-img">-->
-                    <!--                            <a href="#">-->
-                    <!--                                <div class="hover-img">-->
-                    <!--                                    <img src="https://nhaxinh.asia/upload/baiviet/screenshot-20230819-164628-3831.png"-->
-                    <!--                                         class="w-100 h-100 imgProduct"/>-->
-                    <!--                                </div>-->
-                    <!--                                <div class="overplay">-->
-                    <!--                                    <div class="text ">-->
-                    <!--                                        <h2 class="titleProduct">PHỐI CẢNH AN THIÊN</h2>-->
-                    <!--                                        <p class="contentProduct">-->
-                    <!--                                            Là một không gian làm việc đẳng cấp, tạo môi trường khuyến khích sự sáng tạo-->
-                    <!--                                            và-->
-                    <!--                                            đổi mới.-->
-                    <!--                                        </p>-->
-                    <!--                                    </div>-->
-                    <!--                                </div>-->
-                    <!--                            </a>-->
-                    <!--                        </div>-->
-                    <!--                    </div>-->
+                    <div class="col-md-2 mt-3 text-center">
+                        <div class="form-outline">
+                            <select name="category" id="category" class="form-control">
+                                <option value="">---</option>
+                                <option value="villa">villa</option>
+                                <option value="factory">factory</option>
+                                <option value="townhouse">townhouse</option>
+                                <option value="office">office</option>
+                            </select>
+                            <label class="form-label">Loại</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 mt-3 text-center">
+                        <div class="form-outline">
+                            <select name="address" id="address" class="form-control">
+                                <option value="">---</option>
+                                <option value="TP.HCM">TP.HCM</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="Vũng Tàu">Vũng Tàu</option>
+                            </select>
+                            <label class="form-label">Tỉnh thành</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 mt-3 text-center">
+                        <div class="form-outline">
+                            <select name="area" id="area" class="form-control">
+                                <option value="">---</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                                <option value="200">200</option>
+                                <option value="250">250</option>
+                            </select>
+                            <label class="form-label">Diện tích</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mt-3 text-center">
+                        <div class="form-outline">
+                            <select name="area" id="minimum" class="form-control">
+                                <option value="">---</option>
+                                <option value="50">50.000.000</option>
+                                <option value="100">100.000.000</option>
+                                <option value="150">150.000.000</option>
+                                <option value="200">200.000.000</option>
+                                <option value="250">250.000.000</option>
+                            </select>
+                            <label class="form-label">Minimum</label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 mt-3 text-center">
+                        <div class="form-outline">
+                            <select name="area" id="maximum" class="form-control">
+                                <option value="">---</option>
+                                <option value="50">50.000.000</option>
+                                <option value="100">100.000.000</option>
+                                <option value="150">150.000.000</option>
+                                <option value="200">200.000.000</option>
+                                <option value="250">250.000.000</option>
+                            </select>
+                            <label class="form-label">Maximum</label>
+                        </div>
+                    </div>
+                    <!--                                        <button class="btn btn-rounded" id="animationReset">-->
+                    <!--                                            Clear all-->
+                    <!--                                        </button>-->
+
                 </div>
+                <!--end choose price-->
+
+                <!--                <div class="row" id="imageProjects">-->
+
+                <!--                </div>-->
+
+                <!--Show Project-->
                 <div class="row" id="imageProjects">
-
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/screenshot-20230819-165117-8274.png" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">PHỐI CẢNH
+                                        AN THIÊN</h6>
+                                        <p class="text-white p-4">Là một không gian làm việc đẳng cấp, tạo môi trường
+                                            khuyến khích sự sáng tạo và đổi mới.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/nhaanhchung-4935.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ ANH
+                                        HƯNG GÒ VẤP</h6>
+                                        <p class="text-white p-4">Nằm trong khu vực có nhiều tiện ích như trường học,
+                                            trung tâm thương mại, nhà hàng và giao thông thuận tiện.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/screenshot-20230819-164028-776.png" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ ANH
+                                        TIẾN Q.6</h6>
+                                        <p class="text-white p-4">Là không gian làm việc độc đáo và đầy sáng tạo, tọa
+                                            lạc tại trung tâm Thành Phố Sài Gòn. Với thiết kế hiện đại, tiện nghi tiên
+                                            tiến và không gian mở, văn phòng này tạo nên môi trường làm việc thú vị và
+                                            tràn đầy ý tưởng mới.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/screenshot-20230819-164628-3831.png" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ CÔ
+                                        NGHỆ</h6>
+                                        <p class="text-white p-4">Nằm trong khu vực có nhiều tiện ích như trường học,
+                                            trung tâm thương mại, nhà hàng và giao thông thuận lợi.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/screenshot-20230819-165318-2198.png" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ ANH
+                                        DƯƠNG</h6>
+                                        <p class="text-white p-4">Khuôn viên của ngôi nhà này không quá rộng nhưng đã
+                                            được sắp xếp hợp lý. Với một khu vực sân trước có thể trồng cây cảnh, và một
+                                            khu vực sân sau làm nơi thư giãn và tiếp khách ngoài trời.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase"> BIỆT THỰ
+                                        CHÂU ÂU</h6>
+                                        <p class="text-white p-4">Thiết kế biệt thự theo phong cách Châu Âu đang khá
+                                            được ưa chuộng hiện nay. Những mẫu biệt thự đẹp theo phong cách Châu Âu thể
+                                            hiện được sự quý tộc, và nguy nga trong từng đường lối thiết kế.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-biet-thu-13-1-e1672026065491.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase"> BIỆT THỰ
+                                        PHÁP</h6>
+                                        <p class="text-white p-4">Thiết kế kiến trúc của Pháp rất phổ biến ở Châu Âu và
+                                            nhiều quốc gia trên thế giới. Những mẫu biệt thự đẹp theo phong cách kiến
+                                            trúc Pháp thể hiện vẻ đẹp, sự cố kính ở mọi góc nhìn. Người nhìn bị choáng
+                                            ngớp trước sự tráng lệ, nguy nga của những đường nét kiến trúc độc đáo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-biet-thu-20-1.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase"> PHONG
+                                        CÁCH GẦN GŨI VỚI THIÊN NHIÊN</h6>
+                                        <p class="text-white p-4">Một ý tưởng độc đáo thiết kế biệt thự đẹp và sang
+                                            trọng bạn không nên bỏ qua đó là tạo không gian sống gần gũi với thiên
+                                            nhiên. Bạn chỉ cần bố trí một vài bồn hoa mini, chậu cây cảnh nhỏ để phủ
+                                            xanh ngôi nhà. Cây xanh không chỉ có tác dụng điều hòa không khí mà nó còn
+                                            giúp cho cơ thể bạn cảm thấy thoải mái, giảm stress, mệt mỏi mỗi khi về
+                                            nhà. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-nha-3-3.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ PHỐ
+                                        HIỆN ĐẠI</h6>
+                                        <p class="text-white p-4">Thiết kế nhà phố vẫn luôn là xu hướng được yêu thích
+                                            nhất trong những năm gần đây bởi vẻ đẹp sang trọng, hiện đại.Khác với những
+                                            mẫu nhà đẹp khác, mẫu nhà nhà phố hiện đại trở nên nổi bật hơn nhờ thiết kế
+                                            phóng khoáng, cởi mở tạo nên nét đặc trưng của loại nhà này. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-nha-5-3.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">THIẾT KẾ
+                                        NHÀ ỐNG</h6>
+                                        <p class="text-white p-4">Xu hướng thiết kế nhà ống vẫn luôn chiếm được cảm tình
+                                            đông đảo của các gia chủ. Bởi với mẫu nhà đẹp này dù bạn có diện tích đất
+                                            nhỏ đến đâu thì vẫn có thể xây dựng được ngôi nhà mái thái hiện đại, đầy đủ
+                                            tiện nghi. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-nha-6-3.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">THIẾT KẾ
+                                        NHÀ ỐNG</h6>
+                                        <p class="text-white p-4">Xu hướng thiết kế nhà ống vẫn luôn chiếm được cảm tình
+                                            đông đảo của các gia chủ. Bởi với mẫu nhà đẹp này dù bạn có diện tích đất
+                                            nhỏ đến đâu thì vẫn có thể xây dựng được ngôi nhà mái thái hiện đại, đầy đủ
+                                            tiện nghi. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-nha-7-2.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">THIẾT KẾ
+                                        NHÀ MÁI THÁI</h6>
+                                        <p class="text-white p-4">Thiết kế nhà mái thái đang ngày một thịnh hành ở Việt
+                                            Nam. Mẫu nhà này thường được xây dựng trên khu đất có diện tích từ 1000m2
+                                            trở lên. Vì thế với các vùng nông thôn đất rộng kiểu nhà này được ví như làn
+                                            gió mới thổi hồn vào nền kiến trúc nông thôn Việt Nam. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-nha-11-2.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">THIẾT KẾ
+                                        NHÀ MÁI THÁI</h6>
+                                        <p class="text-white p-4">Thiết kế nhà mái thái đang ngày một thịnh hành ở Việt
+                                            Nam. Mẫu nhà này thường được xây dựng trên khu đất có diện tích từ 1000m2
+                                            trở lên. Vì thế với các vùng nông thôn đất rộng kiểu nhà này được ví như làn
+                                            gió mới thổi hồn vào nền kiến trúc nông thôn Việt Nam. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/thiet-ke-nha-1-3.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">THIẾT KẾ
+                                        NHÀ KẾT HỢP KINH DOANH</h6>
+                                        <p class="text-white p-4">Thiết kế nhà ở kết hợp kinh doanh đang là xu hướng nổi
+                                            bật được xây dựng rất nhiều cho các lô nhà ở có vị trí trung tâm, đông người
+                                            qua lại.Đối với xu hướng này, mẫu nhà ở thường được thiết kế từ 2-3 tầng trở
+                                            lên. Không gian tầng 1 sẽ được tận dụng để kinh doanh bán shop quán áo, quán
+                                            cafe, không gian tầng 2 trở lên sẽ là diện tích sử dụng phục vụ sinh hoạt
+                                            của chủ nhà.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
+                            class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ PHỐ
+                                        HIỆN ĐẠI TẠI HẢI DƯƠNG</h6>
+                                        <p class="text-white p-4">Thiết kế kiến trúc nhà phố này không quá cầu kì, tiết
+                                            kiệm chi phí nhưng vẫn tạo được điểm nhấn thu hút, tính thẩm mỹ cao. Công
+                                            trình này đã làm gia chủ vô cùng hài lòng và nhận được sự đánh giá cao của
+                                            nhiều người.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
+                            class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">biệt thự
+                                        3 tầng tân cổ điển tại Hưng Yên</h6>
+                                        <p class="text-white p-4">Sự hòa quyện giữa kiến trúc và ánh sáng giúp cho căn
+                                            biệt thự thêm phần xa hoa, lộng lẫy, nổi bật. Chắc chắn sẽ thu hút tất cả
+                                            ánh nhìn khi đi qua nó. Đây cũng là lúc để cho gia chủ thể hiện sự đẳng cấp
+                                            và sang trọng.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
+                            class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">Khu đô
+                                        thị Phú Mỹ Hưng</h6>
+                                        <p class="text-white p-4">Dự án nhà ở này mang đậm bản sắc kiến trúc hiện đại,
+                                            với thiết kế đa dạng và hài hòa. Các căn hộ được trang bị tiện nghi hiện
+                                            đại, phục vụ cuộc sống hàng ngày của cư dân. Khuôn viên xanh mát và tiện ích
+                                            dịch vụ đa dạng đem lại không gian sống lý tưởng.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project1.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">Căn hộ
+                                        Vinhomes Central Park </h6>
+                                        <p class="text-white p-4">Hệ thống an ninh 24/7 và đội ngũ quản lý chuyên nghiệp
+                                            mang đến sự an toàn và tiện lợi cho cư dân. Vị trí thuận lợi gần trung tâm
+                                            và kết nối giao thông thuận lợi là điểm mạnh của dự án. Chất lượng xây dựng
+                                            và vật liệu sử dụng cao cấp, đảm bảo tính bền vững và thẩm mỹ.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project2.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ PHỐ
+                                        HIỆN ĐẠI</h6>
+                                        <p class="text-white p-4">Dự án tập trung vào việc xây dựng cộng đồng văn minh,
+                                            tạo nên một môi trường sống xanh, sạch sẽ và đẳng cấp. Các tiện ích công
+                                            cộng như trường học, bệnh viện, siêu thị và khu vui chơi giải trí gần kề,
+                                            mang đến tiện ích hàng ngày cho cư dân.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project3.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ PHỐ
+                                        HIỆN ĐẠI TẠI TPHCM</h6>
+                                        <p class="text-white p-4">Dự án có mức giá hợp lý, phù hợp với đa dạng đối tượng
+                                            cư dân. Các căn hộ được thiết kế thông minh, tối ưu hóa diện tích sử dụng và
+                                            tạo không gian thoải mái. Dự án đặc biệt quan tâm đến môi trường và tiết
+                                            kiệm năng lượng, thể hiện cam kết bảo vệ môi trường xanh.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project4.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">biệt thự
+                                        3 tầng tại Vĩnh Phúc</h6>
+                                        <p class="text-white p-4">Các khu vực xanh và tiện ích công cộng được quy hoạch
+                                            hài hòa, mang đến không gian sống gắn kết và phát triển bền vững. Chủ đầu tư
+                                            dự án đã tính toán kỹ lưỡng về các tiện ích dịch vụ, đáp ứng đầy đủ nhu cầu
+                                            của cư dân. </p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project5.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">biệt thự
+                                        3 tầng tại Đà Nẵng</h6>
+                                        <p class="text-white p-4">Dự án được xem là lựa chọn lý tưởng cho những người
+                                            đang tìm kiếm một nơi an cư lâu dài với chất lượng sống cao cấp.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project6.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ PHỐ
+                                        HIỆN ĐẠI TẠI Hà Nội</h6>
+                                        <p class="text-white p-4">Dự án nhà ở này đặt trọng điểm vào không gian sống
+                                            xanh, với công viên và khu vườn rộng lớn. Kiến trúc mang nét đặc trưng, thể
+                                            hiện sự đa dạng và phong cách độc đáo. Các căn hộ được thiết kế linh hoạt,
+                                            tối ưu diện tích và ánh sáng tự nhiên.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project7.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">NHÀ PHỐ
+                                        HIỆN ĐẠI TẠI Nam Định</h6>
+                                        <p class="text-white p-4">Hệ thống tiện ích nội khu bao gồm bể bơi, phòng tập
+                                            gym và sân chơi trẻ em, tạo nên cuộc sống tiện nghi và đa dạng cho cư dân.
+                                            Dự án tập trung vào việc tạo nên môi trường sống thoáng đãng, yên bình và an
+                                            lành, phù hợp cho cả gia đình và người độc thân.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/project8.jpg" class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">THIẾT KẾ
+                                        NHÀ MÁI TÔN</h6>
+                                        <p class="text-white p-4">Vị trí dự án thuận lợi, gần trung tâm thành phố và các
+                                            tuyến giao thông chính, giúp cư dân di chuyển dễ dàng và tiết kiệm thời
+                                            gian. Các căn hộ được xây dựng với chất liệu và thiết bị cao cấp, mang đến
+                                            không gian sống đẳng cấp và lịch lãm.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
+                    <div
+                        class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
+                        <a class="bg-image position-relative hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block"
+                           href="http://localhost/RealEstateWeb/projectPost"><img
+                            src="public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
+                            class="w-100">
+                            <div class="w-100 position-absolute projectCard-content">
+                                <div class="mask justify-content-center d-flex h-100"
+                                     style="background-color: rgba(48, 48, 48, 0.72);">
+                                    <div class="align-items-center flex-column d-flex w-100"><h6
+                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">PHỐI CẢNH
+                                        AN THIÊN TRÀ ĐẠO</h6>
+                                        <p class="text-white p-4">Môi trường sống xanh và bảo vệ môi trường là mục tiêu
+                                            quan trọng của dự án, thể hiện tâm huyết và sự cam kết của chủ đầu tư. Dự án
+                                            nhà ở này mang đến sự lựa chọn hoàn hảo cho người muốn tận hưởng cuộc sống
+                                            hiện đại và tiện nghi.</p></div>
+                                </div>
+                            </div>
+                        </a></div>
                 </div>
+                <!--End Show Project-->
 
             </section>
 
@@ -200,20 +688,20 @@
 <footer class="page-footer font-small pt-2">
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left" style="max-width: 90%">
+    <div class="container text-md-left">
 
         <!-- Footer links -->
         <div class="row text-center text-md-left mt-3 pb-3">
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-4 mx-auto mt-3">
+            <div class="col-md-6 col-lg-4 col-xl-4 mx-auto mt-3 flex-column align-items-center justify-content-center">
                 <div class="row ">
-                    <img class="col-auto" src="/RealEstateWeb/public/img/logo.jpg">
-                    <h5 class="col-auto  text-uppercase mb-2 mt-2 font-weight-bold main-color">Real
-                        Estate
-                        Gig</h5>
+                    <img class="col-4 col-sm-3 " src="/RealEstateWeb/public/img/logo.jpg">
+                    <h3 class="col-8 text-uppercase mb-2 mt-2 font-weight-bold main-color d-flex align-items-center">nhà
+                        đẹp</h3>
                 </div>
-                <p style="color: #656565; margin-top: 2%">Real Estate Gig là đơn vị chuyên thi công thiết kế xây dựng,
+                <p class="mt-2" style="color: #656565; font-size: 16px">Nhà Đẹp là đơn vị chuyên thi công, thiết kế, xây
+                    dựng,
                     trang trí nội
                     ngoại thất công trình với nhiều năm kinh nghiệm.</p>
                 <!-- Social buttons -->
@@ -245,21 +733,23 @@
             <hr class="w-100 clearfix d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
-                    <hệ></hệ>
-                </h6>
+            <div class="col-md-6 col-lg-4 col-xl-4 mx-auto mt-3 flex-column align-items-center justify-content-center">
+
+                <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin liên
+                    hệ
+                </h5>
                 <p>
-                    <span style="color: #656565">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
+                    <span
+                        style="color: #656565;font-size: 16px">Địa chỉ: 254/5/41 Lê Văn Thọ, P.11, Q. Gò Vấp, TP. HCM</span>
                 </p>
                 <p>
-                    <span style="color: #656565">Số Điện Thoại: 0935 671 886</span>
+                    <span style="color: #656565;font-size: 16px">Số Điện Thoại: 0935 671 886</span>
                 </p>
                 <p>
-                    <span style="color: #656565">Email: RealEstateGig@gmail.com</span>
+                    <span style="color: #656565;font-size: 16px">Email: RealEstateGig@gmail.com</span>
                 </p>
                 <p>
-                    <span style="color: #656565">Website: RealEstateGig.com</span>
+                    <span style="color: #656565;font-size: 16px">Website: RealEstateGig.com</span>
                 </p>
             </div>
             <!-- Grid column -->
@@ -267,19 +757,20 @@
             <hr class="w-100 clearfix d-md-none">
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3">
-                <h6 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h6>
+            <div class="col-md-12 col-lg-4 col-xl-4 mx-auto mt-3 flex-column align-items-center justify-content-center">
+
+                <h5 class="text-uppercase mb-4 font-weight-bold" style="color: #4A4A4A">Thông tin dịch vụ</h5>
                 <p>
-                    <a class="f-link" href="#!">Thiết kế, xây dựng nội thất</a>
+                    <a class="f-link" style="font-size: 16px" href="#!">Thiết kế, xây dựng nội thất</a>
                 </p>
                 <p>
-                    <a class="f-link" href="#!">Xây nhà thô</a>
+                    <a class="f-link" style="font-size: 16px" href="#!">Xây nhà thô</a>
                 </p>
                 <p>
-                    <a class="f-link" href="#!">Xây biệt thự</a>
+                    <a class="f-link" style="font-size: 16px" href="#!">Xây biệt thự</a>
                 </p>
                 <p>
-                    <a class="f-link " href="#!">Xây hầm</a>
+                    <a class="f-link" style="font-size: 16px" href="#!">Xây hầm</a>
                 </p>
             </div>
 
@@ -299,7 +790,7 @@
 
 </footer>
 <!--end footer-->
-<script src="resources/views/template/js/FilterProject.js"></script>
+<!--<script src="resources/views/template/js/FilterProject.js"></script>-->
 <script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>

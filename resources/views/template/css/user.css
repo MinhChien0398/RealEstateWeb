@@ -1,0 +1,55 @@
+.edit-icon {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    display: none;
+    background-color: unset;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.edit-icon .pencil-edit {
+    font-size: 18px;
+    color: black;
+}
+
+.img-avatar-edit:hover .edit-icon {
+    display: block;
+}
+
+.profile-card {
+    border-radius: 10%;
+}
+
+.btn-save {
+    padding-top: 2%;
+}
+
+.btn {
+    color: white;
+    background-color: #E90808 !important;
+    font-family: Inter, Arial, Inter, Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    border: 5px solid #E90808 !important;
+    margin-top: auto !important;
+
+}
+
+.btn:hover {
+    color: #E90808 !important;
+    background-color: white !important;
+
+}
+
+#slide-out ul li a {
+    color: black;
+}
+
+#slide-out ul li .profile {
+    color: #E90808;
+}
+
+.form-check {
+    top: 50%;
+}
