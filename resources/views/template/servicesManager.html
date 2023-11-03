@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
+</head>
+<body class="">
+
+<!-- Sidebar navigation -->
+<div class="wrapper">
+    <div class="header sticky-top">
+        <div class="header-menu row m-0">
+            <div class="col-11 d-flex align-items-center">
+                <div class="sidebar-btn mr-3">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="title text-uppercase">
+                    Xây dựng <span>Nhà Đẹp</span></div>
+            </div>
+            <ul class="col-1 d-flex align-items-center m-0">
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <center class="logo">
+                <img src="public/img/logo.svg" alt="logo" style="width: 100px">
+            </center>
+            <li class="item">
+                <a href="#" class="menu-btn">
+                    <i class="fas fa-desktop"></i><span>Thống kê</span>
+                </a>
+            </li>
+            <li class="item" id="user">
+                <a href="#user" class="menu-btn">
+                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
+                </a>
+            </li>
+            <li class="item" id="project">
+                <a href="#project" class="menu-btn">
+                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-project" class="menu-btn">
+                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+                    </a>
+                    <a href="#blog-project" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class="item" id="type-project">
+                <a href="#type-project" class="menu-btn">
+                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span><i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#blog-service" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                    </a>
+                </div>
+            </li>
+            <li class="item" id="contact">
+                <a href="#contact" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL Bài viết liên hệ</span><i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-contact" class="menu-btn">
+                        <i class="fa-solid fa-file-contract"></i><span>QL Loại bài viết dịch vụ</span>
+                    </a>
+                </div>
+            </li>
+        </div>
+    </div>
+    <div class="main-container">
+
+        <section>
+            <!-- First row -->
+            <div class="row w-100 main-color container mb-3 d-flex justify-content-center align-items-center">
+                <!--                    <h4 class="h4-responsive mt-1 align-content-center text-lg-center" style="height: 60px;">Dự án</h4>-->
+                <h4 class="col-9 p-0 m-0 font-weight-bold text-uppercase "> quản lí dịch vụ </h4>
+                <button class="col-2 btn btn-sm btn-red text-uppercase">thêm dịch vụ</button>
+            </div>
+        </section>
+        <!-- First column -->
+
+        <table id="example" class="display border text-smaller" style="width:100%">
+            <thead>
+            <tr>
+                <th>#
+                </th>
+                <th class="">Tên dịch vụ
+                </th>
+                <th>Rút gọn
+                </th>
+                <!--                            <th>Avatar-->
+                <!--                            </th>-->
+                <!--                            <th>Bài đăng-->
+                </th>
+                <th>Hành động</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>Thi công nhà thô 100 triệu</td>
+                <td>TCNT100T</td>
+                <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                <td>
+
+                    <i class="fa-solid fa-pen p-1"></i>
+                    <i class="fa-solid fa-trash-can p-1"></i>
+                </td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Xây nhà trọn gói 300 triệu</td>
+                <td>XNTG300T</td>
+                <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                <td>
+
+                    <i class="fa-solid fa-pen p-1"></i>
+                    <i class="fa-solid fa-trash-can p-1"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Thi công nhà xưởng 100 triệu</td>
+                <td>TCNT100T</td>
+                <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                <td>
+
+                    <i class="fa-solid fa-pen p-1"></i>
+                    <i class="fa-solid fa-trash-can p-1"></i>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</div>
+<!--/. Sidebar navigation -->
+</body>
+
+
+<script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
+<script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<!--<script src="public/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"></script>-->
+<script>
+    $('#example').dataTable({
+        "columnDefs": [
+            {"width": "5%", "targets": [0]},
+            {"width": "20%", "targets": [1]},
+            {"width": "25%", "targets": [2]},
+            {"className": "text-center", "targets": "_all"}
+        ]
+    });
+</script>
+<script>
+    (function ($) {
+        $.fn.counter = function () {
+            const $this = $(this),
+                numberFrom = parseInt($this.attr('data-from')),
+                numberTo = parseInt($this.attr('data-to')),
+                delta = numberTo - numberFrom,
+                deltaPositive = delta > 0 ? 1 : 0,
+                time = parseInt($this.attr('data-time')),
+                changeTime = 10;
+
+            let currentNumber = numberFrom,
+                value = delta * changeTime / time;
+            var interval1;
+            const changeNumber = () => {
+                currentNumber += value;
+                //checks if currentNumber reached numberTo
+                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
+                this.text(parseInt(currentNumber));
+                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+            }
+
+            interval1 = setInterval(changeNumber, changeTime);
+        }
+    }(jQuery));
+
+    $(document).ready(function () {
+
+        $('.count-up').counter();
+        $('.count1').counter();
+        $('.count2').counter();
+        $('.count3').counter();
+
+        new WOW().init();
+
+        setTimeout(function () {
+            $('.count5').counter();
+        }, 3000);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+    });</script>
+</body>
+</html>

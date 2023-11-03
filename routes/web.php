@@ -38,11 +38,11 @@ Route::get('/projectPost', function () {
     return view('template.projectPost');
 });
 
-Route::get('/userManage', function () {
+Route::get('/usermanage', function () {
     return view('template.usermanage');
 });
 
-Route::get('/projectsManage', function () {
+Route::get('/manage/projects', function () {
     return view('template.projectsmanage');
 });
 
