@@ -42,7 +42,7 @@ Route::get('/usermanage', function () {
     return view('template.usermanage');
 });
 
-Route::get('/manage/projects', function () {
+Route::get('/projectsManager', function () {
     return view('template.projectsmanage');
 });
 
