@@ -61,4 +61,6 @@ Route::get('/userHistory', function () {
 Route::get('/login', function () {
     return view('template.login');
 });
-
+Route::get('/dashboard', function () {
+    return view('template.dashboard');
+});

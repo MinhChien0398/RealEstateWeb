@@ -5,16 +5,17 @@
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin_Dashboard.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="public/lib/DataTables/dataTables.min.css" rel="stylesheet">
 </head>
 <body class="">
 
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <div class="header sticky-top">
+    <div class="header fixed-top ">
         <div class="header-menu row m-0">
             <div class="col-11 d-flex align-items-center">
                 <div class="sidebar-btn mr-3">
@@ -60,7 +61,7 @@
 
             <li class="item" id="type-project">
                 <a href="#type-project" class="menu-btn">
-                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span><i
+                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
@@ -71,14 +72,19 @@
             </li>
             <li class="item" id="contact">
                 <a href="#contact" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL Bài viết liên hệ</span><i
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
                     <a href="#type-contact" class="menu-btn">
-                        <i class="fa-solid fa-file-contract"></i><span>QL Loại bài viết dịch vụ</span>
+                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
                     </a>
                 </div>
+            </li>
+            <li class="item" id="slide">
+                <a href="#slide" class="menu-btn">
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                </a>
             </li>
         </div>
     </div>
@@ -94,27 +100,27 @@
                 <div class="row d-flex justify-content-center">
 
                     <div class="col-md-6 col-lg-4 text-center">
-                        <h5 class="h1 font-weight-normal mb-3">
+                        <h4 class="font-weight-normal mb-3">
                             <i class="fas fa-file-alt indigo-text"></i>
-                            <span class="d-inline-block count-up" data-from="0" data-to="17" data-time="2000">100</span>
-                        </h5>
-                        <p class="font-weight-normal text-muted">Contact</p>
+                            <span class="d-inline-block count-up" data-from="0" data-to="17" data-time="2000">17</span>
+                        </h4>
+                        <p class="font-weight-normal text-muted">Bài tương tác</p>
                     </div>
 
                     <div class="col-md-6 col-lg-4 text-center">
-                        <h5 class="h1 font-weight-normal mb-3">
+                        <h4 class="font-weight-normal mb-3">
                             <i class="fas fa-layer-group indigo-text"></i>
                             <span class="d-inline-block count1" data-from="0" data-to="250" data-time="2000">250</span>
-                        </h5>
-                        <p class="font-weight-normal text-muted">Views Blog</p>
+                        </h4>
+                        <p class="font-weight-normal text-muted">Lượt xem bài viết</p>
                     </div>
 
                     <div class="col-md-6 col-lg-4 text-center">
-                        <h5 class="h1 font-weight-normal mb-3">
+                        <h4 class=" font-weight-normal mb-3">
                             <i class="fas fa-pencil-ruler indigo-text"></i>
-                            <span class="d-inline-block count2" data-from="0" data-to="25" data-time="2000">330</span>
-                        </h5>
-                        <p class="font-weight-normal text-muted">Account User</p>
+                            <span class="d-inline-block count2" data-from="0" data-to="25" data-time="2000">25</span>
+                        </h4>
+                        <p class="font-weight-normal text-muted">Số người dùng</p>
                     </div>
 
 
@@ -123,36 +129,92 @@
             </section>
             <!--Section: Content-->
             <section class="table-section mt-3">
-                <div class="row d-flex align-content-between">
-                    <div class="col-md-6 col-lg-4 text-center">
-                        <table id="table1" class="display" style="width:100%">
+                <div class="row" style="">
+                    <div class="col-md-12 col-lg-6 pr-1 border-right">
+                        <h5 class="font-weight-bold pl-3 pr-3 main-color text-center">Người dùng mới</h5>
+                        <table id="table1" class="display border" style="width:100%">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
-                    </div>
-                    <div class="col-md-6 col-lg-4 text-center">
-                        <table id="table2" class="display" style="width:100%">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>Email</th>
+                                <th>Trạng thái</th>
+                                <th>Quyền</th>
                             </tr>
                             </thead>
                             <tbody>
-
+                            <tr>
+                                <td>1</td>
+                                <td>Bùi Minh Chiến</td>
+                                <td>buiminhchien@gmail.com</td>
+                                <td>
+                                    <i class="fa-solid fa-square active-icon" value="1"></i>
+                                </td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Vũ Xuân Chiến</td>
+                                <td>vuxuanchien@gmail.com</td>
+                                <td>
+                                    <i class="fa-solid fa-square inactive-icon" value=0></i>
+                                </td>
+                                <td>Admin</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Đặng Minh Tấn</td>
+                                <td>dangminhtan@gmail.com</td>
+                                <td>
+                                    <i class="fa-solid fa-square inactive-icon" value="0"></i>
+                                </td>
+                                <td>Người dùng</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12 col-lg-6 pl-1">
+                        <h5 class="font-weight-bold pl-3 pr-3 main-color text-center">Bài tương tác</h5>
+                        <table id="table2" class="display border" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Người gửi</th>
+                                <th>Phân loại</th>
+                                <th>Thời gian</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Đặng Minh Tấn</td>
+                                <td>Thủ tục hành chính</td>
+                                <td>3/11/2023 9:30</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Vũ Xuân Chiên</td>
+                                <td>Đặt lịch tư vấn</td>
+                                <td>3/11/2023 10:30</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Đặng Minh Tấn</td>
+                                <td>Đặt lịch tư vấn</td>
+                                <td>3/11/2023 10:33</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Bùi Minh Chiến</td>
+                                <td>Báo giá chi tiết</td>
+                                <td>29/10/2023 17:25</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Đặng Minh Tấn</td>
+                                <td>Báo lỗi trang web</td>
+                                <td>8/10/2023 9:30</td>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -171,10 +233,26 @@
 <script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="public/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"></script>
+<script src="public/lib/DataTables/dataTables.min.js"></script>
 <script>
-    new DataTable('#table1');
-    new DataTable('#table2');
+
+$('#table1').DataTable({
+    "columnDefs": [
+        { "width": "5%", "targets": 0 },
+        { "width": "5%", "targets": 3 },
+        {className: "text-center font-weight-bold", targets: "_all"},
+    ]
+});
+$('#table2').DataTable({
+    "columnDefs": [
+        { "width": "5%", "targets": 0 },
+        { "width": "5%", "targets": 3 },
+        {className: "text-center font-weight-bold", targets: "_all"},
+    ]
+});
+document.querySelectorAll('.paginate_button ').forEach(function (e) {
+ e.preventDefault();
+})
 </script>
 <script>
     (function ($) {
