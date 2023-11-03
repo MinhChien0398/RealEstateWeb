@@ -27,6 +27,9 @@ ul {
 .main-color {
     color: #E90808 !important;
 }
+.bg-main-color {
+    background-color: #E90808 !important;
+}
 
 nav .container {
     max-width: 1440px;
@@ -96,7 +99,9 @@ nav .container {
     font-size: 18px;
     font-weight: bold !important;
 }
-
+.nav-menuItem .dropdown-menu{
+    margin-top: 3px;
+}
 .icon-phone-ring {
     margin-left: 25px;
     margin-top: 0px;

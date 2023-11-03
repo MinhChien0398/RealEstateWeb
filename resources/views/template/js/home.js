@@ -7,16 +7,18 @@ let swiper = new Swiper(".slide-content", {
     },
 });
 
-let categorylist = document.getElementById("HomeProjectCategory");
-let categoryBtns = categorylist.getElementsByClassName("category-item");
+let items= document.querySelectorAll('.item-selector');
 
-for (let i = 0; i < categoryBtns.length; i++) {
-    categoryBtns[i].addEventListener("click", function () {
-        for (let j = 0; j < categoryBtns.length; j++) {
-            if (categoryBtns[j].classList.contains("active")) {
-                categoryBtns[j].classList.remove(["active"]);
-            }
-        }
-        this.classList.add(["active"]);
-    });
+let cur=document.getElementsByClassName('item-selector active')
+for (const item of items) {
+    item.addEventListener('click',function () {
+      for(const i of items){
+          if(i!=item){
+              i.classList.remove('active')
+            document.getElementById(i.getAttribute('type')).classList.remove('active')
+          }
+      }
+      item.classList.add('active')
+        document.getElementById(item.getAttribute('type')).classList.add('active')
+    })
 }
