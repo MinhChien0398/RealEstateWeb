@@ -207,4 +207,6 @@ body {
     width: calc(100% - 70px);
     margin-left: 70px;
 }
-
+.container{
+    max-width: 100%;
+}
