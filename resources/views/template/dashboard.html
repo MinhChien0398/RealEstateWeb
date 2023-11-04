@@ -91,7 +91,7 @@
     <div class="main-container">
         <div class="container">
             <div id="section-1" class="bc-icons-2">
-               <h3 class="text-center font-weight-bold main-color mb-4">Thống kê hoạt động</h3>
+                <h3 class="text-center font-weight-bold main-color mb-4">Thống kê hoạt động</h3>
             </div>
 
             <!--Section: Content-->
@@ -137,11 +137,11 @@
                         <table id="table1" class="display border" style="width:100%">
                             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Tên</th>
-                                <th>Email</th>
-                                <th>Trạng thái</th>
-                                <th>Quyền</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">Tên</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Trạng thái</th>
+                                <th scope="col">Quyền</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -224,10 +224,10 @@
             </section>
 
         </div>
+
     </div>
 </div>
 <!--/. Sidebar navigation -->
-</body>
 
 
 <script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
@@ -239,12 +239,44 @@
 <script>
 
     $('#table1').DataTable({
+        "ajax": {
+            "url": "http://localhost/RealEstateWeb/dashboard",
+            "dataSrc": ""
+        },
+        "columns": [
+            {"data": "id"},
+            {"data": "name"},
+            {"data": "email"},
+            {"data": "status"},
+            {"data": "role"},
+        ],
         "columnDefs": [
             {"width": "5%", "targets": 0},
             {"width": "5%", "targets": 3},
             {className: "text-center font-weight-bold", targets: "_all"},
-        ]
+        ],
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ dòng",
+            "zeroRecords": "Không tìm thấy dữ liệu",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "Không có dữ liệu",
+            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
+            "search": "Tìm kiếm",
+            "paginate": {
+                "previous": "Trước",
+                "next": "Tiếp theo"
+            }
+        },
+        "pagingType": "full_numbers",
+        "lengthMenu": [5, 10, 15, 20],
+        "order": [[0, "desc"]],
     });
+        // "columnDefs": [
+        //     {"width": "5%", "targets": 0},
+        //     {"width": "5%", "targets": 3},
+        //     {className: "text-center font-weight-bold", targets: "_all"},
+        // ]
+    // });
     $('#table2').DataTable({
         "columnDefs": [
             {"width": "5%", "targets": 0},
