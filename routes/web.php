@@ -38,17 +38,22 @@ Route::get('/projectPost', function () {
     return view('template.projectPost');
 });
 
-Route::get('/userManage', function () {
+Route::get('/usermanage', function () {
     return view('template.usermanage');
 });
 
-Route::get('/projectsManage', function () {
+Route::get('/projectsManager', function () {
     return view('template.projectsmanage');
 });
 
 Route::get('/servicesManager', function () {
     return view('template.servicesManager');
 });
+
+Route::get('/addUser', function (){
+   return view('template.addUserPage');
+});
+
 Route::get('/user', function () {
     return view('template.user');
 });

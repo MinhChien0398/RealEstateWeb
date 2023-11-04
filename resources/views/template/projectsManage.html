@@ -9,7 +9,7 @@
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="resources/views/template/css/servicesmanage.css" rel="stylesheet">
+    <link href="resources/views/template/css/projectsmanage.css" rel="stylesheet">
 </head>
 <body class="">
 
@@ -84,76 +84,87 @@
         </div>
     </div>
     <div class="main-container">
-
         <section>
             <!-- First row -->
             <div class="row w-100 main-color container mb-3 d-flex justify-content-center align-items-center">
                 <!--                    <h4 class="h4-responsive mt-1 align-content-center text-lg-center" style="height: 60px;">Dự án</h4>-->
-                <h4 class="col-9 p-0 m-0 font-weight-bold text-uppercase "> quản lí dịch vụ </h4>
-                <button class="col-2 btn btn-sm btn-red text-uppercase">thêm dịch vụ</button>
+                <h4 class="col-9 p-0 m-0 font-weight-bold text-uppercase "> quản lí Dự án </h4>
+                <button class="col-2 btn btn-sm btn-red">THÊM DỰ ÁN</button>
             </div>
         </section>
         <!-- First column -->
-
-        <table id="example" class="display border text-smaller" style="width:100%">
+        <table id="example" class="display border" style="width:100%">
             <thead>
             <tr>
-                <th>#
-                </th>
-                <th class="">Tên dịch vụ
-                </th>
-                <th>Rút gọn
-                </th>
-                <!--                            <th>Avatar-->
-                <!--                            </th>-->
-                <!--                            <th>Bài đăng-->
-                </th>
+                <th>#</th>
+                <th>Tên dự án</th>
+                <th>Mô tả</th>
+                <th>Giá</th>
+                <th>Địa chỉ</th>
+                <th>Dịch vụ</th>
+                <th>Phân loại</th>
+                <th>Khởi công</th>
                 <th>Hành động</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>1</td>
-                <td>Thi công nhà thô 100 triệu</td>
-                <td>TCNT100T</td>
+                <td>Phối cảnh An Thiên</td>
+                <td>Là một không gian làm việc đẳng cấp, tạo môi trường khuyến khích sự sáng
+                    tạo và đổi mới.
+                </td>
                 <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
-                <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                <td>400.000.000 VND</td>
+                <td>TP HCM</td>
+                <td>Trọn gói</td>
+                <td>Townhouse</td>
+                <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                <td>31/07/2023</td>
                 <td>
-
                     <i class="fa-solid fa-pen p-1"></i>
                     <i class="fa-solid fa-trash-can p-1"></i>
                 </td>
             </tr>
-
             <tr>
                 <td>2</td>
-                <td>Xây nhà trọn gói 300 triệu</td>
-                <td>XNTG300T</td>
+                <td>NHÀ ANH HƯNG GÒ VẤP</td>
+                <td>Nằm trong khu vực có nhiều tiện ích như trường học, trung tâm thương mại,
+                    nhà hàng và giao thông thuận tiện.
+                </td>
                 <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
-                <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                <td>300.000.000 VND</td>
+                <td>TP HCM</td>
+                <td>Trọn gói</td>
+                <td>Townhouse</td>
+                <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                <td>31/07/2023</td>
                 <td>
-
                     <i class="fa-solid fa-pen p-1"></i>
                     <i class="fa-solid fa-trash-can p-1"></i>
                 </td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>Thi công nhà xưởng 100 triệu</td>
-                <td>TCNT100T</td>
-                <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
-                <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                <td>BIỆT THỰ CHÂU ÂU</td>
+                <td>Thiết kế biệt thự theo phong cách Châu Âu đang khá được ưa chuộng hiện
+                    nay. Những mẫu biệt thự đẹp theo phong cách Châu Âu thể hiện được sự quý tộc, và nguy
+                    nga trong từng đường lối thiết kế.
+                </td>
+                <td>1.000.000.000 VND</td>
+                <td>TP HCM</td>
+                <td>Trọn gói</td>
+                <td>Townhouse</td>
+                <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                <td>31/07/2023</td>
                 <td>
-
                     <i class="fa-solid fa-pen p-1"></i>
                     <i class="fa-solid fa-trash-can p-1"></i>
                 </td>
             </tr>
             </tbody>
-            <tfoot>
-
-            </tfoot>
         </table>
+
     </div>
 </div>
 <!--/. Sidebar navigation -->
@@ -169,9 +180,15 @@
 <script>
     $('#example').dataTable({
         "columnDefs": [
-            {"width": "5%", "targets": [0]},
-            {"width": "20%", "targets": [1]},
-            {"width": "25%", "targets": [2]},
+            {"width": "3%", "targets": [0]},
+            {"width": "12%", "targets": [1]},
+            {"width": "30%", "targets": [2]},
+            {"width": "5%", "targets": [3]},
+            {"width": "10%", "targets": [4]},
+            {"width": "10%", "targets": [5]},
+            {"width": "10%", "targets": [6]},
+            {"width": "10%", "targets": [7]},
+            {"width": "10%", "targets": [8]},
             {"className": "text-center", "targets": "_all"}
         ]
     });
