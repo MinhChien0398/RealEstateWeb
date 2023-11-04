@@ -97,8 +97,15 @@
     </div>
     <div class="main-container">
         <div class="container">
-            <main class="shadow border p-3 h-100">
 
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">QL Dịch vụ</a></li>
+                </ol>
+            </nav>
+
+            <main class="shadow border p-3 h-100">
                 <!-- First row -->
                 <div class="row w-100 main-color mb-3 pb-3 d-flex align-items-center ml-0 border-bottom">
                     <!--                    <h4 class="h4-responsive mt-1 align-content-center text-lg-center" style="height: 60px;">Dự án</h4>-->
@@ -190,6 +197,48 @@
                             <i class="fa-solid fa-trash-can p-1"></i>
                         </td>
                     </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Phòng trọ 20m2 gác lửng</td>
+                        <td>PT20M2GL</td>
+                        <td>Nhà trọ</td>
+                        <td><i class="fa-solid fa-square active-icon"></i></td>
+                        <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                        <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                        <td>
+
+                            <i class="fa-solid fa-pen p-1"></i>
+                            <i class="fa-solid fa-trash-can p-1"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Phòng trọ 20m2 không gác</td>
+                        <td>PT20M2</td>
+                        <td>Nhà trọ</td>
+                        <td><i class="fa-solid fa-square active-icon"></i></td>
+                        <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                        <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                        <td>
+
+                            <i class="fa-solid fa-pen p-1"></i>
+                            <i class="fa-solid fa-trash-can p-1"></i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Thi công nhà xưởng chế biến gà</td>
+                        <td>NXCHEBIENGA</td>
+                        <td>Nhà xưởng</td>
+                        <td><i class="fa-solid fa-square active-icon"></i></td>
+                        <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                        <!--                            <td>http://localhost/RealEstateWeb/services#</td>-->
+                        <td>
+
+                            <i class="fa-solid fa-pen p-1"></i>
+                            <i class="fa-solid fa-trash-can p-1"></i>
+                        </td>
+                    </tr>
                     </tbody>
                     <tfoot>
 
@@ -211,7 +260,7 @@
     $('#example').dataTable({
         "columnDefs": [
             {"width": "5%", "targets": [0]},
-            {"width": "20%", "targets": [1]},
+            {"width": "35%", "targets": [1]},
             {"width": "25%", "targets": [2]},
             {className: "text-center mt-auto mb-auto", targets: "_all"},
         ],
