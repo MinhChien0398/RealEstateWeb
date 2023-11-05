@@ -38,22 +38,35 @@ Route::get('/projectPost', function () {
     return view('template.projectPost');
 });
 
-Route::get('/usermanage', function () {
-    return view('template.usermanage');
+Route::get('/userManage', function () {
+    return view('template.UserManage');
+});
+Route::get('/roleManagement', function () {
+    return view('template.admin-RoleManagement');
+});
+Route::get('/slideManagement', function () {
+    return view('template.admin-slideManagement');
 });
 
-Route::get('/projectsManager', function () {
+Route::get('/projectsManage', function () {
     return view('template.projectsmanage');
+});
+Route::get('/typeOfProject', function () {
+    return view('template.admin-TypeOfProject');
+});
+Route::get('/postProject', function () {
+    return view('template.admin-PostProject');
+});
+Route::get('/contactManagement', function () {
+    return view('template.admin-contactManagement');
+});
+Route::get('/contactTypeManagement', function () {
+    return view('template.admin-ContactTypeManagement');
 });
 
 Route::get('/servicesManager', function () {
     return view('template.servicesManager');
 });
-
-Route::get('/addUser', function (){
-   return view('template.addUserPage');
-});
-
 Route::get('/user', function () {
     return view('template.user');
 });
