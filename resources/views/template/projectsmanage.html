@@ -1,500 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--    <link rel="stylesheet" href="resources/views/template/css/projectsmanage.css">-->
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <!--    <link href="public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">-->
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <!--    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">-->
-    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+<!--    <link href="public/lib/DataTables/FixedColumns-4.3.0/css/fixedColumns.dataTables.min.css" rel="stylesheet">-->
+    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <!---->
-
-    <title>Quản lí dự án</title>
+    <title>Quản lý dự án</title>
+    <style>
+    </style>
 </head>
-<body class="fixed-sn white-skin">
+<body class="">
 
-<!-- Main Navigation -->
-<header>
-
-    <!-- Sidebar navigation -->
-    <div id="slide-out" class="side-nav sn-bg-4 fixed">
-        <ul class="custom-scrollbar">
-
-            <!-- Logo -->
-            <li class="logo-sn waves-effect py-3">
-                <div class="text-center">
-                    <a href="#" class="pl-0"><img src="/RealEstateWeb/public/img/logo.jpg"></a>
+<!-- Sidebar navigation -->
+<div class="wrapper">
+    <div class="header fixed-top ">
+        <div class="header-menu row m-0">
+            <div class="col-11 d-flex align-items-center">
+                <div class="sidebar-btn mr-3">
+                    <i class="fas fa-bars"></i>
                 </div>
-            </li>
-
-            <!-- Search Form -->
-            <li>
-                <form class="search-form" role="search">
-                    <div class="md-form mt-0 waves-light">
-                        <input type="text" class="form-control py-2" placeholder="Search">
-                    </div>
-                </form>
-            </li>
-
-            <!-- Side navigation links -->
-            <li>
-                <ul class="collapsible collapsible-accordion">
-
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fas fa-tachometer-alt"></i>Dashboards<i
-                            class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../dashboards/v-1.html" class="waves-effect">Version 1</a>
-                                </li>
-                                <li>
-                                    <a href="../dashboards/v-2.html" class="waves-effect">Version 2</a>
-                                </li>
-                                <li>
-                                    <a href="../dashboards/v-3.html" class="waves-effect">Version 3</a>
-                                </li>
-                                <li>
-                                    <a href="../dashboards/v-4.html" class="waves-effect">Version 4</a>
-                                </li>
-                                <li>
-                                    <a href="../dashboards/v-5.html" class="waves-effect">Version 5</a>
-                                </li>
-                                <li>
-                                    <a href="../dashboards/v-6.html" class="waves-effect">Version 6</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fas fa-image"></i>Pages<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../pages/login.html" class="waves-effect">Login</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/register.html" class="waves-effect">Register</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/pricing.html" class="waves-effect">Pricing</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/about.html" class="waves-effect">About us</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/single.html" class="waves-effect">Single post</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/post.html" class="waves-effect">Post listing</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/landing.html" class="waves-effect">Landing page</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/customers.html" class="waves-effect">Customers</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/invoice.html" class="waves-effect">Invoice</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/page-creator.html" class="waves-effect">Page Creator</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/support.html" class="waves-effect">Support</a>
-                                </li>
-                                <li>
-                                    <a href="../pages/chat.html" class="waves-effect">Chat</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fas fa-user"></i>Người dùng<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../profile/basic-1.html" class="waves-effect">Basic 1</a>
-                                </li>
-                                <li>
-                                    <a href="../profile/basic-2.html" class="waves-effect">Basic 2</a>
-                                </li>
-                                <li>
-                                    <a href="../profile/extended.html" class="waves-effect">Extended</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fab fa-css3"></i>CSS<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../css/grid.html" class="waves-effect">Grid system</a>
-                                </li>
-                                <li>
-                                    <a href="../css/media.html" class="waves-effect">Media object</a>
-                                </li>
-                                <li>
-                                    <a href="../css/utilities.html" class="waves-effect">Utilities / helpers</a>
-                                </li>
-                                <li>
-                                    <a href="../css/code.html" class="waves-effect">Code</a>
-                                </li>
-                                <li>
-                                    <a href="../css/icons.html" class="waves-effect">Icons</a>
-                                </li>
-                                <li>
-                                    <a href="../css/images.html" class="waves-effect">Images</a>
-                                </li>
-                                <li>
-                                    <a href="../css/typography.html" class="waves-effect">Typography</a>
-                                </li>
-                                <li>
-                                    <a href="../css/animations.html" class="waves-effect">Animations</a>
-                                </li>
-                                <li>
-                                    <a href="../css/colors.html" class="waves-effect">Colors</a>
-                                </li>
-                                <li>
-                                    <a href="../css/hover.html" class="waves-effect">Hover effects</a>
-                                </li>
-                                <li>
-                                    <a href="../css/masks.html" class="waves-effect">Masks</a>
-                                </li>
-                                <li>
-                                    <a href="../css/shadows.html" class="waves-effect">Shadows</a>
-                                </li>
-                                <li>
-                                    <a href="../css/skins.html" class="waves-effect">Skins</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fas fa-th"></i>Components<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../components/buttons.html" class="waves-effect">Buttons</a>
-                                </li>
-                                <li>
-                                    <a href="../components/cards.html" class="waves-effect">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="../components/collapse.html" class="waves-effect">Collapse</a>
-                                </li>
-                                <li>
-                                    <a href="../components/date.html" class="waves-effect">Date picker</a>
-                                </li>
-                                <li>
-                                    <a href="../components/list.html" class="waves-effect">List group</a>
-                                </li>
-                                <li>
-                                    <a href="../components/panels.html" class="waves-effect">Panels</a>
-                                </li>
-                                <li>
-                                    <a href="../components/pagination.html" class="waves-effect">Pagination</a>
-                                </li>
-                                <li>
-                                    <a href="../components/popovers.html" class="waves-effect">Popovers</a>
-                                </li>
-                                <li>
-                                    <a href="../components/progress.html" class="waves-effect">Progress bars</a>
-                                </li>
-                                <li>
-                                    <a href="../components/stepper.html" class="waves-effect">Stepper</a>
-                                </li>
-                                <li>
-                                    <a href="../components/tabs.html" class="waves-effect">Tabs & pills</a>
-                                </li>
-                                <li>
-                                    <a href="../components/tags.html" class="waves-effect">Tags, labels & badges</a>
-                                </li>
-                                <li>
-                                    <a href="../components/time.html" class="waves-effect">Time picker</a>
-                                </li>
-                                <li>
-                                    <a href="../components/tooltips.html" class="waves-effect">Tooltips</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa far fa-check-square"></i>Forms<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../forms/basic.html" class="waves-effect">Basic</a>
-                                </li>
-                                <li>
-                                    <a href="../forms/extended.html" class="waves-effect">Extended</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fas fa-table"></i>Tables<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../tables/basic.html" class="waves-effect">Basic</a>
-                                </li>
-                                <li>
-                                    <a href="../tables/extended.html" class="waves-effect">Extended</a>
-                                </li>
-                                <li>
-                                    <a href="../tables/datatables.html" class="waves-effect">DataTables.net</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="collapsible-header waves-effect arrow-r">
-                            <i class="w-fa fas fa-map"></i>Maps<i class="fas fa-angle-down rotate-icon"></i>
-                        </a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li>
-                                    <a href="../maps/google.html" class="waves-effect">Google Maps</a>
-                                </li>
-                                <li>
-                                    <a href="../maps/full.html" class="waves-effect">Full screen map</a>
-                                </li>
-                                <li>
-                                    <a href="../maps/vector.html" class="waves-effect">Vector world map</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <!-- Simple link -->
-                    <li>
-                        <a href="../alerts/alerts.html" class="collapsible-header waves-effect"><i
-                            class="w-fa far fa-bell"></i>Alerts</a>
-                    </li>
-                    <li>
-                        <a href="../modals/modals.html" class="collapsible-header waves-effect"><i
-                            class="w-fa fas fa-bolt"></i>Modals</a>
-                    </li>
-                    <li>
-                        <a href="../charts/charts.html" class="collapsible-header waves-effect"><i
-                            class="w-fa fas fa-chart-pie"></i>Charts</a>
-                    </li>
-                    <li>
-                        <a href="../calendar/calendar.html" class="collapsible-header waves-effect"><i
-                            class="w-fa far fa-calendar-check"></i>Calendar</a>
-                    </li>
-                    <li>
-                        <a href="../sections/sections.html" class="collapsible-header waves-effect"><i
-                            class="w-fa fas fa-th-large"></i>Sections</a>
-                    </li>
-
-                </ul>
-            </li>
-            <!-- Side navigation links -->
-
-        </ul>
-        <div class="sidenav-bg mask-strong"></div>
-    </div>
-    <!-- Sidebar navigation -->
-
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg scrolling-navbar double-nav">
-
-        <!-- SideNav slide-out button -->
-        <div class="float-left">
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
-        </div>
-
-        <!-- Breadcrumb -->
-        <div class="breadcrumb-dn mr-auto">
-
-        </div>
-
-
-        <!-- Navbar links -->
-        <ul class="nav navbar-nav nav-flex-icons ml-auto">
-
-            <!-- Dropdown -->
-
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle waves-effect" href="#" id="userDropdown" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.webp" class="rounded-circle z-depth-0"
-                         alt="avatar image" height="35">
-                    <span class="clearfix d-none d-sm-inline-block">Supper user</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Log Out</a>
-                    <a class="dropdown-item" href="#">My account</a>
-                </div>
-            </li>
-
-        </ul>
-        <!-- Navbar links -->
-
-    </nav>
-    <!-- Navbar -->
-
-</header>
-<!-- Main Navigation -->
-
-<!-- Main layout -->
-<main class="">
-    <div class="">
-        <!-- Section: Customers -->
-        <section>
-            <!-- First row -->
-            <div class="">
-                <div class="row w-100 main-color container mb-3 d-flex justify-content-center align-items-center">
-                    <!--                    <h4 class="h4-responsive mt-1 align-content-center text-lg-center" style="height: 60px;">Dự án</h4>-->
-                    <h4 class="col-9 p-0 m-0 font-weight-bold text-uppercase "> quản lí Dự án </h4>
-                    <button class="col-2 btn btn-sm btn-red">THÊM DỰ ÁN</button>
-                </div>
-
-                <!-- First column -->
-                <div class=" pt-5 pb-5">
-                    <table id="example" class="display border" style="width:100%">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Tên dự án</th>
-                            <th>Mô tả</th>
-                            <!--                            <th class="th-sm">Avatar-->
-                            <!--        </th>-->
-                            <th>Giá</th>
-                            <th>Địa chỉ</th>
-
-                            <th>Dịch vụ</th>
-                            <th>Phân loại</th>
-                            <!--                            <th class="th-sm">Bài đăng</th>-->
-
-                            <th>Khởi công</th>
-                            <th>Hành động</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Phối cảnh An Thiên</td>
-                            <td>Là một không gian làm việc đẳng cấp, tạo môi trường khuyến khích sự sáng
-                                tạo và đổi mới.
-                            </td>
-                            <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
-                            <td>400.000.000 VND</td>
-                            <td>TP HCM</td>
-                            <td>Trọn gói</td>
-                            <td>Townhouse</td>
-                            <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                            <td>31/07/2023</td>
-                            <td>
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>NHÀ ANH HƯNG GÒ VẤP</td>
-                            <td>Nằm trong khu vực có nhiều tiện ích như trường học, trung tâm thương mại,
-                                nhà hàng và giao thông thuận tiện.
-                            </td>
-                            <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
-                            <td>300.000.000 VND</td>
-                            <td>TP HCM</td>
-                            <td>Trọn gói</td>
-                            <td>Townhouse</td>
-                            <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                            <td>31/07/2023</td>
-                            <td>
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>BIỆT THỰ CHÂU ÂU</td>
-                            <td>Thiết kế biệt thự theo phong cách Châu Âu đang khá được ưa chuộng hiện
-                                nay. Những mẫu biệt thự đẹp theo phong cách Châu Âu thể hiện được sự quý tộc, và nguy
-                                nga trong từng đường lối thiết kế.
-                            </td>
-                            <td>1.000.000.000 VND</td>
-                            <td>TP HCM</td>
-                            <td>Trọn gói</td>
-                            <td>Townhouse</td>
-                            <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                            <td>31/07/2023</td>
-                            <td>
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-
-                        </tbody>
-
-                    </table>
-                </div>
+                <div class="title text-uppercase">
+                    Xây dựng <span>Nhà Đẹp</span></div>
             </div>
-        </section>
+            <ul class="col-1 d-flex align-items-center m-0">
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>
     </div>
-</main>
-<!-- Main layout -->
-<!-- Custom scripts -->
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <center class="logo">
+                <img src="public/img/logo.svg" alt="logo" style="">
+            </center>
+            <li class="sidebar-item">
+                <a href="#" class="menu-btn">
+                    <i class="fas fa-desktop"></i><span>Thống kê</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="user">
+                <a href="#user" class="menu-btn">
+                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="project">
+                <a href="#project" class="menu-btn">
+                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-project" class="menu-btn">
+                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+                    </a>
+                    <a href="#blog-project" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class="sidebar-item" id="type-project">
+                <a href="#type-project" class="menu-btn">
+                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#blog-service" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="contact">
+                <a href="#contact" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-contact" class="menu-btn">
+                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="slide">
+                <a href="#slide" class="menu-btn">
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                </a>
+            </li>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="container p-0">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li>
+                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="main-color" href="#">QL dự án</a>
+                    </li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-100">
+                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
+                    <div class="col-6 d-flex align-items-center p-0">
+                        <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN</h3>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                        <a href="#add">
+                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Add</button>
+                        </a>
+                    </div>
+                </div>
+                <table id="project-table" class="table table-hover table-striped table-bordered m-0" style="">
+                    <thead>
+                    <tr>
+                        <th class="font-weight-bold" scope="col">#</th>
+                        <th class="font-weight-bold" scope="col">Tên dự án</th>
+                        <th class="font-weight-bold" scope="col">Mô tả</th>
+                        <th class="font-weight-bold" scope="col">Avatar</th>
+                        <th class="font-weight-bold" scope="col">Định mức</th>
+                        <th class="font-weight-bold" scope="col">Địa chỉ</th>
+                        <th class="font-weight-bold" scope="col">Loại dịch vụ</th>
+                        <th class="font-weight-bold" scope="col">Loại dự án</th>
+                        <th class="font-weight-bold" scope="col">Trạng thái</th>
+                        <th class="font-weight-bold" scope="col">Ngày cập nhập</th>
+                        <th class="font-weight-bold" scope="col">Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Phối cảnh An Thiên</td>
+                        <td>Là một không gian làm việc đẳng cấp, tạo môi trường khuyến khích sự sáng
+                            tạo và đổi mới.
+                        </td>
+                        <td>
+                            <img src="public/img/project-img/screenshot-20230819-165117-8274.png" alt="" style=""
+                                 class=" w-100">
+                        </td>
+                        <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
+                        <td>400.000.000 VND</td>
+                        <td>TP.HCM</td>
+                        <td>Trọn gói</td>
+                        <td>Thiết kế</td>
+                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                        <td>
+                            <i class="fa-solid fa-square active-icon" value="0"></i>
+                        </td><td>31/07/2023</td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>NHÀ ANH HƯNG GÒ VẤP</td>
+                        <td>Nằm trong khu vực có nhiều tiện ích như trường học, trung tâm thương mại,
+                            nhà hàng và giao thông thuận tiện.
+                        </td>
+                        <td>
+                            <img src="public/img/project-img/nhaanhchung-4935.jpg" alt="" style=""
+                                 class=" w-100">
+                        </td>
+                        <td>300.000.000 VND</td>
+                        <td>TP.HCM</td>
+                        <td>Trọn gói</td>
+                        <td>Nhà Phố</td>
+                        <td>
+                            <i class="fa-solid fa-square active-icon" value="0"></i>
+                        </td> <td>01/02/2023</td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>BIỆT THỰ CHÂU ÂU</td>
+                        <td>Thiết kế biệt thự theo phong cách Châu Âu đang khá được ưa chuộng hiện
+                            nay. Những mẫu biệt thự đẹp theo phong cách Châu Âu thể hiện được sự quý tộc, và nguy
+                            nga trong từng đường lối thiết kế.
+                        </td>
+                        <td>
+                            <img src="public/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg" alt="" style=""
+                                 class=" w-100">
+                        </td>
+                        <td>1.000.000.000 VND</td>
+                        <td>TP.HCM</td>
+                        <td>Trọn gói</td>
+                        <td>Biệt thự</td>
+                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                        <td>
+                            <i class="fa-solid fa-square active-icon" value="0"></i>
+                        </td> <td>28/06/2021</td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>PHONG CÁCH GẦN GŨI VỚI THIÊN NHIÊN</td>
+                        <td>Một ý tưởng độc đáo thiết kế biệt thự đẹp và sang trọng
+                            bạn không nên bỏ qua đó là tạo không gian sống gần gũi với
+                            thiên nhiên. Bạn chỉ cần bố trí một vài bồn hoa mini, chậu
+                            cây cảnh nhỏ để phủ xanh ngôi nhà. Cây xanh không chỉ có tác
+                            dụng điều hòa không khí mà nó còn giúp cho cơ thể bạn cảm thấy
+                            thoải mái, giảm stress, mệt mỏi mỗi khi về nhà.
+                        </td>
+                        <td>
+                            <img src="public/img/project-img/thiet-ke-biet-thu-20-1.jpg" alt="" style=""
+                                 class=" w-100">
+                        </td>
+                        <td>1.000.000.000 VND</td>
+                        <td>Hà nội</td>
+                        <td>Thiết kế</td>
+                        <td>Biệt thự</td>
+                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                        <td>
+                            <i class="fa-solid fa-square active-icon" value="0"></i>
+                        </td><td>30/06/2022</td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                   </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>NHÀ PHỐ HIỆN ĐẠI</td>
+                        <td>Thiết kế nhà phố vẫn luôn là xu hướng được yêu thích nhất trong
+                            những năm gần đây bởi vẻ đẹp sang trọng, hiện đại. Khác với những mẫu
+                            nhà đẹp khác, mẫu nhà nhà phố hiện đại trở nên nổi bật hơn nhờ thiết kế
+                            phóng khoáng, cởi mở tạo nên nét đặc trưng của loại nhà này.
+
+                        </td>
+                        <td>
+                            <img src="public/img/project-img/thiet-ke-nha-3-3.jpg" alt="" style=""
+                                 class=" w-100">
+                        </td>
+                        <td>1.000.000.000 VND</td>
+                        <td>Hà nội</td>
+                        <td>Thiết kế</td>
+                        <td>Nhà phố</td>
+                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                        <td>
+                            <i class="fa-solid fa-square active-icon" value="0"></i>
+                        </td>  <td>10/10/2022</td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                   </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>NHÀ PHỐ HIỆN ĐẠI"</td>
+                        <td>Thiết kế nhà phố vẫn luôn là xu hướng được yêu thích nhất trong
+                            những năm gần đây bởi vẻ đẹp sang trọng, hiện đại. Khác với những mẫu
+                            nhà đẹp khác, mẫu nhà nhà phố hiện đại trở nên nổi bật hơn nhờ thiết kế
+                            phóng khoáng, cởi mở tạo nên nét đặc trưng của loại nhà này.
+
+                        </td>
+                        <td>
+                            <img src="public/img/project-img/project3.jpg" alt="" style=""
+                                 class=" w-100">
+                        </td>
+                        <td>1.000.000.000 VND</td>
+                        <td>TP.HCM</td>
+                        <td>Thiết kế</td>
+                        <td>Nhà phố</td>
+                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
+                        <td>
+                            <i class="fa-solid fa-square active-icon" value="0"></i>
+                        </td> <td>12/10/2022</td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                   </tr>
+
+                    </tbody>
+
+                </table>
+
+            </main>
+        </div>
+    </div>
+</div>
+<!--/. Sidebar navigation -->
+
+
 <script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/mdb.lite.min.js"></script>
-<script src="public/lib/DataTables/datatables.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="public/lib/DataTables/dataTables.min.js"></script>
 <script>
 
-    // SideNav Initialization
-    // $('#example').dataTable({
-    //     "columnDefs": [
-    //         {"width": "10px", "targets": [0]}
-    //     ]
-    // });
-
-    $('#example').dataTable({
+</script>
+<script>
+    $('#project-table').dataTable({
+        // "ajax": {
+        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
+        //     "dataSrc": ""
+        // },
+        // responsive: true,
+        scrollX: true,
+        scrollY: 450,
         "columnDefs": [
-            {"width": "3%", "targets": [0]},
-            {"width": "12%", "targets": [1]},
-            {"width": "30%", "targets": [2]},
-            {"width": "5%", "targets": [3]},
-            {"width": "10%", "targets": [4]},
-            {"width": "10%", "targets": [5]},
-            {"width": "10%", "targets": [6]},
-            {"width": "10%", "targets": [7]},
-            {"width": "10%", "targets": [8]},
-            {"className": "text-center", "targets": "_all"}
-        ]
-    });
+            {
+                "targets": 0,
+                "width": "20px",
+            },
+            {
+                "targets": 1,
+                "width": "150px",
+            },
+            {
+                "targets": 2,
+                "width": "300px",
+            },
+            {
+                "targets": 3,
+                "width": "90px",
+            },
+            {
+                "targets": 4,
+                "width": "90px",
+            },
+            {
+                "targets": 5,
+                "width": "65px",
+            },
+            {
+                "targets": 6,
+                "width": "90px",
+            },
+            {
+                "targets": 7,
+                "width": "90px",
+            },
+            {
+                "targets": 8,
+                "width": "75px",
+            },
+            {
+                "targets": 9,
+                "width": "75px",
+            },
+            {
+                "targets": 10,
+                "width": "60px",
+            },
+            {className: "text-center mt-auto mb-auto", targets: "_all"},
 
+        ],
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ dòng",
+            "zeroRecords": "Không tìm thấy dữ liệu",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "Không có dữ liệu",
+            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
+            "search": "Tìm kiếm",
+            "paginate": {
+                "previous": "Trước",
+                "next": "Tiếp theo"
+            }
+        },
+        "pagingType": "full_numbers",
+        "lengthMenu": [5, 10, 15, 20],
+        "order": [[0, "asc"]],
+    });
+    // $('#project-table').columns.adjust().draw();
+</script>
+<script>
+    (function ($) {
+        $.fn.counter = function () {
+            const $this = $(this),
+                numberFrom = parseInt($this.attr('data-from')),
+                numberTo = parseInt($this.attr('data-to')),
+                delta = numberTo - numberFrom,
+                deltaPositive = delta > 0 ? 1 : 0,
+                time = parseInt($this.attr('data-time')),
+                changeTime = 10;
+
+            let currentNumber = numberFrom,
+                value = delta * changeTime / time;
+            var interval1;
+            const changeNumber = () => {
+                currentNumber += value;
+                //checks if currentNumber reached numberTo
+                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
+                this.text(parseInt(currentNumber));
+                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+            }
+
+            interval1 = setInterval(changeNumber, changeTime);
+        }
+    }(jQuery));
+
+    $(document).ready(function () {
+
+        $('.count-up').counter();
+        $('.count1').counter();
+        $('.count2').counter();
+        $('.count3').counter();
+
+        new WOW().init();
+
+        setTimeout(function () {
+            $('.count5').counter();
+        }, 3000);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+    });
 </script>
 </body>
 </html>

@@ -39,11 +39,29 @@ Route::get('/projectPost', function () {
 });
 
 Route::get('/userManage', function () {
-    return view('template.usermanage');
+    return view('template.UserManage');
+});
+Route::get('/roleManagement', function () {
+    return view('template.admin-RoleManagement');
+});
+Route::get('/slideManagement', function () {
+    return view('template.admin-slideManagement');
 });
 
 Route::get('/projectsmanage', function () {
     return view('template.projectsmanage');
+});
+Route::get('/typeOfProject', function () {
+    return view('template.admin-TypeOfProject');
+});
+Route::get('/postProject', function () {
+    return view('template.admin-PostProject');
+});
+Route::get('/contactManagement', function () {
+    return view('template.admin-contactManagement');
+});
+Route::get('/contactTypeManagement', function () {
+    return view('template.admin-ContactTypeManagement');
 });
 
 Route::get('/servicesManage', function () {

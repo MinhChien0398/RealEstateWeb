@@ -137,8 +137,8 @@ nav .container {
     }
 
 }
-
 .phone-contain {
+
 }
 
 .circle-1, .circle-2 {
@@ -400,12 +400,4 @@ p {
     color: #E90808;
     font-weight: 700;
     font-size: 2.1rem;
-}
-
-table.dataTable td {
-    font-size: 0.68rem;
-}
-
-table.dataTable th {
-    font-size: 0.68rem;
 }
