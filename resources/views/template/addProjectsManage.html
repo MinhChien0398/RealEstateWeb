@@ -150,7 +150,10 @@
                     </div>
                     <!--/.Panel 1-->
                     <div class="tab-pane fade" id="panel105" role="tabpanel">
-                        <label for="editor"></label><textarea id="editor"></textarea>
+                        <form>
+                            <label for="editor1"></label>
+                            <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -171,7 +174,7 @@
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"></script>
-<script src="public/lib/ckeditor5-build-classic-40.0.0/ckeditor5-build-classic/ckeditor.js"></script>
+<script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
 <script>
     (function ($) {
         $.fn.counter = function () {
@@ -232,11 +235,7 @@
     });
 </script>
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
-
+    CKEDITOR.replace('editor1');
+    CKEDITOR.config.height = 500;
 </script>
 </html>
