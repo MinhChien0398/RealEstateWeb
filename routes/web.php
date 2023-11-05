@@ -69,3 +69,7 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('template.dashboard');
 });
+
+Route::get('/addService', function (){
+    return view('template.addServicesPage');
+});
