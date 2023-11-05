@@ -96,10 +96,12 @@
             </li>
         </div>
     </div>
+
+
     <div class="main-container">
-
-
         <div class="container p-0">
+
+
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
@@ -108,101 +110,112 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
+
+
+                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between ">
                     <div class="col-6 d-flex align-items-center p-0">
                         <h3 class="font-weight-bold main-color m-0">Thêm Dịch vụ</h3>
                     </div>
+                    <div class="d-flex align-items-center">
+                        <ul class="nav nav-pills mb-3 d-flex" id="pills-tab" role="tablist">
+                            <li class="">
+                                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                   role="tab"
+                                   aria-controls="pills-home" aria-selected="true">Thông tin</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-link " id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                   role="tab"
+                                   aria-controls="pills-profile" aria-selected="false">Bài viết</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="edit-profile flex-center">
-                    <div class="col-md-8 mb-4">
-                        <!-- Card -->
-                        <div class="card card-cascade cascading-admin-card user-card">
-                            <!-- Card content -->
-                            <div class="card-body card-body-cascade">
-                                <!-- Grid row -->
 
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12">
 
-                                        <div class="md-form form-sm mb-0">
-                                            <input type="text" id="form7" class="form-control form-control-sm">
-                                            <label for="form7" class="">Tên dịch vụ</label>
+                <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                         aria-labelledby="pills-home-tab">
+                        <div class="edit-profile flex-center">
+                            <div class="col-md-8 mb-4">
+                                <!-- Card -->
+                                <div class="card card-cascade cascading-admin-card user-card">
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="text" id="form7" class="form-control form-control-sm">
+                                                    <label for="form7" class="">Tên dịch vụ</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="text" id="form8" class="form-control form-control-sm">
+                                                    <label for="form8" class="">Tên rút gọn</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="text" id="form3" class="form-control form-control-sm">
+                                                    <label for="form3" class="">Địa chỉ / Tỉnh thành </label>
+                                                </div>
+                                            </div>
                                         </div>
-
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-
-                                        <div class="md-form form-sm mb-0">
-                                            <input type="text" id="form8" class="form-control form-control-sm">
-                                            <label for="form8" class="">Tên rút gọn</label>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Grid column -->
-                                    <div class="col-lg-6 col-md-6">
-
-                                        <div class="md-form form-sm mb-0">
-                                            <input type="text" id="form3" class="form-control form-control-sm">
-                                            <label for="form3" class="">Địa chỉ / Tỉnh thành </label>
-                                        </div>
-
-                                    </div>
-                                    <!-- Grid column -->
-
-
-                                    <!-- Grid column -->
-
-                                </div>
-                                <!-- Grid row -->
-
-                                <!-- Grid row -->
-                                <div class="row mt-3 mb-3 flex-center">
-                                    <div class="col-lg-9 col-md-9 d-flex justify-content-between m-auto p-0">
-                                        <div class="input-group col-lg-12 col-md-12">
-                                            <div class="input-group-prepend">
+                                        <div class="row mt-3 mb-3 flex-center">
+                                            <div class="col-lg-9 col-md-9 d-flex justify-content-between m-auto p-0">
+                                                <div class="input-group col-lg-12 col-md-12">
+                                                    <div class="input-group-prepend">
                                                     <span class="input-group-text"
                                                           id="inputGroupFileAddon01">Hình ảnh</span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input"
+                                                               id="inputGroupFile01"
+                                                               aria-describedby="inputGroupFileAddon01">
+                                                        <label class="custom-file-label" for="inputGroupFile01">Tải hình
+                                                            ảnh
+                                                            lên</label>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                                       aria-describedby="inputGroupFileAddon01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Tải hình ảnh
-                                                    lên</label>
+                                            <div class="col-lg-3 col-md-3 ">
+                                                <select class="browser-default custom-select">
+                                                    <option disabled>Trạng thái</option>
+                                                    <option value="1" selected>Khóa</option>
+                                                    <option value="2">Kích hoạt</option>
+                                                </select>
                                             </div>
                                         </div>
+                                        <div class="btn-save flex-center">
+                                            <a class="btn btn-red waves-effect waves-light">LƯU</a>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-3 col-md-3 ">
-                                        <select class="browser-default custom-select">
-                                            <option disabled>Trạng thái</option>
-                                            <option value="1" selected>Khóa</option>
-                                            <option value="2">Kích hoạt</option>
-                                        </select>
+                                    <!-- Card content -->
+                                </div>
+                                <!-- Card -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        <div class="edit-profile flex-center">
+                            <div class="col-md-8 mb-4">
+                                <div class="card card-cascade cascading-admin-card user-card">
+                                    <div class="card-body card-body-cascade">
+                                        <div class="col-lg-12 col-md-12 p-0">
+                                            <div class="form-group">
+                                                <label>Bài viết:</label>
+                                                <textarea class="form-control rounded-0" name="service-des"
+                                                          rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="btn-save flex-center">
+                                            <a class="btn btn-red waves-effect waves-light">LƯU</a>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="row">
-
-                                </div>
-                                <!-- Grid row -->
-                                <div class="col-lg-12 col-md-12 p-0">
-
-                                    <div class="form-group">
-                                        <label>Bài viết:</label>
-                                        <textarea class="form-control rounded-0" name="service-des"
-                                                  rows="10"></textarea>
-                                    </div>
-
-                                </div>
-                                <!-- Grid row -->
-                                <div class="btn-save flex-center">
-                                    <a class="btn btn-red waves-effect waves-light">LƯU</a>
                                 </div>
                             </div>
-                            <!-- Card content -->
-
                         </div>
-                        <!-- Card -->
                     </div>
                 </div>
             </main>
@@ -224,6 +237,8 @@
 </script>
 <script>
     CKEDITOR.replace('service-des');
+    CKEDITOR.config.width = "100%";
+    CKEDITOR.config.height = "500px";
 </script>
 <script>
     (function ($) {
