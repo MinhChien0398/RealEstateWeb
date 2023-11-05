@@ -6,8 +6,8 @@
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="resources/views/template/css/add_slider_manage.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="resources/views/template/css/add_slider_manage.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
@@ -15,13 +15,13 @@
 
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <div class="header sticky-top">
+    <div class="header fixed-top ">
         <div class="header-menu row m-0">
             <div class="col-11 d-flex align-items-center">
                 <div class="sidebar-btn mr-3">
                     <i class="fas fa-bars"></i>
                 </div>
-                <div class="title text-uppercase">
+                <div class="title text-uppercase font-weight-bolder">
                     Xây dựng <span>Nhà Đẹp</span></div>
             </div>
             <ul class="col-1 d-flex align-items-center m-0">
@@ -32,19 +32,19 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="public/img/logo.svg" alt="logo" style="width: 100px">
+                <img src="public/img/logo.svg" alt="logo" style="">
             </center>
-            <li class="item">
+            <li class="sidebar-item">
                 <a href="#" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
-            <li class="item" id="user">
+            <li class="sidebar-item" id="user">
                 <a href="#user" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="item" id="project">
+            <li class="sidebar-item" id="project">
                 <a href="#project" class="menu-btn">
                     <i class="fa-solid fa-building"></i><span>QL Dự án <i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
@@ -59,9 +59,9 @@
                 </div>
             </li>
 
-            <li class="item" id="type-project">
+            <li class="sidebar-item" id="type-project">
                 <a href="#type-project" class="menu-btn">
-                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span><i
+                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
@@ -70,20 +70,25 @@
                     </a>
                 </div>
             </li>
-            <li class="item" id="contact">
+            <li class="sidebar-item" id="contact">
                 <a href="#contact" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL Bài viết liên hệ</span><i
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
                     <a href="#type-contact" class="menu-btn">
-                        <i class="fa-solid fa-file-contract"></i><span>QL Loại bài viết dịch vụ</span>
+                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
                     </a>
                 </div>
             </li>
+            <li class="sidebar-item" id="slide">
+                <a href="#slide" class="menu-btn">
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                </a>
+            </li>
         </div>
     </div>
-    <div class="main-container">
+    <div class="main-container">v
         <div class="content-header">
             <h2 class="title text-uppercase addSlider">Thêm sliders</h2>
             <button id="saveBtn" class="btn btn-orange"></i>Lưu</button>
