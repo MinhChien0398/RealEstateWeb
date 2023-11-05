@@ -110,7 +110,7 @@
             <main class="container shadow border p-3 h-100">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
                     <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">Thêm loại Dịch vụ</h3>
+                        <h3 class="font-weight-bold main-color m-0">Thêm Dịch vụ</h3>
                     </div>
                 </div>
                 <div class="edit-profile flex-center">
@@ -157,38 +157,27 @@
                                 <!-- Grid row -->
 
                                 <!-- Grid row -->
-                                <div class="row">
-
-
-                                    <!-- Grid column -->
-
-                                    <!-- Grid column -->
-
-                                    <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
-                                        <div class="col-lg-6 col-md-6">
-
-                                            <div class="md-form form-sm mb-0">
-                                                <select class="browser-default custom-select mb-4">
-                                                    <option value="" disabled selected>Category</option>
-                                                    <option value="1">Townhouse</option>
-                                                    <option value="2">Villa</option>
-                                                    <option value="3">Nhà tiền chế</option>
-                                                </select>
+                                <div class="row mt-3 mb-3 flex-center">
+                                    <div class="col-lg-9 col-md-9 d-flex justify-content-between m-auto p-0">
+                                        <div class="input-group col-lg-12 col-md-12">
+                                            <div class="input-group-prepend">
+                                                    <span class="input-group-text"
+                                                          id="inputGroupFileAddon01">Hình ảnh</span>
                                             </div>
-
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-
-                                            <div class="md-form form-sm mb-0">
-                                                <select class="browser-default custom-select mb-4">
-                                                    <option value="" disabled selected>Trạng thái hoạt động</option>
-                                                    <option value="1">Hoạt động</option>
-                                                    <option value="2">Tạm dừng</option>
-                                                </select>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                       aria-describedby="inputGroupFileAddon01">
+                                                <label class="custom-file-label" for="inputGroupFile01">Tải hình ảnh
+                                                    lên</label>
                                             </div>
-
                                         </div>
-                                        <!-- Grid column -->
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 ">
+                                        <select class="browser-default custom-select">
+                                            <option disabled>Trạng thái</option>
+                                            <option value="1" selected>Khóa</option>
+                                            <option value="2">Kích hoạt</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -199,9 +188,9 @@
                                 <div class="col-lg-12 col-md-12 p-0">
 
                                     <div class="form-group">
-                                        <label for="service-des">Bài viết:</label>
-                                        <textarea class="form-control rounded-0" id="service-des"
-                                                  rows="8"></textarea>
+                                        <label>Bài viết:</label>
+                                        <textarea class="form-control rounded-0" name="service-des"
+                                                  rows="10"></textarea>
                                     </div>
 
                                 </div>
@@ -229,14 +218,12 @@
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="public/lib/DataTables/dataTables.min.js"></script>
-<script src="public/lib/ckeditor5-build-classic/ckeditor.js"></script>
+<script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
 <script>
 
 </script>
 <script>
-    ClassicEditor.create(document.querySelector('#service-des')).catch(error=>{
-        console.error(error);
-    });
+    CKEDITOR.replace('service-des');
 </script>
 <script>
     (function ($) {

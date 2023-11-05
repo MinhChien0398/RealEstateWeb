@@ -73,3 +73,7 @@ Route::get('/dashboard', function () {
 Route::get('/addService', function (){
     return view('template.addServicesPage');
 });
+
+Route::get('/updateService', function (){
+   return view('template.updateServiceManage');
+});
