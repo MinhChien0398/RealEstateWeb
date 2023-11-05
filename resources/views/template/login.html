@@ -18,15 +18,19 @@
                 <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
             </div>
             <span>Thông tin đăng nhập</span>
-            <label>
-                <input type="text" placeholder="Tên">
-            </label>
-            <label>
-                <input type="email" placeholder="Tên tài khoản / Email">
-            </label>
-            <label>
-                <input type="password" placeholder="Mật khẩu">
-            </label>
+            <input type="text" placeholder="Tên">
+            <div style="display: flex">
+                <input class="birth" type="date" placeholder="Ngày sinh">
+                <label style="display: flex;margin-left: 7%;">
+                    <input type="checkbox">
+                    <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nam</p>
+                    <input type="checkbox">
+                    <p style="margin: auto; padding: 6%;top:6%;font-size: 16px">Nữ</p>
+                </label>
+            </div>
+            <input type="email" placeholder="Tên tài khoản / Email">
+            <input type="password" placeholder="Mật khẩu">
+            <input type="password" placeholder="Xác nhận mật khẩu">
             <button>Đăng kí</button>
         </form>
     </div>
@@ -54,13 +58,13 @@
                     <a class="icon-arrow" href="http://localhost/RealEstateWeb/"><i
                         class="fa-solid fa-arrow-left"></i></a>
                 </div>
-                <h1>Welcome Back!</h1>
-                <p>Enter your personal details to use all site features</p>
+                <h1>Chào mừng quay trở lại!</h1>
+                <p>Đăng nhập với thông tin cá nhân của bạn</p>
                 <button class="hidden" id="login">Đăng nhập</button>
             </div>
             <div class="toggle-panel toggle-right">
-                <h1>Hello, Friend!</h1>
-                <p>Register with your personal details to use all site features</p>
+                <h1>Xin chào!</h1>
+                <p>Đăng ký với thông tin cá nhân của bạn</p>
                 <button class="hidden" id="register">Đăng kí</button>
             </div>
         </div>
