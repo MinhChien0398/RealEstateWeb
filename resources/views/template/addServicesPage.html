@@ -15,7 +15,7 @@
     <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
-<!--    <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
+    <!--    <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
 
     <!---->
     <title>Thêm DV</title>
@@ -113,23 +113,28 @@
             <main class="container shadow border p-3 h-100">
 
 
-                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between ">
-                    <div class="col-6 d-flex align-items-center p-0">
+                <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center p-0">
                         <h3 class="font-weight-bold main-color m-0">Thêm Dịch vụ</h3>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <ul class="nav nav-pills mb-3 d-flex" id="pills-tab" role="tablist">
+                    <div class="d-flex mt-4">
+                        <ul class="nav nav-pills  mb-3 d-flex font-weight-bold" id="pills-tab" role="tablist">
                             <li class="">
-                                <a class="nav-link active pills-warning" id="pills-home-tab" data-toggle="pill" href="#pills-home"
+                                <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
+                                   href="#pills-home"
                                    role="tab"
                                    aria-controls="pills-home" aria-selected="true">Thông tin</a>
                             </li>
                             <li class="">
-                                <a class="nav-link pills-warning" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                <a class="nav-link " id="pills-profile-tab" data-toggle="pill"
+                                   href="#pills-profile"
                                    role="tab"
                                    aria-controls="pills-profile" aria-selected="false">Bài viết</a>
                             </li>
                         </ul>
+                    </div>
+                    <div class="btn-save flex-center">
+                        <a class="btn btn-red waves-effect waves-light font-weight-bold">LƯU</a>
                     </div>
                 </div>
 
@@ -188,9 +193,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="btn-save flex-center">
-                                            <a class="btn btn-red waves-effect waves-light">LƯU</a>
-                                        </div>
+
                                     </div>
                                     <!-- Card content -->
                                 </div>
@@ -209,9 +212,6 @@
                                                 <textarea class="form-control rounded-0" name="service-des"
                                                           rows="10"></textarea>
                                             </div>
-                                        </div>
-                                        <div class="btn-save flex-center">
-                                            <a class="btn btn-red waves-effect waves-light">LƯU</a>
                                         </div>
                                     </div>
                                 </div>
