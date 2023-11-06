@@ -81,3 +81,7 @@ Route::get('/updateService', function (){
 Route::get('updateUser', function(){
    return view('template.updateUser');
 });
+
+Route::get('servicePostsManage', function(){
+   return view('template.servicePostsManage');
+});
