@@ -48,7 +48,7 @@ Route::get('/slideManagement', function () {
     return view('template.admin-slideManagement');
 });
 
-Route::get('/projectsManage', function () {
+Route::get('/projectsmanage', function () {
     return view('template.projectsmanage');
 });
 Route::get('/typeOfProject', function () {
@@ -64,8 +64,8 @@ Route::get('/contactTypeManagement', function () {
     return view('template.admin-ContactTypeManagement');
 });
 
-Route::get('/servicesManager', function () {
-    return view('template.servicesManager');
+Route::get('/servicesManage', function () {
+    return view('template.servicesManage');
 });
 Route::get('/user', function () {
     return view('template.user');
@@ -79,6 +79,13 @@ Route::get('/userHistory', function () {
 Route::get('/login', function () {
     return view('template.login');
 });
+Route::get('/addSlidersManage', function () {
+    return view('template.addSlidersManage');
+});
+Route::get('/addProjectsManage', function () {
+    return view('template.addProjectsManage');
+});
 Route::get('/dashboard', function () {
     return view('template.dashboard');
 });
+

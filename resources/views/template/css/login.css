@@ -22,9 +22,9 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 768px;
+    width: 1000px;
     max-width: 100%;
-    min-height: 480px;
+    min-height: 600px;
 }
 
 .container p {
@@ -83,6 +83,12 @@ body {
     border-radius: 8px;
     width: 100%;
     outline: none;
+}
+
+.container .birth {
+    width: 70% !important;
+    display: flex;
+    justify-content: space-between;
 }
 
 .form-container {
@@ -208,7 +214,7 @@ body {
 
 .icon-arrow {
     position: absolute !important;
-    top:3%;
+    top: 3%;
     left: 10%;
 
 }
