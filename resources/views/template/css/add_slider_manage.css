@@ -1,0 +1,11 @@
+.file-field .btn {
+    background-color: red !important;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+}
+.addSlider{
+    font-family: "Inter Semi Bold", Arial, Helvetica, sans-serif;
+}
