@@ -15,6 +15,7 @@
     <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <!--        <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
 
     <!---->
     <title>Sửa DV</title>
@@ -96,10 +97,12 @@
             </li>
         </div>
     </div>
+
+
     <div class="main-container">
-
-
         <div class="container p-0">
+
+
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
@@ -108,120 +111,122 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
-                    <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">Sửa Dịch vụ</h3>
+
+                <form action="#" method="post">
+                    <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center p-0 ">
+                            <h3 class="font-weight-bold main-color m-0">Sửa Dịch vụ</h3>
+                        </div>
+                        <div class="d-flex">
+                            <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
+                                role="tablist">
+                                <li class="">
+                                    <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
+                                       href="#pills-home"
+                                       role="tab"
+                                       aria-controls="pills-home" aria-selected="true">Thông tin</a>
+                                </li>
+                                <li class="">
+                                    <a class="nav-link " id="pills-profile-tab" data-toggle="pill"
+                                       href="#pills-profile"
+                                       role="tab"
+                                       aria-controls="pills-profile" aria-selected="false">Bài viết</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-save flex-center">
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
+                                </button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="edit-profile flex-center">
-                    <div class="col-md-8 mb-4">
-                        <!-- Card -->
-                        <div class="card card-cascade cascading-admin-card user-card">
-                            <!-- Card content -->
-                            <div class="card-body card-body-cascade">
-                                <!-- Grid row -->
-
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12">
-                                        <select class="browser-default custom-select">
-                                            <option value="0" selected>Phòng trọ 20m2 gác lửng</option>
-                                            <option value="1">Thi công nhà thô 100 triệu</option>
-                                            <option value="2">Xây nhà trọn gói 300 triệu</option>
-                                            <option value="3">Thi công nhà xưởng 100 triệu</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-12 col-md-12">
-
-                                        <div class="md-form form-sm mb-0">
-                                            <input type="text" id="form7" class="form-control form-control-sm">
-                                            <label for="form7" class="">Tên dịch vụ</label>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-
-                                        <div class="md-form form-sm mb-0">
-                                            <input type="text" id="form8" class="form-control form-control-sm">
-                                            <label for="form8" class="">Tên rút gọn</label>
-                                        </div>
-
-                                    </div>
-
-                                    <!-- Grid column -->
-                                    <div class="col-lg-6 col-md-6">
-
-                                        <div class="md-form form-sm mb-0">
-                                            <input type="text" id="form3" class="form-control form-control-sm">
-                                            <label for="form3" class="">Địa chỉ / Tỉnh thành </label>
-                                        </div>
-
-                                    </div>
-                                    <!-- Grid column -->
 
 
-                                    <!-- Grid column -->
-
-                                </div>
-                                <!-- Grid row -->
-
-                                <!-- Grid row -->
-                                <div class="row">
-                                    <!-- Grid column -->
-
-                                    <!-- Grid column -->
-
-                                    <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
-                                        <div class="col-lg-6 col-md-6">
-
-                                            <div class="md-form form-sm mb-0">
-                                                <select class="browser-default custom-select mb-4">
-                                                    <option value="" disabled selected>Category</option>
-                                                    <option value="1">Townhouse</option>
-                                                    <option value="2">Villa</option>
-                                                    <option value="3">Nhà tiền chế</option>
-                                                </select>
+                    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                             aria-labelledby="pills-home-tab">
+                            <div class="edit-profile flex-center">
+                                <div class="col-md-8 mb-4">
+                                    <!-- Card -->
+                                    <div class="card card-cascade cascading-admin-card user-card">
+                                        <!-- Card content -->
+                                        <div class="card-body card-body-cascade">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="md-form form-sm mb-0">
+                                                        <input type="text" id="form7"
+                                                               class="form-control form-control-sm">
+                                                        <label for="form7" class="">Tên dịch vụ</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-6">
+                                                    <div class="md-form form-sm mb-0">
+                                                        <input type="text" id="form8"
+                                                               class="form-control form-control-sm">
+                                                        <label for="form8" class="">Tên rút gọn</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="md-form form-sm mb-0">
+                                                        <select class="browser-default custom-select">
+                                                            <option disabled>Trạng thái</option>
+                                                            <option value="1" selected>Ẩn</option>
+                                                            <option value="2">Hiện</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3 mb-3 flex-center">
+                                                <div
+                                                    class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
+                                                    <div class="input-group col-lg-12 col-md-12">
+                                                        <div class="input-group-prepend">
+                                                    <span class="input-group-text"
+                                                          id="inputGroupFileAddon01">Hình ảnh</span>
+                                                        </div>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input"
+                                                                   id="inputGroupFile01"
+                                                                   aria-describedby="inputGroupFileAddon01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Tải
+                                                                hình
+                                                                ảnh
+                                                                lên</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
 
                                         </div>
-                                        <div class="col-lg-6 col-md-6">
-
-                                            <div class="md-form form-sm mb-0">
-                                                <select class="browser-default custom-select mb-4">
-                                                    <option value="" disabled selected>Trạng thái hoạt động</option>
-                                                    <option value="1">Hoạt động</option>
-                                                    <option value="2">Tạm dừng</option>
-                                                </select>
-                                            </div>
-
-                                        </div>
-                                        <!-- Grid column -->
+                                        <!-- Card content -->
                                     </div>
-                                </div>
-
-                                <div class="row">
-
-                                </div>
-                                <!-- Grid row -->
-                                <div class="col-lg-12 col-md-12 p-0">
-
-                                    <div class="form-group">
-                                        <label for="service-des">Bài viết:</label>
-                                        <textarea class="form-control rounded-0" id="service-des"
-                                                  rows="8"></textarea>
-                                    </div>
-
-                                </div>
-                                <!-- Grid row -->
-                                <div class="btn-save flex-center">
-                                    <a class="btn btn-red waves-effect waves-light">LƯU</a>
+                                    <!-- Card -->
                                 </div>
                             </div>
-                            <!-- Card content -->
-
                         </div>
-                        <!-- Card -->
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                             aria-labelledby="pills-profile-tab">
+                            <div class="edit-profile flex-center">
+                                <div class="col-md-12 mb-4">
+                                    <div class="card card-cascade cascading-admin-card user-card">
+                                        <div class="card-body card-body-cascade">
+                                            <div class="col-lg-12 col-md-12 p-0">
+                                                <div class="form-group">
+                                                    <textarea
+                                                        class="form-control rounded-0"
+                                                        name="service-des"
+                                                        rows="10">
+                                                    </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </form>
             </main>
         </div>
     </div>
@@ -235,54 +240,12 @@
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="public/lib/DataTables/dataTables.min.js"></script>
-<script src="public/lib/ckeditor5-build-classic/ckeditor.js"></script>
+<script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
+
 <script>
-
-</script>
-<script>
-    ClassicEditor.create(document.querySelector('#service-des')).catch(error => {
-        console.error(error);
-    });
-</script>
-<script>
-    (function ($) {
-        $.fn.counter = function () {
-            const $this = $(this),
-                numberFrom = parseInt($this.attr('data-from')),
-                numberTo = parseInt($this.attr('data-to')),
-                delta = numberTo - numberFrom,
-                deltaPositive = delta > 0 ? 1 : 0,
-                time = parseInt($this.attr('data-time')),
-                changeTime = 10;
-
-            let currentNumber = numberFrom,
-                value = delta * changeTime / time;
-            var interval1;
-            const changeNumber = () => {
-                currentNumber += value;
-                //checks if currentNumber reached numberTo
-                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
-                this.text(parseInt(currentNumber));
-                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
-            }
-
-            interval1 = setInterval(changeNumber, changeTime);
-        }
-    }(jQuery));
-
-    $(document).ready(function () {
-
-        $('.count-up').counter();
-        $('.count1').counter();
-        $('.count2').counter();
-        $('.count3').counter();
-
-        new WOW().init();
-
-        setTimeout(function () {
-            $('.count5').counter();
-        }, 3000);
-    });
+    CKEDITOR.replace('service-des');
+    CKEDITOR.config.width = "100%";
+    CKEDITOR.config.height = "400px";
 </script>
 <script>
     $(document).ready(function () {
@@ -292,13 +255,5 @@
 
     });
 </script>
-<script>
-    $(document).ready(function () {
-        $(".sidebar-btn").click(function () {
-            $(".wrapper").toggleClass("mycollapse");
-        });
-    });</script>
 </body>
-
-
 </html>

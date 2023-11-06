@@ -15,7 +15,7 @@
     <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="public/lib/suneditor-master/dist/css/suneditor.min.css">
     <!--    <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
 
     <!---->
@@ -137,8 +137,7 @@
                         </div>
                         <div class="btn-save flex-center">
                             <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"><i
-                                    class="fa-solid fa-plus"></i> LƯU
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
                                 </button>
                             </a>
                         </div>
@@ -210,14 +209,17 @@
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                              aria-labelledby="pills-profile-tab">
                             <div class="edit-profile flex-center">
-                                <div class="col-md-8 mb-4">
+                                <div class="col-md-12 mb-12">
                                     <div class="card card-cascade cascading-admin-card user-card">
                                         <div class="card-body card-body-cascade">
                                             <div class="col-lg-12 col-md-12 p-0">
                                                 <div class="form-group">
-                                                    <label>Bài viết:</label>
-                                                    <textarea class="form-control rounded-0" name="service-des"
-                                                              rows="10"></textarea>
+                                                                                                        <textarea
+                                                                                                            class="form-control rounded-0"
+                                                                                                            name="service-des"
+                                                                                                            rows="10">
+                                                                                                        </textarea>
+                                                    <!--                                                    <textarea id="sample">Hi</textarea>-->
                                                 </div>
                                             </div>
                                         </div>
@@ -242,52 +244,10 @@
 <script src="public/lib/DataTables/dataTables.min.js"></script>
 <script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
 <script>
-
-</script>
-<script>
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";
-    CKEDITOR.config.height = "500px";
-</script>
-<script>
-    (function ($) {
-        $.fn.counter = function () {
-            const $this = $(this),
-                numberFrom = parseInt($this.attr('data-from')),
-                numberTo = parseInt($this.attr('data-to')),
-                delta = numberTo - numberFrom,
-                deltaPositive = delta > 0 ? 1 : 0,
-                time = parseInt($this.attr('data-time')),
-                changeTime = 10;
+    CKEDITOR.config.height = "400px";
 
-            let currentNumber = numberFrom,
-                value = delta * changeTime / time;
-            var interval1;
-            const changeNumber = () => {
-                currentNumber += value;
-                //checks if currentNumber reached numberTo
-                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
-                this.text(parseInt(currentNumber));
-                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
-            }
-
-            interval1 = setInterval(changeNumber, changeTime);
-        }
-    }(jQuery));
-
-    $(document).ready(function () {
-
-        $('.count-up').counter();
-        $('.count1').counter();
-        $('.count2').counter();
-        $('.count3').counter();
-
-        new WOW().init();
-
-        setTimeout(function () {
-            $('.count5').counter();
-        }, 3000);
-    });
 </script>
 <script>
     $(document).ready(function () {
