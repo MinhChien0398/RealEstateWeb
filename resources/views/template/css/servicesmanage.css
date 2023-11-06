@@ -5,3 +5,7 @@ table.dataTable td {
 table.dataTable th {
     font-size: 0.67rem;
 }
+
+tr td img {
+    height: 150px;
+}

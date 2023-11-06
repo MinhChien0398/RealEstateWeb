@@ -15,6 +15,7 @@
     <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <link rel="stylesheet" href="resources/views/template/css/servicesmanage.css">
 
     <!---->
     <title>Quản lý Dịch vụ</title>
@@ -132,79 +133,36 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         <tr>
                             <td>1</td>
-                            <td>Thi công nhà thô 100 triệu</td>
-                            <td>TCNT100T</td>
-                            <td><img src="" alt=""></td>
+                            <td>Dịch vụ thi công nhà phần thô</td>
+                            <td>TCPT</td>
+                            <td><img src="public/img/main-service/untitled-3-8307.png" alt=""></td>
                             <td><i class="fa-solid fa-square active-icon"></i></td>
                             <td>
                                 <i class="fa-solid fa-pen p-1"></i>
                                 <i class="fa-solid fa-trash-can p-1"></i>
                             </td>
                         </tr>
+
                         <tr>
                             <td>2</td>
-                            <td>Xây nhà trọn gói 300 triệu</td>
-                            <td>XNTG300T</td>
-                            <td><img src="" alt=""></td>
+                            <td>Dịch vụ xây nhà trọn gói</td>
+                            <td>XNTG</td>
+                            <td><img src="public/img/main-service/dichvuxaydungnhaotrongoi-2589.jpg" alt=""></td>
                             <td><i class="fa-solid fa-square active-icon"></i></td>
                             <td>
                                 <i class="fa-solid fa-pen p-1"></i>
                                 <i class="fa-solid fa-trash-can p-1"></i>
                             </td>
                         </tr>
+
                         <tr>
                             <td>3</td>
-                            <td>Thi công nhà xưởng 100 triệu</td>
-                            <td>TCNT100T</td>
-                            <td>TP HCM</td>
-                            <td><i class="fa-solid fa-square active-icon"></i></td>
-                            <td>
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Thi công nhà mái tôn 20 triệu</td>
-                            <td>NMT20T</td>
-                            <td><img src="" alt=""></td>
-                            <td><i class="fa-solid fa-square inactive-icon"></i></td>
-                            <td>
-
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Phòng trọ 20m2 gác lửng</td>
-                            <td>PT20M2GL</td>
-                            <td><img src="" alt=""></td>
-                            <td><i class="fa-solid fa-square active-icon"></i></td>
-                            <td>
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Phòng trọ 20m2 không gác</td>
-                            <td>PT20M2</td>
-                            <td><img src="" alt=""></td>
-                            <td><i class="fa-solid fa-square active-icon"></i></td>
-                            <td>
-
-                                <i class="fa-solid fa-pen p-1"></i>
-                                <i class="fa-solid fa-trash-can p-1"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Thi công nhà xưởng chế biến gà</td>
-                            <td>NXCHEBIENGA</td>
-                            <td><img src="" alt=""></td>
+                            <td>Dịch vụ thi công nhà xưởng</td>
+                            <td>TCNX</td>
+                            <td><img src="public/img/main-service/nhamaysanxuatgangtay-7223.jpg" alt=""></td>
                             <td><i class="fa-solid fa-square active-icon"></i></td>
                             <td>
                                 <i class="fa-solid fa-pen p-1"></i>
@@ -232,15 +190,12 @@
 <script src="public/lib/DataTables/dataTables.min.js"></script>
 
 
-
-
-
 <script>
     $('#table-service').dataTable({
         "columnDefs": [
             {"width": "5%", "targets": [0]},
             {"width": "35%", "targets": [1]},
-            {"width": "25%", "targets": [2]},
+            {"width": "20%%", "targets": [2]},
             {className: "text-center mt-auto mb-auto", targets: "_all"},
         ],
         "language": {
