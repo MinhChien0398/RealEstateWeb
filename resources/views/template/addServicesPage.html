@@ -15,6 +15,7 @@
     <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
+
     <!--    <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
 
     <!---->
@@ -117,8 +118,8 @@
                     <div class="d-flex align-items-center p-0">
                         <h3 class="font-weight-bold main-color m-0">Thêm Dịch vụ</h3>
                     </div>
-                    <div class="d-flex mt-4">
-                        <ul class="nav nav-pills  mb-3 d-flex font-weight-bold" id="pills-tab" role="tablist">
+                    <div class="d-flex">
+                        <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab" role="tablist">
                             <li class="">
                                 <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
                                    href="#pills-home"
@@ -134,7 +135,10 @@
                         </ul>
                     </div>
                     <div class="btn-save flex-center">
-                        <a class="btn btn-red waves-effect waves-light font-weight-bold">LƯU</a>
+                        <a href="#add">
+                            <button class="btn btn-warning p-2 waves-effect waves-light" type="button"><i class="fa-solid fa-plus"></i> LƯU
+                            </button>
+                        </a>
                     </div>
                 </div>
 
@@ -240,6 +244,7 @@
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";
     CKEDITOR.config.height = "500px";
+    CKEDITOR.instances.yourInstance.execCommand( 'justifyright' );
 </script>
 <script>
     (function ($) {
