@@ -38,35 +38,22 @@ Route::get('/projectPost', function () {
     return view('template.projectPost');
 });
 
-Route::get('/userManage', function () {
-    return view('template.UserManage');
-});
-Route::get('/roleManagement', function () {
-    return view('template.admin-RoleManagement');
-});
-Route::get('/slideManagement', function () {
-    return view('template.admin-slideManagement');
+Route::get('/usermanage', function () {
+    return view('template.usermanage');
 });
 
-Route::get('/projectsmanage', function () {
+Route::get('/projectsManager', function () {
     return view('template.projectsmanage');
 });
-Route::get('/typeOfProject', function () {
-    return view('template.admin-TypeOfProject');
-});
-Route::get('/postProject', function () {
-    return view('template.admin-PostProject');
-});
-Route::get('/contactManagement', function () {
-    return view('template.admin-contactManagement');
-});
-Route::get('/contactTypeManagement', function () {
-    return view('template.admin-ContactTypeManagement');
+
+Route::get('/servicesManager', function () {
+    return view('template.servicesManager');
 });
 
-Route::get('/servicesManage', function () {
-    return view('template.servicesManage');
+Route::get('/addUser', function (){
+   return view('template.addUserPage');
 });
+
 Route::get('/user', function () {
     return view('template.user');
 });
@@ -79,13 +66,22 @@ Route::get('/userHistory', function () {
 Route::get('/login', function () {
     return view('template.login');
 });
-Route::get('/addSlidersManage', function () {
-    return view('template.addSlidersManage');
-});
-Route::get('/addProjectsManage', function () {
-    return view('template.addProjectsManage');
-});
 Route::get('/dashboard', function () {
     return view('template.dashboard');
 });
 
+Route::get('/addService', function (){
+    return view('template.addServicesPage');
+});
+
+Route::get('/updateService', function (){
+   return view('template.updateServiceManage');
+});
+
+Route::get('updateUser', function(){
+   return view('template.updateUser');
+});
+
+Route::get('servicePostsManage', function(){
+   return view('template.servicePostsManage');
+});
