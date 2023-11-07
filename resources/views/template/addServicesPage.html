@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/lib/suneditor-master/dist/css/suneditor.min.css">
+    <!--    <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
+
+    <!---->
+    <title>Thêm DV</title>
+</head>
+<body class="">
+
+<!-- Sidebar navigation -->
+<div class="wrapper">
+    <div class="header fixed-top ">
+        <div class="header-menu row m-0">
+            <div class="col-11 d-flex align-items-center">
+                <div class="sidebar-btn mr-3">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="title text-uppercase">
+                    Xây dựng <span>Nhà Đẹp</span></div>
+            </div>
+            <ul class="col-1 d-flex align-items-center m-0">
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <center class="logo">
+                <img src="public/img/logo.svg" alt="logo" style="">
+            </center>
+            <li class="sidebar-item">
+                <a href="#" class="menu-btn">
+                    <i class="fas fa-desktop"></i><span>Thống kê</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="user">
+                <a href="#user" class="menu-btn">
+                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="project">
+                <a href="#project" class="menu-btn">
+                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-project" class="menu-btn">
+                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+                    </a>
+                    <a href="#blog-project" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class="sidebar-item" id="type-project">
+                <a href="#type-project" class="menu-btn">
+                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#blog-service" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="contact">
+                <a href="#contact" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-contact" class="menu-btn">
+                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="slide">
+                <a href="#slide" class="menu-btn">
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                </a>
+            </li>
+        </div>
+    </div>
+
+
+    <div class="main-container">
+        <div class="container p-0">
+
+
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL Dịch vụ</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm dịch vụ</a></li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-100">
+
+                <form action="#" method="post">
+                    <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Thêm Dịch vụ</h3>
+                        </div>
+                        <div class="d-flex">
+                            <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
+                                role="tablist">
+                                <li class="">
+                                    <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
+                                       href="#pills-home"
+                                       role="tab"
+                                       aria-controls="pills-home" aria-selected="true">Thông tin</a>
+                                </li>
+                                <li class="">
+                                    <a class="nav-link " id="pills-profile-tab" data-toggle="pill"
+                                       href="#pills-profile"
+                                       role="tab"
+                                       aria-controls="pills-profile" aria-selected="false">Bài viết</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-save flex-center">
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                             aria-labelledby="pills-home-tab">
+                            <div class="edit-profile flex-center">
+                                <div class="col-md-8 mb-4">
+                                    <!-- Card -->
+                                    <div class="card card-cascade cascading-admin-card user-card">
+                                        <!-- Card content -->
+                                        <div class="card-body card-body-cascade">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="md-form form-sm mb-0">
+                                                        <input type="text" id="form7"
+                                                               class="form-control form-control-sm">
+                                                        <label for="form7" class="">Tên dịch vụ</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-6">
+                                                    <div class="md-form form-sm mb-0">
+                                                        <input type="text" id="form8"
+                                                               class="form-control form-control-sm">
+                                                        <label for="form8" class="">Tên rút gọn</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="md-form form-sm mb-0">
+                                                        <select class="browser-default custom-select">
+                                                            <option disabled>Trạng thái</option>
+                                                            <option value="1" selected>Ẩn</option>
+                                                            <option value="2">Hiện</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3 mb-3 flex-center">
+                                                <div
+                                                    class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
+                                                    <div class="input-group col-lg-12 col-md-12">
+                                                        <div class="input-group-prepend">
+                                                    <span class="input-group-text"
+                                                          id="inputGroupFileAddon01">Hình ảnh</span>
+                                                        </div>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input"
+                                                                   id="inputGroupFile01"
+                                                                   aria-describedby="inputGroupFileAddon01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Tải
+                                                                hình
+                                                                ảnh
+                                                                lên</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- Card content -->
+                                    </div>
+                                    <!-- Card -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                             aria-labelledby="pills-profile-tab">
+                            <div class="edit-profile flex-center">
+                                <div class="col-md-12 mb-12">
+                                    <div class="card card-cascade cascading-admin-card user-card">
+                                        <div class="card-body card-body-cascade">
+                                            <div class="col-lg-12 col-md-12 p-0">
+                                                <div class="form-group">
+                                                                                                        <textarea
+                                                                                                            class="form-control rounded-0"
+                                                                                                            name="service-des"
+                                                                                                            rows="10">
+                                                                                                        </textarea>
+                                                    <!--                                                    <textarea id="sample">Hi</textarea>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+</div>
+<!--/. Sidebar navigation -->
+
+
+<script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
+<script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="public/lib/DataTables/dataTables.min.js"></script>
+<script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('service-des');
+    CKEDITOR.config.width = "100%";
+    CKEDITOR.config.height = "400px";
+
+</script>
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+
+    });
+</script>
+</body>
+</html>
