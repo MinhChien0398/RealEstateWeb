@@ -248,3 +248,27 @@ body {
 .projectCard-content p {
     font-size: 13px;
 }
+
+.pagination {
+    text-align: center;
+}
+
+.page-numbers {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.page-link {
+    background-color: #E90808;
+}
+
+.btn-search {
+    padding-top: 10px;
+    top: 10%;
+    background-color: #E90808 !important;
+}

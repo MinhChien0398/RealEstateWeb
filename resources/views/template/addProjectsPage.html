@@ -5,11 +5,11 @@
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="resources/views/template/css/add_project_manage.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <!--    <link href="resources/views/template/css/add_slider_manage.css" rel="stylesheet">-->
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/dataTables.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
 <body class="">
 
@@ -21,7 +21,7 @@
                 <div class="sidebar-btn mr-3">
                     <i class="fas fa-bars"></i>
                 </div>
-                <div class="title text-uppercase font-weight-bolder">
+                <div class="title text-uppercase">
                     Xây dựng <span>Nhà Đẹp</span></div>
             </div>
             <ul class="col-1 d-flex align-items-center m-0">
@@ -88,84 +88,139 @@
             </li>
         </div>
     </div>
+
+
     <div class="main-container">
-        <div class="content-header">
-            <h2 class="title text-uppercase addSlider">Thêm Projects</h2>
-            <button id="saveBtn" class="btn btn-orange"></i>Lưu</button>
-        </div>
-        <div class="col-md-12 col-lg-12 col-xl-12">
-            <ul class="nav md-pills nav-justified pills-warning mb-4">
-                <li class="nav-item pl-0">
-                    <a class="nav-link active " data-toggle="tab" href="#panel104" role="tab">Thông tin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#panel105" role="tab">Bài viết</a>
-                </li>
-            </ul>
-            <div class="container">
-                <!-- Tab panels -->
-                <div class="tab-content card">
-                    <!--Panel 1-->
-                    <div class="tab-pane fade in show active" id="panel104" role="tabpanel">
-                        <div class="row flex-center">
-                            <div class="col-lg-11 mb-4">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <label for="name" class="labels">Tiêu đề</label>
-                                        <input id="name" type="text" class="form-control"
-                                               placeholder="Tiêu đề" value="">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="status" class="labels">Trạng thái</label>
-                                        <select id="status" class="browser-default custom-select">
-                                            <option value="1">Kích hoạt</option>
-                                            <option value="2">Ẩn</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="id" class="labels">STT</label>
-                                        <fieldset>
-                                            <input id="id" type="text" class="form-control"
-                                                   placeholder="STT" value="">
-                                        </fieldset>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label class="form-label">Tải hình</label>
-                                        <form class="md-form mr-0" action="#">
-                                            <div class="file-field">
-                                                <div class="btn btn-primary btn-sm float-left">
-                                                    <span>Chọn hình</span>
-                                                    <input type="file" multiple>
-                                                </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text"
-                                                           placeholder="Upload one or more files">
+        <div class="container p-0">
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL Bài viết dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm dự án</a></li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-100">
+
+                <form action="#" method="post">
+                    <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
+                        </div>
+                        <div class="d-flex">
+                            <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
+                                role="tablist">
+                                <li class="">
+                                    <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
+                                       href="#pills-home"
+                                       role="tab"
+                                       aria-controls="pills-home" aria-selected="true">Thông tin</a>
+                                </li>
+                                <li class="">
+                                    <a class="nav-link " id="pills-profile-tab" data-toggle="pill"
+                                       href="#pills-profile"
+                                       role="tab"
+                                       aria-controls="pills-profile" aria-selected="false">Bài viết</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-save flex-center">
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                             aria-labelledby="pills-home-tab">
+                            <div class="edit-profile flex-center">
+                                <div class="col-md-8 mb-4">
+                                    <!-- Card -->
+                                    <div class="card card-cascade cascading-admin-card user-card">
+                                        <!-- Card content -->
+                                        <div class="card-body card-body-cascade">
+                                            <div class="row flex-center">
+                                                <div class="col-lg-11 mb-4">
+                                                    <div class="card-body">
+                                                        <div class="mb-4">
+                                                            <label for="name" class="labels">Tiêu đề</label>
+                                                            <input id="name" type="text" class="form-control"
+                                                                   placeholder="Tiêu đề" value="">
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <div class="form-group green-border-focus">
+                                                                <label for="exampleFormControlTextarea5">Nội
+                                                                    dung</label>
+                                                                <textarea class="form-control"
+                                                                          id="exampleFormControlTextarea5"
+                                                                          rows="3"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="status" class="labels">Trạng thái</label>
+                                                            <select id="status" class="browser-default custom-select">
+                                                                <option value="1">Kích hoạt</option>
+                                                                <option value="2">Ẩn</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="id" class="labels">STT</label>
+                                                            <fieldset>
+                                                                <input id="id" type="text" class="form-control validate"
+                                                                       placeholder="STT" value="">
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label class="form-label">Tải hình</label>
+                                                            <form class="md-form mr-0" action="#">
+                                                                <div class="file-field">
+                                                                    <div class="btn btn-primary btn-sm float-left"
+                                                                         style="background-color:#E90808 !important;">
+                                                                        <span>Chọn hình</span>
+                                                                        <input type="file" multiple>
+                                                                    </div>
+                                                                    <div class="file-path-wrapper">
+                                                                        <input class="file-path validate" type="text"
+                                                                               placeholder="Chọn một hoặc nhiều hình">
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </form>
+                                        </div>
+                                        <!-- Card content -->
+                                    </div>
+                                    <!-- Card -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                             aria-labelledby="pills-profile-tab">
+                            <div class="edit-profile flex-center">
+                                <div class="col-md-12 mb-12">
+                                    <div class="card card-cascade cascading-admin-card user-card">
+                                        <div class="card-body card-body-cascade">
+                                            <div class="col-lg-12 col-md-12 p-0">
+                                                <div class="form-group">
+                                                    <textarea class="form-control rounded-0" name="service-des"
+                                                              rows="10"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--/.Panel 1-->
-                    <div class="tab-pane fade" id="panel105" role="tabpanel">
-                        <form>
-                            <label for="editor1"></label>
-                            <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
+                </form>
+            </main>
         </div>
-        <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
 </div>
 <!--/. Sidebar navigation -->
-</body>
 
 
 <script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
@@ -173,55 +228,20 @@
 <script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="public/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"></script>
+<script src="public/lib/DataTables/dataTables.min.js"></script>
 <script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
-
 <script>
-    (function ($) {
-        $.fn.counter = function () {
-            const $this = $(this),
-                numberFrom = parseInt($this.attr('data-from')),
-                numberTo = parseInt($this.attr('data-to')),
-                delta = numberTo - numberFrom,
-                deltaPositive = delta > 0 ? 1 : 0,
-                time = parseInt($this.attr('data-time')),
-                changeTime = 10;
-
-            let currentNumber = numberFrom,
-                value = delta * changeTime / time;
-            var interval1;
-            const changeNumber = () => {
-                currentNumber += value;
-                //checks if currentNumber reached numberTo
-                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
-                this.text(parseInt(currentNumber));
-                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
-            }
-
-            interval1 = setInterval(changeNumber, changeTime);
-        }
-    }(jQuery));
-
-    $(document).ready(function () {
-
-        $('.count-up').counter();
-        $('.count1').counter();
-        $('.count2').counter();
-        $('.count3').counter();
-
-        new WOW().init();
-
-        setTimeout(function () {
-            $('.count5').counter();
-        }, 3000);
-    });
+    CKEDITOR.replace('service-des');
+    CKEDITOR.config.width = "100%";
+    CKEDITOR.config.height = "400px";
 </script>
 <script>
     $(document).ready(function () {
         $(".sidebar-btn").click(function () {
             $(".wrapper").toggleClass("mycollapse");
         });
-    });</script>
+    });
+</script>
 <script>
     document.getElementById('status').addEventListener('change', function () {
         var selectedStatus = this.value;
@@ -234,9 +254,7 @@
             idField.disabled = true;
         }
     });
+
 </script>
-<script>
-    CKEDITOR.replace('editor1');
-    CKEDITOR.config.height = 500;
-</script>
+</body>
 </html>

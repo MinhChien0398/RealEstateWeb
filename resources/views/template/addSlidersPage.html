@@ -21,7 +21,7 @@
                 <div class="sidebar-btn mr-3">
                     <i class="fas fa-bars"></i>
                 </div>
-                <div class="title text-uppercase font-weight-bolder">
+                <div class="title text-uppercase">
                     Xây dựng <span>Nhà Đẹp</span></div>
             </div>
             <ul class="col-1 d-flex align-items-center m-0">
@@ -89,11 +89,72 @@
         </div>
     </div>
     <div class="main-container">
-        <div class="content-header">
-            <h2 class="title text-uppercase addSlider">Thêm sliders</h2>
-            <button id="saveBtn" class="btn btn-orange"></i>Lưu</button>
+        <div class="container p-0">
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL slide</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm Slide</a></li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-100">
+                <form>
+                    <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
+                        <div class="col-6 d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Thêm Slide</h3>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row flex-center h-auto">
+                            <div class="card col-lg-10 mb-4">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <label for="name" class="labels">Tiêu đề</label>
+                                        <input id="name" type="text" class="form-control"
+                                               placeholder="Tiêu đề" value="">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="status" class="labels">Trạng thái</label>
+                                        <select id="status" class="browser-default custom-select">
+                                            <option value="1">Kích hoạt</option>
+                                            <option value="2">Ẩn</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="id" class="labels">STT</label>
+                                        <fieldset>
+                                            <input id="id" type="text" class="form-control"
+                                                   placeholder="STT" value="">
+                                        </fieldset>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label">Tải hình</label>
+                                        <form class="md-form mr-0" action="#">
+                                            <div class="file-field">
+                                                <div class="btn btn-primary btn-sm float-left"
+                                                     style="background-color:#E90808 !important;">
+                                                    <span>Chọn hình</span>
+                                                    <input type="file" multiple>
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input class="file-path validate" type="text"
+                                                           placeholder="Chọn một hoặc nhiều hình">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
         </div>
-        
     </div>
 </div>
 <!--/. Sidebar navigation -->
