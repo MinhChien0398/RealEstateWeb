@@ -5,11 +5,11 @@
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="resources/views/template/css/add_project_manage.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="resources/views/template/css/fileInput.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/dataTables.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
 <body class="">
 
@@ -21,7 +21,7 @@
                 <div class="sidebar-btn mr-3">
                     <i class="fas fa-bars"></i>
                 </div>
-                <div class="title text-uppercase font-weight-bolder">
+                <div class="title text-uppercase">
                     Xây dựng <span>Nhà Đẹp</span></div>
             </div>
             <ul class="col-1 d-flex align-items-center m-0">
@@ -89,26 +89,29 @@
         </div>
     </div>
     <div class="main-container">
-        <div class="content-header">
-            <h2 class="title text-uppercase addSlider">Thêm Projects</h2>
-            <button id="saveBtn" class="btn btn-orange"></i>Lưu</button>
-        </div>
-        <div class="col-md-12 col-lg-12 col-xl-12">
-            <ul class="nav md-pills nav-justified pills-warning mb-4">
-                <li class="nav-item pl-0">
-                    <a class="nav-link active " data-toggle="tab" href="#panel104" role="tab">Thông tin</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#panel105" role="tab">Bài viết</a>
-                </li>
-            </ul>
-            <div class="container">
-                <!-- Tab panels -->
-                <div class="tab-content card">
-                    <!--Panel 1-->
-                    <div class="tab-pane fade in show active" id="panel104" role="tabpanel">
-                        <div class="row flex-center">
-                            <div class="col-lg-11 mb-4">
+        <div class="container p-0">
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL slide</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm Slide</a></li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-100">
+                <form>
+                    <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
+                        <div class="col-6 d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Thêm Slide</h3>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row flex-center h-auto">
+                            <div class="card col-lg-10 mb-4">
                                 <div class="card-body">
                                     <div class="mb-4">
                                         <label for="name" class="labels">Tiêu đề</label>
@@ -130,39 +133,35 @@
                                         </fieldset>
                                     </div>
                                     <div class="mb-4">
-                                        <label class="form-label">Tải hình</label>
-                                        <form class="md-form mr-0" action="#">
-                                            <div class="file-field">
-                                                <div class="btn btn-primary btn-sm float-left">
-                                                    <span>Chọn hình</span>
-                                                    <input type="file" multiple>
-                                                </div>
-                                                <div class="file-path-wrapper">
-                                                    <input class="file-path validate" type="text"
-                                                           placeholder="Upload one or more files">
-                                                </div>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                                    <span class="input-group-text"
+                                                                          id="inputGroupFileAddon01">Upload</span>
                                             </div>
-                                        </form>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input"
+                                                       id="inputGroupFile01"
+                                                       aria-describedby="inputGroupFileAddon01"
+                                                       onchange="preview()"
+                                                       multiple>
+                                                <label class="custom-file-label"
+                                                       for="inputGroupFile01">Choose file
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                        <p id="num-of-files">No Files Chosen</p>
+                                        <div id="images"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!--/.Panel 1-->
-                    <div class="tab-pane fade" id="panel105" role="tabpanel">
-                        <form>
-                            <label for="editor1"></label>
-                            <textarea name="editor1" id="editor1" rows="10" cols="80"></textarea>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
+                </form>
+            </main>
         </div>
-        <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
 </div>
 <!--/. Sidebar navigation -->
 </body>
@@ -174,8 +173,7 @@
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"></script>
-<script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
-
+<script src="resources/views/template/js/inputFile.js"></script>
 <script>
     (function ($) {
         $.fn.counter = function () {
@@ -234,9 +232,7 @@
             idField.disabled = true;
         }
     });
+
 </script>
-<script>
-    CKEDITOR.replace('editor1');
-    CKEDITOR.config.height = 500;
-</script>
+
 </html>
