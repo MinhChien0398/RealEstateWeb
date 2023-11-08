@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
+    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <!---->
+    <title>Thêm người dùng</title>
+</head>
+<body class="">
+
+<!-- Sidebar navigation -->
+<div class="wrapper">
+    <div class="header fixed-top ">
+        <div class="header-menu row m-0">
+            <div class="col-11 d-flex align-items-center">
+                <div class="sidebar-btn mr-3">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <div class="title text-uppercase">
+                    Xây dựng <span>Nhà Đẹp</span></div>
+            </div>
+            <ul class="col-1 d-flex align-items-center m-0">
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <center class="logo">
+                <img src="public/img/logo.svg" alt="logo" style="">
+            </center>
+            <li class="sidebar-item">
+                <a href="#" class="menu-btn">
+                    <i class="fas fa-desktop"></i><span>Thống kê</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="user">
+                <a href="#user" class="menu-btn">
+                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="project">
+                <a href="#project" class="menu-btn">
+                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-project" class="menu-btn">
+                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+                    </a>
+                    <a href="#blog-project" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class="sidebar-item" id="type-project">
+                <a href="#type-project" class="menu-btn">
+                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#blog-service" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="contact">
+                <a href="#contact" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                </a>
+                <div class="sub-menu">
+                    <a href="#type-contact" class="menu-btn">
+                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="slide">
+                <a href="#slide" class="menu-btn">
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                </a>
+            </li>
+        </div>
+    </div>
+    <div class="main-container">
+
+
+        <div class="container p-0">
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-100">
+                <form action="">
+                    <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
+                        <div class="col-6 d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Đăng kí người dùng</h3>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                            <a href="#add">
+                                <button class="btn btn-blue p-2 waves-effect waves-light" type="button"><i
+                                    class="fa-solid fa-plus"></i> Add
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="edit-profile flex-center">
+                            <div class="col-md-8 mb-4">
+                                <!-- Card -->
+                                <div class="card card-cascade cascading-admin-card user-card">
+                                    <!-- Card content -->
+                                    <div class="card-body card-body-cascade">
+                                        <!-- Grid row -->
+
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="email" id="form8" class="form-control form-control-sm">
+                                                    <label for="form8" class="">Email</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="password" id="form9"
+                                                           class="form-control form-control-sm">
+                                                    <label for="form9" class="">Password</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row d-flex align-items-center">
+                                            <!-- Grid column -->
+                                            <div class="col-lg-4">
+
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="text" id="form12" class="form-control form-control-sm">
+                                                    <label for="form12" class="">Họ và tên</label>
+                                                </div>
+
+                                            </div>
+                                            <!-- Grid column -->
+
+                                            <!-- Grid column -->
+                                            <div class="col-lg-4">
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="date" id="date-picker-example" style="padding: 6.2px;"
+                                                           class="form-control datepicker">
+                                                    <label for="date-picker-example">Ngày sinh</label>
+                                                </div>
+
+                                            </div>
+                                            <!-- Grid column -->
+
+                                            <!-- Grid column -->
+                                            <div class="col-lg-4">
+
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="number" id="form4"
+                                                           class="form-control form-control-sm">
+                                                    <label for="form4" class="disabled">SĐT</label>
+                                                </div>
+
+                                            </div>
+                                            <!-- Grid column -->
+                                        </div>
+                                        <div class="row">
+
+                                            <!-- Grid column -->
+                                            <div class="col-lg-6 col-md-10">
+
+                                                <div class="md-form form-sm mb-0">
+                                                    <input type="text" id="form3" class="form-control form-control-sm">
+                                                    <label for="form3" class="">Địa chỉ / Tỉnh thành </label>
+                                                </div>
+
+                                            </div>
+                                            <!-- Grid column -->
+
+                                            <!-- Grid column -->
+                                            <div class="col-lg-2 col-md-3">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check mt-4">
+                                                    <input type="checkbox" class="form-check-input"
+                                                           id="materialUnchecked">
+                                                    <label class="form-check-label" for="materialUnchecked">Nam</label>
+                                                </div>
+                                            </div>
+                                            <!-- Grid column -->
+                                            <!-- Grid column -->
+                                            <div class="col-lg-2 col-md-3">
+                                                <!-- Material indeterminate -->
+                                                <div class="form-check mt-4">
+                                                    <input type="checkbox" class="form-check-input"
+                                                           id="materialIndeterminate2"
+                                                           checked>
+                                                    <label class="form-check-label"
+                                                           for="materialIndeterminate2">Nữ</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Grid column -->
+
+                                            <!-- Grid column -->
+
+                                            <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
+                                                <div class="col-lg-6 col-md-6">
+
+                                                    <div class="md-form form-sm mb-0">
+                                                        <select class="browser-default custom-select mb-4">
+                                                            <option value="" disabled>Trạng thái</option>
+                                                            <option value="1" selected>Chưa kích hoạt</option>
+                                                            <option value="2">Kích hoạt</option>
+                                                            <option value="3">Khóa</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-6 col-md-6">
+
+                                                    <div class="md-form form-sm mb-0">
+                                                        <select class="browser-default custom-select mb-4">
+                                                            <option value="" disabled>Chọn phân quyền</option>
+                                                            <option value="1" selected>Người dùng thường</option>
+                                                            <option value="2">Admin</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <!-- Grid column -->
+                                            </div>
+                                        </div>
+                                        <!-- Grid row -->
+
+                                        <!-- Grid row -->
+
+                                    </div>
+                                    <!-- Grid row -->
+
+                                    <!-- Grid row -->
+
+                                </div>
+                                <!-- Card content -->
+
+                            </div>
+                            <!-- Card -->
+
+                        </div>
+
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+    </form>
+</div>
+<!--/. Sidebar navigation -->
+
+
+<script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
+<script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
+<script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="public/lib/DataTables/dataTables.min.js"></script>
+<script>
+
+</script>
+<script>
+    $('#table-user').dataTable({
+        // "ajax": {
+        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
+        //     "dataSrc": ""
+        // },
+        "columnDefs": [
+            {
+                "targets": 0,
+                "width": "5%",
+            },
+            {
+                "targets": 1,
+                "width": "15%",
+            },
+            {
+                "targets": 2,
+                "width": "20%",
+            },
+            {
+                "targets": 3,
+                "width": "10%",
+            },
+            {
+                "targets": 4,
+                "width": "10%",
+            },
+            {
+                "targets": 5,
+                "width": "5%",
+            },
+            {
+                "targets": 6,
+                "width": "5%",
+            },
+            {
+                "targets": 7,
+                "width": "10%",
+            },
+            {
+                "targets": 8,
+                "width": "10%",
+            },
+            {
+                "targets": 9,
+                "width": "1%",
+            },
+            {className: "text-center mt-auto mb-auto", targets: "_all"},
+
+        ],
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ dòng",
+            "zeroRecords": "Không tìm thấy dữ liệu",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "Không có dữ liệu",
+            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
+            "search": "Tìm kiếm",
+            "paginate": {
+                "previous": "Trước",
+                "next": "Tiếp theo"
+            }
+        },
+        "pagingType": "full_numbers",
+        "lengthMenu": [5, 10, 15, 20],
+        "order": [[0, "asc"]],
+    });
+
+</script>
+<script>
+    (function ($) {
+        $.fn.counter = function () {
+            const $this = $(this),
+                numberFrom = parseInt($this.attr('data-from')),
+                numberTo = parseInt($this.attr('data-to')),
+                delta = numberTo - numberFrom,
+                deltaPositive = delta > 0 ? 1 : 0,
+                time = parseInt($this.attr('data-time')),
+                changeTime = 10;
+
+            let currentNumber = numberFrom,
+                value = delta * changeTime / time;
+            var interval1;
+            const changeNumber = () => {
+                currentNumber += value;
+                //checks if currentNumber reached numberTo
+                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
+                this.text(parseInt(currentNumber));
+                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+            }
+
+            interval1 = setInterval(changeNumber, changeTime);
+        }
+    }(jQuery));
+
+    $(document).ready(function () {
+
+        $('.count-up').counter();
+        $('.count1').counter();
+        $('.count2').counter();
+        $('.count3').counter();
+
+        new WOW().init();
+
+        setTimeout(function () {
+            $('.count5').counter();
+        }, 3000);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+
+    });
+</script>
+
+</body>
+
+
+</html>
