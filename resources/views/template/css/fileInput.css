@@ -1,0 +1,23 @@
+
+input[type="file"] {
+    display: none;
+}
+
+#images {
+    width: 90%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+figure {
+    width: 40%;
+}
+
+img {
+    width: 50%;
+}
+
