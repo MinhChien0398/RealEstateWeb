@@ -7,7 +7,7 @@
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <!--    <link href="resources/views/template/css/add_slider_manage.css" rel="stylesheet">-->
+    <link href="resources/views/template/css/fileInput.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
@@ -172,20 +172,26 @@
                                                             </fieldset>
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label class="form-label">Tải hình</label>
-                                                            <form class="md-form mr-0" action="#">
-                                                                <div class="file-field">
-                                                                    <div class="btn btn-primary btn-sm float-left"
-                                                                         style="background-color:#E90808 !important;">
-                                                                        <span>Chọn hình</span>
-                                                                        <input type="file" multiple>
-                                                                    </div>
-                                                                    <div class="file-path-wrapper">
-                                                                        <input class="file-path validate" type="text"
-                                                                               placeholder="Chọn một hoặc nhiều hình">
-                                                                    </div>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text"
+                                                                          id="inputGroupFileAddon01">Upload</span>
                                                                 </div>
-                                                            </form>
+                                                                <div class="custom-file">
+                                                                    <input type="file" class="custom-file-input"
+                                                                           id="inputGroupFile01"
+                                                                           aria-describedby="inputGroupFileAddon01"
+                                                                           onchange="preview()"
+                                                                           multiple>
+                                                                    <label class="custom-file-label"
+                                                                           for="inputGroupFile01">Choose file
+                                                                    </label>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <p id="num-of-files">No Files Chosen</p>
+                                                            <div id="images"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -230,6 +236,7 @@
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="public/lib/DataTables/dataTables.min.js"></script>
 <script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
+<script src="resources/views/template/js/inputFile.js"></script>
 <script>
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";
