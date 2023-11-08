@@ -50,8 +50,8 @@ Route::get('/servicesManager', function () {
     return view('template.servicesManager');
 });
 
-Route::get('/addUser', function (){
-   return view('template.addUserPage');
+Route::get('/addUser', function () {
+    return view('template.addUserPage');
 });
 
 Route::get('/user', function () {
@@ -70,18 +70,28 @@ Route::get('/dashboard', function () {
     return view('template.dashboard');
 });
 
-Route::get('/addService', function (){
+Route::get('/addService', function () {
     return view('template.addServicesPage');
 });
 
-Route::get('/updateService', function (){
-   return view('template.updateServiceManage');
+Route::get('/updateService', function () {
+    return view('template.updateServiceManage');
 });
 
-Route::get('updateUser', function(){
-   return view('template.updateUser');
+Route::get('updateUser', function () {
+    return view('template.updateUser');
 });
 
-Route::get('servicePostsManage', function(){
-   return view('template.servicePostsManage');
+Route::get('servicePostsManage', function () {
+    return view('template.servicePostsManage');
+});
+Route::get('/addSliders', function () {
+    return view('template.addSlidersPage');
+});
+Route::get('/addProjects', function () {
+    return view('template.addProjectsPage');
+});
+
+Route::get('updatePost', function (){
+    return view('template.updatePost');
 });

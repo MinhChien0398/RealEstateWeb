@@ -16,6 +16,7 @@
     <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <link rel="stylesheet" href="public/lib/suneditor-master/dist/css/suneditor.min.css">
+    <link href="resources/views/template/css/fileInput.css" rel="stylesheet">
     <!--    <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
 
     <!---->
@@ -178,27 +179,48 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row mt-3 mb-3 flex-center">
-                                                <div
-                                                    class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
-                                                    <div class="input-group col-lg-12 col-md-12">
-                                                        <div class="input-group-prepend">
-                                                    <span class="input-group-text"
-                                                          id="inputGroupFileAddon01">Hình ảnh</span>
-                                                        </div>
-                                                        <div class="custom-file">
-                                                            <input type="file" class="custom-file-input"
-                                                                   id="inputGroupFile01"
-                                                                   aria-describedby="inputGroupFileAddon01">
-                                                            <label class="custom-file-label" for="inputGroupFile01">Tải
-                                                                hình
-                                                                ảnh
-                                                                lên</label>
-                                                        </div>
+                                            <!--                                            <div class="row mt-3 mb-3 flex-center">-->
+                                            <!--                                                <div-->
+                                            <!--                                                    class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">-->
+                                            <!--                                                    <div class="input-group col-lg-12 col-md-12">-->
+                                            <!--                                                        <div class="input-group-prepend">-->
+                                            <!--                                                    <span class="input-group-text"-->
+                                            <!--                                                          id="inputGroupFileAddon01">Hình ảnh</span>-->
+                                            <!--                                                        </div>-->
+                                            <!--                                                        <div class="custom-file">-->
+                                            <!--                                                            <input type="file" class="custom-file-input"-->
+                                            <!--                                                                   id="inputGroupFile01"-->
+                                            <!--                                                                   aria-describedby="inputGroupFileAddon01">-->
+                                            <!--                                                            <label class="custom-file-label" for="inputGroupFile01">Tải-->
+                                            <!--                                                                hình-->
+                                            <!--                                                                ảnh-->
+                                            <!--                                                                lên</label>-->
+                                            <!--                                                        </div>-->
+                                            <!--                                                    </div>-->
+                                            <!--                                                </div>-->
+                                            <!--                                            </div>-->
+                                            <div class="mb-4">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                                    <span class="input-group-text"
+                                                                          id="inputGroupFileAddon01">Upload</span>
                                                     </div>
-                                                </div>
-                                            </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input"
+                                                               id="inputGroupFile01"
+                                                               aria-describedby="inputGroupFileAddon01"
+                                                               onchange="preview()"
+                                                               multiple>
+                                                        <label class="custom-file-label"
+                                                               for="inputGroupFile01">Choose file
+                                                        </label>
 
+                                                    </div>
+
+                                                </div>
+                                                <p id="num-of-files">No Files Chosen</p>
+                                                <div id="images"></div>
+                                            </div>
                                         </div>
                                         <!-- Card content -->
                                     </div>
@@ -243,6 +265,7 @@
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="public/lib/DataTables/dataTables.min.js"></script>
 <script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
+<script src="resources/views/template/js/inputFile.js"></script>
 <script>
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";
