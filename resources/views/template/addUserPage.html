@@ -7,19 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="/RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="/RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="/RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="/RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="/RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="/RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
+          rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <!---->
     <title>Thêm người dùng</title>
 </head>
 <body class="">
-
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <div class="header fixed-top ">
@@ -39,15 +39,15 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="/RealEstateWeb/public/img/logo.svg" alt="logo" style="">
+                <img src="../../../../RealEstateWeb/public/img/logo.svg" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="#" class="menu-btn">
+                <a href="../../../../RealEstateWeb/resources/views/template/dashboard.html" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="#user" class="menu-btn">
+                <a href="../../../../RealEstateWeb/resources/views/template/UserManage.html" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
@@ -57,10 +57,11 @@
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
-                    <a href="#type-project" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/projectsmanage.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="#blog-project" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/admin-PostProject.html"
+                       class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
                 </div>
@@ -72,7 +73,8 @@
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
-                    <a href="#blog-service" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/servicePostsManage.html"
+                       class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
@@ -83,13 +85,15 @@
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
-                    <a href="#type-contact" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/admin-contactManagement.html"
+                       class="menu-btn">
                         <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="#slide" class="menu-btn">
+                <a href="../../../../RealEstateWeb/resources/views/template/admin-ContactTypeManagement.html"
+                   class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
@@ -101,7 +105,9 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text"
+                                                   href="../../../../RealEstateWeb/resources/views/template/dashboard.html">Thống
+                        kê</a></li>
                     <li class="breadcrumb-item"><a class="black-text" href="#">QL người dùng</a></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
                 </ol>
@@ -115,158 +121,215 @@
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
                             <a href="#add">
                                 <button class="btn btn-blue p-2 waves-effect waves-light" type="button"><i
-                                    class="fa-solid fa-plus"></i> Add
+                                    class="fa-solid fa-plus"></i>Add
                                 </button>
                             </a>
                         </div>
                     </div>
                     <div class="">
+                        <!--                        <div class="edit-profile flex-center">-->
+                        <!--                            <div class="col-md-8 mb-4">-->
+                        <!--                                &lt;!&ndash; Card &ndash;&gt;-->
+                        <!--                                <div class="card card-cascade cascading-admin-card user-card">-->
+                        <!--                                    &lt;!&ndash; Card content &ndash;&gt;-->
+                        <!--                                    <div class="card-body card-body-cascade">-->
+                        <!--                                        &lt;!&ndash; Grid row &ndash;&gt;-->
+
+                        <!--                                        <div class="row">-->
+                        <!--                                            <div class="col-lg-6 col-md-6">-->
+
+                        <!--                                                <div class="md-form form-sm mb-0">-->
+                        <!--                                                    <input type="email" id="form8" class="form-control form-control-sm">-->
+                        <!--                                                    <label for="form8" class="">Email</label>-->
+                        <!--                                                </div>-->
+
+                        <!--                                            </div>-->
+                        <!--                                            <div class="col-lg-6 col-md-6">-->
+
+                        <!--                                                <div class="md-form form-sm mb-0">-->
+                        <!--                                                    <input type="password" id="form9"-->
+                        <!--                                                           class="form-control form-control-sm">-->
+                        <!--                                                    <label for="form9" class="">Password</label>-->
+                        <!--                                                </div>-->
+
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="row d-flex align-items-center">-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            <div class="col-lg-4">-->
+
+                        <!--                                                <div class="md-form form-sm mb-0">-->
+                        <!--                                                    <input type="text" id="form12" class="form-control form-control-sm">-->
+                        <!--                                                    <label for="form12" class="">Họ và tên</label>-->
+                        <!--                                                </div>-->
+
+                        <!--                                            </div>-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            <div class="col-lg-4">-->
+                        <!--                                                <div class="md-form form-sm mb-0">-->
+                        <!--                                                    <input type="date" id="date-picker-example" style="padding: 6.2px;"-->
+                        <!--                                                           class="form-control datepicker">-->
+                        <!--                                                    <label for="date-picker-example">Ngày sinh</label>-->
+                        <!--                                                </div>-->
+
+                        <!--                                            </div>-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            <div class="col-lg-4">-->
+
+                        <!--                                                <div class="md-form form-sm mb-0">-->
+                        <!--                                                    <input type="number" id="form4"-->
+                        <!--                                                           class="form-control form-control-sm">-->
+                        <!--                                                    <label for="form4" class="disabled">SĐT</label>-->
+                        <!--                                                </div>-->
+
+                        <!--                                            </div>-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                        </div>-->
+                        <!--                                        <div class="row">-->
+
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            <div class="col-lg-6 col-md-10">-->
+
+                        <!--                                                <div class="md-form form-sm mb-0">-->
+                        <!--                                                    <input type="text" id="form3" class="form-control form-control-sm">-->
+                        <!--                                                    <label for="form3" class="">Địa chỉ / Tỉnh thành </label>-->
+                        <!--                                                </div>-->
+
+                        <!--                                            </div>-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            <div class="col-lg-2 col-md-3">-->
+                        <!--                                                &lt;!&ndash; Material unchecked &ndash;&gt;-->
+                        <!--                                                <div class="form-check mt-4">-->
+                        <!--                                                    <input type="checkbox" class="form-check-input"-->
+                        <!--                                                           id="materialUnchecked">-->
+                        <!--                                                    <label class="form-check-label" for="materialUnchecked">Nam</label>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            <div class="col-lg-2 col-md-3">-->
+                        <!--                                                &lt;!&ndash; Material indeterminate &ndash;&gt;-->
+                        <!--                                                <div class="form-check mt-4">-->
+                        <!--                                                    <input type="checkbox" class="form-check-input"-->
+                        <!--                                                           id="materialIndeterminate2"-->
+                        <!--                                                           checked>-->
+                        <!--                                                    <label class="form-check-label"-->
+                        <!--                                                           for="materialIndeterminate2">Nữ</label>-->
+                        <!--                                                </div>-->
+                        <!--                                            </div>-->
+
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+
+                        <!--                                            &lt;!&ndash; Grid column &ndash;&gt;-->
+
+                        <!--                                            <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">-->
+                        <!--                                                <div class="col-lg-6 col-md-6">-->
+
+                        <!--                                                    <div class="md-form form-sm mb-0">-->
+                        <!--                                                        <select class="browser-default custom-select mb-4">-->
+                        <!--                                                            <option value="" disabled>Trạng thái</option>-->
+                        <!--                                                            <option value="1" selected>Chưa kích hoạt</option>-->
+                        <!--                                                            <option value="2">Kích hoạt</option>-->
+                        <!--                                                            <option value="3">Khóa</option>-->
+                        <!--                                                        </select>-->
+                        <!--                                                    </div>-->
+
+                        <!--                                                </div>-->
+                        <!--                                                <div class="col-lg-6 col-md-6">-->
+
+                        <!--                                                    <div class="md-form form-sm mb-0">-->
+                        <!--                                                        <select class="browser-default custom-select mb-4">-->
+                        <!--                                                            <option value="" disabled>Chọn phân quyền</option>-->
+                        <!--                                                            <option value="1" selected>Người dùng thường</option>-->
+                        <!--                                                            <option value="2">Admin</option>-->
+                        <!--                                                        </select>-->
+                        <!--                                                    </div>-->
+
+                        <!--                                                </div>-->
+                        <!--                                                &lt;!&ndash; Grid column &ndash;&gt;-->
+                        <!--                                            </div>-->
+                        <!--                                        </div>-->
+                        <!--                                        &lt;!&ndash; Grid row &ndash;&gt;-->
+
+                        <!--                                        &lt;!&ndash; Grid row &ndash;&gt;-->
+
+                        <!--                                    </div>-->
+                        <!--                                    &lt;!&ndash; Grid row &ndash;&gt;-->
+
+                        <!--                                    &lt;!&ndash; Grid row &ndash;&gt;-->
+
+                        <!--                                </div>-->
+                        <!--                                &lt;!&ndash; Card content &ndash;&gt;-->
+
+                        <!--                            </div>-->
+                        <!--                            &lt;!&ndash; Card &ndash;&gt;-->
+                        <!---->
+                        <!--                        </div>-->
+
                         <div class="edit-profile flex-center">
                             <div class="col-md-8 mb-4">
                                 <!-- Card -->
                                 <div class="card card-cascade cascading-admin-card user-card">
                                     <!-- Card content -->
                                     <div class="card-body card-body-cascade">
-                                        <!-- Grid row -->
-
-                                        <div class="row">
-                                            <div class="col-lg-6 col-md-6">
-
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="email" id="form8" class="form-control form-control-sm">
-                                                    <label for="form8" class="">Email</label>
-                                                </div>
-
-                                            </div>
-                                            <div class="col-lg-6 col-md-6">
-
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="password" id="form9"
-                                                           class="form-control form-control-sm">
-                                                    <label for="form9" class="">Password</label>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="row d-flex align-items-center">
-                                            <!-- Grid column -->
-                                            <div class="col-lg-4">
-
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form12" class="form-control form-control-sm">
-                                                    <label for="form12" class="">Họ và tên</label>
-                                                </div>
-
-                                            </div>
-                                            <!-- Grid column -->
-
-                                            <!-- Grid column -->
-                                            <div class="col-lg-4">
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="date" id="date-picker-example" style="padding: 6.2px;"
-                                                           class="form-control datepicker">
-                                                    <label for="date-picker-example">Ngày sinh</label>
-                                                </div>
-
-                                            </div>
-                                            <!-- Grid column -->
-
-                                            <!-- Grid column -->
-                                            <div class="col-lg-4">
-
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="number" id="form4"
-                                                           class="form-control form-control-sm">
-                                                    <label for="form4" class="disabled">SĐT</label>
-                                                </div>
-
-                                            </div>
-                                            <!-- Grid column -->
-                                        </div>
-                                        <div class="row">
-
-                                            <!-- Grid column -->
-                                            <div class="col-lg-6 col-md-10">
-
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form3" class="form-control form-control-sm">
-                                                    <label for="form3" class="">Địa chỉ / Tỉnh thành </label>
-                                                </div>
-
-                                            </div>
-                                            <!-- Grid column -->
-
-                                            <!-- Grid column -->
-                                            <div class="col-lg-2 col-md-3">
-                                                <!-- Material unchecked -->
-                                                <div class="form-check mt-4">
-                                                    <input type="checkbox" class="form-check-input"
-                                                           id="materialUnchecked">
-                                                    <label class="form-check-label" for="materialUnchecked">Nam</label>
-                                                </div>
-                                            </div>
-                                            <!-- Grid column -->
-                                            <!-- Grid column -->
-                                            <div class="col-lg-2 col-md-3">
-                                                <!-- Material indeterminate -->
-                                                <div class="form-check mt-4">
-                                                    <input type="checkbox" class="form-check-input"
-                                                           id="materialIndeterminate2"
-                                                           checked>
-                                                    <label class="form-check-label"
-                                                           for="materialIndeterminate2">Nữ</label>
-                                                </div>
-                                            </div>
-
-                                            <!-- Grid column -->
-
-                                            <!-- Grid column -->
-
-                                            <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
-                                                <div class="col-lg-6 col-md-6">
-
-                                                    <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4">
-                                                            <option value="" disabled>Trạng thái</option>
-                                                            <option value="1" selected>Chưa kích hoạt</option>
-                                                            <option value="2">Kích hoạt</option>
-                                                            <option value="3">Khóa</option>
-                                                        </select>
+                                        <div class="row flex-center">
+                                            <div class="col-lg-11 mb-4">
+                                                <div class="card-body">
+                                                    <div class="mb-4">
+                                                        <label for="name" class="labels">Họ và tên</label>
+                                                        <input id="name" type="text" class="form-control"
+                                                               placeholder="VD: Nguyễn Văn A" value="">
                                                     </div>
-
-                                                </div>
-                                                <div class="col-lg-6 col-md-6">
-
-                                                    <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4">
-                                                            <option value="" disabled>Chọn phân quyền</option>
-                                                            <option value="1" selected>Người dùng thường</option>
-                                                            <option value="2">Admin</option>
-                                                        </select>
+                                                    <div class="mb-4">
+                                                        <div class="form-group green-border-focus">
+                                                            <!--                                                            <label for="exampleFormControlTextarea5">Mô tả</label>-->
+                                                            <!--                                                            <textarea class="form-control"-->
+                                                            <!--                                                                      id="exampleFormControlTextarea5"-->
+                                                            <!--                                                                      rows="3"></textarea>-->
+                                                            <label for="email" class="labels">Email</label>
+                                                            <input id="email" type="text" class="form-control"
+                                                                   placeholder="VD: taikhoan@gmail.com" value="">
+                                                        </div>
                                                     </div>
-
                                                 </div>
-                                                <!-- Grid column -->
+                                                <div
+                                                    class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="md-form form-sm mb-0">
+                                                            <select class="browser-default custom-select mb-4"
+                                                                    id="status">
+                                                                <option value="" disabled>Trạng thái</option>
+                                                                <option value="1" selected>Chưa kích hoạt</option>
+                                                                <option value="2">Kích hoạt</option>
+                                                                <option value="3">Khóa</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="md-form form-sm mb-0">
+                                                            <select class="browser-default custom-select mb-4">
+                                                                <option value="" disabled>Chọn phân quyền</option>
+                                                                <option value="1" selected>Người dùng thường
+                                                                </option>
+                                                                <option value="2">Admin</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Grid column -->
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- Grid row -->
-
-                                        <!-- Grid row -->
-
                                     </div>
-                                    <!-- Grid row -->
-
-                                    <!-- Grid row -->
-
+                                    <!-- Card content -->
                                 </div>
-                                <!-- Card content -->
 
                             </div>
-                            <!-- Card -->
-
-                        </div>
-
-                    </div>
                 </form>
             </main>
         </div>
@@ -276,12 +339,12 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="/RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="/RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="/RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="/RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="/RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="/RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
 <script>
 
 </script>
