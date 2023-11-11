@@ -1,4 +1,5 @@
 var listImgProject = document.getElementById("imageProjects");
+var listImgProject2 = document.getElementById("imageProjects2");
 var listButton = document.querySelectorAll(".item-selector");
 var listProjects = [
     {
@@ -307,8 +308,6 @@ var listProjects = [
 let projectFilter = listProjects;
 
 
-
-
 function showList(projectFilter) {
     listImgProject.innerHTML = "";
     projectFilter.forEach(item => {
@@ -357,6 +356,7 @@ function showList(projectFilter) {
         col.appendChild(a);
 
         listImgProject.appendChild(col);
+        listImgProject2.appendChild(col);
     });
 }
 
