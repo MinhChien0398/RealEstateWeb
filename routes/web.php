@@ -100,3 +100,6 @@ Route::get('/projectschedule', function () {
 Route::get('/updateprojectschedule', function () {
     return view('template.updateProjectSchedule');
 });
+Route::get('updatePost', function (){
+    return view('template.updatePost');
+});

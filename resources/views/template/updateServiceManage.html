@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
-    <!--        <link rel="stylesheet" href="resources/views/template/css/addServicePage.css">-->
+    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <!--        <link rel="stylesheet" href="../../../../RealEstateWeb/resources/views/template/css/addServicePage.css">-->
 
     <!---->
     <title>Sửa DV</title>
@@ -41,15 +41,15 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="public/img/logo.svg" alt="logo" style="">
+                <img src="../../../../RealEstateWeb/public/img/logo.svg" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="#" class="menu-btn">
+                <a href="../../../../RealEstateWeb/resources/views/template/dashboard.html" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="#user" class="menu-btn">
+                <a href="../../../../RealEstateWeb/resources/views/template/UserManage.html" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
@@ -59,10 +59,10 @@
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
-                    <a href="#type-project" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/projectsmanage.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="#blog-project" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/admin-PostProject.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
                 </div>
@@ -74,7 +74,7 @@
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
-                    <a href="#blog-service" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/servicePostsManage.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
@@ -85,13 +85,13 @@
                     class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
                 </a>
                 <div class="sub-menu">
-                    <a href="#type-contact" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/admin-contactManagement.html" class="menu-btn">
                         <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="#slide" class="menu-btn">
+                <a href="../../../../RealEstateWeb/resources/views/template/admin-ContactTypeManagement.html" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
@@ -156,7 +156,8 @@
                                                 <div class="col-lg-12 col-md-12">
                                                     <div class="md-form form-sm mb-0">
                                                         <input type="text" id="form7"
-                                                               class="form-control form-control-sm" value="Dịch vụ thi công nhà phần thô">
+                                                               class="form-control form-control-sm"
+                                                               value="Dịch vụ thi công nhà phần thô">
                                                         <label for="form7" class="">Tên dịch vụ</label>
                                                     </div>
                                                 </div>
@@ -171,7 +172,7 @@
                                                     <div class="md-form form-sm mb-0">
                                                         <select class="browser-default custom-select">
                                                             <option disabled>Trạng thái</option>
-                                                            <option value="1" >Ẩn</option>
+                                                            <option value="1">Ẩn</option>
                                                             <option value="2" selected>Hiện</option>
                                                         </select>
                                                     </div>
@@ -188,13 +189,22 @@
                                                         <div class="custom-file">
                                                             <input type="file" class="custom-file-input"
                                                                    id="inputGroupFile01"
-                                                                   aria-describedby="inputGroupFileAddon01" value="public/img/main-service/untitled-3-8307.png">
+                                                                   aria-describedby="inputGroupFileAddon01"
+                                                                   value="../../../../RealEstateWeb/public/img/main-service/untitled-3-8307.png">
                                                             <label class="custom-file-label" for="inputGroupFile01">untitled-3-8307.png</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <div class="row">
+                                                <div class="col-md-12 mb-4">
+                                                    <div class="col-lg-12 col-md-12 p-0">
+                                                             <textarea
+                                                                 class="form-control rounded-0 form-group"
+                                                                 rows="6" placeholder="Mô tả">Để xây dựng một tổ ấm hoàn mỹ, lựa chọn được một đơn vị thi công phần thô nhà phố là yêu cầu tiên quyết. Một đơn vị thi công phù hợp sẽ đảm bảo chất lượng công trình tốt nhất và giúp gia chủ cân đối được nguồn tài chính khi xây nhà.</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- Card content -->
                                     </div>
@@ -231,13 +241,13 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="public/lib/DataTables/dataTables.min.js"></script>
-<script src="public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
+<script src="../../../../RealEstateWeb/public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
 
 <script>
     CKEDITOR.replace('service-des');
