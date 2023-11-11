@@ -14,8 +14,7 @@
     object-fit: cover;
 }
 
-.post-content > div > p {
-    text-align: center;
+.post-content  div  p {
     font-size: 15px;
     font-weight: 400;
 }

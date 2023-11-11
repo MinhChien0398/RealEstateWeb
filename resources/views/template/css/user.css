@@ -25,8 +25,10 @@
 .btn-save {
     padding-top: 2%;
 }
-
-.btn {
+.mdb-select .dropdown-content li > a, .mdb-select .dropdown-content li > span{
+ color: rgb(73, 80, 87);
+}
+.btn-save .btn {
     color: white;
     background-color: #E90808 !important;
     font-family: Inter, Arial, Inter, Arial, Helvetica, sans-serif;
@@ -58,6 +60,6 @@
     border-radius: 10px !important;
 }
 .form-check-input[type="radio"]:checked + label:after{
-    background-color: #E90808 !important;
-    border: 2px solid #E90808 !important;
+    /*background-color: #E90808 !important;*/
+    /*border: 2px solid #E90808 !important;*/
 }

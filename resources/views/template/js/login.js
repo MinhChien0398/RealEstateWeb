@@ -50,8 +50,11 @@ document.getElementById("login-button").addEventListener("click", function () {
     errorMessageSigin.textContent = "";
     if (!emailSignIn || !password) {
         errorMessageSigin.textContent = "Vui lòng điền đầy đủ thông tin.";
+        errorMessageSigin.style.display="block";
+
         setTimeout(function () {
             errorMessageSigin.textContent = "";
+            errorMessageSigin.style.display="none"
         }, 2000);
         return;
     }
@@ -60,8 +63,10 @@ document.getElementById("request-button").addEventListener("click", function () 
     errorMessageForgot.textContent = "";
     if (!emailForgot) {
         errorMessageForgot.textContent = "Vui lòng điền đầy đủ thông tin.";
+        errorMessageForgot.style.display="block"
         setTimeout(function () {
             errorMessageForgot.textContent = "";
+            errorMessageForgot.style.display="none"
         }, 2000);
         return;
     }
