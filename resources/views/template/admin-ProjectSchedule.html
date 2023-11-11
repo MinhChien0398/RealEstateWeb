@@ -1,15 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="resources/views/template/css/fileInput.css" rel="stylesheet">
     <link href="public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="public/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <!--    <link href="public/lib/DataTables/FixedColumns-4.3.0/css/fixedColumns.dataTables.min.css" rel="stylesheet">-->
+    <link href="public/lib/DataTables/datatables.min.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <style>
+        div.dataTables_scrollHeadInner, div.dataTables_scrollHeadInner > table {
+            width: 100% !important;
+        }
+    </style>
 </head>
 <body class="">
 
@@ -56,6 +68,9 @@
                     <a href="#blog-project" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
+                    <a href="#blog-project" class="menu-btn">
+                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
+                    </a>
                 </div>
             </li>
 
@@ -90,80 +105,88 @@
     </div>
     <div class="main-container">
         <div class="container p-0">
-            <nav class="" aria-label="breadcrumb">
+            <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">QL slide</a></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm Slide</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li>
+                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL dự án</a></li>
+                    <li>
+                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="main-color" href="#">QL dự án đang thi công</a>
+                    </li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-                <form>
-                    <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
-                        <div class="col-6 d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Thêm Slide</h3>
-                        </div>
-                        <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
-                                </button>
-                            </a>
-                        </div>
+                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
+                    <div class="col-6 d-flex align-items-center p-0">
+                        <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN ĐANG THI CÔNG</h3>
                     </div>
-                    <div>
-                        <div class="row flex-center h-auto">
-                            <div class="card col-lg-10 mb-4">
-                                <div class="card-body">
-                                    <div class="mb-4">
-                                        <label for="name" class="labels">Tiêu đề</label>
-                                        <input id="name" type="text" class="form-control"
-                                               placeholder="Tiêu đề" value="">
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="status" class="labels">Trạng thái</label>
-                                        <select id="status" class="browser-default custom-select">
-                                            <option value="1">Kích hoạt</option>
-                                            <option value="2">Ẩn</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="id" class="labels">STT</label>
-                                        <fieldset>
-                                            <input id="id" type="text" class="form-control"
-                                                   placeholder="STT" value="">
-                                        </fieldset>
-                                    </div>
-                                    <div class="mb-4">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
-                                            </div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input"
-                                                       id="inputGroupFile01"
-                                                       aria-describedby="inputGroupFileAddon01"
-                                                       onchange="preview()">
-                                                <label class="custom-file-label"
-                                                       for="inputGroupFile01">Chọn file
-                                                </label>
+                </div>
+                <table id="project-type-table" class="table table-hover table-striped table-bordered m-0 "
+                       style="width:100%">
+                    <thead>
+                    <tr>
+                        <th class="font-weight-bold" scope="col">STT</th>
+                        <th class="font-weight-bold" scope="col">Email khách hàng</th>
+                        <th class="font-weight-bold" scope="col">Mã dự án</th>
+                        <th class="font-weight-bold" scope="col">Tiến độ</th>
+                        <th class="font-weight-bold" scope="col">Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>nguyenvana@gmail.com</td>
+                        <td>#094223</td>
+                        <td>
+                            Hoàn thành
+                        </td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>nguyenvanb@gmail.com</td>
+                        <td>#045343</td>
+                        <td>
+                            Hoàn thành
+                        </td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>vuxuanchien@gmail.com</td>
+                        <td>#937564</td>
+                        <td>
+                            Hoàn thành
+                        </td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>dangminhtan@gmail.com</td>
+                        <td>#245558</td>
+                        <td>
+                            Hoàn thành
+                        </td>
+                        <td>
+                            <a href="#edit"><i class="icon-action fa-solid fa-edit"></i></a>
+                    </tr>
+                    </tbody>
 
-                                            </div>
+                </table>
 
-                                        </div>
-                                        <p id="num-of-files">Không có file được chọn</p>
-                                        <div id="images"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
             </main>
         </div>
     </div>
 </div>
 <!--/. Sidebar navigation -->
-</body>
 
 
 <script src="public/lib/MDB_4_pro/js/jquery.min.js"></script>
@@ -171,8 +194,41 @@
 <script src="public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
 <script src="public/lib/MDB_4_pro/js/mdb.min.js"></script>
 <script src="public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="public/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"></script>
-<script src="resources/views/template/js/inputFile.js"></script>
+<script src="public/lib/DataTables/dataTables.min.js"></script>
+<!--<script src="public/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
+<script>
+
+</script>
+<script>
+    $('#project-type-table').dataTable({
+        // "ajax": {
+        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
+        //     "dataSrc": ""
+        // },
+        scrollX: true,
+        "columnDefs": [
+
+            {className: "text-center mt-auto mb-auto", targets: "_all"},
+
+        ],
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ dòng",
+            "zeroRecords": "Không tìm thấy dữ liệu",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "Không có dữ liệu",
+            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
+            "search": "Tìm kiếm",
+            "paginate": {
+                "previous": "Trước",
+                "next": "Tiếp theo"
+            }
+        },
+        "pagingType": "full_numbers",
+        "lengthMenu": [5, 10, 15, 20],
+        "order": [[0, "asc"]],
+    });
+
+</script>
 <script>
     (function ($) {
         $.fn.counter = function () {
@@ -218,20 +274,7 @@
         $(".sidebar-btn").click(function () {
             $(".wrapper").toggleClass("mycollapse");
         });
-    });</script>
-<script>
-    document.getElementById('status').addEventListener('change', function () {
-        var selectedStatus = this.value;
-
-        var idField = document.getElementById('id');
-
-        if (selectedStatus === '1') {
-            idField.disabled = false;
-        } else {
-            idField.disabled = true;
-        }
     });
-
 </script>
-
+</body>
 </html>

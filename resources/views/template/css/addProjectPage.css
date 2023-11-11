@@ -1,0 +1,12 @@
+.mdb-select .select-dropdown {
+    border: 1px solid #bdbdbd !important;
+    border-radius: 5px !important;
+}
+
+.mb-4 .md-form input[type=text]:focus {
+    box-shadow: 0 0 0 0 !important;
+    border-bottom: 0 solid !important;
+}
+.md-form{
+    margin: 0 !important;
+}

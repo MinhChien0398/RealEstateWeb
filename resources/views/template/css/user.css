@@ -11,7 +11,7 @@
 
 .edit-icon .pencil-edit {
     font-size: 18px;
-    color: black;
+    color: #E90808;
 }
 
 .img-avatar-edit:hover .edit-icon {
@@ -52,4 +52,12 @@
 
 .form-check {
     top: 50%;
+}
+
+.btn-save-edit {
+    border-radius: 10px !important;
+}
+.form-check-input[type="radio"]:checked + label:after{
+    background-color: #E90808 !important;
+    border: 2px solid #E90808 !important;
 }

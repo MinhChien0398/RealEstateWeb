@@ -91,3 +91,12 @@ Route::get('/addSliders', function () {
 Route::get('/addProjects', function () {
     return view('template.addProjectsPage');
 });
+Route::get('/categorymanage', function () {
+    return view('template.admin-TypeOfProject');
+});
+Route::get('/projectschedule', function () {
+    return view('template.admin-ProjectSchedule');
+});
+Route::get('/updateprojectschedule', function () {
+    return view('template.updateProjectSchedule');
+});
