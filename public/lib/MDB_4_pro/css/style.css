@@ -221,7 +221,9 @@ p {
         left: 125%
     }
 }
-
+.my-body .projectCard-container:hover .projectCard-content p.id-project{
+    padding: 0!important;
+}
 
 .map-container-6 {
     overflow: hidden;
@@ -242,15 +244,15 @@ p {
     background-color: #E90808;
     color: #E90808;
 }
-.md-form label.active:focus,.md-form label.active{
-    color: #E90808!important;
-}
-.md-form input[type=text]:focus {
+/*.md-form label.active:focus,.md-form label.active{*/
+/*    color: #E90808!important;*/
+/*}*/
+/*.md-form input[type=text]:focus {*/
 
-    box-shadow: 0 1px 0 0 #E90808 !important;
+/*    box-shadow: 0 1px 0 0 #E90808 !important;*/
 
-    border-bottom: 1px solid #E90808 !important;
-}
+/*    border-bottom: 1px solid #E90808 !important;*/
+/*}*/
 @media only screen and (max-width: 1212px) {
     .nav-link{
         padding: unset!important;
