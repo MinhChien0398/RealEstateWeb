@@ -183,16 +183,23 @@
                             <input type="text" id="form-address" class="form-control">
                             <label for="form-address">Địa chỉ(tỉnh/thành phố)</label>
                         </div>
-                        <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center">
-                            <label>Chủ đề</label>
-                            <select class="browser-default custom-select mb-4">
-                                <option value="" disabled>Chọn nội dung</option>
-                                <option value="1" selected>Thủ tục hành chính</option>
-                                <option value="2">Đặt lịch tư vấn</option>
-                                <option value="3">Báo giá chi tiết</option>
-                                <option value="4">Báo lỗi trang web</option>
-                                <option value="5">Khác</option>
-                            </select>
+                        <div class="row">
+                            <div
+                                class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
+                                <!--                            <label>Chủ đề</label>-->
+                                <select class="browser-default custom-select mb-4">
+                                    <option value="" disabled>Loại dự án</option>
+                                    <option value="1" selected>Villa</option>
+                                    <option value="2">Nhà cấp 4</option>
+                                    <option value="3">Nhà phố</option>
+                                    <option value="4">Biệt thự</option>
+                                    <option value="5">Nhà tiền chế</option>
+                                </select>
+
+                            </div>
+                            <div class="form-outline col-6">
+                                <input type="text" id="typeText" class="form-control" placeholder="Mã dự án"/>
+                            </div>
                         </div>
 
                         <!-- Message -->
