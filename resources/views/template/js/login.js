@@ -1,14 +1,3 @@
-// const container = document.getElementById('container');
-// const registerBtn = document.getElementById('register');
-// const loginBtn = document.getElementById('login');
-//
-// registerBtn.addEventListener('click', () => {
-//     container.classList.add("active");
-// });
-// loginBtn.addEventListener('click', () => {
-//     container.classList.remove("active");
-// });
-
 const container = document.getElementById('container');
 const showSignUpButton = document.getElementById('showSignUp');
 const showSignInButton = document.getElementById('showSignIn');
@@ -61,8 +50,11 @@ document.getElementById("login-button").addEventListener("click", function () {
     errorMessageSigin.textContent = "";
     if (!emailSignIn || !password) {
         errorMessageSigin.textContent = "Vui lòng điền đầy đủ thông tin.";
+        errorMessageSigin.style.display="block";
+
         setTimeout(function () {
             errorMessageSigin.textContent = "";
+            errorMessageSigin.style.display="none"
         }, 2000);
         return;
     }
@@ -71,9 +63,13 @@ document.getElementById("request-button").addEventListener("click", function () 
     errorMessageForgot.textContent = "";
     if (!emailForgot) {
         errorMessageForgot.textContent = "Vui lòng điền đầy đủ thông tin.";
+        errorMessageForgot.style.display="block"
         setTimeout(function () {
             errorMessageForgot.textContent = "";
+            errorMessageForgot.style.display="none"
         }, 2000);
         return;
     }
 });
+
+
