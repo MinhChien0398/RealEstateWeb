@@ -19,6 +19,16 @@ tbody td i.inactive-icon {
     color: #cc0000;
     font-size: 80%;
 }
+tbody td i.pending-icon {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    margin: 0 13px 0 0;
+    color: orange;
+    font-size: 80%;
+}
 table.dataTable td {
     font-size: 13px;
 }
