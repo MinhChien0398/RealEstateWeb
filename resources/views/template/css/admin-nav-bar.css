@@ -145,7 +145,6 @@ body {
 .wrapper .sidebar .sidebar-menu .sidebar-item .sub-menu {
     overflow: hidden;
     transition: 0.5s;
-    max-height: 0px;
     margin-left: 10px;
     transition-property: color, max-height;
 }
