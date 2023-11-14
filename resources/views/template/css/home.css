@@ -201,10 +201,6 @@
     border-right: 8px solid transparent;
 }
 
-.category-menu .category-item.active button::before {
-    border-top: 12px solid #E90808;
-    margin-top: 0;
-}
 
 .home-contact {
     background: url("/RealEstateWeb/public/img/main-bg-project/bgda14401111-5952.png") center;
@@ -250,7 +246,7 @@
     top: 75%;
     left: 0;
     height: 100%;
-    transition: all 1s ease-in-out;
+    transition: all .75s ease-in-out;
 }
 
 .projectCard-content img {

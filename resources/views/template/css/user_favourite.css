@@ -22,9 +22,9 @@
 .my-body .projectCard-container:hover .projectCard-content div div {
     justify-content: center;
 }
-
 .my-body .projectCard-container:hover .projectCard-content p {
     padding: 1.5rem !important;
+    padding-top: 0!important;
 }
 
 .my-body img {
@@ -41,7 +41,7 @@
     top: 75%;
     left: 0;
     height: 100%;
-    transition: all .5s ease-in-out;
+    transition: all .75s ease-in-out;
 }
 
 .projectCard-content img {
@@ -60,7 +60,7 @@
     width: 65px;
     height: 2px;
     border-bottom: 2px solid #fff;
-    margin: 12px auto 22px auto !important;
+    margin: 12px auto 0px auto !important;
 }
 
 .projectCard-content p {

@@ -18,7 +18,9 @@
     font-weight: 700;
     font-size: 2.1rem;
 }
-
+#PostContent .header-post>p{
+    font-size: 14px!important;
+}
 #PostContent .post-content p {
     margin: 0;
     text-align: justify;
