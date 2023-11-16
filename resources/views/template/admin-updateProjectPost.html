@@ -11,13 +11,15 @@
     <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
+          rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <!--        <link rel="stylesheet" href="../../../../RealEstateWeb/resources/views/template/css/addServicePage.css">-->
 
     <!---->
-    <title>Chỉnh sửa bài viết</title>
+    <title>Chỉnh sửa bài viết dự án</title>
 </head>
 <body class="">
 
@@ -37,7 +39,6 @@
             </ul>
         </div>
     </div>
-
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
@@ -53,12 +54,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="admin-projectsManage.html" >
-                    <span>QL Dự án</span>
-                </a> <i
-                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="admin-projectsManage.html">
+                        <span>QL Dự án</span>
+                    </a> <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="admin-TypeOfProject.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -72,7 +74,7 @@
                 </div>
             </li>
 
-            <li class="sidebar-item" id="type-project">
+            <li class="sidebar-item">
                 <div class="menu-btn">
                     <a href="servicesManager.html">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
@@ -97,25 +99,23 @@
         </div>
     </div>
 
+
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="#">QL Dịch vụ</a></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Bài viết Dịch vụ</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.html">Thống kê</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Bài viết dự
+                        án</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Chỉnh sửa bài viết dự
+                        án</a></li>
                 </ol>
             </nav>
 
-
-            <nav class="" aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Quản lí dịch vụ</a></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Quản lí bài viết Dịch vụ</a></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa bài viết</a></li>
-                </ol>
-            </nav>
             <main class="container shadow border p-3 h-100">
 
                 <form action="#" method="post">
@@ -125,10 +125,8 @@
                         </div>
 
                         <div class="btn-save flex-center">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
+                                <button type="submit" class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
                                 </button>
-                            </a>
                         </div>
                     </div>
                     <div class="col-md-12 mb-4">
@@ -137,8 +135,47 @@
                                 <div class="col-lg-12 col-md-12 p-0">
                                     <div class="form-group">
                                         <textarea class="form-control rounded-0" name="service-des" rows="10"
-                                                  id="service-des">
+                                                  id="service-des" contenteditable="true">
+                <h6 className="mt-2 mb-2" id="1. Đơn vị thi công phần thô nhà phố đạt tiêu chuẩn 2023">
 
+                    Thiết kế kiến trúc mặt tiền bắt mắt
+                </h6>
+                <p>
+                    Mặt tiền của công trình được sử dụng những vật liệu hiện đại, đem lại sự sang trọng và cuốn hút.
+                    Kết hợp cùng với không gian xanh tự nhiên, tạo cảm giác thông thoáng, dễ chịu cho căn nhà.
+                </p>
+                <div>
+                    <img
+                        src="../../../../RealEstateWeb/public/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
+                        alt="">
+                        <p>Mặt tiền được thiết kế kiến trúc vuông vắn với những đường nét độc đáo</p>
+                </div>
+                <div>
+                    <img
+                        src="../../../../RealEstateWeb/public/img/project post img/z3904713188335_87a8fb4e1b477eb507e2f7ff61ecd945_1671524950-1032x800.jpg"
+                        alt="">
+                        <p>Kết hợp cùng không gian xanh tạo cảm giác thông thoáng, dễ chịu</p>
+                </div>
+                <h6 className="mt-2 mb-2">
+                    Bố trí cửa sổ đón nhiều ánh sáng tự nhiên
+                </h6>
+                <p>
+                    Những căn nhà phố có mặt tiền hẹp và sâu dễ bị thiếu sáng và không khí. Tuy nhiên với thiết kế kiến
+                    trúc này có hệ thống nhiều cửa sổ
+                    cùng với giếng trời giúp cho ngôi nhà luôn tràn ngập ánh sáng và không khí tự nhiên.
+                </p>
+                <div>
+                    <img
+                        src="../../../../RealEstateWeb/public/img/project post img/z3904713186745_bd7de960470cba9ae042a368cdd52e8b_1671524950.jpg"
+                        alt="">
+                        <p>Hệ thống nhiều cửa sổ giúp ngôi nhà luôn ngập tràn ánh sáng và không khí tự nhiên</p>
+                </div>
+                <div>
+                    <img
+                        src="../../../../RealEstateWeb/public/img/project post img/z3904713175130_7b02a6152c6770ef31910c99ae5d4314_1671524950-1032x800.jpg"
+                        alt="">
+                        <p>Mái tum tầng có thể bố trí làm phòng thờ và sân thượng đẹp mắt</p>
+               </div>
                                         </textarea>
                                     </div>
                                 </div>
@@ -165,10 +202,10 @@
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";
     CKEDITOR.config.height = "800px";
-    CKEDITOR.instances['service-des'].setData('' +
-        '<img src="../../../../RealEstateWeb/public/img/main-service/untitled-3-8307.png" alt="Default Image">' +
-        '<h3>Dịch vụ thi công nhà phần thô</h3> ' +
-        '<p>Để xây dựng một tổ ấm hoàn mỹ, lựa chọn được một đơn vị thi công phần thô nhà phố là yêu cầu tiên quyết. Một đơn vị thi công phù hợp sẽ đảm bảo chất lượng công trình tốt nhất và giúp gia chủ cân đối được nguồn tài chính khi xây nhà.</p>');
+    // CKEDITOR.instances['service-des'].setData(
+    //
+    // )
+
 </script>
 
 <script>
@@ -179,5 +216,23 @@
 
     });
 </script>
+<script>
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
+                cur.classList.remove('d-block');
+                cur.classList.add('d-none');
+            }
+            if (this.children.length === 2) {
+                this.children[1].classList.remove('d-none')
+                this.children[1].classList.add('d-block')
+                cur = this.children[1];
+            }
+        })
+    }
+
+</script>
+
 </body>
 </html>
