@@ -1,7 +1,7 @@
 .edit-icon {
     position: absolute;
-    top: 23%;
-    left: 50%;
+    top: 20%;
+    left: 49%;
     display: none;
     background-color: unset;
     border-radius: 50%;
@@ -59,7 +59,6 @@
 .btn-save-edit {
     border-radius: 10px !important;
 }
-.form-check-input[type="radio"]:checked + label:after{
-    /*background-color: #E90808 !important;*/
-    /*border: 2px solid #E90808 !important;*/
+.rounded-circle{
+    height: 200px;
 }
