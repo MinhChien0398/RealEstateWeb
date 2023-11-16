@@ -11,7 +11,6 @@ tbody td i.active-icon {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
-    margin: 0 13px 0 0;
     color: #28a745;
     font-size: 80%;
 }
@@ -22,8 +21,16 @@ tbody td i.inactive-icon {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
-    margin: 0 13px 0 0;
     color: #cc0000;
+    font-size: 80%;
+}
+tbody td i.pending-icon {
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    color: orange;
     font-size: 80%;
 }
 
@@ -56,5 +63,9 @@ td .icon-action{
 }
 .table td, .table th,.table thead th {
     vertical-align: middle;
+}
+td img{
+    width: 100%;
+    height:auto
 }
 
