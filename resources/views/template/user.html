@@ -12,6 +12,12 @@
     <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
     <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
     <!--    <link href="../../../../RealEstateWeb/resources/views/template/css/swiper-bundle.min.css" rel="stylesheet">-->
+    <style>
+        div.picker.datepicker .picker__box {
+            border: 1px solid;
+            box-shadow: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -179,10 +185,10 @@
 
                                         <!-- Grid column -->
                                         <div class="col-lg-4">
-                                            <div class="md-form form-sm mb-0">
-                                                <input type="text" id="date-picker-example"
-                                                       class="form-control datepicker" placeholder="15 November, 2023">
-                                                <label for="form4">Ngày sinh</label>
+                                            <div id="date-picker-example" class="md-form mb-0 datepicker" style="outline: none" inline="true">
+                                                <input  type="text" id="birthday" class="form-control form-control-sm" placeholder="01/11/2023">
+                                                <label for="birthday" style="">Ngày sinh</label>
+                                                <i class="fas fa-calendar input-prefix" style="font-size: .875rem; right:10% "></i>
                                             </div>
                                         </div>
                                         <!-- Grid column -->
@@ -439,5 +445,25 @@
 
     });
 </script>
+<script>
+    $('.datepicker').datepicker({
+        inline: true,
+        monthsFull: ['Tháng 01', 'Tháng 02', 'Tháng 03', 'Tháng 04', 'Tháng 05', 'Tháng 06', 'Tháng 07', 'Tháng 08', 'Tháng 09', 'Tháng 10',
+            'Tháng 11', 'Tháng 12'],
+
+        weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+        showWeekdaysFull: true ,
+        today: 'Hôm nay',
+        clear: 'Xóa',
+        close: 'Đóng',
+        regional: 'vi-VN',
+        labelMonthNext: 'Tháng kế tiêp',
+        labelMonthPrev: 'Tháng trước',
+        labelMonthSelect: 'Chọn tháng',
+        labelYearSelect: 'Chọn năm',
+        format: 'dd/mm/yyyy',
+    });
+</script>
+
 </body>
 </html>
