@@ -102,13 +102,47 @@
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="admin-TypeOfProject.html">QL loại dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="admin-TypeOfProject.html">QL loại dự án</a>
+                    </li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="admin-addCategoryProject.html">Thêm loại dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="admin-addCategoryProject.html">Thêm loại dự
+                        án</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-
+                <form>
+                    <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
+                        <div class="col-6 d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Thêm Loại dự án</h3>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="row flex-center h-auto">
+                            <div class="card col-lg-10 mb-4">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <label for="name" class="labels">Tên dự án</label>
+                                        <input id="name" type="text" class="form-control"
+                                               placeholder="Tên dự án" value="">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="status" class="labels">Trạng thái</label>
+                                        <select id="status" class="browser-default custom-select">
+                                            <option value="1">Kích hoạt</option>
+                                            <option value="2">Ẩn</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </main>
         </div>
     </div>
