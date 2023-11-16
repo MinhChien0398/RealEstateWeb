@@ -30,7 +30,14 @@ ul {
 .bg-main-color {
     background-color: #E90808 !important;
 }
+.fa-bookmark{
+    color: #ffd500;
+    position: absolute;
+    top:0.5%;
+    right: 0.5%;
+    font-size: 30px;
 
+}
 nav .container {
     max-width: 1440px;
     margin: 0;

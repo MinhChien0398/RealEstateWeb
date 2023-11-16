@@ -18,7 +18,6 @@ function preview(){
         reader.onload=()=>{
             let img = document.createElement("img");
             img.setAttribute("src",reader.result);
-            console.log(URL.createObjectURL(reader.result));
             figure.insertBefore(img,figCap);
         }
         imageContainer.appendChild(figure);
