@@ -81,7 +81,7 @@ body {
     z-index: 1;
     position: fixed;
     top: 70px;
-    width: 220px;
+    width: 225px;
     height: calc(100% - 9%);
     background-color: #fff;
     transition: 0.5s;
@@ -127,8 +127,10 @@ body {
     font-weight: 500;
 
 }
-
-.wrapper .sidebar .sidebar-menu .sidebar-item .menu-btn:hover {
+.wrapper .sidebar .sidebar-menu .sidebar-item .menu-btn a{
+    color: #000;
+}
+.wrapper .sidebar .sidebar-menu .sidebar-item .menu-btn:hover ,.wrapper .sidebar .sidebar-menu .sidebar-item .menu-btn:hover a{
     color: #E90808;
 }
 
@@ -159,6 +161,7 @@ body {
     transition: 0.3s;
     transition-property: color;
     border-bottom: 1px solid #bbb;
+
 }
 
 .wrapper .sidebar .sidebar-menu .sidebar-item .sub-menu a:hover {
@@ -176,7 +179,7 @@ body {
 }
 
 .wrapper.mycollapse .sidebar {
-    width: 70px;
+    width: 80px;
 }
 
 .wrapper.mycollapse .sidebar .logo {
@@ -185,7 +188,8 @@ body {
 
 .wrapper.mycollapse .sidebar .sidebar-menu img,
 .wrapper.mycollapse .sidebar .sidebar-menu a span,
-.wrapper.mycollapse .sidebar .sidebar-menu p {
+.wrapper.mycollapse .sidebar .sidebar-menu p ,
+.wrapper.mycollapse .sidebar .sidebar-menu i.drop-down{
     display: none !important;
 }
 
@@ -195,8 +199,8 @@ body {
 
 .wrapper .main-container {
     margin-top: 70px;
-    width: calc(100% - 220px);
-    margin-left: 220px;
+    width: calc(100% - 225px);
+    margin-left: 225px;
     padding: 15px;
     height: 100vh;
     transition: 0.5s;

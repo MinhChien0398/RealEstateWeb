@@ -7,9 +7,10 @@
     <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin_Dashboard.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.css" rel="stylesheet">
+    <link href="../../../../RealEstateWeb/resources/views/template/css/admin_Dashboard.css" rel="stylesheet">
 </head>
 <body class="">
 
@@ -29,66 +30,69 @@
             </ul>
         </div>
     </div>
-    <div class="sidebar">
-        <div class="sidebar-menu">
-            <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo.svg" alt="logo" style="">
-            </center>
-            <li class="sidebar-item">
-                <a href="../../../../RealEstateWeb/resources/views/template/dashboard.html" class="menu-btn">
-                    <i class="fas fa-desktop"></i><span>Thống kê</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="user">
-                <a href="../../../../RealEstateWeb/resources/views/template/UserManage.html" class="menu-btn">
-                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="project">
-                <a href="#project" class="menu-btn">
-                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/projectsmanage.html" class="menu-btn">
-                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <center class="logo">
+                    <img src="../../../../RealEstateWeb/public/img/logo.svg" alt="logo" style="">
+                </center>
+                <li class="sidebar-item">
+                    <a href="dashboard.html" class="menu-btn">
+                        <i class="fas fa-desktop"></i><span>Thống kê</span>
                     </a>
-                    <a href="../../../../RealEstateWeb/resources/views/template/admin-PostProject.html" class="menu-btn">
-                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                </li>
+                <li class="sidebar-item" id="user">
+                    <a href="admin-userManage.html" class="menu-btn">
+                        <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                     </a>
-                </div>
-            </li>
+                </li>
+                <li class="sidebar-item" id="project"><div class="menu-btn">
+                    <i class="fa-solid fa-building">  </i>
+                    <a href="admin-projectsManage.html" >
+                      <span>QL Dự án</span>
+                    </a> <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                    <div class="sub-menu d-none">
+                        <a href="admin-TypeOfProject.html" class="menu-btn">
+                            <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+                        </a>
+                        <a href="admin-PostProject.html" class="menu-btn">
+                            <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                        </a>
+                        <a href="admin-ProjectSchedule.html" class="menu-btn">
+                            <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
+                        </a>
+                    </div>
+                </li>
 
-            <li class="sidebar-item" id="type-project">
-                <a href="#type-project" class="menu-btn">
-                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/servicePostsManage.html" class="menu-btn">
-                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                <li class="sidebar-item" id="type-project">
+                    <div class="menu-btn">
+                    <a href="servicesManager.html">
+                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
+                    </a><i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                    <div class="sub-menu d-none">
+                        <a href="servicePostsManage.html" class="menu-btn">
+                            <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="sidebar-item" id="contact">
+                    <a href="admin-contactManagement.html" class="menu-btn">
+                        <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                     </a>
-                </div>
-            </li>
-            <li class="sidebar-item" id="contact">
-                <a href="#contact" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-
-            </li>
-            <li class="sidebar-item" id="slide">
-                <a href="../../../../RealEstateWeb/resources/views/template/admin-slideManagement.html" class="menu-btn">
-                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
-                </a>
-            </li>
+                </li>
+                <li class="sidebar-item" id="slide">
+                    <a href="admin-slideManagement.html" class="menu-btn">
+                        <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                    </a>
+                </li>
+            </div>
         </div>
-    </div>
     <div class="main-container">
         <div class="container">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item font-weight-bolder"><a class="main-color" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item font-weight-bolder"><a class="main-color" href="dashboard.html">Thống kê</a></li>
                 </ol>
             </nav>
             <!--Section: Content-->
@@ -109,7 +113,7 @@
                     <div class="col-md-6 col-lg-4 text-center">
                         <h4 class="font-weight-normal mb-3">
                             <i class="fa-solid fa-sitemap indigo-text"></i>
-                            <span class="d-inline-block count1" data-from="0" data-to="250" data-time="2000">250</span>
+                            <span class="d-inline-block count1" data-from="0" data-to="2" data-time="2000">2</span>
                         </h4>
                         <p class="font-weight-normal text-muted">Loại dự án</p>
                     </div>
@@ -305,23 +309,34 @@
             interval1 = setInterval(changeNumber, changeTime);
         }
     }(jQuery));
-
     $(document).ready(function () {
 
         $('.count-up').counter();
         $('.count1').counter();
         $('.count2').counter();
         $('.count3').counter();
-
         new WOW().init();
-
         setTimeout(function () {
             $('.count5').counter();
         }, 3000);
     });
 </script>
 <script>
-    $('.sidebar-item').
+    let cur ;
+    for (let item of  $('.sidebar-item')) {
+        item.addEventListener('click', function (){
+            if(cur!=null) {
+                cur.classList.remove('d-block');
+                cur.classList.add('d-none');
+            }
+            if(this.children.length===2){
+                this.children[1].classList.remove('d-none')
+                this.children[1].classList.add('d-block')
+                cur=this.children[1];
+            }
+        })
+    }
+
 </script>
 <script>
     $(document).ready(function () {

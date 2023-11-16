@@ -45,54 +45,53 @@
                 <img src="../../../../RealEstateWeb/public/img/logo.svg" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="../../../../RealEstateWeb/resources/views/template/dashboard.html" class="menu-btn">
+                <a href="dashboard.html" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="../../../../RealEstateWeb/resources/views/template/UserManage.html" class="menu-btn">
+                <a href="admin-userManage.html" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project">
-                <a href="#project" class="menu-btn">
-                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/projectsmanage.html" class="menu-btn">
+            <li class="sidebar-item" id="project"><div class="menu-btn">
+                <i class="fa-solid fa-building">  </i>
+                <a href="admin-projectsManage.html" >
+                    <span>QL Dự án</span>
+                </a> <i
+                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                <div class="sub-menu d-none">
+                    <a href="admin-TypeOfProject.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="../../../../RealEstateWeb/resources/views/template/admin-PostProject.html" class="menu-btn">
+                    <a href="admin-PostProject.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                    <a href="admin-ProjectSchedule.html" class="menu-btn">
+                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
                     </a>
                 </div>
             </li>
 
             <li class="sidebar-item" id="type-project">
-                <a href="#type-project" class="menu-btn">
-                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/servicePostsManage.html" class="menu-btn">
+                <div class="menu-btn">
+                    <a href="servicesManager.html">
+                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
+                    </a><i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                <div class="sub-menu d-none">
+                    <a href="servicePostsManage.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="contact">
-                <a href="#contact" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                <a href="admin-contactManagement.html" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/admin-contactManagement.html" class="menu-btn">
-                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
-                    </a>
-                </div>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="../../../../RealEstateWeb/resources/views/template/admin-slideManagement.html" class="menu-btn">
+                <a href="admin-slideManagement.html" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
@@ -102,8 +101,6 @@
 
     <div class="main-container">
         <div class="container p-0">
-
-
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="../../../../RealEstateWeb/resources/views/template/dashboard.html">Thống kê</a></li>
@@ -166,42 +163,36 @@
                                                                           id="exampleFormControlTextarea5"
                                                                           rows="3"></textarea>
                                                             </div>
+                                                            <div class="mb-4">
+                                                                <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                    <span class="input-group-text"
+                                                                          id="inputGroupFileAddon01">Tải lên</span>
+                                                                    </div>
+                                                                    <div class="custom-file">
+                                                                        <input type="file" class="custom-file-input"
+                                                                               id="inputGroupFile01"
+                                                                               aria-describedby="inputGroupFileAddon01"
+                                                                               onchange="preview()"
+                                                                        >
+                                                                        <label class="custom-file-label"
+                                                                               for="inputGroupFile01">Chọn file
+                                                                        </label>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <p id="num-of-files">Không có file được chọn</p>
+                                                                <div id="images"></div>
+                                                            </div>
+
                                                         </div>
                                                         <div class="mb-4">
                                                             <label for="status" class="labels">Trạng thái</label>
                                                             <select id="status" class="browser-default custom-select">
-                                                                <option value="1">Kích hoạt</option>
-                                                                <option value="2">Ẩn</option>
+                                                                <option value="1">Hiện dịch vụ</option>
+                                                                <option value="2">Ẩn dịch vụ</option>
                                                             </select>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="id" class="labels">Tên rút gọn</label>
-                                                            <fieldset>
-                                                                <input id="id" type="text" class="form-control validate"
-                                                                       placeholder="VD: Xây nhà phần thô => 'XNPT'" value="">
-                                                            </fieldset>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
-                                                                </div>
-                                                                <div class="custom-file">
-                                                                    <input type="file" class="custom-file-input"
-                                                                           id="inputGroupFile01"
-                                                                           aria-describedby="inputGroupFileAddon01"
-                                                                           onchange="preview()"
-                                                                    >
-                                                                    <label class="custom-file-label"
-                                                                           for="inputGroupFile01">Chọn file
-                                                                    </label>
-
-                                                                </div>
-
-                                                            </div>
-                                                            <p id="num-of-files">Không có file được chọn</p>
-                                                            <div id="images"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -252,11 +243,30 @@
 <script src="../../../../RealEstateWeb/public/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
 <script src="../../../../RealEstateWeb/resources/views/template/js/inputFile.js"></script>
 <script>
-    CKEDITOR.replace('service-des');
-    CKEDITOR.config.width = "100%";
-    CKEDITOR.config.height = "400px";
+    CKEDITOR.replace('service-des',{
+        width :"100%",
+        height :"400px",
+    });
 
 </script>
+<script>
+    let cur ;
+    for (let item of  $('.sidebar-item')) {
+        item.addEventListener('click', function (){
+            if(cur!=null) {
+                cur.classList.remove('d-block');
+                cur.classList.add('d-none');
+            }
+            if(this.children.length===2){
+                this.children[1].classList.remove('d-none')
+                this.children[1].classList.add('d-block')
+                cur=this.children[1];
+            }
+        })
+    }
+
+</script>
+
 <script>
     $(document).ready(function () {
         $(".sidebar-btn").click(function () {

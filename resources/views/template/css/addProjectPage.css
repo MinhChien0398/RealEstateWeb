@@ -10,3 +10,9 @@
 .md-form{
     margin: 0 !important;
 }
+ .dropdown-content li > span , .select-wrapper.md-form > ul li.select-toggle-all label{
+    color: black;
+}
+.select-wrapper input.select-dropdown  {
+     padding:10px
+ }

@@ -14,7 +14,6 @@
     <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
     <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <!--        <link rel="stylesheet" href="../../../../RealEstateWeb/resources/views/template/css/addServicePage.css">-->
 
     <!---->
@@ -38,69 +37,75 @@
             </ul>
         </div>
     </div>
+
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
                 <img src="../../../../RealEstateWeb/public/img/logo.svg" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="../../../../RealEstateWeb/resources/views/template/dashboard.html" class="menu-btn">
+                <a href="dashboard.html" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="../../../../RealEstateWeb/resources/views/template/UserManage.html" class="menu-btn">
+                <a href="admin-userManage.html" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project">
-                <a href="#project" class="menu-btn">
-                    <i class="fa-solid fa-building"></i><span>QL Dự án <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/projectsmanage.html" class="menu-btn">
+            <li class="sidebar-item" id="project"><div class="menu-btn">
+                <i class="fa-solid fa-building">  </i>
+                <a href="admin-projectsManage.html" >
+                    <span>QL Dự án</span>
+                </a> <i
+                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                <div class="sub-menu d-none">
+                    <a href="admin-TypeOfProject.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="../../../../RealEstateWeb/resources/views/template/admin-PostProject.html" class="menu-btn">
+                    <a href="admin-PostProject.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                    <a href="admin-ProjectSchedule.html" class="menu-btn">
+                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
                     </a>
                 </div>
             </li>
 
             <li class="sidebar-item" id="type-project">
-                <a href="#type-project" class="menu-btn">
-                    <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ<i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
-                </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/servicePostsManage.html" class="menu-btn">
+                <div class="menu-btn">
+                    <a href="servicesManager.html">
+                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
+                    </a><i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                <div class="sub-menu d-none">
+                    <a href="servicePostsManage.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="contact">
-                <a href="#contact" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác<i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></span>
+                <a href="admin-contactManagement.html" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
-                <div class="sub-menu">
-                    <a href="../../../../RealEstateWeb/resources/views/template/admin-contactManagement.html" class="menu-btn">
-                        <i class="fa-solid fa-file-contract"></i><span>QL Loại tương tác</span>
-                    </a>
-                </div>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="../../../../RealEstateWeb/resources/views/template/admin-slideManagement.html" class="menu-btn">
+                <a href="admin-slideManagement.html" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
         </div>
     </div>
 
-
     <div class="main-container">
         <div class="container p-0">
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">QL Dịch vụ</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Bài viết Dịch vụ</a></li>
+                </ol>
+            </nav>
 
 
             <nav class="" aria-label="breadcrumb">
