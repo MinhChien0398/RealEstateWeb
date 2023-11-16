@@ -22,9 +22,10 @@
 .my-body .projectCard-container:hover .projectCard-content div div {
     justify-content: center;
 }
+
 .my-body .projectCard-container:hover .projectCard-content p {
     padding: 1.5rem !important;
-    padding-top: 0!important;
+    padding-top: 0 !important;
 }
 
 .my-body img {
@@ -65,4 +66,13 @@
 
 .projectCard-content p {
     font-size: 13px;
+}
+
+.fa-bookmark {
+    color: #ffd500;
+    position: absolute;
+    top: 0.5%;
+    right: 0.5%;
+    font-size: 30px;
+
 }
