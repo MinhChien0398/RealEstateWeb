@@ -163,11 +163,4 @@ body {
     display: flex;
     justify-content: center;
 }
-.fa-bookmark{
-    color: #ffd500;
-    position: absolute;
-    top:0.5%;
-    right: 0.5%;
-    font-size: 30px;
 
-}
