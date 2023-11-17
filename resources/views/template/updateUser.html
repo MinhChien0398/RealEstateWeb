@@ -17,6 +17,12 @@
     <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
     <!---->
     <title>Cập nhật tài khoản</title>
+	  <style>
+        div.picker.datepicker .picker__box {
+            border: 1px solid;
+            box-shadow: none;
+        }
+    </style>
 </head>
 <body class="">
 
@@ -164,13 +170,14 @@
                                             <!-- Grid column -->
 
                                             <!-- Grid column -->
-                                            <div class="col-lg-4">
-                                                <div class="md-form form-sm mb-0">
-                                                    <input type="date" id="date-picker-example"
-                                                           style="padding: 6.2px; color: rgb(73, 80, 87);"
-                                                           class="form-control datepicker" value="2003-02-23">
-                                                    <label for="date-picker-example" class="active">Ngày sinh</label>
+                                            
+                                              <div class="col-lg-4">
+                                                <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
+                                                    <input  type="text" id="birthday" class="form-control form-control-sm">
+                                                    <label for="birthday" class="">Ngày sinh</label>
+                                                    <i class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
                                                 </div>
+                                        
 
                                             </div>
                                             <!-- Grid column -->
@@ -489,6 +496,25 @@
             $(".wrapper").toggleClass("mycollapse");
         });
 
+    });
+</script>
+<script>
+    $('.datepicker').datepicker({
+        inline: true,
+        monthsFull: ['Tháng 01', 'Tháng 02', 'Tháng 03', 'Tháng 04', 'Tháng 05', 'Tháng 06', 'Tháng 07', 'Tháng 08', 'Tháng 09', 'Tháng 10',
+            'Tháng 11', 'Tháng 12'],
+
+        weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+        showWeekdaysFull: true ,
+        today: 'Hôm nay',
+        clear: 'Xóa',
+        close: 'Đóng',
+        regional: 'vi-VN',
+        labelMonthNext: 'Tháng kế tiêp',
+        labelMonthPrev: 'Tháng trước',
+        labelMonthSelect: 'Chọn tháng',
+        labelYearSelect: 'Chọn năm',
+        format: 'dd/mm/yyyy',
     });
 </script>
 <script>
