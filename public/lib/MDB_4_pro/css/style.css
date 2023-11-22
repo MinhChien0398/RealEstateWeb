@@ -195,14 +195,13 @@ p {
     font-family: Inter, Arial, Helvetica, sans-serif;;
 }
 
-
 .hover-image {
     overflow: hidden;
     position: relative;
-    transition: all 1s;
+    transition: width 0.8s;
 }
 
-.hover-image:before {
+.hover-image:hover:before {
     animation: shine-1 1s;
 }
 

@@ -114,7 +114,8 @@ body {
 
 .wrapper .sidebar .sidebar-menu .sidebar-item {
     width: 100%;
-    overflow: hidden;font-size: 15px;
+    overflow: hidden;
+    font-size: 15px;
 }
 
 .wrapper .sidebar .sidebar-menu .sidebar-item .menu-btn {
@@ -202,7 +203,7 @@ body {
     width: calc(100% - 225px);
     margin-left: 225px;
     padding: 15px;
-    height: 100vh;
+    height: 100%;
     transition: 0.5s;
 }
 
