@@ -230,9 +230,9 @@
     justify-content: center;
 }
 
-.my-5 .projectCard-container:hover .projectCard-content p {
-    padding: 1.5rem !important;
-}
+//.my-5 .projectCard-container:hover .projectCard-content p {
+//    padding: 1.5rem !important;
+//}
 
 .my-5 img {
     object-fit: cover;
