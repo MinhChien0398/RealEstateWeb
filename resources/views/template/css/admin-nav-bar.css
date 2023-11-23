@@ -102,8 +102,8 @@ body {
 .wrapper .sidebar .sidebar-menu .logo img {
     padding: 20px 0px;
     height: auto;
-    width: 80px;
-    border-radius: 50%;
+    width: 150px;
+
 }
 
 .wrapper .sidebar .sidebar-menu .logo p {
@@ -202,7 +202,7 @@ body {
     margin-top: 70px;
     width: calc(100% - 225px);
     margin-left: 225px;
-    padding: 15px;
+    /*padding: 15px;*/
     height: 100%;
     transition: 0.5s;
 }
