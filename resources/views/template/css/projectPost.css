@@ -48,12 +48,15 @@
 }
 
 span.caret {
-    margin-right: 1rem;
+    margin-right: 0.25rem;
 }
 
 .mdb-select.md-form input[type=text]:focus {
     box-shadow: 0 0 0 0 !important;
     border-bottom: 0 solid !important;
+}
+.mdb-select.md-form input{
+    padding-left: 1rem;
 }
 
 .upload-wrapper .image img {

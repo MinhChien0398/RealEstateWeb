@@ -1,14 +1,20 @@
 let swiper = new Swiper(".slide-content", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
     },
+    breakpoints: {
+        675: {
+            slidesPerView: 2
+        },
+        800: {
+            slidesPerView: 3
+        }
+    }
 });
-
 let items = document.querySelectorAll('.item-selector');
-
 let cur = document.getElementsByClassName('item-selector active')
 for (const item of items) {
     item.addEventListener('click', function () {
