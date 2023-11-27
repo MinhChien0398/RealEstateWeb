@@ -65,7 +65,8 @@ td .icon-action{
     vertical-align: middle;
 }
 td img{
-    width: 100%;
-    height:auto
+    max-height: 80px;
+    width: auto;
+    height: 100%;
 }
 

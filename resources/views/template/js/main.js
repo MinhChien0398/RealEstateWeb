@@ -13,19 +13,17 @@ for (let i = 0; i < btns.length; i++) {
 function myFunction(x) {
     if (x.matches) {
         let drBtns = document.querySelectorAll(".nav-dropdownItem");
+
         for (let i = 0; i < drBtns.length; i++) {
-            drBtns[i].addEventListener("click", function () {
+            drBtns[i].addEventListener("click", function () { console.log(123)
                 for (let j = 0; j < drBtns.length; j++) {
                     if (drBtns[j].children[2].classList.contains("d-block")) {
                         drBtns[j].children[2].classList.remove("d-block");
                         if(drBtns[i].body===drBtns[j].body)
                             return;
                     };
-
-
                 }
                     drBtns[i].children[2].classList.add("d-block");
-
             });
         }
     }
