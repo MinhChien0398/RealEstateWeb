@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/layout/common.jsp"%>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-property ">
     <div class="container">
         <a class="navbar-brand "
            href="#">
             <div class="navbar-brand flex-center justify-content-between ">
-                <img class="mr-3 ml-4 " src="<%@include file="/views/img/logo/logo.png"%>" style="width: 50px">
+                <img class="mr-3 ml-4 " src="<c:url value="/template/img/logo/logo.png" />" style="width: 50px">
                 <h5 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h5>
             </div>
         </a>
@@ -54,10 +54,10 @@
                 </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="contact.jsp">Liên Hệ</a>
+                    <a class="nav-link" href="../../../../NhaDepModule/resources/views/template/contact.html">Liên Hệ</a>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="login.jsp">Đăng nhập</a>
+                    <a class="nav-link" href="../../../../NhaDepModule/resources/views/template/login.html">Đăng nhập</a>
                 </li>
             </ul>
             <!--icon font ring-->

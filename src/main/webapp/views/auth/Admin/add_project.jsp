@@ -6,20 +6,20 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/layout/common.jsp" %>
 <html>
 <head>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+    <%@include file="/layout/link.jsp" %>
     <meta charset="UTF-8">
-    <link href="lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="css/admin-nav-bar.css" rel="stylesheet">
-    <link href="css/fileInput.css" rel="stylesheet">
-    <link href="css/addProjectPage.css" rel="stylesheet">
+    <link href="/template//template/css/admin-nav-bar.css" rel="stylesheet">
+    <link href="/template/css/fileInput.css" rel="stylesheet">
+    <link href="/template/css/addProjectPage.css" rel="stylesheet">
     <style>
-        .select-wrapper input.select-dropdown,.custom-file-label {
+        .select-wrapper input.select-dropdown, .custom-file-label {
             z-index: 0;
         }
+
         div.picker.datepicker .picker__box {
             border: 1px solid;
             box-shadow: none;
@@ -190,11 +190,13 @@
                                                                 <label for="acreage" class="labels">Diện tích</label>
                                                                 <input id="acreage" type="text" class="form-control"
                                                                        placeholder="Diện tích" value="">
-                                                            </div></div>
+                                                            </div>
+                                                        </div>
                                                         <div class="mb-4">
                                                             <label for="address" class="labels">Địa chỉ</label>
                                                             <select name="address" id="address" class="form-control">
-                                                                <option value="" disabled selected>Chọn tỉnh thành</option>
+                                                                <option value="" disabled selected>Chọn tỉnh thành
+                                                                </option>
 
                                                                 <option value="92TTT">Thành phố Cần Thơ</option>
 
@@ -336,7 +338,7 @@
                                                             <label class="mdb-main-label">Dịch vụ</label>
                                                             <select class="mdb-select md-form" multiple>
                                                                 <option value="1" selected>Xây dựng phần thô</option>
-                                                                <option value="2" >Xây nhà trọn gói</option>
+                                                                <option value="2">Xây nhà trọn gói</option>
                                                                 <option value="3">Thiết kế nội thất</option>
                                                                 <option value="4">Sữa chữa</option>
                                                             </select>
@@ -345,7 +347,9 @@
                                                             <div class="d-flex">
                                                                 <label>Tiến độ dự án:</label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="false" onclick="conpleteProject()" class="form-check-input"
+                                                                    <input type="checkbox" checked="false"
+                                                                           onclick="conpleteProject()"
+                                                                           class="form-check-input"
                                                                            id="projectProgress">
                                                                     <label class="form-check-label"
                                                                            for="projectProgress">Hoàn thành</label>
@@ -354,8 +358,12 @@
                                                             <div id="projectProgressText">
                                                                 <input type="text" class="form-control  mb-3"
                                                                        placeholder="Tiến độ dự án" value="">
-                                                                <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker" inline="true">
-                                                                    <input placeholder="Dự kiến ngày hoàng thành" type="text" id="example" class="form-control">
+                                                                <div id="date-picker-example"
+                                                                     class="md-form md-outline input-with-post-icon datepicker"
+                                                                     inline="true">
+                                                                    <input placeholder="Dự kiến ngày hoàng thành"
+                                                                           type="text" id="example"
+                                                                           class="form-control">
                                                                     <i class="fas fa-calendar input-prefix"></i>
                                                                 </div>
                                                             </div>
@@ -364,9 +372,12 @@
                                                             <div class="d-flex">
                                                                 <label for="status" class="labels">Trạng thái: </label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="true"  onclick="userAccepted()" class="form-check-input" id="UserAccepted">
+                                                                    <input type="checkbox" checked="true"
+                                                                           onclick="userAccepted()"
+                                                                           class="form-check-input" id="UserAccepted">
                                                                     <label class="form-check-label"
-                                                                           for="UserAccepted">Người dùng chấp nhận đăng bài</label>
+                                                                           for="UserAccepted">Người dùng chấp nhận đăng
+                                                                        bài</label>
                                                                 </div>
                                                             </div>
                                                             <select id="status" class="custom-select">
@@ -458,17 +469,14 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="lib/DataTables/dataTables.min.js"></script>
-<script src="js/inputFile.js"></script>
-<script src="lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
+<%@include file="/layout/script.jsp" %>
+<script src="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="/template/lib/DataTables/dataTables.min.js"></script>
+<script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script src="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('service-des',{
-        width : "100%",
+    CKEDITOR.replace('service-des', {
+        width: "100%",
         height: "400px",
     });
 
@@ -480,7 +488,7 @@
             'Tháng 11', 'Tháng 12'],
 
         weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-        showWeekdaysFull: true ,
+        showWeekdaysFull: true,
         today: 'Hôm nay',
         clear: 'Xóa',
         close: 'Đóng',
@@ -500,16 +508,16 @@
     });
 </script>
 <script>
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }
@@ -517,7 +525,8 @@
 
 <script>
     userAccepted()
-    function userAccepted(){
+
+    function userAccepted() {
         var status = document.getElementById('status');
         if (!document.getElementById('UserAccepted').checked) {
             status.classList.add('d-none');
@@ -530,7 +539,8 @@
 </script>
 <script>
     conpleteProject()
-    function conpleteProject(){
+
+    function conpleteProject() {
         var projectProgressText = document.getElementById('projectProgressText');
         if (document.getElementById('projectProgress').checked) {
             projectProgressText.classList.add('d-none');

@@ -1,28 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Minh Tan
-  Date: 11/27/2023
-  Time: 1:59 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="css/projectPost.css" rel="stylesheet">
-
-    <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
-    <link href="lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-
-    <title>Title</title>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+    <%@include file="/layout/common.jsp"%>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%@ include file="/layout/link.jsp"%>
+    <link rel="stylesheet" href="/template/css/projectPost.css">
+    <title>Bài viết dịch vụ</title>
 </head>
 <body>
-<jsp:include page="public/layout/public/header.jsp"></jsp:include>
-<!--start content-->
+<%@include file="/layout/public/header.jsp"%>
 <section id="PostContent">
     <!--start breadcrumb-->
 
@@ -63,35 +53,35 @@
 
                 <div class="gallery position-relative h-auto mb-3 ">
                     <div class="img position-relative w-100 h-100 overflow-hidden ">
-                        <img class="" src="img/gallery project post img/1.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/1.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/2.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/2.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/3.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/3.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/4.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/4.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/9.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/9.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/12.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/12.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/13.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/13.jpg"
                              alt="Image">
                     </div>
                     <div class="img position-relative w-100 h-100 overflow-hidden">
-                        <img class="" src="img/gallery project post img/14.jpg"
+                        <img class="" src="../../../../RealEstateWeb/public/img/gallery project post img/14.jpg"
                              alt="Image">
                     </div>
                 </div>
@@ -105,13 +95,13 @@
                 </p>
                 <div>
                     <img
-                            src="img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
+                            src="../../../../../RealEstateWeb/public/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
                             alt="">
                     <p>Mặt tiền được thiết kế kiến trúc vuông vắn với những đường nét độc đáo</p>
                 </div>
                 <div>
                     <img
-                            src="img/project post img/z3904713188335_87a8fb4e1b477eb507e2f7ff61ecd945_1671524950-1032x800.jpg"
+                            src="../../../../../RealEstateWeb/public/img/project post img/z3904713188335_87a8fb4e1b477eb507e2f7ff61ecd945_1671524950-1032x800.jpg"
                             alt="">
                     <p>Kết hợp cùng không gian xanh tạo cảm giác thông thoáng, dễ chịu</p>
                 </div>
@@ -125,13 +115,13 @@
                 </p>
                 <div>
                     <img
-                            src="img/project post img/z3904713186745_bd7de960470cba9ae042a368cdd52e8b_1671524950.jpg"
+                            src="../../../../../RealEstateWeb/public/img/project post img/z3904713186745_bd7de960470cba9ae042a368cdd52e8b_1671524950.jpg"
                             alt="">
                     <p>Hệ thống nhiều cửa sổ giúp ngôi nhà luôn ngập tràn ánh sáng và không khí tự nhiên</p>
                 </div>
                 <div>
                     <img
-                            src="img/project post img/z3904713175130_7b02a6152c6770ef31910c99ae5d4314_1671524950-1032x800.jpg"
+                            src="../../../../../RealEstateWeb/public/img/project post img/z3904713175130_7b02a6152c6770ef31910c99ae5d4314_1671524950-1032x800.jpg"
                             alt="">
                     <p>Mái tum tầng có thể bố trí làm phòng thờ và sân thượng đẹp mắt</p>
                 </div>
@@ -369,7 +359,7 @@
                                     <a href="#" class="feature-news-items-link d-flex row" role="link">
                                         <div class="feature-news-items-img d-block hover-image col-5 pr-0">
                                             <img
-                                                    src="img/project-img/thiet-ke-biet-thu-13-1-e1672026065491.jpg"
+                                                    src="../../../../../RealEstateWeb/public/img/project-img/thiet-ke-biet-thu-13-1-e1672026065491.jpg"
                                                     alt="">
                                         </div>
                                         <div class="feature-news-items-info col-6 pl-0">
@@ -383,7 +373,7 @@
                                     <a href="#" class="feature-news-items-link d-flex row" role="link">
                                         <div class="feature-news-items-img d-block hover-image col-5 pr-0">
                                             <img
-                                                    src="img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
+                                                    src="../../../../../RealEstateWeb/public/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
                                                     alt="">
                                         </div>
                                         <div class="feature-news-items-info col-6 pl-0">
@@ -397,7 +387,7 @@
                                     <a href="#" class="feature-news-items-link d-flex row" role="link">
                                         <div class="feature-news-items-img d-block hover-image col-5 pr-0">
                                             <img
-                                                    src="img/project-img/nhaanhchung-4935.jpg"
+                                                    src="../../../../../RealEstateWeb/public/img/project-img/nhaanhchung-4935.jpg"
                                                     alt="">
                                         </div>
                                         <div class="feature-news-items-info col-6 pl-0">
@@ -411,7 +401,7 @@
                                     <a href="#" class="feature-news-items-link d-flex row" role="link">
                                         <div class="feature-news-items-img d-block hover-image col-5 pr-0">
                                             <img
-                                                    src="img/project-img/screenshot-20230819-165117-8274.png"
+                                                    src="../../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-165117-8274.png"
                                                     alt="">
                                         </div>
                                         <div class="feature-news-items-info col-6 pl-0">
@@ -430,17 +420,9 @@
         </div>
     </div>
 </section>
-<jsp:include page="public/layout/public/footer.jsp"></jsp:include>
-<!--end content-->
-<script src="lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.lite.min.js"></script>
-<script src="js/main.js"></script>
-
-<!--<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>-->
-<!-- Define the symbols, these are invisible on the page -->
+<%@include file="/layout/public/footer.jsp"%>
+<%@include file="/layout/script.jsp"%>
+<script src="<c:url value="/template/js/main.js"/>"></script>
 <script>
     let allFiles = [];
     let form = document.getElementsByClassName("form-img");

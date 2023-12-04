@@ -1,25 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Minh Tan
-  Date: 11/27/2023
-  Time: 1:59 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="vi">
-<head><meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/contact.css">
-    <link href="lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <!--    <link href="lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">-->
-    <link href="lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-
-    <title>Title</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+    <%@include file="/layout/common.jsp"%>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%@ include file="/layout/link.jsp"%>
+    <link rel="stylesheet" href="/template/css/postServices.css">
+    <title>Bài viết dịch vụ</title>
 </head>
 <body>
-<jsp:include page="public/layout/public/header.jsp"></jsp:include>
+<%@include file="/layout/public/header.jsp"%>
+<!--start content-->
 <!--start content-->
 <!--        Start breadcrumb -->
 <div class="container">
@@ -92,8 +86,6 @@
                             <input type="text" id="form-name" class="form-control">
                             <label for="form-name">Họ và tên</label>
                         </div>
-
-
                         <div class="md-form">
                             <i class="fas fa-envelope prefix grey-text"></i>
                             <input type="text" id="form-email" class="form-control">
@@ -157,12 +149,9 @@
 </div>
 <!--    end main contact-->
 <!--end content-->
-<jsp:include page="public/layout/public/footer.jsp"></jsp:include>
-<script src="../../../../RealEstateWeb/resources/views/template/js/main.js"></script>
-<script src="lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.lite.min.js"></script>
+<!--end content-->
+<%@include file="/layout/public/footer.jsp"%>
+<%@include file="/layout/script.jsp"%>
+<script src="<c:url value="/template/js/main.js"/>"></script>
 </body>
 </html>

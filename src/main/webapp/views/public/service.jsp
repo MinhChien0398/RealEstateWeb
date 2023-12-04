@@ -1,29 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Minh Tan
-  Date: 11/27/2023
-  Time: 1:58 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-
-    <link href="lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="css/services.css" rel="stylesheet">
-
-    <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-
-    <title>Title</title>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+    <%@include file="/layout/common.jsp"%>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%@ include file="/layout/link.jsp"%>
+    <link rel="stylesheet" href="/template/css/services.css">
+    <title>DỊCH VỤ</title>
 </head>
 <body>
-<jsp:include page="public/layout/public/header.jsp"></jsp:include>
+<%@include file="/layout/public/header.jsp"%>
 <!--start content-->
 <div class="my-body">
     <div class="container">
@@ -64,7 +53,7 @@
                                 ></div>
                                 <div class="hover-img">
                                     <img
-                                            src="img/service-img/untitled-3-8307.png"
+                                            src="../../../../RealEstateWeb/public/img/service-img/untitled-3-8307.png"
                                             class="img-fluid"/>
                                 </div>
                             </a>
@@ -80,8 +69,7 @@
                                     giúp gia chủ cân đối được nguồn tài chính khi xây nhà.
                                 </p>
                             </div>
-                            <a href="servicePost.jsp"
-                               class="btn btn-rounded">Xem thêm</a>
+                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -97,7 +85,7 @@
                                 ></div>
                                 <div class="hover-img">
                                     <img
-                                            src="img/service-img/dichvuxaydungnhaotrongoi-2589.jpg"
+                                            src="../../../../RealEstateWeb/public/img/service-img/dichvuxaydungnhaotrongoi-2589.jpg"
                                             class="img-fluid"/>
                                 </div>
                             </a>
@@ -112,8 +100,7 @@
                                     ban đầu đến hoàn thiện cuối cùng.
                                 </p>
                             </div>
-                            <a href="servicePost.jsp"
-                               class="btn btn-rounded">Xem thêm</a>
+                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -129,7 +116,7 @@
                                 ></div>
                                 <div class="hover-img">
                                     <img
-                                            src="img/service-img/nhamaysanxuatgangtay-7223.jpg"
+                                            src="../../../../RealEstateWeb/public/img/service-img/nhamaysanxuatgangtay-7223.jpg"
                                             class="img-fluid"/>
                                 </div>
                             </a>
@@ -143,8 +130,7 @@
                                     kinh doanh của khách hàng.
                                 </p>
                             </div>
-                            <a href="servicePost.jsp"
-                               class="btn btn-rounded">Xem thêm</a>
+                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -154,12 +140,8 @@
     </div>
 </div>
 <!--end content-->
-<jsp:include page="public/layout/public/footer.jsp"></jsp:include>
-<script src="js/main.js"></script>
-<script src="lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.lite.min.js"></script>
+<%@include file="/layout/public/footer.jsp"%>
+<%@include file="/layout/script.jsp"%>
+<script src="<c:url value="/template/js/main.js"/>"></script>
 </body>
 </html>

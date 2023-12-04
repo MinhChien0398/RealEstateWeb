@@ -1,31 +1,22 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Clover
-  Date: 04/12/2023
-  Time: 9:47 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp"%>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <!--    <link href="lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">-->
-    <link href="lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="css/user.css" rel="stylesheet">
-    <link href="css/admin-nav-bar.css" rel="stylesheet">
-    <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
-    <link href="lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <!--    <link href="css/swiper-bundle.min.css" rel="stylesheet">-->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%@include file="/layout/link.jsp"%>
+    <link rel="stylesheet" href="/template/css/user.css">
+    <link rel="stylesheet" href="/template/css/admin-nav-bar.css">
+    <title>Thông tin người dùng</title>
     <style>
         div.picker.datepicker .picker__box {
             border: 1px solid;
             box-shadow: none;
         }
     </style>
-    <title>Title</title>
 </head>
 <body>
 
@@ -37,9 +28,9 @@
              style="z-index: 1000; top:0">
             <div class="container">
                 <a class="navbar-brand "
-                   href="home.jsp">
+                   href="../../../../RealEstateWeb/resources/views/template/main.html">
                     <div class="navbar-brand flex-center justify-content-between">
-                        <img class="mr-3 ml-4 " src="img/logo/logo.png" style="width: 50px">
+                        <img class="mr-3 ml-4 " src="../../../../RealEstateWeb/public/img/logo/logo.png" style="width: 50px">
                         <h5 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h5>
                     </div>
                 </a>
@@ -48,18 +39,18 @@
                     <ul class="navbar-nav  col-9 border-right">
                         <li class="nav-item nav-menuItem font-weight-bolder ">
                             <a class="nav-link text-center"
-                               href="home.jsp">Trang Chủ
+                               href="../../../../RealEstateWeb/resources/views/template/main.html">Trang Chủ
                             </a>
                         </li>
                         <li class="nav-item nav-menuItem font-weight-bolder">
                             <a class="nav-link text-center"
-                               href="intro.jsp">Giới Thiệu</a>
+                               href="../../../../RealEstateWeb/resources/views/template/intro.html">Giới Thiệu</a>
                         </li>
                         <li class="d-flex align-items-center nav-item
                 nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
                         >
                             <a class="nav-link text-center"
-                               href="services.jsp"
+                               href="../../../../RealEstateWeb/resources/views/template/services.html"
                                role="link"
                             >Dịch vụ
                             </a>
@@ -77,7 +68,7 @@
                 nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
                         >
                             <a class="nav-link text-center"
-                               href="project.jsp"
+                               href="../../../../RealEstateWeb/resources/views/template/project.html"
                                role="link"
                             >Dự án
                             </a>
@@ -90,7 +81,7 @@
                         </li>
                         <li class="nav-item nav-menuItem font-weight-bolder">
                             <a class="nav-link text-center"
-                               href="contact.jsp">Liên Hệ</a>
+                               href="../../../../RealEstateWeb/resources/views/template/contact.html">Liên Hệ</a>
                         </li>
                         <li class="nav-item nav-menuItem font-weight-bolder" id="nav-menuItem-active">
                             <a class="nav-link text-center" href="#">TK của tôi</a>
@@ -119,22 +110,22 @@
         <div class="sidebar">
             <div class="sidebar-menu">
                 <li class="sidebar-item" id="user">
-                    <a href="user.jsp" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/user.html" class="menu-btn">
                         <i class="fas fa-user-circle"></i><span>Thông tin cá nhân</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="favourite">
-                    <a href="user_favourite.jsp" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/user_favourite.html" class="menu-btn">
                         <i class="fa-solid fa-star"></i><span>Dự án đã lưu</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="history">
-                    <a href="user_history.jsp" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/user_history.html" class="menu-btn">
                         <i class="fa-solid fa-clock-rotate-left"></i><span>Lịch sử truy cập</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="my-projcet">
-                    <a href="user_Projects.jsp" class="menu-btn">
+                    <a href="../../../../RealEstateWeb/resources/views/template/user_Projects.html" class="menu-btn">
                         <i class="fa-solid fa-layer-group"></i><span>Dự án của tôi</span>
                     </a>
                 </li>
@@ -147,7 +138,7 @@
                     <ol class="breadcrumb bg-white small">
                         <li class="breadcrumb-item">
                             <a class="black-text breadcrumb-size"
-                               href="home.jsp">
+                               href="../../../../RealEstateWeb/resources/views/template/main.html">
                                 <i class="fa-solid fa-house"></i>
                             </a>
                         </li>
@@ -156,7 +147,7 @@
                         </li>
                         <li class="breadcrumb-item active breadcrumb-size">
                             <a class="black-text text-uppercase font-weight-bolder "
-                               href="user.jsp">Tài khoản cá nhân</a>
+                               href="../../../../RealEstateWeb/resources/views/template/user.html">Tài khoản cá nhân</a>
                         </li>
                     </ol>
                 </nav>
@@ -177,7 +168,7 @@
                                         <!-- Grid row -->
                                         <div class="img-avatar flex-center">
                                             <a class="img-avatar-edit">
-                                                <img src="img/Avatar/user.png"
+                                                <img src="../../../../RealEstateWeb/public/img/Avatar/user.png"
                                                      class="rounded-circle"
                                                      alt="User's Profile Picture">
                                                 <div class="edit-icon">
@@ -453,39 +444,7 @@
         </div>
     </div>
 </div>
-
-<script src="lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="js/user.js"></script>
-<!--<script src="lib/MDB_4_pro/js/mdb.lite.min.js"></script>-->
-<script>
-    $(document).ready(function () {
-        $(".sidebar-btn").click(function () {
-            $(".wrapper").toggleClass("mycollapse");
-        });
-
-    });
-</script>
-<script>
-    $('.datepicker').datepicker({
-        inline: true,
-        monthsFull: ['Tháng 01', 'Tháng 02', 'Tháng 03', 'Tháng 04', 'Tháng 05', 'Tháng 06', 'Tháng 07', 'Tháng 08', 'Tháng 09', 'Tháng 10',
-            'Tháng 11', 'Tháng 12'],
-
-        weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-        showWeekdaysFull: true,
-        today: 'Hôm nay',
-        clear: 'Xóa',
-        close: 'Đóng',
-        regional: 'vi-VN',
-        labelMonthNext: 'Tháng kế tiêp',
-        labelMonthPrev: 'Tháng trước',
-        labelMonthSelect: 'Chọn tháng',
-        labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
-    });
-</script>
+<%@include file="/layout/script.jsp"%>
+<script src="<c:url value="/template/js/user.js"/>"></script>
 </body>
 </html>

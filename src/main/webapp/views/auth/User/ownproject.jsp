@@ -1,21 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp" %>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <!--    <link href="../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.lite.min.css" rel="stylesheet">-->
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/user_favourite.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/user_projects.css" rel="stylesheet">
-
-    <!--<link href="/lib/fontawesome-free-6.4.2-web/css/fontawesome.min.css" rel="stylesheet"> -->
-    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <!--    <link href="../../../RealEstateWeb/public/views/template/css/swiper-bundle.min.css" rel="stylesheet">-->
-    <style>
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <%@include file="/layout/link.jsp" %>
+    <link rel="stylesheet" href="/template/css/admin-nav-bar.css">
+    <link rel="stylesheet" href="/template/css/user_favourite.css">
+    <link rel="stylesheet" href="/template/css/user_projects.css">
+    <title>Dự án của tôi</title>
 </head>
 <body>
 <div class="wrapper position-relative">
@@ -28,7 +24,8 @@
                 <a class="navbar-brand "
                    href="../../../../RealEstateWeb/resources/views/template/main.html">
                     <div class="navbar-brand flex-center justify-content-between">
-                        <img class="mr-3 ml-4 " src="../../../../RealEstateWeb/public/img/logo/logo.png" style="width: 50px">
+                        <img class="mr-3 ml-4 " src="../../../../RealEstateWeb/public/img/logo/logo.png"
+                             style="width: 50px">
                         <h5 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h5>
                     </div>
                 </a>
@@ -196,12 +193,6 @@
         </div>
     </div>
 </div>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script>
-
-</script>
+<%@include file="/layout/script.jsp" %>
 </body>
 </html>

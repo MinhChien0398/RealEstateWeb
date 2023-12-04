@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/layout/common.jsp" %>
 <footer class="page-footer font-small pt-2">
     <!-- Footer Links -->
     <div class="container text-md-left" style="">
@@ -9,7 +9,7 @@
             <div class="col-md-6 col-lg-4 col-xl-4 mx-auto mt-3 flex-column align-items-center justify-content-center">
                 <div class="row ">
                     <img class="col-4 col-sm-3 "
-                         src="<%@include file="/views/img/logo/logo.png"%>>">
+                         src="<c:url value="/template/img/logo/logo.png"/>">
                     <h3 class="col-8 text-uppercase mb-2 mt-2 font-weight-bold main-color d-flex align-items-center">nhà
                         đẹp</h3>
                 </div>
@@ -33,7 +33,7 @@
                         <li class="list-inline-item">
                             <a class="hoverable btn-floating mx-1">
                                 <img class="hoverable-img mx-0 "
-                                     src="<%@include file="/views/img/snapedit_1694631625483.png"%>>"
+                                     src="<c:url value="/template/img/snapedit_1694631625483.png"/>"
                                      style="width: 45px">
                             </a>
                         </li>

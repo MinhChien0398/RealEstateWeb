@@ -6,19 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="/layout/common.jsp" %>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="css/nav-bar.css" rel="stylesheet">
-    <link href="lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-    <link href="css/datatable.css" rel="stylesheet">
-    <link href="lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
+    <%@include file="/layout/link.jsp" %>
+    <link href="/template/css/nav-bar.css" rel="stylesheet">
+    <link href="/template/css/datatable.css" rel="stylesheet">
+    <link href="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
           rel="stylesheet">
-    <link href="lib/DataTables/dataTables.min.css" rel="stylesheet">
-    <link href="views/css/Dashboard.css" rel="stylesheet">
+    <link href="/template/lib/DataTables/dataTables.min.css" rel="stylesheet">
+    <link href="/template/css/Dashboard.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
@@ -250,12 +248,9 @@
     </div>
 </div>
 <!--/. Sidebar navigation -->
-<script src="lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="lib/DataTables/dataTables.min.js"></script>
+<%@include file="/layout/script.jsp" %>
+<script src="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="/template/lib/DataTables/dataTables.min.js"></script>
 <script>
 
     $('#table1').DataTable({
