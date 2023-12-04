@@ -18,7 +18,7 @@
     <link href="lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
           rel="stylesheet">
     <link href="lib/DataTables/dataTables.min.css" rel="stylesheet">
-    <link href="css/Dashboard.css" rel="stylesheet">
+    <link href="views/css/Dashboard.css" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
