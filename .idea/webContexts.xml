@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/New folder/layout/common.jsp" value="file://$PROJECT_DIR$/src/main/webapp/New folder/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/New folder/layout/public/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/New folder/layout/public" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/layout/public/footer.jsp" value="file://$PROJECT_DIR$/src/main/webapp/layout/public" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/template/main.html" value="file://$PROJECT_DIR$/src/main/webapp/template" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/public/layout/public/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/public/layout/public" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/views/public/project.jsp" value="file://$PROJECT_DIR$/src/main/webapp/views/public" />
+      </map>
+    </option>
+  </component>
+</project>
