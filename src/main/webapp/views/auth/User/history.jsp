@@ -7,10 +7,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@include file="/layout/link.jsp" %>
-    <link rel="stylesheet" href="/template/css/admin-nav-bar.css">
-    <link rel="stylesheet" href="/template/css/user_history.css">
-    <link rel="stylesheet" href="/template/css/project.css">
+    <%@include file="/layout/public/link.jsp" %>
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/user_history.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/project.css"/>" rel="stylesheet">
     <title>lịch sử đã xem</title>
 </head>
 <body>
@@ -193,7 +193,7 @@
         </div>
     </div>
 </div>
-<%@include file="/layout/script.jsp" %>
+<%@include file="/layout/public/script.jsp" %>
 <script>
     $('document').ready(function () {
         $(".button-collapse").sideNav();

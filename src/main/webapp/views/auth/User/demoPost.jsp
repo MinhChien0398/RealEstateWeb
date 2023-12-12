@@ -7,9 +7,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@include file="/layout/link.jsp" %>
-    <link rel="stylesheet" href="/template/css/projectPost.css">
-    <link rel="stylesheet" href="/template/css/user-demoPost.css">
+    <%@include file="/layout/public/link.jsp" %>
+    <link href=" <c:url value="/template/css/projectPost.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/user-demoPost.css"/>" rel="stylesheet">
     <title>XEM TRƯỚC</title>
 </head>
 <body>
@@ -438,7 +438,7 @@
         </div>
     </div>
 </div>
-<%@include file="/layout/script.jsp" %>
+<%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/user.js"/>"></script>
 </body>
 </html>
