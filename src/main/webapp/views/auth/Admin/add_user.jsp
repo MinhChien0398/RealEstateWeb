@@ -5,22 +5,20 @@
   Time: 2:41 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
-    <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-    <%@include file="/layout/link.jsp" %>
+    <%@include file="/layout/public/link.jsp" %>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
-          rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
     <!---->
     <title>Thêm người dùng</title>
     <style>
@@ -51,7 +49,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+                <img src="/template/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="dashboard.html" class="menu-btn">
@@ -113,7 +111,7 @@
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text"
-                                                   href="../../../../RealEstateWeb/resources/views/template/dashboard.html">Thống
+                                                   href="/template//template/dashboard.html">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text" href="#">QL người dùng</a></li>
@@ -393,5 +391,51 @@
     </form>
 </div>
 <!--/. Sidebar navigation -->
+<%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<script>
+    $('.datepicker').datepicker({
+        inline: true,
+        monthsFull: ['Tháng 01', 'Tháng 02', 'Tháng 03', 'Tháng 04', 'Tháng 05', 'Tháng 06', 'Tháng 07', 'Tháng 08', 'Tháng 09', 'Tháng 10',
+            'Tháng 11', 'Tháng 12'],
+
+        weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+        showWeekdaysFull: true ,
+        today: 'Hôm nay',
+        clear: 'Xóa',
+        close: 'Đóng',
+        regional: 'vi-VN',
+        labelMonthNext: 'Tháng kế tiêp',
+        labelMonthPrev: 'Tháng trước',
+        labelMonthSelect: 'Chọn tháng',
+        labelYearSelect: 'Chọn năm',
+        format: 'dd/mm/yyyy',
+    });
+</script>
+<script>
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
+                cur.classList.remove('d-block');
+                cur.classList.add('d-none');
+            }
+            if (this.children.length === 2) {
+                this.children[1].classList.remove('d-none')
+                this.children[1].classList.add('d-block')
+                cur = this.children[1];
+            }
+        })
+    }
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+    });
+</script>
 </body>
 </html>

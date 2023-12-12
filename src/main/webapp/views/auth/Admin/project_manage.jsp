@@ -1,28 +1,23 @@
-<!doctype html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Clover
+  Date: 11/12/2023
+  Time: 1:39 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp" %>
+<html>
 <head>
-
+    <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
-    <title>Quản lý dự án</title>
-    <style>
-    </style>
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
+    <title>Title</title>
 </head>
-<body class="">
-
+<body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <div class="header fixed-top ">
@@ -42,7 +37,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+                <img src="/template/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="dashboard.html" class="menu-btn">
@@ -59,7 +54,7 @@
                 <a href="admin-projectsManage.html" >
                     <span>QL Dự án</span>
                 </a> <i
-                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
                     <a href="admin-TypeOfProject.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -78,7 +73,7 @@
                     <a href="servicesManager.html">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="servicePostsManage.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
@@ -142,7 +137,7 @@
                         <td>1</td>
                         <td>Phối cảnh An Thiên</td>
                         <td>
-                            <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-165117-8274.png" alt=""
+                            <img src="/template/img/project-img/screenshot-20230819-165117-8274.png" alt=""
                                  style=""
                                  class=" w-100">
                         </td>
@@ -166,7 +161,7 @@
                         <td>2</td>
                         <td>NHÀ ANH HƯNG GÒ VẤP</td>
                         <td>
-                            <img src="../../../../RealEstateWeb/public/img/project-img/nhaanhchung-4935.jpg" alt="" style=""
+                            <img src="/template/img/project-img/nhaanhchung-4935.jpg" alt="" style=""
                                  class=" w-100">
                         </td>
                         <td>300.000.000 VND</td>
@@ -189,9 +184,9 @@
                         <td>BIỆT THỰ CHÂU ÂU</td>
                         <td>
                             <img
-                                src="../../../../RealEstateWeb/public/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
-                                alt="" style=""
-                                class=" w-100">
+                                    src="/template/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
+                                    alt="" style=""
+                                    class=" w-100">
                         </td>
                         <td>1.000.000.000 VND</td>
                         <td>TP.HCM</td>
@@ -212,7 +207,7 @@
                         <td>4</td>
                         <td>PHONG CÁCH GẦN GŨI VỚI THIÊN NHIÊN</td>
                         <td>
-                            <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-biet-thu-20-1.jpg" alt="" style=""
+                            <img src="/template/img/project-img/thiet-ke-biet-thu-20-1.jpg" alt="" style=""
                                  class=" w-100">
                         </td>
                         <td>1.000.000.000 VND</td>
@@ -234,7 +229,7 @@
                         <td>5</td>
                         <td>NHÀ PHỐ HIỆN ĐẠI</td>
                         <td>
-                            <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-nha-3-3.jpg" alt="" style=""
+                            <img src="/template/img/project-img/thiet-ke-nha-3-3.jpg" alt="" style=""
                                  class=" w-100">
                         </td>
                         <td>1.000.000.000 VND</td>
@@ -256,7 +251,7 @@
                         <td>6</td>
                         <td>NHÀ PHỐ HIỆN ĐẠI"</td>
                         <td>
-                            <img src="../../../../RealEstateWeb/public/img/project-img/project3.jpg" alt="" style=""
+                            <img src="/template/img/project-img/project3.jpg" alt="" style=""
                                  class=" w-100">
                         </td>
                         <td>1.000.000.000 VND</td>
@@ -286,12 +281,8 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
+<%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
 
 </script>

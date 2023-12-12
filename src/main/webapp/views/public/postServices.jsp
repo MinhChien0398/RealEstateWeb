@@ -7,8 +7,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@ include file="/layout/link.jsp"%>
-    <link rel="stylesheet" href="/template/css/postServices.css">
+    <%@ include file="/layout/public/link.jsp"%>
+    <link href=" <c:url value="/template/css/postServices.css"/>" rel="stylesheet">
     <title>Bài viết dịch vụ</title>
 </head>
 <body>
@@ -151,7 +151,7 @@
 <!--end content-->
 <!--end content-->
 <%@include file="/layout/public/footer.jsp"%>
-<%@include file="/layout/script.jsp"%>
+<%@include file="/layout/public/script.jsp"%>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 </body>
 </html>

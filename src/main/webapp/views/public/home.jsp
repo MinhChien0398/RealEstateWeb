@@ -9,7 +9,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@ include file="/layout/link.jsp" %>
+    <%@ include file="/layout/public/link.jsp" %>
     <link rel="stylesheet" href="<c:url value="/template/css/swiper-bundle.min.css" />">
     <link rel="stylesheet" href="<c:url value="/template/css/home.css" />">
     <title>Trang chủ</title>
@@ -1032,7 +1032,7 @@
 
 
 <%@include file="/layout/public/footer.jsp" %>
-<%@include file="/layout/script.jsp" %>
+<%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 <script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
 <script src="<c:url value="/template/js/home.js"/>"></script>

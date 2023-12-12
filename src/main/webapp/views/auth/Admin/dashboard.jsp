@@ -5,18 +5,16 @@
   Time: 10:22 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
     <meta charset="UTF-8">
-    <%@include file="/layout/link.jsp" %>
-    <link href="/template/css/nav-bar.css" rel="stylesheet">
-    <link href="/template/css/datatable.css" rel="stylesheet">
-    <link href="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"
-          rel="stylesheet">
-    <link href="/template/lib/DataTables/dataTables.min.css" rel="stylesheet">
-    <link href="/template/css/Dashboard.css" rel="stylesheet">
+    <%@include file="/layout/public/link.jsp" %>
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin_Dashboard.css"/>" rel="stylesheet">
     <title>Title</title>
 </head>
 <body>
@@ -248,9 +246,8 @@
     </div>
 </div>
 <!--/. Sidebar navigation -->
-<%@include file="/layout/script.jsp" %>
-<script src="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="/template/lib/DataTables/dataTables.min.js"></script>
+<%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
 
     $('#table1').DataTable({

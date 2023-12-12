@@ -1,31 +1,27 @@
-<!doctype html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Clover
+  Date: 11/12/2023
+  Time: 1:59 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp" %>
+<html>
 <head>
-
-    <meta charset="UTF-8">
+    <%@include file="/layout/public/link.jsp" %>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
-
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
-    <!---->
-    <title>Quản lý liên hệ</title>
-    <style>
-        /*div.dataTables_scrollHeadInner,div.dataTables_scrollHeadInner>table{*/
-        /*    width: 100%!important;}*/
-    </style>
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
+    <title>Title</title>
 </head>
-<body class="">
-
+<body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <div class="header fixed-top ">
@@ -45,7 +41,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+                <img src="/template/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="dashboard.html" class="menu-btn">
@@ -62,7 +58,7 @@
                 <a href="admin-projectsManage.html" >
                     <span>QL Dự án</span>
                 </a> <i
-                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
                     <a href="admin-TypeOfProject.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -81,7 +77,7 @@
                     <a href="servicesManager.html">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="servicePostsManage.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
@@ -101,59 +97,91 @@
         </div>
     </div>
 
-    <div class="main-container">
+    <div class="main-container ">
+
+
         <div class="container p-0">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="../../../../RealEstateWeb/resources/views/template/dashboard.html">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
-                    <li class="breadcrumb-item main-color"><a class="black-text" href="#">QL liên hệ</a></li>
+                    <li class="breadcrumb-item">
+                        <a class="black-text" href="#">QL Dịch vụ</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a class="main-color" href="#">Bài viết Dịch vụ</a>
+                    </li>
                 </ol>
             </nav>
+
             <main class="container shadow border p-3 h-100">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
                     <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">QL Liên hệ</h3>
+                        <h3 class="font-weight-bold main-color m-0">QL bài viết Dịch vụ</h3>
                     </div>
                 </div>
-                <table id="project-post-table" class="table table-hover table-striped table-bordered m-0 " style="">
-                    <thead>
-                    <tr>
-                        <th class="font-weight-bold" scope="col">#</th>
-                        <th class="font-weight-bold" scope="col">Tên người gửi</th>
-                        <th class="font-weight-bold" scope="col">Email</th>
-                        <th class="font-weight-bold" scope="col">Địa chỉ</th>
-                        <th class="font-weight-bold" scope="col">Nội dung</th>
-                        <th class="font-weight-bold" scope="col">Loại dự án</th>
-                        <th class="font-weight-bold" scope="col">Mã dự án mẫu</th>
-                        <th class="font-weight-bold" scope="col">Ngày cập nhập</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Bùi Minh Chiến</td>
-                        <td>buiminhchien@gmail.com</td>
-                        <td>TP.HCM</td>
-                        <td></td>
-                        <td>Nhà phố</td>
-                        <td>#0010</td>
-                        <td>10/05/2023</td>
-                    <tr>
-                        <td>2</td>
-                        <td>Đặng Minh Tấn</td>
-                        <td>dangminhtan@gmail.com</td>
-                        <td>Bình Dương</td>
-                        <td>Chi phí để thiết kế và xây dựng cho một biệt thự với nhiều cây xanh trên khoản 1000m2</td>
-                        <td>Biệt thư</td>
-                        <td>#0011</td>
-                        <td>10/05/2023</td>
-                    </tbody>
+                <div class="">
+                    <table class="table table-hover table-striped table-bordered m-0 w-100 " id="table-service">
+                        <thead>
+                        <tr>
+                            <th class="font-weight-bold" scope="col">STT</th>
+                            <th class="font-weight-bold" scope="col">Tên bài viết</th>
+                            <th class="font-weight-bold" scope="col">Lượt xem</th>
 
-                </table>
+                            <th class="font-weight-bold" scope="col">Thao tác</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
+                        <tr>
+                            <td>1</td>
+                            <td>Dịch vụ thi công nhà phần thô</td>
+                            <td>2656</td>
+
+
+                            <td>
+                                <a href="updatePostService.html"> <i class="fa-solid fa-pen icon-action p-1"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>Dịch vụ xây nhà trọn gói</td>
+                            <td>1759</td>
+
+
+                            <td>
+                                <a href="updatePostService.html">
+                                    <i class="fa-solid fa-pen icon-action p-1"></i>
+                                </a>
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Dịch vụ thi công nhà xưởng</td>
+                            <td>236</td>
+
+
+                            <td>
+                                <a href="updatePostService.html">
+                                    <i class="fa-solid fa-pen icon-action p-1"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+
+                        </tfoot>
+                    </table>
+                </div>
             </main>
         </div>
     </div>
@@ -161,57 +189,17 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
-<script>
+<%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 
-</script>
+
 <script>
-    $('#project-post-table').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
-        // scrollX: true,
+    $('#table-service').dataTable({
         "columnDefs": [
-
-            {
-                "targets": 0,
-                "width": "5%",
-            },
-            {
-                "targets": 1,
-                "width": "15%",
-            },
-            {
-                "targets": 2,
-                "width": "15%",
-            },
-            {
-                "targets": 3,
-                "width": "10%",
-            },
-            {
-                "targets": 4,
-                "width": "30%",
-            }, {
-                "targets": 5,
-                "width": "10%",
-            },
-            {
-                "targets": 6,
-                "width": "7%",
-            },
-            {
-                "targets": 7,
-                "width": "7%",
-            },
+            {"width": "5%", "targets": [0]},
+            {"width": "35%", "targets": [1]},
+            {"width": "20%%", "targets": [2]},
             {className: "text-center mt-auto mb-auto", targets: "_all"},
-
         ],
         "language": {
             "lengthMenu": "Hiển thị _MENU_ dòng",
@@ -229,7 +217,6 @@
         "lengthMenu": [5, 10, 15, 20],
         "order": [[0, "asc"]],
     });
-
 </script>
 <script>
     let cur ;
@@ -254,6 +241,7 @@
         $(".sidebar-btn").click(function () {
             $(".wrapper").toggleClass("mycollapse");
         });
+
     });
 </script>
 </body>
