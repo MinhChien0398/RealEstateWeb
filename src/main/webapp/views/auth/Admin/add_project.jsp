@@ -64,12 +64,12 @@
             <li class="sidebar-item" id="project">
                 <div class="menu-btn">
                     <i class="fa-solid fa-building"> </i>
-                    <a href="projects_manage.jsp">
+                    <a href="project_manage.jsp">
                         <span>QL Dự án</span>
                     </a> <i
                         class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="typeOfProject.jsp" class="menu-btn">
+                    <a href="type_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
                     <a href="post_project.jsp" class="menu-btn">
@@ -83,12 +83,12 @@
 
             <li class="sidebar-item" id="type-project">
                 <div class="menu-btn">
-                    <a href="services_manage.jsp">
+                    <a href="service_manage.jsp">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
                         class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="service_post_manage.jsp" class="menu-btn">
+                    <a href="post_service.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
@@ -110,11 +110,11 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.html">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.jsp">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="project_manage.jsp">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Thêm dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="add_project.jsp">Thêm dự án</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">

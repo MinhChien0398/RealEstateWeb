@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Clover
-  Date: 04/12/2023
-  Time: 2:41 PM
+  Date: 13/12/2023
+  Time: 2:03 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -19,14 +19,6 @@
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
-    <!---->
-    <title>Thêm người dùng</title>
-    <style>
-        div.picker.datepicker .picker__box {
-            border: 1px solid;
-            box-shadow: none;
-        }
-    </style>
     <title>Title</title>
 </head>
 <body>
@@ -106,30 +98,27 @@
     </div>
 
     <div class="main-container">
+
+
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text"
-                                                   href="/template//template/dashboard.html">Thống
-                        kê</a></li>
-                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
                     <li class="breadcrumb-item"><a class="black-text" href="#">QL người dùng</a></li>
-                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Cập nhật tài khoản</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
                 <form action="">
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Đăng kí người dùng</h3>
+                            <h3 class="font-weight-bold main-color m-0">Cập nhật tài khoản</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <div class="btn-save flex-center">
-                                <button type="submit" class="btn btn-warning p-2 waves-effect waves-light"
-                                        type="button">LƯU
+                            <a href="#add">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
                                 </button>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div class="">
@@ -140,55 +129,74 @@
                                     <!-- Card content -->
                                     <div class="card-body card-body-cascade">
                                         <!-- Grid row -->
+
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
+
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="email" id="form8" class="form-control form-control-sm">
-                                                    <label for="form8" class="">Email</label>
+                                                    <input type="email" id="form8" class="form-control form-control-sm"
+                                                           value="buiminhchien@gmail.com">
+                                                    <label for="form8" class="active">Email</label>
                                                 </div>
+
                                             </div>
                                             <div class="col-lg-6 col-md-6">
+
                                                 <div class="md-form form-sm mb-0">
                                                     <input type="password" id="form9"
-                                                           class="form-control form-control-sm">
-                                                    <label for="form9" class="">Password</label>
+                                                           class="form-control form-control-sm"
+                                                           value="@Bc12345">
+                                                    <label for="form9" class="active">Password</label>
                                                 </div>
+
                                             </div>
                                         </div>
                                         <div class="row d-flex align-items-center">
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
+
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form12" class="form-control form-control-sm">
-                                                    <label for="form12" class="">Họ và tên</label>
+                                                    <input type="text" id="form12" class="form-control form-control-sm"
+                                                           value="Bùi Minh Chiến">
+                                                    <label for="form12" class="active">Họ và tên</label>
                                                 </div>
+
                                             </div>
                                             <!-- Grid column -->
+
                                             <!-- Grid column -->
+
                                             <div class="col-lg-4">
                                                 <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
                                                     <input  type="text" id="birthday" class="form-control form-control-sm">
                                                     <label for="birthday" class="">Ngày sinh</label>
                                                     <i class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
                                                 </div>
+
+
                                             </div>
                                             <!-- Grid column -->
+
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
+
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form4"
-                                                           class="form-control form-control-sm">
-                                                    <label for="form4" class="disabled">SĐT</label>
+                                                    <input type="text" id="form4" class="form-control form-control-sm"
+                                                           value="0908200400">
+                                                    <label for="form4" class="active">SĐT</label>
                                                 </div>
+
                                             </div>
                                             <!-- Grid column -->
                                         </div>
                                         <div class="row">
+
                                             <!-- Grid column -->
                                             <div class="col-lg-6 col-md-10">
+
                                                 <div class="md-form form-sm mb-0">
                                                     <select name="address" id="address" class=" custom-select ">
-                                                        <option value="" disabled selected>Chọn tỉnh thành</option>
+                                                        <option value="" disabled >Chọn tỉnh thành</option>
 
                                                         <option value="92TTT">Thành phố Cần Thơ</option>
 
@@ -256,7 +264,7 @@
 
                                                         <option value="77TTT"> Bà Rịa - Vũng Tàu</option>
 
-                                                        <option value="79TTT">Thành phố Hồ Chí Minh</option>
+                                                        <option value="79TTT" selected>Thành phố Hồ Chí Minh</option>
 
                                                         <option value="02TTT"> Hà Giang</option>
 
@@ -319,79 +327,165 @@
                                                     </select>
 
                                                 </div>
+
+
                                             </div>
-                                            <!-- Grid column -->
                                             <!-- Grid column -->
 
-                                            <div class="col-lg-6 input-group  justify-content-around" role="group">
-                                                <div class="col-6 col-md-3">
-                                                    <!-- Material unchecked -->
-                                                    <div class="form-check  mt-4">
-                                                        <input type="checkbox" class="form-check-input"
-                                                               id="materialUnchecked">
-                                                        <label class="form-check-label"
-                                                               for="materialUnchecked">Nam</label>
-                                                    </div>
-                                                </div>
-                                                <!-- Grid column -->
-                                                <!-- Grid column -->
-                                                <div class="col-6 col-md-3">
-                                                    <!-- Material indeterminate -->
-                                                    <div class="form-check mt-4">
-                                                        <input type="checkbox" class="form-check-input"
-                                                               id="materialIndeterminate2"
-                                                               checked>
-                                                        <label class="form-check-label"
-                                                               for="materialIndeterminate2">Nữ</label>
-                                                    </div>
+                                            <!-- Grid column -->
+                                            <div class="col-lg-2 col-md-3">
+                                                <!-- Material unchecked -->
+                                                <div class="form-check mt-4">
+                                                    <input type="checkbox" class="form-check-input" id="nam" checked>
+                                                    <label class="form-check-label" for="nam">Nam</label>
                                                 </div>
                                             </div>
                                             <!-- Grid column -->
                                             <!-- Grid column -->
+                                            <div class="col-lg-2 col-md-3">
+                                                <!-- Material indeterminate -->
+                                                <div class="form-check mt-4">
+                                                    <input type="checkbox" class="form-check-input"
+                                                           id="nu"
+                                                    >
+                                                    <label class="form-check-label" for="nu">Nữ</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Grid column -->
+
+                                            <!-- Grid column -->
+
                                             <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
                                                 <div class="col-lg-6 col-md-6">
+
                                                     <div class="md-form form-sm mb-0">
                                                         <select class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Trạng thái</option>
-                                                            <option value="1" selected>Chưa kích hoạt</option>
-                                                            <option value="2">Kích hoạt</option>
+                                                            <option value="1">Chưa kích hoạt</option>
+                                                            <option value="2" selected>Kích hoạt</option>
                                                             <option value="3">Khóa</option>
                                                         </select>
                                                     </div>
+
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
                                                         <select class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
-                                                            <option value="1" selected>Người dùng thường</option>
-                                                            <option value="2">Admin</option>
+                                                            <option value="1">Người dùng</option>
+                                                            <option value="2" selected>Admin</option>
                                                         </select>
                                                     </div>
+
                                                 </div>
                                                 <!-- Grid column -->
                                             </div>
                                         </div>
                                         <!-- Grid row -->
+
                                         <!-- Grid row -->
+
                                     </div>
                                     <!-- Grid row -->
+
                                     <!-- Grid row -->
+
                                 </div>
                                 <!-- Card content -->
+
                             </div>
                             <!-- Card -->
 
                         </div>
+
                     </div>
                 </form>
             </main>
         </div>
     </div>
-    </form>
 </div>
 <!--/. Sidebar navigation -->
+
+
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<script>
+    $('#table-user').dataTable({
+        // "ajax": {
+        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
+        //     "dataSrc": ""
+        // },
+        "columnDefs": [
+            {
+                "targets": 0,
+                "width": "5%",
+            },
+            {
+                "targets": 1,
+                "width": "15%",
+            },
+            {
+                "targets": 2,
+                "width": "20%",
+            },
+            {
+                "targets": 3,
+                "width": "10%",
+            },
+            {
+                "targets": 4,
+                "width": "10%",
+            },
+            {
+                "targets": 5,
+                "width": "5%",
+            },
+            {
+                "targets": 6,
+                "width": "5%",
+            },
+            {
+                "targets": 7,
+                "width": "10%",
+            },
+            {
+                "targets": 8,
+                "width": "10%",
+            },
+            {
+                "targets": 9,
+                "width": "1%",
+            },
+            {className: "text-center mt-auto mb-auto", targets: "_all"},
+
+        ],
+        "language": {
+            "lengthMenu": "Hiển thị _MENU_ dòng",
+            "zeroRecords": "Không tìm thấy dữ liệu",
+            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
+            "infoEmpty": "Không có dữ liệu",
+            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
+            "search": "Tìm kiếm",
+            "paginate": {
+                "previous": "Trước",
+                "next": "Tiếp theo"
+            }
+        },
+        "pagingType": "full_numbers",
+        "lengthMenu": [5, 10, 15, 20],
+        "order": [[0, "asc"]],
+    });
+
+</script>
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+
+    });
+</script>
 <script>
     $('.datepicker').datepicker({
         inline: true,
@@ -427,14 +521,6 @@
         })
     }
 
-</script>
-
-<script>
-    $(document).ready(function () {
-        $(".sidebar-btn").click(function () {
-            $(".wrapper").toggleClass("mycollapse");
-        });
-    });
 </script>
 </body>
 </html>

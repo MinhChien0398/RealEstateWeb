@@ -1,18 +1,18 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-    <%@include file="/layout/common.jsp"%>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@ include file="/layout/public/link.jsp"%>
+    <%@ include file="/layout/public/link.jsp" %>
     <link href=" <c:url value="/template/css/contact.css"/>" rel="stylesheet">
-    <title>BÀI VIẾT DỰ ÁN</title>
+    <title>Liên hệ</title>
 </head>
 <body>
-<%@include file="/layout/public/header.jsp"%>
+<%@include file="/layout/public/header.jsp" %>
 <!--start content-->
 <!--start content-->
 <!--        Start breadcrumb -->
@@ -152,8 +152,8 @@
 <!--    end main contact-->
 <!--end content-->
 <!--end content-->
-<%@include file="/layout/public/footer.jsp"%>
-<%@include file="/layout/public/script.jsp"%>
+<%@include file="/layout/public/footer.jsp" %>
+<%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 
 </body>

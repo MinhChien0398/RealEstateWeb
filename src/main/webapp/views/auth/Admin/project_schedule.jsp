@@ -37,32 +37,32 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="/template/img/logo/logo.png" alt="logo" style="">
+                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="dashboard.html" class="menu-btn">
+                <a href="dashboard.jsp" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="admin-userManage.html" class="menu-btn">
+                <a href="user_manage.jsp" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
             <li class="sidebar-item" id="project"><div class="menu-btn">
                 <i class="fa-solid fa-building">  </i>
-                <a href="admin-projectsManage.html" >
+                <a href="project_manage.jsp" >
                     <span>QL Dự án</span>
                 </a> <i
                     class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
-                    <a href="admin-TypeOfProject.html" class="menu-btn">
+                    <a href="type_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="admin-PostProject.html" class="menu-btn">
+                    <a href="post_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
-                    <a href="admin-ProjectSchedule.html" class="menu-btn">
+                    <a href="project_schedule.jsp" class="menu-btn">
                         <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
                     </a>
                 </div>
@@ -70,23 +70,23 @@
 
             <li class="sidebar-item" id="type-project">
                 <div class="menu-btn">
-                    <a href="servicesManager.html">
+                    <a href="service_manage.jsp">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
                         class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="servicePostsManage.html" class="menu-btn">
+                    <a href="post_service.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="contact">
-                <a href="admin-contactManagement.html" class="menu-btn">
+                <a href="contact_manage.jsp" class="menu-btn">
                     <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="admin-slideManagement.html" class="menu-btn">
+                <a href="slide_manage.jsp" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
@@ -138,7 +138,7 @@
                         </td>
                         <td>12/12/2025</td>
                         <td>
-                            <a href="admin-updateProjectsPage.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -148,7 +148,7 @@
                             Đang trong quá trình dựng móng
                         </td><td>12/12/2025</td>
                         <td>
-                            <a href="admin-updateProjectsPage.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -158,7 +158,7 @@
                             Hoàn thiện cải tạo
                         </td><td>12/12/2025</td>
                         <td>
-                            <a href="admin-updateProjectsPage.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -168,7 +168,7 @@
                             Hoàn thành chờ kiểm duyệt
                         </td><td>12/12/2025</td>
                         <td>
-                            <a href="admin-updateProjectsPage.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     </tbody>
 

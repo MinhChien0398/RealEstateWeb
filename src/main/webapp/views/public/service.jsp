@@ -69,7 +69,7 @@
                                     giúp gia chủ cân đối được nguồn tài chính khi xây nhà.
                                 </p>
                             </div>
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
+                            <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                                     ban đầu đến hoàn thiện cuối cùng.
                                 </p>
                             </div>
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
+                            <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                                     kinh doanh của khách hàng.
                                 </p>
                             </div>
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
+                            <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>

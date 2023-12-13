@@ -109,7 +109,7 @@
                     <li class="breadcrumb-item"><a class="black-text" href="type_project.jsp">QL loại dự án</a>
                     </li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="admin-addCategoryProject.html">Thêm loại dự
+                    <li class="breadcrumb-item"><a class="main-color" href="add_category_project.jsp">Thêm loại dự
                         án</a></li>
                 </ol>
             </nav>

@@ -30,7 +30,7 @@
                     Xây dựng <span>Nhà Đẹp</span></div>
             </div>
             <ul class="col-1 d-flex align-items-center m-0">
-                <li><a href="home.jsp"><i
+                <li><a href="/views/public/home.jsp"><i
                         class="fas fa-sign-out-alt"></i></a></li>
             </ul>
         </div>
@@ -38,7 +38,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="img/logo.svg" alt="logo" style="">
+                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="dashboard.jsp" class="menu-btn">
@@ -50,15 +50,14 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project">
-                <div class="menu-btn">
-                    <i class="fa-solid fa-building"> </i>
-                    <a href="projects_manage.jsp">
-                        <span>QL Dự án</span>
-                    </a> <i
-                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+            <li class="sidebar-item" id="project"><div class="menu-btn">
+                <i class="fa-solid fa-building">  </i>
+                <a href="project_manage.jsp" >
+                    <span>QL Dự án</span>
+                </a> <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
-                    <a href="typeOfProject.jsp" class="menu-btn">
+                    <a href="type_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
                     <a href="post_project.jsp" class="menu-btn">
@@ -72,12 +71,12 @@
 
             <li class="sidebar-item" id="type-project">
                 <div class="menu-btn">
-                    <a href="services_manage.jsp">
+                    <a href="service_manage.jsp">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
                         class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="service_post_manage.jsp" class="menu-btn">
+                    <a href="post_service.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
