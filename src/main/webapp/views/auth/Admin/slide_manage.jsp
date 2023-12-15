@@ -1,33 +1,23 @@
-<!doctype html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Clover
+  Date: 11/12/2023
+  Time: 1:44 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp" %>
+<html>
 <head>
-
+    <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
 
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!--    <link href="../../../../RealEstateWeb/public/lib/DataTables/FixedColumns-4.3.0/css/fixedColumns.dataTables.min.css" rel="stylesheet">-->
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
-    <!---->
-    <title>Quản lý loại dự án</title>
-    <style>
-        div.dataTables_scrollHeadInner, div.dataTables_scrollHeadInner > table {
-            width: 100% !important;
-        }
-    </style>
+    <title>Title</title>
 </head>
-<body class="">
-
+<body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <div class="header fixed-top ">
@@ -50,29 +40,29 @@
                 <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="dashboard.html" class="menu-btn">
+                <a href="dashboard.jsp" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="admin-userManage.html" class="menu-btn">
+                <a href="user_manage.jsp" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
             <li class="sidebar-item" id="project"><div class="menu-btn">
                 <i class="fa-solid fa-building">  </i>
-                <a href="admin-projectsManage.html" >
+                <a href="project_manage.jsp" >
                     <span>QL Dự án</span>
                 </a> <i
-                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
-                    <a href="admin-TypeOfProject.html" class="menu-btn">
+                    <a href="type_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="admin-PostProject.html" class="menu-btn">
+                    <a href="post_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
-                    <a href="admin-ProjectSchedule.html" class="menu-btn">
+                    <a href="project_schedule.jsp" class="menu-btn">
                         <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
                     </a>
                 </div>
@@ -80,23 +70,23 @@
 
             <li class="sidebar-item" id="type-project">
                 <div class="menu-btn">
-                    <a href="servicesManager.html">
+                    <a href="service_manage.jsp">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="servicePostsManage.html" class="menu-btn">
+                    <a href="post_service.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="contact">
-                <a href="admin-contactManagement.html" class="menu-btn">
+                <a href="contact_manage.jsp" class="menu-btn">
                     <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="admin-slideManagement.html" class="menu-btn">
+                <a href="slide_manage.jsp" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
@@ -111,23 +101,19 @@
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
-                    <li class="breadcrumb-item"><a class="black-text" href="#">QL dự án</a></li>
-                    <li>
-                        <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
-                    </li>
                     <li class="breadcrumb-item">
-                        <a class="main-color" href="#">QL loại dự án</a>
+                        <a class="main-color" href="#">QL Slide</a>
                     </li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
                     <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">QL LOẠI DỰ ÁN</h3>
+                        <h3 class="font-weight-bold main-color m-0">QL Slide</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="admin-addCategoryProject.html">
-                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm loại dự án</button>
+                        <a href="add_slider.jsp">
+                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i>Thêm slide</button>
                         </a>
 
                     </div>
@@ -137,9 +123,10 @@
                     <thead>
                     <tr>
                         <th class="font-weight-bold" scope="col">#</th>
-                        <th class="font-weight-bold" scope="col">Tên loại dự án</th>
-                        <th class="font-weight-bold" scope="col">Số lượng dự án</th>
-                        <th class="font-weight-bold" scope="col">Ngày cập nhập</th>
+                        <th class="font-weight-bold" scope="col">Tiêu đề</th>
+                        <th class="font-weight-bold" scope="col">Hình ảnh</th>
+                        <th class="font-weight-bold" scope="col">Thứ tự</th>
+
                         <th class="font-weight-bold" scope="col">Trạng thái</th>
                         <th class="font-weight-bold" scope="col">Hành động</th>
                     </tr>
@@ -147,52 +134,47 @@
                     <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Biệt thự</td>
-                        <td>5</td>
-                        <td>20/05/2018</td>
+                        <td>Giới thiệu 1</td>
+                        <td><img src="/template/img/slide/xay-dung-nha-xinh-1887.jpg" alt=""
+                                 class="w-100 h-auto"></td>
+                        <td>1</td>
+
                         <td>
                             <i class="fa-solid fa-square active-icon" value="0"></i>
                         </td>
                         <td>
-                            <a href="admin-updateCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_slide_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                             <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Nhà phố</td>
-                        <td>12</td>
-                        <td>20/05/2018</td>
+                        <td>Giới thiệu 2</td>
+                        <td><img src="/template/img/slide/slide-nha-xinh-1-4581.png" alt=""
+                                 class="w-100 h-auto"></td>
+                        <td>2</td>
+
                         <td>
                             <i class="fa-solid fa-square active-icon" value="0"></i>
                         </td>
                         <td>
-                            <a href="admin-addCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_slide_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                             <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Căn hộ</td>
-                        <td>25</td>
-                        <td>24/01/2023</td>
+                        <td>Giới thiệu 3</td>
+                        <td><img src="/template/img/slide/slider1440610-6934.png" alt=""
+                                 class="w-100 h-auto"></td>
+                        <td>3</td>
+
                         <td>
                             <i class="fa-solid fa-square active-icon" value="0"></i>
                         </td>
                         <td>
-                            <a href="admin-updateCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="update_slide_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                             <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
                     </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Văn phòng</td>
-                        <td>20</td>
-                        <td>28/06/2022</td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-addCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
+
                     </tbody>
 
                 </table>
@@ -204,13 +186,9 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
-<!--<script src="../../../../RealEstateWeb/public/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
+<%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<!--<script src="/template/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
 <script>
 
 </script>
@@ -220,33 +198,12 @@
         //     // "url": "http://localhost/RealEstateWeb/userManage" ,
         //     "dataSrc": ""
         // },
-        // scrollX: true,
+        scrollX: true,
         "columnDefs": [
             {
-                "targets": 0,
-                "width": "5%",
-            },
-            {
-                "targets": 1,
-                "width": "20%",
-            },
-            {
                 "targets": 2,
-                "width": "20%",
+                "width": "30%",
             },
-            {
-                "targets": 3,
-                "width": "20%",
-            },
-            {
-                "targets": 4,
-                "width": "20%",
-            },
-            {
-                "targets": 5,
-                "width": "15%",
-            },
-
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],
@@ -269,6 +226,13 @@
 
 </script>
 <script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+    });
+</script>
+<script>
     let cur ;
     for (let item of  $('.sidebar-item')) {
         item.addEventListener('click', function (){
@@ -284,14 +248,6 @@
         })
     }
 
-</script>
-
-<script>
-    $(document).ready(function () {
-        $(".sidebar-btn").click(function () {
-            $(".wrapper").toggleClass("mycollapse");
-        });
-    });
 </script>
 </body>
 </html>

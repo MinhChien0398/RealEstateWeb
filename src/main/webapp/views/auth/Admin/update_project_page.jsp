@@ -1,31 +1,24 @@
 <%--
   Created by IntelliJ IDEA.
   User: Clover
-  Date: 04/12/2023
-  Time: 10:34 AM
+  Date: 11/12/2023
+  Time: 1:52 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-
     <%@include file="/layout/public/link.jsp" %>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/addProjectPage.css"/>" rel="stylesheet">
 
-    <style>
-        .select-wrapper input.select-dropdown, .custom-file-label {
-            z-index: 0;
-        }
-
-        div.picker.datepicker .picker__box {
-            border: 1px solid;
-            box-shadow: none;
-        }
-    </style>
     <title>Title</title>
 </head>
 <body>
@@ -49,7 +42,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="img/logo.svg" alt="logo" style="">
+                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="dashboard.jsp" class="menu-btn">
@@ -61,13 +54,12 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project">
-                <div class="menu-btn">
-                    <i class="fa-solid fa-building"> </i>
-                    <a href="project_manage.jsp">
-                        <span>QL Dự án</span>
-                    </a> <i
-                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+            <li class="sidebar-item" id="project"><div class="menu-btn">
+                <i class="fa-solid fa-building">  </i>
+                <a href="project_manage.jsp" >
+                    <span>QL Dự án</span>
+                </a> <i
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
                     <a href="type_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -110,11 +102,11 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.jsp">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.html">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="project_manage.jsp">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="add_project.jsp">Thêm dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Chỉnh sửa dự án</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
@@ -122,7 +114,7 @@
                 <form action="#" method="post" id="addproject">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
+                            <h3 class="font-weight-bold main-color m-0">Chỉnh sửa dự án</h3>
                         </div>
                         <div class="d-flex">
                             <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
@@ -163,19 +155,19 @@
                                                         <div class="mb-4">
                                                             <label for="investor" class="labels">Chủ đầu tư</label>
                                                             <input id="investor" type="email" class="form-control"
-                                                                   placeholder="Email chủ đầu tư" value="">
+                                                                   placeholder="Email chủ đầu tư" value="tandanmin@gmail.com">
                                                         </div>
                                                         <div class="mb-4">
                                                             <label for="name" class="labels">Tiêu đề</label>
                                                             <input id="name" type="text" class="form-control"
-                                                                   placeholder="Tiêu đề" value="">
+                                                                   placeholder="Tiêu đề" value="Hòa nhập thiên nhiên">
                                                         </div>
                                                         <div class="mb-4">
                                                             <label for="category" class="labels">Loại dự án</label>
                                                             <select name="category" id="category" class="form-control">
-                                                                <option value="" disabled selected>Loại dự án</option>
+                                                                <option value="" disabled >Loại dự án</option>
 
-                                                                <option value="92TTT">Nhà Phố</option>
+                                                                <option value="92TTT" selected>Nhà Phố</option>
 
                                                                 <option value="92TTT">Biệt thự</option>
 
@@ -185,19 +177,17 @@
                                                             <div class="col-6 mb-4">
                                                                 <label for="price" class="labels">Kinh phí</label>
                                                                 <input id="price" type="number" class="form-control"
-                                                                       placeholder="Kinh phí" value="">
+                                                                       placeholder="Kinh phí" value="1000000000">
                                                             </div>
                                                             <div class="col-6 mb-4">
                                                                 <label for="acreage" class="labels">Diện tích</label>
                                                                 <input id="acreage" type="text" class="form-control"
-                                                                       placeholder="Diện tích" value="">
-                                                            </div>
-                                                        </div>
+                                                                       placeholder="Diện tích" value="250">
+                                                            </div></div>
                                                         <div class="mb-4">
                                                             <label for="address" class="labels">Địa chỉ</label>
                                                             <select name="address" id="address" class="form-control">
-                                                                <option value="" disabled selected>Chọn tỉnh thành
-                                                                </option>
+                                                                <option value="" disabled>Chọn tỉnh thành</option>
 
                                                                 <option value="92TTT">Thành phố Cần Thơ</option>
 
@@ -217,7 +207,7 @@
 
                                                                 <option value="58TTT"> Ninh Thuận</option>
 
-                                                                <option value="74TTT"> Bình Dương</option>
+                                                                <option value="74TTT" selected> Bình Dương</option>
 
                                                                 <option value="37TTT"> Ninh Bình</option>
 
@@ -327,6 +317,7 @@
 
                                                             </select>
                                                         </div>
+
                                                         <div class="mb-4">
                                                             <div class="form-group green-border-focus">
                                                                 <label for="exampleFormControlTextarea5">Mô tả</label>
@@ -338,9 +329,9 @@
                                                         <div class="mb-4">
                                                             <label class="mdb-main-label">Dịch vụ</label>
                                                             <select class="mdb-select md-form" multiple>
-                                                                <option value="1" selected>Xây dựng phần thô</option>
-                                                                <option value="2">Xây nhà trọn gói</option>
-                                                                <option value="3">Thiết kế nội thất</option>
+                                                                <option value="1" >Xây dựng phần thô</option>
+                                                                <option value="2" >Xây nhà trọn gói</option>
+                                                                <option value="3" selected>Thiết kế nội thất</option>
                                                                 <option value="4">Sữa chữa</option>
                                                             </select>
                                                         </div>
@@ -348,9 +339,7 @@
                                                             <div class="d-flex">
                                                                 <label>Tiến độ dự án:</label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="false"
-                                                                           onclick="conpleteProject()"
-                                                                           class="form-check-input"
+                                                                    <input type="checkbox"onclick="conpleteProject()" class="form-check-input"
                                                                            id="projectProgress">
                                                                     <label class="form-check-label"
                                                                            for="projectProgress">Hoàn thành</label>
@@ -358,13 +347,11 @@
                                                             </div>
                                                             <div id="projectProgressText">
                                                                 <input type="text" class="form-control  mb-3"
-                                                                       placeholder="Tiến độ dự án" value="">
-                                                                <div id="date-picker-example"
-                                                                     class="md-form md-outline input-with-post-icon datepicker"
+                                                                       placeholder="Tiến độ dự án" value="Trong quá trình thiết kế nội thất">
+                                                                <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
                                                                      inline="true">
-                                                                    <input placeholder="Dự kiến ngày hoàng thành"
-                                                                           type="text" id="example"
-                                                                           class="form-control">
+                                                                    <input placeholder="Dự kiến ngày hoàng thành" type="text" id="example" class="form-control"\
+                                                                           value="16/11/2023">
                                                                     <i class="fas fa-calendar input-prefix"></i>
                                                                 </div>
                                                             </div>
@@ -373,12 +360,9 @@
                                                             <div class="d-flex">
                                                                 <label for="status" class="labels">Trạng thái: </label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="true"
-                                                                           onclick="userAccepted()"
-                                                                           class="form-check-input" id="UserAccepted">
+                                                                    <input type="checkbox"  onclick="userAccepted()" class="form-check-input" id="UserAccepted">
                                                                     <label class="form-check-label"
-                                                                           for="UserAccepted">Người dùng chấp nhận đăng
-                                                                        bài</label>
+                                                                           for="UserAccepted">Người dùng chấp nhận đăng bài</label>
                                                                 </div>
                                                             </div>
                                                             <select id="status" class="custom-select">
@@ -395,7 +379,7 @@
                                                                           id="inputGroupFileAddon01">Tải lên</span>
                                                                 </div>
                                                                 <div class="custom-file">
-                                                                    <input type="file" class="custom-file-input"
+                                                                    <input type="file"   class="custom-file-input"
                                                                            id="inputGroupFile01"
                                                                            aria-describedby="inputGroupFileAddon01"
                                                                            onchange="preview()">
@@ -475,8 +459,8 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    CKEDITOR.replace('service-des', {
-        width: "100%",
+    CKEDITOR.replace('service-des',{
+        width : "100%",
         height: "400px",
     });
 
@@ -488,7 +472,7 @@
             'Tháng 11', 'Tháng 12'],
 
         weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-        showWeekdaysFull: true,
+        showWeekdaysFull: true ,
         today: 'Hôm nay',
         clear: 'Xóa',
         close: 'Đóng',
@@ -508,16 +492,16 @@
     });
 </script>
 <script>
-    for (let item of $('.sidebar-item')) {
-        item.addEventListener('click', function () {
-            if (cur != null) {
+    for (let item of  $('.sidebar-item')) {
+        item.addEventListener('click', function (){
+            if(cur!=null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if (this.children.length === 2) {
+            if(this.children.length===2){
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur = this.children[1];
+                cur=this.children[1];
             }
         })
     }
@@ -525,8 +509,7 @@
 
 <script>
     userAccepted()
-
-    function userAccepted() {
+    function userAccepted(){
         var status = document.getElementById('status');
         if (!document.getElementById('UserAccepted').checked) {
             status.classList.add('d-none');
@@ -539,8 +522,7 @@
 </script>
 <script>
     conpleteProject()
-
-    function conpleteProject() {
+    function conpleteProject(){
         var projectProgressText = document.getElementById('projectProgressText');
         if (document.getElementById('projectProgress').checked) {
             projectProgressText.classList.add('d-none');

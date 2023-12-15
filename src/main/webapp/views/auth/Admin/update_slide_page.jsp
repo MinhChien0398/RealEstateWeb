@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Clover
-  Date: 04/12/2023
-  Time: 2:03 PM
+  Date: 11/12/2023
+  Time: 1:54 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -10,11 +10,16 @@
 <html>
 <head>
     <%@include file="/layout/public/link.jsp" %>
-    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css"/>" rel="stylesheet">
+
     <title>Title</title>
 </head>
 <body>
@@ -108,7 +113,7 @@
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
                     <li class="breadcrumb-item">
-                        <a class="main-color" href="#">Thêm Slide</a>
+                        <a class="main-color" href="#">Chỉnh sửa Slide</a>
                     </li>
                 </ol>
             </nav>
@@ -117,7 +122,7 @@
                 <form>
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Thêm Slide</h3>
+                            <h3 class="font-weight-bold main-color m-0">Chỉnh sửa Slide</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
                             <a href="#add">
@@ -133,7 +138,7 @@
                                     <div class="mb-4">
                                         <label for="name" class="labels">Tiêu đề</label>
                                         <input id="name" type="text" class="form-control"
-                                               placeholder="Tiêu đề" value="">
+                                               placeholder="Tiêu đề" value="slide giới thiệu 10 năm tới">
                                     </div>
                                     <div class="mb-4">
                                         <label for="status" class="labels">Trạng thái</label>
@@ -145,7 +150,7 @@
                                     <div class="mb-4">
                                         <label for="id" class="labels">STT</label>
                                         <fieldset>
-                                            <input id="id" type="text" class="form-control"
+                                            <input id="id" type="number" class="form-control"
                                                    placeholder="STT" value="">
                                         </fieldset>
                                     </div>
@@ -180,57 +185,37 @@
     </div>
 </div>
 <!--/. Sidebar navigation -->
+</body>
+
 
 <%@include file="/layout/public/script.jsp" %>
-<script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"/>"></script>
-<script>
-    (function ($) {
-        $.fn.counter = function () {
-            const $this = $(this),
-                numberFrom = parseInt($this.attr('data-from')),
-                numberTo = parseInt($this.attr('data-to')),
-                delta = numberTo - numberFrom,
-                deltaPositive = delta > 0 ? 1 : 0,
-                time = parseInt($this.attr('data-time')),
-                changeTime = 10;
-
-            let currentNumber = numberFrom,
-                value = delta * changeTime / time;
-            var interval1;
-            const changeNumber = () => {
-                currentNumber += value;
-                //checks if currentNumber reached numberTo
-                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
-                this.text(parseInt(currentNumber));
-                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
-            }
-
-            interval1 = setInterval(changeNumber, changeTime);
-        }
-    }(jQuery));
-
-    $(document).ready(function () {
-
-        $('.count-up').counter();
-        $('.count1').counter();
-        $('.count2').counter();
-        $('.count3').counter();
-
-        new WOW().init();
-
-        setTimeout(function () {
-            $('.count5').counter();
-        }, 3000);
-    });
-</script>
+<script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
     $(document).ready(function () {
         $(".sidebar-btn").click(function () {
             $(".wrapper").toggleClass("mycollapse");
         });
     });</script>
+<script>
+    let cur ;
+    for (let item of  $('.sidebar-item')) {
+        item.addEventListener('click', function (){
+            if(cur!=null) {
+                cur.classList.remove('d-block');
+                cur.classList.add('d-none');
+            }
+            if(this.children.length===2){
+                this.children[1].classList.remove('d-none')
+                this.children[1].classList.add('d-block')
+                cur=this.children[1];
+            }
+        })
+    }
+
+</script>
+
 <script>
     document.getElementById('status').addEventListener('change', function () {
         var selectedStatus = this.value;
@@ -243,23 +228,6 @@
             idField.disabled = true;
         }
     });
-
-</script>
-<script>
-    let cur;
-    for (let item of $('.sidebar-item')) {
-        item.addEventListener('click', function () {
-            if (cur != null) {
-                cur.classList.remove('d-block');
-                cur.classList.add('d-none');
-            }
-            if (this.children.length === 2) {
-                this.children[1].classList.remove('d-none')
-                this.children[1].classList.add('d-block')
-                cur = this.children[1];
-            }
-        })
-    }
 
 </script>
 </body>

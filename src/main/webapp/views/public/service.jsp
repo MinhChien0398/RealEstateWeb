@@ -7,8 +7,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@ include file="/layout/link.jsp"%>
-    <link rel="stylesheet" href="/template/css/services.css">
+    <%@ include file="/layout/public/link.jsp"%>
+    <link href=" <c:url value="/template/css/services.css"/>" rel="stylesheet">
     <title>DỊCH VỤ</title>
 </head>
 <body>
@@ -69,7 +69,7 @@
                                     giúp gia chủ cân đối được nguồn tài chính khi xây nhà.
                                 </p>
                             </div>
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
+                            <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,7 @@
                                     ban đầu đến hoàn thiện cuối cùng.
                                 </p>
                             </div>
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
+                            <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                                     kinh doanh của khách hàng.
                                 </p>
                             </div>
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html" class="btn btn-rounded">Xem thêm</a>
+                            <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +141,7 @@
 </div>
 <!--end content-->
 <%@include file="/layout/public/footer.jsp"%>
-<%@include file="/layout/script.jsp"%>
+<%@include file="/layout/public/script.jsp"%>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 </body>
 </html>
