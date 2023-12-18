@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Clover
-  Date: 04/12/2023
-  Time: 1:58 PM
+  Date: 11/12/2023
+  Time: 2:05 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -20,6 +20,7 @@
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
+
     <title>Title</title>
 </head>
 <body>
@@ -103,18 +104,22 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.jsp">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text"
+                                                   href="dashboard.jsp">Thống
+                        kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="post_service.jsp">QL Dịch vụ</a></li>
+                    <li class="breadcrumb-item"><a class="black-text"
+                                                   href="post_service.jsp">QL
+                        Dịch vụ</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="add_service.jsp">Thêm dịch vụ</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa dịch vụ</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
                 <form action="#" method="post" id="addproject">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Thêm dịch vụ</h3>
+                            <h3 class="font-weight-bold main-color m-0">Chỉnh sửa dịch vụ</h3>
                         </div>
                         <div class="d-flex">
                             <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
@@ -134,7 +139,8 @@
                             </ul>
                         </div>
                         <div class="btn-save flex-center">
-                            <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light" type="submit"> LƯU
+                            <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light"
+                                    type="submit"> LƯU
                             </button>
                         </div>
                     </div>
@@ -154,14 +160,17 @@
                                                         <div class="mb-4">
                                                             <label for="name" class="labels">Tiêu đề</label>
                                                             <input id="name" type="text" class="form-control"
-                                                                   placeholder="Tiêu đề" value="">
+                                                                   placeholder="Tiêu đề"
+                                                                   value="DỊCH VỤ XIN GIẤY PHÉP XÂY DỰNG TP HCM">
                                                         </div>
                                                         <div class="mb-4">
                                                             <div class="form-group green-border-focus">
                                                                 <label for="exampleFormControlTextarea5">Mô tả</label>
                                                                 <textarea class="form-control"
                                                                           id="exampleFormControlTextarea5"
-                                                                          rows="3"></textarea>
+                                                                          rows="3">
+Xin Giấy Phép Xây Dựng là một trong những thủ tục bắt buộc không thể thiếu khi bạn khởi công xây dựng công trình mới. Trong trường hợp nếu bạn chưa xin giấy phép mà bạn đã khởi công xây dựng công trình thì bạn đã vi phạm pháp luật về lĩnh vực xây dựng.
+                                                                </textarea>
                                                             </div>
                                                             <div class="mb-4">
                                                                 <div class="input-group">
@@ -172,18 +181,20 @@
                                                                     <div class="custom-file">
                                                                         <input type="file" class="custom-file-input"
                                                                                id="inputGroupFile01"
-                                                                               aria-describedby="inputGroupFileAddon01"
                                                                                onchange="preview()"
-                                                                        >
+                                                                               value="">
                                                                         <label class="custom-file-label"
-                                                                               for="inputGroupFile01">Chọn file
+                                                                               for="inputGroupFile01">
                                                                         </label>
 
                                                                     </div>
 
                                                                 </div>
-                                                                <p id="num-of-files">Không có file được chọn</p>
-                                                                <div id="images"></div>
+                                                                <p id="num-of-files" class="mb-2">Không có file được
+                                                                    chọn</p>
+                                                                <div id="images">
+
+                                                                </div>
                                                             </div>
 
                                                         </div>
@@ -233,29 +244,30 @@
 </div>
 <!--/. Sidebar navigation -->
 
+
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    CKEDITOR.replace('service-des',{
-        width :"100%",
-        height :"400px",
+    CKEDITOR.replace('service-des', {
+        width: "100%",
+        height: "400px",
     });
 
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }

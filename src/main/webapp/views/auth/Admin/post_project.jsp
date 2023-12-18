@@ -1,33 +1,24 @@
-<!doctype html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Clover
+  Date: 11/12/2023
+  Time: 1:35 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@include file="/layout/common.jsp" %>
+<html>
 <head>
-
+    <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/mdb.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/MDB_4_pro/css/style.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/public/lib/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
 
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!--    <link href="../../../../RealEstateWeb/public/lib/DataTables/FixedColumns-4.3.0/css/fixedColumns.dataTables.min.css" rel="stylesheet">-->
-    <link href="../../../../RealEstateWeb/public/lib/DataTables/datatables.min.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-nav-bar.css" rel="stylesheet">
-    <link href="../../../../RealEstateWeb/resources/views/template/css/admin-datatable.css" rel="stylesheet">
-    <!---->
-    <title>Quản lý loại dự án</title>
-    <style>
-        div.dataTables_scrollHeadInner, div.dataTables_scrollHeadInner > table {
-            width: 100% !important;
-        }
-    </style>
+    <title>Title</title>
 </head>
-<body class="">
-
+<body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <div class="header fixed-top ">
@@ -50,29 +41,29 @@
                 <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="dashboard.html" class="menu-btn">
+                <a href="dashboard.jsp" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="admin-userManage.html" class="menu-btn">
+                <a href="user_manage.jsp" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
             <li class="sidebar-item" id="project"><div class="menu-btn">
                 <i class="fa-solid fa-building">  </i>
-                <a href="admin-projectsManage.html" >
+                <a href="project_manage.jsp" >
                     <span>QL Dự án</span>
                 </a> <i
-                class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
                 <div class="sub-menu d-none">
-                    <a href="admin-TypeOfProject.html" class="menu-btn">
+                    <a href="type_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="admin-PostProject.html" class="menu-btn">
+                    <a href="post_project.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
-                    <a href="admin-ProjectSchedule.html" class="menu-btn">
+                    <a href="project_schedule.jsp" class="menu-btn">
                         <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
                     </a>
                 </div>
@@ -80,34 +71,33 @@
 
             <li class="sidebar-item" id="type-project">
                 <div class="menu-btn">
-                    <a href="servicesManager.html">
+                    <a href="service_manage.jsp">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="servicePostsManage.html" class="menu-btn">
+                    <a href="post_service.jsp" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="contact">
-                <a href="admin-contactManagement.html" class="menu-btn">
+                <a href="contact_manage.jsp" class="menu-btn">
                     <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="admin-slideManagement.html" class="menu-btn">
+                <a href="slide_manage.jsp" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
         </div>
     </div>
-
     <div class="main-container">
         <div class="container p-0">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.jsp">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
@@ -116,83 +106,86 @@
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
                     <li class="breadcrumb-item">
-                        <a class="main-color" href="#">QL loại dự án</a>
+                        <a class="main-color" href="#">QL bài viết dự án</a>
                     </li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
-                    <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">QL LOẠI DỰ ÁN</h3>
-                    </div>
-                    <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="admin-addCategoryProject.html">
-                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm loại dự án</button>
-                        </a>
-
+                    <div class="col-12 d-flex align-items-center p-0">
+                        <h3 class="font-weight-bold main-color m-0">QL BÀI VIẾT DỰ ÁN</h3>
                     </div>
                 </div>
-                <table id="project-type-table" class="table table-hover table-striped table-bordered m-0 "
+                <table id="project-post-table" class="table table-hover table-striped table-bordered m-0 w-100"
                        style="width:100%">
                     <thead>
                     <tr>
                         <th class="font-weight-bold" scope="col">#</th>
-                        <th class="font-weight-bold" scope="col">Tên loại dự án</th>
-                        <th class="font-weight-bold" scope="col">Số lượng dự án</th>
+                        <th class="font-weight-bold" scope="col">Tên dự án</th>
+                        <th class="font-weight-bold" scope="col">Lượt lưu</th>
+                        <th class="font-weight-bold" scope="col">Lượt xem</th>
                         <th class="font-weight-bold" scope="col">Ngày cập nhập</th>
-                        <th class="font-weight-bold" scope="col">Trạng thái</th>
                         <th class="font-weight-bold" scope="col">Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Biệt thự</td>
-                        <td>5</td>
-                        <td>20/05/2018</td>
+                        <td>PHỐI CẢNH AN NHIÊN</td>
+                        <td>10</td>
+                        <td>110</td>
+                        <td>17/09/2023</td>
                         <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-updateCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Nhà phố</td>
-                        <td>12</td>
-                        <td>20/05/2018</td>
+                        <td>NHÀ ANH HƯNG GÒ VẤP</td>
+                        <td>20</td>
+                        <td>220</td>
+                        <td>14/02/2023</td>
                         <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-addCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Căn hộ</td>
-                        <td>25</td>
-                        <td>24/01/2023</td>
+                        <td>BIỆT THỰ CHÂU ÂU</td>
+                        <td>15</td>
+                        <td>80</td>
+                        <td>29/06/2021</td>
+
                         <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-updateCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td>Văn phòng</td>
-                        <td>20</td>
-                        <td>28/06/2022</td>
+                        <td>PHONG CÁCH GẦN GŨI VỚI THIÊN NHIÊN</td>
+                        <td>25</td>
+                        <td>80</td>
+                        <td>30/06/2022</td>
+
                         <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-addCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
                     </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>NHÀ PHỐ HIỆN ĐẠI</td>
+                        <td>15</td>
+                        <td>90</td>
+                        <td>10/10/2022</td>
+                        <td>
+                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>NHÀ PHỐ HIỆN ĐẠI</td>
+                        <td>30</td>
+                        <td>50</td>
+                        <td>15/10/2022</td>
+                        <td>
+                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
+                    </tr>
+
                     </tbody>
 
                 </table>
@@ -204,18 +197,13 @@
 <!--/. Sidebar navigation -->
 
 
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/jquery.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/popper.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/bootstrap.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/MDB_4_pro/js/mdb.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="../../../../RealEstateWeb/public/lib/DataTables/dataTables.min.js"></script>
-<!--<script src="../../../../RealEstateWeb/public/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
+<%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
 
 </script>
 <script>
-    $('#project-type-table').dataTable({
+    $('#project-post-table').dataTable({
         // "ajax": {
         //     // "url": "http://localhost/RealEstateWeb/userManage" ,
         //     "dataSrc": ""
@@ -224,7 +212,7 @@
         "columnDefs": [
             {
                 "targets": 0,
-                "width": "5%",
+                "width": "10%",
             },
             {
                 "targets": 1,
@@ -244,12 +232,13 @@
             },
             {
                 "targets": 5,
-                "width": "15%",
+                "width": "10%",
             },
 
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],
+
         "language": {
             "lengthMenu": "Hiển thị _MENU_ dòng",
             "zeroRecords": "Không tìm thấy dữ liệu",
@@ -269,17 +258,17 @@
 
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }
