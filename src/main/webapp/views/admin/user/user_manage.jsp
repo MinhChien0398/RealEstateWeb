@@ -177,7 +177,7 @@
                                     </c:otherwise>
                                 </c:choose></td>
                             <td>
-                                <a href="${pageContext.request.contextPath}/admin/user_management?action=edit&useremail="${u.email}><i class="icon-action fa-solid fa-edit"></i></a>
+                                <a href="${pageContext.request.contextPath}/admin/user_management?action=edit&useremail=${u.email}"><i class="icon-action fa-solid fa-edit"></i></a>
                                 <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
 
                         </tr>
