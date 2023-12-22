@@ -1,2 +1,4 @@
-package com.nhom44.Services;public interface ServiceOfProjectService {
+package com.nhom44.services;
+
+public interface ServiceOfProjectService {
 }

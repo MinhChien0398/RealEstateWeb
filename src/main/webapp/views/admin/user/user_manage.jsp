@@ -1,4 +1,4 @@
-<%--
+ <%--
   Created by IntelliJ IDEA.
   User: Clover
   Date: 11/12/2023
@@ -9,17 +9,19 @@
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
-    <%@include file="/layout/public/link.jsp" %>
+
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <%@include file="/layout/public/link.jsp" %>
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
-    <title>Title</title>
+    <title>Quản lý người dùng</title>
 </head>
 <body>
 <!-- Sidebar navigation -->
@@ -41,7 +43,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="../dashboard.jsp" class="menu-btn">
@@ -53,12 +55,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -99,9 +102,9 @@
 
 
     <div class="main-container ">
-        <div class="container p-0">
+        <div class="container">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 bg-white">
+                <ol class="breadcrumb m-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
@@ -112,13 +115,14 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
+                <div class="row border-bottom  ml-1 mr-1   ">
                     <div class="col-6 d-flex align-items-center p-0">
                         <h3 class="font-weight-bold main-color m-0">QL Người dùng</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="add_user.jsp">
-                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Đăng ký</button>
+                        <a href="/admin/user_management?action=add">
+                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Đăng ký
+                            </button>
                         </a>
 
                     </div>
@@ -142,129 +146,42 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>1
-                            </td>
-                            <td>Bùi Minh Chiến</td>
-                            <td>buiminhchien@gmail.com</td>
-                            <td>123@123@@B</td>
-                            <td>0908200400</td>
-                            <td>Quảng Nam</td>
-                            <!--                            <td>-->
-                            <!--                                <img src="/template/img/Avatar/159470802-jurist-avatar-icon-flat-style.jpg"-->
-                            <!--                                     alt="" style=""-->
-                            <!--                                     class=" w-100">-->
-                            <!--                            </td>-->
+                            <c:forEach var="u" items="${users}" step="1" varStatus="c">
+                            <td>${c.count}</td>
+                            <td>${u.fullName}</td>
+                            <td>${u.email}</td>
+                            <td>${u.password}</td>
+                            <td>${u.phone}</td>
+                            <td>${u.province}</td>
                             <td>
                                 <i class="fa-solid fa-person" style="color: #005eff;"></i>
                             </td>
                             <td>
-                                <i class="fa-solid fa-square active-icon" value="0"></i>
+                                <c:choose>
+                                    <c:when test="${u.role==0}">
+                                        <i class="fa-solid fa-square active-icon"></i>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <i class="fa-solid fa-square inactive-icon"></i>
+                                    </c:otherwise>
+                                </c:choose></td>
+
                             </td>
-                            <td>Admin</td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${u.role==1}">
+                                        Admin
+                                    </c:when>
+                                    <c:otherwise>
+                                        Người dùng
+                                    </c:otherwise>
+                                </c:choose></td>
                             <td>
                                 <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
                                 <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+
                         </tr>
-                        <tr>
-                            <td>2
-                            </td>
-                            <td>Vũ Xuân Chiến</td>
-                            <td>vuxuanchien@gmail.com</td><td>123@123@@B</td>
-                            <td></td>
-                            <td>Đồng Nai</td>
-                            <!--                            <td>-->
-                            <!--                                <img src="/template/img/Avatar/159470802-jurist-avatar-icon-flat-style.jpg"-->
-                            <!--                                     alt="" style=""-->
-                            <!--                                     class=" w-100">-->
-                            <!--                            </td>-->
-                            <td>
-                                <i class="fa-solid fa-person" style="color: #005eff;"></i>
-                            </td>
-                            <td>
-                                <i class="fa-solid fa-square inactive-icon" value="0"></i>
-                            </td>
-                            <td>Admin</td>
-                            <td>
-                                <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>3
-                            </td>
-                            <td>Đặng Minh Tấn</td>
-                            <td>dangminhtan@gmail.com</td><td>123@123@@B</td>
-                            <td></td>
-                            <td>Bình Dương</td>
-                            <!--                            <td>-->
-                            <!--                                <img src="/template/img/Avatar/159470802-jurist-avatar-icon-flat-style.jpg"-->
-                            <!--                                     alt="" style=""-->
-                            <!--                                     class=" w-100">-->
-                            <!--                            </td>-->
-                            <td>
-                                <i class="fa-solid fa-person" style="color: #005eff;"></i>
-                            </td>
-                            <td>
-                                <i class="fa-solid fa-square inactive-icon" value="0"></i>
-                            </td>
-                            <td>Người dùng</td>
-                            <td>
-                                <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>4
-                            </td>
-                            <td>Trần Quý Bằng</td>
-                            <td></td>
-                            <td></td><td>123@123@@B</td>
-                            <td>Bình Định</td>
-                            <!--                            <td></td>-->
-                            <td>
-                                <i class="fa-solid fa-person" style="color: #005eff;"></i></td>
-                            <td>
-                                <i class="fa-solid fa-square inactive-icon" value="0"></i>
-                            </td>
-                            <td>Người dùng</td>
-                            <td>
-                                <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>5
-                            </td>
-                            <td>Đỗ Công Thịnh</td>
-                            <td></td>
-                            <td></td><td>123@123@@B</td>
-                            <td>Thanh Hóa</td>
-                            <!--                            <td></td>-->
-                            <td>
-                                <i class="fa-solid fa-person" style="color: #005eff;"></i></td>
-                            <td>
-                                <i class="fa-solid fa-square active-icon" value="0"></i>
-                            </td>
-                            <td>Người dùng</td>
-                            <td>
-                                <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Nguyễn Hữu Tính</td>
-                            <td></td>
-                            <td></td><td>123@123@@B</td>
-                            <td>An Giang</td>
-                            <!--                            <td>-->
-                            <!--                            </td>-->
-                            <td>
-                                <i class="fa-solid fa-person" style="color: #005eff;"></i>
-                            <td>
-                                <i class="fa-solid fa-square active-icon" value="0"></i>
-                            </td>
-                            <td>người dùng</td>
-                            <td>
-                                <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit "></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                        </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -395,17 +312,17 @@
 
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }

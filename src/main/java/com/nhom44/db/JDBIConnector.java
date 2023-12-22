@@ -1,7 +1,9 @@
 package com.nhom44.db;
 
+
 import com.mysql.cj.jdbc.MysqlDataSource;
 import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.sqlobject.SqlObjectPlugin;
 
 import java.sql.SQLException;
 
@@ -9,7 +11,7 @@ import java.sql.SQLException;
 public class JDBIConnector {
     private static Jdbi jdbi;
 
-   private static void makeConnect() {
+    private static void makeConnect() {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setURL("jdbc:mysql://" + DBProperties.getDbHost() + ":" + DBProperties.getDbPort() + "/"
                 + DBProperties.getDbName());
@@ -18,11 +20,12 @@ public class JDBIConnector {
         try {
             dataSource.setUseCompression(true);
             dataSource.setAutoReconnect(true);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-            throw new RuntimeException(throwables);
+        } catch (SQLException e) {
+            e.printStackTrace();
+//            throw new RuntimeException(throwables);
         }
         jdbi = Jdbi.create(dataSource);
+        jdbi.installPlugin(new SqlObjectPlugin());
     }
 
 
@@ -30,7 +33,7 @@ public class JDBIConnector {
     }
 
     public static Jdbi get() {
-        if(jdbi==null) makeConnect();
+        if (jdbi == null) makeConnect();
         return jdbi;
     }
 
