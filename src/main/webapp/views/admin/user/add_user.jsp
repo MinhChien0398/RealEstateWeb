@@ -233,7 +233,7 @@
                                                     <select name="province" id="province" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
                                                         <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.id}">${item.name}</option>
+                                                            <option value="${item.name}">${item.name}</option>
                                                         </c:forEach>
 
                                                     </select>

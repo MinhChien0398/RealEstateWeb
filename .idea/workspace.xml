@@ -10,63 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/PostController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/db/DBProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/db/JDBIConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/layout/public/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layout/public/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/layout/public/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layout/public/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/layout/public/link.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layout/public/link.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/add_category_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/category/add_category_project.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/add_service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/service/add_service.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/add_slider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/add_slider.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/contact_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/contact/contact_manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/contact_post_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/order/contact_order.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/post_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/post_project.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/post_service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/service/post_service.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/project_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/project_schedule.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_schedule.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/service_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/service/service_manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/slide_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/slide_manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/type_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/category/category_management.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/update_project_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/update_project_post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_post.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/update_service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/service/update_service.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/update_service_post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/service/update_service_post.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/update_slide_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/update_slide_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/Admin/user_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/User/demoPost.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/User/demoPost.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/User/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/User/history.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/User/ownproject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/User/ownproject.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/User/savedList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/User/savedList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/auth/User/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/User/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/post.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/postProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/postProject.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.lite.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.lite.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -146,7 +101,7 @@
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\project" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.UserService">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.72">
     <configuration name="ProvinceService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProvinceService" />
       <module name="RealEstateWeb" />
@@ -303,6 +258,7 @@
       <workItem from="1703121354386" duration="1950000" />
       <workItem from="1703123818851" duration="26615000" />
       <workItem from="1703174505727" duration="4683000" />
+      <workItem from="1703210117969" duration="7524000" />
     </task>
     <servers />
   </component>

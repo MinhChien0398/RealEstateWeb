@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 
-public class UserService implements Service {
+public class UserService{
     private static UserService instance;
     private Jdbi conn;
 
@@ -37,38 +37,33 @@ public class UserService implements Service {
     }
 
     private boolean isContainEmail(String email) {
-        return conn.withExtension(UserDAO.class, dao -> dao.getIdUserWithEmail(email)) == 1;
+        return conn.withExtension(UserDAO.class, dao -> dao.NumOfSameEmailContain(email)) == 1;
     }
 
     public int additional(String email, String password, String name, Date birthday, String phone, String province, String isMale, String status, String role) {
         if (isContainEmail(email)) {
             return -1;
         }
-
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);
         user.setFullName(name);
-        user.setBirthday((java.sql.Date) birthday);
+        user.setBirthday(new java.sql.Date(birthday.getTime()));
+        user.setAvatar(-1);
         user.setPhone(phone);
         user.setProvince(province);
         user.setGender(isMale != null ? 1 : 0);
         user.setStatus(Integer.parseInt(status));
         user.setRole(Integer.parseInt(role));
         String idProvince = conn.withExtension(ProvinceDAO.class, handle -> handle.getSpecificId(user.getProvince()));
-        int line=conn.withExtension(UserDAO.class, handle -> handle.insertUser(user.getFullName(), user.getEmail(), user.getPassword(),
-                user.getRole(), user.getAvatar(), user.getPhone(), Integer.parseInt(idProvince),
-                (java.sql.Date) user.getBirthday(), user.getGender(), user.getStatus(), LocalDateTime.now()));
-        System.out.println(1);
+        int line=conn.withExtension(UserDAO.class, handle -> handle.insertUser(user.getFullName(),
+                user.getEmail(), user.getPassword(),
+                user.getRole(),  user.getPhone(), Integer.parseInt(idProvince),
+             user.getGender(),    (java.sql.Date) user.getBirthday(), user.getStatus()));
         return line;
     }
 
     public static void main(String[] args) {
-        try {
-            int id = getInstance().additional("user@gmail.com", "123456", "nguoi dung", new java.sql.Date(23, 12, 2009), "0908300400", "Bình Dương", "on", "1", "1");
-            System.out.println(id); }catch (Exception e){
-            System.out.println("loi");
-        }
-
+        int id = getInstance().additional("user1@gmail.com", "123456", "nguoi dung", new java.sql.Date(23, 12, 2009), "0908300400", "Bình Dương", "on", "1", "1");
     }
 }

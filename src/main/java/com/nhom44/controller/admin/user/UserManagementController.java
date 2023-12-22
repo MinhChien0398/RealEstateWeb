@@ -41,6 +41,7 @@ public class UserManagementController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
+        req.setCharacterEncoding("UTF-8");
         boolean isErr = false;
         String email = req.getParameter("email");
         String regex = "^[\\w!#$%&amp;'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&amp;'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
@@ -61,7 +62,7 @@ public class UserManagementController extends HttpServlet {
             isErr = true;
         }
 
-        String ip_birthday = req.getParameter("birthday");  System.out.println("err");
+        String ip_birthday = req.getParameter("birthday");
         Date birthday = null;
         if (ip_birthday==null|| ip_birthday.trim().isEmpty()) {
             req.setAttribute("birthdayErr", "Vui lòng chọn ngày sinh");
@@ -103,9 +104,35 @@ public class UserManagementController extends HttpServlet {
             return;
         }
         if (action.equalsIgnoreCase("add")) {
-            userService.additional(email,password,name,birthday,phone,province,isMale,status,role);
+            int check=userService.additional(email,password,name,birthday,phone,province,isMale,status,role);
+            if(check==-1){
+                req.setAttribute("emailErr", "Email đã tồn tại");
+                req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
+                return;
+            }
+            if(check==1){
+                req.setAttribute("success", "Thêm thành công");
+                req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
+                return;
+            }
+            if(check==0){
+                req.setAttribute("SysErr", "Thêm thất bại");
+                resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
+                return;
+            }
         }
-        resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
+        if (action.equalsIgnoreCase("edit")) {
+//            int id = Integer.parseInt(req.getParameter("id"));
+//            String avatar = req.getParameter("avatar");
+//            String createdAt = req.getParameter("createdAt");
+//            String updatedAt = req.getParameter("updatedAt");
+//            User user = new User(id, Integer.parseInt(avatar), name, email, password, phone, (java.sql.Date) birthday, Integer.parseInt(isMale), Integer.parseInt(status), Timestamp.valueOf(createdAt), Timestamp.valueOf(updatedAt), province, Integer.parseInt(role));
+//            userService.updateUser(user);
+//            req.setAttribute("success", "Cập nhật thành công");
+//            req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
+//            return;
+        }
+
     }
 
 }
