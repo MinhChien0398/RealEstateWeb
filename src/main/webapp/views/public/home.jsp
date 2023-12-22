@@ -143,7 +143,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
                                     <a href="#">
-                                        <%--                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">--%>
+                                        <%--                                    <a href="postProject.jsp">--%>
                                         <img src=""
                                         <%--                                        <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-165117-8274.png"--%>
                                              class="w-100">
@@ -172,7 +172,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/nhaanhchung-4935.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -203,7 +203,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-164028-776.png"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -243,7 +243,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-164628-3831.png"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -276,7 +276,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-165318-2198.png"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -312,7 +312,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img
                                                 src="../../../../RealEstateWeb/public/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
                                                 class="w-100">
@@ -350,7 +350,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-biet-thu-13-1-e1672026065491.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -389,7 +389,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-biet-thu-20-1.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -436,7 +436,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-nha-11-2.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -476,7 +476,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-nha-1-3.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -515,7 +515,7 @@
                                 <div
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img
                                                 src="../../../../RealEstateWeb/public/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
                                                 class="w-100">
@@ -557,7 +557,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img
                                                 src="../../../../RealEstateWeb/public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
                                                 class="w-100">
@@ -600,7 +600,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img
                                                 src="../../../../RealEstateWeb/public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
                                                 class="w-100">
@@ -644,7 +644,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/project1.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -688,7 +688,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/project2.jpg"
                                              class="w-100">
                                         <div class="w-100 position-absolute projectCard-content">
@@ -731,7 +731,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/project3.jpg"
                                              class="w-100">
                                         <div
@@ -778,7 +778,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/project4.jpg"
                                              class="w-100">
                                         <div
@@ -821,7 +821,7 @@
                                         class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
                                     <i class="fa-regular fa-bookmark position-absolute"
                                        style="z-index: 1000"></i>
-                                    <a href="../../../../RealEstateWeb/resources/views/template/projectPost.html">
+                                    <a href="postProject.jsp">
                                         <img src="../../../../RealEstateWeb/public/img/project-img/project5.jpg"
                                              class="w-100">
                                         <div
@@ -874,7 +874,7 @@
                     <!--start image-->
                     <div class="image-content">
                         <div class="card-image ">
-                            <div href="../../../../RealEstateWeb/resources/views/template/servicePost.html"
+                            <div href="postService.jsp"
                                  class="img-container  ">
                                 <div class="img-wrapper hover-image">
                                     <img src="../../../../RealEstateWeb/public/img/main-service/xaydungphantho1e57-4555.jpg"
@@ -892,7 +892,7 @@
                 <div class="card-home swiper-slide">
                     <div class="image-content">
                         <div class="card-image ">
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html"
+                            <a href="postService.jsp"
                                class="img-container  ">
                                 <div class="img-wrapper hover-image">
                                     <img src="../../../../RealEstateWeb/public/img/main-service/th2-792.png" alt=""
@@ -908,7 +908,7 @@
                 <div class="card-home swiper-slide">
                     <div class="image-content">
                         <div class="card-image ">
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html"
+                            <a href="postService.jsp"
                                class="img-container  ">
                                 <div class="img-wrapper hover-image">
                                     <img src="../../../../RealEstateWeb/public/img/main-service/tang-ham-1-9740.png"
@@ -925,7 +925,7 @@
                 <div class="card-home swiper-slide">
                     <div class="image-content">
                         <div class="card-image ">
-                            <a href="../../../../RealEstateWeb/resources/views/template/servicePost.html"
+                            <a href="postService.jsp"
                                class="img-container  ">
                                 <div class="img-wrapper hover-image">
                                     <img src="../../../../RealEstateWeb/public/img/main-service/th2-792.png" alt=""

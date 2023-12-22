@@ -54,10 +54,10 @@
                 </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="../../../../NhaDepModule/resources/views/template/contact.html">Liên Hệ</a>
+                    <a class="nav-link" href="contact.jsp">Liên Hệ</a>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="../../../../NhaDepModule/resources/views/template/login.html">Đăng nhập</a>
+                    <a class="nav-link" href="login.jsp">Đăng nhập</a>
                 </li>
             </ul>
             <!--icon font ring-->
