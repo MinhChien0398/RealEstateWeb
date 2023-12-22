@@ -16,11 +16,11 @@
         <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
             <ul class="navbar-nav  col-9 border-right">
                 <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
-                    <a class="nav-link" href="#">Trang Chủ
+                    <a class="nav-link" href="/home">Trang Chủ
                     </a>
                 </li>
-                <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link " href="#">Giới Thiệu</a>
+                <li class="nav-item nav-menuItem font-weight-bolder" >>
+                    <a class="nav-link " href="/intro">Giới Thiệu</a>
                 </li>
                 <li class="nav-item nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
                 >

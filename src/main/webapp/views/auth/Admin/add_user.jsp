@@ -327,10 +327,10 @@
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material unchecked -->
                                                     <div class="form-check  mt-4">
-                                                        <input type="checkbox" class="form-check-input"
-                                                               id="materialUnchecked">
+                                                        <input type="radio" class="form-check-input"
+                                                               id="male" name="gender">
                                                         <label class="form-check-label"
-                                                               for="materialUnchecked">Nam</label>
+                                                               for="male">Nam</label>
                                                     </div>
                                                 </div>
                                                 <!-- Grid column -->
@@ -338,11 +338,11 @@
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material indeterminate -->
                                                     <div class="form-check mt-4">
-                                                        <input type="checkbox" class="form-check-input"
-                                                               id="materialIndeterminate2"
-                                                               checked>
+                                                        <input type="radio" class="form-check-input"
+                                                               id="female"
+                                                               name="gender">
                                                         <label class="form-check-label"
-                                                               for="materialIndeterminate2">Nữ</label>
+                                                               for="female">Nữ</label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -436,5 +436,6 @@
         });
     });
 </script>
+
 </body>
 </html>
