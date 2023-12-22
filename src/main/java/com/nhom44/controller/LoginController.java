@@ -1,6 +1,5 @@
 package com.nhom44.controller;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,12 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/home")
-public class HomeController extends HttpServlet {
+@WebServlet (urlPatterns = "/login")
+public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/views/public/postProject.jsp");
-        rd.forward(req, resp);
+        String action= req.getParameter("action");
+        if(action!=null && action.equals("login")){
+//            req.getSession().removeAttribute("user");
+            req.getRequestDispatcher("/views/login.jsp").forward(req,resp);
+            return;
+        }
+        req.getRequestDispatcher("/views/login.jsp").forward(req,resp);
     }
 
     @Override

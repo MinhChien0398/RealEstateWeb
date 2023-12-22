@@ -3,7 +3,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport"
@@ -1035,6 +1034,6 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 <script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
-<script src="<c:url value="/template/js/home.js"/>"></script>
+<script src="<c:url value='/template/js/home.js'/>"></script>
 </body>
 </html>
