@@ -1,5 +1,5 @@
+<%@include file="/layout/common.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@include file="/layout/common.jsp" %>
 <footer class="page-footer font-small pt-2">
     <!-- Footer Links -->
     <div class="container text-md-left" style="">
