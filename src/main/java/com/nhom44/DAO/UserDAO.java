@@ -27,12 +27,12 @@ public interface UserDAO {
                    @Bind("provinceId") int provinceId, @Bind("gender") int gender, @Bind("birthday") Date birthday,
                    @Bind("status") int status);
 
-    @SqlUpdate("UPDATE users SET fullname =: fullName , email =:email , password =: password, role =:role, avatar=:avatar,phone=:phone, birthday=:birthday," +
-            " gender=:gender, status=:status, createdAt=:createdAt, updatedAt=:updatedAt WHERE id=:id")
-    void updateUser(@BindBean User user);
+    @SqlUpdate("UPDATE users SET fullname =:fullName , email =:email , password =:password, role =:role,avatar=:avatar,phone=:phone, birthday=:birthday," +
+            " gender=:gender, status=:status ,updatedAt=now() WHERE email=:oldEmail")
+    int updateUser(@BindBean User user,@Bind("oldEmail") String oldEmail);
 
-    @SqlUpdate("UPDATE users SET provinceId=:provinceId WHERE id=:id")
-    void updateProvinceForUser(@Bind("id") int id);
+    @SqlUpdate("UPDATE users SET provinceId=:provinceId WHERE email=:email")
+    int updateProvinceForUser(@Bind("provinceId") int provinceId,@Bind("email") String email);
 
     @SqlQuery("Select u.fullname, u.email,u.password,u.phone, u.gender,u.status,u.role,p.name as province " +
             "FROM users u Left Join provinces p ON u.provinceId=p.id")
@@ -43,6 +43,9 @@ public interface UserDAO {
 
     @SqlQuery("Select u.id FROM users u WHERE u.email=:email")
     int getIdUserWithEmail(@Bind("email") String email);
+@SqlQuery("Select u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role,p.name as province " +
+        "FROM users u Left Join provinces p ON u.provinceId=p.id where u.email=:email")
+        User getUserByEmail(@Bind("email") String email);
 //    String getIdUserWithEmail(@Bind("email") String email);
 
 }

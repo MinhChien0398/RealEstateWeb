@@ -30,10 +30,17 @@ public class UserManagementController extends HttpServlet {
             List<User> users = userService.getAllUser();
             req.setAttribute("users", users);
             req.getRequestDispatcher("/views/admin/user/user_manage.jsp").forward(req, resp);
-        } else if (action.equalsIgnoreCase("add")) {
+        } else
+            if (action.equalsIgnoreCase("add")) {
             ProvinceService provinceService = ProvinceService.getInstance();
             List<Province> provinces = provinceService.getAllProvince();
             req.getSession().setAttribute("provinces", provinces);
+            req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
+        } else
+            if (action.equalsIgnoreCase("edit")) {
+            String email = req.getParameter("useremail");
+            User user = userService.getUserByEmail(email);
+            req.setAttribute("user", user);
             req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
         }
     }
@@ -57,21 +64,21 @@ public class UserManagementController extends HttpServlet {
             isErr = true;
         }
         String name = req.getParameter("fullname");
-        if (name==null||name.trim().isEmpty()) {
+        if (name == null || name.trim().isEmpty()) {
             req.setAttribute("fullnameErr", "Tên phải có ít nhất 6 ký tự");
             isErr = true;
         }
 
         String ip_birthday = req.getParameter("birthday");
         Date birthday = null;
-        if (ip_birthday==null|| ip_birthday.trim().isEmpty()) {
+        if (ip_birthday == null || ip_birthday.trim().isEmpty()) {
             req.setAttribute("birthdayErr", "Vui lòng chọn ngày sinh");
             isErr = true;
-        }else{
-            SimpleDateFormat dmy= new SimpleDateFormat("dd/MM/yyyy");
+        } else {
+            SimpleDateFormat dmy = new SimpleDateFormat("dd/MM/yyyy");
             dmy.setLenient(false);
             try {
-           birthday=dmy.parse(ip_birthday);
+                birthday = dmy.parse(ip_birthday);
             } catch (Exception e) {
                 req.setAttribute("birthdayErr", "Ngày sinh không hợp lệ");
                 isErr = true;
@@ -97,40 +104,48 @@ public class UserManagementController extends HttpServlet {
             req.setAttribute("genderErr", "Vui lòng chọn giới tính");
             isErr = true;
         }
-        String status=req.getParameter("status");
-        String role=req.getParameter("role");
+        String status = req.getParameter("status");
+        String role = req.getParameter("role");
         if (isErr) {
             req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
             return;
         }
         if (action.equalsIgnoreCase("add")) {
-            int check=userService.additional(email,password,name,birthday,phone,province,isMale,status,role);
-            if(check==-1){
+            int check = userService.additional(email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
+            if (check == -1) {
                 req.setAttribute("emailErr", "Email đã tồn tại");
                 req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
                 return;
             }
-            if(check==1){
+            if (check == 1) {
                 req.setAttribute("success", "Thêm thành công");
                 req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
                 return;
             }
-            if(check==0){
+            if (check == 0) {
                 req.setAttribute("SysErr", "Thêm thất bại");
                 resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
                 return;
             }
         }
         if (action.equalsIgnoreCase("edit")) {
-//            int id = Integer.parseInt(req.getParameter("id"));
-//            String avatar = req.getParameter("avatar");
-//            String createdAt = req.getParameter("createdAt");
-//            String updatedAt = req.getParameter("updatedAt");
-//            User user = new User(id, Integer.parseInt(avatar), name, email, password, phone, (java.sql.Date) birthday, Integer.parseInt(isMale), Integer.parseInt(status), Timestamp.valueOf(createdAt), Timestamp.valueOf(updatedAt), province, Integer.parseInt(role));
-//            userService.updateUser(user);
-//            req.setAttribute("success", "Cập nhật thành công");
-//            req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
-//            return;
+            String oldEmail = req.getParameter("oldEmail");
+            int check = userService.update(oldEmail, email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
+            if (check == -1) {
+                req.setAttribute("emailErr", "Email đã tồn tại");
+                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
+                return;
+            }
+            if (check == 1) {
+                req.setAttribute("success", "Cập nhật thành công");
+                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
+                return;
+            }
+            if (check == 0) {
+                req.setAttribute("SysErr", "Cập nhật thất bại");
+                resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
+                return;
+            }
         }
 
     }

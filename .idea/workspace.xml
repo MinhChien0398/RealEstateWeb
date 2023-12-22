@@ -11,17 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ProvinceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ProvinceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.lite.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.lite.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/lib/MDB_4_pro/css/mdb.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +84,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nhom44.services.observer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\java\com\nhom44\db" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\resources" />
@@ -101,7 +99,7 @@
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\project" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.72">
+  <component name="RunManager" selected="Application.UserService">
     <configuration name="ProvinceService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProvinceService" />
       <module name="RealEstateWeb" />
@@ -258,7 +256,7 @@
       <workItem from="1703121354386" duration="1950000" />
       <workItem from="1703123818851" duration="26615000" />
       <workItem from="1703174505727" duration="4683000" />
-      <workItem from="1703210117969" duration="7524000" />
+      <workItem from="1703210117969" duration="18354000" />
     </task>
     <servers />
   </component>
