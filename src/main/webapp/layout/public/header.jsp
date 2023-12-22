@@ -1,5 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-property ">
     <div class="container">
         <a class="navbar-brand "
@@ -58,6 +58,7 @@
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
                     <a class="nav-link" href="login.jsp">Đăng nhập</a>
+
                 </li>
             </ul>
             <!--icon font ring-->

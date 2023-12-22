@@ -1,35 +1,41 @@
+<%@include file="/layout/common.jsp" %>
+<%--<%@ page isELIgnored="false" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="../template/lib/fontawesome-free-6.4.2-web/css/all.min.css">
-    <link rel="stylesheet" href="../template/css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<%--    <%@ include file="/layout/link.jsp" %>--%>
+    <link href="<c:url value="/template/lib/fontawesome-free-6.4.2-web/css/all.min.css"/>" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value="/template/css/login.css"/> ">
+    <title>Đăng nhập</title>
 </head>
-
 <body>
+
 <div class="container" id="container">
     <div class="form-container sign-up">
-        <a class="icon-arrow arrow-sign-up" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
-        class="fa-solid fa-arrow-left"></i></a>
-        <form>
+        <a class="icon-arrow arrow-sign-up" href="home"><i
+                class="fa-solid fa-arrow-left"></i></a>
+        <form method="post" action="login.jsp" >
             <h1>Tạo tài khoản</h1>
             <span>Thông tin đăng nhập</span>
-            <input type="text" placeholder="Tên">
-            <div style="display: flex">
-                <input class="birth" type="date" placeholder="Ngày sinh">
+            <input type="text" name="name" placeholder="Tên">
+            <div style="display: flex;width: 100%" >
+                <input class="birth" name="birthday" type="date" placeholder="Ngày sinh">
                 <label style="display: flex;margin-left: 7%;">
-                    <input type="checkbox">
+                    <input name="isMale" type="checkbox">
                     <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nam</p>
                 </label>
                 <label style="display: flex;margin-left: 7%;">
-                    <input type="checkbox">
+                    <input name="isFemale" type="checkbox">
                     <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nữ</p>
                 </label>
             </div>
             <!--            <input type="address" placeholder="Địa chỉ">-->
-            <select class="mdb-select md-form" id="mdb-select" searchable="Search here..">
+            <select class="mdb-select md-form" name="address" id="mdb-select" searchable="Search here..">
                 <option value="" disabled selected>Chọn tỉnh thành</option>
 
                 <option value="92TTT">Thành phố Cần Thơ</option>
@@ -157,35 +163,34 @@
                 <option value="01TTT">Thành phố Hà Nội</option>
 
                 <option value="06TTT"> Bắc Kạn</option>
-
             </select>
-            <input type="email" placeholder="Tên tài khoản / Email">
-            <input type="password" placeholder="Mật khẩu">
-            <input type="password" placeholder="Xác nhận mật khẩu">
+            <input type="email" name="email" placeholder="Tên tài khoản / Email">
+            <input type="password" name="password" placeholder="Mật khẩu">
+            <input type="password" name="verifyPassword" placeholder="Xác nhận mật khẩu">
             <p id="error-message-signup" style="color: red;"></p>
-            <button>Đăng kí</button>
+            <button type="submit">Đăng kí</button>
         </form>
     </div>
     <div class="form-container forgot-password">
         <div class="arrow-container">
             <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
-                class="fa-solid fa-arrow-left"></i></a>
+                    class="fa-solid fa-arrow-left"></i></a>
         </div>
         <form>
             <form>
                 <h1>Quên mật khẩu</h1>
                 <span>Nhập email để đặt lại mật khẩu</span>
-                <input id="email-forgot" type="email" placeholder="Email">
+                <input id="email-forgot" name="email-forgot" type="email" placeholder="Email">
                 <a id="showSignInForm" href="#">Đăng nhập ?</a>
                 <p id="error-message-forgot" style="color: red; display: none"></p>
-                <button id="request-button">Gửi yêu cầu đặt lại mật khẩu</button>
+                <button type="submit" id="request-button">Gửi yêu cầu đặt lại mật khẩu</button>
             </form>
         </form>
     </div>
     <div class="form-container sign-in">
         <div class="arrow-container">
             <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
-                class="fa-solid fa-arrow-left"></i></a>
+                    class="fa-solid fa-arrow-left"></i></a>
         </div>
         <form>
             <h1>Đăng Nhập</h1>
@@ -193,11 +198,11 @@
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
             </div>
             <span>Đã có tài khoản</span>
-            <input type="email" placeholder="Email" id="email-signin">
-            <input type="password" placeholder="Mật khẩu" id="password-signin">
+            <input name="email" type="email" placeholder="Email" id="email-signin">
+            <input name=password="password" type="password" placeholder="Mật khẩu" id="password-signin">
             <a id="showForgotPassword" href="#">Quên mật khẩu?</a>
             <p id="error-message-signin" style="color: red; display: none"></p>
-            <button id="login-button">Đăng Nhập</button>
+            <button id="login-button" name="login">Đăng Nhập</button>
         </form>
     </div>
     <div class="toggle-container">
@@ -205,7 +210,7 @@
             <div class="toggle-panel toggle-left">
                 <div class="arrow-container">
                     <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
-                        class="fa-solid fa-arrow-left"></i></a>
+                            class="fa-solid fa-arrow-left"></i></a>
                 </div>
                 <h1>Chào mừng quay trở lại!</h1>
                 <p>Đăng nhập với thông tin cá nhân của bạn</p>
@@ -222,6 +227,9 @@
     </div>
 </div>
 
-<script src="../template/js/login.js"></script>
+<%--<%@include file="/layout/script.jsp"%>--%>
+<script src="<c:url value="/template/js/login.js"/> "></script>
+
+
 </body>
 </html>

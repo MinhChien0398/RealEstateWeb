@@ -1034,6 +1034,6 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 <script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
-<script src="<c:url value="/template/js/home.js"/>"></script>
+<script src="<c:url value='/template/js/home.js'/>"></script>
 </body>
 </html>
