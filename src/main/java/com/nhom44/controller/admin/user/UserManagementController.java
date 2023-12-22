@@ -41,7 +41,7 @@ public class UserManagementController extends HttpServlet {
             String email = req.getParameter("useremail");
             User user = userService.getUserByEmail(email);
             req.setAttribute("user", user);
-            req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
+            req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
         }
     }
 
