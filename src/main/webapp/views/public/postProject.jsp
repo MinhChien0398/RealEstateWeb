@@ -140,12 +140,12 @@
                             <p class="text-uppercase main-color"><i class="fa-solid fa-caret-right mr-2">
                             </i>Đặt ngay cho bạn</p>
                         </div>
-                        <form class="card" action="" method="post">
+                        <form class="card" action="post?action=cast" method="post">
                             <div class="card-body pl-3 pr-3">
                                 <!--Header-->
                                 <!--Body-->
                                 <div class="md-form mt-1 mb-1 p-1">
-                                    <input type="text" id="form-email" class="form-control p-1 m-0"
+                                    <input type="text" id="form-email" name="email" class="form-control p-1 m-0"
                                            style="font-size: 15px">
                                     <label for="form-email" class="m-0" style="font-size: 15px"> <i
                                             class="fa-lg fas fa-envelope grey-text"></i>
@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="row d-flex justify-content-between m-0 p-0 ">
                                     <!--                                <div class=" col-lg-5 col-md-5 col-sm-12 mb-3  p-0">-->
-                                    <select name="category" id="category" class="form-control md-form
+                                    <select name="category" id="category"  class="form-control md-form
                                      col-lg-6 col-md-6 col-sm-12 m-0 mt-2 p-0  p-1">
                                         <option value="" disabled="" selected="">Loại dự án</option>
 
@@ -296,7 +296,7 @@
                                     </select>
                                     <!--                                </div>-->
                                     <div class="form-outline col-lg-6 col-md-6 col-sm-12  mt-2 p-0 m-0 ">
-                                        <input type="number" id="itProject" placeholder="Mã dự án"
+                                        <input name="idProject" type="number" id="itProject" placeholder="Mã dự án"
                                                class="form-control ml-md-2 p-1">
                                     </div>
                                 </div>
@@ -306,19 +306,19 @@
                                             Chiều rộng(<span class="position-relative m-1">m<span
                                                 class="position-absolute top right "
                                                 style="font-size: 10px;">2</span></span> )</label>
-                                        <input type="number" id="area-width" class="form-control mr-2 p-1">
+                                        <input name="width" type="number" id="area-width" class="form-control mr-2 p-1">
                                     </div>
                                     <div class="form-outline col-lg-6 col-md-6 col-sm-12 p-0 m-0 ">
                                         <label for="area-length" class="ml-md-2" style="font-size: 13px">
                                             Chiều dài(<span class="position-relative m-1">m<span
                                                 class="position-absolute top right "
                                                 style="font-size: 10px;">2</span></span> )</label>
-                                        <input type="number" id="area-length" class="form-control ml-md-2 p-1">
+                                        <input name="height" type="number" id="area-length" class="form-control ml-md-2 p-1">
                                     </div>
                                 </div>
                                 <div class="">
                                     <label class="mdb-main-label" style="font-size: 13px">Dịch vụ</label>
-                                    <select class="mdb-select md-form " multiple>
+                                    <select name="services" class="mdb-select md-form " multiple>
                                         <option value="1">Xây dựng phần thô</option>
                                         <option value="2">Xây nhà trọn gói</option>
                                         <option value="3" selected>Thiết kế nội thất</option>
@@ -327,13 +327,13 @@
                                 </div>
 
                                 <!-- Message -->
-                                <form method="dialog" class="form-img">
+                                <form method="dialog"  enctype="multipart/form-data" class="form-img">
                                     <div class="input-group mt-2">
                                         <div class="file-field d-flex align-items-center">
                                             <p class="m-0">khu vực thi công: </p>
                                             <div class="btn btn-primary btn-sm float-left">
                                                 <span>chọn ảnh</span>
-                                                <input type="file" id="file_input" multiple>
+                                                <input name="image"  type="file" id="file_input" multiple>
                                             </div>
                                         </div>
                                     </div>
@@ -345,7 +345,6 @@
                                 <div class="text-center mt-4">
                                     <button class="btn btn-red" type="submit">Đặt Ngay</button>
                                 </div>
-
                             </div>
                         </form>
 

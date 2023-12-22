@@ -1,3 +1,3 @@
 <%@include file="/layout/common.jsp"%>
-<%--<c:redirect url="/views/auth/Admin/contact_post_project.jsp"/>--%>
-<c:redirect url="/home"/>
+<%--<c:redirect url="/views/auth/Admin/contact_order.jsp"/>--%>
+<c:redirect url="/admin/user_management?action=manager"/>
