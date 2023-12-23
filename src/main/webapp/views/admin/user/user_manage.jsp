@@ -120,7 +120,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL Người dùng</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="/admin/user_management?action=add">
+                        <a href="${pageContext.request.contextPath}/admin/user_management?action=add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Đăng ký
                             </button>
                         </a>
@@ -177,7 +177,7 @@
                                     </c:otherwise>
                                 </c:choose></td>
                             <td>
-                                <a href="update_user.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
+                                <a href="${pageContext.request.contextPath}/admin/user_management?action=edit&useremail=${u.email}"><i class="icon-action fa-solid fa-edit"></i></a>
                                 <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
 
                         </tr>
