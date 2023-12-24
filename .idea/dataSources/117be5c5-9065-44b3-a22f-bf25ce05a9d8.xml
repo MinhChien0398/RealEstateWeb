@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="doanweb@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.49">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.51">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1145,8 +1145,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </schema>
     <schema id="325" parent="1" name="doanweb">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-12-20.21:24:37</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-20.07:24:37</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2023-12-20.07:24:37</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="326" parent="1" name="longapp">
