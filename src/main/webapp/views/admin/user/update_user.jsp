@@ -145,45 +145,50 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="md-form form-sm mb-0">
-                                                    <c:if test="${emailErr!=null}">
-                                                        <input type="email" id="form8"
-                                                               class="form-control form-control-sm" name="email"
-                                                               value="" placeholder="${emailErr}"
-                                                        ></c:if>
-                                                    <c:if test="${emailErr==null}">
-                                                        <input type="email" id="form8"
-                                                               class="form-control form-control-sm" name="email"
-                                                        ></c:if>
+                                                    <c:if test="${emailErr != null}">
+                                                        <input type="email" id="form8" class="form-control form-control-sm" name="email" value="" placeholder="${emailErr}">
+                                                    </c:if>
+                                                    <c:if test="${emailErr == null}">
+                                                        <input type="email" id="form8" class="form-control form-control-sm" name="email" value="${emailValue}">
+                                                    </c:if>
                                                     <label for="form8" class="">Email</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="md-form form-sm mb-0">
-                                                    <c:if test="${passwordErr!=null}">
-                                                        <input type="password" id="form9"
-                                                               class="form-control form-control-sm" name="password"
-                                                               value="" placeholder="${passwordErr}"
-                                                        ></c:if>
-                                                    <c:if test="${passwordErr==null}">
-                                                        <input type="password" id="form9"
-                                                               class="form-control form-control-sm" name="password"
-                                                        ></c:if>
+                                                    <c:if test="${passwordErr != null}">
+                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="" placeholder="${passwordErr}">
+                                                    </c:if>
+                                                    <c:if test="${passwordErr == null}">
+                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="${passwordValue}">
+                                                    </c:if>
                                                     <label for="form9" class="">Password</label>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="row d-flex align-items-center">
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
+<%--                                                <div class="md-form form-sm mb-0">--%>
+<%--                                                    <c:if test="${fullnameErr!=null}">--%>
+<%--                                                        <input type="text" id="form12"--%>
+<%--                                                               class="form-control form-control-sm" name="fullname"--%>
+<%--                                                               value="" placeholder="${fullnameErr}">--%>
+<%--                                                    </c:if>--%>
+<%--                                                    <c:if test="${fullnameErr==null}">--%>
+<%--                                                        <input type="text" id="form12"--%>
+<%--                                                               class="form-control form-control-sm" name="fullname">--%>
+<%--                                                    </c:if>--%>
+<%--                                                    <label for="form12" class="">Họ và tên</label>--%>
+<%--                                                </div>--%>
+
                                                 <div class="md-form form-sm mb-0">
-                                                    <c:if test="${fullnameErr!=null}">
-                                                        <input type="text" id="form12"
-                                                               class="form-control form-control-sm" name="fullname"
-                                                               value="" placeholder="${fullnameErr}">
+                                                    <c:if test="${fullnameErr != null}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="" placeholder="${fullnameErr}">
                                                     </c:if>
-                                                    <c:if test="${fullnameErr==null}">
-                                                        <input type="text" id="form12"
-                                                               class="form-control form-control-sm" name="fullname">
+                                                    <c:if test="${fulnameErr == null}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="${fullnameValue}">
                                                     </c:if>
                                                     <label for="form12" class="">Họ và tên</label>
                                                 </div>
@@ -191,37 +196,29 @@
                                             <!-- Grid column -->
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
-                                                <div id="date-picker-example"
-                                                     class="md-form mb-0 input-with-post-icon datepicker"
-                                                     style="outline: none" inline="true">
-                                                    <c:if test="${birthdayErr!=null}">
-                                                        <input placeholder="${birthdayErr}" type="text" id="birthday"
-                                                               value="" class="form-control  form-control-sm"
-                                                               name="birthday">
+                                                <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
+                                                    <c:if test="${birthdayErr != null}">
+                                                        <input placeholder="${birthdayErr}" type="text" id="birthday" value="" class="form-control form-control-sm" name="birthday">
                                                     </c:if>
-                                                    <c:if test="${birthdayErr==null}">
-                                                        <input type="text" id="birthday"
-                                                               class="form-control form-control-sm" name="birthday">
+                                                    <c:if test="${birthdayErr == null}">
+                                                        <input type="text" id="birthday" class="form-control form-control-sm" name="birthday" value="${birthdayValue}">
                                                     </c:if>
                                                     <label for="birthday" class="">Ngày sinh</label>
-                                                    <i id="label-birthday" class="fas fa-calendar input-prefix"
-                                                       style="font-size: .875rem"></i>
+                                                    <i id="label-birthday" class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
                                                 </div>
                                             </div>
                                             <!-- Grid column -->
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
+
                                                 <div class="md-form form-sm mb-0">
-                                                    <c:if test="${phoneErr!=null}">
-                                                        <input type="text" id="form4"
-                                                               class="form-control form-control-sm" name="phone"
-                                                               value="" placeholder="${phoneErr}">
+                                                    <c:if test="${phoneErr != null}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="" placeholder="${phoneErr}">
                                                     </c:if>
-                                                    <c:if test="${phoneErr==null}">
-                                                        <input type="text" id="form4"
-                                                               class="form-control form-control-sm" name="phone">
+                                                    <c:if test="${phoneErr == null}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="${phoneValue}">
                                                     </c:if>
-                                                    <label for="form4" class="disabled">SĐT</label>
+                                                    <label for="form4" class="">SĐT</label>
                                                 </div>
                                             </div>
                                             <!-- Grid column -->
