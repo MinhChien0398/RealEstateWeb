@@ -137,7 +137,7 @@
 
                                                 <div class="md-form form-sm mb-0">
                                                     <input type="email" id="form8" class="form-control form-control-sm"
-                                                           value="buiminhchien@gmail.com">
+                                                           value="${user.email}">
                                                     <label for="form8" class="active">Email</label>
                                                 </div>
 
@@ -147,7 +147,7 @@
                                                 <div class="md-form form-sm mb-0">
                                                     <input type="password" id="form9"
                                                            class="form-control form-control-sm"
-                                                           value="@Bc12345">
+                                                           value="${user.password}">
                                                     <label for="form9" class="active">Password</label>
                                                 </div>
 
@@ -159,9 +159,7 @@
 
                                                 <div class="md-form form-sm mb-0">
                                                     <input type="text" id="form12" class="form-control form-control-sm" value="${user.fullName}">
-<%--                                                    <c:forEach var="user" items="${sessionScope.get('user')}">--%>
-<%--                                                        <c:out value="${user.fullName}">${item.fullName}></c:out>--%>
-<%--                                                    </c:forEach>--%>
+
                                                     <label for="form12" class="active">Họ và tên</label>
                                                 </div>
 
@@ -175,8 +173,8 @@
                                                      class="md-form mb-0 input-with-post-icon datepicker"
                                                      style="outline: none" inline="true">
                                                     <input type="text" id="birthday"
-                                                           class="form-control form-control-sm">
-                                                    <label for="birthday" class="">Ngày sinh</label>
+                                                           class="form-control form-control-sm" value="${user.birthday}">
+                                                    <label for="birthday" class="" >Ngày sinh</label>
                                                     <i class="fas fa-calendar input-prefix"
                                                        style="font-size: .875rem"></i>
                                                 </div>
@@ -190,7 +188,7 @@
 
                                                 <div class="md-form form-sm mb-0">
                                                     <input type="text" id="form4" class="form-control form-control-sm"
-                                                           value="0908200400">
+                                                           value="${user.phone}">
                                                     <label for="form4" class="active">SĐT</label>
                                                 </div>
 
