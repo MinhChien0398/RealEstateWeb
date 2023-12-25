@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class User {
     private int id;
-    private int avatar;
+    private String avatar;
     private String fullName;
     private String email;
     private String password;
@@ -65,7 +65,7 @@ public class User {
     }
 
 
-    public int getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
@@ -110,7 +110,7 @@ public class User {
         this.id = id;
     }
 
-    public void setAvatar(int avatar) {
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 
@@ -144,7 +144,7 @@ public class User {
         this.role = role;
     }
 
-    public User(int id, int avatar, String fullName, String email, String password, String phone, Date birthday, int gender, int status, Timestamp createdAt, Timestamp updatedAt, String province, int role) {
+    public User(int id, String avatar, String fullName, String email, String password, String phone, Date birthday, int gender, int status, Timestamp createdAt, Timestamp updatedAt, String province, int role) {
         this.id = id;
         this.avatar = avatar;
         this.fullName = fullName;

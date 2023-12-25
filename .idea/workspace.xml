@@ -14,9 +14,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -94,11 +95,15 @@
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\order" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\user" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\service" />
-      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\project" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nhom44.controller.admin.user" />
+      <recent name="com.nhom44.controller.admin.project" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
@@ -120,7 +125,7 @@
       <module name="RealEstateWeb" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.nhom44.controller.admin.user.*" />
+          <option name="PATTERN" value="com.nhom44.controller.admin.project.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -234,7 +239,7 @@
       <item itemvalue="Application.ProvinceService" />
       <item itemvalue="Application.UserManagementController" />
       <item itemvalue="Application.UserService" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.80" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.72" />
     </list>
     <recent_temporary>
       <list>
@@ -273,13 +278,29 @@
       <workItem from="1703121354386" duration="1950000" />
       <workItem from="1703123818851" duration="26615000" />
       <workItem from="1703174505727" duration="4683000" />
-      <workItem from="1703210117969" duration="19299000" />
-      <workItem from="1703210117969" duration="18354000" />
+      <workItem from="1703210117969" duration="21992000" />
+      <workItem from="1703261138211" duration="4953000" />
+      <workItem from="1703269200462" duration="378000" />
+      <workItem from="1703269907740" duration="16903000" />
+      <workItem from="1703304166577" duration="7818000" />
+      <workItem from="1703439504976" duration="6533000" />
+      <workItem from="1703481367340" duration="601000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
