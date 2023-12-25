@@ -19,24 +19,33 @@ import java.util.stream.Stream;
 
 @RegisterFieldMapper(User.class)
 public interface UserDAO {
-    @SqlUpdate("INSERT INTO users(fullname, email, password, role, avatar, phone , provinceId, birthday, gender, status, createdAt, updatedAt)" +
-            " value(:fullname,:email,:password,:role, :avatar, :phone,:provinceId ,:birthday, :gender, :status, :createdAt, :updatedAt")
-    int insertUser(@Bind("fullname") String fulllName, @Bind("email") String email, @Bind("password") String password,
-                   @Bind("role") int role, @Bind("avatar") int avatar, @Bind("phone") String phone,
-                   @Bind("provinceId") int provinceId, @Bind("birthday") Date birthday, @Bind("gender") int gender,
-                   @Bind("status") int status, @Bind("createdAt")Timestamp createdAt, @Bind("updatedAt")Timestamp updatedAt);
+    @SqlUpdate("INSERT INTO users(fullname, email, password, role, phone , provinceId, birthday, gender, status)" +
+                         " VALUES(:fullname,:email,:password,:role, :phone,:provinceId ,:birthday, :gender, :status)")
+    int insertUser(@Bind("fullname") String fulllName, @Bind("email") String email,
+                   @Bind("password") String password,
+                   @Bind("role") int role,  @Bind("phone") String phone,
+                   @Bind("provinceId") int provinceId, @Bind("gender") int gender, @Bind("birthday") Date birthday,
+                   @Bind("status") int status);
 
-    @SqlUpdate("UPDATE users SET fullname =: fullName , email =:email , password =: password, role =:role, avatar=:avatar,phone=:phone, birthday=:birthday," +
-            " gender=:gender, status=:status, createdAt=:createdAt, updatedAt=:updatedAt WHERE id=:id")
-    void updateUser(@BindBean User user);
+    @SqlUpdate("UPDATE users SET fullname =:fullName , email =:email , password =:password, role =:role,avatar=:avatar,phone=:phone, birthday=:birthday," +
+            " gender=:gender, status=:status ,updatedAt=now() WHERE email=:oldEmail")
+    int updateUser(@BindBean User user,@Bind("oldEmail") String oldEmail);
 
-    @SqlUpdate("UPDATE users SET provinceId=:provinceId WHERE id=:id")
-    void updateProvinceForUser(@Bind("id") int id);
+    @SqlUpdate("UPDATE users SET provinceId=:provinceId WHERE email=:email")
+    int updateProvinceForUser(@Bind("provinceId") int provinceId,@Bind("email") String email);
 
     @SqlQuery("Select u.fullname, u.email,u.password,u.phone, u.gender,u.status,u.role,p.name as province " +
             "FROM users u Left Join provinces p ON u.provinceId=p.id")
     List<User> getAllUser();
-@SqlQuery("Select COUNT(u.id) FROM users u WHERE u.email=:email")
-    String getIdUserWithEmail(@Bind("email") String email);
+
+    @SqlQuery("Select COUNT(u.email) FROM users u WHERE u.email=:email")
+    int NumOfSameEmailContain(@Bind("email") String email);
+
+    @SqlQuery("Select u.id FROM users u WHERE u.email=:email")
+    int getIdUserWithEmail(@Bind("email") String email);
+@SqlQuery("Select u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role,p.name as province " +
+        "FROM users u Left Join provinces p ON u.provinceId=p.id where u.email=:email")
+        User getUserByEmail(@Bind("email") String email);
+//    String getIdUserWithEmail(@Bind("email") String email);
 
 }

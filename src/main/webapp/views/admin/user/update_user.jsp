@@ -86,7 +86,7 @@
             </li>
             <li class="sidebar-item" id="contact">
                 <a href="../contact/contact_manage.jsp" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
+                    <i class="fa-solid fa-file-contract"></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">

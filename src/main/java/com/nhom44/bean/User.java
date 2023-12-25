@@ -85,7 +85,7 @@ public class User {
         return phone;
     }
 
-    public java.util.Date getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
