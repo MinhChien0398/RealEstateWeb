@@ -183,7 +183,7 @@ public class UserController extends HttpServlet {
             } else if (user.getPassword() != null) {
                 responseModel = new ResponseModel<>();
                 resp.setStatus(200);
-                responseModel.setName("Sys");
+                responseModel.setName("sys");
                 responseModel.setMessage("Thêm thất bại");
                 responseModel.setData(user);
                 printWriter.print(gson.toJson(responseModel));

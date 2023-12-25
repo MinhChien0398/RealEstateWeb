@@ -447,8 +447,12 @@
                     role: $('#role').val(),
                 },
                 success: function (data) {
-                    console.log(data)
-                           fetchInput(data)
+                    console.log(data);
+                    if (data.name=="sys") {
+                       alert(data.message);
+                    }else {
+                        window.location.href = "/admin/user_management?action=manage";
+                    }
                 },
                 error: function (data) {
                         var err = JSON.parse(data.responseText);
@@ -456,61 +460,10 @@
                     for (const e of err) {
                         fetchErr(e.name, e.message);
                     }
-
                 }
             })
         })
     });
-</script>
-<script>
-//     function fetchInput(data){
-//         $('#input').innerHTML='<div className="row">'+
-//           '  <div className="col-lg-6 col-md-6">'+
-//               '  <div className="md-form form-sm mb-0">'+
-//               '      <input type="email" id="form8"'+
-//                       '     className="form-control form-control-sm" name="email"'+
-//                 '           value="" placeholder='+data+'>'+
-//                      '   <label htmlFor="form8" className="">Email</label>'+
-//                 '</div>'+
-//             +
-//             '<div className="col-lg-6 col-md-6">'+
-//                 '<div className="md-form form-sm mb-0">'+
-//                     '<input type="password" id="form9"'
-//         +'className="form-control form-control-sm" name="password">'
-//                         +'<label htmlFor="form9" className="">Password</label>'+
-//         ' </div>'+
-//           '  </div>'+
-//         '</div>'+
-//        ' <div className="row d-flex align-items-center">'+
-//             <!-- Grid column -->
-//             '<div className="col-lg-4">;'+
-//               '  <div className="md-form form-sm mb-0">'+
-//                    ' <input type="text" id="form12"'+
-//                           ' className="form-control form-control-sm" name="fullname">'+
-//                         '<label htmlFor="form12" className="">Họ và tên</label>'+
-//               '  </div>'
-//             '</div>'
-//         '    <div className="col-lg-4">'
-//        '         <div id="date-picker-example"'
-//                      'className="md-form mb-0 input-with-post-icon datepicker"'+
-//                 'style="outline: none" inline="true">'+
-//                    ' <input type="text" id="birthday"'+
-//                           ' className="form-control form-control-sm" name="birthday">'+
-//                         '<label htmlFor="birthday" className="">Ngày sinh</label>'+
-//                     '    <i id="label-birthday" className="fas fa-calendar input-prefix"'+
-//                      +' style="font-size: .875rem"></i>'+
-//               '  </div>'+
-// '            </div>+'
-//          '   <div className="col-lg-4">'+
-//             '    <div className="md-form form-sm mb-0">'+
-//                    ' <input type="text" id="form4"'+
-//                         '   className="form-control form-control-sm" name="phone">'+
-//                        ' <label htmlFor="form4" className="disabled">SĐT</label>'+
-//              '   </div>'+
-//             '</div>'+
-//             <!-- Grid column -->
-//        ' </div>'
-//     }
 </script>
 <script>
     function fetchErr(name, mess) {
@@ -519,6 +472,7 @@
                 let email = document.getElementById('form8');
                 email.classList.add('border-danger');
                 email.classList.add('text-danger');
+                email.value="";
                 email.nextElementSibling.classList.add('active');
                 email.setAttribute('value'," ");
                 email.setAttribute('placeholder', mess);
@@ -528,6 +482,7 @@
                 let password = document.getElementById('form9');
                 password.classList.add('border-danger');
                 password.classList.add('text-danger');
+                password.value="";
                 password.nextElementSibling.classList.add('active');
                 password.setAttribute('placeholder', mess);
                 console.log("run 2");   break;
@@ -535,6 +490,7 @@
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
+                fullname.value="";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
                 fullname.setAttribute('placeholder', mess);
@@ -543,6 +499,7 @@
                 let phone = document.getElementById('form4');
                 phone.classList.add('border-danger');
                 phone.classList.add('text-danger');
+                phone.value="";
                 phone.nextElementSibling.classList.add('active');
                 phone.setAttribute('placeholder', mess);
                 console.log("run 4");    break;
@@ -550,6 +507,7 @@
                 let birthday = document.getElementById('birthday');
                 birthday.classList.add('border-danger');
                 birthday.classList.add('text-danger');
+                birthday.value="";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
                 birthday.setAttribute('placeholder', mess);

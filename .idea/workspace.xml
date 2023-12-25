@@ -10,18 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/ResponseModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +269,8 @@
       <workItem from="1703269200462" duration="378000" />
       <workItem from="1703269907740" duration="16903000" />
       <workItem from="1703304166577" duration="7818000" />
-      <workItem from="1703439504976" duration="6136000" />
+      <workItem from="1703439504976" duration="6533000" />
+      <workItem from="1703481367340" duration="601000" />
     </task>
     <servers />
   </component>
