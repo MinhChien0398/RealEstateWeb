@@ -19,13 +19,13 @@
                     <a class="nav-link" href="/home">Trang Chủ
                     </a>
                 </li>
-                <li class="nav-item nav-menuItem font-weight-bolder" >>
+                <li class="nav-item nav-menuItem font-weight-bolder">
                     <a class="nav-link " href="/intro">Giới Thiệu</a>
                 </li>
                 <li class="nav-item nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
                 >
                     <a class="nav-link justify-content-center text-center"
-                       href="#"
+                       href="/service"
                        role="link"
                     >Dịch vụ
                     </a>
@@ -41,7 +41,7 @@
                 nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
                 >
                 <a class="nav-link justify-content-center text-center"
-                   href="#"
+                   href="/project"
                    role="link"
                 >Dự án
                 </a>
@@ -54,10 +54,10 @@
                 </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="contact.jsp">Liên Hệ</a>
+                    <a class="nav-link" href="/contact">Liên Hệ</a>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="login.jsp">Đăng nhập</a>
+                    <a class="nav-link" href="/login">Đăng nhập</a>
 
                 </li>
             </ul>

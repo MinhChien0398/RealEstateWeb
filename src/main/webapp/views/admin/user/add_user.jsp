@@ -206,23 +206,23 @@
                                             <div class="col-lg-6 input-group  justify-content-around" role="group">
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material unchecked -->
-                                                    <div class="form-check mt-4">
-                                                        <input name="isMale" type="checkbox" class="form-check-input"
-                                                               id="materialUnchecked">
+                                                    <div class="custom-control custom-radio form-check mt-4">
+                                                        <input name="gender" type="radio" class="form-check-input"
+                                                               id="male" checked>
                                                         <label class="form-check-label"
-                                                               for="materialUnchecked">Nam</label>
+                                                               for="male">Nam</label>
                                                     </div>
                                                 </div>
                                                 <!-- Grid column -->
                                                 <!-- Grid column -->
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material indeterminate -->
-                                                    <div class="form-check mt-4">
-                                                        <input name="isFemale" type="checkbox" class="form-check-input"
-                                                               id="materialIndeterminate2"
-                                                               checked>
+                                                    <div class="custom-control custom-radio form-check mt-4">
+                                                        <input name="gender" type="radio" class="form-check-input"
+                                                               id="female"
+                                                               >
                                                         <label class="form-check-label"
-                                                               for="materialIndeterminate2">Nữ</label>
+                                                               for="female">Nữ</label>
                                                     </div>
                                                 </div>
                                             </div>

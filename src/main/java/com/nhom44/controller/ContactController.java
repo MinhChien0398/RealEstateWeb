@@ -1,14 +1,16 @@
-package com.nhom44.controller.admin;
+package com.nhom44.controller;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "ContactController", value = "/ContactController")
+@WebServlet(name = "ContactController", value = "/contact")
 public class ContactController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+       RequestDispatcher rd = request.getRequestDispatcher("/views/public/contact.jsp");
+       rd.forward(request, response);
     }
 
     @Override

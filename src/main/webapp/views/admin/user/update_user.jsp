@@ -15,7 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -53,12 +54,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -156,8 +158,10 @@
                                             <div class="col-lg-4">
 
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form12" class="form-control form-control-sm"
-                                                           value="Bùi Minh Chiến">
+                                                    <input type="text" id="form12" class="form-control form-control-sm" value="${user.fullName}">
+<%--                                                    <c:forEach var="user" items="${sessionScope.get('user')}">--%>
+<%--                                                        <c:out value="${user.fullName}">${item.fullName}></c:out>--%>
+<%--                                                    </c:forEach>--%>
                                                     <label for="form12" class="active">Họ và tên</label>
                                                 </div>
 
@@ -167,10 +171,14 @@
                                             <!-- Grid column -->
 
                                             <div class="col-lg-4">
-                                                <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
-                                                    <input  type="text" id="birthday" class="form-control form-control-sm">
+                                                <div id="date-picker-example"
+                                                     class="md-form mb-0 input-with-post-icon datepicker"
+                                                     style="outline: none" inline="true">
+                                                    <input type="text" id="birthday"
+                                                           class="form-control form-control-sm">
                                                     <label for="birthday" class="">Ngày sinh</label>
-                                                    <i class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
+                                                    <i class="fas fa-calendar input-prefix"
+                                                       style="font-size: .875rem"></i>
                                                 </div>
 
 
@@ -196,136 +204,11 @@
 
                                                 <div class="md-form form-sm mb-0">
                                                     <select name="address" id="address" class=" custom-select ">
-                                                        <option value="" disabled >Chọn tỉnh thành</option>
-
-                                                        <option value="92TTT">Thành phố Cần Thơ</option>
-
-                                                        <option value="91TTT"> Kiên Giang</option>
-
-                                                        <option value="75TTT"> Đồng Nai</option>
-
-                                                        <option value="20TTT"> Lạng Sơn</option>
-
-                                                        <option value="89TTT"> An Giang</option>
-
-                                                        <option value="34TTT"> Thái Bình</option>
-
-                                                        <option value="62TTT"> Kon Tum</option>
-
-                                                        <option value="45TTT"> Quảng Trị</option>
-
-                                                        <option value="58TTT"> Ninh Thuận</option>
-
-                                                        <option value="74TTT"> Bình Dương</option>
-
-                                                        <option value="37TTT"> Ninh Bình</option>
-
-                                                        <option value="31TTT">Thành phố Hải Phòng</option>
-
-                                                        <option value="95TTT"> Bạc Liêu</option>
-
-                                                        <option value="08TTT"> Tuyên Quang</option>
-
-                                                        <option value="14TTT"> Sơn La</option>
-
-                                                        <option value="36TTT"> Nam Định</option>
-
-                                                        <option value="25TTT"> Phú Thọ</option>
-
-                                                        <option value="42TTT"> Hà Tĩnh</option>
-
-                                                        <option value="93TTT"> Hậu Giang</option>
-
-                                                        <option value="82TTT"> Tiền Giang</option>
-
-                                                        <option value="66TTT"> Đắk Lắk</option>
-
-                                                        <option value="80TTT"> Long An</option>
-
-                                                        <option value="17TTT"> Hòa Bình</option>
-
-                                                        <option value="87TTT"> Đồng Tháp</option>
-
-                                                        <option value="19TTT"> Thái Nguyên</option>
-
-                                                        <option value="83TTT"> Bến Tre</option>
-
-                                                        <option value="54TTT"> Phú Yên</option>
-
-                                                        <option value="26TTT"> Vĩnh Phúc</option>
-
-                                                        <option value="94TTT"> Sóc Trăng</option>
-
-                                                        <option value="60TTT"> Bình Thuận</option>
-
-                                                        <option value="51TTT"> Quảng Ngãi</option>
-
-                                                        <option value="64TTT"> Gia Lai</option>
-
-                                                        <option value="77TTT"> Bà Rịa - Vũng Tàu</option>
-
-                                                        <option value="79TTT" selected>Thành phố Hồ Chí Minh</option>
-
-                                                        <option value="02TTT"> Hà Giang</option>
-
-                                                        <option value="68TTT"> Lâm Đồng</option>
-
-                                                        <option value="35TTT"> Hà Nam</option>
-
-                                                        <option value="48TTT">Thành phố Đà Nẵng</option>
-
-                                                        <option value="70TTT"> Bình Phước</option>
-
-                                                        <option value="49TTT"> Quảng Nam</option>
-
-                                                        <option value="38TTT"> Thanh Hóa</option>
-
-                                                        <option value="84TTT"> Trà Vinh</option>
-
-                                                        <option value="11TTT"> Điện Biên</option>
-
-                                                        <option value="27TTT"> Bắc Ninh</option>
-
-                                                        <option value="30TTT"> Hải Dương</option>
-
-                                                        <option value="46TTT"> Thừa Thiên Huế</option>
-
-                                                        <option value="67TTT"> Đắk Nông</option>
-
-                                                        <option value="44TTT"> Quảng Bình</option>
-
-                                                        <option value="22TTT"> Quảng Ninh</option>
-
-                                                        <option value="33TTT"> Hưng Yên</option>
-
-                                                        <option value="96TTT"> Cà Mau</option>
-
-                                                        <option value="10TTT"> Lào Cai</option>
-
-                                                        <option value="56TTT"> Khánh Hòa</option>
-
-                                                        <option value="40TTT"> Nghệ An</option>
-
-                                                        <option value="12TTT"> Lai Châu</option>
-
-                                                        <option value="72TTT"> Tây Ninh</option>
-
-                                                        <option value="86TTT"> Vĩnh Long</option>
-
-                                                        <option value="24TTT"> Bắc Giang</option>
-
-                                                        <option value="04TTT"> Cao Bằng</option>
-
-                                                        <option value="15TTT"> Yên Bái</option>
-
-                                                        <option value="52TTT"> Bình Định</option>
-
-                                                        <option value="01TTT">Thành phố Hà Nội</option>
-
-                                                        <option value="06TTT"> Bắc Kạn</option>
-
+                                                        <option value="" disabled>Chọn tỉnh thành</option>
+                                                        <c:forEach var="item" items="${sessionScope.get('provinces')}">
+                                                            <option value="${item.name}">${item.name}</option>
+                                                        </c:forEach>
                                                     </select>
-
                                                 </div>
 
 
@@ -333,22 +216,27 @@
                                             <!-- Grid column -->
 
                                             <!-- Grid column -->
-                                            <div class="col-lg-2 col-md-3">
-                                                <!-- Material unchecked -->
-                                                <div class="form-check mt-4">
-                                                    <input type="checkbox" class="form-check-input" id="nam" checked>
-                                                    <label class="form-check-label" for="nam">Nam</label>
+                                            <div class="col-lg-6 input-group  justify-content-around" role="group">
+                                                <div class="col-6 col-md-3">
+                                                    <!-- Material unchecked -->
+                                                    <div class="custom-control custom-radio form-check mt-4">
+                                                        <input name="gender" type="radio" class="form-check-input"
+                                                               id="male" checked>
+                                                        <label class="form-check-label"
+                                                               for="male">Nam</label>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <!-- Grid column -->
-                                            <!-- Grid column -->
-                                            <div class="col-lg-2 col-md-3">
-                                                <!-- Material indeterminate -->
-                                                <div class="form-check mt-4">
-                                                    <input type="checkbox" class="form-check-input"
-                                                           id="nu"
-                                                    >
-                                                    <label class="form-check-label" for="nu">Nữ</label>
+                                                <!-- Grid column -->
+                                                <!-- Grid column -->
+                                                <div class="col-6 col-md-3">
+                                                    <!-- Material indeterminate -->
+                                                    <div class="custom-control custom-radio form-check mt-4">
+                                                        <input name="gender" type="radio" class="form-check-input"
+                                                               id="female"
+                                                        >
+                                                        <label class="form-check-label"
+                                                               for="female">Nữ</label>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -493,7 +381,7 @@
             'Tháng 11', 'Tháng 12'],
 
         weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-        showWeekdaysFull: true ,
+        showWeekdaysFull: true,
         today: 'Hôm nay',
         clear: 'Xóa',
         close: 'Đóng',
