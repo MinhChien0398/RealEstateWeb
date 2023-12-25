@@ -30,16 +30,23 @@ public class UserManagementController extends HttpServlet {
             List<User> users = userService.getAllUser();
             req.setAttribute("users", users);
             req.getRequestDispatcher("/views/admin/user/user_manage.jsp").forward(req, resp);
-        } else
-            if (action.equalsIgnoreCase("add")) {
+        } else if (action.equalsIgnoreCase("add")) {
             ProvinceService provinceService = ProvinceService.getInstance();
             List<Province> provinces = provinceService.getAllProvince();
             req.getSession().setAttribute("provinces", provinces);
             req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
-        } else
-            if (action.equalsIgnoreCase("edit")) {
+        } else if (action.equalsIgnoreCase("edit")) {
+            ProvinceService provinceService = ProvinceService.getInstance();
+            List<Province> provinces = provinceService.getAllProvince();
+            req.getSession().setAttribute("provinces", provinces);
             String email = req.getParameter("useremail");
             User user = userService.getUserByEmail(email);
+            req.setAttribute("emailValue", user.getEmail());
+            req.setAttribute("passwordValue", user.getPassword());
+            req.setAttribute("fullnameValue", user.getFullName());
+            req.setAttribute("birthdayValue", user.getBirthday());
+            req.setAttribute("phoneValue", user.getPhone());
+
             req.setAttribute("user", user);
             req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
         }

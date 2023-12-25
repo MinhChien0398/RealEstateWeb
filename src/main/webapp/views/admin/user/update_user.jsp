@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Clover
-  Date: 13/12/2023
-  Time: 2:03 PM
+  Date: 04/12/2023
+  Time: 2:41 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
@@ -15,10 +15,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
+    <!---->
+    <title>Thêm người dùng</title>
+    <style>
+        div.picker.datepicker .picker__box {
+            border: 1px solid;
+            box-shadow: none;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
@@ -41,7 +50,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="../dashboard.jsp" class="menu-btn">
@@ -53,12 +62,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -86,7 +96,7 @@
             </li>
             <li class="sidebar-item" id="contact">
                 <a href="../contact/contact_manage.jsp" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i><span>QL tương tác</span>
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">
@@ -98,27 +108,30 @@
     </div>
 
     <div class="main-container">
-
-
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text"
+                                                   href="/template//template/dashboard.html">Thống
+                        kê</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text" href="#">QL người dùng</a></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Cập nhật tài khoản</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa người dùng</a></li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
-                <form action="">
+            <main class="container shadow border p-3" style="height: fit-content!important;">
+                <form action="${pageContext.request.contextPath}/admin/user_management?action=add" method="post">
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Cập nhật tài khoản</h3>
+                            <h3 class="font-weight-bold main-color m-0">Chỉnh sửa người dùng</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                            <div class="btn-save flex-center">
+                                <button type="submit" class="btn btn-warning p-2 waves-effect waves-light"
+                                        id="save">LƯU
                                 </button>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     <div class="">
@@ -129,371 +142,263 @@
                                     <!-- Card content -->
                                     <div class="card-body card-body-cascade">
                                         <!-- Grid row -->
-
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
-
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="email" id="form8" class="form-control form-control-sm"
-                                                           value="buiminhchien@gmail.com">
-                                                    <label for="form8" class="active">Email</label>
+                                                    <c:if test="${emailErr != null}">
+                                                        <input type="email" id="form8" class="form-control form-control-sm" name="email" value="" placeholder="${emailErr}">
+                                                    </c:if>
+                                                    <c:if test="${emailErr == null}">
+                                                        <input type="email" id="form8" class="form-control form-control-sm" name="email" value="${emailValue}">
+                                                    </c:if>
+                                                    <label for="form8" class="">Email</label>
                                                 </div>
-
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="password" id="form9"
-                                                           class="form-control form-control-sm"
-                                                           value="@Bc12345">
-                                                    <label for="form9" class="active">Password</label>
+                                                    <c:if test="${passwordErr != null}">
+                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="" placeholder="${passwordErr}">
+                                                    </c:if>
+                                                    <c:if test="${passwordErr == null}">
+                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="${passwordValue}">
+                                                    </c:if>
+                                                    <label for="form9" class="">Password</label>
                                                 </div>
-
                                             </div>
                                         </div>
+
                                         <div class="row d-flex align-items-center">
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
+<%--                                                <div class="md-form form-sm mb-0">--%>
+<%--                                                    <c:if test="${fullnameErr!=null}">--%>
+<%--                                                        <input type="text" id="form12"--%>
+<%--                                                               class="form-control form-control-sm" name="fullname"--%>
+<%--                                                               value="" placeholder="${fullnameErr}">--%>
+<%--                                                    </c:if>--%>
+<%--                                                    <c:if test="${fullnameErr==null}">--%>
+<%--                                                        <input type="text" id="form12"--%>
+<%--                                                               class="form-control form-control-sm" name="fullname">--%>
+<%--                                                    </c:if>--%>
+<%--                                                    <label for="form12" class="">Họ và tên</label>--%>
+<%--                                                </div>--%>
 
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form12" class="form-control form-control-sm"
-                                                           value="Bùi Minh Chiến">
-                                                    <label for="form12" class="active">Họ và tên</label>
+                                                    <c:if test="${fullnameErr != null}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="" placeholder="${fullnameErr}">
+                                                    </c:if>
+                                                    <c:if test="${fulnameErr == null}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="${fullnameValue}">
+                                                    </c:if>
+                                                    <label for="form12" class="">Họ và tên</label>
                                                 </div>
-
                                             </div>
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
-
                                             <div class="col-lg-4">
                                                 <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
-                                                    <input  type="text" id="birthday" class="form-control form-control-sm">
+                                                    <c:if test="${birthdayErr != null}">
+                                                        <input placeholder="${birthdayErr}" type="text" id="birthday" value="" class="form-control form-control-sm" name="birthday">
+                                                    </c:if>
+                                                    <c:if test="${birthdayErr == null}">
+                                                        <input type="text" id="birthday" class="form-control form-control-sm" name="birthday" value="${birthdayValue}">
+                                                    </c:if>
                                                     <label for="birthday" class="">Ngày sinh</label>
-                                                    <i class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
+                                                    <i id="label-birthday" class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
                                                 </div>
-
-
                                             </div>
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
 
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form4" class="form-control form-control-sm"
-                                                           value="0908200400">
-                                                    <label for="form4" class="active">SĐT</label>
+                                                    <c:if test="${phoneErr != null}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="" placeholder="${phoneErr}">
+                                                    </c:if>
+                                                    <c:if test="${phoneErr == null}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="${phoneValue}">
+                                                    </c:if>
+                                                    <label for="form4" class="">SĐT</label>
                                                 </div>
-
                                             </div>
                                             <!-- Grid column -->
                                         </div>
                                         <div class="row">
-
                                             <!-- Grid column -->
                                             <div class="col-lg-6 col-md-10">
-
                                                 <div class="md-form form-sm mb-0">
-                                                    <select name="address" id="address" class=" custom-select ">
-                                                        <option value="" disabled >Chọn tỉnh thành</option>
-
-                                                        <option value="92TTT">Thành phố Cần Thơ</option>
-
-                                                        <option value="91TTT"> Kiên Giang</option>
-
-                                                        <option value="75TTT"> Đồng Nai</option>
-
-                                                        <option value="20TTT"> Lạng Sơn</option>
-
-                                                        <option value="89TTT"> An Giang</option>
-
-                                                        <option value="34TTT"> Thái Bình</option>
-
-                                                        <option value="62TTT"> Kon Tum</option>
-
-                                                        <option value="45TTT"> Quảng Trị</option>
-
-                                                        <option value="58TTT"> Ninh Thuận</option>
-
-                                                        <option value="74TTT"> Bình Dương</option>
-
-                                                        <option value="37TTT"> Ninh Bình</option>
-
-                                                        <option value="31TTT">Thành phố Hải Phòng</option>
-
-                                                        <option value="95TTT"> Bạc Liêu</option>
-
-                                                        <option value="08TTT"> Tuyên Quang</option>
-
-                                                        <option value="14TTT"> Sơn La</option>
-
-                                                        <option value="36TTT"> Nam Định</option>
-
-                                                        <option value="25TTT"> Phú Thọ</option>
-
-                                                        <option value="42TTT"> Hà Tĩnh</option>
-
-                                                        <option value="93TTT"> Hậu Giang</option>
-
-                                                        <option value="82TTT"> Tiền Giang</option>
-
-                                                        <option value="66TTT"> Đắk Lắk</option>
-
-                                                        <option value="80TTT"> Long An</option>
-
-                                                        <option value="17TTT"> Hòa Bình</option>
-
-                                                        <option value="87TTT"> Đồng Tháp</option>
-
-                                                        <option value="19TTT"> Thái Nguyên</option>
-
-                                                        <option value="83TTT"> Bến Tre</option>
-
-                                                        <option value="54TTT"> Phú Yên</option>
-
-                                                        <option value="26TTT"> Vĩnh Phúc</option>
-
-                                                        <option value="94TTT"> Sóc Trăng</option>
-
-                                                        <option value="60TTT"> Bình Thuận</option>
-
-                                                        <option value="51TTT"> Quảng Ngãi</option>
-
-                                                        <option value="64TTT"> Gia Lai</option>
-
-                                                        <option value="77TTT"> Bà Rịa - Vũng Tàu</option>
-
-                                                        <option value="79TTT" selected>Thành phố Hồ Chí Minh</option>
-
-                                                        <option value="02TTT"> Hà Giang</option>
-
-                                                        <option value="68TTT"> Lâm Đồng</option>
-
-                                                        <option value="35TTT"> Hà Nam</option>
-
-                                                        <option value="48TTT">Thành phố Đà Nẵng</option>
-
-                                                        <option value="70TTT"> Bình Phước</option>
-
-                                                        <option value="49TTT"> Quảng Nam</option>
-
-                                                        <option value="38TTT"> Thanh Hóa</option>
-
-                                                        <option value="84TTT"> Trà Vinh</option>
-
-                                                        <option value="11TTT"> Điện Biên</option>
-
-                                                        <option value="27TTT"> Bắc Ninh</option>
-
-                                                        <option value="30TTT"> Hải Dương</option>
-
-                                                        <option value="46TTT"> Thừa Thiên Huế</option>
-
-                                                        <option value="67TTT"> Đắk Nông</option>
-
-                                                        <option value="44TTT"> Quảng Bình</option>
-
-                                                        <option value="22TTT"> Quảng Ninh</option>
-
-                                                        <option value="33TTT"> Hưng Yên</option>
-
-                                                        <option value="96TTT"> Cà Mau</option>
-
-                                                        <option value="10TTT"> Lào Cai</option>
-
-                                                        <option value="56TTT"> Khánh Hòa</option>
-
-                                                        <option value="40TTT"> Nghệ An</option>
-
-                                                        <option value="12TTT"> Lai Châu</option>
-
-                                                        <option value="72TTT"> Tây Ninh</option>
-
-                                                        <option value="86TTT"> Vĩnh Long</option>
-
-                                                        <option value="24TTT"> Bắc Giang</option>
-
-                                                        <option value="04TTT"> Cao Bằng</option>
-
-                                                        <option value="15TTT"> Yên Bái</option>
-
-                                                        <option value="52TTT"> Bình Định</option>
-
-                                                        <option value="01TTT">Thành phố Hà Nội</option>
-
-                                                        <option value="06TTT"> Bắc Kạn</option>
+                                                    <select name="province" id="province" class=" custom-select ">
+                                                        <option value="" disabled>Chọn tỉnh thành</option>
+                                                        <c:forEach var="item" items="${sessionScope.get('provinces')}">
+                                                            <option value="${item.name}">${item.name}</option>
+                                                        </c:forEach>
 
                                                     </select>
 
                                                 </div>
-
-
                                             </div>
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
-                                            <div class="col-lg-2 col-md-3">
-                                                <!-- Material unchecked -->
-                                                <div class="form-check mt-4">
-                                                    <input type="checkbox" class="form-check-input" id="nam" checked>
-                                                    <label class="form-check-label" for="nam">Nam</label>
+
+                                            <div class="col-lg-6 input-group  justify-content-around" role="group">
+                                                <div class="col-6 col-md-3">
+                                                    <!-- Material unchecked -->
+                                                    <div class="form-check mt-4">
+                                                        <input name="isMale" type="checkbox" class="form-check-input"
+                                                               id="materialUnchecked">
+                                                        <label class="form-check-label"
+                                                               for="materialUnchecked">Nam</label>
+                                                    </div>
+                                                </div>
+                                                <!-- Grid column -->
+                                                <!-- Grid column -->
+                                                <div class="col-6 col-md-3">
+                                                    <!-- Material indeterminate -->
+                                                    <div class="form-check mt-4">
+                                                        <input name="isFemale" type="checkbox" class="form-check-input"
+                                                               id="materialIndeterminate2"
+                                                               checked>
+                                                        <label class="form-check-label"
+                                                               for="materialIndeterminate2">Nữ</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- Grid column -->
                                             <!-- Grid column -->
-                                            <div class="col-lg-2 col-md-3">
-                                                <!-- Material indeterminate -->
-                                                <div class="form-check mt-4">
-                                                    <input type="checkbox" class="form-check-input"
-                                                           id="nu"
-                                                    >
-                                                    <label class="form-check-label" for="nu">Nữ</label>
-                                                </div>
-                                            </div>
-
-                                            <!-- Grid column -->
-
-                                            <!-- Grid column -->
-
                                             <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
                                                 <div class="col-lg-6 col-md-6">
-
                                                     <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4">
+                                                        <select name="status"
+                                                                class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Trạng thái</option>
-                                                            <option value="1">Chưa kích hoạt</option>
-                                                            <option value="2" selected>Kích hoạt</option>
+                                                            <option value="1" selected>Chưa kích hoạt</option>
+                                                            <option value="2">Kích hoạt</option>
                                                             <option value="3">Khóa</option>
                                                         </select>
                                                     </div>
-
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4">
+                                                        <select name="role" class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
-                                                            <option value="1">Người dùng</option>
-                                                            <option value="2" selected>Admin</option>
+                                                            <option value="1" selected>Người dùng thường</option>
+                                                            <option value="2">Admin</option>
                                                         </select>
                                                     </div>
-
                                                 </div>
                                                 <!-- Grid column -->
                                             </div>
                                         </div>
                                         <!-- Grid row -->
-
                                         <!-- Grid row -->
-
                                     </div>
                                     <!-- Grid row -->
-
                                     <!-- Grid row -->
-
                                 </div>
                                 <!-- Card content -->
-
                             </div>
                             <!-- Card -->
 
                         </div>
-
                     </div>
                 </form>
             </main>
         </div>
     </div>
+    </form>
 </div>
 <!--/. Sidebar navigation -->
-
-
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-    $('#table-user').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
-        "columnDefs": [
-            {
-                "targets": 0,
-                "width": "5%",
-            },
-            {
-                "targets": 1,
-                "width": "15%",
-            },
-            {
-                "targets": 2,
-                "width": "20%",
-            },
-            {
-                "targets": 3,
-                "width": "10%",
-            },
-            {
-                "targets": 4,
-                "width": "10%",
-            },
-            {
-                "targets": 5,
-                "width": "5%",
-            },
-            {
-                "targets": 6,
-                "width": "5%",
-            },
-            {
-                "targets": 7,
-                "width": "10%",
-            },
-            {
-                "targets": 8,
-                "width": "10%",
-            },
-            {
-                "targets": 9,
-                "width": "1%",
-            },
-            {className: "text-center mt-auto mb-auto", targets: "_all"},
+    <%-- email--%>
+    let email = document.getElementById('form8');
+    if (${emailErr!=null}) {
+        email.classList.add('border-danger');
+        email.classList.add('text-danger');
+    }
+    email.addEventListener('click', function () {
+            email.classList.remove('border-danger');
+            email.classList.remove('text-danger');
+            email.attributes.removeNamedItem("placeholder");
+            email.attributes.removeNamedItem("value");
+            ${requestScope.remove("emailErr")}
+        }
+    )
+    <%-- password--%>
+    let password = document.getElementById('form9');
+    if (${passwordErr!=null}) {
+        password.classList.add('border-danger');
+        password.classList.add('text-danger');
+    }
+    password.addEventListener('click', function () {
+            password.classList.remove('border-danger');
+            password.classList.remove('text-danger');
+            password.attributes.removeNamedItem("placeholder");
+            password.attributes.removeNamedItem("value");
+            ${requestScope.remove("passwordErr")}
+        }
+    )
+    <%-- fullname--%>
+    let fullname = document.getElementById('form12');
+    if (${fullnameErr!=null}) {
+        fullname.classList.add('border-danger');
+        fullname.classList.add('text-danger');
+    }
+    fullname.addEventListener('click', function () {
+            fullname.classList.remove('border-danger');
+            fullname.classList.remove('text-danger');
+            fullname.attributes.removeNamedItem("placeholder");
+            fullname.attributes.removeNamedItem("value");
+            ${requestScope.remove("fullnameErr")}
+        }
+    )
+    <%-- phone--%>
+    let phone = document.getElementById('form4');
+    if (${phoneErr!=null}) {
+        phone.classList.add('border-danger');
+        phone.classList.add('text-danger');
+    }
 
-        ],
-        "language": {
-            "lengthMenu": "Hiển thị _MENU_ dòng",
-            "zeroRecords": "Không tìm thấy dữ liệu",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
-            "infoEmpty": "Không có dữ liệu",
-            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
-            "search": "Tìm kiếm",
-            "paginate": {
-                "previous": "Trước",
-                "next": "Tiếp theo"
-            }
-        },
-        "pagingType": "full_numbers",
-        "lengthMenu": [5, 10, 15, 20],
-        "order": [[0, "asc"]],
-    });
-
-</script>
-<script>
-    $(document).ready(function () {
-        $(".sidebar-btn").click(function () {
-            $(".wrapper").toggleClass("mycollapse");
-        });
-
-    });
+    phone.addEventListener('click', function () {
+            phone.classList.remove('border-danger');
+            phone.classList.remove('text-danger');
+            phone.attributes.removeNamedItem("placeholder");
+            phone.attributes.removeNamedItem("value");
+            ${requestScope.remove("phoneErr")}
+        }
+    )
+    <%-- birthday--%>
+    let birthday = document.getElementById('birthday');
+    let label = document.getElementById('label-birthday');
+    if (${birthdayErr!=null}) {
+        birthday.classList.add('border-danger');
+        birthday.classList.add('text-danger');
+    }
+    label.addEventListener('click', function () {
+            birthday.classList.remove('border-danger');
+            birthday.classList.remove('text-danger');
+            birthday.attributes.removeNamedItem("placeholder");
+            birthday.attributes.removeNamedItem("value");
+            ${requestScope.remove("birthdayErr")}
+        }
+    )
+    birthday.addEventListener('click', function () {
+            birthday.classList.remove('border-danger');
+            birthday.classList.remove('text-danger');
+            birthday.attributes.removeNamedItem("placeholder");
+            birthday.attributes.removeNamedItem("value");
+            ${requestScope.remove("birthdayErr")}
+        }
+    )
 </script>
 <script>
     $('.datepicker').datepicker({
         inline: true,
         monthsFull: ['Tháng 01', 'Tháng 02', 'Tháng 03', 'Tháng 04', 'Tháng 05', 'Tháng 06', 'Tháng 07', 'Tháng 08', 'Tháng 09', 'Tháng 10',
             'Tháng 11', 'Tháng 12'],
-
         weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-        showWeekdaysFull: true ,
+        showWeekdaysFull: true,
         today: 'Hôm nay',
         clear: 'Xóa',
         close: 'Đóng',
@@ -521,6 +426,14 @@
         })
     }
 
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+    });
 </script>
 </body>
 </html>
