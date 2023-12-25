@@ -42,27 +42,32 @@ public class UserService {
     }
 
 
-    public int additional(String email, String password, String name, Date birthday, String phone, String province, String isMale, String status, String role) {
+    public User additional(String email, String password, String name, Date birthday, String phone, String province, String isMale, String status, String role) throws Exception {
         if (isContainEmail(email)) {
-            return -1;
+            throw new Exception();
         }
         User user = new User();
         user.setEmail(email);
         user.setPassword(password);
         user.setFullName(name);
         user.setBirthday(new java.sql.Date(birthday.getTime()));
-        user.setAvatar(-1);
+        user.setAvatar(null);
         user.setPhone(phone);
         user.setProvince(province);
         user.setGender(isMale != null ? 1 : 0);
         user.setStatus(Integer.parseInt(status));
         user.setRole(Integer.parseInt(role));
         String idProvince = conn.withExtension(ProvinceDAO.class, handle -> handle.getSpecificId(user.getProvince()));
-        int line = conn.withExtension(UserDAO.class, handle -> handle.insertUser(user.getFullName(),
-                user.getEmail(), user.getPassword(),
-                user.getRole(), user.getPhone(), Integer.parseInt(idProvince),
-                user.getGender(), (java.sql.Date) user.getBirthday(), user.getStatus()));
-        return line;
+        int line=Integer.MIN_VALUE;
+            line = conn.withExtension(UserDAO.class, handle -> handle.insertUser(user.getFullName(),
+                    user.getEmail(), user.getPassword(),
+                    user.getRole(), user.getPhone(), Integer.parseInt(idProvince),
+                    user.getGender(), (java.sql.Date) user.getBirthday(), user.getStatus()));
+            if(line==1){
+                user.setPassword(null);
+                return user;
+            }
+            return user;
     }
 
     private int updateProvinceId(int id, String email) {
@@ -84,7 +89,7 @@ public class UserService {
         user.setPassword(password);
         user.setFullName(name);
         user.setBirthday(new java.sql.Date(birthday.getTime()));
-        user.setAvatar(-1);
+        user.setAvatar(null);
         user.setPhone(phone);
         user.setGender(isMale != null ? 1 : 0);
         user.setStatus(Integer.parseInt(status));
