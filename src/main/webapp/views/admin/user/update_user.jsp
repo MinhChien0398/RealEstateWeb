@@ -148,7 +148,8 @@
                                                     <input type="password" id="form9"
                                                            class="form-control form-control-sm"
                                                            value="${user.password}">
-                                                    <label for="form9" class="active">Password</label>
+                                                    <label
+                                                            for="form9" class="active">Password</label>
                                                 </div>
 
                                             </div>
@@ -158,7 +159,8 @@
                                             <div class="col-lg-4">
 
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form12" class="form-control form-control-sm" value="${user.fullName}">
+                                                    <input type="text" id="form12" class="form-control form-control-sm"
+                                                           value="${user.fullName}">
 
                                                     <label for="form12" class="active">Họ và tên</label>
                                                 </div>
@@ -173,8 +175,9 @@
                                                      class="md-form mb-0 input-with-post-icon datepicker"
                                                      style="outline: none" inline="true">
                                                     <input type="text" id="birthday"
-                                                           class="form-control form-control-sm" value="${user.birthday}">
-                                                    <label for="birthday" class="" >Ngày sinh</label>
+                                                           class="form-control form-control-sm"
+                                                    >
+                                                    <label for="birthday" class="">Ngày sinh</label>
                                                     <i class="fas fa-calendar input-prefix"
                                                        style="font-size: .875rem"></i>
                                                 </div>
@@ -204,7 +207,12 @@
                                                     <select name="address" id="address" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
                                                         <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.name}">${item.name}</option>
+                                                            <option value="${item.name}"
+                                                                    <c:if test="${item.name == user.province}">
+                                                                        selected
+                                                                    </c:if>
+
+                                                            >${item.name} </option>
                                                         </c:forEach>
                                                     </select>
                                                 </div>
@@ -214,12 +222,14 @@
                                             <!-- Grid column -->
 
                                             <!-- Grid column -->
+
                                             <div class="col-lg-6 input-group  justify-content-around" role="group">
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material unchecked -->
                                                     <div class="custom-control custom-radio form-check mt-4">
                                                         <input name="gender" type="radio" class="form-check-input"
-                                                               id="male" checked>
+                                                               id="male"
+                                                               <c:if test="${user.gender == '1'}">checked</c:if>>
                                                         <label class="form-check-label"
                                                                for="male">Nam</label>
                                                     </div>
@@ -231,7 +241,7 @@
                                                     <div class="custom-control custom-radio form-check mt-4">
                                                         <input name="gender" type="radio" class="form-check-input"
                                                                id="female"
-                                                        >
+                                                               <c:if test="${user.gender == '0'}">checked</c:if>>
                                                         <label class="form-check-label"
                                                                for="female">Nữ</label>
                                                     </div>
@@ -246,21 +256,36 @@
                                                 <div class="col-lg-6 col-md-6">
 
                                                     <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4">
-                                                            <option value="" disabled>Trạng thái</option>
-                                                            <option value="1">Chưa kích hoạt</option>
-                                                            <option value="2" selected>Kích hoạt</option>
-                                                            <option value="3">Khóa</option>
+                                                        <select class="browser-default custom-select mb-4" id="status">
+                                                            <option disabled>Trạng thái</option>
+                                                            <option value="0"
+                                                                    <c:if test="${user.status == '0'}">selected</c:if>>
+                                                                Chưa kích hoạt
+                                                            </option>
+                                                            <option value="1"
+                                                                    <c:if test="${user.status == '1'}">selected</c:if>>
+                                                                Kích hoạt
+                                                            </option>
+                                                            <option value="2"
+                                                                    <c:if test="${user.status == '2'}">selected</c:if>>
+                                                                Khóa
+                                                            </option>
                                                         </select>
                                                     </div>
 
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4">
-                                                            <option value="" disabled>Chọn phân quyền</option>
-                                                            <option value="1">Người dùng</option>
-                                                            <option value="2" selected>Admin</option>
+                                                        <select class="browser-default custom-select mb-4" id="role">
+                                                            <option disabled selected>Chọn phân quyền</option>
+                                                            <option value="1"
+                                                                    <c:if test="${user.role == '1'}">selected</c:if> >
+                                                                Người dùng
+                                                            </option>
+                                                            <option value="2"
+                                                                    <c:if test="${user.role == '2'}">selected</c:if>>
+                                                                Admin
+                                                            </option>
                                                         </select>
                                                     </div>
 
@@ -372,6 +397,7 @@
 
     });
 </script>
+
 <script>
     $('.datepicker').datepicker({
         inline: true,
