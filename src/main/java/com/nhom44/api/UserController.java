@@ -192,25 +192,25 @@ public class UserController extends HttpServlet {
             printWriter.close();
 //            req.getRequestDispatcher()
         }
-//        if (action.equalsIgnoreCase("edit")) {
-//            String oldEmail = req.getParameter("oldEmail");
-//            int check = userService.update(oldEmail, email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
-//            if (check == -1) {
-//                req.setAttribute("email", "Email đã tồn tại");
-//                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
-//                return;
-//            }
-//            if (check == 1) {
-//                req.setAttribute("success", "Cập nhật thành công");
-//                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
-//                return;
-//            }
-//            if (check == 0) {
-//                req.setAttribute("Sys", "Cập nhật thất bại");
-//                resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
-//                return;
-//            }
-//        }
+        if (action.equalsIgnoreCase("edit")) {
+            String oldEmail = req.getParameter("oldEmail");
+            int check = userService.update(oldEmail, email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
+            if (check == -1) {
+                req.setAttribute("email", "Email đã tồn tại");
+                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
+                return;
+            }
+            if (check == 1) {
+                req.setAttribute("success", "Cập nhật thành công");
+                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
+                return;
+            }
+            if (check == 0) {
+                req.setAttribute("Sys", "Cập nhật thất bại");
+                resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
+                return;
+            }
+        }
 
     }
 }
