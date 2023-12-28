@@ -9,9 +9,14 @@
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@include file="/layout/public/link.jsp" %>
-    <meta charset="UTF-8">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -49,12 +54,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -112,8 +118,9 @@
                         <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="add_project.jsp">
-                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dự án</button>
+                        <a href="/admin/project_additional_and_edit">
+                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dự án
+                            </button>
                         </a>
                     </div>
                 </div>
@@ -134,142 +141,18 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Phối cảnh An Thiên</td>
-                        <td>
-                            <img src="/template/img/project-img/screenshot-20230819-165117-8274.png" alt=""
-                                 style=""
-                                 class=" w-100">
-                        </td>
-                        <!--                            <td>public/img/project-img/screenshot-20230819-165117-8274.png</td>-->
-                        <td>400.000.000 VND</td>
-                        <td>TP.HCM</td>
-                        <td>Trọn gói</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>31/07/2023</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>NHÀ ANH HƯNG GÒ VẤP</td>
-                        <td>
-                            <img src="/template/img/project-img/nhaanhchung-4935.jpg" alt="" style=""
-                                 class=" w-100">
-                        </td>
-                        <td>300.000.000 VND</td>
-                        <td>TP.HCM</td>
-                        <td>Nhà Phố</td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>01/02/2023</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>BIỆT THỰ CHÂU ÂU</td>
-                        <td>
-                            <img
-                                    src="/template/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
-                                    alt="" style=""
-                                    class=" w-100">
-                        </td>
-                        <td>1.000.000.000 VND</td>
-                        <td>TP.HCM</td>
-                        <td>Biệt thự</td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>28/06/2021</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>PHONG CÁCH GẦN GŨI VỚI THIÊN NHIÊN</td>
-                        <td>
-                            <img src="/template/img/project-img/thiet-ke-biet-thu-20-1.jpg" alt="" style=""
-                                 class=" w-100">
-                        </td>
-                        <td>1.000.000.000 VND</td>
-                        <td>Hà nội</td>
-                        <td>Biệt thự</td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>30/06/2022</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>NHÀ PHỐ HIỆN ĐẠI</td>
-                        <td>
-                            <img src="/template/img/project-img/thiet-ke-nha-3-3.jpg" alt="" style=""
-                                 class=" w-100">
-                        </td>
-                        <td>1.000.000.000 VND</td>
-                        <td>Hà nội</td>
-                        <td>Nhà phố</td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>10/10/2022</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>NHÀ PHỐ HIỆN ĐẠI"</td>
-                        <td>
-                            <img src="/template/img/project-img/project3.jpg" alt="" style=""
-                                 class=" w-100">
-                        </td>
-                        <td>1.000.000.000 VND</td>
-                        <td>TP.HCM</td>
-                        <td>Nhà phố</td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>12/10/2022</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-
                     </tbody>
 
                 </table>
@@ -284,17 +167,99 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-
+    $.ajax({
+        url: "${pageContext.request.contextPath}/api/project",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (e) {
+            console.log(e)
+        }
+    })
 </script>
 <script>
+    let index = 1;
     $('#project-table').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
+        ajax: {
+            url: "${pageContext.request.contextPath}/api/project",
+            type: "get",
+            dataSrc: "",
+            dataType: "json",
+        },
+        columns: [
+            {
+                data: "id",
+                render: function () {
+                    return index++;
+                }
+            },
+            {
+                data: "title",
+                render: function (title) {
+                    return (title==null|| title==="")?"---":title;
+                }
+            },
+            {
+                data: "avatar",
+                render: function (avatar) {
+        return (avatar==null|| avatar==="")?"":"<img src=\""+avatar+"\" alt=\"\" style=\"\" class=\"w-100\">"
+            },
+            },
+            {
+                data: "price",
+                render: function (price) {
+                    return (price==null|| price===0)?0:price  + "VND";
+                }
+            },
+            {
+                data: "province",
+                render: function (province) {
+                    return (province==null|| province==="")?"---":province;
+                }
+            },
+            {
+                data: "category",
+                render: function (category) {
+                    return (category==null|| category==="")?"---":category;
+                }
+            },
+            {
+                data: "isAccepted", render: function (isAccepted) {
+                    if (isAccepted === 1 ) {
+                        return '<i class="fa-solid fa-square active-icon" value="0"></i>'
+                    } else {
+                        return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'
+                    }
+                }
+            },
+            {
+                data: "status",
+                render: function (status) {
+                    if (status === 1) {
+                        return '<i class="fa-solid fa-square active-icon" value="0"></i>'
+                    } else {
+                        return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'
+                    }
+                }
+            },
+            {
+                data: "updatedAt", render: function (updatedAt) {
+                    return updatedAt
+                }
+            },
+            {
+                data: "id",
+                render: function (id) {
+                    return '<a href="update_project_page.jsp?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                        '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
+                }
+            },
+        ],
         // responsive: true,
         // scrollX: true,
-        "columnDefs": [
+        columnDefs: [
             {
                 "targets": 0,
                 "width": "5%",
@@ -338,36 +303,36 @@
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],
-        "language": {
-            "lengthMenu": "Hiển thị _MENU_ dòng",
-            "zeroRecords": "Không tìm thấy dữ liệu",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
-            "infoEmpty": "Không có dữ liệu",
-            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
-            "search": "Tìm kiếm",
-            "paginate": {
-                "previous": "Trước",
-                "next": "Tiếp theo"
+        language: {
+            lengthMenu: "Hiển thị _MENU_ dòng",
+            zeroRecords: "Không tìm thấy dữ liệu",
+            info: "Hiển thị trang _PAGE_ trên _PAGES_",
+            infoEmpty: "Không có dữ liệu",
+            infoFiltered: "(lọc từ _MAX_ dòng dữ liệu)",
+            search: "Tìm kiếm",
+            paginate: {
+                previous: "Trước",
+                next: "Tiếp theo"
             }
         },
-        "pagingType": "full_numbers",
-        "lengthMenu": [5, 10, 15, 20],
-        "order": [[0, "asc"]],
+        pagingType: "full_numbers",
+        lengthMenu: [5, 10, 15, 20],
+        order: [[0, "asc"]],
     });
     // $('#project-table').columns.adjust().draw();
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }

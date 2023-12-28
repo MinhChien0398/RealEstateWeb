@@ -1,2 +1,4 @@
-package com.nhom44.bean;public class Contact {
+package com.nhom44.bean;
+
+public class Contact {
 }

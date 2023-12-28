@@ -24,6 +24,15 @@ public class ProjectService {
 
 
     public List<Project> getAllProject() {
-        return null;
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getAllProject());
+    }
+public int add(Project project){
+        return conn.withExtension(ProjectDAO.class,dao->dao.add(project));}
+    public static void main(String[] args) {
+        ProjectService projectService = ProjectService.getInstance();
+        List<Project> projects = projectService.getAllProject();
+        for (Project project : projects) {
+            System.out.println(project.getUpdatedAt());
+        }
     }
 }

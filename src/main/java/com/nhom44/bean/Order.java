@@ -1,2 +1,4 @@
-package com.nhom44.bean;public class Order {
+package com.nhom44.bean;
+
+public class Order {
 }

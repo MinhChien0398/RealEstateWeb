@@ -10,14 +10,375 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ContactDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/OrderDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Project.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x14m-1-1024x649.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x14m-1024x646.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x14m-2-1024x633.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x14m-3-1024x603.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x14m-4-1024x641.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x15m-23-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x15m-43-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x15m-59-768x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x15m-61-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/post/nha-2-mat-tien-7x15m-66-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0001/Đẳng cấp của thiết kế nhà 2 mặt tiền 7x14m 4 phòng ngủ full nội thất sang trọng" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-1-1024x659.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-12-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-14-768x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-17-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-20-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-23-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-26-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-29-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-3-1024x687.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-36-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-38-768x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-4-1024x669.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-43-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-44-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-5-1024x675.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-6-1024x663.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/post/nha-4-tang-6x9m-7-1024x670.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0002/Ứng Dụng Kiến Trúc Không Gian Mở Cho Ngôi Nhà 4 Tầng 6x9m Khu Vực Quận 9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/Mẫu thiết kế nhà phố 4x18m 6 tầng dạy học của CĐT anh Ân – Gò Vấp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/cau-thang-lau-2-nha-pho-3-tang-4x18m-1-768x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/lau-1-nha-pho-3-tang-4x18m-1024x729.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/lau-2-nha-pho-3-tang-4x18m-1024x724.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/lau-3-nha-pho-3-tang-4x18m-1024x724.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/lung-nha-pho-3-tang-4x18m-1024x730.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-bep-an-nha-pho-3-tang-4x18m-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-bep-an-nha-pho-3-tang-4x18m-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-doc-sach-nha-pho-3-tang-4x18m-2-768x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-hoc-1-nha-pho-3-tang-4x18m-1-768x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-hoc-1-nha-pho-3-tang-4x18m-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-hoc-2-nha-pho-3-tang-4x18m-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-ngu-1-nha-pho-3-tang-4x18m-1024x768.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-tho-nha-pho-3-tang-4x18m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/phong-tiep-khach-nha-pho-3-tang-4x18m-684x1024.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/san-mai-nha-pho-3-tang-4x18m-1024x730.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/san-thuong-nha-pho-3-tang-4x18m-1024x727.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0003/post/tret-nha-pho-3-tang-4x18m-1024x723.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/Thiết kế nhà 2 tầng 4.2x11m 2 phòng ngủ mái bằng bê tông cốt thép" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/nha-2-tang-4.2x11m-1-1024x493.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/nha-2-tang-4.2x11m-2-1024x497.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0004/post/nha-2-tang-4.2x11m-3-1024x490.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/Không gian sống tươi mới với ngôi nhà 3 tầng 6x11m sân ô tô 12m tại Bình Dương" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/nha-3-tang-6x23m-1-1024x539.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/nha-3-tang-6x23m-2-1024x544.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/nha-3-tang-6x23m-3-1024x548.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0005/post/nha-3-tang-6x23m-4-1024x553.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/Thiết kế nhà vườn 8x16m 3 phòng ngủ ghi điểm nhờ kiến trúc không gian mở gần gũi" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0006/post/nha-vuon-8x16m-3-phong-ngu-1024x558.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/Nhà phố mặt tiền 5m5 trệt lửng 2 lầu sân thượng đẹp ngỡ ngàng" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/nha-pho-mat-tien-5m5-tret-lung-2-lau-san-thuong-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/nha-pho-mat-tien-5m5-tret-lung-2-lau-san-thuong-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/nha-pho-mat-tien-5m5-tret-lung-2-lau-san-thuong-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/nha-pho-mat-tien-5m5-tret-lung-2-lau-san-thuong-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/nha-pho-mat-tien-5m5-tret-lung-2-lau-san-thuong-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0007/post/nha-pho-mat-tien-5m5-tret-lung-2-lau-san-thuong-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/Nhà 3 tầng 4x14m lệch tầng chừa sân sau thiết kế nội thất hiện đại!" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/nha-3-tang-4x14m-10-1024x571.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/nha-3-tang-4x14m-11-1024x578.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/nha-3-tang-4x14m-12-1010x560.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/nha-3-tang-4x14m-13-1024x550.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0008/post/nha-3-tang-4x14m-9-1024x545.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/Nhà phố 2 tầng 150m2 cùng 3 phòng ngủ hiện đại tại Quận Tân Phú" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0009/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/Nhà ống 2 mặt tiền 4 tầng sân thượng cùng nội thất sang trọng tại phú nhuận" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/thiet-ke-nha-ong-2-mat-tien-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/thiet-ke-nha-ong-2-mat-tien-2-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/thiet-ke-nha-ong-2-mat-tien-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0010/post/thiet-ke-nha-ong-2-mat-tien-768x516.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/Tư Vấn Thi Công Nhà Ống 2 Tầng 40m2 Sang Trọng Ở Quận 8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/thi-cong-nha-ong-2-tang-40m-7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/thi-cong-nha-ong-2-tang-40m-8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0011/post/thi-cong-nha-ong-2-tang-40m-9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/Cải tạo nhà phố 3 tầng thành khách sạn 2 sao sang trọng tại TPHCM" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0012/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/Nhà Phố 3 Tầng Sang Trọng Hướng Nam Diện Tích 5x14m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/nha-pho-3-tang-huong-nam-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/nha-pho-3-tang-huong-nam-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/nha-pho-3-tang-huong-nam-3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0013/post/nha-pho-3-tang-huong-nam-5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/Hoàn Thiện Nội Thất Chung Cư Nhỏ – Chốn Bình Yên Để Về" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0014/post/mat-bang-chung-cu-nho.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/Xây dựng vẻ đẹp với ngôi nhà 3 tầng 3 phòng ngủ 4x13m khu vực Quận Tân Phú" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/nha-3-tang-3-phong-ngu-1-1024x466.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/nha-3-tang-3-phong-ngu-2-1024x522.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/nha-3-tang-3-phong-ngu-3-1024x537.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/nha-3-tang-3-phong-ngu-4-1024x519.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/nha-3-tang-3-phong-ngu-5-1024x503.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0015/post/nha-3-tang-3-phong-ngu-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/Thiết kế mẫu nhà 4x22m trệt 2 lầu 1 tum full nội thất" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/lau-1-nha-pho-4x22m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/mat-bang-lau-2-nha-pho-4x22m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/mat-bang-mai-nha-4x22m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/mat-bang-san-thuong-nha-4x22m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0016/post/tang-tret-mau-nha-4x22m-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/Hoàn thiện trọn gói nhà phố 2 tầng 4x19m 5 phòng ngủ chi phí 1 tỷ 4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/hoan-thien-nha-pho-2-tang-4x19m-1-1024x348.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/hoan-thien-nha-pho-2-tang-4x19m-2-1024x381.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/hoan-thien-nha-pho-2-tang-4x19m-3-1024x380.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0017/post/hoan-thien-nha-pho-2-tang-4x19m-4-1024x381.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/Thiết kế nhà lệch tầng kết hợp kinh doanh rộng 3m dài 17m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/dinh-vi-cua-nha-lech-tang.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/gia-lap-ket-cau-nha-lech-tang-3-x-17m.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/mat-bang-thang-tret-nha-lech-tang-ket-hop-kinh-doanh-1024x460.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/nha-lech-tang-ket-hop-kinh-doanh-1-1024x308.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/nha-lech-tang-ket-hop-kinh-doanh-2-1024x302.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/nha-lech-tang-ket-hop-kinh-doanh-3-1024x312.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/nha-lech-tang-ket-hop-kinh-doanh-4-1024x297.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/nha-lech-tang-ket-hop-kinh-doanh-5-1024x293.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0018/post/nha-lech-tang-ket-hop-kinh-doanh-6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/Thiết kế nhà 5x25m không gian mở độc đáo tại Biên Hòa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/thiet-ke-nha-5-x-25m-khong-gian-mo-2-1024x380.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/thiet-ke-nha-5-x-25m-khong-gian-mo-3-1024x385.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/thiet-ke-nha-5-x-25m-khong-gian-mo-4-1024x396.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/thiet-ke-nha-5-x-25m-khong-gian-mo-4-2-1024x518.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/thiet-ke-nha-5-x-25m-khong-gian-mo-5-1024x550.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0019/post/thiet-ke-nha-5-x-25m-khong-gian-mo-6-1024x552.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/Thiết kế nhà ống 5 tầng có thang máy, garage xe diện tích 8 x 12m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0003.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0004.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0005.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0006.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/0008.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/mat-bang-lung-nha-ong-5-tang-co-thang-may.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/mat-bang-mai-nha-ong-5-tang-co-thang-may.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/mat-bang-san-thuong-5-tang-co-thang-may.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/mat-bang-tang-1-nha-ong-5-tang-co-thang-may.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/mat-bang-tang-2-nha-ong-5-tang-co-thang-may.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0020/post/mat-bang-tang-tret-nha-ong-5-tang-co-thang-may-768x604.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8/storage_v2/_src_/schema/doanweb.XMbjbA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/117be5c5-9065-44b3-a22f-bf25ce05a9d8/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/user/UserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/layout/public/script.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layout/public/script.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/addProjectsPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/addProjectsPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/css/fileInput.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/css/fileInput.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/Avatar/159470802-jurist-avatar-icon-flat-style.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/Avatar/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project post img/z3904713175130_7b02a6152c6770ef31910c99ae5d4314_1671524950-1032x800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project post img/z3904713186745_bd7de960470cba9ae042a368cdd52e8b_1671524950.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project post img/z3904713188335_87a8fb4e1b477eb507e2f7ff61ecd945_1671524950-1032x800.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/nhaanhchung-4935.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/project8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-163307-2002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-163757-5659.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-164028-776.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-164152-8278.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-164628-3831.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-165117-8274.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-165318-2198.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-170236-6709.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/screenshot-20230819-170506-387.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-biet-thu-13-1-e1672026065491.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-biet-thu-20-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-nha-1-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-nha-11-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-nha-3-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-nha-5-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-nha-6-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/thiet-ke-nha-7-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +388,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,36 +422,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 9.0.80.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "mchien-branch",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/User/Laravel Project/RealEstateWeb",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "database.query.execution",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.80.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mchien-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/User/Laravel Project/RealEstateWeb/src/main/webapp/template/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.nhom44.services.observer" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\template\img" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\java\com\nhom44\db" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\resources" />
     </key>
@@ -106,7 +468,27 @@
       <recent name="com.nhom44.controller.admin.project" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
+    <configuration name="ProjectService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProjectService" />
+      <module name="RealEstateWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhom44.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProvinceService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProvinceService" />
       <module name="RealEstateWeb" />
@@ -146,7 +528,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.72" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -236,13 +618,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ProjectService" />
       <item itemvalue="Application.ProvinceService" />
       <item itemvalue="Application.UserManagementController" />
       <item itemvalue="Application.UserService" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.72" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.80" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ProjectService" />
         <item itemvalue="Application.UserService" />
         <item itemvalue="Application.ProvinceService" />
         <item itemvalue="Application.UserManagementController" />
@@ -285,6 +669,11 @@
       <workItem from="1703304166577" duration="7818000" />
       <workItem from="1703439504976" duration="6533000" />
       <workItem from="1703481367340" duration="601000" />
+      <workItem from="1703668464373" duration="4352000" />
+      <workItem from="1703733469362" duration="4513000" />
+      <workItem from="1703738636637" duration="6602000" />
+      <workItem from="1703772684760" duration="9536000" />
+      <workItem from="1703784192492" duration="5524000" />
     </task>
     <servers />
   </component>
@@ -295,9 +684,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp</url>
+          <line>44</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

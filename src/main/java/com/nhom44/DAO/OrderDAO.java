@@ -1,2 +1,4 @@
-package com.nhom44.DAO;public class OrderDAO {
+package com.nhom44.DAO;
+
+public class OrderDAO {
 }
