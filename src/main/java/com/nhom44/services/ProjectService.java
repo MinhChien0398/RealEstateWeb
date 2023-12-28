@@ -1,7 +1,11 @@
 package com.nhom44.services;
 
+import com.nhom44.DAO.ProjectDAO;
+import com.nhom44.bean.Project;
 import com.nhom44.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
+
+import java.util.List;
 
 public class ProjectService {
     private static ProjectService instance;
@@ -12,6 +16,8 @@ public class ProjectService {
     public static ProjectService getInstance() {
         return instance != null ? instance : (instance = new ProjectService());
     }
-
+    public List<Project> getAllProject() {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getAllProject());
+    }
 
 }

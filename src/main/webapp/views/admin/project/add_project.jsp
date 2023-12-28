@@ -386,7 +386,6 @@
                                                                 <option value="2">Ẩn</option>
                                                             </select>
                                                         </div>
-
                                                         <div class="mb-4">
                                                             <label>Chọn hình đại diện</label>
                                                             <div class="input-group">
