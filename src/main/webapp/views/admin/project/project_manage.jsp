@@ -115,7 +115,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="add_project.jsp">
+                        <a href="${pageContext.request.contextPath}/admin/project_management?action=add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dự án
                             </button>
                         </a>
@@ -138,45 +138,17 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <c:forEach var="pj" items="${projects}" step="1" varStatus="c">
-                        <td>${c.count}</td>
-                        <td>${pj.title}</td>
-                        <td><img src="${pj.avatar}" alt="" style="width: 100px"></td>
-                        <td>${pj.price}</td>
-                        <td>${pj.provinceId}</td>
-                        <td>${pj.categoryId}</td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
-                        <td>
-<%--                            <i class="fa-solid fa-square active-icon" value="0"></i>--%>
-                            <c:choose>
-                                <c:when test="${pj.isAccepted == 0}">
-                                    <i class="fa-solid fa-square active-icon" value="0"></i>
-                                </c:when>
-                                <c:otherwise>
-                                    <i class="fa-solid fa-square inactive-icon" value="1"></i>
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-<%--                            <i class="fa-solid fa-square active-icon" value="0"></i>--%>
-                            <c:choose>
-                                <c:when test="${pj.status == 0}">
-                                    <i class="fa-solid fa-square active-icon" value="0"></i>
-                                </c:when>
-                                <c:otherwise>
-                                    <i class="fa-solid fa-square inactive-icon" value="1"></i>
-                                </c:otherwise>
-                            </c:choose>
-                        </td>
-                        <td>
-<%--                            31/07/2023--%>
-                            <c:out value="${pj.updatedAt}"/>
-                        </td>
-                        <td>
-                            <a href="${pageContext.request.contextPath}/admin/project_management?action=edit&title=${pj.title}"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                    </c:forEach>
                     </tbody>
 
                 </table>
@@ -191,17 +163,93 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-
+    $(document).ready(function () {
+        $.ajax({
+            url: "${pageContext.request.contextPath}/api/project",
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+            },
+        })
+    });
 </script>
 <script>
+    let index = 1;
     $('#project-table').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
-        // responsive: true,
-        // scrollX: true,
-        "columnDefs": [
+        ajax: {
+            url: "${pageContext.request.contextPath}/api/project",
+            type: "get",
+            dataSrc: ''
+        },
+        responsive: true,
+        scrollX: true,
+        columns: [
+
+            {
+                render: function () {
+                    return index++
+                },
+            },
+            {
+                data: 'title',
+                render: function (title) {
+                    if (title == null || title === "") return "---"; else return title;
+                }
+            },
+            {
+                data: 'avatar',
+                render: function (avatar) {
+                    if (avatar == null || avatar === "") return "---"; else return avatar;
+                }
+            },
+            {
+                data: 'price',
+                render: function (price) {
+                    if (price == null || price === "") return "---"; else return price;
+                }
+            },
+
+            {
+                data: 'provinceName',
+                render: function (provinceName) {
+                    if (provinceName == null || provinceName === "") return "---"; else return provinceName;
+                }
+            },
+            {
+                data: 'categoryName', render: function (categoryName) {
+                    if (categoryName == null || categoryName === "") return "---"; else return categoryName;
+                }
+            },
+            {
+                data: 'isAccepted',
+                render: function (isAccepted) {
+                    return isAccepted === 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                }
+            },
+            {
+                data: 'status',
+                render: function (status) {
+                    return status === 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                }
+            },
+            {
+                data: 'managerProject',
+                render: function (managerProject) {
+                    if (managerProject == null || managerProject === "") return "---";
+                    else {
+                        return new Date(managerProject).toLocaleString();
+                    }
+                }
+            },
+            {
+                data: 'title', render: function (title) {
+                    return "<a href='${pageContext.request.contextPath}/admin/project_management?action=edit&projecttitle=" + title + "'><i class='icon-action fa-solid fa-edit'></i></a>\n" +
+                        "<a href='${pageContext.request.contextPath}/admin/project_management?action=delete&projecttitle=" + title + "'><i class='icon-action fa-solid fa-trash-can'></i></a>"
+                }
+            },
+        ],
+        columnDefs: [
             {
                 "targets": 0,
                 "width": "5%",

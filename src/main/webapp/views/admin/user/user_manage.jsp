@@ -146,42 +146,19 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <c:forEach var="u" items="${users}" step="1" varStatus="c">
-                            <td>${c.count}</td>
-                            <td>${u.fullName}</td>
-                            <td>${u.email}</td>
-                            <td>${u.password}</td>
-                            <td>${u.phone}</td>
-                            <td>${u.province}</td>
-                            <td>
-                                <i class="fa-solid fa-person" style="color: #005eff;"></i>
-                            </td>
-                            <td>
-                                <c:choose>
-                                    <c:when test="${u.role==0}">
-                                        <i class="fa-solid fa-square active-icon"></i>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <i class="fa-solid fa-square inactive-icon"></i>
-                                    </c:otherwise>
-                                </c:choose></td>
-
-                            <td>
-                                <c:choose>
-                                    <c:when test="${u.role==1}">
-                                        Admin
-                                    </c:when>
-                                    <c:otherwise>
-                                        Người dùng
-                                    </c:otherwise>
-                                </c:choose></td>
-                            <td>
-                                <a href="${pageContext.request.contextPath}/admin/user_management?action=edit&useremail=${u.email}"><i
-                                        class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
 
                         </tr>
-                        </c:forEach>
+                        <%--                        </c:forEach>--%>
                         </tbody>
                     </table>
                 </div>
@@ -195,25 +172,93 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-
+    $(document).ready(function () {
+        $.ajax({
+            url: "${pageContext.request.contextPath}/api/user",
+            type: "post",
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+            },
+        })
+    });
 </script>
 <script>
+    let index = 1;
     $('#table-user').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
-        // scrollX: true,
+        ajax: {
+            url: "${pageContext.request.contextPath}/api/user",
+            type: "get",
+            dataSrc: ''
+        },
+        columns: [
 
-        "columnDefs": [
+            {
+                render:function (){
+                    return index++
+                },
+            },
+            {
+                data: 'fullName',
+                render: function (fullName) {
+                    if (fullName == null || fullName === "") return "---"; else return fullName;
+                }
+            },
+            {
+                data: 'email',
+                render: function (email) {
+                    if (email == null || email === "") return "---"; else return email;
+                }
+            },
+            {
+                data: 'password',
+                render: function (password) {
+                    if (password == null || password === "") return "---"; else return password;
+                }
+            },
+
+            {
+                data: 'phone',
+                render: function (phone) {
+                    if (phone == null || phone === "") return "---"; else return phone;
+                }
+            },
+            {
+                data: 'province', render: function (province) {
+                    if (province == null || province === "") return "---"; else return province;
+                }
+            },
+            {
+                data: 'gender',
+                render: function (gender) {
+                    return gender == 1 ? "<i class='fa-solid fa-person' style='color: #005eff;'></i>" : "<i class='fa-solid fa-person-dress' style='color: #ff00d0;'></i>"
+                }
+            },
+            {
+                data: 'status',
+                render: function (status) {
+                    return status == 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                }
+            },
+            {
+                data: 'role',
+                render: function (role) {
+                    return role == 2 ? "Admin" : "Người dùng"
+                }
+            },
+            {
+                data: 'email', render: function (email) {
+                    return "<a href='${pageContext.request.contextPath}/admin/user_management?action=edit&useremail=" + email + "'><i class='icon-action fa-solid fa-edit'></i></a>\n" +
+                        "<a href='${pageContext.request.contextPath}/admin/user_management?action=delete&useremail=" + email + "'><i class='icon-action fa-solid fa-trash-can'></i></a>"
+                }
+            },
+        ],
+        columnDefs: [
             {
                 "targets": 0,
                 "width": "5%",
+
             },
-            // {
-            //     "targets": 0,
-            //     "width": "20px",
-            // },
             {
                 "targets": 1,
                 "width": "15%",

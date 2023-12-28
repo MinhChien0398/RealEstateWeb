@@ -170,18 +170,6 @@
                                         <div class="row d-flex align-items-center">
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                    <c:if test="${fullnameErr!=null}">--%>
-<%--                                                        <input type="text" id="form12"--%>
-<%--                                                               class="form-control form-control-sm" name="fullname"--%>
-<%--                                                               value="" placeholder="${fullnameErr}">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <c:if test="${fullnameErr==null}">--%>
-<%--                                                        <input type="text" id="form12"--%>
-<%--                                                               class="form-control form-control-sm" name="fullname">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <label for="form12" class="">Họ và tên</label>--%>
-<%--                                                </div>--%>
 
                                                 <div class="md-form form-sm mb-0">
                                                     <c:if test="${fullnameErr != null}">
