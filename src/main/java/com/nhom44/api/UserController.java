@@ -46,7 +46,7 @@ public class UserController extends HttpServlet {
         List<ResponseModel> errMess = new ArrayList<>();
         String action = req.getParameter("action");
         boolean isErr = false;
-        String email = req.getParameter("email");
+        String email = req.getParameter("email")==null?"":req.getParameter("email");
         String regex = "^[\\w!#$%&amp;'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&amp;'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
@@ -192,25 +192,37 @@ public class UserController extends HttpServlet {
             printWriter.close();
 //            req.getRequestDispatcher()
         }
-//        if (action.equalsIgnoreCase("edit")) {
-//            String oldEmail = req.getParameter("oldEmail");
-//            int check = userService.update(oldEmail, email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
-//            if (check == -1) {
-//                req.setAttribute("email", "Email đã tồn tại");
-//                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
-//                return;
-//            }
-//            if (check == 1) {
-//                req.setAttribute("success", "Cập nhật thành công");
-//                req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
-//                return;
-//            }
-//            if (check == 0) {
-//                req.setAttribute("Sys", "Cập nhật thất bại");
-//                resp.sendRedirect(req.getContextPath() + "/admin/user_management?action=manager");
-//                return;
-//            }
-//        }
+        if (action.equalsIgnoreCase("edit")) {
+            ResponseModel responseModel = null;
+            String oldEmail = req.getParameter("oldEmail");
+            int check = userService.update(oldEmail, email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
+            if (check == -1) {
+                resp.setStatus(400);
+                responseModel = new ResponseModel();
+                responseModel.setName("email");
+                responseModel.setMessage("Email đã tồn tại");
+                errMess.add(responseModel);
+                printWriter.print(gson.toJson(errMess));
+                return;
+            }
+            if (check == 1) {
+                responseModel = new ResponseModel<>();
+                responseModel.setName("success");
+                responseModel.setMessage("Thêm thành công");
+                resp.setStatus(200);
+                printWriter.print(gson.toJson(errMess));
+                return;
+            }
+            if (check == 0) {
+                resp.setStatus(200);
+                responseModel.setName("sys");
+                responseModel.setMessage("Thêm thất bại");
+                printWriter.print(gson.toJson(responseModel));
+                return;
+            }
+            printWriter.flush();
+            printWriter.close();
+        }
 
     }
 }

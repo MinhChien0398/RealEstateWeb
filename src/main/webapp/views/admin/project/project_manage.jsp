@@ -10,6 +10,11 @@
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
     <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
@@ -96,10 +101,10 @@
         </div>
     </div>
 
-    <div class="main-container">
-        <div class="container p-0">
+    <div class="main-container" style="height: fit-content">
+        <div class="container">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 bg-white">
+                <ol class="breadcrumb m-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
@@ -163,16 +168,17 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-    $(document).ready(function () {
-        $.ajax({
-            url: "${pageContext.request.contextPath}/api/project",
-            type: "post",
-            dataType: "json",
-            success: function (data) {
-                console.log(data)
-            },
-        })
-    });
+    $.ajax({
+        url: "${pageContext.request.contextPath}/api/project",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (e) {
+            console.log(e)
+        }
+    })
 </script>
 <script>
     let index = 1;
@@ -180,75 +186,80 @@
         ajax: {
             url: "${pageContext.request.contextPath}/api/project",
             type: "get",
-            dataSrc: ''
+            dataSrc: "",
+            dataType: "json",
         },
-        responsive: true,
-        scrollX: true,
         columns: [
-
             {
+                data: "id",
                 render: function () {
-                    return index++
-                },
+                    return index++;
+                }
             },
             {
-                data: 'title',
+                data: "title",
                 render: function (title) {
-                    if (title == null || title === "") return "---"; else return title;
+                    return (title==null|| title==="")?"---":title;
                 }
             },
             {
-                data: 'avatar',
+                data: "avatar",
                 render: function (avatar) {
-                    if (avatar == null || avatar === "") return "---"; else return avatar;
-                }
+        return (avatar==null|| avatar==="")?"":"<img src=\""+avatar+"\" alt=\"\" style=\"\" class=\"w-100\">"
+            },
             },
             {
-                data: 'price',
+                data: "price",
                 render: function (price) {
-                    if (price == null || price === "") return "---"; else return price;
-                }
-            },
-
-            {
-                data: 'provinceName',
-                render: function (provinceName) {
-                    if (provinceName == null || provinceName === "") return "---"; else return provinceName;
+                    return (price==null|| price===0)?0:price  + "VND";
                 }
             },
             {
-                data: 'categoryName', render: function (categoryName) {
-                    if (categoryName == null || categoryName === "") return "---"; else return categoryName;
+                data: "province",
+                render: function (province) {
+                    return (province==null|| province==="")?"---":province;
                 }
             },
             {
-                data: 'isAccepted',
-                render: function (isAccepted) {
-                    return isAccepted === 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                data: "category",
+                render: function (category) {
+                    return (category==null|| category==="")?"---":category;
                 }
             },
             {
-                data: 'status',
-                render: function (status) {
-                    return status === 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
-                }
-            },
-            {
-                data: 'managerProject',
-                render: function (managerProject) {
-                    if (managerProject == null || managerProject === "") return "---";
-                    else {
-                        return new Date(managerProject).toLocaleString();
+                data: "isAccepted", render: function (isAccepted) {
+                    if (isAccepted === 1 ) {
+                        return '<i class="fa-solid fa-square active-icon" value="0"></i>'
+                    } else {
+                        return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'
                     }
                 }
             },
             {
-                data: 'title', render: function (title) {
-                    return "<a href='${pageContext.request.contextPath}/admin/project_management?action=edit&projecttitle=" + title + "'><i class='icon-action fa-solid fa-edit'></i></a>\n" +
-                        "<a href='${pageContext.request.contextPath}/admin/project_management?action=delete&projecttitle=" + title + "'><i class='icon-action fa-solid fa-trash-can'></i></a>"
+                data: "status",
+                render: function (status) {
+                    if (status === 1) {
+                        return '<i class="fa-solid fa-square active-icon" value="0"></i>'
+                    } else {
+                        return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'
+                    }
+                }
+            },
+            {
+                data: "updatedAt", render: function (updatedAt) {
+                    return updatedAt
+                }
+            },
+            {
+                data: "id",
+                render: function (id) {
+                    return '<a href="update_project_page.jsp?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                        '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
                 }
             },
         ],
+        // responsive: true,
+        // scrollX: true,
         columnDefs: [
             {
                 "targets": 0,
@@ -293,21 +304,21 @@
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],
-        "language": {
-            "lengthMenu": "Hiển thị _MENU_ dòng",
-            "zeroRecords": "Không tìm thấy dữ liệu",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
-            "infoEmpty": "Không có dữ liệu",
-            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
-            "search": "Tìm kiếm",
-            "paginate": {
-                "previous": "Trước",
-                "next": "Tiếp theo"
+        language: {
+            lengthMenu: "Hiển thị _MENU_ dòng",
+            zeroRecords: "Không tìm thấy dữ liệu",
+            info: "Hiển thị trang _PAGE_ trên _PAGES_",
+            infoEmpty: "Không có dữ liệu",
+            infoFiltered: "(lọc từ _MAX_ dòng dữ liệu)",
+            search: "Tìm kiếm",
+            paginate: {
+                previous: "Trước",
+                next: "Tiếp theo"
             }
         },
-        "pagingType": "full_numbers",
-        "lengthMenu": [5, 10, 15, 20],
-        "order": [[0, "asc"]],
+        pagingType: "full_numbers",
+        lengthMenu: [5, 10, 15, 20],
+        order: [[0, "asc"]],
     });
     // $('#project-table').columns.adjust().draw();
 </script>

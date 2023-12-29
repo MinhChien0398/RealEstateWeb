@@ -7,24 +7,49 @@ public class Service {
     private int id;
     private String name;
     private String description;
-    private int postId;
-    private int status;
     private String avatar;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
-
-    public Service() {
+    private int status;
+    private int postId;
+    private String createdAt;
+    private String updatedAt;
+public Service() {
     }
-
-    public Service(int id, String name, String description, int postId, int status, String avatar, Timestamp createdAt, Timestamp updatedAt) {
+    public Service(int id, String name, String description, String avatar, int status, int postId, String createdAt, String updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.postId = postId;
-        this.status = status;
         this.avatar = avatar;
+        this.status = status;
+        this.postId = postId;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Service{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", status=" + status +
+                ", postId=" + postId +
+                ", createdAt='" + createdAt + '\'' +
+                ", updatedAt='" + updatedAt + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Service service = (Service) o;
+        return id == service.id && status == service.status && postId == service.postId && Objects.equals(name, service.name) && Objects.equals(description, service.description) && Objects.equals(avatar, service.avatar) && Objects.equals(createdAt, service.createdAt) && Objects.equals(updatedAt, service.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, description, avatar, status, postId, createdAt, updatedAt);
     }
 
     public int getId() {
@@ -51,12 +76,12 @@ public class Service {
         this.description = description;
     }
 
-    public int getPostId() {
-        return postId;
+    public String getAvatar() {
+        return avatar;
     }
 
-    public void setPostId(int postId) {
-        this.postId = postId;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public int getStatus() {
@@ -67,40 +92,27 @@ public class Service {
         this.status = status;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public int getPostId() {
+        return postId;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setPostId(int postId) {
+        this.postId = postId;
     }
 
-    public Timestamp getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Timestamp createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Timestamp getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Timestamp updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Service service = (Service) o;
-        return id == service.id && postId == service.postId && status == service.status && Objects.equals(name, service.name) && Objects.equals(description, service.description) && Objects.equals(avatar, service.avatar) && Objects.equals(createdAt, service.createdAt) && Objects.equals(updatedAt, service.updatedAt);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, description, postId, status, avatar, createdAt, updatedAt);
     }
 }

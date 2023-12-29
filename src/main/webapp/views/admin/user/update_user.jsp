@@ -145,13 +145,10 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="md-form form-sm mb-0">
-                                                    <c:if test="${emailErr != null}">
-                                                        <input type="email" id="form8" class="form-control form-control-sm" name="email" value="" placeholder="${emailErr}">
-                                                    </c:if>
-                                                    <c:if test="${emailErr == null}">
-                                                        <input type="email" id="form8" class="form-control form-control-sm" name="email" value="${emailValue}">
-                                                    </c:if>
-                                                    <label for="form8" class="">Email</label>
+                                                        <input type="email" id="form8"
+                                                               class="form-control form-control-sm" name="email"
+                                                               value="${user.email}">
+                                                        <label for="form8" class="">Email</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
@@ -298,6 +295,44 @@
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<script>
+    $('#save').click(function () {
+        $.ajax({
+            url: "http://localhost:8080/api/user?action=edit",
+            type: "POST",
+            dataType: "json",
+            data: {
+                email: $('#form8').val(),
+                password: $('#form9').val(),
+                fullname: $('#form12').val(),
+                birthday: $('#birthday').val(),
+                phone: $('#form4').val(),
+                province: $('#province').val(),
+                isMale: $('#materialUnchecked').val(),
+                isFemale: $('#materialIndeterminate2').val(),
+                status: $('#status').val(),
+                role: $('#role').val(),
+            },
+            success: function (data) {
+                console.log(data);
+                if (data.name=="sys") {
+                    alert(data.message);
+                }else {
+                    window.location.href = "/admin/user_management?action=manage";
+                }
+            },
+            error: function (data) {   console.log(err)
+                var err = JSON.parse(data.responseText);
+
+                for (const e of err) {
+                    fetchErr(e.name, e.message);
+                }
+            }
+        })
+    })
+    });
+</script>
+</script>
 <script>
     <%-- email--%>
     let email = document.getElementById('form8');

@@ -17,6 +17,7 @@ public class User {
     private int status;
     private Timestamp createdAt;
     private Timestamp updatedAt;
+    private int provinceId;
     private String province;
     private int role;
 
@@ -141,6 +142,30 @@ public class User {
 
 
     public void setRole(int role) {
+        this.role = role;
+    }
+
+    public int getProvinceId() {
+        return provinceId;
+    }
+
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public User(int id, String avatar, String fullName, String email, String password, String phone, Date birthday, int gender, int status, Timestamp createdAt, Timestamp updatedAt, int provinceId, int role) {
+        this.id = id;
+        this.avatar = avatar;
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.provinceId = provinceId;
         this.role = role;
     }
 
