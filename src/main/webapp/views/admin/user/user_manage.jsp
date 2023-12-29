@@ -193,7 +193,7 @@
 
             {
                 render:function (){
-                  return index++
+                    return index++
                 },
             },
             {

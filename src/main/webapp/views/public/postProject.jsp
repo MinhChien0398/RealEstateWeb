@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-    <%@include file="/layout/common.jsp"%>
+    <%@include file="/layout/common.jsp" %>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <%@ include file="/layout/public/link.jsp"%>
+    <%@ include file="/layout/public/link.jsp" %>
     <link href=" <c:url value="/template/css/projectPost.css"/>" rel="stylesheet">
     <title>Bài viết dịch vụ</title>
 </head>
 <body>
-<%@include file="/layout/public/header.jsp"%>
+<%@include file="/layout/public/header.jsp" %>
 <section id="PostContent">
     <!--start breadcrumb-->
 
@@ -39,9 +39,12 @@
         <div class="row">
 
             <div class="col-sm-12 col-md-8 col-lg-8 post-content position-relative">
-                <i class="fa-regular fa-bookmark position-absolute "
-                   style="z-index: 1000; left: 5%; top:22px; font-size: 25px"></i>
+                <div><i class="fa-regular fa-bookmark position-absolute "
+                        style="z-index: 1000; left:2%; top:22px; font-size: 25px"></i>
+                </div>
+
                 <h1 class="text-center mb-3 mt-3 post-title text-uppercase">nhà phố hiện đại tại hải dương</h1>
+
                 <div class="row">
 
                     <p class="font-italic col-lg-5 col-md-5 col-sm-12 m-0"><strong>Ngày đăng: 25/06/2018; Mã dự án:
@@ -286,7 +289,7 @@
                                 </div>
                                 <div class="row d-flex justify-content-between m-0 p-0 ">
                                     <!--                                <div class=" col-lg-5 col-md-5 col-sm-12 mb-3  p-0">-->
-                                    <select name="category" id="category"  class="form-control md-form
+                                    <select name="category" id="category" class="form-control md-form
                                      col-lg-6 col-md-6 col-sm-12 m-0 mt-2 p-0  p-1">
                                         <option value="" disabled="" selected="">Loại dự án</option>
 
@@ -313,7 +316,8 @@
                                             Chiều dài(<span class="position-relative m-1">m<span
                                                 class="position-absolute top right "
                                                 style="font-size: 10px;">2</span></span> )</label>
-                                        <input name="height" type="number" id="area-length" class="form-control ml-md-2 p-1">
+                                        <input name="height" type="number" id="area-length"
+                                               class="form-control ml-md-2 p-1">
                                     </div>
                                 </div>
                                 <div class="">
@@ -327,13 +331,13 @@
                                 </div>
 
                                 <!-- Message -->
-                                <form method="dialog"  enctype="multipart/form-data" class="form-img">
+                                <form method="dialog" enctype="multipart/form-data" class="form-img">
                                     <div class="input-group mt-2">
                                         <div class="file-field d-flex align-items-center">
                                             <p class="m-0">khu vực thi công: </p>
                                             <div class="btn btn-primary btn-sm float-left">
                                                 <span>chọn ảnh</span>
-                                                <input name="image"  type="file" id="file_input" multiple>
+                                                <input name="image" type="file" id="file_input" multiple>
                                             </div>
                                         </div>
                                     </div>
@@ -419,18 +423,18 @@
         </div>
     </div>
 </section>
-<%@include file="/layout/public/footer.jsp"%>
-<%@include file="/layout/public/script.jsp"%>
+<%@include file="/layout/public/footer.jsp" %>
+<%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 <script>
     let allFiles = [];
     let form = document.getElementsByClassName("form-img");
     let input = document.getElementById("file_input");
     let container = document.getElementsByClassName("img-container");
-    if(input.files.length!= 0){
+    if (input.files.length != 0) {
         container[0].parentElement.classList.add('d-block')
         container[0].parentElement.classList.remove('d-none')
-    }else{
+    } else {
         container[0].parentElement.classList.add('d-none')
         container[0].parentElement.classList.remove('d-block')
     }
@@ -442,10 +446,10 @@
         showImage();
     })
     const showImage = () => {
-        if(input.files.length!= 0){
+        if (input.files.length != 0) {
             container[0].parentElement.classList.add('d-block')
             container[0].parentElement.classList.remove('d-none')
-        }else{
+        } else {
             container[0].parentElement.classList.add('d-none')
             container[0].parentElement.classList.remove('d-block')
         }
@@ -461,10 +465,10 @@
         let dt = new DataTransfer();
         for (let i = 0; i < input.files.length; i++) {
             if (index !== i)
-                dt.items.add( input.files[i]) // here you exclude the file. thus removing it.
+                dt.items.add(input.files[i]) // here you exclude the file. thus removing it.
         }
         input.files = dt.files
-        allFiles=Array.from(input.files)
+        allFiles = Array.from(input.files)
         showImage()
     }
 </script>

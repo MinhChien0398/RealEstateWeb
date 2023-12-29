@@ -1,7 +1,6 @@
 package com.nhom44.DAO;
 
 import com.nhom44.bean.Province;
-import com.nhom44.bean.User;
 import org.jdbi.v3.sqlobject.config.RegisterFieldMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;

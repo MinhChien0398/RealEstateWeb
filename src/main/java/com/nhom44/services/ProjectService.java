@@ -20,7 +20,9 @@ public class ProjectService {
     public static ProjectService getInstance() {
         return instance != null ? instance : (instance = new ProjectService());
     }
-
+    public List<Project> getAllProject() {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getAllProject());
+    }
 
 
     public List<Project> getAllProject() {

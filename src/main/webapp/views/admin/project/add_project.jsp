@@ -265,7 +265,6 @@
                                                                 <option value="2">Ẩn</option>
                                                             </select>
                                                         </div>
-
                                                         <div class="mb-4">
                                                             <div class="input-group mt-2 d-flex align-items-center">
                                                                 <label>Chọn hình đại diện</label>

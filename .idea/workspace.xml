@@ -409,7 +409,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="localRepository" value="D:\Maven\repository" />
+        <option name="localRepository" value="C:\Users\Clover\maven" />
       </MavenGeneralSettings>
     </option>
   </component>

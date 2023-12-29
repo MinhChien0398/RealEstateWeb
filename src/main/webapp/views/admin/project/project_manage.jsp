@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%--
   Created by IntelliJ IDEA.
   User: Clover
@@ -15,6 +16,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@include file="/layout/public/link.jsp" %>
+    <meta charset="UTF-8">
     <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
           rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
@@ -118,7 +120,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="/admin/project_additional_and_edit">
+                        <a href="${pageContext.request.contextPath}/admin/project_management?action=add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dự án
                             </button>
                         </a>
@@ -147,7 +149,6 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
                         <td></td>
                         <td></td>
                         <td></td>

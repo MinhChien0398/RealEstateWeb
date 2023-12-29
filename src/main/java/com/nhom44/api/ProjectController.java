@@ -17,15 +17,14 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/api/project")
 public class ProjectController extends HttpServlet {
+    private Gson gson;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Project>projects= ProjectService.getInstance().getAllProject();
-projects.forEach(project -> project.setUpdatedAt(project.getUpdatedAt().trim()
-//        .substring(0,project.getUpdatedAt().indexOf(" "))
-));
-        Gson gson= new Gson();
-        PrintWriter printWriter= resp.getWriter();
-        String json= gson.toJson(projects);
+        ProjectService projectService = ProjectService.getInstance();
+        PrintWriter printWriter = resp.getWriter();
+        gson = new Gson();
+        List<Project> projects = projectService.getAllProject();
+        String json = gson.toJson(projects);
         printWriter.println(json);
         printWriter.flush();
         printWriter.close();
