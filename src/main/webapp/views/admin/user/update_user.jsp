@@ -178,7 +178,7 @@
                                                      style="outline: none" inline="true">
                                                     <input type="text" id="birthday"
                                                            class="form-control form-control-sm active"
-                                                           value="18/01/2003"
+                                                           value="${user.birthday}"
                                                     >
                                                     <label for="birthday" class="">Ngày sinh</label>
                                                     <i class="fas fa-calendar input-prefix"
