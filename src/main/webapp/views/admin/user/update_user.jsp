@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.sql.Date" %>
+<%@ page import="com.nhom44.bean.User" %><%--
   Created by IntelliJ IDEA.
   User: Clover
   Date: 13/12/2023
@@ -7,6 +8,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <%@include file="/layout/public/link.jsp" %>
@@ -175,7 +177,8 @@
                                                      class="md-form mb-0 input-with-post-icon datepicker"
                                                      style="outline: none" inline="true">
                                                     <input type="text" id="birthday"
-                                                           class="form-control form-control-sm"
+                                                           class="form-control form-control-sm active"
+                                                           value="18/01/2003"
                                                     >
                                                     <label for="birthday" class="">Ngày sinh</label>
                                                     <i class="fas fa-calendar input-prefix"
@@ -184,6 +187,24 @@
 
 
                                             </div>
+
+<%--                                            <div class="col-lg-4">--%>
+<%--                                                <input type="text" value="id ${user.id}">--%>
+<%--                                                <input type="text" value="avatar ${user.avatar}">--%>
+<%--                                                <input type="text" value="fullName ${user.fullName}">--%>
+<%--                                                <input type="text" value="email ${user.email}">--%>
+<%--                                                <input type="text" value="password ${user.password}">--%>
+<%--                                                <input type="text" value="phone ${user.phone}">--%>
+<%--                                                <input type="text" value="birthday ${user.birthday}">--%>
+<%--                                                <input type="text" value="gender ${user.gender}">--%>
+<%--                                                <input type="text" value="status ${user.status}">--%>
+<%--                                                <input type="text" value="createAt ${user.createdAt}">--%>
+<%--                                                <input type="text" value="updateAt ${user.updatedAt}">--%>
+<%--                                                <input type="text" value="province ${user.province}">--%>
+<%--                                                <input type="text" value="role ${user.role}">--%>
+<%--                                            </div>--%>
+<%--                                            <fmt:formatDate pattern="dd-MM-yyyy"--%>
+<%--                                                               value="${user.birthday}"/>${user.birhtday}  --%>
                                             <!-- Grid column -->
 
                                             <!-- Grid column -->
