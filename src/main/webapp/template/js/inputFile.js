@@ -1,6 +1,6 @@
     let allFiles = [];
     let form = document.getElementsByClassName("form-img");
-    let input = document.getElementById("file_input");
+    let input = document.getElementById("avatar");
     let container = document.getElementsByClassName("img-container");
     // console.log(input.files)
     if(input.files.length!== 0|| allFiles.length!==0){

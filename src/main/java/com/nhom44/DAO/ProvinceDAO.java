@@ -9,9 +9,10 @@ import java.util.List;
 
 @RegisterFieldMapper(Province.class)
 public interface ProvinceDAO {
-@SqlQuery("SELECT * FROM provinces")
-    List<Province> getAllProvince();
-@SqlQuery("SELECT id FROM provinces where name=:name")
+    @SqlQuery("SELECT * FROM provinces")
+    List<Province> getAll();
+
+    @SqlQuery("SELECT id FROM provinces where name=:name")
     String getSpecificId(@Bind("name") String name);
 
     String getIdProvinceWithName(String province);
