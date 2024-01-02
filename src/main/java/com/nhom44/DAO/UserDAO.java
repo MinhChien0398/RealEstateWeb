@@ -43,7 +43,7 @@ public interface UserDAO {
 
     @SqlQuery("Select u.id FROM users u WHERE u.email=:email")
     int getIdUserWithEmail(@Bind("email") String email);
-@SqlQuery("Select u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role,p.name as province " +
+@SqlQuery("Select u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role, u.birthday,p.name as province " +
         "FROM users u Left Join provinces p ON u.provinceId=p.id where u.email=:email")
         User getUserByEmail(@Bind("email") String email);
 //    String getIdUserWithEmail(@Bind("email") String email);

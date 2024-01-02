@@ -2,7 +2,6 @@ package com.nhom44.controller.admin.user;
 
 import com.nhom44.bean.Province;
 import com.nhom44.bean.User;
-import com.nhom44.services.ProjectService;
 import com.nhom44.services.ProvinceService;
 import com.nhom44.services.UserService;
 
@@ -12,12 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @WebServlet(urlPatterns = "/admin/user_management")
 public class UserManagementController extends HttpServlet {
@@ -26,23 +20,20 @@ public class UserManagementController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
+        ProvinceService provinceService = ProvinceService.getInstance();
+        List<Province> provinces = provinceService.getAll();
+        req.getSession().setAttribute("provinces", provinces);
         if (action.equalsIgnoreCase("manager")) {
             List<User> users = userService.getAllUser();
             req.setAttribute("users", users);
-//            src/main/webapp/views/admin/user/user_manage.jsp
             req.getRequestDispatcher("/views/admin/user/user_manage.jsp").forward(req, resp);
         } else if (action.equalsIgnoreCase("add")) {
-            ProvinceService provinceService = ProvinceService.getInstance();
-            List<Province> provinces = provinceService.getAllProvince();
-            req.getSession().setAttribute("provinces", provinces);
             req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
         } else if (action.equalsIgnoreCase("edit")) {
             String email = req.getParameter("useremail");
             User user = userService.getUserByEmail(email);
+            System.out.println(user.toString());
             req.setAttribute("user", user);
-            ProvinceService provinceService = ProvinceService.getInstance();
-            List<Province> provinces = provinceService.getAllProvince();
-            req.getSession().setAttribute("provinces", provinces);
             req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);
         }
     }

@@ -252,160 +252,6 @@
                                                 <!-- Grid column -->
                                             </div>
                                         </div>
-<%--                                        <div class="row">--%>
-<%--                                            <div class="col-lg-6 col-md-6">--%>
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                        <input type="email" id="form8"--%>
-<%--                                                               class="form-control form-control-sm" name="email"--%>
-<%--                                                               value="">--%>
-
-<%--&lt;%&ndash;                                                    <c:if test="${emailErr!=null}">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                        <input type="email" id="form8"&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                               class="form-control form-control-sm" name="email"&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                               value="" placeholder="${emailErr}"&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                        ></c:if>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                    <c:if test="${emailErr==null}">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                        <input type="email" id="form8"&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                               class="form-control form-control-sm" name="email"&ndash;%&gt;--%>
-<%--&lt;%&ndash;                                                        ></c:if>&ndash;%&gt;--%>
-<%--                                                    <label for="form8" class="">Email</label>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <div class="col-lg-6 col-md-6">--%>
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                    <c:if test="${passwordErr!=null}">--%>
-<%--                                                        <input type="password" id="form9"--%>
-<%--                                                               class="form-control form-control-sm" name="password"--%>
-<%--                                                               value="" placeholder="${passwordErr}"--%>
-<%--                                                        ></c:if>--%>
-<%--                                                    <c:if test="${passwordErr==null}">--%>
-<%--                                                        <input type="password" id="form9"--%>
-<%--                                                               class="form-control form-control-sm" name="password"--%>
-<%--                                                        ></c:if>--%>
-<%--                                                    <label for="form9" class="">Password</label>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                        <div class="row d-flex align-items-center">--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <div class="col-lg-4">--%>
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                    <c:if test="${fullnameErr!=null}">--%>
-<%--                                                        <input type="text" id="form12"--%>
-<%--                                                               class="form-control form-control-sm" name="fullname"--%>
-<%--                                                               value="" placeholder="${fullnameErr}">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <c:if test="${fullnameErr==null}">--%>
-<%--                                                        <input type="text" id="form12"--%>
-<%--                                                               class="form-control form-control-sm" name="fullname">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <label for="form12" class="">Họ và tên</label>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <div class="col-lg-4">--%>
-<%--                                                <div id="date-picker-example"--%>
-<%--                                                     class="md-form mb-0 input-with-post-icon datepicker"--%>
-<%--                                                     style="outline: none" inline="true">--%>
-<%--                                                    <c:if test="${birthdayErr!=null}">--%>
-<%--                                                        <input placeholder="${birthdayErr}" type="text" id="birthday"--%>
-<%--                                                               value="" class="form-control  form-control-sm"--%>
-<%--                                                               name="birthday">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <c:if test="${birthdayErr==null}">--%>
-<%--                                                        <input type="text" id="birthday"--%>
-<%--                                                               class="form-control form-control-sm" name="birthday">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <label for="birthday" class="">Ngày sinh</label>--%>
-<%--                                                    <i id="label-birthday" class="fas fa-calendar input-prefix"--%>
-<%--                                                       style="font-size: .875rem"></i>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <div class="col-lg-4">--%>
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                    <c:if test="${phoneErr!=null}">--%>
-<%--                                                        <input type="text" id="form4"--%>
-<%--                                                               class="form-control form-control-sm" name="phone"--%>
-<%--                                                               value="" placeholder="${phoneErr}">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <c:if test="${phoneErr==null}">--%>
-<%--                                                        <input type="text" id="form4"--%>
-<%--                                                               class="form-control form-control-sm" name="phone">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <label for="form4" class="disabled">SĐT</label>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                        </div>--%>
-<%--                                        <div class="row">--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <div class="col-lg-6 col-md-10">--%>
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                    <select name="province" id="province" class=" custom-select ">--%>
-<%--                                                        <option value="" disabled>Chọn tỉnh thành</option>--%>
-<%--                                                        <c:forEach var="item" items="${sessionScope.get('provinces')}">--%>
-<%--                                                            <option value="${item.name}">${item.name}</option>--%>
-<%--                                                        </c:forEach>--%>
-
-<%--                                                    </select>--%>
-
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <!-- Grid column -->--%>
-
-<%--                                            <div class="col-lg-6 input-group  justify-content-around" role="group">--%>
-<%--                                                <div class="col-6 col-md-3">--%>
-<%--                                                    <!-- Material unchecked -->--%>
-<%--                                                    <div class="form-check mt-4">--%>
-<%--                                                        <input name="isMale" type="checkbox" class="form-check-input"--%>
-<%--                                                               id="materialUnchecked">--%>
-<%--                                                        <label class="form-check-label"--%>
-<%--                                                               for="materialUnchecked">Nam</label>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <!-- Grid column -->--%>
-<%--                                                <!-- Grid column -->--%>
-<%--                                                <div class="col-6 col-md-3">--%>
-<%--                                                    <!-- Material indeterminate -->--%>
-<%--                                                    <div class="form-check mt-4">--%>
-<%--                                                        <input name="isFemale" type="checkbox" class="form-check-input"--%>
-<%--                                                               id="materialIndeterminate2"--%>
-<%--                                                               checked>--%>
-<%--                                                        <label class="form-check-label"--%>
-<%--                                                               for="materialIndeterminate2">Nữ</label>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <!-- Grid column -->--%>
-<%--                                            <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">--%>
-<%--                                                <div class="col-lg-6 col-md-6">--%>
-<%--                                                    <div class="md-form form-sm mb-0">--%>
-<%--                                                        <select name="status"--%>
-<%--                                                                class="browser-default custom-select mb-4">--%>
-<%--                                                            <option value="" disabled>Trạng thái</option>--%>
-<%--                                                            <option value="1" selected>Chưa kích hoạt</option>--%>
-<%--                                                            <option value="2">Kích hoạt</option>--%>
-<%--                                                            <option value="3">Khóa</option>--%>
-<%--                                                        </select>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <div class="col-lg-6 col-md-6">--%>
-<%--                                                    <div class="md-form form-sm mb-0">--%>
-<%--                                                        <select name="role" class="browser-default custom-select mb-4">--%>
-<%--                                                            <option value="" disabled>Chọn phân quyền</option>--%>
-<%--                                                            <option value="1" selected>Người dùng thường</option>--%>
-<%--                                                            <option value="2">Admin</option>--%>
-<%--                                                        </select>--%>
-<%--                                                    </div>--%>
-<%--                                                </div>--%>
-<%--                                                <!-- Grid column -->--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
                                         <!-- Grid row -->
                                         <!-- Grid row -->
                                     </div>
@@ -447,70 +293,23 @@
                     role: $('#role').val(),
                 },
                 success: function (data) {
-                    console.log(data)
-                           fetchInput(data)
+                    console.log(data);
+                    if (data.name=="sys") {
+                       alert(data.message);
+                    }else {
+                        window.location.href = "/admin/user_management?action=manage";
+                    }
                 },
-                error: function (data) {
+                error: function (data) {   console.log(err)
                         var err = JSON.parse(data.responseText);
-                    console.log(err)
+
                     for (const e of err) {
                         fetchErr(e.name, e.message);
                     }
-
                 }
             })
         })
     });
-</script>
-<script>
-//     function fetchInput(data){
-//         $('#input').innerHTML='<div className="row">'+
-//           '  <div className="col-lg-6 col-md-6">'+
-//               '  <div className="md-form form-sm mb-0">'+
-//               '      <input type="email" id="form8"'+
-//                       '     className="form-control form-control-sm" name="email"'+
-//                 '           value="" placeholder='+data+'>'+
-//                      '   <label htmlFor="form8" className="">Email</label>'+
-//                 '</div>'+
-//             +
-//             '<div className="col-lg-6 col-md-6">'+
-//                 '<div className="md-form form-sm mb-0">'+
-//                     '<input type="password" id="form9"'
-//         +'className="form-control form-control-sm" name="password">'
-//                         +'<label htmlFor="form9" className="">Password</label>'+
-//         ' </div>'+
-//           '  </div>'+
-//         '</div>'+
-//        ' <div className="row d-flex align-items-center">'+
-//             <!-- Grid column -->
-//             '<div className="col-lg-4">;'+
-//               '  <div className="md-form form-sm mb-0">'+
-//                    ' <input type="text" id="form12"'+
-//                           ' className="form-control form-control-sm" name="fullname">'+
-//                         '<label htmlFor="form12" className="">Họ và tên</label>'+
-//               '  </div>'
-//             '</div>'
-//         '    <div className="col-lg-4">'
-//        '         <div id="date-picker-example"'
-//                      'className="md-form mb-0 input-with-post-icon datepicker"'+
-//                 'style="outline: none" inline="true">'+
-//                    ' <input type="text" id="birthday"'+
-//                           ' className="form-control form-control-sm" name="birthday">'+
-//                         '<label htmlFor="birthday" className="">Ngày sinh</label>'+
-//                     '    <i id="label-birthday" className="fas fa-calendar input-prefix"'+
-//                      +' style="font-size: .875rem"></i>'+
-//               '  </div>'+
-// '            </div>+'
-//          '   <div className="col-lg-4">'+
-//             '    <div className="md-form form-sm mb-0">'+
-//                    ' <input type="text" id="form4"'+
-//                         '   className="form-control form-control-sm" name="phone">'+
-//                        ' <label htmlFor="form4" className="disabled">SĐT</label>'+
-//              '   </div>'+
-//             '</div>'+
-//             <!-- Grid column -->
-//        ' </div>'
-//     }
 </script>
 <script>
     function fetchErr(name, mess) {
@@ -519,6 +318,7 @@
                 let email = document.getElementById('form8');
                 email.classList.add('border-danger');
                 email.classList.add('text-danger');
+                email.value="";
                 email.nextElementSibling.classList.add('active');
                 email.setAttribute('value'," ");
                 email.setAttribute('placeholder', mess);
@@ -528,6 +328,7 @@
                 let password = document.getElementById('form9');
                 password.classList.add('border-danger');
                 password.classList.add('text-danger');
+                password.value="";
                 password.nextElementSibling.classList.add('active');
                 password.setAttribute('placeholder', mess);
                 console.log("run 2");   break;
@@ -535,6 +336,7 @@
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
+                fullname.value="";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
                 fullname.setAttribute('placeholder', mess);
@@ -543,6 +345,7 @@
                 let phone = document.getElementById('form4');
                 phone.classList.add('border-danger');
                 phone.classList.add('text-danger');
+                phone.value="";
                 phone.nextElementSibling.classList.add('active');
                 phone.setAttribute('placeholder', mess);
                 console.log("run 4");    break;
@@ -550,6 +353,7 @@
                 let birthday = document.getElementById('birthday');
                 birthday.classList.add('border-danger');
                 birthday.classList.add('text-danger');
+                birthday.value="";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
                 birthday.setAttribute('placeholder', mess);

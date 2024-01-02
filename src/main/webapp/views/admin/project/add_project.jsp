@@ -9,8 +9,12 @@
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
-
+    <meta content="application/x-www-form-urlencoded;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@include file="/layout/public/link.jsp" %>
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
@@ -25,10 +29,12 @@
             border: 1px solid;
             box-shadow: none;
         }
+
     </style>
     <title>Title</title>
 </head>
 <body>
+
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <div class="header fixed-top">
@@ -49,33 +55,33 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="img/logo.svg" alt="logo" style="">
+                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">
             </center>
             <li class="sidebar-item">
-                <a href="../dashboard.jsp" class="menu-btn">
+                <a href="dashboard.html" class="menu-btn">
                     <i class="fas fa-desktop"></i><span>Thống kê</span>
                 </a>
             </li>
             <li class="sidebar-item" id="user">
-                <a href="../user/user_manage.jsp" class="menu-btn">
+                <a href="admin-userManage.html" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
             <li class="sidebar-item" id="project">
                 <div class="menu-btn">
                     <i class="fa-solid fa-building"> </i>
-                    <a href="project_manage.jsp">
+                    <a href="admin-projectsManage.html">
                         <span>QL Dự án</span>
                     </a> <i
                         class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="../category/category_management.jsp" class="menu-btn">
+                    <a href="admin-TypeOfProject.html" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
                     </a>
-                    <a href="post_project.jsp" class="menu-btn">
+                    <a href="admin-PostProject.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
                     </a>
-                    <a href="project_schedule.jsp" class="menu-btn">
+                    <a href="admin-ProjectSchedule.html" class="menu-btn">
                         <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
                     </a>
                 </div>
@@ -83,23 +89,23 @@
 
             <li class="sidebar-item" id="type-project">
                 <div class="menu-btn">
-                    <a href="../service/service_manage.jsp">
+                    <a href="servicesManager.html">
                         <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
                     </a><i
                         class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
-                    <a href="../service/post_service.jsp" class="menu-btn">
+                    <a href="servicePostsManage.html" class="menu-btn">
                         <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
                     </a>
                 </div>
             </li>
             <li class="sidebar-item" id="contact">
-                <a href="../contact/contact_manage.jsp" class="menu-btn">
+                <a href="admin-contactManagement.html" class="menu-btn">
                     <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">
-                <a href="../slide/slide_manage.jsp" class="menu-btn">
+                <a href="admin-slideManagement.html" class="menu-btn">
                     <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
                 </a>
             </li>
@@ -110,16 +116,15 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="../dashboard.jsp">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.html">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="project_manage.jsp">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="add_project.jsp">Thêm dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Thêm dự án</a></li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
-
-                <form action="#" method="post" id="addproject">
+            <main class="container shadow border p-3 h-auto">
+                <form action="api/project?action=add" enctype="multipart/form-data" method="post"  id="add-project">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
@@ -142,13 +147,13 @@
                             </ul>
                         </div>
                         <div class="btn-save flex-center">
-                            <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light"
-                                    type="submit"> LƯU
+                            <button id="save" form="add-project" class="btn btn-warning p-2 waves-effect waves-light"
+                                    type="button"> LƯU
                             </button>
                         </div>
                     </div>
 
-                    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                    <div class="tab-content pt-2 pl-1" id="pills-tabContent" style="height: fit-content">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                              aria-labelledby="pills-home-tab">
                             <div class="edit-profile flex-center">
@@ -161,187 +166,62 @@
                                                 <div class="col-lg-11 mb-4">
                                                     <div class="card-body">
                                                         <div class="mb-4">
-                                                            <label for="investor" class="labels">Chủ đầu tư</label>
-                                                            <input id="investor" type="email" class="form-control"
-                                                                   placeholder="Email chủ đầu tư" value="">
+                                                            <label for="OwnEmail" class="labels">Chủ đầu tư</label>
+                                                            <input id="OwnEmail" type="email" class="form-control"
+                                                                   name="OwnEmail" placeholder="Email chủ đầu tư"
+                                                                   value="">
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="name" class="labels">Tiêu đề</label>
-                                                            <input id="name" type="text" class="form-control"
-                                                                   placeholder="Tiêu đề" value="">
+                                                            <label for="title" class="labels">Tiêu đề</label>
+                                                            <input id="title" type="text" class="form-control"
+                                                                   name="title" placeholder="Tiêu đề" value="">
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="category" class="labels">Loại dự án</label>
-                                                            <select name="category" id="category" class="form-control">
+                                                            <label for="categoryId" class="labels">Loại dự án</label>
+                                                            <select name="categoryId" id="categoryId" name="categoryId"
+                                                                    class="form-control">
                                                                 <option value="" disabled selected>Loại dự án</option>
 
-                                                                <option value="92TTT">Nhà Phố</option>
-
-                                                                <option value="92TTT">Biệt thự</option>
 
                                                             </select>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-6 mb-4">
                                                                 <label for="price" class="labels">Kinh phí</label>
-                                                                <input id="price" type="number" class="form-control"
+                                                                <input id="price" type="number" name="price"
+                                                                       class="form-control"
                                                                        placeholder="Kinh phí" value="">
                                                             </div>
                                                             <div class="col-6 mb-4">
                                                                 <label for="acreage" class="labels">Diện tích</label>
-                                                                <input id="acreage" type="text" class="form-control"
-                                                                       placeholder="Diện tích" value="">
+                                                                <input id="acreage" type="number" class="form-control"
+                                                                       placeholder="Diện tích" name="acreage" value="">
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="address" class="labels">Địa chỉ</label>
-                                                            <select name="address" id="address" class="form-control">
+                                                            <label for="provinceId" class="labels">Địa chỉ</label>
+                                                            <select name="provinceId" id="provinceId"
+                                                                    class="form-control">
                                                                 <option value="" disabled selected>Chọn tỉnh thành
                                                                 </option>
 
-                                                                <option value="92TTT">Thành phố Cần Thơ</option>
-
-                                                                <option value="91TTT"> Kiên Giang</option>
-
-                                                                <option value="75TTT"> Đồng Nai</option>
-
-                                                                <option value="20TTT"> Lạng Sơn</option>
-
-                                                                <option value="89TTT"> An Giang</option>
-
-                                                                <option value="34TTT"> Thái Bình</option>
-
-                                                                <option value="62TTT"> Kon Tum</option>
-
-                                                                <option value="45TTT"> Quảng Trị</option>
-
-                                                                <option value="58TTT"> Ninh Thuận</option>
-
-                                                                <option value="74TTT"> Bình Dương</option>
-
-                                                                <option value="37TTT"> Ninh Bình</option>
-
-                                                                <option value="31TTT">Thành phố Hải Phòng</option>
-
-                                                                <option value="95TTT"> Bạc Liêu</option>
-
-                                                                <option value="08TTT"> Tuyên Quang</option>
-
-                                                                <option value="14TTT"> Sơn La</option>
-
-                                                                <option value="36TTT"> Nam Định</option>
-
-                                                                <option value="25TTT"> Phú Thọ</option>
-
-                                                                <option value="42TTT"> Hà Tĩnh</option>
-
-                                                                <option value="93TTT"> Hậu Giang</option>
-
-                                                                <option value="82TTT"> Tiền Giang</option>
-
-                                                                <option value="66TTT"> Đắk Lắk</option>
-
-                                                                <option value="80TTT"> Long An</option>
-
-                                                                <option value="17TTT"> Hòa Bình</option>
-
-                                                                <option value="87TTT"> Đồng Tháp</option>
-
-                                                                <option value="19TTT"> Thái Nguyên</option>
-
-                                                                <option value="83TTT"> Bến Tre</option>
-
-                                                                <option value="54TTT"> Phú Yên</option>
-
-                                                                <option value="26TTT"> Vĩnh Phúc</option>
-
-                                                                <option value="94TTT"> Sóc Trăng</option>
-
-                                                                <option value="60TTT"> Bình Thuận</option>
-
-                                                                <option value="51TTT"> Quảng Ngãi</option>
-
-                                                                <option value="64TTT"> Gia Lai</option>
-
-                                                                <option value="77TTT"> Bà Rịa - Vũng Tàu</option>
-
-                                                                <option value="79TTT">Thành phố Hồ Chí Minh</option>
-
-                                                                <option value="02TTT"> Hà Giang</option>
-
-                                                                <option value="68TTT"> Lâm Đồng</option>
-
-                                                                <option value="35TTT"> Hà Nam</option>
-
-                                                                <option value="48TTT">Thành phố Đà Nẵng</option>
-
-                                                                <option value="70TTT"> Bình Phước</option>
-
-                                                                <option value="49TTT"> Quảng Nam</option>
-
-                                                                <option value="38TTT"> Thanh Hóa</option>
-
-                                                                <option value="84TTT"> Trà Vinh</option>
-
-                                                                <option value="11TTT"> Điện Biên</option>
-
-                                                                <option value="27TTT"> Bắc Ninh</option>
-
-                                                                <option value="30TTT"> Hải Dương</option>
-
-                                                                <option value="46TTT"> Thừa Thiên Huế</option>
-
-                                                                <option value="67TTT"> Đắk Nông</option>
-
-                                                                <option value="44TTT"> Quảng Bình</option>
-
-                                                                <option value="22TTT"> Quảng Ninh</option>
-
-                                                                <option value="33TTT"> Hưng Yên</option>
-
-                                                                <option value="96TTT"> Cà Mau</option>
-
-                                                                <option value="10TTT"> Lào Cai</option>
-
-                                                                <option value="56TTT"> Khánh Hòa</option>
-
-                                                                <option value="40TTT"> Nghệ An</option>
-
-                                                                <option value="12TTT"> Lai Châu</option>
-
-                                                                <option value="72TTT"> Tây Ninh</option>
-
-                                                                <option value="86TTT"> Vĩnh Long</option>
-
-                                                                <option value="24TTT"> Bắc Giang</option>
-
-                                                                <option value="04TTT"> Cao Bằng</option>
-
-                                                                <option value="15TTT"> Yên Bái</option>
-
-                                                                <option value="52TTT"> Bình Định</option>
-
-                                                                <option value="01TTT">Thành phố Hà Nội</option>
-
-                                                                <option value="06TTT"> Bắc Kạn</option>
 
                                                             </select>
                                                         </div>
                                                         <div class="mb-4">
                                                             <div class="form-group green-border-focus">
-                                                                <label for="exampleFormControlTextarea5">Mô tả</label>
+                                                                <label for="description">Mô tả</label>
                                                                 <textarea class="form-control"
-                                                                          id="exampleFormControlTextarea5"
+                                                                          id="description"
+                                                                          name="description"
                                                                           rows="3" placeholder="Mô tả dự án"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
                                                             <label class="mdb-main-label">Dịch vụ</label>
-                                                            <select class="mdb-select md-form" multiple>
+                                                            <select class="mdb-select md-form" name="service[]"
+                                                                    multiple>
                                                                 <option value="1" selected>Xây dựng phần thô</option>
-                                                                <option value="2">Xây nhà trọn gói</option>
-                                                                <option value="3">Thiết kế nội thất</option>
-                                                                <option value="4">Sữa chữa</option>
                                                             </select>
                                                         </div>
                                                         <div class="mb-4 ">
@@ -349,21 +229,24 @@
                                                                 <label>Tiến độ dự án:</label>
                                                                 <div class="form-check">
                                                                     <input type="checkbox" checked="false"
-                                                                           onclick="conpleteProject()"
+                                                                           name="isComplete" onclick="conpleteProject()"
                                                                            class="form-check-input"
-                                                                           id="projectProgress">
+                                                                           id="isComplete">
                                                                     <label class="form-check-label"
-                                                                           for="projectProgress">Hoàn thành</label>
+                                                                           for="isComplete">Hoàn thành</label>
                                                                 </div>
                                                             </div>
                                                             <div id="projectProgressText">
                                                                 <input type="text" class="form-control  mb-3"
-                                                                       placeholder="Tiến độ dự án" value="">
+                                                                       placeholder="Tiến độ dự án" id="schedule"
+                                                                       name="schedule" value="">
                                                                 <div id="date-picker-example"
-                                                                     class="md-form md-outline input-with-post-icon datepicker"
-                                                                     inline="true">
+                                                                     class="md-form md-outline
+                                                                     input-with-post-icon datepicker"
+                                                                     style="outline: none " inline="true">
                                                                     <input placeholder="Dự kiến ngày hoàng thành"
-                                                                           type="text" id="example"
+                                                                           type="text" id="estimated_complete"
+                                                                           name="estimated_complete"
                                                                            class="form-control">
                                                                     <i class="fas fa-calendar input-prefix"></i>
                                                                 </div>
@@ -374,40 +257,35 @@
                                                                 <label for="status" class="labels">Trạng thái: </label>
                                                                 <div class="form-check">
                                                                     <input type="checkbox" checked="true"
+                                                                           name="isAccepted"
                                                                            onclick="userAccepted()"
-                                                                           class="form-check-input" id="UserAccepted">
+                                                                           class="form-check-input" id="isAccepted">
                                                                     <label class="form-check-label"
-                                                                           for="UserAccepted">Người dùng chấp nhận đăng
+                                                                           for="isAccepted">Người dùng chấp nhận đăng
                                                                         bài</label>
                                                                 </div>
                                                             </div>
-                                                            <select id="status" class="custom-select">
+                                                            <select id="status" name="status" class="custom-select">
                                                                 <option value="1">Đăng bài</option>
                                                                 <option value="2">Ẩn</option>
                                                             </select>
                                                         </div>
 
                                                         <div class="mb-4">
-                                                            <label>Chọn hình đại diện</label>
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
+                                                            <div class="input-group mt-2 d-flex align-items-center">
+                                                                <label>Chọn hình đại diện</label>
+                                                                <div class="file-field d-flex align-items-center">
+                                                                    <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                                        <span>chọn ảnh</span>
+                                                                        <input type="file" name="avatar[]" id="avatar">
+                                                                    </div>
                                                                 </div>
-                                                                <div class="custom-file">
-                                                                    <input type="file" class="custom-file-input"
-                                                                           id="inputGroupFile01"
-                                                                           aria-describedby="inputGroupFileAddon01"
-                                                                           onchange="preview()">
-                                                                    <label class="custom-file-label"
-                                                                           for="inputGroupFile01">Chọn file
-                                                                    </label>
-
-                                                                </div>
-
                                                             </div>
-                                                            <p id="num-of-files">Không có file được chọn</p>
-                                                            <div id="images"></div>
+
+                                                            <div class="upload-wrapper d-none avatar">
+                                                                <div class="border d-flex img-container">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -426,35 +304,28 @@
                                     <div class="card card-cascade cascading-admin-card user-card">
                                         <div class="card-body card-body-cascade">
                                             <div class=" col-12 mb-4">
-                                                <label>Hình ảnh mô tả dự án</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon0">Tải lên</span>
+                                                <div class="input-group mt-2 d-flex align-items-center">
+                                                    <label>Hình ảnh mô tả dự án</label>
+                                                    <div class="file-field d-flex align-items-center">
+                                                        <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                            <span>chọn ảnh</span>
+                                                            <input type="file"  name="groupImage[]" id="file_input1"
+                                                                   multiple>
+                                                        </div>
                                                     </div>
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input"
-                                                               id="inputGroupFile0"
-                                                               aria-describedby="inputGroupFileAddon01"
-                                                               onchange="preview1()" multiple>
-                                                        <label class="custom-file-label"
-                                                               for="inputGroupFile0">Chọn file
-                                                        </label>
-
-                                                    </div>
-
                                                 </div>
-                                                <p id="num-of-files1">Không có file được chọn</p>
-                                                <div id="GroupImage" class="row">
-
+                                                <div class="upload-wrapper d-none avatar">
+                                                    <div class="border d-flex img-container1">
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-12 p-0">
-                                                <div class="form-group">
-                                                    <textarea class="form-control rounded-0" name="service-des"
+                                        </div>
+
+                                        <div class="col-12 p-0">
+                                            <div class="form-group">
+                                                    <textarea class="form-control rounded-0" name="post" id="post"
                                                               rows="10"></textarea>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -468,18 +339,142 @@
     </div>
 </div>
 <!--/. Sidebar navigation -->
-
-
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    CKEDITOR.replace('service-des', {
+    function savePost(id) {
+        $.ajax({
+            url: "http://localhost:8080/api/project?action=add",
+            type: "POST",
+            dataType: "json",
+            data: {
+                post: CKEDITOR.instances.post.getData(),
+                id: id
+            },
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (data) {
+                console.log(data)
+            }
+        })
+    }
+</script>
+<script>
+    function uploadGroupImage() {
+        var file_data = $('#file_input1').prop('files');
+        var form_data = new FormData();
+        for (let i = 0; i < file_data.length; i++) {
+            form_data.append('file', file_data[i]);
+        }
+        $.ajax({
+            url: 'http://localhost:8080/api/uploadImage?action=groupImage',
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'POST',
+            success: function (res) {
+                console.log(res)
+            },
+            error: function (res) {
+                console.log(res)
+            }
+        });
+    }
+</script>
+<script>
+    $('#save').click(function () {
+        let form = new FormData();
+        form.append('ownEmail',$("#OwnEmail").val())
+        form.append('title', $("#title").val());
+        form.append('categoryId', $("#categoryId").val());
+        form.append('price', $("#price").val());
+        form.append('acreage', $("#acreage").val());
+        form.append('provinceId', $("#provinceId").val());
+        form.append('description', $("#description").val());
+        form.append('service', $("#service").val());
+        form.append('schedule', $("#schedule").val());
+        form.append('estimated_complete', $("#estimated_complete").val());
+        form.append('status', $("#status").val());
+        form.append('avatar', $("#avatar").prop('files')[0]);
+        form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
+        form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
+        $.ajax({
+            url: "/api/project?action=add",
+            type: "POST",
+            // dataType: "json",
+            processData: false,
+            contentType: false,
+            data:  form,
+            success: function (data) {
+                if(data.status === 200){
+                    // uploadAvatar()
+                    // uploadGroupImage()
+                    // savePost(data.data)
+                }
+            },
+            error: function (data) {
+                console.log(data)
+            }
+        })
+    })
+</script>
+<script>
+    CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });
 
+</script>
+<script>
+    let allFiles1 = [];
+    let input1 = document.getElementById("file_input1");
+    let container1 = document.getElementsByClassName("img-container1");
+    // console.log(input.files)
+    if (input1.files.length !== 0 || allFiles1.length !== 0) {
+        container1[0].parentElement.classList.add('d-block')
+        container1[0].parentElement.classList.remove('d-none')
+    } else {
+        container1[0].parentElement.classList.add('d-none')
+        container1[0].parentElement.classList.remove('d-block')
+    }
+    input1.addEventListener('change', function () {
+        let files1 = this.files;
+        for (let i = 0; i < files1.length; i++) {
+            allFiles1.push(files1[i])
+        }
+        showImage1();
+    })
+    const showImage1 = () => {
+        if (input1.files.length !== 0) {
+            container1[0].parentElement.classList.add('d-block')
+            container1[0].parentElement.classList.remove('d-none')
+        } else {
+            container1[0].parentElement.classList.add('d-none')
+            container1[0].parentElement.classList.remove('d-block')
+        }
+        let images1 = ' ';
+        allFiles1.forEach((e, i) => {
+            images1 += '<div class="image1 position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
+                '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage1(' + i + ')" style=""></i></div></div>'
+        })
+        container1[0].innerHTML = images1
+    }
+    let dt1 = new DataTransfer();
+    const delImage1 = index => {
+        let dt1 = new DataTransfer();
+        for (let i = 0; i < input1.files.length; i++) {
+            if (index !== i)
+                dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
+        }
+        input1.files = dt1.files
+        allFiles1 = Array.from(input1.files)
+        showImage1()
+    }
 </script>
 <script>
     $('.datepicker').datepicker({
@@ -497,7 +492,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'yyyy-mm-dd',
     });
 </script>
 <script>
@@ -528,7 +523,7 @@
 
     function userAccepted() {
         var status = document.getElementById('status');
-        if (!document.getElementById('UserAccepted').checked) {
+        if (!document.getElementById('isAccepted').checked) {
             status.classList.add('d-none');
             status.classList.remove('d-block');
         } else {
@@ -542,7 +537,7 @@
 
     function conpleteProject() {
         var projectProgressText = document.getElementById('projectProgressText');
-        if (document.getElementById('projectProgress').checked) {
+        if (document.getElementById('isComplete').checked) {
             projectProgressText.classList.add('d-none');
             projectProgressText.classList.remove('d-block');
         } else {
