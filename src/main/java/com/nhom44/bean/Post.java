@@ -1,6 +1,5 @@
 package com.nhom44.bean;
 
-import java.sql.Timestamp;
 import java.util.Objects;
 
 public class Post {

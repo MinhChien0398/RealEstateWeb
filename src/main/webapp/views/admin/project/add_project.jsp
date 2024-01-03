@@ -12,7 +12,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta content="application/x-www-form-urlencoded;charset=utf-8" http-equiv="Content-Type">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%@include file="/layout/public/link.jsp" %>
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
@@ -123,7 +124,7 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">
-                <form action="api/project?action=add" method="post" enctype="multipart/form-data" id="add-project">
+                <form action="api/project?action=add" enctype="multipart/form-data" method="post"  id="add-project">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
@@ -177,7 +178,7 @@
                                                         </div>
                                                         <div class="mb-4">
                                                             <label for="categoryId" class="labels">Loại dự án</label>
-                                                            <select name="categoryId" id="category" name="categoryId"
+                                                            <select name="categoryId" id="categoryId" name="categoryId"
                                                                     class="form-control">
                                                                 <option value="" disabled selected>Loại dự án</option>
 
@@ -198,8 +199,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="address" class="labels">Địa chỉ</label>
-                                                            <select name="address" id="address" class="form-control">
+                                                            <label for="provinceId" class="labels">Địa chỉ</label>
+                                                            <select name="provinceId" id="provinceId"
+                                                                    class="form-control">
                                                                 <option value="" disabled selected>Chọn tỉnh thành
                                                                 </option>
 
@@ -208,16 +210,17 @@
                                                         </div>
                                                         <div class="mb-4">
                                                             <div class="form-group green-border-focus">
-                                                                <label for="exampleFormControlTextarea5">Mô tả</label>
+                                                                <label for="description">Mô tả</label>
                                                                 <textarea class="form-control"
-                                                                          id="exampleFormControlTextarea5"
+                                                                          id="description"
                                                                           name="description"
                                                                           rows="3" placeholder="Mô tả dự án"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
                                                             <label class="mdb-main-label">Dịch vụ</label>
-                                                            <select class="mdb-select md-form" name="service[]" multiple>
+                                                            <select class="mdb-select md-form" name="service[]"
+                                                                    multiple>
                                                                 <option value="1" selected>Xây dựng phần thô</option>
                                                             </select>
                                                         </div>
@@ -235,13 +238,15 @@
                                                             </div>
                                                             <div id="projectProgressText">
                                                                 <input type="text" class="form-control  mb-3"
-                                                                       placeholder="Tiến độ dự án" value="">
+                                                                       placeholder="Tiến độ dự án" id="schedule"
+                                                                       name="schedule" value="">
                                                                 <div id="date-picker-example"
                                                                      class="md-form md-outline
                                                                      input-with-post-icon datepicker"
                                                                      style="outline: none " inline="true">
                                                                     <input placeholder="Dự kiến ngày hoàng thành"
-                                                                           type="text" id="schedule" name="schedule"
+                                                                           type="text" id="estimated_complete"
+                                                                           name="estimated_complete"
                                                                            class="form-control">
                                                                     <i class="fas fa-calendar input-prefix"></i>
                                                                 </div>
@@ -265,16 +270,18 @@
                                                                 <option value="2">Ẩn</option>
                                                             </select>
                                                         </div>
+
                                                         <div class="mb-4">
                                                             <div class="input-group mt-2 d-flex align-items-center">
                                                                 <label>Chọn hình đại diện</label>
                                                                 <div class="file-field d-flex align-items-center">
                                                                     <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                                         <span>chọn ảnh</span>
-                                                                        <input type="file" name="avatar" id="file_input">
+                                                                        <input type="file" name="avatar[]" id="avatar">
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                             <div class="upload-wrapper d-none avatar">
                                                                 <div class="border d-flex img-container">
                                                                 </div>
@@ -302,7 +309,8 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file" name="groupImage[]" id="file_input1" multiple>
+                                                            <input type="file"  name="groupImage[]" id="file_input1"
+                                                                   multiple>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -312,19 +320,19 @@
                                                 </div>
                                             </div>
 
-                                            </div>
+                                        </div>
 
-                                            <div class="col-12 p-0">
-                                                <div class="form-group">
-                                                    <textarea class="form-control rounded-0" name="service-des"
+                                        <div class="col-12 p-0">
+                                            <div class="form-group">
+                                                    <textarea class="form-control rounded-0" name="post" id="post"
                                                               rows="10"></textarea>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </form>
             </main>
         </div>
@@ -336,26 +344,14 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    $('#save').click(function () {
-    $.ajax({
+    function savePost(id) {
+        $.ajax({
             url: "http://localhost:8080/api/project?action=add",
             type: "POST",
             dataType: "json",
             data: {
-                title: $("#name").val(),
-                categoryId: $("#category").val(),
-                price: $("#price").val(),
-                acreage: $("#acreage").val(),
-                address: $("#address").val(),
-                description: $("#description").val(),
-                service: $("#service").val(),
-                schedule: $("#schedule").val(),
-                status: $("#status").val(),
-                isAccepted: $("#isAccepted").val(),
-                isComplete: $("#isComplete").val(),
-                avatar: $("#avatar").val(),
-                groupImage: $("#groupImage").val(),
-                serviceDes: $("#service-des").val(),
+                post: CKEDITOR.instances.post.getData(),
+                id: id
             },
             success: function (data) {
                 console.log(data)
@@ -364,10 +360,71 @@
                 console.log(data)
             }
         })
+    }
+</script>
+<script>
+    function uploadGroupImage() {
+        var file_data = $('#file_input1').prop('files');
+        var form_data = new FormData();
+        for (let i = 0; i < file_data.length; i++) {
+            form_data.append('file', file_data[i]);
+        }
+        $.ajax({
+            url: 'http://localhost:8080/api/uploadImage?action=groupImage',
+            dataType: 'text',
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'POST',
+            success: function (res) {
+                console.log(res)
+            },
+            error: function (res) {
+                console.log(res)
+            }
+        });
+    }
+</script>
+<script>
+    $('#save').click(function () {
+        let form = new FormData();
+        form.append('ownEmail',$("#OwnEmail").val())
+        form.append('title', $("#title").val());
+        form.append('categoryId', $("#categoryId").val());
+        form.append('price', $("#price").val());
+        form.append('acreage', $("#acreage").val());
+        form.append('provinceId', $("#provinceId").val());
+        form.append('description', $("#description").val());
+        form.append('service', $("#service").val());
+        form.append('schedule', $("#schedule").val());
+        form.append('estimated_complete', $("#estimated_complete").val());
+        form.append('status', $("#status").val());
+        form.append('avatar', $("#avatar").prop('files')[0]);
+        form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
+        form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
+        $.ajax({
+            url: "/api/project?action=add",
+            type: "POST",
+            // dataType: "json",
+            processData: false,
+            contentType: false,
+            data:  form,
+            success: function (data) {
+                if(data.status === 200){
+                    // uploadAvatar()
+                    // uploadGroupImage()
+                    // savePost(data.data)
+                }
+            },
+            error: function (data) {
+                console.log(data)
+            }
+        })
     })
 </script>
 <script>
-    CKEDITOR.replace('service-des', {
+    CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });
@@ -378,10 +435,10 @@
     let input1 = document.getElementById("file_input1");
     let container1 = document.getElementsByClassName("img-container1");
     // console.log(input.files)
-    if(input1.files.length!== 0|| allFiles1.length!==0){
+    if (input1.files.length !== 0 || allFiles1.length !== 0) {
         container1[0].parentElement.classList.add('d-block')
         container1[0].parentElement.classList.remove('d-none')
-    }else{
+    } else {
         container1[0].parentElement.classList.add('d-none')
         container1[0].parentElement.classList.remove('d-block')
     }
@@ -393,10 +450,10 @@
         showImage1();
     })
     const showImage1 = () => {
-        if(input1.files.length!== 0){
+        if (input1.files.length !== 0) {
             container1[0].parentElement.classList.add('d-block')
             container1[0].parentElement.classList.remove('d-none')
-        }else{
+        } else {
             container1[0].parentElement.classList.add('d-none')
             container1[0].parentElement.classList.remove('d-block')
         }
@@ -412,10 +469,10 @@
         let dt1 = new DataTransfer();
         for (let i = 0; i < input1.files.length; i++) {
             if (index !== i)
-                dt1.items.add( input1.files[i]) // here you exclude the file. thus removing it.
+                dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
         }
         input1.files = dt1.files
-        allFiles1=Array.from(input1.files)
+        allFiles1 = Array.from(input1.files)
         showImage1()
     }
 </script>
@@ -435,7 +492,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'yyyy-mm-dd',
     });
 </script>
 <script>

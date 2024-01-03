@@ -11,14 +11,35 @@ public class Project {
     protected int price;
     protected double acreage;
     protected int status;
-    protected int categoryId;
-    protected int provinceId;
     protected int postId;
     protected int isAccepted;
     protected String createdAt;
     protected String updatedAt;
     private String schedule;
     private Date estimated_complete;
+    private String province;
+    private String category;
+
+    public Project() {
+    }
+
+    public Project(int id, String title, String description, String avatar, int price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, Date estimated_complete, String province, String category) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.avatar = avatar;
+        this.price = price;
+        this.acreage = acreage;
+        this.status = status;
+        this.postId = postId;
+        this.isAccepted = isAccepted;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.schedule = schedule;
+        this.estimated_complete = estimated_complete;
+        this.province = province;
+        this.category = category;
+    }
 
     @Override
     public String toString() {
@@ -30,14 +51,14 @@ public class Project {
                 ", price=" + price +
                 ", acreage=" + acreage +
                 ", status=" + status +
-                ", categoryId=" + categoryId +
-                ", provinceId=" + provinceId +
                 ", postId=" + postId +
                 ", isAccepted=" + isAccepted +
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
                 ", schedule='" + schedule + '\'' +
                 ", estimated_complete=" + estimated_complete +
+                ", province='" + province + '\'' +
+                ", category='" + category + '\'' +
                 '}';
     }
 
@@ -46,12 +67,12 @@ public class Project {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Project project = (Project) o;
-        return id == project.id && price == project.price && Double.compare(acreage, project.acreage) == 0 && status == project.status && categoryId == project.categoryId && provinceId == project.provinceId && postId == project.postId && isAccepted == project.isAccepted && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(avatar, project.avatar) && Objects.equals(createdAt, project.createdAt) && Objects.equals(updatedAt, project.updatedAt) && Objects.equals(schedule, project.schedule) && Objects.equals(estimated_complete, project.estimated_complete);
+        return id == project.id && price == project.price && Double.compare(acreage, project.acreage) == 0 && status == project.status && postId == project.postId && isAccepted == project.isAccepted && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(avatar, project.avatar) && Objects.equals(createdAt, project.createdAt) && Objects.equals(updatedAt, project.updatedAt) && Objects.equals(schedule, project.schedule) && Objects.equals(estimated_complete, project.estimated_complete) && Objects.equals(province, project.province) && Objects.equals(category, project.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, avatar, price, acreage, status, categoryId, provinceId, postId, isAccepted, createdAt, updatedAt, schedule, estimated_complete);
+        return Objects.hash(id, title, description, avatar, price, acreage, status, postId, isAccepted, createdAt, updatedAt, schedule, estimated_complete, province, category);
     }
 
     public int getId() {
@@ -110,22 +131,6 @@ public class Project {
         this.status = status;
     }
 
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public int getProvinceId() {
-        return provinceId;
-    }
-
-    public void setProvinceId(int provinceId) {
-        this.provinceId = provinceId;
-    }
-
     public int getPostId() {
         return postId;
     }
@@ -174,24 +179,19 @@ public class Project {
         this.estimated_complete = estimated_complete;
     }
 
-    public Project() {
+    public String getProvince() {
+        return province;
     }
 
-    public Project(int id, String title, String description, String avatar, int price, double acreage, int status, int categoryId, int provinceId, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, Date estimated_complete) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.avatar = avatar;
-        this.price = price;
-        this.acreage = acreage;
-        this.status = status;
-        this.categoryId = categoryId;
-        this.provinceId = provinceId;
-        this.postId = postId;
-        this.isAccepted = isAccepted;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.schedule = schedule;
-        this.estimated_complete = estimated_complete;
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
