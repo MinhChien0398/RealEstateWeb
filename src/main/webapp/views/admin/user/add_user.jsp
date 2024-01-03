@@ -113,6 +113,30 @@
                     <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
                 </ol>
             </nav>
+
+
+            <div class="modal fade in" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true" style="display: block">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <main class="container shadow border p-3" style="height: fit-content!important;">
                 <form action="/admin/user_management?action=add" method="post">
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
@@ -274,6 +298,7 @@
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<script>$("#basicExampleModal").modal('show');</script>
 <script>
     $(document).ready(function () {
         $('#save').click(function () {
@@ -298,6 +323,7 @@
                     alert(data.name);
                     if (data.name == "sys") {
                         alert(data.message);
+
                     } else {
                         window.location.href = "/admin/user_management?action=manage";
                     }
