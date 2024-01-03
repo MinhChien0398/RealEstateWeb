@@ -220,7 +220,7 @@
                                                     <div class="custom-control custom-radio form-check mt-4">
                                                         <input name="gender" type="radio" class="form-check-input"
                                                                id="female"
-                                                               >
+                                                        >
                                                         <label class="form-check-label"
                                                                for="female">Nữ</label>
                                                     </div>
@@ -242,7 +242,8 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
-                                                        <select name="role" id="role"class="browser-default custom-select mb-4">
+                                                        <select name="role" id="role"
+                                                                class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
                                                             <option value="1" selected>Người dùng thường</option>
                                                             <option value="2">Admin</option>
@@ -287,26 +288,40 @@
                     birthday: $('#birthday').val(),
                     phone: $('#form4').val(),
                     province: $('#province').val(),
-                    isMale: $('#materialUnchecked').val(),
-                    isFemale: $('#materialIndeterminate2').val(),
+                    isMale: $('#male').val(),
+                    isFemale: $('#female').val(),
                     status: $('#status').val(),
                     role: $('#role').val(),
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.name=="sys") {
-                       alert(data.message);
-                    }else {
+                    alert(data.name);
+                    if (data.name == "sys") {
+                        alert(data.message);
+                    } else {
                         window.location.href = "/admin/user_management?action=manage";
                     }
                 },
-                error: function (data) {   console.log(err)
-                        var err = JSON.parse(data.responseText);
+                error: function (data) {
+                    var err = JSON.parse(data.responseText);
+                    console.log(err)
+                    // alert(err.data);
+
 
                     for (const e of err) {
                         fetchErr(e.name, e.message);
                     }
-                }
+                },
+                // error: function (jqXHR, error, errorThrown) {
+                //     if (jqXHR.status && jqXHR.status == 400) {
+                //         var err = JSON.parse(jqXHR.responseText);
+                //         console.log(err);
+                //         alert(JSON.stringify(err["message"]));
+                //     } else {
+                //         alert("Something went wrong");
+                //     }
+                // }
+
             })
         })
     });
@@ -318,9 +333,9 @@
                 let email = document.getElementById('form8');
                 email.classList.add('border-danger');
                 email.classList.add('text-danger');
-                email.value="";
+                email.value = "";
                 email.nextElementSibling.classList.add('active');
-                email.setAttribute('value'," ");
+                email.setAttribute('value', " ");
                 email.setAttribute('placeholder', mess);
                 console.log("run 1")
                 break;
@@ -328,36 +343,40 @@
                 let password = document.getElementById('form9');
                 password.classList.add('border-danger');
                 password.classList.add('text-danger');
-                password.value="";
+                password.value = "";
                 password.nextElementSibling.classList.add('active');
                 password.setAttribute('placeholder', mess);
-                console.log("run 2");   break;
+                console.log("run 2");
+                break;
             case "fullname":
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
-                fullname.value="";
+                fullname.value = "";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
                 fullname.setAttribute('placeholder', mess);
-                console.log("run 3");  break;
+                console.log("run 3");
+                break;
             case "phone":
                 let phone = document.getElementById('form4');
                 phone.classList.add('border-danger');
                 phone.classList.add('text-danger');
-                phone.value="";
+                phone.value = "";
                 phone.nextElementSibling.classList.add('active');
                 phone.setAttribute('placeholder', mess);
-                console.log("run 4");    break;
+                console.log("run 4");
+                break;
             case "birthday":
                 let birthday = document.getElementById('birthday');
                 birthday.classList.add('border-danger');
                 birthday.classList.add('text-danger');
-                birthday.value="";
+                birthday.value = "";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
                 birthday.setAttribute('placeholder', mess);
-                console.log("run 5"); break;
+                console.log("run 5");
+                break;
         }
     }
 </script>
@@ -367,7 +386,7 @@
     email.addEventListener('click', function () {
             email.classList.remove('border-danger');
             email.classList.remove('text-danger');
-            email.placeholder="";
+            email.placeholder = "";
             // email.value;
         }
     )
@@ -376,7 +395,7 @@
     password.addEventListener('click', function () {
             password.classList.remove('border-danger');
             password.classList.remove('text-danger');
-            password.placeholder="";
+            password.placeholder = "";
             // password.attributes.removeNamedItem("value");
         }
     )

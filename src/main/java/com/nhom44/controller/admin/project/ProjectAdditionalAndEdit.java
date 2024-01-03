@@ -1,6 +1,7 @@
 package com.nhom44.controller.admin.project;
 
 import com.nhom44.bean.Project;
+import com.nhom44.bean.Province;
 import com.nhom44.bean.Service;
 import com.nhom44.services.CategoryService;
 import com.nhom44.services.ProjectService;
@@ -40,10 +41,20 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
             }
             try {
                 int id = Integer.parseInt(req.getParameter("id"));
+
                 Project project = ProjectService.getInstance().getById(id);
                 req.setAttribute("project", project);
+
+
                 List<Service> services = ServiceOfProjectService.getInstance().getServicesByProjectId(id);
                 req.setAttribute("servicesOfproject", services);
+
+
+                ProvinceService provinceService = ProvinceService.getInstance();
+                List<Province> provinces = provinceService.getAll();
+                req.getSession().setAttribute("provinces", provinces);
+
+
                 req.getRequestDispatcher("/views/admin/project/update_project_page.jsp").forward(req, resp);
             } catch (NumberFormatException e) {
                 resp.sendRedirect("/admin/project_management");
