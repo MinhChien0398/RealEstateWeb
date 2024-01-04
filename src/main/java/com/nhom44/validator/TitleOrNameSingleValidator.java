@@ -1,8 +1,6 @@
 package com.nhom44.validator;
 
-import com.nhom44.bean.ResponseModel;
-
-public class TitleOrNameValidator implements Validator{
+public class TitleOrNameSingleValidator implements SingleValidator {
 
     @Override
     public boolean validator(String input) {

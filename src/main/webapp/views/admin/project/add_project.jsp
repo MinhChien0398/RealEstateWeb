@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Clover
-  Date: 04/12/2023
-  Time: 10:34 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=utf-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
@@ -124,7 +117,7 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">
-                <form action="api/project?action=add" enctype="multipart/form-data" method="post"  id="add-project">
+                <form action="api/project?action=add" enctype="multipart/form-data" method="post" id="add-project">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
@@ -166,9 +159,9 @@
                                                 <div class="col-lg-11 mb-4">
                                                     <div class="card-body">
                                                         <div class="mb-4">
-                                                            <label for="OwnEmail" class="labels">Chủ đầu tư</label>
-                                                            <input id="OwnEmail" type="email" class="form-control"
-                                                                   name="OwnEmail" placeholder="Email chủ đầu tư"
+                                                            <label for="email" class="labels">Chủ đầu tư</label>
+                                                            <input id="email" type="email" class="form-control"
+                                                                   name="email" placeholder="Email chủ đầu tư"
                                                                    value="">
                                                         </div>
                                                         <div class="mb-4">
@@ -177,11 +170,15 @@
                                                                    name="title" placeholder="Tiêu đề" value="">
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="categoryId" class="labels">Loại dự án</label>
-                                                            <select name="categoryId" id="categoryId" name="categoryId"
+                                                            <label for="category" class="labels">Loại dự án</label>
+                                                            <select name="category" id="category" name="category"
                                                                     class="form-control">
-                                                                <option value="" disabled selected>Loại dự án</option>
-
+                                                                <option value="" selected>Loại dự án</option>
+                                                                <c:forEach var="item" items="${categories}">
+                                                                    <option value="${item.id}"><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
 
                                                             </select>
                                                         </div>
@@ -199,12 +196,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="provinceId" class="labels">Địa chỉ</label>
-                                                            <select name="provinceId" id="provinceId"
+                                                            <label for="province" class="labels">Địa chỉ</label>
+                                                            <select name="province" id="province"
                                                                     class="form-control">
-                                                                <option value="" disabled selected>Chọn tỉnh thành
-                                                                </option>
-
+                                                                <option value="" selected>Chọn tỉnh thành</option>
+                                                                <c:forEach var="item" items="${provinces}">
+                                                                    <option value="${item.id}"><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
 
                                                             </select>
                                                         </div>
@@ -219,16 +219,21 @@
                                                         </div>
                                                         <div class="mb-4">
                                                             <label class="mdb-main-label">Dịch vụ</label>
-                                                            <select class="mdb-select md-form" name="service[]"
+                                                            <select class="mdb-select md-form" id="service"
+                                                                    name="service[]"
                                                                     multiple>
-                                                                <option value="1" selected>Xây dựng phần thô</option>
+                                                                <c:forEach var="item" items="${services}">
+                                                                    <option value="${item.id}"><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
                                                             </select>
                                                         </div>
                                                         <div class="mb-4 ">
                                                             <div class="d-flex">
                                                                 <label>Tiến độ dự án:</label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="false"
+                                                                    <input type="checkbox"
                                                                            name="isComplete" onclick="conpleteProject()"
                                                                            class="form-check-input"
                                                                            id="isComplete">
@@ -256,7 +261,7 @@
                                                             <div class="d-flex">
                                                                 <label for="status" class="labels">Trạng thái: </label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="true"
+                                                                    <input type="checkbox"
                                                                            name="isAccepted"
                                                                            onclick="userAccepted()"
                                                                            class="form-check-input" id="isAccepted">
@@ -267,7 +272,7 @@
                                                             </div>
                                                             <select id="status" name="status" class="custom-select">
                                                                 <option value="1">Đăng bài</option>
-                                                                <option value="2">Ẩn</option>
+                                                                <option value="0" selected>Ẩn</option>
                                                             </select>
                                                         </div>
 
@@ -277,7 +282,9 @@
                                                                 <div class="file-field d-flex align-items-center">
                                                                     <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                                         <span>chọn ảnh</span>
-                                                                        <input type="file" name="avatar[]" id="avatar">
+                                                                        <input type="file" name="avatar"
+                                                                               id="avatar"
+                                                                               onchange="validateFileType()">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -309,8 +316,8 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file"  name="groupImage[]" id="file_input1"
-                                                                   multiple>
+                                                            <input type="file" name="groupImage" id="file_input1"
+                                                                  onchange="validateFileType()" multiple>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -344,92 +351,96 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    function savePost(id) {
-        $.ajax({
-            url: "http://localhost:8080/api/project?action=add",
-            type: "POST",
-            dataType: "json",
-            data: {
-                post: CKEDITOR.instances.post.getData(),
-                id: id
-            },
-            success: function (data) {
-                console.log(data)
-            },
-            error: function (data) {
-                console.log(data)
-            }
-        })
-    }
-</script>
-<script>
-    function uploadGroupImage() {
-        var file_data = $('#file_input1').prop('files');
-        var form_data = new FormData();
-        for (let i = 0; i < file_data.length; i++) {
-            form_data.append('file', file_data[i]);
-        }
-        $.ajax({
-            url: 'http://localhost:8080/api/uploadImage?action=groupImage',
-            dataType: 'text',
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,
-            type: 'POST',
-            success: function (res) {
-                console.log(res)
-            },
-            error: function (res) {
-                console.log(res)
-            }
-        });
-    }
-</script>
-<script>
-    $('#save').click(function () {
+    function saveproject(idPost) {
         let form = new FormData();
-        form.append('ownEmail',$("#OwnEmail").val())
+        form.append('email', $("#email").val())
         form.append('title', $("#title").val());
-        form.append('categoryId', $("#categoryId").val());
+        form.append('categoryId', $("#category").val());
         form.append('price', $("#price").val());
         form.append('acreage', $("#acreage").val());
-        form.append('provinceId', $("#provinceId").val());
+        form.append('provinceId', $("#province").val());
         form.append('description', $("#description").val());
+        form.append('postId', idPost);
         form.append('service', $("#service").val());
         form.append('schedule', $("#schedule").val());
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
+        for (const x of  $("#file_input1").prop('files')) {
+            form.append('groupImage', x);
+        }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
             url: "/api/project?action=add",
             type: "POST",
-            // dataType: "json",
+            dataType: "json",
             processData: false,
             contentType: false,
-            data:  form,
+            data: form,
             success: function (data) {
-                if(data.status === 200){
-                    // uploadAvatar()
-                    // uploadGroupImage()
-                    // savePost(data.data)
+                console.log(data.responseText)
+                if (data.status === 200) {
                 }
             },
             error: function (data) {
-                console.log(data)
+                console.log(data.responseText)
             }
         })
-    })
+    }
+</script>
+<script>
+let avatar= document.getElementById("avatar");
+console.log(avatar.files.length)
+avatar.addEventListener('change', function(){
+    // var files= input.files;
+    // console.log(files.length)
+    // if (files.length > 0) {
+    //     // Xử lý file tại đây nếu cần thiết
+    //     console.log('File loaded:', files[0].name);
+    // }
+    $.ajax({
+        url: serverFilePath,
+        dataType: 'text',
+        success: function(data) {
+            // Ở đây, bạn có thể xử lý dữ liệu theo ý muốn
+        },
+        error: function(error) {
+            console.error('Error loading file:', error);
+        }
+    });
+
+})
+let serverFilePath='/template/img/projects/0082/1704342307729 Screenshot (4).png';
+avatar.dispatchEvent(new Event("change"))
 </script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });
-
 </script>
+<script>
+    $('#save').click(function () {
+        let content = CKEDITOR.instances.post.getData();
+        $.ajax({
+            url: "/api/post?action=add",
+            type: "POST",
+            dataType: "json",
+            // contentType: "application/json",
+            // processData: false,
+            data: {content: content},
+            success: function (data) {
+                saveproject(data.data.id)
+            },
+            error: function (data) {
+                //thông báo lỗi sys
+                console.log(data)
+            }
+        })
+    })
+</script>
+
 <script>
     let allFiles1 = [];
     let input1 = document.getElementById("file_input1");

@@ -1,6 +1,6 @@
 package com.nhom44.validator;
 
-public class SelectorValidator implements Validator{
+public class SelectorSingleValidator implements SingleValidator {
     @Override
     public boolean validator(String input) {
         if(input==null||input.trim().isEmpty())

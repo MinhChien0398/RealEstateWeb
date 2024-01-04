@@ -1,13 +1,14 @@
 package com.nhom44.DAO;
 
 import com.nhom44.bean.Province;
+import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.config.RegisterFieldMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
 import java.util.List;
 
-@RegisterFieldMapper(Province.class)
+@RegisterBeanMapper(Province.class)
 public interface ProvinceDAO {
     @SqlQuery("SELECT * FROM provinces")
     List<Province> getAll();

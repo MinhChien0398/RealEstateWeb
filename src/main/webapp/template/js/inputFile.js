@@ -1,5 +1,4 @@
     let allFiles = [];
-    let form = document.getElementsByClassName("form-img");
     let input = document.getElementById("avatar");
     let container = document.getElementsByClassName("img-container");
     // console.log(input.files)
@@ -10,6 +9,7 @@
     container[0].parentElement.classList.add('d-none')
     container[0].parentElement.classList.remove('d-block')
 }
+
     input.addEventListener('change', function () {
     let files = this.files;allFiles=[];
     for (let i = 0; i < files.length; i++) {
@@ -17,6 +17,7 @@
 }
     showImage();
 })
+
     const showImage = () => {
     if(input.files.length!== 0){
     container[0].parentElement.classList.add('d-block')
@@ -43,3 +44,13 @@
     allFiles=Array.from(input.files)
     showImage()
 }
+    function validateFileType(){
+        var fileName = document.getElementById("fileName").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+            //TO DO
+        }else{
+            alert("Only jpg/jpeg and png files are allowed!");
+        }
+    }
