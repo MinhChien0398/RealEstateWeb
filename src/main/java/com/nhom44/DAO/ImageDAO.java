@@ -1,4 +1,19 @@
 package com.nhom44.DAO;
+import com.nhom44.bean.Image;
+import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
+import org.jdbi.v3.sqlobject.config.RegisterFieldMapper;
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
+import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
-public class ImageDAO {
+
+@RegisterBeanMapper(Image.class)
+public interface ImageDAO {
+    @SqlUpdate("INSERT INTO group_images(projectId, imageId) VALUES(:projectId, :imageId)")
+    int addProjectImage(@Bind("projectId") int projectId,@Bind("imageId") int imageId);
+@SqlUpdate("INSERT INTO images(path, name) VALUES(:path, :name)")
+    int addImage(@BindBean Image image);
+@SqlQuery("SELECT id FROM images WHERE path=:path AND name=:name")
+    int getIdImage(@BindBean Image image);
 }

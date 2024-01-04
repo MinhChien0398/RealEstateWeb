@@ -1,52 +1,56 @@
-let fileInput = document.getElementById("inputGroupFile01");
-let fileInput1 = document.getElementById("inputGroupFile0");
-let imageContainer = document.getElementById("images");
-let imageContainer1 = document.getElementById("GroupImage");
-let numOfFiles = document.getElementById("num-of-files")    ;
-let numOfFiles1 = document.getElementById("num-of-files1");
-
-function preview(){
-    imageContainer.innerHTML = "";
-    numOfFiles.textContent = `Đã chọn ${fileInput.files.length} `;
-
-    for(i of fileInput.files){
-        let reader = new FileReader();
-        let figure = document.createElement("figure");
-        let figCap = document.createElement("figcaption");
-        figCap.innerText = i.name;
-        figure.appendChild(figCap);
-        reader.onload=()=>{
-            let img = document.createElement("img");
-            img.setAttribute("src",reader.result);
-            figure.insertBefore(img,figCap);
-        }
-        imageContainer.appendChild(figure);
-        reader.readAsDataURL(i);
-    }
+    let allFiles = [];
+    let input = document.getElementById("avatar");
+    let container = document.getElementsByClassName("img-container");
+    // console.log(input.files)
+    if(input.files.length!== 0|| allFiles.length!==0){
+    container[0].parentElement.classList.add('d-block')
+    container[0].parentElement.classList.remove('d-none')
+}else{
+    container[0].parentElement.classList.add('d-none')
+    container[0].parentElement.classList.remove('d-block')
 }
-function preview1(){
-    imageContainer1.innerHTML = "";
-    numOfFiles1.textContent = `Đã chọn ${fileInput1.files.length}`;
 
-    for(i of fileInput1.files){
-        let reader = new FileReader();
-        let figure = document.createElement("figure");
-        let figCap = document.createElement("figcaption");
-        figure.classList.add("col-lg-4");
-        figure.classList.add("col-md-6");
-        figure.classList.add("col-sm-12");
-        figure.classList.add("mb-4");
-        figCap.innerText = i.name;
-        figCap.classList.add('text-center')
-        figure.appendChild(figCap);
-        reader.onload=()=>{
-            let img = document.createElement("img");
-            img.setAttribute("src",reader.result);
-            img.classList.add("w-100");
-            img.classList.add("h-auto");
-            figure.insertBefore(img,figCap);
-        }
-        imageContainer1.appendChild(figure);
-        reader.readAsDataURL(i);
-    }
+    input.addEventListener('change', function () {
+    let files = this.files;allFiles=[];
+    for (let i = 0; i < files.length; i++) {
+    allFiles.push(files[i])
 }
+    showImage();
+})
+
+    const showImage = () => {
+    if(input.files.length!== 0){
+    container[0].parentElement.classList.add('d-block')
+    container[0].parentElement.classList.remove('d-none')
+}else{
+    container[0].parentElement.classList.add('d-none')
+    container[0].parentElement.classList.remove('d-block')
+}
+    let images = ' ';
+    allFiles.forEach((e, i) => {
+    images += '<div class="image position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
+    '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage(' + i + ')" style=""></i></div></div>'
+})
+    container[0].innerHTML = images
+}
+    let dt = new DataTransfer();
+    const delImage = index => {
+    let dt = new DataTransfer();
+    for (let i = 0; i < input.files.length; i++) {
+    if (index !== i)
+    dt.items.add( input.files[i]) // here you exclude the file. thus removing it.
+}
+    input.files = dt.files
+    allFiles=Array.from(input.files)
+    showImage()
+}
+    function validateFileType(){
+        var fileName = document.getElementById("fileName").value;
+        var idxDot = fileName.lastIndexOf(".") + 1;
+        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
+            //TO DO
+        }else{
+            alert("Only jpg/jpeg and png files are allowed!");
+        }
+    }

@@ -6,8 +6,9 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 public class User {
+    // status 0-> disable, 1-> enable, 2-> block, 3-> not create
     private int id;
-    private int avatar;
+    private String avatar;
     private String fullName;
     private String email;
     private String password;
@@ -17,6 +18,7 @@ public class User {
     private int status;
     private Timestamp createdAt;
     private Timestamp updatedAt;
+    private int provinceId;
     private String province;
     private int role;
 
@@ -65,7 +67,7 @@ public class User {
     }
 
 
-    public int getAvatar() {
+    public String getAvatar() {
         return avatar;
     }
 
@@ -110,7 +112,7 @@ public class User {
         this.id = id;
     }
 
-    public void setAvatar(int avatar) {
+    public void setAvatar(String avatar) {
         this.avatar = avatar;
     }
 
@@ -144,7 +146,31 @@ public class User {
         this.role = role;
     }
 
-    public User(int id, int avatar, String fullName, String email, String password, String phone, Date birthday, int gender, int status, Timestamp createdAt, Timestamp updatedAt, String province, int role) {
+    public int getProvinceId() {
+        return provinceId;
+    }
+
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public User(int id, String avatar, String fullName, String email, String password, String phone, Date birthday, int gender, int status, Timestamp createdAt, Timestamp updatedAt, int provinceId, int role) {
+        this.id = id;
+        this.avatar = avatar;
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.provinceId = provinceId;
+        this.role = role;
+    }
+
+    public User(int id, String avatar, String fullName, String email, String password, String phone, Date birthday, int gender, int status, Timestamp createdAt, Timestamp updatedAt, String province, int role) {
         this.id = id;
         this.avatar = avatar;
         this.fullName = fullName;
