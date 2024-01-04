@@ -94,7 +94,7 @@
             </li>
             <li class="sidebar-item" id="slide">
                 <a href="../slide/slide_manage.jsp" class="menu-btn">
-                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span>
                 </a>
             </li>
         </div>

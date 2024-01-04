@@ -21,7 +21,6 @@ public class ProjectService {
         return instance != null ? instance : (instance = new ProjectService());
     }
 
-
     public List<Project> getAllProject() {
         return conn.withExtension(ProjectDAO.class, dao -> dao.getAll());
     }

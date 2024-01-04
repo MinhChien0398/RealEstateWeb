@@ -15,8 +15,6 @@ public class ProjectManagementController extends HttpServlet {
     private final ProjectService projectService = ProjectService.getInstance();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        List<Project> projects = projectService.getAllProject();
-//        req.setAttribute("projects", projects);
         req.getRequestDispatcher("/views/admin/project/project_manage.jsp").forward(req, resp);
     }
 

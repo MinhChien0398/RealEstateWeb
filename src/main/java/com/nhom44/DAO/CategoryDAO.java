@@ -8,7 +8,8 @@ import java.util.List;
 
 @RegisterFieldMapper(Category.class)
 public interface CategoryDAO {
-    //get all category
-    @SqlQuery("SELECT id, name, status FROM categories")
+    @SqlQuery("SELECT id, name, status, updatedAt FROM categories")
     List<Category> getAll();
+
+
 }

@@ -147,16 +147,13 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
                     </tbody>
-
                 </table>
-
             </main>
         </div>
     </div>
