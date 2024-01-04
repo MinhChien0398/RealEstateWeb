@@ -31,6 +31,7 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action") == null || req.getParameter("action").isEmpty() ? "add" : req.getParameter("action");
+        resp.addHeader("Access-Control-Allow-Origin", "*");
         if (action.equals("add")) {
             req.getRequestDispatcher("/views/admin/project/add_project.jsp").forward(req, resp);
         } else if (action.equals("edit")) {

@@ -10,6 +10,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/ImageHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/DateValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/DescriptionSingleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/MuitipleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/NumberVallidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/SelectorSingleValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/ServiceSelectValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/TitleOrNameSingleValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ServiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ServiceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" afterDir="false" />
@@ -63,31 +98,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.80.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;mchien-branch&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/User/Laravel Project/RealEstateWeb/src/main/webapp/template/img&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 9.0.80.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "mchien-branch",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "D:/User/Laravel Project/RealEstateWeb/src/main/webapp/template/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "database.query.execution",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.nhom44.services.observer" />
@@ -109,11 +145,9 @@
       <recent name="com.nhom44.controller.admin.project" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="excludedTypes">
-      <set>
-        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
-      </set>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="(){" />
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
@@ -315,6 +349,13 @@
       <workItem from="1703738636637" duration="6602000" />
       <workItem from="1703772684760" duration="9536000" />
       <workItem from="1703784192492" duration="5524000" />
+      <workItem from="1704173474447" duration="6358000" />
+      <workItem from="1704208078645" duration="18378000" />
+      <workItem from="1704251178186" duration="8098000" />
+      <workItem from="1704260524599" duration="8470000" />
+      <workItem from="1704292977052" duration="293000" />
+      <workItem from="1704293412565" duration="21949000" />
+      <workItem from="1704336404977" duration="15422000" />
     </task>
     <servers />
   </component>
@@ -325,9 +366,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp</url>
-          <line>42</line>
-          <option name="timeStamp" value="4" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/validator/EmailSingleValidator.java</url>
+          <line>11</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/services/ImageService.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

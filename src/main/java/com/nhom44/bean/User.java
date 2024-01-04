@@ -6,6 +6,7 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 public class User {
+    // status 0-> disable, 1-> enable, 2-> block, 3-> not create
     private int id;
     private String avatar;
     private String fullName;

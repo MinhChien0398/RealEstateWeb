@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Stream;
 
-@RegisterFieldMapper(User.class)
+@RegisterBeanMapper(User.class)
 public interface UserDAO {
     @SqlUpdate("INSERT INTO users(fullname, email, password, role, phone , provinceId, birthday, gender, status)" +
                          " VALUES(:fullname,:email,:password,:role, :phone,:provinceId ,:birthday, :gender, :status)")
@@ -43,7 +43,7 @@ public interface UserDAO {
 
     @SqlQuery("Select u.id FROM users u WHERE u.email=:email")
     int getIdUserWithEmail(@Bind("email") String email);
-@SqlQuery("Select u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role, u.birthday,p.name as province " +
+@SqlQuery("Select u.id, u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role, u.birthday,p.name as province " +
         "FROM users u Left Join provinces p ON u.provinceId=p.id where u.email=:email")
         User getUserByEmail(@Bind("email") String email);
 //    String getIdUserWithEmail(@Bind("email") String email);

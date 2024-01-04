@@ -104,23 +104,6 @@ public class UserService {
     }
 
 
-    public static void main(String[] args) {
-//        User user = new User();
-//        String oldEmail = "user1@gmail.com";
-//        user.setFullName("nguoi dung thu 1");
-//        user.setEmail("user@gmail.com");
-//        user.setPassword("123456");
-//        user.setPhone("0123456789");
-//        user.setBirthday(new Date(1929, 07, 01));
-//        user.setGender(1);
-//        user.setStatus(1);
-//        user.setRole(1);
-//        user.setProvince("Bình Dương");
-//        user.setAvatar(1);
-//        System.out.println(  getInstance().update(user,oldEmail));;
-        User user = getInstance().getUserByEmail("user@gmail.com");
-        System.out.println(user.toString());
-    }
 
     public User getUserByEmail(String email) {
         return conn.withExtension(UserDAO.class, dao -> dao.getUserByEmail(email));
