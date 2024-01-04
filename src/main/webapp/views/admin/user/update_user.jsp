@@ -341,9 +341,7 @@
                 }
             }
         })
-    })
     });
-</script>
 </script>
 <script>
     <%-- email--%>
