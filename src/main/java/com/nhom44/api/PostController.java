@@ -17,10 +17,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 
 @WebServlet(urlPatterns = "/api/post")
-@MultipartConfig(
-        maxFileSize = 1024 * 1024 * 10,
-        maxRequestSize = 1024 * 1024 * 10 * 5,
-        fileSizeThreshold = 1024 * 1024 * 10)
+
 
 public class PostController extends HttpServlet {
     @Override

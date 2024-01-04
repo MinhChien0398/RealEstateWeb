@@ -10,51 +10,120 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ImageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/ImageHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/DateValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/DescriptionSingleValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/MuitipleValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/NumberVallidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/SelectorSingleValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/ServiceSelectValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/TitleOrNameSingleValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProvinceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ServiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ServiceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Image.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/NumberVallidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/NumberVallidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/1704313915289 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/post/1704313919480 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/post/1704313919503 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/post/1704313919519 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/post/1704313919533 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/post/1704313919546 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0058/post/1704313919564 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/1704314074467 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/post/1704314080250 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/post/1704314080274 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/post/1704314080287 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/post/1704314080301 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/post/1704314080316 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0059/post/1704314080335 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/1704314237396 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/post/1704314237494 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/post/1704314237507 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/post/1704314237521 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/post/1704314237536 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/post/1704314237550 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0060/post/1704314237592 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/1704314338106 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/post/1704314358681 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/post/1704314358702 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/post/1704314358718 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/post/1704314358745 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/post/1704314358761 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0061/post/1704314358779 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/1704316297580 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/post/1704316302906 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/post/1704316302931 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/post/1704316302945 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/post/1704316302998 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/post/1704316303014 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0067/post/1704316303035 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/1704316592074 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/post/1704316592150 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/post/1704316592162 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/post/1704316592173 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/post/1704316592186 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/post/1704316592198 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0068/post/1704316592212 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/1704316868314 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/post/1704316868407 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/post/1704316868418 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/post/1704316868431 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/post/1704316868443 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/post/1704316868457 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0069/post/1704316868471 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/1704317076704 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/post/1704317079226 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/post/1704317079242 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/post/1704317079258 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/post/1704317079268 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/post/1704317079283 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0070/post/1704317079297 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/1704317346826 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/post/1704317346984 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/post/1704317346998 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/post/1704317347012 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/post/1704317347027 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/post/1704317347038 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0071/post/1704317347053 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/1704337220153 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/post/1704337220268 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/post/1704337220281 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/post/1704337220294 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/post/1704337220306 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/post/1704337220318 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0072/post/1704337220358 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/1704337582638 Screenshot (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/post/1704337582682 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/post/1704337582695 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/post/1704337582708 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/post/1704337582720 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/post/1704337582732 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0073/post/1704337582745 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0074/1704337765651 Screenshot (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0074/post/1704337765690 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0074/post/1704337765704 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0075/1704339070294 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0075/post/1704339070373 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0075/post/1704339070389 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0076/1704339851599 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0076/post/1704339851666 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0076/post/1704339851677 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0076/post/1704339851688 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/1704340421141 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/post/1704340421207 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/post/1704340421221 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/post/1704340421233 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/post/1704340421244 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/post/1704340421257 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0077/post/1704340421271 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/1704341065050 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/post/1704341065095 Screenshot (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/post/1704341065110 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/post/1704341065122 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/post/1704341065133 Screenshot (5) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/post/1704341065144 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0078/post/1704341065155 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0081/1704341771287 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0081/post/1704341771410 Screenshot (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0081/post/1704341771427 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0081/post/1704341771458 Screenshot (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0081/post/1704341771468 Screenshot (6) - Copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0082/1704342307729 Screenshot (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/projects/0082/post/1704342307878 Screenshot (3).png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/category/category_management.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/category/category_management.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/user_manage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,32 +167,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Tomcat Server.Tomcat 9.0.80.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "mchien-branch",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/User/Laravel Project/RealEstateWeb/src/main/webapp/template/img",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "database.query.execution",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.80.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mchien-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/User/Laravel Project/RealEstateWeb/src/main/webapp/template/img&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.nhom44.services.observer" />
@@ -150,7 +219,14 @@
       <command value="(){" />
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.72">
     <configuration name="ProjectService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProjectService" />
       <module name="RealEstateWeb" />
@@ -203,9 +279,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+    <configuration name="Tomcat 9.0.72" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.72" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="RealEstateWeb:war exploded">
@@ -215,7 +289,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c7c9bcc0-4c31-4589-8496-fabed5c349d8" />
+        <option name="BASE_DIRECTORY_NAME" value="dff67fb6-9c63-4faa-b269-3e7a0b6ba63d" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -223,7 +297,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="62042" />
+        <option name="DEBUG_PORT" value="53007" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -297,7 +371,7 @@
       <item itemvalue="Application.ProvinceService" />
       <item itemvalue="Application.UserManagementController" />
       <item itemvalue="Application.UserService" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.80" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.72" />
     </list>
     <recent_temporary>
       <list>
@@ -355,7 +429,8 @@
       <workItem from="1704260524599" duration="8470000" />
       <workItem from="1704292977052" duration="293000" />
       <workItem from="1704293412565" duration="21949000" />
-      <workItem from="1704336404977" duration="15422000" />
+      <workItem from="1704336404977" duration="17534000" />
+      <workItem from="1704370901765" duration="6609000" />
     </task>
     <servers />
   </component>
@@ -387,6 +462,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/services/ImageService.java</url>
           <line>18</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

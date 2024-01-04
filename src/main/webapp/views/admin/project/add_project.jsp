@@ -284,7 +284,7 @@
                                                                         <span>chọn ảnh</span>
                                                                         <input type="file" name="avatar"
                                                                                id="avatar"
-                                                                               onchange="validateFileType()">
+                                                                               accept="image/*">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -316,8 +316,7 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file" name="groupImage" id="file_input1"
-                                                                  onchange="validateFileType()" multiple>
+                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,29 +389,8 @@
     }
 </script>
 <script>
-let avatar= document.getElementById("avatar");
-console.log(avatar.files.length)
-avatar.addEventListener('change', function(){
-    // var files= input.files;
-    // console.log(files.length)
-    // if (files.length > 0) {
-    //     // Xử lý file tại đây nếu cần thiết
-    //     console.log('File loaded:', files[0].name);
-    // }
-    $.ajax({
-        url: serverFilePath,
-        dataType: 'text',
-        success: function(data) {
-            // Ở đây, bạn có thể xử lý dữ liệu theo ý muốn
-        },
-        error: function(error) {
-            console.error('Error loading file:', error);
-        }
-    });
-
-})
-let serverFilePath='/template/img/projects/0082/1704342307729 Screenshot (4).png';
-avatar.dispatchEvent(new Event("change"))
+    let input = new Input();
+    input.files.
 </script>
 <script>
     CKEDITOR.replace('post', {
@@ -482,6 +460,7 @@ avatar.dispatchEvent(new Event("change"))
             if (index !== i)
                 dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
         }
+        dt1.setData("image", )
         input1.files = dt1.files
         allFiles1 = Array.from(input1.files)
         showImage1()
