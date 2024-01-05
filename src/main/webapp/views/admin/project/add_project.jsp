@@ -282,9 +282,7 @@
                                                                 <div class="file-field d-flex align-items-center">
                                                                     <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                                         <span>chọn ảnh</span>
-                                                                        <input type="file" name="avatar"
-                                                                               id="avatar"
-                                                                               accept="image/*">
+                                                                        <input type="file" id="avatar" accept="image/*">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -316,7 +314,7 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple>
+                                                            <input type="file" id="file_input1" accept="image/*">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -365,7 +363,7 @@
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
-        for (const x of  $("#file_input1").prop('files')) {
+        for (const x of $("#file_input1").prop('files')) {
             form.append('groupImage', x);
         }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
@@ -388,10 +386,31 @@
         })
     }
 </script>
-<script>
-    let input = new Input();
-    input.files.
-</script>
+<%--<script>--%>
+<%--    let avatar = document.getElementById("avatar");--%>
+<%--    console.log(avatar.files.length)--%>
+<%--    avatar.addEventListener('change', function () {--%>
+<%--        // var files= input.files;--%>
+<%--        // console.log(files.length)--%>
+<%--        // if (files.length > 0) {--%>
+<%--        //     // Xử lý file tại đây nếu cần thiết--%>
+<%--        //     console.log('File loaded:', files[0].name);--%>
+<%--        // }--%>
+<%--        $.ajax({--%>
+<%--            url: serverFilePath,--%>
+<%--            dataType: 'text',--%>
+<%--            success: function (data) {--%>
+<%--                // Ở đây, bạn có thể xử lý dữ liệu theo ý muốn--%>
+<%--            },--%>
+<%--            error: function (error) {--%>
+<%--                console.error('Error loading file:', error);--%>
+<%--            }--%>
+<%--        });--%>
+
+<%--    })--%>
+<%--    let serverFilePath = '/template/img/projects/0082/1704342307729 Screenshot (4).png';--%>
+<%--    avatar.dispatchEvent(new Event("change"))--%>
+<%--</script>--%>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
@@ -402,21 +421,55 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post?action=add",
+            url: "/api/project?action=add",
             type: "POST",
             dataType: "json",
             // contentType: "application/json",
             // processData: false,
-            data: {content: content},
+            data: {
+                content: content,
+            },
             success: function (data) {
                 saveproject(data.data.id)
             },
             error: function (data) {
                 //thông báo lỗi sys
-                console.log(data)
+                console.log(data.responseText)
             }
         })
     })
+</script>
+<script>
+    function fetchErr(name, message) {
+        switch (name) {
+            case "email":
+                let email = document.getElementById("email");
+                email.classList.add("border-danger");
+                email.classList.remove("border-success");
+                email.value = "";
+                email.nextElementSibling.innerText = message;
+                email.setAttribute('value', " ");
+                email.setAttribute('placeholder', message);
+                break;
+            case "title":
+                let title = document.getElementById("title");
+                title.classList.add("border-danger");
+                title.classList.remove("border-success");
+                title.nextElementSibling.innerText = message;
+                title.setAttribute("title", message);
+                break;
+            case "categoryId":
+                let category = document.getElementById("category");
+                category.classList.add("border-danger");
+                category.classList.remove("border-success");
+                category.nextElementSibling.innerText = message;
+                category.setAttribute("title", message);
+                break;
+        }
+    }
+</script>
+<script>
+
 </script>
 
 <script>
