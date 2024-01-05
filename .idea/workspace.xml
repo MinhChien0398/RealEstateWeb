@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/views/public/404.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/layout/public/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/layout/public/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -308,7 +310,8 @@
       <workItem from="1703772684760" duration="9536000" />
       <workItem from="1703784192492" duration="5524000" />
       <workItem from="1704247385513" duration="18310000" />
-      <workItem from="1704333375291" duration="2084000" />
+      <workItem from="1704333375291" duration="2904000" />
+      <workItem from="1704417129718" duration="5780000" />
     </task>
     <servers />
   </component>

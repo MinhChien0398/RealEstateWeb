@@ -15,7 +15,7 @@
         </button>
         <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
             <ul class="navbar-nav  col-9 border-right">
-                <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
+                <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active"  >
                     <a class="nav-link" href="/home">Trang Chủ
                     </a>
                 </li>
