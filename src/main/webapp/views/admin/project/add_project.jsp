@@ -223,7 +223,7 @@
                                                                     name="service[]"
                                                                     multiple>
                                                                 <c:forEach var="item" items="${services}">
-                                                                    <option value="${item.id}"><span
+                                                                    <option value="${item.id}" <c:if test="${item.id==1}"> selected </c:if><span
                                                                             class="text-uppercase">${item.name}</span>
                                                                     </option>
                                                                 </c:forEach>
@@ -316,8 +316,7 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file" accept="image/*" name="groupImage"
-                                                                   id="file_input1" multiple>
+                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -401,10 +400,10 @@
         })
     }
 </script>
-<%--<script>--%>
-<%--    let input = new Input();--%>
-<%--    input.files.--%>
-<%--</script>--%>
+<script>
+
+
+</script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",

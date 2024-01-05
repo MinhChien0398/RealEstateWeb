@@ -7,6 +7,8 @@ import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import java.util.List;
+
 
 @RegisterBeanMapper(Image.class)
 public interface ImageDAO {
@@ -16,4 +18,6 @@ public interface ImageDAO {
     int addImage(@BindBean Image image);
 @SqlQuery("SELECT id FROM images WHERE path=:path AND name=:name")
     int getIdImage(@BindBean Image image);
+@SqlQuery("SELECT concat(images.path,'/',images.name) FROM images  JOIN doanweb.group_images gi on images.id = gi.imageId WHERE projectId=:id")
+    List<String> getGroupImagesByProjectId(@Bind("id") int id);
 }

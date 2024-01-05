@@ -102,7 +102,9 @@ public class UserService {
             return -1;
         }
     }
-
+    public User getUserOwnerOfProject(int projectId) {
+        return conn.withExtension(UserDAO.class, dao -> dao.getUserOwnerOfProject(projectId));
+    }
 
 
     public User getUserByEmail(String email) {
