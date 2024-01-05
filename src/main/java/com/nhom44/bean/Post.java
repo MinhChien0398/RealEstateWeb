@@ -8,6 +8,10 @@ public class Post {
     private String createdAt;
     private String updatedAt;
 
+    public Post() {
+
+    }
+
     @Override
     public String toString() {
         return "Post{" +

@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Clover
-  Date: 04/12/2023
-  Time: 10:34 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=utf-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
@@ -124,7 +117,7 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">
-                <form action="api/project?action=add" enctype="multipart/form-data" method="post"  id="add-project">
+                <form action="api/project?action=add" enctype="multipart/form-data" method="post" id="add-project">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
@@ -166,9 +159,9 @@
                                                 <div class="col-lg-11 mb-4">
                                                     <div class="card-body">
                                                         <div class="mb-4">
-                                                            <label for="OwnEmail" class="labels">Chủ đầu tư</label>
-                                                            <input id="OwnEmail" type="email" class="form-control"
-                                                                   name="OwnEmail" placeholder="Email chủ đầu tư"
+                                                            <label for="email" class="labels">Chủ đầu tư</label>
+                                                            <input id="email" type="email" class="form-control"
+                                                                   name="email" placeholder="Email chủ đầu tư"
                                                                    value="">
                                                         </div>
                                                         <div class="mb-4">
@@ -177,11 +170,15 @@
                                                                    name="title" placeholder="Tiêu đề" value="">
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="categoryId" class="labels">Loại dự án</label>
-                                                            <select name="categoryId" id="categoryId" name="categoryId"
+                                                            <label for="category" class="labels">Loại dự án</label>
+                                                            <select name="category" id="category" name="category"
                                                                     class="form-control">
-                                                                <option value="" disabled selected>Loại dự án</option>
-
+                                                                <option value="" selected>Loại dự án</option>
+                                                                <c:forEach var="item" items="${categories}">
+                                                                    <option value="${item.id}"><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
 
                                                             </select>
                                                         </div>
@@ -199,12 +196,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="provinceId" class="labels">Địa chỉ</label>
-                                                            <select name="provinceId" id="provinceId"
+                                                            <label for="province" class="labels">Địa chỉ</label>
+                                                            <select name="province" id="province"
                                                                     class="form-control">
-                                                                <option value="" disabled selected>Chọn tỉnh thành
-                                                                </option>
-
+                                                                <option value="" selected>Chọn tỉnh thành</option>
+                                                                <c:forEach var="item" items="${provinces}">
+                                                                    <option value="${item.id}"><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
 
                                                             </select>
                                                         </div>
@@ -219,16 +219,21 @@
                                                         </div>
                                                         <div class="mb-4">
                                                             <label class="mdb-main-label">Dịch vụ</label>
-                                                            <select class="mdb-select md-form" name="service[]"
+                                                            <select class="mdb-select md-form" id="service"
+                                                                    name="service[]"
                                                                     multiple>
-                                                                <option value="1" selected>Xây dựng phần thô</option>
+                                                                <c:forEach var="item" items="${services}">
+                                                                    <option value="${item.id}" <c:if test="${item.id==1}"> selected </c:if><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
                                                             </select>
                                                         </div>
                                                         <div class="mb-4 ">
                                                             <div class="d-flex">
                                                                 <label>Tiến độ dự án:</label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="false"
+                                                                    <input type="checkbox"
                                                                            name="isComplete" onclick="conpleteProject()"
                                                                            class="form-check-input"
                                                                            id="isComplete">
@@ -256,7 +261,7 @@
                                                             <div class="d-flex">
                                                                 <label for="status" class="labels">Trạng thái: </label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox" checked="true"
+                                                                    <input type="checkbox"
                                                                            name="isAccepted"
                                                                            onclick="userAccepted()"
                                                                            class="form-check-input" id="isAccepted">
@@ -267,7 +272,7 @@
                                                             </div>
                                                             <select id="status" name="status" class="custom-select">
                                                                 <option value="1">Đăng bài</option>
-                                                                <option value="2">Ẩn</option>
+                                                                <option value="0" selected>Ẩn</option>
                                                             </select>
                                                         </div>
 
@@ -277,7 +282,9 @@
                                                                 <div class="file-field d-flex align-items-center">
                                                                     <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                                         <span>chọn ảnh</span>
-                                                                        <input type="file" name="avatar[]" id="avatar">
+                                                                        <input type="file" name="avatar"
+                                                                               id="avatar"
+                                                                               accept="image/*">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -309,8 +316,7 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file"  name="groupImage[]" id="file_input1"
-                                                                   multiple>
+                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -344,91 +350,314 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    function savePost(id) {
-        $.ajax({
-            url: "http://localhost:8080/api/project?action=add",
-            type: "POST",
-            dataType: "json",
-            data: {
-                post: CKEDITOR.instances.post.getData(),
-                id: id
-            },
-            success: function (data) {
-                console.log(data)
-            },
-            error: function (data) {
-                console.log(data)
-            }
-        })
-    }
-</script>
-<script>
-    function uploadGroupImage() {
-        var file_data = $('#file_input1').prop('files');
-        var form_data = new FormData();
-        for (let i = 0; i < file_data.length; i++) {
-            form_data.append('file', file_data[i]);
-        }
-        $.ajax({
-            url: 'http://localhost:8080/api/uploadImage?action=groupImage',
-            dataType: 'text',
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,
-            type: 'POST',
-            success: function (res) {
-                console.log(res)
-            },
-            error: function (res) {
-                console.log(res)
-            }
-        });
-    }
-</script>
-<script>
-    $('#save').click(function () {
+    function saveproject(idPost) {
         let form = new FormData();
-        form.append('ownEmail',$("#OwnEmail").val())
+        form.append('email', $("#email").val())
         form.append('title', $("#title").val());
-        form.append('categoryId', $("#categoryId").val());
+        form.append('categoryId', $("#category").val());
         form.append('price', $("#price").val());
         form.append('acreage', $("#acreage").val());
-        form.append('provinceId', $("#provinceId").val());
+        form.append('provinceId', $("#province").val());
         form.append('description', $("#description").val());
+        form.append('postId', idPost);
         form.append('service', $("#service").val());
         form.append('schedule', $("#schedule").val());
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
+        for (const x of $("#file_input1").prop('files')) {
+            form.append('groupImage', x);
+        }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
             url: "/api/project?action=add",
             type: "POST",
-            // dataType: "json",
+            dataType: "json",
             processData: false,
             contentType: false,
-            data:  form,
+            data: form,
             success: function (data) {
-                if(data.status === 200){
-                    // uploadAvatar()
-                    // uploadGroupImage()
-                    // savePost(data.data)
+                console.log(data.responseText)
+                if (data.status === 200) {
                 }
             },
             error: function (data) {
-                console.log(data)
+                // console.log(data.responseText)
+
+
+                var err = JSON.parse(data.responseText);
+                console.log(err)
+                for (let e of err) {
+
+                    console.log(e.name, e.message)
+                    //     console.log email
+                    fetchErr(e.name, e.message);
+
+
+                }
             }
         })
-    })
+    }
+</script>
+<script>
+
+
 </script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });
+</script>
+<script>
+    $('#save').click(function () {
+        let content = CKEDITOR.instances.post.getData();
+        $.ajax({
+            url: "/api/post?action=add",
+            type: "POST",
+            dataType: "json",
+            // contentType: "application/json",
+            // processData: false,
+            data: {content: content},
+            success: function (data) {
+                saveproject(data.data.id)
+            },
+            error: function (data) {
+                //thông báo lỗi sys
+                // console.log(data)
 
+                console.log(data)
+                var err = JSON.parse(data.responseText);
+
+                for (const e of err) {
+                    //     console.log email
+                    fetchErr(e.name, e.message);
+                }
+            }
+        })
+    })
+</script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            case "email":
+                let email = document.getElementById('email');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', " ");
+                email.setAttribute('placeholder', mess);
+                break;
+            case "title":
+                let title = document.getElementById('title');
+                title.classList.add('border-danger');
+                title.classList.add('text-danger');
+                title.value = "";
+                title.setAttribute('value', " ");
+                title.setAttribute('placeholder', mess);
+                break;
+            case "category":
+                let category = document.getElementById('category');
+                category.classList.add('border-danger');
+                category.classList.add('text-danger');
+                category.value = "";
+                category.setAttribute('value', " ");
+                category.setAttribute('placeholder', mess);
+                break;
+            case "price":
+                let price = document.getElementById('price');
+                price.classList.add('border-danger');
+                price.classList.add('text-danger');
+                price.value = "";
+                // price.setAttribute('value', " ");
+                price.setAttribute('placeholder', mess);
+                // price.value("");
+                // price.placeholder(mess);
+                break;
+            case "acreage":
+                let acreage = document.getElementById('acreage');
+                acreage.classList.add('border-danger');
+                acreage.classList.add('text-danger');
+                acreage.value = "";
+                // acreage.setAttribute('value', " ");
+                acreage.value = "";
+                acreage.setAttribute('placeholder', mess);
+                break;
+            case "province":
+                let province = document.getElementById('province');
+                province.classList.add('border-danger');
+                province.classList.add('text-danger');
+                province.value = "";
+                province.setAttribute('value', " ");
+                province.setAttribute('placeholder', mess);
+                break;
+            case "description":
+                let description = document.getElementById('description');
+                description.classList.add('border-danger');
+                description.classList.add('text-danger');
+                description.value = "";
+                description.setAttribute('value', " ");
+                description.setAttribute('placeholder', mess);
+                break;
+            case "service":
+                let service = document.getElementById('service');
+                service.classList.add('border-danger');
+                service.classList.add('text-danger');
+                service.value = "";
+                service.setAttribute('value', " ");
+                service.setAttribute('placeholder', mess);
+                break;
+            case "schedule":
+                let schedule = document.getElementById('schedule');
+                schedule.classList.add('border-danger');
+                schedule.classList.add('text-danger');
+                schedule.value = "";
+                schedule.setAttribute('value', " ");
+                schedule.setAttribute('placeholder', mess);
+                break;
+            case "estimated_complete":
+                let estimated_complete = document.getElementById('estimated_complete');
+                estimated_complete.classList.add('border-danger');
+                estimated_complete.classList.add('text-danger');
+                estimated_complete.value = "";
+                estimated_complete.setAttribute('value', " ");
+                estimated_complete.setAttribute('placeholder', mess);
+                break;
+            // case "status":
+            //     let status = document.getElementById('status');
+            //     status.classList.add('border-danger');
+            //     status.classList.add('text-danger');
+            //     status.value = "";
+            //     status.setAttribute('value', " ");
+            //     status.setAttribute('placeholder', mess);
+            //     break;
+            case "avatar":
+                let avatar = document.getElementById('avatar');
+                avatar.classList.add('border-danger');
+                avatar.classList.add('text-danger');
+                avatar.value = "";
+                avatar.setAttribute('value', " ");
+                avatar.setAttribute('placeholder', mess);
+                break;
+            // case "groupImage":
+            //     let file_input1 = document.getElementById('file_input1');
+            //     file_input1.classList.add('border-danger');
+            //     file_input1.classList.add('text-danger');
+            //     file_input1.value = "";
+            //     file_input1.setAttribute('value', " ");
+            //     file_input1.setAttribute('placeholder', mess);
+            //     break;
+
+        }
+    }
+</script>
+<script>
+    <%-- email--%>
+    let email = document.getElementById('email');
+    email.addEventListener('click', function () {
+            email.classList.remove('border-danger');
+            email.classList.remove('text-danger');
+            email.placeholder = "";
+        }
+    )
+    <%-- title--%>
+    let title = document.getElementById('title');
+    title.addEventListener('click', function () {
+            title.classList.remove('border-danger');
+            title.classList.remove('text-danger');
+            title.placeholder = "";
+        }
+    )
+    <%-- category--%>
+    let category = document.getElementById('category');
+    category.addEventListener('click', function () {
+            category.classList.remove('border-danger');
+            category.classList.remove('text-danger');
+            category.placeholder = "";
+        }
+    )
+    <%-- price--%>
+    let price = document.getElementById('price');
+    price.addEventListener('click', function () {
+            price.classList.remove('border-danger');
+            price.classList.remove('text-danger');
+            price.placeholder = "";
+        }
+    )
+    <%-- acreage--%>
+    let acreage = document.getElementById('acreage');
+    acreage.addEventListener('click', function () {
+            acreage.classList.remove('border-danger');
+            acreage.classList.remove('text-danger');
+            acreage.placeholder = "";
+        }
+    )
+    <%-- province--%>
+    let province = document.getElementById('province');
+    province.addEventListener('click', function () {
+            province.classList.remove('border-danger');
+            province.classList.remove('text-danger');
+            province.placeholder = "";
+        }
+    )
+    <%-- description--%>
+    let description = document.getElementById('description');
+    description.addEventListener('click', function () {
+            description.classList.remove('border-danger');
+            description.classList.remove('text-danger');
+            description.placeholder = "";
+        }
+    )
+    <%-- service--%>
+    let service = document.getElementById('service');
+    service.addEventListener('click', function () {
+            service.classList.remove('border-danger');
+            service.classList.remove('text-danger');
+            service.placeholder = "";
+        }
+    )
+    <%-- schedule--%>
+    let schedule = document.getElementById('schedule');
+    schedule.addEventListener('click', function () {
+            schedule.classList.remove('border-danger');
+            schedule.classList.remove('text-danger');
+            schedule.placeholder = "";
+        }
+    )
+    <%-- estimated_complete--%>
+    let estimated_complete = document.getElementById('estimated_complete');
+    estimated_complete.addEventListener('click', function () {
+            estimated_complete.classList.remove('border-danger');
+            estimated_complete.classList.remove('text-danger');
+            estimated_complete.placeholder = "";
+        }
+    )
+    <%-- status--%>
+    let status = document.getElementById('status');
+    status.addEventListener('click', function () {
+            status.classList.remove('border-danger');
+            status.classList.remove('text-danger');
+            status.placeholder = "";
+        }
+    )
+    <%-- avatar--%>
+    let avatar = document.getElementById('avatar');
+    avatar.addEventListener('click', function () {
+            avatar.classList.remove('border-danger');
+            avatar.classList.remove('text-danger');
+            avatar.placeholder = "";
+        }
+    )
+    <%-- groupImage--%>
+    // let groupImage = document.getElementById('file_input1');
+    // groupImage.addEventListener('click', function () {
+    //         groupImage.classList.remove('border-danger');
+    //         groupImage.classList.remove('text-danger');
+    //         groupImage.placeholder = "";
+    //     }
+    // )
 </script>
 <script>
     let allFiles1 = [];
@@ -465,16 +694,30 @@
         container1[0].innerHTML = images1
     }
     let dt1 = new DataTransfer();
+
+    // const delImage1 = index => {
+    //     let dt1 = new DataTransfer();
+    //     for (let i = 0; i < input1.files.length; i++) {
+    //         if (index !== i)
+    //             dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
+    //     }
+    //     // dt1.setData("image",)
+    //     input1.files = dt1.files
+    //     allFiles1 = Array.from(input1.files)
+    //     showImage1()
+    // }
     const delImage1 = index => {
-        let dt1 = new DataTransfer();
-        for (let i = 0; i < input1.files.length; i++) {
-            if (index !== i)
-                dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
-        }
-        input1.files = dt1.files
-        allFiles1 = Array.from(input1.files)
-        showImage1()
-    }
+        dt1.items.clear();
+        allFiles1.splice(index, 1);
+
+        allFiles1.forEach(file => {
+            dt1.items.add(file);
+        });
+
+        input1.files = dt1.files;
+        showImage1();
+    };
+
 </script>
 <script>
     $('.datepicker').datepicker({

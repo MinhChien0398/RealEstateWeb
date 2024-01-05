@@ -18,8 +18,7 @@
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/addProjectPage.css"/>" rel="stylesheet">
-
-    <title>Title</title>
+    <title></title>
 </head>
 <body>
 <!-- Sidebar navigation -->
@@ -54,12 +53,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -106,7 +106,8 @@
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Chỉnh sửa dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Chỉnh sửa dự án</a>
+                    </li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">
@@ -139,7 +140,6 @@
                             </button>
                         </div>
                     </div>
-
                     <div class="tab-content pt-2 pl-1" id="pills-tabContent" style="height: fit-content">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                              aria-labelledby="pills-home-tab">
@@ -153,84 +153,116 @@
                                                 <div class="col-lg-11 mb-4">
                                                     <div class="card-body">
                                                         <div class="mb-4">
-                                                            <label for="investor" class="labels">Chủ đầu tư</label>
-                                                            <input id="investor" type="email" class="form-control"
-                                                                   placeholder="Email chủ đầu tư" value="tandanmin@gmail.com">
+                                                            <label for="email" class="labels">Chủ đầu tư</label>
+                                                            <input id="email" type="email" class="form-control"
+                                                                   name="email" placeholder="Email chủ đầu tư"
+                                                                   value="${userEmail}">
                                                         </div>
                                                         <div class="mb-4">
-                                                            <label for="name" class="labels">Tiêu đề</label>
-                                                            <input id="name" type="text" class="form-control"
-                                                                   placeholder="Tiêu đề" value="Hòa nhập thiên nhiên">
+                                                            <label for="title" class="labels">Tiêu đề</label>
+                                                            <input id="title" type="text" class="form-control"
+                                                                   name="title" placeholder="Tiêu đề"
+                                                                   value="${project.title}">
                                                         </div>
                                                         <div class="mb-4">
                                                             <label for="category" class="labels">Loại dự án</label>
-                                                            <select name="category" id="category" class="form-control">
-                                                                <option value="" disabled >Loại dự án</option>
-
-                                                                <option value="92TTT" selected>Nhà Phố</option>
-
-                                                                <option value="92TTT">Biệt thự</option>
+                                                            <select name="category" id="category" name="category"
+                                                                    class="form-control">
+                                                                <option value="" selected>Loại dự án</option>
+                                                                <c:forEach var="item" items="${categories}">
+                                                                    <option value="${item.id}"
+                                                                            <c:if test="${project.categoryId==item.id}">selected</c:if>><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
 
                                                             </select>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-6 mb-4">
                                                                 <label for="price" class="labels">Kinh phí</label>
-                                                                <input id="price" type="number" class="form-control"
-                                                                       placeholder="Kinh phí" value="1000000000">
+                                                                <input id="price" type="number" name="price"
+                                                                       class="form-control"
+                                                                       placeholder="Kinh phí" value="${project.price}">
                                                             </div>
                                                             <div class="col-6 mb-4">
                                                                 <label for="acreage" class="labels">Diện tích</label>
-                                                                <input id="acreage" type="text" class="form-control"
-                                                                       placeholder="Diện tích" value="250">
-                                                            </div></div>
+                                                                <input id="acreage" type="number" class="form-control"
+                                                                       placeholder="Diện tích" name="acreage"
+                                                                       value="${project.acreage}">
+
+                                                            </div>
+                                                        </div>
                                                         <div class="mb-4">
-                                                            <label for="address" class="labels">Địa chỉ</label>
-                                                            <select name="address" id="address" class="form-control">
-                                                                <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                                    <option value="${item.name}"
-                                                                    <c:if test="${item.name == project.province}">
-                                                                        selected
-                                                                    </c:if>
-                                                                        >${item.name}</option>
+                                                            <label for="province" class="labels">Địa chỉ</label>
+                                                            <select name="province" id="province"
+                                                                    class="form-control">
+                                                                <option value="" selected>Chọn tỉnh thành</option>
+                                                                <c:forEach var="item" items="${provinces}">
+                                                                    <option value="${item.id}" <c:if
+                                                                            test="${project.provinceId==item.id}"> selected</c:if>><span
+                                                                            class="text-uppercase">${item.name}</span>
+                                                                    </option>
                                                                 </c:forEach>
+
                                                             </select>
                                                         </div>
-
                                                         <div class="mb-4">
                                                             <div class="form-group green-border-focus">
-                                                                <label for="exampleFormControlTextarea5">Mô tả</label>
+                                                                <label for="description">Mô tả</label>
                                                                 <textarea class="form-control"
-                                                                          id="exampleFormControlTextarea5"
-                                                                          rows="3" placeholder="Mô tả dự án"></textarea>
+                                                                          id="description"
+                                                                          name="description"
+                                                                          rows="3" placeholder="Mô tả dự án"
+                                                                          value="${project.description}"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
                                                             <label class="mdb-main-label">Dịch vụ</label>
-                                                            <select class="mdb-select md-form" multiple>
-                                                                <option value="1" >Xây dựng phần thô</option>
-                                                                <option value="2" >Xây nhà trọn gói</option>
-                                                                <option value="3" selected>Thiết kế nội thất</option>
-                                                                <option value="4">Sữa chữa</option>
+                                                            <select class="mdb-select md-form" id="service"
+                                                                    name="service[]"
+                                                                    multiple>
+                                                                <c:forEach var="item" items="${services}">
+                                                                    <option value="${item.id}"
+                                                                            <c:forEach var="item1"
+                                                                                       items="${servicesOfproject}">
+                                                                                <c:if test="${item.id==item1.id}">
+                                                                                    selected
+                                                                                </c:if></c:forEach>>
+                                                                   <span
+                                                                           class="text-uppercase">${item.name}</span>
+                                                                    </option>
+                                                                </c:forEach>
                                                             </select>
                                                         </div>
                                                         <div class="mb-4 ">
                                                             <div class="d-flex">
                                                                 <label>Tiến độ dự án:</label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox"onclick="conpleteProject()" class="form-check-input"
-                                                                           id="projectProgress">
+                                                                    <input type="checkbox"
+                                                                           name="isComplete" onclick="conpleteProject()"
+                                                                           class="form-check-input"
+                                                                           id="isComplete"
+                                                                           <c:if test="${isExcuting==false}">checked</c:if>
+                                                                    >
                                                                     <label class="form-check-label"
-                                                                           for="projectProgress">Hoàn thành</label>
+                                                                           for="isComplete">Hoàn thành</label>
                                                                 </div>
                                                             </div>
                                                             <div id="projectProgressText">
                                                                 <input type="text" class="form-control  mb-3"
-                                                                       placeholder="Tiến độ dự án" value="Trong quá trình thiết kế nội thất">
-                                                                <div id="date-picker-example" class="md-form md-outline input-with-post-icon datepicker"
-                                                                     inline="true">
-                                                                    <input placeholder="Dự kiến ngày hoàng thành" type="text" id="example" class="form-control"\
-                                                                           value="16/11/2023">
+                                                                       placeholder="Tiến độ dự án" id="schedule"
+                                                                       name="schedule"
+                                                                       value=" <c:if test="${isExcuting}">${project.schedule}</c:if>">
+                                                                <div id="date-picker-example"
+                                                                     class="md-form md-outline
+                                                                     input-with-post-icon datepicker"
+                                                                     style="outline: none " inline="true">
+                                                                    <input placeholder="Dự kiến ngày hoàng thành"
+                                                                           type="text" id="estimated_complete"
+                                                                           name="estimated_complete"
+                                                                           class="form-control"
+                                                                           value="<c:if test="${isExcuting}">${project.estimated_complete}</c:if>">
                                                                     <i class="fas fa-calendar input-prefix"></i>
                                                                 </div>
                                                             </div>
@@ -239,38 +271,46 @@
                                                             <div class="d-flex">
                                                                 <label for="status" class="labels">Trạng thái: </label>
                                                                 <div class="form-check">
-                                                                    <input type="checkbox"  onclick="userAccepted()" class="form-check-input" id="UserAccepted">
+                                                                    <input type="checkbox"
+                                                                           name="isAccepted"
+                                                                           onclick="userAccepted()"
+                                                                           class="form-check-input" id="isAccepted"
+                                                                           <c:if test="${project.isAccepted==1}">checked</c:if>
+                                                                    >
                                                                     <label class="form-check-label"
-                                                                           for="UserAccepted">Người dùng chấp nhận đăng bài</label>
+                                                                           for="isAccepted">Người dùng chấp nhận đăng
+                                                                        bài</label>
                                                                 </div>
                                                             </div>
-                                                            <select id="status" class="custom-select">
-                                                                <option value="1">Đăng bài</option>
-                                                                <option value="2">Ẩn</option>
+                                                            <select id="status" name="status" class="custom-select">
+                                                                <option value="1"
+                                                                        <c:if test="${project.status==1}">selected</c:if>>
+                                                                    Đăng bài
+                                                                </option>
+                                                                <option value="0"
+                                                                        <c:if test="${project.status==0}">selected</c:if>>
+                                                                    Ẩn
+                                                                </option>
                                                             </select>
                                                         </div>
 
                                                         <div class="mb-4">
-                                                            <label>Chọn hình đại diện</label>
-                                                            <div class="input-group">
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
+                                                            <div class="input-group mt-2 d-flex align-items-center">
+                                                                <label>Chọn hình đại diện</label>
+                                                                <div class="file-field d-flex align-items-center">
+                                                                    <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                                        <span>chọn ảnh</span>
+                                                                        <input type="file" name="avatar"
+                                                                               id="avatar"
+                                                                               accept="image/*">
+                                                                    </div>
                                                                 </div>
-                                                                <div class="custom-file">
-                                                                    <input type="file"   class="custom-file-input"
-                                                                           id="inputGroupFile01"
-                                                                           aria-describedby="inputGroupFileAddon01"
-                                                                           onchange="preview()">
-                                                                    <label class="custom-file-label"
-                                                                           for="inputGroupFile01">Chọn file
-                                                                    </label>
-
-                                                                </div>
-
                                                             </div>
-                                                            <p id="num-of-files">Không có file được chọn</p>
-                                                            <div id="images"></div>
+
+                                                            <div class="upload-wrapper d-none avatar">
+                                                                <div class="border d-flex img-container">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -278,6 +318,7 @@
                                         </div>
                                         <!-- Card content -->
                                     </div>
+
                                     <!-- Card -->
                                 </div>
                             </div>
@@ -289,35 +330,29 @@
                                     <div class="card card-cascade cascading-admin-card user-card">
                                         <div class="card-body card-body-cascade">
                                             <div class=" col-12 mb-4">
-                                                <label>Hình ảnh mô tả dự án</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon0">Tải lên</span>
+                                                <div class="input-group mt-2 d-flex align-items-center">
+                                                    <label>Hình ảnh mô tả dự án</label>
+                                                    <div class="file-field d-flex align-items-center">
+                                                        <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                            <span>chọn ảnh</span>
+                                                            <input type="file" accept="image/*" name="groupImage"
+                                                                   id="file_input1" multiple
+                                                                   value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
+                                                        </div>
                                                     </div>
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input"
-                                                               id="inputGroupFile0"
-                                                               aria-describedby="inputGroupFileAddon01"
-                                                               onchange="preview1()" multiple>
-                                                        <label class="custom-file-label"
-                                                               for="inputGroupFile0">Chọn file
-                                                        </label>
-
-                                                    </div>
-
                                                 </div>
-                                                <p id="num-of-files1">Không có file được chọn</p>
-                                                <div id="GroupImage" class="row">
-
+                                                <div class="upload-wrapper d-none avatar">
+                                                    <div class="border d-flex img-container1">
+                                                    </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-12 p-0">
-                                                <div class="form-group">
-                                                    <textarea class="form-control rounded-0" name="service-des"
+                                        </div>
+
+                                        <div class="col-12 p-0">
+                                            <div class="form-group">
+                                                    <textarea class="form-control rounded-0" name="post" id="post"
                                                               rows="10"></textarea>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -332,17 +367,192 @@
 </div>
 <!--/. Sidebar navigation -->
 
-
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
-<script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<%--<script src="<c:url value="/template/js/inputFile.js"/>"></script>--%>
 <script>
-    CKEDITOR.replace('service-des',{
-        width : "100%",
+    let allFiles = [];
+    let input = document.getElementById("avatar");
+    let container = document.getElementsByClassName("img-container");
+    // console.log(input.files)
+    if (input.files.length == 0 && allFiles.length == 0) {
+        let images = ' ';
+        container[0].parentElement.classList.add('d-block')
+        container[0].parentElement.classList.remove('d-none')
+        images += '<div class="image position-relative border-radius"><img src="${project.avatar}" alt="" class="border"> ' +
+            '<div class="position-absolute " ></div></div>'
+        container[0].innerHTML = images;
+    }
+
+    input.addEventListener('change', function () {
+        let files = this.files;
+        allFiles = [];
+        for (let i = 0; i < files.length; i++) {
+            allFiles.push(files[i])
+        }
+        showImage();
+    })
+
+    const showImage = () => {
+        container[0].parentElement.classList.add('d-block')
+        container[0].parentElement.classList.remove('d-none')
+        if (input.files.length == 0) {
+            let images = ' ';
+            images += '<div class="image position-relative border-radius"><img src="${project.avatar}" alt="" class="border"> ' +
+                '<div class="position-absolute " ></div></div>'
+            container[0].innerHTML = images;
+        } else {
+            let images = ' ';
+            allFiles.forEach((e, i) => {
+                images += '<div class="image position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
+                    '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage(' + i + ')" style=""></i></div></div>'
+            })
+            container[0].innerHTML = images
+        }
+    }
+    let dt = new DataTransfer();
+    const delImage = index => {
+        let dt = new DataTransfer();
+        for (let i = 0; i < input.files.length; i++) {
+            if (index !== i)
+                dt.items.add(input.files[i]) // here you exclude the file. thus removing it.
+        }
+        input.files = dt.files
+        allFiles = Array.from(input.files)
+        showImage()
+    }
+    // document.onload = function () {
+    //         if(input.files.length!== 0) {
+    //         input.files
+    //         }
+    // };
+
+</script>
+<script>
+    function saveproject(idPost) {
+        let form = new FormData();
+        form.append('email', $("#email").val())
+        form.append('title', $("#title").val());
+        form.append('categoryId', $("#category").val());
+        form.append('price', $("#price").val());
+        form.append('acreage', $("#acreage").val());
+        form.append('provinceId', $("#province").val());
+        form.append('description', $("#description").val());
+        form.append('postId', idPost);
+        form.append('service', $("#service").val());
+        form.append('schedule', $("#schedule").val());
+        form.append('estimated_complete', $("#estimated_complete").val());
+        form.append('status', $("#status").val());
+        form.append('avatar', $("#avatar").prop('files')[0]);
+        for (const x of $("#file_input1").prop('files')) {
+            form.append('groupImage', x);
+        }
+        form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
+        form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
+        $.ajax({
+            url: "/api/project?action=add",
+            type: "POST",
+            dataType: "json",
+            processData: false,
+            contentType: false,
+            data: form,
+            success: function (data) {
+                console.log(data.responseText)
+                if (data.status === 200) {
+                }
+            },
+            error: function (data) {
+                console.log(data.responseText)
+            }
+        })
+    }
+</script>
+<script>
+
+
+</script>
+<script>
+    CKEDITOR.replace('post', {
+        width: "100%",
         height: "400px",
     });
+</script>
+<script>
+    $('#save').click(function () {
+        let content = CKEDITOR.instances.post.getData();
+        $.ajax({
+            url: "/api/post?action=add",
+            type: "POST",
+            dataType: "json",
+            // contentType: "application/json",
+            // processData: false,
+            data: {content: content},
+            success: function (data) {
+                saveproject(data.data.id)
+            },
+            error: function (data) {
+                //thông báo lỗi sys
+                console.log(data)
+            }
+        })
+    })
+</script>
 
+<script>
+    let allFiles1 = [];
+    let input1 = document.getElementById("file_input1");
+    let container1 = document.getElementsByClassName("img-container1");
+    // console.log(input.files)
+
+    if (input1.files.length == 0 || allFiles1.length == 0) {
+        let images = ' ';
+        container1[0].parentElement.classList.add('d-block')
+        container1[0].parentElement.classList.remove('d-none')
+        <c:forEach var="item" begin="0" items="${groupImages}">
+        images += '<div class="image position-relative border-radius"><img src="${item}" alt="" class="border"> ' +
+            '</div>'
+        </c:forEach>
+        container1[0].innerHTML = images;
+    }
+    input1.addEventListener('change', function () {
+        let files1 = this.files;
+        for (let i = 0; i < files1.length; i++) {
+            allFiles1.push(files1[i])
+        }
+        showImage1();
+    })
+    const showImage1 = () => {
+        container1[0].parentElement.classList.add('d-block')
+        container1[0].parentElement.classList.remove('d-none')
+        console.log(input1.files.length)
+        if (input1.files.length == 0) {
+            let images = ' ';
+            <c:forEach var="item" begin="0" items="${groupImages}">
+            images += '<div class="image position-relative border-radius"><img src="${item}" alt="" class="border"> ' +
+                '</div>'
+            </c:forEach>
+            container1[0].innerHTML = images;
+        } else {
+            let images1 = ' ';
+            allFiles1.forEach((e, i) => {
+                images1 += '<div class="image1 position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
+                    '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage1(' + i + ')" style=""></i></div></div>'
+            })
+            container1[0].innerHTML = images1
+        }
+    }
+    let dt1 = new DataTransfer();
+    const delImage1 = index => {
+        let dt1 = new DataTransfer();
+        for (let i = 0; i < input1.files.length; i++) {
+            if (index !== i)
+                dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
+        }
+        input1.files = dt1.files
+        allFiles1 = Array.from(input1.files)
+        showImage1()
+    }
 </script>
 <script>
     $('.datepicker').datepicker({
@@ -351,7 +561,7 @@
             'Tháng 11', 'Tháng 12'],
 
         weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
-        showWeekdaysFull: true ,
+        showWeekdaysFull: true,
         today: 'Hôm nay',
         clear: 'Xóa',
         close: 'Đóng',
@@ -360,7 +570,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'yyyy-mm-dd',
     });
 </script>
 <script>
@@ -371,16 +581,16 @@
     });
 </script>
 <script>
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }
@@ -388,9 +598,10 @@
 
 <script>
     userAccepted()
-    function userAccepted(){
+
+    function userAccepted() {
         var status = document.getElementById('status');
-        if (!document.getElementById('UserAccepted').checked) {
+        if (!document.getElementById('isAccepted').checked) {
             status.classList.add('d-none');
             status.classList.remove('d-block');
         } else {
@@ -401,9 +612,10 @@
 </script>
 <script>
     conpleteProject()
-    function conpleteProject(){
+
+    function conpleteProject() {
         var projectProgressText = document.getElementById('projectProgressText');
-        if (document.getElementById('projectProgress').checked) {
+        if (document.getElementById('isComplete').checked) {
             projectProgressText.classList.add('d-none');
             projectProgressText.classList.remove('d-block');
         } else {
@@ -436,6 +648,5 @@
         $('.mdb-select').materialSelect();
     });
 </script>
-
 </body>
 </html>

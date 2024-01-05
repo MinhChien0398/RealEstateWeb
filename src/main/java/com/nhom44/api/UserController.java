@@ -77,9 +77,9 @@ public class UserController extends HttpServlet {
         if (name == null || name.trim().isEmpty() || name.length() < 6) {
             req.setAttribute("fullname", "Tên phải có ít nhất 6 ký tự");
             ResponseModel responseModel = new ResponseModel();
-            responseModel.setMessage("Tên phải có ít nhất 6 ký tự");
-            responseModel.setData(null);
             responseModel.setName("fullname");
+            responseModel.setMessage("Tên phải có ít nhất 6 ký tự");
+//            responseModel.setData(null);
             errMess.add(responseModel);
             isErr = true;
         }

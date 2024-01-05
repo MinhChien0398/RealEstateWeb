@@ -20,7 +20,9 @@ public class ServiceOfProjectService {
     public List<Service> getAll() {
         return conn.withExtension(ServiceDAO.class, dao -> dao.getAll());
     }
-
+    public int addServiceForProject(int projectId, int serviceId) {
+        return conn.withExtension(ServiceDAO.class, dao -> dao.addServiceForProject(projectId, serviceId));
+    }
     public List<Service> getServicesByProjectId(int id) {
         return conn.withExtension(ServiceDAO.class, dao -> dao.getServicesByProjectId(id));
     }

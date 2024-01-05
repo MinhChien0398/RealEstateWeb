@@ -1,45 +1,23 @@
 package com.nhom44.bean;
 
-import java.sql.Date;
-import java.util.Objects;
-
 public class Project {
-    protected int id;
-    protected String title;
-    protected String description;
-    protected String avatar;
-    protected int price;
-    protected double acreage;
-    protected int status;
-    protected int postId;
-    protected int isAccepted;
-    protected String createdAt;
-    protected String updatedAt;
+    private int id;
+    private String title;
+    private String description;
+    private String avatar;
+    private long price;
+    private double acreage;
+    private int status;
+    private int postId;
+    private int isAccepted;
+    private String createdAt;
+    private String updatedAt;
     private String schedule;
-    private Date estimated_complete;
+    private String estimated_complete;
     private String province;
     private String category;
-
-    public Project() {
-    }
-
-    public Project(int id, String title, String description, String avatar, int price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, Date estimated_complete, String province, String category) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.avatar = avatar;
-        this.price = price;
-        this.acreage = acreage;
-        this.status = status;
-        this.postId = postId;
-        this.isAccepted = isAccepted;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.schedule = schedule;
-        this.estimated_complete = estimated_complete;
-        this.province = province;
-        this.category = category;
-    }
+    private int provinceId;
+    private int categoryId;
 
     @Override
     public String toString() {
@@ -56,26 +34,16 @@ public class Project {
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
                 ", schedule='" + schedule + '\'' +
-                ", estimated_complete=" + estimated_complete +
+                ", estimated_complete='" + estimated_complete + '\'' +
                 ", province='" + province + '\'' +
                 ", category='" + category + '\'' +
+                ", provinceId=" + provinceId +
+                ", categoryId=" + categoryId +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Project project = (Project) o;
-        return id == project.id && price == project.price && Double.compare(acreage, project.acreage) == 0 && status == project.status && postId == project.postId && isAccepted == project.isAccepted && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(avatar, project.avatar) && Objects.equals(createdAt, project.createdAt) && Objects.equals(updatedAt, project.updatedAt) && Objects.equals(schedule, project.schedule) && Objects.equals(estimated_complete, project.estimated_complete) && Objects.equals(province, project.province) && Objects.equals(category, project.category);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, title, description, avatar, price, acreage, status, postId, isAccepted, createdAt, updatedAt, schedule, estimated_complete, province, category);
-    }
-
     public int getId() {
+        System.out.println("getId");
         return id;
     }
 
@@ -84,6 +52,7 @@ public class Project {
     }
 
     public String getTitle() {
+        System.out.println("getTitle");
         return title;
     }
 
@@ -92,6 +61,7 @@ public class Project {
     }
 
     public String getDescription() {
+        System.out.println("description");
         return description;
     }
 
@@ -107,15 +77,17 @@ public class Project {
         this.avatar = avatar;
     }
 
-    public int getPrice() {
+    public long getPrice() {
+        System.out.println("price");
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(long price) {
         this.price = price;
     }
 
     public double getAcreage() {
+        System.out.println("acreage");
         return acreage;
     }
 
@@ -171,11 +143,11 @@ public class Project {
         this.schedule = schedule;
     }
 
-    public Date getEstimated_complete() {
+    public String getEstimated_complete() {
         return estimated_complete;
     }
 
-    public void setEstimated_complete(Date estimated_complete) {
+    public void setEstimated_complete(String estimated_complete) {
         this.estimated_complete = estimated_complete;
     }
 
@@ -193,5 +165,44 @@ public class Project {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getProvinceId() {
+        return provinceId;
+    }
+
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public Project() {
+    }
+
+    public Project(int id, String title, String description, String avatar, long price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, String estimated_complete, String province, String category, int provinceId, int categoryId) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.avatar = avatar;
+        this.price = price;
+        this.acreage = acreage;
+        this.status = status;
+        this.postId = postId;
+        this.isAccepted = isAccepted;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.schedule = schedule;
+        this.estimated_complete = estimated_complete;
+        this.province = province;
+        this.category = category;
+        this.provinceId = provinceId;
+        this.categoryId = categoryId;
     }
 }

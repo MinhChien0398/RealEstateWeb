@@ -11,7 +11,8 @@
 <head>
     <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -49,12 +50,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -117,7 +119,9 @@
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
                         <a href="add_category_project.jsp">
-                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm loại dự án</button>
+                            <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm loại dự
+                                án
+                            </button>
                         </a>
 
                     </div>
@@ -136,136 +140,145 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Biệt thự</td>
-                        <td>5</td>
-                        <td>20/05/2018</td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-updateCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Nhà phố</td>
-                        <td>12</td>
-                        <td>20/05/2018</td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-addCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Căn hộ</td>
-                        <td>25</td>
-                        <td>24/01/2023</td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-updateCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Văn phòng</td>
-                        <td>20</td>
-                        <td>28/06/2022</td>
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="admin-addCategoryProject.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     </tbody>
-
                 </table>
-
             </main>
         </div>
     </div>
 </div>
-<!--/. Sidebar navigation -->
-
 
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <!--<script src="/template/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
 <script>
-
+    $.ajax({
+        url: "${pageContext.request.contextPath}/api/category",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            console.log(data)
+        },
+        error: function (e) {
+            console.log(e)
+        }
+    })
 </script>
 <script>
+    let index = 1;
     $('#project-type-table').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
-        // scrollX: true,
-        "columnDefs": [
+        ajax: {
+            url: "${pageContext.request.contextPath}/api/category",
+            type: "get",
+            dataSrc: "",
+            dataType: "json",
+        },
+        columns: [
+            {
+                data: "id",
+                render: function () {
+                    return index++;
+                }
+            },
+            {
+                data: "name",
+                render: function (name) {
+                    return (name == null || name === "") ? "---" : name;
+                }
+            },
+            {
+                data: "name",
+                render: function (name) {
+                    return (name == null || name === "") ? "---" : name;
+                }
+            },
+            {
+                data: "updatedAt", render: function (updatedAt) {
+                    return updatedAt
+                }
+            },
+            {
+                data: "status",
+                render: function (status) {
+                    if (status === 1) {
+                        return '<i class="fa-solid fa-square active-icon" value="0"></i>'
+                    } else {
+                        return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'
+                    }
+                }
+            },
+            {
+                data: "id",
+                render: function (id) {
+                    return '<a href="update_project_page.jsp?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                        '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
+                }
+            },
+        ],
+        columnDefs: [
             {
                 "targets": 0,
                 "width": "5%",
             },
             {
                 "targets": 1,
-                "width": "20%",
+                "width": "15%",
             },
             {
                 "targets": 2,
-                "width": "20%",
+                "width": "10%",
             },
             {
                 "targets": 3,
-                "width": "20%",
+                "width": "15%",
             },
             {
                 "targets": 4,
-                "width": "20%",
+                "width": "10%",
             },
             {
                 "targets": 5,
-                "width": "15%",
+                "width": "10%",
             },
-
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],
-        "language": {
-            "lengthMenu": "Hiển thị _MENU_ dòng",
-            "zeroRecords": "Không tìm thấy dữ liệu",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
-            "infoEmpty": "Không có dữ liệu",
-            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
-            "search": "Tìm kiếm",
-            "paginate": {
-                "previous": "Trước",
-                "next": "Tiếp theo"
+        language: {
+            lengthMenu: "Hiển thị _MENU_ dòng",
+            zeroRecords: "Không tìm thấy dữ liệu",
+            info: "Hiển thị trang _PAGE_ trên _PAGES_",
+            infoEmpty: "Không có dữ liệu",
+            infoFiltered: "(lọc từ _MAX_ dòng dữ liệu)",
+            search: "Tìm kiếm",
+            paginate: {
+                previous: "Trước",
+                next: "Tiếp theo"
             }
         },
-        "pagingType": "full_numbers",
-        "lengthMenu": [5, 10, 15, 20],
-        "order": [[0, "asc"]],
+        pagingType: "full_numbers",
+        lengthMenu: [5, 10, 15, 20],
+        order: [[0, "asc"]],
     });
 
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }
