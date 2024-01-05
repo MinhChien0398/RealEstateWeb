@@ -115,9 +115,6 @@
             </nav>
 
 
-
-
-
             <main class="container shadow border p-3" style="height: fit-content!important;">
                 <form action="/admin/user_management?action=add" method="post">
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
@@ -212,8 +209,8 @@
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material unchecked -->
                                                     <div class="custom-control custom-radio form-check mt-4">
-                                                        <input name="gender" type="radio" class="form-check-input"
-                                                               id="male" checked>
+                                                        <input name="gender" type="checkbox" class="form-check-input"
+                                                               id="male" onclick="isMale()">
                                                         <label class="form-check-label"
                                                                for="male">Nam</label>
                                                     </div>
@@ -223,7 +220,8 @@
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material indeterminate -->
                                                     <div class="custom-control custom-radio form-check mt-4">
-                                                        <input name="gender" type="radio" class="form-check-input"
+                                                        <input name="gender" type="checkbox" class="form-check-input"
+                                                               onclick="isFemale()"
                                                                id="female"
                                                         >
                                                         <label class="form-check-label"
@@ -270,7 +268,8 @@
 
                         </div>
                     </div>
-                    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel"
                          aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -300,7 +299,20 @@
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
-<script></script>
+
+
+<script>
+    function isMale() {
+        document.getElementById('female').checked = false;
+        return true;
+    }
+    function isFemale(){
+        document.getElementById('male').checked = false;
+        return true;
+    }
+</script>
+
+
 <script>
     $(document).ready(function () {
         $('#save').click(function () {
@@ -326,9 +338,9 @@
 
                     if (data.name == "sys") {
                         $("#basicExampleModal").modal('show');
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('#basicExampleModal').modal('hide');
-                            }, 3000);
+                        }, 3000);
                     } else {
                         window.location.href = "/admin/user_management?action=manage";
                     }
