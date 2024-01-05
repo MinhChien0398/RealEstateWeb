@@ -365,7 +365,7 @@
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
-        for (const x of  $("#file_input1").prop('files')) {
+        for (const x of $("#file_input1").prop('files')) {
             form.append('groupImage', x);
         }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
@@ -383,7 +383,19 @@
                 }
             },
             error: function (data) {
-                console.log(data.responseText)
+                // console.log(data.responseText)
+
+
+                var err = JSON.parse(data.responseText);
+                console.log(err)
+                for (let e of err) {
+
+                    console.log(e.name, e.message)
+                    //     console.log email
+                    fetchErr(e.name, e.message);
+
+
+                }
             }
         })
     }
@@ -413,12 +425,240 @@
             },
             error: function (data) {
                 //thông báo lỗi sys
+                // console.log(data)
+
                 console.log(data)
+                var err = JSON.parse(data.responseText);
+
+                for (const e of err) {
+                    //     console.log email
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })
 </script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            case "email":
+                let email = document.getElementById('email');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', " ");
+                email.setAttribute('placeholder', mess);
+                break;
+            case "title":
+                let title = document.getElementById('title');
+                title.classList.add('border-danger');
+                title.classList.add('text-danger');
+                title.value = "";
+                title.setAttribute('value', " ");
+                title.setAttribute('placeholder', mess);
+                break;
+            case "category":
+                let category = document.getElementById('category');
+                category.classList.add('border-danger');
+                category.classList.add('text-danger');
+                category.value = "";
+                category.setAttribute('value', " ");
+                category.setAttribute('placeholder', mess);
+                break;
+            case "price":
+                let price = document.getElementById('price');
+                price.classList.add('border-danger');
+                price.classList.add('text-danger');
+                price.value = "";
+                // price.setAttribute('value', " ");
+                price.setAttribute('placeholder', mess);
+                // price.value("");
+                // price.placeholder(mess);
+                break;
+            case "acreage":
+                let acreage = document.getElementById('acreage');
+                acreage.classList.add('border-danger');
+                acreage.classList.add('text-danger');
+                acreage.value = "";
+                // acreage.setAttribute('value', " ");
+                acreage.value = "";
+                acreage.setAttribute('placeholder', mess);
+                break;
+            case "province":
+                let province = document.getElementById('province');
+                province.classList.add('border-danger');
+                province.classList.add('text-danger');
+                province.value = "";
+                province.setAttribute('value', " ");
+                province.setAttribute('placeholder', mess);
+                break;
+            case "description":
+                let description = document.getElementById('description');
+                description.classList.add('border-danger');
+                description.classList.add('text-danger');
+                description.value = "";
+                description.setAttribute('value', " ");
+                description.setAttribute('placeholder', mess);
+                break;
+            case "service":
+                let service = document.getElementById('service');
+                service.classList.add('border-danger');
+                service.classList.add('text-danger');
+                service.value = "";
+                service.setAttribute('value', " ");
+                service.setAttribute('placeholder', mess);
+                break;
+            case "schedule":
+                let schedule = document.getElementById('schedule');
+                schedule.classList.add('border-danger');
+                schedule.classList.add('text-danger');
+                schedule.value = "";
+                schedule.setAttribute('value', " ");
+                schedule.setAttribute('placeholder', mess);
+                break;
+            case "estimated_complete":
+                let estimated_complete = document.getElementById('estimated_complete');
+                estimated_complete.classList.add('border-danger');
+                estimated_complete.classList.add('text-danger');
+                estimated_complete.value = "";
+                estimated_complete.setAttribute('value', " ");
+                estimated_complete.setAttribute('placeholder', mess);
+                break;
+            // case "status":
+            //     let status = document.getElementById('status');
+            //     status.classList.add('border-danger');
+            //     status.classList.add('text-danger');
+            //     status.value = "";
+            //     status.setAttribute('value', " ");
+            //     status.setAttribute('placeholder', mess);
+            //     break;
+            case "avatar":
+                let avatar = document.getElementById('avatar');
+                avatar.classList.add('border-danger');
+                avatar.classList.add('text-danger');
+                avatar.value = "";
+                avatar.setAttribute('value', " ");
+                avatar.setAttribute('placeholder', mess);
+                break;
+            // case "groupImage":
+            //     let file_input1 = document.getElementById('file_input1');
+            //     file_input1.classList.add('border-danger');
+            //     file_input1.classList.add('text-danger');
+            //     file_input1.value = "";
+            //     file_input1.setAttribute('value', " ");
+            //     file_input1.setAttribute('placeholder', mess);
+            //     break;
 
+        }
+    }
+</script>
+<script>
+    <%-- email--%>
+    let email = document.getElementById('email');
+    email.addEventListener('click', function () {
+            email.classList.remove('border-danger');
+            email.classList.remove('text-danger');
+            email.placeholder = "";
+        }
+    )
+    <%-- title--%>
+    let title = document.getElementById('title');
+    title.addEventListener('click', function () {
+            title.classList.remove('border-danger');
+            title.classList.remove('text-danger');
+            title.placeholder = "";
+        }
+    )
+    <%-- category--%>
+    let category = document.getElementById('category');
+    category.addEventListener('click', function () {
+            category.classList.remove('border-danger');
+            category.classList.remove('text-danger');
+            category.placeholder = "";
+        }
+    )
+    <%-- price--%>
+    let price = document.getElementById('price');
+    price.addEventListener('click', function () {
+            price.classList.remove('border-danger');
+            price.classList.remove('text-danger');
+            price.placeholder = "";
+        }
+    )
+    <%-- acreage--%>
+    let acreage = document.getElementById('acreage');
+    acreage.addEventListener('click', function () {
+            acreage.classList.remove('border-danger');
+            acreage.classList.remove('text-danger');
+            acreage.placeholder = "";
+        }
+    )
+    <%-- province--%>
+    let province = document.getElementById('province');
+    province.addEventListener('click', function () {
+            province.classList.remove('border-danger');
+            province.classList.remove('text-danger');
+            province.placeholder = "";
+        }
+    )
+    <%-- description--%>
+    let description = document.getElementById('description');
+    description.addEventListener('click', function () {
+            description.classList.remove('border-danger');
+            description.classList.remove('text-danger');
+            description.placeholder = "";
+        }
+    )
+    <%-- service--%>
+    let service = document.getElementById('service');
+    service.addEventListener('click', function () {
+            service.classList.remove('border-danger');
+            service.classList.remove('text-danger');
+            service.placeholder = "";
+        }
+    )
+    <%-- schedule--%>
+    let schedule = document.getElementById('schedule');
+    schedule.addEventListener('click', function () {
+            schedule.classList.remove('border-danger');
+            schedule.classList.remove('text-danger');
+            schedule.placeholder = "";
+        }
+    )
+    <%-- estimated_complete--%>
+    let estimated_complete = document.getElementById('estimated_complete');
+    estimated_complete.addEventListener('click', function () {
+            estimated_complete.classList.remove('border-danger');
+            estimated_complete.classList.remove('text-danger');
+            estimated_complete.placeholder = "";
+        }
+    )
+    <%-- status--%>
+    let status = document.getElementById('status');
+    status.addEventListener('click', function () {
+            status.classList.remove('border-danger');
+            status.classList.remove('text-danger');
+            status.placeholder = "";
+        }
+    )
+    <%-- avatar--%>
+    let avatar = document.getElementById('avatar');
+    avatar.addEventListener('click', function () {
+            avatar.classList.remove('border-danger');
+            avatar.classList.remove('text-danger');
+            avatar.placeholder = "";
+        }
+    )
+    <%-- groupImage--%>
+    // let groupImage = document.getElementById('file_input1');
+    // groupImage.addEventListener('click', function () {
+    //         groupImage.classList.remove('border-danger');
+    //         groupImage.classList.remove('text-danger');
+    //         groupImage.placeholder = "";
+    //     }
+    // )
+</script>
 <script>
     let allFiles1 = [];
     let input1 = document.getElementById("file_input1");
@@ -454,16 +694,30 @@
         container1[0].innerHTML = images1
     }
     let dt1 = new DataTransfer();
+
+    // const delImage1 = index => {
+    //     let dt1 = new DataTransfer();
+    //     for (let i = 0; i < input1.files.length; i++) {
+    //         if (index !== i)
+    //             dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
+    //     }
+    //     // dt1.setData("image",)
+    //     input1.files = dt1.files
+    //     allFiles1 = Array.from(input1.files)
+    //     showImage1()
+    // }
     const delImage1 = index => {
-        let dt1 = new DataTransfer();
-        for (let i = 0; i < input1.files.length; i++) {
-            if (index !== i)
-                dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
-        }
-        input1.files = dt1.files
-        allFiles1 = Array.from(input1.files)
-        showImage1()
-    }
+        dt1.items.clear();
+        allFiles1.splice(index, 1);
+
+        allFiles1.forEach(file => {
+            dt1.items.add(file);
+        });
+
+        input1.files = dt1.files;
+        showImage1();
+    };
+
 </script>
 <script>
     $('.datepicker').datepicker({
