@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -29,7 +30,7 @@ public class Upload {
                     continue;
                 }
                 String applicationPath = req.getServletContext().getRealPath("");
-                String basePath = applicationPath + File.separator + place;
+                String basePath = applicationPath+  File.separator +"template\\img"+ File.separator + place;
                 String realPath = UPLOAD_DIR + File.separator + place;
                 File projectFolder = new File(realPath);
                 File targetFolder = new File(basePath);
@@ -39,12 +40,11 @@ public class Upload {
                 if (!targetFolder.exists()) {
                     targetFolder.mkdirs();
                 }
-                System.out.println(fileName);
-                String filename = targetFolder.getAbsolutePath() +"\\" + (fileName);
-                part.write(filename);
-                String destination = projectFolder.getAbsolutePath() +"\\" + (System.currentTimeMillis() + " " + fileName);
-                Files.copy(new File(filename).toPath(), new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
-                fileNames.add("template/img/" + place + "/" + System.currentTimeMillis() + " " + fileName);
+                String name = targetFolder.getAbsolutePath() +"\\" + (fileName);
+                part.write(name);
+                String destination = projectFolder.getAbsolutePath() +"\\" +fileName;
+                Files.copy(new File(name).toPath(), new File(destination).toPath(), StandardCopyOption.REPLACE_EXISTING);
+                fileNames.add("/template/img/" + place + "/" + fileName);
             }
         }
         return fileNames;

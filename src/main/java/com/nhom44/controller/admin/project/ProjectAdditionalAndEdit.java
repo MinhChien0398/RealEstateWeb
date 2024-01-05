@@ -1,11 +1,9 @@
 package com.nhom44.controller.admin.project;
 
+import com.nhom44.bean.Post;
 import com.nhom44.bean.Project;
 import com.nhom44.bean.Service;
-import com.nhom44.services.CategoryService;
-import com.nhom44.services.ProjectService;
-import com.nhom44.services.ProvinceService;
-import com.nhom44.services.ServiceOfProjectService;
+import com.nhom44.services.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,9 +40,28 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
             try {
                 int id = Integer.parseInt(req.getParameter("id"));
                 Project project = ProjectService.getInstance().getById(id);
+                if (project == null) {
+                    resp.sendRedirect("/admin/project_management");
+                    return;
+                }
                 req.setAttribute("project", project);
+                if (project.getEstimated_complete()==null||project.getEstimated_complete().isEmpty()||project.getSchedule()==null||project.getSchedule().isEmpty()){
+                  req.setAttribute("isExcuting",false);
+                }else {
+                    req.setAttribute("isExcuting",true);
+                }
+                System.out.println(project.toString());
+                Post post = PostService.getInstance().getById(project.getPostId());
+                req.setAttribute("post", post);
                 List<Service> services = ServiceOfProjectService.getInstance().getServicesByProjectId(id);
+
                 req.setAttribute("servicesOfproject", services);
+
+                String userEmail = UserService.getInstance().getUserOwnerOfProject(project.getId()).getEmail();
+                req.setAttribute("userEmail", userEmail);
+
+                List<String> groupImages = ImageService.getInstance().getGroupImagesByProjectId(id);
+                req.setAttribute("groupImages", groupImages);
                 req.getRequestDispatcher("/views/admin/project/update_project_page.jsp").forward(req, resp);
             } catch (NumberFormatException e) {
                 resp.sendRedirect("/admin/project_management");

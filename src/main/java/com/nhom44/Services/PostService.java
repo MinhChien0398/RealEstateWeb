@@ -43,4 +43,8 @@ public class PostService {
         });
         return status==1?getByObject(post):null;
     }
+
+    public Post getById(int postId) {
+        return conn.withExtension(PostDAO.class, dao -> dao.getById(postId));
+    }
 }

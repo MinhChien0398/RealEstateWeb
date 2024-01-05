@@ -223,7 +223,7 @@
                                                                     name="service[]"
                                                                     multiple>
                                                                 <c:forEach var="item" items="${services}">
-                                                                    <option value="${item.id}"><span
+                                                                    <option value="${item.id}" <c:if test="${item.id==1}"> selected </c:if><span
                                                                             class="text-uppercase">${item.name}</span>
                                                                     </option>
                                                                 </c:forEach>
@@ -284,7 +284,7 @@
                                                                         <span>chọn ảnh</span>
                                                                         <input type="file" name="avatar"
                                                                                id="avatar"
-                                                                               onchange="validateFileType()">
+                                                                               accept="image/*">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -316,8 +316,7 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file" name="groupImage" id="file_input1"
-                                                                  onchange="validateFileType()" multiple>
+                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,29 +389,8 @@
     }
 </script>
 <script>
-let avatar= document.getElementById("avatar");
-console.log(avatar.files.length)
-avatar.addEventListener('change', function(){
-    // var files= input.files;
-    // console.log(files.length)
-    // if (files.length > 0) {
-    //     // Xử lý file tại đây nếu cần thiết
-    //     console.log('File loaded:', files[0].name);
-    // }
-    $.ajax({
-        url: serverFilePath,
-        dataType: 'text',
-        success: function(data) {
-            // Ở đây, bạn có thể xử lý dữ liệu theo ý muốn
-        },
-        error: function(error) {
-            console.error('Error loading file:', error);
-        }
-    });
 
-})
-let serverFilePath='/template/img/projects/0082/1704342307729 Screenshot (4).png';
-avatar.dispatchEvent(new Event("change"))
+
 </script>
 <script>
     CKEDITOR.replace('post', {

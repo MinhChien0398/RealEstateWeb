@@ -147,16 +147,13 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <!--                            <td>http://localhost/RealEstateWeb/projectPost</td>-->
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
                     </tbody>
-
                 </table>
-
             </main>
         </div>
     </div>
@@ -190,7 +187,7 @@
         },
         columns: [
             {
-                data: "id",
+
                 render: function () {
                     return index++;
                 }
@@ -252,7 +249,7 @@
             {
                 data: "id",
                 render: function (id) {
-                    return '<a href="update_project_page.jsp?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                    return '<a href="/admin/project_additional_and_edit?action=edit&id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
                         '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
                 }
             },
