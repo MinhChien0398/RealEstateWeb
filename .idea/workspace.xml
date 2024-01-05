@@ -10,13 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="688757aa-fb64-47fe-a742-76c1de1faaf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/css/addProjectPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/css/addProjectPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/add_user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

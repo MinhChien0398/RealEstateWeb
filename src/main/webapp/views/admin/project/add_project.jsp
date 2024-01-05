@@ -391,7 +391,7 @@
                 console.log(err)
                 for (let e of err) {
 
-                    // console.log(e.name, e.message)
+                    console.log(e.name, e.message)
                     //     console.log email
                     fetchErr(e.name, e.message);
 
@@ -441,7 +441,7 @@
 </script>
 <script>
     function fetchErr(name, mess) {
-        // console.log(name, mess)
+        console.log(name, mess)
         switch (name) {
             case "email":
                 let email = document.getElementById('email');
@@ -658,7 +658,7 @@
     //         groupImage.classList.remove('text-danger');
     //         groupImage.placeholder = "";
     //     }
-    )
+    // )
 </script>
 <script>
     let allFiles1 = [];
@@ -695,17 +695,30 @@
         container1[0].innerHTML = images1
     }
     let dt1 = new DataTransfer();
+
+    // const delImage1 = index => {
+    //     let dt1 = new DataTransfer();
+    //     for (let i = 0; i < input1.files.length; i++) {
+    //         if (index !== i)
+    //             dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
+    //     }
+    //     // dt1.setData("image",)
+    //     input1.files = dt1.files
+    //     allFiles1 = Array.from(input1.files)
+    //     showImage1()
+    // }
     const delImage1 = index => {
-        let dt1 = new DataTransfer();
-        for (let i = 0; i < input1.files.length; i++) {
-            if (index !== i)
-                dt1.items.add(input1.files[i]) // here you exclude the file. thus removing it.
-        }
-        dt1.setData("image",)
-        input1.files = dt1.files
-        allFiles1 = Array.from(input1.files)
-        showImage1()
-    }
+        dt1.items.clear();
+        allFiles1.splice(index, 1);
+
+        allFiles1.forEach(file => {
+            dt1.items.add(file);
+        });
+
+        input1.files = dt1.files;
+        showImage1();
+    };
+
 </script>
 <script>
     $('.datepicker').datepicker({
