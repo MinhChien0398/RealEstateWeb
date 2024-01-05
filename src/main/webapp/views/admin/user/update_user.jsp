@@ -121,14 +121,14 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3" style="height: fit-content!important;">
-                <form action="${pageContext.request.contextPath}/admin/user_management?action=add" method="post">
+                <form action="${pageContext.request.contextPath}/admin/user_management?action=edit" method="post">
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Chỉnh sửa người dùng</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
                             <div class="btn-save flex-center">
-                                <button type="submit" class="btn btn-warning p-2 waves-effect waves-light"
+                                <button type="button" class="btn btn-warning p-2 waves-effect waves-light"
                                         id="save">LƯU
                                 </button>
                             </div>
@@ -185,7 +185,7 @@
                                                         <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="" placeholder="${fullnameErr}">
                                                     </c:if>
                                                     <c:if test="${fulnameErr == null}">
-                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="${fullnameValue}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="${user.fullName}">
                                                     </c:if>
                                                     <label for="form12" class="">Họ và tên</label>
                                                 </div>
@@ -198,7 +198,7 @@
                                                         <input placeholder="${birthdayErr}" type="text" id="birthday" value="" class="form-control form-control-sm" name="birthday">
                                                     </c:if>
                                                     <c:if test="${birthdayErr == null}">
-                                                        <input type="text" id="birthday" class="form-control form-control-sm" name="birthday" value="${birthdayValue}">
+                                                        <input type="text" id="birthday" class="form-control form-control-sm" name="birthday" value="${user.birthday}">
                                                     </c:if>
                                                     <label for="birthday" class="">Ngày sinh</label>
                                                     <i id="label-birthday" class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
@@ -213,7 +213,7 @@
                                                         <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="" placeholder="${phoneErr}">
                                                     </c:if>
                                                     <c:if test="${phoneErr == null}">
-                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="${phoneValue}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="${user.phone}">
                                                     </c:if>
                                                     <label for="form4" class="">SĐT</label>
                                                 </div>
@@ -227,7 +227,7 @@
                                                     <select name="province" id="province" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
                                                         <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.name}">${item.name}</option>
+                                                            <option value="${item.name}" <c:if test="${user.province==item.name}">selected</c:if> >${item.name}</option>
                                                         </c:forEach>
 
                                                     </select>
@@ -242,7 +242,7 @@
                                                     <!-- Material unchecked -->
                                                     <div class="form-check mt-4">
                                                         <input name="isMale" type="checkbox" class="form-check-input"
-                                                               id="materialUnchecked">
+                                                               id="materialUnchecked"  <c:if test="${user.gender==1}">checked </c:if> >
                                                         <label class="form-check-label"
                                                                for="materialUnchecked">Nam</label>
                                                     </div>
@@ -254,7 +254,7 @@
                                                     <div class="form-check mt-4">
                                                         <input name="isFemale" type="checkbox" class="form-check-input"
                                                                id="materialIndeterminate2"
-                                                               checked>
+                                                               <c:if test="${user.gender==0}">checked </c:if>>
                                                         <label class="form-check-label"
                                                                for="materialIndeterminate2">Nữ</label>
                                                     </div>
@@ -268,9 +268,9 @@
                                                         <select name="status"
                                                                 class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Trạng thái</option>
-                                                            <option value="1" selected>Chưa kích hoạt</option>
-                                                            <option value="2">Kích hoạt</option>
-                                                            <option value="3">Khóa</option>
+                                                            <option value="1"<c:if test="${user.status==1}"> selected</c:if>Chưa kích hoạt</option>
+                                                            <option value="2" <c:if test="${user.status==2}"> selected</c:if>>Kích hoạt</option>
+                                                            <option value="3" <c:if test="${user.status==3}"> selected</c:if>>Khóa</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -278,8 +278,8 @@
                                                     <div class="md-form form-sm mb-0">
                                                         <select name="role" class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
-                                                            <option value="1" selected>Người dùng thường</option>
-                                                            <option value="2">Admin</option>
+                                                            <option value="1" <c:if test="${user.role==1}"> selected</c:if>selected>Người dùng thường</option>
+                                                            <option value="2" <c:if test="${user.role==2}"> selected</c:if>>Admin</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -327,7 +327,7 @@
             },
             success: function (data) {
                 console.log(data);
-                if (data.name=="sys") {
+                if (data.name==="sys") {
                     alert(data.message);
                 }else {
                     window.location.href = "/admin/user_management?action=manage";
@@ -342,6 +342,56 @@
             }
         })
     });
+</script>
+<script>
+    function fetchErr(name, mess) {
+        switch (name) {
+            case "email":
+                let email = document.getElementById('form8');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value="";
+                email.nextElementSibling.classList.add('active');
+                email.setAttribute('value'," ");
+                email.setAttribute('placeholder', mess);
+                console.log("run 1")
+                break;
+            case "password":
+                let password = document.getElementById('form9');
+                password.classList.add('border-danger');
+                password.classList.add('text-danger');
+                password.value="";
+                password.nextElementSibling.classList.add('active');
+                password.setAttribute('placeholder', mess);
+                console.log("run 2");   break;
+            case "fullname":
+                let fullname = document.getElementById('form12');
+                fullname.classList.add('border-danger');
+                fullname.classList.add('text-danger');
+                fullname.value="";
+                fullname.nextElementSibling.classList.add('active');
+                console.log(fullname.nextElementSibling);
+                fullname.setAttribute('placeholder', mess);
+                console.log("run 3");  break;
+            case "phone":
+                let phone = document.getElementById('form4');
+                phone.classList.add('border-danger');
+                phone.classList.add('text-danger');
+                phone.value="";
+                phone.nextElementSibling.classList.add('active');
+                phone.setAttribute('placeholder', mess);
+                console.log("run 4");    break;
+            case "birthday":
+                let birthday = document.getElementById('birthday');
+                birthday.classList.add('border-danger');
+                birthday.classList.add('text-danger');
+                birthday.value="";
+                birthday.nextElementSibling.classList.add('active');
+                console.log(birthday.nextElementSibling);
+                birthday.setAttribute('placeholder', mess);
+                console.log("run 5"); break;
+        }
+    }
 </script>
 <script>
     <%-- email--%>

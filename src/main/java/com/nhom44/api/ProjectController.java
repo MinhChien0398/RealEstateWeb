@@ -96,6 +96,7 @@ public class ProjectController extends HttpServlet {
         String[] arr = input.split(",");
         if (!new ServiceSelectValidator().validator(arr)) {
             ResponseModel responseModel = new ResponseModel();
+            System.out.println("loi service");
             responseModel.setMessage("Vui lòng chọn loại dịch vụ");
             responseModel.setName("service");
             errMess.add(responseModel);
@@ -193,28 +194,41 @@ public class ProjectController extends HttpServlet {
                     return;
                 }
                 ProjectService.getInstance().addProjectForUser(project.getId(), user.getId());
-            }else if(action.equalsIgnoreCase("edit")){
-
+            } else if (action.equalsIgnoreCase("edit")) {
+                project = ProjectService.getInstance().add(project, !req.getParameter("isComplete").equals("0"));
             }
-                List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "\\" + StringUtil.projectFolder(project.getId()), "avatar", req);
-                if (!fileNames.isEmpty()) {
-                    project.setAvatar(fileNames.get(0));
-                    ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));
-                } else {
-                    ResponseModel responseModel = new ResponseModel();
-                    resp.setStatus(400);
-                    responseModel.setMessage("Vui lòng chọn ảnh đại diện");
-                    responseModel.setName("avatar");
-                    errMess.add(responseModel);
-                    Gson gson = new Gson();
-                    PrintWriter printWriter = resp.getWriter();
-                    String json = gson.toJson(errMess);
-                    printWriter.println(json);
-                    printWriter.flush();
-                    printWriter.close();
-                    return;
-                }
+            List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "\\" + StringUtil.projectFolder(project.getId()), "avatar", req);
+            if (action.equalsIgnoreCase("add") && !fileNames.isEmpty() || action.equalsIgnoreCase("edit") && !fileNames.isEmpty()) {
+                project.setAvatar(fileNames.get(0));
+                ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));
+            } else if (action.equalsIgnoreCase("edit") || fileNames.isEmpty()) {
 
+            } else {
+                ResponseModel responseModel = new ResponseModel();
+                resp.setStatus(400);
+                responseModel.setMessage("Vui lòng chọn ảnh đại diện");
+                responseModel.setName("avatar");
+                errMess.add(responseModel);
+                Gson gson = new Gson();
+                PrintWriter printWriter = resp.getWriter();
+                String json = gson.toJson(errMess);
+                printWriter.println(json);
+                printWriter.flush();
+                printWriter.close();
+                return;
+            }
+            resp.setStatus(200);
+            ResponseModel responseModel = new ResponseModel();
+            responseModel.setMessage("Thêm thành công");
+            responseModel.setData("/admin/project_management");
+            responseModel.setName("success");
+            Gson gson = new Gson();
+            PrintWriter printWriter = resp.getWriter();
+            String json = gson.toJson(responseModel);
+            printWriter.println(json);
+            printWriter.flush();
+            printWriter.close();
+            return;
 
         } catch (Exception e) {
             ResponseModel responseModel = new ResponseModel();

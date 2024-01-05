@@ -28,6 +28,7 @@
 }
     let images = ' ';
     allFiles.forEach((e, i) => {
+        console.log(URL.createObjectURL(e))
     images += '<div class="image position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
     '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage(' + i + ')" style=""></i></div></div>'
 })
@@ -44,13 +45,8 @@
     allFiles=Array.from(input.files)
     showImage()
 }
-    function validateFileType(){
-        var fileName = document.getElementById("fileName").value;
-        var idxDot = fileName.lastIndexOf(".") + 1;
-        var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
-        if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){
-            //TO DO
-        }else{
-            alert("Only jpg/jpeg and png files are allowed!");
-        }
-    }
+// document.onload = function () {
+//         if(input.files.length!== 0) {
+//         input.files
+//         }
+// };

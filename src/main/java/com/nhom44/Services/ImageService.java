@@ -5,6 +5,7 @@ import com.nhom44.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class ImageService {
     private static ImageService instance;
@@ -24,5 +25,13 @@ public class ImageService {
 
     public int addImageForProject(int id, int idImg) {
         return conn.withExtension(ImageDAO.class, dao -> dao.addProjectImage(id,idImg));
+    }
+
+    public List<String> getGroupImagesByProjectId(int id) {
+        return conn.withExtension(ImageDAO.class, dao -> dao.getGroupImagesByProjectId(id));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(ImageService.getInstance().getGroupImagesByProjectId(1));
     }
 }
