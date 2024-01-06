@@ -405,8 +405,6 @@
             url: "/api/post?action=add",
             type: "POST",
             dataType: "json",
-            // contentType: "application/json",
-            // processData: false,
             data: {content: content},
             success: function (data) {
                 saveproject(data.data.id)

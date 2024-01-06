@@ -15,7 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -54,12 +55,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -110,7 +112,7 @@
                     <li class="breadcrumb-item"><a class="main-color" href="add_service.jsp">Thêm dịch vụ</a></li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
                 <form action="#" method="post" id="addproject">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
@@ -134,7 +136,8 @@
                             </ul>
                         </div>
                         <div class="btn-save flex-center">
-                            <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light" type="submit"> LƯU
+                            <button form="addproject" id="save" class="btn btn-warning p-2 waves-effect waves-light"
+                                    type="button"> LƯU
                             </button>
                         </div>
                     </div>
@@ -142,7 +145,7 @@
                     <div class="tab-content pt-2 pl-1" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                              aria-labelledby="pills-home-tab">
-                            <div class="edit-profile flex-center">
+                            <div class="edit-profile d-flex justify-content-center">
                                 <div class="col-md-8 mb-4">
                                     <!-- Card -->
                                     <div class="card card-cascade cascading-admin-card user-card">
@@ -157,43 +160,40 @@
                                                                    placeholder="Tiêu đề" value="">
                                                         </div>
                                                         <div class="mb-4">
-                                                            <div class="form-group green-border-focus">
-                                                                <label for="exampleFormControlTextarea5">Mô tả</label>
-                                                                <textarea class="form-control"
-                                                                          id="exampleFormControlTextarea5"
-                                                                          rows="3"></textarea>
-                                                            </div>
-                                                            <div class="mb-4">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
-                                                                    </div>
-                                                                    <div class="custom-file">
-                                                                        <input type="file" class="custom-file-input"
-                                                                               id="inputGroupFile01"
-                                                                               aria-describedby="inputGroupFileAddon01"
-                                                                               onchange="preview()"
-                                                                        >
-                                                                        <label class="custom-file-label"
-                                                                               for="inputGroupFile01">Chọn file
-                                                                        </label>
-
-                                                                    </div>
-
-                                                                </div>
-                                                                <p id="num-of-files">Không có file được chọn</p>
-                                                                <div id="images"></div>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="mb-4">
                                                             <label for="status" class="labels">Trạng thái</label>
                                                             <select id="status" class="browser-default custom-select">
                                                                 <option value="1">Hiện dịch vụ</option>
                                                                 <option value="2">Ẩn dịch vụ</option>
                                                             </select>
                                                         </div>
+                                                        <div class="mb-4">
+                                                            <div class="form-group green-border-focus">
+                                                                <label for="description">Mô tả</label>
+                                                                <textarea class="form-control"
+                                                                          id="description"
+                                                                          rows="3"></textarea>
+                                                            </div>
+                                                            <div class="mb-4">
+                                                                <div class="input-group mt-2 d-flex align-items-center">
+                                                                    <label>Chọn hình đại diện</label>
+                                                                    <div class="file-field d-flex align-items-center">
+                                                                        <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                                            <span>chọn ảnh</span>
+                                                                            <input type="file" name="avatar"
+                                                                                   id="avatar"
+                                                                                   accept="image/*">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="upload-wrapper d-none avatar">
+                                                                    <div class="border d-flex img-container">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,17 +206,17 @@
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                              aria-labelledby="pills-profile-tab">
-                            <div class="edit-profile flex-center">
+                            <div class="edit-profile d-flex justify-content-center">
                                 <div class="col-md-12 mb-12">
                                     <div class="card card-cascade cascading-admin-card user-card">
                                         <div class="card-body card-body-cascade">
                                             <div class="col-lg-12 col-md-12 p-0">
                                                 <div class="form-group">
-                                                                                                        <textarea
-                                                                                                                class="form-control rounded-0"
-                                                                                                                name="service-des"
-                                                                                                                rows="10">
-                                                                                                        </textarea>
+                                                 <textarea
+                                                         class="form-control rounded-0"
+                                                         id="post"
+                                                         rows="10">
+                                                </textarea>
                                                     <!--                                                    <textarea id="sample">Hi</textarea>-->
                                                 </div>
                                             </div>
@@ -238,24 +238,67 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
 <script>
-    CKEDITOR.replace('service-des',{
-        width :"100%",
-        height :"400px",
+    CKEDITOR.replace('post', {
+        width: "100%",
+        height: "400px",
     });
+</script>
+<script>
+    function saveService(id) {
+        let form = new FormData();
+        form.append('name', $("#name").val());
+        form.append('status', $("#status").val());
+        form.append('description', $("#description").val());
+        form.append('avatar', $("#avatar").prop('files')[0]);
+        form.append('postId', id);
+        $.ajax({
+            url: "/api/service?action=add",
+            type: "POST",
+            // dataType: "json",
+            processData: false,
+            contentType: false,
+            data: form,
+            success: function (data) {
+                console.log(data.responseText)
+            },
+            error: function (data) {
+                console.log(data.responseText)
+            }
+        })
+    }
 
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    $('#save').click(function () {
+        let content = CKEDITOR.instances.post.getData();
+        $.ajax({
+            url: "/api/post?action=add",
+            type: 'POST', dataType: "json",
+            data: {content: content},
+            success: function (data) {
+                console.log("success post")
+                saveService(data.data.id);
+            },
+            error: function (data) {
+
+            }
+        })
+    })
+
+</script>
+
+<script>
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }

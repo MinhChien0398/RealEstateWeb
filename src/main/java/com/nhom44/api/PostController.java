@@ -29,13 +29,12 @@ public class PostController extends HttpServlet {
         PrintWriter printWriter = resp.getWriter();
         try {
             BeanUtils.populate(post, req.getParameterMap());
-            System.out.println(post.toString());
+
         } catch (IllegalAccessException | InvocationTargetException e) {
            responseModel= new ResponseModel();
            resp.setStatus(400);
               responseModel.setMessage("Lỗi không xác định");
                 responseModel.setData(null);
-
                 responseModel.setName("sys");
                 printWriter.println(new Gson().toJson(responseModel));
                 printWriter.flush();
@@ -53,6 +52,7 @@ public class PostController extends HttpServlet {
             responseModel.setMessage("Lỗi hệ thống");
             responseModel.setData(null);
             responseModel.setName("sys");
+
         }
         else{
             resp.setStatus(200);
@@ -60,10 +60,14 @@ public class PostController extends HttpServlet {
             responseModel.setMessage("Thêm thành công");
             responseModel.setData(post);
             responseModel.setName("success");
+
         }
         printWriter.println(new Gson().toJson(responseModel));
         printWriter.flush();
         printWriter.close();
+        System.out.println(42354);
+        return;
+
     }
 
     @Override

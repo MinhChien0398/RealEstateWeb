@@ -136,7 +136,7 @@
                         </div>
                         <div class="btn-save flex-center">
                             <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light"
-                                    type="submit"> LƯU
+                                  id="save"  type="button"> LƯU
                             </button>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
                                                                           id="description"
                                                                           name="description"
                                                                           rows="3" placeholder="Mô tả dự án"
-                                                                          value="${project.description}"></textarea>
+                                                                          value="">${project.description}</textarea>
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
@@ -336,8 +336,7 @@
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
                                                             <input type="file" accept="image/*" name="groupImage"
-                                                                   id="file_input1" multiple
-                                                                   value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
+                                                                   id="file_input1" multiple>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -352,7 +351,7 @@
                                         <div class="col-12 p-0">
                                             <div class="form-group">
                                                     <textarea class="form-control rounded-0" name="post" id="post"
-                                                              rows="10"></textarea>
+                                                              rows="10">${post.content}</textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -372,6 +371,7 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <%--<script src="<c:url value="/template/js/inputFile.js"/>"></script>--%>
 <script>
+    console.log("${groupImages}")
     let allFiles = [];
     let input = document.getElementById("avatar");
     let container = document.getElementsByClassName("img-container");
@@ -432,6 +432,7 @@
 <script>
     function saveproject(idPost) {
         let form = new FormData();
+        form.append('id', ${project.id});
         form.append('email', $("#email").val())
         form.append('title', $("#title").val());
         form.append('categoryId', $("#category").val());
@@ -444,14 +445,18 @@
         form.append('schedule', $("#schedule").val());
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
+        if ($("#avatar").prop('files').length !== 0)
         form.append('avatar', $("#avatar").prop('files')[0]);
+        else form.append('avatar', ${project.avatar});
+       if ($("#file_input1").prop('files').length !== 0)
         for (const x of $("#file_input1").prop('files')) {
+            console.log(x)
             form.append('groupImage', x);
         }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
-            url: "/api/project?action=add",
+            url: "/api/project?action=edit",
             type: "POST",
             dataType: "json",
             processData: false,
@@ -473,7 +478,7 @@
 
 </script>
 <script>
-    CKEDITOR.replace('post', {
+  let editor= CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });
@@ -482,12 +487,15 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post?action=add",
+            url: "/api/post?action=edit",
             type: "POST",
             dataType: "json",
             // contentType: "application/json",
             // processData: false,
-            data: {content: content},
+
+            data: {content: content,
+                id: ${post.id}
+            },
             success: function (data) {
                 saveproject(data.data.id)
             },

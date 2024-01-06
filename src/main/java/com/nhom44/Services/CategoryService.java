@@ -18,5 +18,35 @@ public class CategoryService {
     }
     public List<Category> getAll() {
         return conn.withExtension(CategoryDAO.class, dao -> dao.getAll());
+
+    }
+
+    public static void main(String[] args) {
+        CategoryService categoryService = CategoryService.getInstance();
+        List<Category> categories = categoryService.getAll();
+        System.out.println(categories);
+    }
+
+    public Category getById(int id) {
+        return conn.withExtension(CategoryDAO.class, dao -> dao.getById(id));
+    }
+
+    public int add(Category category) {
+        if(existCategory(category.getName())){
+            return -1;
+        }
+        int status = conn.withExtension(CategoryDAO.class, dao -> dao.add(category));
+       return status;
+    }
+
+    private boolean existCategory(String name) {
+        return conn.withExtension(CategoryDAO.class, dao -> dao.existCategory(name));
+    }
+
+    public int update(Category category) {
+        if(existCategory(category.getName())){
+            return -1;
+        }
+        return conn.withExtension(CategoryDAO.class, dao -> dao.update(category));
     }
 }

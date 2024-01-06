@@ -34,7 +34,8 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
             req.getRequestDispatcher("/views/admin/project/add_project.jsp").forward(req, resp);
         } else if (action.equals("edit")) {
             if (req.getParameter("id") == null || req.getParameter("id").isEmpty()) {
-                resp.sendRedirect("/admin/project_management");
+             //error
+               resp.sendRedirect("/admin/project_management");
                 return;
             }
             try {
@@ -45,13 +46,14 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
                     return;
                 }
                 req.setAttribute("project", project);
-                if (project.getEstimated_complete()==null||project.getEstimated_complete().isEmpty()||project.getSchedule()==null||project.getSchedule().isEmpty()){
-                  req.setAttribute("isExcuting",false);
-                }else {
-                    req.setAttribute("isExcuting",true);
+                if (project.getEstimated_complete() == null || project.getEstimated_complete().isEmpty() || project.getSchedule() == null || project.getSchedule().isEmpty()) {
+                    req.setAttribute("isExcuting", false);
+                } else {
+                    req.setAttribute("isExcuting", true);
                 }
                 System.out.println(project.toString());
                 Post post = PostService.getInstance().getById(project.getPostId());
+                System.out.println(post.toString());
                 req.setAttribute("post", post);
                 List<Service> services = ServiceOfProjectService.getInstance().getServicesByProjectId(id);
 
@@ -63,7 +65,7 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
                 List<String> groupImages = ImageService.getInstance().getGroupImagesByProjectId(id);
                 req.setAttribute("groupImages", groupImages);
                 req.getRequestDispatcher("/views/admin/project/update_project_page.jsp").forward(req, resp);
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException | NullPointerException e) {
                 resp.sendRedirect("/admin/project_management");
             }
         }

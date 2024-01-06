@@ -4,6 +4,7 @@ import com.nhom44.DAO.ProjectDAO;
 import com.nhom44.bean.Project;
 import com.nhom44.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.core.mapper.JoinRow;
 
 import java.util.List;
 
@@ -27,15 +28,15 @@ public class ProjectService {
         int status = Integer.MIN_VALUE;
         if (isComplete) {
             status = conn.withExtension(ProjectDAO.class, dao -> {
-                System.out.println("complete dao\n "+ project.getAcreage());
-               return  dao.add(project);
+                System.out.println("complete dao\n " + project.getDescription());
+                return dao.add(project);
             });
         } else {
             int s1 = conn.withExtension(ProjectDAO.class, dao -> {
-                System.out.println("dao\n "+ project.toString());
-                return  dao.add(project);
+                System.out.println("dao\n " + project.toString());
+                return dao.add(project);
             });
-            Project nProject= getProjectByObject(project);
+            Project nProject = getProjectByObject(project);
             int s2 = conn.withExtension(ProjectDAO.class, dao -> dao.addExcuting(nProject.getId(), project.getSchedule(), project.getEstimated_complete()));
             status = s1 == 1 && s2 == 1 ? 1 : 0;
         }
@@ -69,13 +70,13 @@ public class ProjectService {
         int s1 = Integer.MIN_VALUE;
         int s2 = Integer.MIN_VALUE;
         if (isComplete) {
-            s1 = conn.withExtension(ProjectDAO.class, dao -> dao.deleteInExcuting(project.getId()));
-            s2 = conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
+            conn.withExtension(ProjectDAO.class, dao -> dao.deleteInExcuting(project.getId()));
+            conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
         } else {
-            s1 = conn.withExtension(ProjectDAO.class, dao -> dao.updateExcuting(project));
-            s2 = conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
+            conn.withExtension(ProjectDAO.class, dao -> dao.updateExcuting(project));
+            conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
         }
-        return s1 == 1 && s2 == 1 ? getProjectByObject(project) : null;
+        return getProjectByObject(project);
     }
 
     public int addProjectForUser(int projectId, int userId) {
@@ -87,13 +88,21 @@ public class ProjectService {
 
     }
 
+
+
+    public int updateProjectForUser(int id, int id1) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.updateProjectForUser(id, id1));
+    }
+public List<Project> getNumOfSavedAndRead(){
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getNumOfSavedAndRead());
+}
+    public List<Project> getExcuting() {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getExcuting());
+    }
     public static void main(String[] args) {
-        Project project = getInstance().getById(74);
-        System.out.println(project.toString());
-        project.setPrice(2);
-        project.setAcreage(123123);
-        getInstance().updateProject(project,true);
-        project = getInstance().getById(74);
-        System.out.println(project.toString());
+        List<Project> list = ProjectService.getInstance().getNumOfSavedAndRead();
+        for (Project project : list) {
+            System.out.println(project.toString());
+        }
     }
 }

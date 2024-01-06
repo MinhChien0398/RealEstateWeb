@@ -20,4 +20,6 @@ public interface ImageDAO {
     int getIdImage(@BindBean Image image);
 @SqlQuery("SELECT concat(images.path,'/',images.name) FROM images  JOIN doanweb.group_images gi on images.id = gi.imageId WHERE projectId=:id")
     List<String> getGroupImagesByProjectId(@Bind("id") int id);
+@SqlUpdate("DELETE FROM group_images WHERE projectId=:id")
+    int deleteAllImageProProject(@Bind("id")int id);
 }

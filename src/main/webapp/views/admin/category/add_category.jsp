@@ -9,7 +9,7 @@
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
-    
+
     <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
@@ -114,16 +114,13 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-                <form>
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Thêm Loại dự án</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                                <button class="btn btn-warning p-2 waves-effect waves-light" id="save" type="button">LƯU
                                 </button>
-                            </a>
                         </div>
                     </div>
                     <div>
@@ -137,8 +134,8 @@
                                     </div>
                                     <div class="mb-4">
                                         <label for="status" class="labels">Trạng thái</label>
-                                        <select id="status" class="browser-default custom-select">
-                                            <option value="1">Kích hoạt</option>
+                                        <select id="status"  class="browser-default custom-select">
+                                            <option value="1" selected>Kích hoạt</option>
                                             <option value="2">Ẩn</option>
                                         </select>
                                     </div>
@@ -146,7 +143,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
             </main>
         </div>
     </div>
@@ -157,8 +153,30 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
-<script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script>
+        $('#save').click(function () {
 
+            $.ajax({
+                url: '/api/category?action=add',
+                type: 'POST',
+                // processData:false,
+                // contentType:false,
+                data: {
+                    name: $('#name').val(),
+                    status: $('#status').val()
+                },
+                // dataType: "json",
+                // contentType: 'application/json',
+
+                success: function (data) {
+                   console.log(data)
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            })
+        })
+</script>
 <script>
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";

@@ -15,7 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -55,12 +56,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -115,7 +117,7 @@
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa dịch vụ</a></li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
                 <form action="#" method="post" id="addproject">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
@@ -139,16 +141,16 @@
                             </ul>
                         </div>
                         <div class="btn-save flex-center">
-                            <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light"
-                                    type="submit"> LƯU
+                            <button form="addproject" id="save" class="btn btn-warning p-2 waves-effect waves-light"
+                                    type="button"> LƯU
                             </button>
                         </div>
                     </div>
 
-                    <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                    <div class="tab-content pt-2 pl-1 h-auto" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                              aria-labelledby="pills-home-tab">
-                            <div class="edit-profile flex-center">
+                            <div class="edit-profile d-flex justify-content-center">
                                 <div class="col-md-8 mb-4">
                                     <!-- Card -->
                                     <div class="card card-cascade cascading-admin-card user-card">
@@ -160,50 +162,48 @@
                                                         <div class="mb-4">
                                                             <label for="name" class="labels">Tiêu đề</label>
                                                             <input id="name" type="text" class="form-control"
-                                                                   placeholder="Tiêu đề"
-                                                                   value="DỊCH VỤ XIN GIẤY PHÉP XÂY DỰNG TP HCM">
+                                                                   placeholder="Tiêu đề" value="${service.name}">
                                                         </div>
                                                         <div class="mb-4">
                                                             <div class="form-group green-border-focus">
-                                                                <label for="exampleFormControlTextarea5">Mô tả</label>
+                                                                <label for="description">Mô tả</label>
                                                                 <textarea class="form-control"
-                                                                          id="exampleFormControlTextarea5"
-                                                                          rows="3">
-Xin Giấy Phép Xây Dựng là một trong những thủ tục bắt buộc không thể thiếu khi bạn khởi công xây dựng công trình mới. Trong trường hợp nếu bạn chưa xin giấy phép mà bạn đã khởi công xây dựng công trình thì bạn đã vi phạm pháp luật về lĩnh vực xây dựng.
-                                                                </textarea>
+                                                                          id="description"
+                                                                          rows="3">${service.description}</textarea>
                                                             </div>
-                                                            <div class="mb-4">
-                                                                <div class="input-group">
-                                                                    <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
-                                                                    </div>
-                                                                    <div class="custom-file">
-                                                                        <input type="file" class="custom-file-input"
-                                                                               id="inputGroupFile01"
-                                                                               onchange="preview()"
-                                                                               value="">
-                                                                        <label class="custom-file-label"
-                                                                               for="inputGroupFile01">
-                                                                        </label>
-
-                                                                    </div>
-
-                                                                </div>
-                                                                <p id="num-of-files" class="mb-2">Không có file được
-                                                                    chọn</p>
-                                                                <div id="images">
-
-                                                                </div>
-                                                            </div>
-
                                                         </div>
                                                         <div class="mb-4">
                                                             <label for="status" class="labels">Trạng thái</label>
                                                             <select id="status" class="browser-default custom-select">
-                                                                <option value="1">Hiện dịch vụ</option>
-                                                                <option value="2">Ẩn dịch vụ</option>
+
+                                                                <option value="1"
+                                                                        <c:if test="${service.status==1}">selected</c:if>>
+                                                                    Hiện dịch vụ
+                                                                </option>
+                                                                <option value="0"
+                                                                        <c:if test="${service.status==0}">selected</c:if>>
+                                                                    Ẩn dịch vụ
+                                                                </option>
                                                             </select>
+                                                        </div>
+
+                                                        <div class="mb-4">
+                                                            <div class="input-group mt-2 d-flex align-items-center">
+                                                                <label>Chọn hình đại diện</label>
+                                                                <div class="file-field d-flex align-items-center">
+                                                                    <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                                        <span>chọn ảnh</span>
+                                                                        <input type="file" name="avatar"
+                                                                               id="avatar"
+                                                                               accept="image/*">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="upload-wrapper d-none avatar">
+                                                                <div class="border d-flex img-container">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -217,17 +217,17 @@ Xin Giấy Phép Xây Dựng là một trong những thủ tục bắt buộc kh
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                              aria-labelledby="pills-profile-tab">
-                            <div class="edit-profile flex-center">
+                            <div class="edit-profile d-flex justify-content-center">
                                 <div class="col-md-12 mb-12">
                                     <div class="card card-cascade cascading-admin-card user-card">
                                         <div class="card-body card-body-cascade">
                                             <div class="col-lg-12 col-md-12 p-0">
                                                 <div class="form-group">
-                                                                                                        <textarea
-                                                                                                                class="form-control rounded-0"
-                                                                                                                name="service-des"
-                                                                                                                rows="10">
-                                                                                                        </textarea>
+                                                 <textarea
+                                                         class="form-control rounded-0"
+                                                         id="post"
+                                                         rows="10">${post.content}
+                                                 </textarea>
                                                     <!--                                                    <textarea id="sample">Hi</textarea>-->
                                                 </div>
                                             </div>
@@ -248,9 +248,120 @@ Xin Giấy Phép Xây Dựng là một trong những thủ tục bắt buộc kh
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
-<script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<%--<script src="<c:url value="/template/js/inputFile.js"/>"></script>--%>
 <script>
-    CKEDITOR.replace('service-des', {
+    function saveService(id) {
+        console.log(213123)
+        let form = new FormData();
+        form.append('name', $("#name").val());
+        form.append('status', $("#status").val());
+        form.append('description', $("#description").val());
+        if ($("#avatar").prop('files').length !== 0)
+            form.append('avatar', $("#avatar").prop('files')[0]);
+        else form.append('avatar', ${service.avatar});
+        form.append('postId', id);
+        form.append('id', ${service.id});
+        $.ajax({
+            url: "/api/service?action=edit",
+            type: "POST",
+            // dataType: "json",
+            processData: false,
+            contentType: false,
+            data: form,
+            success: function (data) {
+                console.log(data.responseText)
+            },
+            error: function (data) {
+                console.log(data.responseText)
+            }
+        })
+    }
+
+</script>
+<script>
+    $('#save').click(function () {
+        let content = CKEDITOR.instances.post.getData();
+        $.ajax({
+            url: "/api/post?action=edit",
+            type: 'POST',
+            dataType: "json",
+            data: {
+                content: content,
+                id:${post.id}
+            },
+            success: function (data) {
+                console.log("success post")
+                saveService(data.data.id);
+            },
+            error: function (data) {
+                console.log(data.responseText)
+                // saveService(data.data.id);
+            }
+        })
+    })
+
+</script>
+<script>
+    let allFiles = [];
+    let input = document.getElementById("avatar");
+    let container = document.getElementsByClassName("img-container");
+    // console.log(input.files)
+    if (input.files.length == 0 && allFiles.length == 0) {
+        let images = ' ';
+        container[0].parentElement.classList.add('d-block')
+        container[0].parentElement.classList.remove('d-none')
+        images += '<div class="image position-relative border-radius"><img src="${service.avatar}" alt="" class="border"> ' +
+            '<div class="position-absolute " ></div></div>'
+        container[0].innerHTML = images;
+    }
+
+    input.addEventListener('change', function () {
+        let files = this.files;
+        allFiles = [];
+        for (let i = 0; i < files.length; i++) {
+            allFiles.push(files[i])
+        }
+        showImage();
+    })
+
+    const showImage = () => {
+        container[0].parentElement.classList.add('d-block')
+        container[0].parentElement.classList.remove('d-none')
+        if (input.files.length == 0) {
+            let images = ' ';
+            images += '<div class="image position-relative border-radius"><img src="${service.avatar}" alt="" class="border"> ' +
+                '<div class="position-absolute " ></div></div>'
+            container[0].innerHTML = images;
+        } else {
+            let images = ' ';
+            allFiles.forEach((e, i) => {
+                images += '<div class="image position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
+                    '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage(' + i + ')" style=""></i></div></div>'
+            })
+            container[0].innerHTML = images
+        }
+    }
+    let dt = new DataTransfer();
+    const delImage = index => {
+        let dt = new DataTransfer();
+        for (let i = 0; i < input.files.length; i++) {
+            if (index !== i)
+                dt.items.add(input.files[i]) // here you exclude the file. thus removing it.
+        }
+        input.files = dt.files
+        allFiles = Array.from(input.files)
+        showImage()
+    }
+    // document.onload = function () {
+    //         if(input.files.length!== 0) {
+    //         input.files
+    //         }
+    // };
+
+</script>
+
+<script>
+    CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });

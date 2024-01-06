@@ -110,4 +110,11 @@ public class UserService {
     public User getUserByEmail(String email) {
         return conn.withExtension(UserDAO.class, dao -> dao.getUserByEmail(email));
     }
+    public String getEmailUserWithProjectId(int projectId) {
+        return conn.withExtension(UserDAO.class, dao -> dao.getUserWithProjectId(projectId));
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getInstance().getEmailUserWithProjectId(100));
+    }
 }
