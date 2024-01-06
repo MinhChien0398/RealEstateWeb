@@ -304,6 +304,7 @@
                         var err = JSON.parse(data.responseText);
 
                     for (const e of err) {
+                        console.log(e.name, e.message)
                         fetchErr(e.name, e.message);
                     }
                 }

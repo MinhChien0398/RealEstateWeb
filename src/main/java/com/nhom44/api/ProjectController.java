@@ -81,7 +81,7 @@ public class ProjectController extends HttpServlet {
         if (!validator.validator(req.getParameter("categoryId"))) {
             ResponseModel responseModel = new ResponseModel();
             responseModel.setMessage("Vui lòng chọn loại dự án");
-            responseModel.setName("catgory");
+            responseModel.setName("category");
             errMess.add(responseModel);
             isErr = true;
         }
