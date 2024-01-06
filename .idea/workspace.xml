@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="RealEstateWeb:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="688757aa-fb64-47fe-a742-76c1de1faaf9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/SelectorSingleValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/SelectorSingleValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/ServiceSelectValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/ServiceSelectValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Tomcat Server.Tomcat 9.0.80.executor": "Run",
+    "Tomcat Server.add_project.jsp.executor": "Run",
+    "git-widget-placeholder": "mchien-branch",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.nhom44.services.observer" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\template\img" />
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\java\com\nhom44\db" />
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp" />
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views" />
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\order" />
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\user" />
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nhom44.controller.admin.user" />
+      <recent name="com.nhom44.controller.admin.project" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="(){" />
+    </option>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.72">
+    <configuration name="ImageService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ImageService" />
+      <module name="RealEstateWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhom44.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProjectService" />
+      <module name="RealEstateWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhom44.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProvinceService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProvinceService" />
+      <module name="RealEstateWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhom44.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserManagementController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.controller.admin.user.UserManagementController" />
+      <module name="RealEstateWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhom44.controller.admin.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.UserService" />
+      <module name="RealEstateWeb" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.nhom44.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.72" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.72" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="RealEstateWeb:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="c4ad578d-05be-4e02-938d-8f94c5fb6091" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58213" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="RealEstateWeb:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ImageService" />
+      <item itemvalue="Application.ProjectService" />
+      <item itemvalue="Application.ProvinceService" />
+      <item itemvalue="Application.UserManagementController" />
+      <item itemvalue="Application.UserService" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.72" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ImageService" />
+        <item itemvalue="Application.ProjectService" />
+        <item itemvalue="Application.UserService" />
+        <item itemvalue="Application.ProvinceService" />
+        <item itemvalue="Application.UserManagementController" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-8336523bb0d9-b81783ad" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="" />
+      <created>1701851446373</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701851446373</updated>
+      <workItem from="1701851447372" duration="4957000" />
+      <workItem from="1702003396902" duration="589000" />
+      <workItem from="1702276234068" duration="2228000" />
+      <workItem from="1702582954416" duration="9000" />
+      <workItem from="1702613100088" duration="24000" />
+      <workItem from="1702870422111" duration="4096000" />
+      <workItem from="1702892474357" duration="126000" />
+      <workItem from="1702892894275" duration="1888000" />
+      <workItem from="1703040243299" duration="703000" />
+      <workItem from="1703040981876" duration="25945000" />
+      <workItem from="1703085194432" duration="10872000" />
+      <workItem from="1703121354386" duration="1950000" />
+      <workItem from="1703123818851" duration="26615000" />
+      <workItem from="1703174505727" duration="4683000" />
+      <workItem from="1703210117969" duration="21992000" />
+      <workItem from="1703261138211" duration="4953000" />
+      <workItem from="1703269200462" duration="378000" />
+      <workItem from="1703269907740" duration="16903000" />
+      <workItem from="1703304166577" duration="7818000" />
+      <workItem from="1703439504976" duration="6533000" />
+      <workItem from="1703481367340" duration="601000" />
+      <workItem from="1703668464373" duration="4352000" />
+      <workItem from="1703733469362" duration="4513000" />
+      <workItem from="1703738636637" duration="6602000" />
+      <workItem from="1703772684760" duration="9536000" />
+      <workItem from="1703784192492" duration="5524000" />
+      <workItem from="1704173474447" duration="6358000" />
+      <workItem from="1704208078645" duration="18378000" />
+      <workItem from="1704251178186" duration="8098000" />
+      <workItem from="1704260524599" duration="8470000" />
+      <workItem from="1704292977052" duration="293000" />
+      <workItem from="1704293412565" duration="21949000" />
+      <workItem from="1704336404977" duration="17534000" />
+      <workItem from="1704370901765" duration="23605000" />
+      <workItem from="1704427733843" duration="146000" />
+      <workItem from="1704427971730" duration="3807000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/validator/EmailSingleValidator.java</url>
+          <line>11</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/services/ImageService.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
