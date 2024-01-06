@@ -18,7 +18,7 @@ public class ServiceOfProjectService {
     }
 
     public List<Service> getAll() {
-        return conn.withExtension(ServiceDAO.class, dao -> dao.getAll());
+            return conn.withExtension(ServiceDAO.class, dao -> dao.getAll());
     }
     public int addServiceForProject(int projectId, int serviceId) {
         return conn.withExtension(ServiceDAO.class, dao -> dao.addServiceForProject(projectId, serviceId));
@@ -28,7 +28,12 @@ public class ServiceOfProjectService {
     }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().getAll());
+        List<Service> services = getInstance().getAll();
+        System.out.println(services.size());
+        for (Service service : services
+             ) {
+            System.out.println(service);
+        };
     }
 
     public void updateServiceForProject(int id, List<String> services) {
@@ -56,4 +61,5 @@ public class ServiceOfProjectService {
     public Service getById(int id) {
         return conn.withExtension(ServiceDAO.class, dao -> dao.getById(id));
     }
+
 }
