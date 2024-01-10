@@ -17,13 +17,4 @@ public class ProjectManagementController extends HttpServlet {
         req.getRequestDispatcher("/views/admin/project/project_manage.jsp").forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-    }
-
-    @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp);
-    }
 }

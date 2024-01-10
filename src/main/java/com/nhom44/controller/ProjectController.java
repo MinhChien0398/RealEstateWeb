@@ -1,11 +1,21 @@
 package com.nhom44.controller;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+import com.nhom44.bean.Category;
+import com.nhom44.bean.Project;
+import com.nhom44.bean.Province;
+import com.nhom44.bean.Service;
+import com.nhom44.services.CategoryService;
+import com.nhom44.services.ProjectService;
+import com.nhom44.services.ProvinceService;
+import com.nhom44.services.ServiceOfProjectService;
+import com.nhom44.util.PriceObjectHelper;
+import com.nhom44.util.SearcherProjectUtil;
 
-@WebServlet(name = "ProjectController", value = "/project")
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import java.util.List;
+
+@WebServlet(urlPatterns = "/project")
 public class ProjectController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -17,4 +27,3 @@ public class ProjectController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
-}

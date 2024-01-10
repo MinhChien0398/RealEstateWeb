@@ -132,50 +132,21 @@
                             <th class="font-weight-bold" scope="col">STT</th>
                             <th class="font-weight-bold" scope="col">Tên bài viết</th>
                             <th class="font-weight-bold" scope="col">Lượt xem</th>
-
                             <th class="font-weight-bold" scope="col">Thao tác</th>
                         </tr>
                         </thead>
                         <tbody>
-
+<c:forEach items="${services}" var="service" varStatus="loop" begin="0">
                         <tr>
-                            <td>1</td>
-                            <td>Dịch vụ thi công nhà phần thô</td>
-                            <td>2656</td>
-
-
+                            <td>${loop.index+1}</td>
+                            <td>${service.name}</td>
+                            <td>${service.numberOfView}</td>
                             <td>
-                                <a href="update_service_post.jsp"> <i class="fa-solid fa-pen icon-action p-1"></i>
+                                <a href="/admin/post_service?action=edit&id=${service.postId}"> <i class="fa-solid fa-pen icon-action p-1"></i>
                                 </a>
                             </td>
                         </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Dịch vụ xây nhà trọn gói</td>
-                            <td>1759</td>
-
-
-                            <td>
-                                <a href="update_service_post.jsp">
-                                    <i class="fa-solid fa-pen icon-action p-1"></i>
-                                </a>
-
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Dịch vụ thi công nhà xưởng</td>
-                            <td>236</td>
-
-
-                            <td>
-                                <a href="update_service_post.jsp">
-                                    <i class="fa-solid fa-pen icon-action p-1"></i>
-                                </a>
-                            </td>
-                        </tr>
+</c:forEach>
                         </tbody>
                         <tfoot>
 

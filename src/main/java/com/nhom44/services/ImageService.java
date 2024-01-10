@@ -34,4 +34,12 @@ public class ImageService {
     public static void main(String[] args) {
         System.out.println(ImageService.getInstance().getGroupImagesByProjectId(1));
     }
+
+    public void updateImageForProject(int id, int idImg) {
+        addImageForProject(id, idImg);
+    }
+
+    public int deleteAllImageProProject(int id) {
+      return  conn.withExtension(ImageDAO.class, dao -> dao.deleteAllImageProProject(id));
+    }
 }

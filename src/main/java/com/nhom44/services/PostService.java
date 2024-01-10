@@ -36,12 +36,11 @@ public class PostService {
     }
 
     public Post updatePost(Post post) {
-        post.setUpdatedAt(LocalDateTime.now().toString());
         int status= conn.withExtension(PostDAO.class, dao -> {
             return dao.updatePost(post);
-
         });
-        return status==1?getByObject(post):null;
+
+        return status==1?getById(post.getId()):null;
     }
 
     public Post getById(int postId) {
