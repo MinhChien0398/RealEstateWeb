@@ -113,17 +113,14 @@
                 </ol>
             </nav>
 
-            <main class="container shadow border p-3 h-100">
-                <form>
+            <main class="container shadow border p-3 h-auto">
+<%--                <form action="/admin/slide/add" method="post" enctype="multipart/form-data">--%>
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Thêm Slide</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
-                                </button>
-                            </a>
+                            <button class="btn btn-warning p-2 waves-effect waves-light" id="save" type="button">LƯU</button>
                         </div>
                     </div>
                     <div>
@@ -131,50 +128,45 @@
                             <div class="card col-lg-10 mb-4">
                                 <div class="card-body">
                                     <div class="mb-4">
-                                        <label for="name" class="labels">Tiêu đề</label>
-                                        <input id="name" type="text" class="form-control"
+                                        <label for="title" class="labels">Tiêu đề</label>
+                                        <input id="title" type="text" class="form-control"
                                                placeholder="Tiêu đề" value="">
                                     </div>
                                     <div class="mb-4">
                                         <label for="status" class="labels">Trạng thái</label>
                                         <select id="status" class="browser-default custom-select">
                                             <option value="1">Kích hoạt</option>
-                                            <option value="2">Ẩn</option>
+                                            <option value="0">Ẩn</option>
                                         </select>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="id" class="labels">STT</label>
-                                        <fieldset>
-                                            <input id="id" type="text" class="form-control"
+                                        <label for="sequence" class="labels">STT</label>
+                                            <input id="sequence" type="text" class="form-control"
                                                    placeholder="STT" value="">
-                                        </fieldset>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
+                                        <div class="input-group mt-2 d-flex align-items-center">
+                                            <label>Chọn hình đại diện</label>
+                                            <div class="file-field d-flex align-items-center">
+                                                <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                    <span>chọn ảnh</span>
+                                                    <input type="file" name="avatar"
+                                                           id="avatar"
+                                                           accept="image/*">
+                                                </div>
                                             </div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input"
-                                                       id="inputGroupFile01"
-                                                       aria-describedby="inputGroupFileAddon01"
-                                                       onchange="preview()">
-                                                <label class="custom-file-label"
-                                                       for="inputGroupFile01">Chọn file
-                                                </label>
-
-                                            </div>
-
                                         </div>
-                                        <p id="num-of-files">Không có file được chọn</p>
-                                        <div id="images"></div>
+
+                                        <div class="upload-wrapper d-none avatar">
+                                            <div class="border d-flex img-container">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
+<%--                </form>--%>
             </main>
         </div>
     </div>
@@ -186,43 +178,28 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"/>"></script>
 <script>
-    (function ($) {
-        $.fn.counter = function () {
-            const $this = $(this),
-                numberFrom = parseInt($this.attr('data-from')),
-                numberTo = parseInt($this.attr('data-to')),
-                delta = numberTo - numberFrom,
-                deltaPositive = delta > 0 ? 1 : 0,
-                time = parseInt($this.attr('data-time')),
-                changeTime = 10;
-
-            let currentNumber = numberFrom,
-                value = delta * changeTime / time;
-            var interval1;
-            const changeNumber = () => {
-                currentNumber += value;
-                //checks if currentNumber reached numberTo
-                (deltaPositive && currentNumber >= numberTo) || (!deltaPositive && currentNumber <= numberTo) ? currentNumber = numberTo : currentNumber;
-                this.text(parseInt(currentNumber));
-                currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+    $('#save').click(function () {
+        console.log(123)
+        let form = new FormData();
+        form.append('title', $('#title').val());
+        form.append('status', $('#status').val());
+        form.append('sequence', $('#sequence').val());
+        form.append('avatar', $('#avatar').prop('files')[0]);
+        $.ajax({
+            url: "/api/slider/add",
+            type: 'POST',
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            data: form,
+            success: function (data) {
+                console.log(data.responseText)
+            },
+            error: function (data) {
+                console.log(data.responseText)
+                // saveService(data.data.id);
             }
-
-            interval1 = setInterval(changeNumber, changeTime);
-        }
-    }(jQuery));
-
-    $(document).ready(function () {
-
-        $('.count-up').counter();
-        $('.count1').counter();
-        $('.count2').counter();
-        $('.count3').counter();
-
-        new WOW().init();
-
-        setTimeout(function () {
-            $('.count5').counter();
-        }, 3000);
+        });
     });
 </script>
 <script>
@@ -231,20 +208,6 @@
             $(".wrapper").toggleClass("mycollapse");
         });
     });</script>
-<script>
-    document.getElementById('status').addEventListener('change', function () {
-        var selectedStatus = this.value;
-
-        var idField = document.getElementById('id');
-
-        if (selectedStatus === '1') {
-            idField.disabled = false;
-        } else {
-            idField.disabled = true;
-        }
-    });
-
-</script>
 <script>
     let cur;
     for (let item of $('.sidebar-item')) {

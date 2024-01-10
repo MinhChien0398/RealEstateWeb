@@ -24,4 +24,6 @@ public interface CategoryDAO {
     Boolean existCategory(@Bind("name")String name);
     @SqlUpdate("UPDATE Categories SET name = :name, status = :status WHERE id = :id")
     Integer update(@BindBean Category category);
+    @SqlQuery("SELECT * FROM Categories WHERE status=1 ")
+    List<Category> getAllActive();
 }

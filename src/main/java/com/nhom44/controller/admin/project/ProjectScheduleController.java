@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns="/admin/project_schedule")
@@ -22,10 +21,10 @@ public class ProjectScheduleController extends HttpServlet {
         for (Project project: projects) {
             System.out.println(project.toString());
         }
-        List<String> emails= new ArrayList<>();
-        for (Project project: projects) {
-            emails.add(UserService.getInstance().getEmailUserWithProjectId(project.getId()));
-        }
+        List<String> emails= UserService.getInstance().getEmailOwner();
+//        for (Project project: projects) {
+//            emails.add(UserService.getInstance().getEmailUserWithProjectId(project.getId()));
+//        }
         req.setAttribute("emails", emails);
         req.setAttribute("projects", projects);
         req.getRequestDispatcher("/views/admin/project/project_schedule.jsp").forward(req, resp);

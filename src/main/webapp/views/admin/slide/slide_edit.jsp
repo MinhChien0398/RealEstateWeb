@@ -118,17 +118,15 @@
                 </ol>
             </nav>
 
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
                 <form>
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
                             <h3 class="font-weight-bold main-color m-0">Chỉnh sửa Slide</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                                <button class="btn btn-warning p-2 waves-effect waves-light" id="save" type="button">LƯU
                                 </button>
-                            </a>
                         </div>
                     </div>
                     <div>
@@ -136,8 +134,8 @@
                             <div class="card col-lg-10 mb-4">
                                 <div class="card-body">
                                     <div class="mb-4">
-                                        <label for="name" class="labels">Tiêu đề</label>
-                                        <input id="name" type="text" class="form-control"
+                                        <label for="title" class="labels">Tiêu đề</label>
+                                        <input id="title" type="text" class="form-control"
                                                placeholder="Tiêu đề" value="${slider.title}">
                                     </div>
                                     <div class="mb-4">
@@ -146,21 +144,19 @@
                                             <c:choose>
                                                 <c:when test="${slider.status == 1}">
                                                     <option value="1" selected>Kích hoạt</option>
-                                                    <option value="2">Ẩn</option>
+                                                    <option value="0">Ẩn</option>
                                                 </c:when>
                                                 <c:otherwise>
                                                     <option value="1">Kích hoạt</option>
-                                                    <option value="2" selected>Ẩn</option>
+                                                    <option value="0" selected>Ẩn</option>
                                                 </c:otherwise>
                                             </c:choose>
                                         </select>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="id" class="labels">STT</label>
-                                        <fieldset>
-                                            <input id="id" type="number" class="form-control"
+                                        <label for="sequence" class="labels">STT</label>
+                                            <input id="sequence" type="number" class="form-control"
                                                    placeholder="STT" value="${slider.sequence}">
-                                        </fieldset>
                                     </div>
                                     <div class="mb-4">
                                         <div class="input-group mt-2 d-flex align-items-center">
@@ -196,7 +192,92 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/dataTables.bootstrap4.min.js"/>"></script>
-<script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script>
+    $('#save').click(function () {
+        let form = new FormData();
+        form.append('id',${slider.id});
+        form.append('title', $('#title').val());
+        form.append('status', $('#status').val());
+        form.append('sequence', $('#sequence').val());
+    if ($("#avatar").prop('files').length != 0)
+        form.append('avatar', $("#avatar").prop('files')[0]);
+    else form.append('notHave', '1');;
+        $.ajax({
+            url: "/api/slider/edit?id=${slider.id}",
+            type: 'POST',
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            data: form,
+            success: function (data) {
+                console.log(data.responseText)
+            },
+            error: function (data) {
+                console.log(data.responseText)
+                // saveService(data.data.id);
+            }
+        });
+    });
+
+</script>
+<script>
+    let allFiles = [];
+    let input = document.getElementById("avatar");
+    let container = document.getElementsByClassName("img-container");
+    // console.log(input.files)
+    if (input.files.length == 0 && allFiles.length == 0) {
+        let images = ' ';
+        container[0].parentElement.classList.add('d-block')
+        container[0].parentElement.classList.remove('d-none')
+        images += '<div class="image position-relative border-radius"><img src="${slider.avatar}" alt="" class="border"> ' +
+            '<div class="position-absolute " ></div></div>'
+        container[0].innerHTML = images;
+    }
+
+    input.addEventListener('change', function () {
+        let files = this.files;
+        allFiles = [];
+        for (let i = 0; i < files.length; i++) {
+            allFiles.push(files[i])
+        }
+        showImage();
+    })
+
+    const showImage = () => {
+        container[0].parentElement.classList.add('d-block')
+        container[0].parentElement.classList.remove('d-none')
+        if (input.files.length == 0) {
+            let images = ' ';
+            images += '<div class="image position-relative border-radius"><img src="${slider.avatar}" alt="" class="border"> ' +
+                '<div class="position-absolute " ></div></div>'
+            container[0].innerHTML = images;
+        } else {
+            let images = ' ';
+            allFiles.forEach((e, i) => {
+                images += '<div class="image position-relative border-radius"><img src="' + URL.createObjectURL(e) + '" alt="" class="border"> ' +
+                    '<div class="position-absolute " > <i class="fa-solid fa-xmark" onclick="delImage(' + i + ')" style=""></i></div></div>'
+            })
+            container[0].innerHTML = images
+        }
+    }
+    let dt = new DataTransfer();
+    const delImage = index => {
+        let dt = new DataTransfer();
+        for (let i = 0; i < input.files.length; i++) {
+            if (index !== i)
+                dt.items.add(input.files[i]) // here you exclude the file. thus removing it.
+        }
+        input.files = dt.files
+        allFiles = Array.from(input.files)
+        showImage()
+    }
+    // document.onload = function () {
+    //         if(input.files.length!== 0) {
+    //         input.files
+    //         }
+    // };
+
+</script>
 <script>
     $(document).ready(function () {
         $(".sidebar-btn").click(function () {
@@ -221,19 +302,5 @@
 
 </script>
 
-<script>
-    document.getElementById('status').addEventListener('change', function () {
-        var selectedStatus = this.value;
-
-        var idField = document.getElementById('id');
-
-        if (selectedStatus === '1') {
-            idField.disabled = false;
-        } else {
-            idField.disabled = true;
-        }
-    });
-
-</script>
 </body>
 </html>

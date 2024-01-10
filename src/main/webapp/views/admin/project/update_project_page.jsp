@@ -447,12 +447,12 @@
         form.append('status', $("#status").val());
         if ($("#avatar").prop('files').length !== 0)
         form.append('avatar', $("#avatar").prop('files')[0]);
-        else form.append('avatar', ${project.avatar});
+        else form.append('notHaveAvatar', '1');
        if ($("#file_input1").prop('files').length !== 0)
         for (const x of $("#file_input1").prop('files')) {
             console.log(x)
             form.append('groupImage', x);
-        }
+        } else form.append('notHaveGroupImages', '1');
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({

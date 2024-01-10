@@ -6,5 +6,6 @@
 <%--<c:redirect url="/admin/category_management"/>--%>
 <%--<c:redirect url="/admin/service"/>--%>
 <%--<c:redirect url="/admin/post_service"/>--%>
-<c:redirect url="/admin/slide"/>
+<%--<c:redirect url="/admin/slide"/>--%>
 <%--<c:redirect url="/admin/user_management"/>--%>
+<c:redirect url="/home"/>

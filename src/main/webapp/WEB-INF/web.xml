@@ -14,4 +14,8 @@
     <filter-name>utf8</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+<!--<filter>-->
+<!--    <filter-name>auth</filter-name>-->
+<!--    <filter-class>com.nhom44.filter.login</filter-class>-->
+<!--    </filter>-->
   </web-app>

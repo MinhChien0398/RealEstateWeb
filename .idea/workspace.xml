@@ -9,29 +9,87 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="688757aa-fb64-47fe-a742-76c1de1faaf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     <list default="true" id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ContactService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/SliderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/user/ContactController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/user/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/user/ProjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/ContactController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/IntroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/ProjectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/ServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/Dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/contact/ContactController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/order/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/filter/Authencation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/PriceObjectHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/SearcherProjectUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5e2c7d1-7519-4fb9-9a32-9d21e2d2e1cd.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5e2c7d1-7519-4fb9-9a32-9d21e2d2e1cd/storage_v2/_src_/schema/doanweb.XMbjbA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5e2c7d1-7519-4fb9-9a32-9d21e2d2e1cd/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5e2c7d1-7519-4fb9-9a32-9d21e2d2e1cd/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a5e2c7d1-7519-4fb9-9a32-9d21e2d2e1cd/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ImageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/PostDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ContactDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ContactDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ProjectDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ServiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/ServiceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/SliderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/SliderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectAdditionalAndEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/ServiceOfProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/SliderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/Services/SliderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/ProjectScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/ServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/bean/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/project/ProjectScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/slide/SliderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/controller/admin/slide/SliderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/ProjectService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/SelectorSingleValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/SelectorSingleValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/ServiceSelectValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/validator/ServiceSelectValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/js/inputFile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/add_project.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/project_manage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/img/intro-img.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/img/intro/intro-img.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/template/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/template/js/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/dashboard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/user/update_user.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/service/service_edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/service/service_edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/add_slider.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/slide_add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/slide_manage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/slide_manage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/update_slide_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/admin/slide/slide_edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/contact.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/contact.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/intro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/intro.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/project.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/project.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/views/public/service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/views/public/service.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -40,35 +98,68 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Tomcat Server.Tomcat 9.0.80.executor": "Run",
-    "Tomcat Server.add_project.jsp.executor": "Run",
-    "git-widget-placeholder": "mchien-branch",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Maven\repository" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2ZA4FBI0d1483YZlpzyfKFhoxaf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.80.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mchien-branch&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/User/Laravel Project/RealEstateWeb/src/main/webapp/views/admin/category&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
-
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.nhom44.services.observer" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\admin\category" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\template\img" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\java\com\nhom44\db" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\template\img\intro" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\order" />
       <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\user" />
-      <recent name="D:\User\Laravel Project\RealEstateWeb\src\main\webapp\views\auth\Admin\service" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.nhom44.controller.admin.user" />
@@ -80,16 +171,9 @@
       <command value="(){" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="excludedTypes">
-      <set>
-        <option value="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" />
-      </set>
-    </option>
-  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.72">
-    <configuration name="ImageService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ImageService" />
+    <configuration name="CategoryService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.CategoryService" />
       <module name="RealEstateWeb" />
       <extension name="coverage">
         <pattern>
@@ -114,8 +198,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProvinceService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ProvinceService" />
+    <configuration name="ServiceOfProjectService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.ServiceOfProjectService" />
       <module name="RealEstateWeb" />
       <extension name="coverage">
         <pattern>
@@ -127,12 +211,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserManagementController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.nhom44.controller.admin.user.UserManagementController" />
+    <configuration name="SliderService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.nhom44.services.SliderService" />
       <module name="RealEstateWeb" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.nhom44.controller.admin.project.*" />
+          <option name="PATTERN" value="com.nhom44.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -153,7 +237,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.72" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.72" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 9.0.72" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.72" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-19" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="RealEstateWeb:war exploded">
@@ -163,7 +249,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c4ad578d-05be-4e02-938d-8f94c5fb6091" />
+        <option name="BASE_DIRECTORY_NAME" value="dff67fb6-9c63-4faa-b269-3e7a0b6ba63d" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -171,7 +257,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="58213" />
+        <option name="DEBUG_PORT" value="53003" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -241,20 +327,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ImageService" />
+      <item itemvalue="Application.SliderService" />
+      <item itemvalue="Application.ServiceOfProjectService" />
+      <item itemvalue="Application.CategoryService" />
       <item itemvalue="Application.ProjectService" />
-      <item itemvalue="Application.ProvinceService" />
-      <item itemvalue="Application.UserManagementController" />
       <item itemvalue="Application.UserService" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.72" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ImageService" />
         <item itemvalue="Application.ProjectService" />
         <item itemvalue="Application.UserService" />
-        <item itemvalue="Application.ProvinceService" />
-        <item itemvalue="Application.UserManagementController" />
+        <item itemvalue="Application.SliderService" />
+        <item itemvalue="Application.ServiceOfProjectService" />
+        <item itemvalue="Application.CategoryService" />
       </list>
     </recent_temporary>
   </component>
@@ -265,6 +351,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a22bb2bc-db9c-4642-ab7b-5eca1a9d6c6e" name="Changes" comment="" />
@@ -307,7 +394,31 @@
       <workItem from="1704336404977" duration="17534000" />
       <workItem from="1704370901765" duration="23605000" />
       <workItem from="1704427733843" duration="146000" />
-      <workItem from="1704427971730" duration="3807000" />
+      <workItem from="1704427971730" duration="19953000" />
+      <workItem from="1704448106011" duration="3034000" />
+      <workItem from="1704471815414" duration="1396000" />
+      <workItem from="1704473439440" duration="3966000" />
+      <workItem from="1704477458240" duration="2137000" />
+      <workItem from="1704479650446" duration="8144000" />
+      <workItem from="1704488015049" duration="12554000" />
+      <workItem from="1704510583314" duration="1996000" />
+      <workItem from="1704512640893" duration="3605000" />
+      <workItem from="1704520644538" duration="2669000" />
+      <workItem from="1704523374782" duration="9388000" />
+      <workItem from="1704562535192" duration="21171000" />
+      <workItem from="1704642206462" duration="3184000" />
+      <workItem from="1704645927102" duration="783000" />
+      <workItem from="1704646843294" duration="15823000" />
+      <workItem from="1704737542048" duration="8703000" />
+      <workItem from="1704776506584" duration="6394000" />
+      <workItem from="1704787675659" duration="5351000" />
+      <workItem from="1704820550543" duration="195000" />
+      <workItem from="1704821063602" duration="136000" />
+      <workItem from="1704821252045" duration="2127000" />
+      <workItem from="1704823446636" duration="11268000" />
+      <workItem from="1704852206895" duration="3083000" />
+      <workItem from="1704857019666" duration="21436000" />
+      <workItem from="1704898623212" duration="14712000" />
     </task>
     <servers />
   </component>
@@ -318,12 +429,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/UserController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/UserController.java</url>
           <line>47</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/ProjectController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/ProjectController.java</url>
           <line>54</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -344,6 +455,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/util/Upload.java</url>
           <line>23</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/ProjectController.java</url>
+          <line>222</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/views/admin/project/update_project_post.jsp</url>
+          <line>129</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/ServiceController.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/nhom44/api/admin/SliderController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

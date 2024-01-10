@@ -112,7 +112,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL Slide</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="/admin/slide?action=add">
+                        <a href="/admin/slide/add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i>Thêm slide</button>
                         </a>
 
@@ -151,7 +151,7 @@
                         </c:choose>
                             </td>
                             <td>
-                                <a href="/admin/slide?action=edit&id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
+                                <a href="/admin/slide/edit?action=edit&id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
                                 <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
                         </tr>
                     </c:forEach>

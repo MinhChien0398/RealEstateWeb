@@ -49,4 +49,8 @@ public class CategoryService {
         }
         return conn.withExtension(CategoryDAO.class, dao -> dao.update(category));
     }
+
+    public List<Category> getAllActive() {
+        return conn.withExtension(CategoryDAO.class, dao -> dao.getAllActive());
+    }
 }

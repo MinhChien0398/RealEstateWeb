@@ -1,4 +1,4 @@
-package com.nhom44.api;
+package com.nhom44.api.admin;
 
 import com.google.gson.JsonArray;
 import com.nhom44.bean.Project;

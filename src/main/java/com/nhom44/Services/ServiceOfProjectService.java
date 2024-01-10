@@ -62,4 +62,7 @@ public class ServiceOfProjectService {
         return conn.withExtension(ServiceDAO.class, dao -> dao.getById(id));
     }
 
+    public List<Service> getAllActive() {
+        return conn.withExtension(ServiceDAO.class, dao -> dao.getAllActive());
+    }
 }

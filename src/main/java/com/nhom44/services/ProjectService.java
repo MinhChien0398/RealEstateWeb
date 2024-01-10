@@ -1,10 +1,12 @@
 package com.nhom44.services;
 
 import com.nhom44.DAO.ProjectDAO;
+import com.nhom44.DAO.ServiceDAO;
 import com.nhom44.bean.Project;
+import com.nhom44.bean.Service;
 import com.nhom44.db.JDBIConnector;
+import com.nhom44.util.SearcherProjectUtil;
 import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.core.mapper.JoinRow;
 
 import java.util.List;
 
@@ -66,6 +68,11 @@ public class ProjectService {
         return conn.withExtension(ProjectDAO.class, dao -> dao.getProjectByObject(project));
     }
 
+    public Project updateProjectAvatar(Project project) {
+        conn.withExtension(ProjectDAO.class, dao -> dao.updateProjectAvatar(project));
+        return getById(project.getId());
+    }
+
     public Project updateProject(Project project, boolean isComplete) {
         int s1 = Integer.MIN_VALUE;
         int s2 = Integer.MIN_VALUE;
@@ -89,20 +96,54 @@ public class ProjectService {
     }
 
 
-
     public int updateProjectForUser(int id, int id1) {
         return conn.withExtension(ProjectDAO.class, dao -> dao.updateProjectForUser(id, id1));
     }
-public List<Project> getNumOfSavedAndRead(){
+
+    public List<Project> getNumOfSavedAndRead() {
         return conn.withExtension(ProjectDAO.class, dao -> dao.getNumOfSavedAndRead());
-}
+    }
+
     public List<Project> getExcuting() {
         return conn.withExtension(ProjectDAO.class, dao -> dao.getExcuting());
     }
+
+    public List<Project> getProjetAllActive(int offset, int categoryId, int serviceId, int provinceId, long minPrice, long maxPrice, int minAcreage, int maxAcreage) {
+        return conn.withExtension(ProjectDAO.class, dao -> {
+//            List<Project> projects = dao.getProjetAllActive(categoryId);
+//            System.out.println(projects.size());
+//            if (serviceId != 0)
+//                projects.stream().filter(project -> conn.withExtension(ServiceDAO.class, handle -> handle.isProjectHaveExsistProject(project.getId(), serviceId)));
+//            if (categoryId != 0) projects.stream().filter(project -> project.getCategoryId() == categoryId);
+//            if (provinceId != 0) projects.stream().filter(project -> project.getProvinceId() == provinceId);
+//            if (minPrice != 0) projects.stream().filter(project -> project.getPrice() < minPrice);
+//            if (maxPrice != 0) projects.stream().filter(project -> project.getPrice() < maxPrice);
+//            if (minAcreage != 0) projects.stream().filter(project -> project.getAcreage() < minAcreage);
+//            if (maxAcreage != 0) projects.stream().filter(project -> project.getAcreage() < maxAcreage);
+//            if (offset != 0) projects.stream().skip(offset);
+//            projects.stream().limit(16);
+//            System.out.println(projects.size());
+            return dao.getProjetAllActive(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minAcreage, maxAcreage);
+        });
+    }
+
     public static void main(String[] args) {
-        List<Project> list = ProjectService.getInstance().getNumOfSavedAndRead();
-        for (Project project : list) {
-            System.out.println(project.toString());
+//        List<Project> projects = getInstance().getProjetForPreview();
+//        for (Project project : projects) {
+//            System.out.println(project);
+//        }
+        List<Project> projects = getInstance().getProjetAllActive(0, 0, 0, 0, 0, 0, 0, 0);
+        System.out.println(projects.size());
+        for (Project project : projects) {
+            System.out.println(project);
         }
+    }
+
+    public List<Project> get8ActiveProjectHighestView(int id) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.get8ActiveProjectHighestView(id));
+    }
+
+    public int getProjetAllActiveSize(int offset, int categoryId, int serviceId, int provinceId, long minPrice, long maxPrice, int minArea, int maxArea) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getProjetAllActiveSize(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minArea, maxArea));
     }
 }

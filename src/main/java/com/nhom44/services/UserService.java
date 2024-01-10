@@ -2,18 +2,12 @@ package com.nhom44.services;
 
 import com.nhom44.DAO.ProvinceDAO;
 import com.nhom44.DAO.UserDAO;
-import com.nhom44.bean.Province;
 import com.nhom44.bean.User;
 import com.nhom44.db.JDBIConnector;
-import org.jdbi.v3.core.Handle;
 import org.jdbi.v3.core.Jdbi;
-import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 
 import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class UserService {
@@ -110,11 +104,11 @@ public class UserService {
     public User getUserByEmail(String email) {
         return conn.withExtension(UserDAO.class, dao -> dao.getUserByEmail(email));
     }
-    public String getEmailUserWithProjectId(int projectId) {
-        return conn.withExtension(UserDAO.class, dao -> dao.getUserWithProjectId(projectId));
+    public List<String> getEmailOwner() {
+        return conn.withExtension(UserDAO.class, dao -> dao.getEmailOwner());
     }
 
     public static void main(String[] args) {
-        System.out.println(getInstance().getEmailUserWithProjectId(100));
+        System.out.println(getInstance().getEmailOwner());
     }
 }

@@ -250,6 +250,16 @@
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <%--<script src="<c:url value="/template/js/inputFile.js"/>"></script>--%>
 <script>
+    const srcToFile = async (src, fileName) => {
+        const response = await axios.get(src, {
+            responseType: "blob",
+        });
+        const mimeType = response.headers["content-type"];
+        return new File([response.data], fileName, { type: mimeType });
+    };
+
+</script>
+<script>
     function saveService(id) {
         console.log(213123)
         let form = new FormData();
@@ -258,7 +268,7 @@
         form.append('description', $("#description").val());
         if ($("#avatar").prop('files').length !== 0)
             form.append('avatar', $("#avatar").prop('files')[0]);
-        else form.append('avatar', ${service.avatar});
+        else form.append('notHave', '1');;
         form.append('postId', id);
         form.append('id', ${service.id});
         $.ajax({
@@ -276,7 +286,6 @@
             }
         })
     }
-
 </script>
 <script>
     $('#save').click(function () {

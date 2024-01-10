@@ -83,44 +83,44 @@
                         <!--Body-->
                         <div class="md-form">
                             <i class="fas fa-user prefix grey-text"></i>
-                            <input type="text" id="form-name" class="form-control">
-                            <label for="form-name">Họ và tên</label>
+                            <input type="text" id="fullName" class="form-control">
+                            <label for="fullName">Họ và tên</label>
                         </div>
-
-
                         <div class="md-form">
                             <i class="fas fa-envelope prefix grey-text"></i>
-                            <input type="text" id="form-email" class="form-control">
-                            <label for="form-email">Địa chỉ email</label>
+                            <input type="text" id="email" class="form-control">
+                            <label for="email">Địa chỉ email</label>
                         </div>
                         <div class="md-form">
                             <i class="fa-solid fa-map-location prefix grey-text"></i>
-                            <input type="text" id="form-address" class="form-control">
-                            <label for="form-address">Địa chỉ(tỉnh/thành phố)</label>
+                            <input type="text" id="address" class="form-control">
+                            <label for="address">Địa chỉ(tỉnh/thành phố)</label>
                         </div>
                         <div class="row">
-                            <div
-                                    class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
+                            <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
                                 <!--                            <label>Chủ đề</label>-->
-                                <select class="browser-default custom-select mb-4">
-                                    <option value="" disabled>Loại dự án</option>
-                                    <option value="1" selected>Nhà phố</option>
-                                    <option value="2">Biệt thự</option>
+                                <select id="categoryId" class="browser-default custom-select mb-4">
+                                    <option value="" disabled="">Loại dự án</option>
+                                    <c:forEach var="category" items="${categories}">
+                                        <option value="${category.id}">${category.name}</option>
+                                    </c:forEach>
                                 </select>
 
                             </div>
                             <div class="form-outline col-6">
-                                <input type="text" id="typeText" class="form-control" placeholder="Mã dự án"/>
+                                <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">
                             </div>
                         </div>
 
                         <!-- Message -->
                         <div class="form-group">
-                                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
+                                <textarea class="form-control rounded-0" id="content" rows="3"
                                           placeholder="Lời nhắn"></textarea>
                         </div>
                         <div class="text-center mt-4">
-                            <button class="btn btn-red" type="submit">Gửi ngay</button>
+                            <button class="btn btn-red waves-effect waves-light" onclick="saveContact()"
+                                    type="button">Gửi ngay
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -155,6 +155,37 @@
 <%@include file="/layout/public/footer.jsp" %>
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
+<script>
+    function saveContact() {
+        $.ajax({
+            url: '/api/contact/save',
+            type: 'Post',
+            dataType: 'json',
+            data: {
+                fullName: $('#fullName').val(),
+                email: $('#email').val(),
+                address: $('#address').val(),
+                categoryId: $('#categoryId').val(),
+                projectId: $('#projectId').val(),
+                content: $('#content').val(),
+            },
+            success: function (data) {
+                let resp = JSON.parse(data);
+                if (resp.status === 200) {
+                    alert(resp.message);
+                    window.location.reload();
+                } else {
+                    alert(resp.message);
+                }
+            },
+            error: function (data) {
+                //bắt lỗi email
+                console.log(data);
+            }
+
+        })
+    }
+</script>
 
 </body>
 </html>

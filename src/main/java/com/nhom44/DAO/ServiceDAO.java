@@ -31,5 +31,12 @@ public interface ServiceDAO {
     Integer update(@BindBean Service service);
 @SqlQuery("SELECT * FROM services WHERE id=:id")
     Service getById(@Bind("id") int id);
+    @SqlQuery("SELECT * FROM services WHERE status=1")
+    List<Service> getAllActive();
+    @SqlQuery("Select EXISTS(SELECT * FROM services s " +
+            "JOIN doanweb.projects_services ps " +
+            "on s.id = ps.serviceId " +
+            "WHERE ps.projectId=:projectId AND ps.serviceId=:serviceId AND s.status=1)")
+    boolean isProjectHaveExsistProject(@Bind("projectId") int projectId,@Bind("serviceId") int serviceId);
 }
 

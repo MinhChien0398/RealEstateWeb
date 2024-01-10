@@ -27,4 +27,19 @@ public class SliderService {
         List<Slider> sliders = SliderService.getInstance().getAll();
         System.out.println(sliders);
     }
+
+    public int add(Slider slider) {
+        return conn.withExtension(SliderDAO.class, dao -> dao.add(slider));
+    }
+    public int update(Slider slider) {
+        return conn.withExtension(SliderDAO.class, dao -> dao.update(slider));
+    }
+
+    public Slider getById(int id) {
+        return conn.withExtension(SliderDAO.class, dao -> dao.getById(id));
+    }
+
+    public List<Slider> getAllActive() {
+        return conn.withExtension(SliderDAO.class, dao -> dao.getAllActive());
+    }
 }
