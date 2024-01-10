@@ -85,11 +85,15 @@ public class ServiceController extends HttpServlet {
                     return;
                 }
             } else if (action.equals("edit")) {
-                List<String> images = Upload.uploadFile(Upload.UPLOAD_AVATAR_SERVICE, "avatar", req);
-                if (images.size() !=0) {
-                    service.setAvatar(images.get(0));
-                } else {
-                    //error
+                if (req.getParameter("notHave") == null) {
+                    List<String> images = Upload.uploadFile(Upload.UPLOAD_AVATAR_SERVICE, "avatar", req);
+                    if (images.size() != 0) {
+                        service.setAvatar(images.get(0));
+                    } else {
+                        //error
+                    }
+                }else{
+                    service.setAvatar(ServiceOfProjectService.getInstance().getById(service.getId()).getAvatar());
                 }
                 int i = ServiceOfProjectService.getInstance().update(service);
 

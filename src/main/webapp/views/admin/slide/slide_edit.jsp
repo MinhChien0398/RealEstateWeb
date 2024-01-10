@@ -138,42 +138,47 @@
                                     <div class="mb-4">
                                         <label for="name" class="labels">Tiêu đề</label>
                                         <input id="name" type="text" class="form-control"
-                                               placeholder="Tiêu đề" value="slide giới thiệu 10 năm tới">
+                                               placeholder="Tiêu đề" value="${slider.title}">
                                     </div>
                                     <div class="mb-4">
                                         <label for="status" class="labels">Trạng thái</label>
                                         <select id="status" class="browser-default custom-select">
-                                            <option value="1">Kích hoạt</option>
-                                            <option value="2">Ẩn</option>
+                                            <c:choose>
+                                                <c:when test="${slider.status == 1}">
+                                                    <option value="1" selected>Kích hoạt</option>
+                                                    <option value="2">Ẩn</option>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <option value="1">Kích hoạt</option>
+                                                    <option value="2" selected>Ẩn</option>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </select>
                                     </div>
                                     <div class="mb-4">
                                         <label for="id" class="labels">STT</label>
                                         <fieldset>
                                             <input id="id" type="number" class="form-control"
-                                                   placeholder="STT" value="">
+                                                   placeholder="STT" value="${slider.sequence}">
                                         </fieldset>
                                     </div>
                                     <div class="mb-4">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                                    <span class="input-group-text"
-                                                                          id="inputGroupFileAddon01">Tải lên</span>
+                                        <div class="input-group mt-2 d-flex align-items-center">
+                                            <label>Chọn hình đại diện</label>
+                                            <div class="file-field d-flex align-items-center">
+                                                <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                    <span>chọn ảnh</span>
+                                                    <input type="file" name="avatar"
+                                                           id="avatar"
+                                                           accept="image/*">
+                                                </div>
                                             </div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input"
-                                                       id="inputGroupFile01"
-                                                       aria-describedby="inputGroupFileAddon01"
-                                                       onchange="preview()">
-                                                <label class="custom-file-label"
-                                                       for="inputGroupFile01">Chọn file
-                                                </label>
-
-                                            </div>
-
                                         </div>
-                                        <p id="num-of-files">Không có file được chọn</p>
-                                        <div id="images"></div>
+
+                                        <div class="upload-wrapper d-none avatar">
+                                            <div class="border d-flex img-container">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -94,10 +94,10 @@ public class ProjectController extends HttpServlet {
         }
         String input = req.getParameter("service");
         String[] arr = input.split(",");
-        System.out.println(arr.length   );
+        System.out.println(arr.length);
         if (!new ServiceSelectValidator().validator(arr)) {
             ResponseModel responseModel = new ResponseModel();
-            System.out.println("loi service" +input);
+            System.out.println("loi service" + input);
             responseModel.setMessage("Vui lòng chọn loại dịch vụ");
             responseModel.setName("service");
             errMess.add(responseModel);
@@ -198,10 +198,10 @@ public class ProjectController extends HttpServlet {
                 ProjectService.getInstance().addProjectForUser(project.getId(), user.getId());
                 List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()), "avatar", req);
                 System.out.println(fileNames.toString());
-                if (!fileNames.isEmpty() ) {
+                if (!fileNames.isEmpty()) {
                     project.setAvatar(fileNames.get(0));
-                    ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));}
-                else {
+                    ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));
+                } else {
                     ResponseModel responseModel = new ResponseModel();
                     resp.setStatus(400);
                     responseModel.setMessage("Vui lòng chọn ảnh đại diện");
@@ -219,22 +219,25 @@ public class ProjectController extends HttpServlet {
                 project = ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));
                 List<String> services = Arrays.asList(arr);
                 ServiceOfProjectService.getInstance().updateServiceForProject(project.getId(), services);
-                List<String> groupImages = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()) + "/post", "groupImage", req);
-                if (!groupImages.isEmpty()) {
-                    ImageService.getInstance().deleteAllImageProProject(project.getId());
-                    for (String path : groupImages
-                    ) {
-                        Image img = StringUtil.getImage(path);
-                        int idImg = ImageService.getInstance().add(img);
-                        ImageService.getInstance().updateImageForProject(project.getId(), idImg);
+                if (req.getParameter("notHaveGroupImages") == null) {
+                    List<String> groupImages = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()) + "/post", "groupImage", req);
+                    if (!groupImages.isEmpty()) {
+                        ImageService.getInstance().deleteAllImageProProject(project.getId());
+                        for (String path : groupImages
+                        ) {
+                            Image img = StringUtil.getImage(path);
+                            int idImg = ImageService.getInstance().add(img);
+                            ImageService.getInstance().updateImageForProject(project.getId(), idImg);
+                        }
                     }
                 }
+                if(req.getParameter("notHaveAvatar")==null){
                 List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()), "avatar", req);
                 System.out.println(fileNames.toString());
                 if (!fileNames.isEmpty()) {
                     project.setAvatar(fileNames.get(0));
-                    ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));
-                }
+                    ProjectService.getInstance().updateProjectAvatar(project);
+                }}
                 ProjectService.getInstance().updateProjectForUser(project.getId(), user.getId());
             }
             resp.setStatus(200);

@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns="/api/project_schedule")
@@ -24,10 +23,7 @@ public class ProjectScheduleController extends HttpServlet {
         for (Project project: projects) {
             System.out.println(project.toString());
         }
-        List<String> emails= new ArrayList<>();
-        for (Project project: projects) {
-            emails.add(UserService.getInstance().getEmailUserWithProjectId(project.getId()));
-        }
+        List<String> emails= UserService.getInstance().getEmailOwner();
         PrintWriter out = resp.getWriter();
         out.print(new Gson().toJson(projects));
         out.print(new Gson().toJson(emails));
