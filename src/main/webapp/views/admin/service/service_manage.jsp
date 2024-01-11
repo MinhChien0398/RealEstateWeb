@@ -1,3 +1,4 @@
+<%@ taglib prefix="ac" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Clover
@@ -114,13 +115,13 @@
                 </ol>
             </nav>
 
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
                     <div class="col-6 d-flex align-items-center p-0">
                         <h3 class="font-weight-bold main-color m-0">QL Dịch vụ</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="add_service.jsp">
+                        <a href="/admin/service?action=add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dịch vụ
                             </button>
                         </a>
@@ -131,7 +132,7 @@
                     <table class="table table-hover table-striped table-bordered m-0 w-100 " id="table-service">
                         <thead>
                         <tr>
-                            <th class="font-weight-bold" scope="col">STT</th>
+                            <th class="font-weight-bold " scope="col">STT</th>
                             <th class="font-weight-bold" scope="col">Tên DV</th>
                             <th class="font-weight-bold" scope="col">Mô tả</th>
                             <th class="font-weight-bold" scope="col">Hình ảnh</th>
@@ -141,51 +142,20 @@
                         </tr>
                         </thead>
                         <tbody>
-
-                        <tr>
-                            <td>1</td>
-                            <td>Thi công nhà phần thô</td>
-                            <td>Để xây dựng một tổ ấm hoàn mỹ, lựa chọn được một đơn vị thi công phần thô nhà phố là yêu cầu tiên quyết. Một đơn vị thi công phù hợp sẽ đảm bảo</td>
-                            <td><img src="/template/img/main-service/untitled-3-8307.png" alt="">
-                            </td>
-                            <td>5</td>
-                            <td><i class="fa-solid fa-square active-icon" title="Đang phục vụ"></i></td>
-                            <td>
-                                <a href="update_service.jsp"><i class="fa-solid fa-pen p-1 icon-action"></i></a>
-                                <i class="fa-solid fa-trash-can p-1 icon-action"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Xây nhà trọn gói</td>
-                            <td>Dịch vụ thi công nhà xưởng là quá trình tổ chức, quản lý và thực hiện xây dựng hoặc cải tạo các cơ sở sản xuất, nhà máy, hoặc nhà xưởng để đáp ứng</td>
-                            <td><img
-                                    src="/template/img/main-service/dichvuxaydungnhaotrongoi-2589.jpg"
-                                    alt=""></td>
-                            <td>10</td>
-                            <td><i class="fa-solid fa-square active-icon" title="Đang phục vụ"></i></td>
-                            <td>
-                                <a href="update_service.jsp"><i class="fa-solid fa-pen p-1 icon-action"></i></a>
-                                <i class="fa-solid fa-trash-can p-1 icon-action"></i>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Thi công nhà xưởng</td>
-                            <td>Dịch vụ xây nhà trọn gói là một giải pháp toàn diện và tiện lợi cho việc xây dựng ngôi nhà mơ ước của bạn. Thay vì bạn phải tự mình quản lý từng khía</td>
-                            <td><img
-                                    src="/template/img/main-service/nhamaysanxuatgangtay-7223.jpg"
-                                    alt="">
-                            </td>
-                            <td>12</td>
-                            <td><i class="fa-solid fa-square active-icon" title="Đang phục vụ"></i></td>
-                            <td>
-                                <a href="update_service.jsp"><i class="fa-solid fa-pen p-1 icon-action"></i></a>
-                                <i class="fa-solid fa-trash-can p-1 icon-action"></i>
-                            </td>
-                        </tr>
+                        <c:forEach step="1" begin="0" var="service"  varStatus="loop" items="${serviceList}">
+                            <tr>
+                                <td>${loop.index}</td>
+                                <td>${service.name}</td>
+                                <td>${service.description}</td>
+                                <td><img src="${service.avatar}" alt=""></td>
+                                <td>${service.numberOfProject}</td>
+                                <td><i class="fa-solid fa-square active-icon" title="Đang phục vụ"></i></td>
+                                <td>
+                                    <a href="/admin/service?action=edit&id=${service.id}"><i class="fa-solid fa-pen p-1 icon-action"></i></a>
+                                    <i class="fa-solid fa-trash-can p-1 icon-action"></i>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                         <tfoot>
 
@@ -205,7 +175,6 @@
 
 <script>
     $('#table-service').dataTable({
-        scrollX: true,
         "columnDefs": [
             {"width": "5%", "targets": [0]},
             {"width": "15%", "targets": [1]},
@@ -214,7 +183,7 @@
             {"width": "10%", "targets": [4]},
             {"width": "10%", "targets": [5]},
             {"width": "10%", "targets": [6]},
-            {className: "text-center mt-auto mb-auto", targets: "_all"},
+            {className: " text-center mt-auto mb-auto text-break" , targets: "_all"},
         ],
         "language": {
             "lengthMenu": "Hiển thị _MENU_ dòng",

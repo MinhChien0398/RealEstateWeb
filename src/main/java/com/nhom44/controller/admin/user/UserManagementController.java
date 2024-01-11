@@ -4,6 +4,7 @@ import com.nhom44.bean.Province;
 import com.nhom44.bean.User;
 import com.nhom44.services.ProvinceService;
 import com.nhom44.services.UserService;
+import com.nhom44.validator.EmailSingleValidator;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +36,13 @@ public class UserManagementController extends HttpServlet {
 
         } else if (action.equalsIgnoreCase("edit")) {
             String email = req.getParameter("useremail");
+            if(!new EmailSingleValidator().validator(email)){
+                // error
+            }
             User user = userService.getUserByEmail(email);
+            if(user==null){
+                // error
+            }
             System.out.println(user.toString());
             req.setAttribute("user", user);
             req.getRequestDispatcher("/views/admin/user/update_user.jsp").forward(req, resp);

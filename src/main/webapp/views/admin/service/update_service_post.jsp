@@ -9,142 +9,140 @@
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
-  <%@include file="/layout/public/link.jsp" %>
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
-  <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
-  <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
-  <title>Title</title>
+    <%@include file="/layout/public/link.jsp" %>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <title>Title</title>
 </head>
 <body>
 !-- Sidebar navigation -->
 <div class="wrapper">
-  <div class="header fixed-top ">
-    <div class="header-menu row m-0">
-      <div class="col-11 d-flex align-items-center">
-        <div class="sidebar-btn mr-3">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="title text-uppercase">
-          Xây dựng <span>Nhà Đẹp</span></div>
-      </div>
-      <ul class="col-1 d-flex align-items-center m-0">
-        <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="sidebar">
-    <div class="sidebar-menu">
-      <center class="logo">
-        <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
-      </center>
-      <li class="sidebar-item">
-        <a href="../dashboard.jsp" class="menu-btn">
-          <i class="fas fa-desktop"></i><span>Thống kê</span>
-        </a>
-      </li>
-      <li class="sidebar-item" id="user">
-        <a href="../user/user_manage.jsp" class="menu-btn">
-          <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
-        </a>
-      </li>
-      <li class="sidebar-item" id="project"><div class="menu-btn">
-        <i class="fa-solid fa-building">  </i>
-        <a href="../project/project_manage.jsp" >
-          <span>QL Dự án</span>
-        </a> <i
-              class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
-        <div class="sub-menu d-none">
-          <a href="../category/category_management.jsp" class="menu-btn">
-            <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
-          </a>
-          <a href="../project/post_project.jsp" class="menu-btn">
-            <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
-          </a>
-          <a href="../project/project_schedule.jsp" class="menu-btn">
-            <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
-          </a>
-        </div>
-      </li>
-
-      <li class="sidebar-item" id="type-project">
-        <div class="menu-btn">
-          <a href="service_manage.jsp">
-            <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
-          </a><i
-                class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
-        <div class="sub-menu d-none">
-          <a href="post_service.jsp" class="menu-btn">
-            <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
-          </a>
-        </div>
-      </li>
-      <li class="sidebar-item" id="contact">
-        <a href="../contact/contact_manage.jsp" class="menu-btn">
-          <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
-        </a>
-      </li>
-      <li class="sidebar-item" id="slide">
-        <a href="../slide/slide_manage.jsp" class="menu-btn">
-          <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
-        </a>
-      </li>
-    </div>
-  </div>
-
-  <div class="main-container">
-    <div class="container p-0">
-      <nav class="" aria-label="breadcrumb">
-        <ol class="breadcrumb p-0 bg-white">
-          <li class="breadcrumb-item"><a class="black-text" href="../dashboard.jsp">Thống
-            kê</a></li>
-          <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-          <li class="breadcrumb-item"><a class="black-text" href="service_manage.jsp">QL
-            Dịch vụ</a></li>
-          <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-          <li class="breadcrumb-item"><a class="black-text" href="post_service.jsp">QL bài viết dịch vụ	</a></li>
-          <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-          <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa dịch vụ</a></li>
-        </ol>
-      </nav>
-      <main class="container shadow border p-3 h-100">
-
-        <form action="#" method="post">
-          <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center p-0 ">
-              <h3 class="font-weight-bold main-color m-0">Chỉnh sửa bài viết</h3>
-            </div>
-
-            <div class="btn-save flex-center">
-              <a href="#add">
-                <button class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
-                </button>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-12 mb-4">
-            <div class="card card-cascade cascading-admin-card user-card">
-              <div class="card-body card-body-cascade">
-                <div class="col-lg-12 col-md-12 p-0">
-                  <div class="form-group">
-                                        <textarea class="form-control rounded-0" name="service-des" rows="10"
-                                                  id="service-des">
-
-                                        </textarea>
-                  </div>
+    <div class="header fixed-top ">
+        <div class="header-menu row m-0">
+            <div class="col-11 d-flex align-items-center">
+                <div class="sidebar-btn mr-3">
+                    <i class="fas fa-bars"></i>
                 </div>
-              </div>
+                <div class="title text-uppercase">
+                    Xây dựng <span>Nhà Đẹp</span></div>
             </div>
-          </div>
-        </form>
-      </main>
+            <ul class="col-1 d-flex align-items-center m-0">
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </div>
     </div>
-  </div>
+
+    <div class="sidebar">
+        <div class="sidebar-menu">
+            <center class="logo">
+                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+            </center>
+            <li class="sidebar-item">
+                <a href="../dashboard.jsp" class="menu-btn">
+                    <i class="fas fa-desktop"></i><span>Thống kê</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="user">
+                <a href="../user/user_manage.jsp" class="menu-btn">
+                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="../project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                <div class="sub-menu d-none">
+                    <a href="../category/category_management.jsp" class="menu-btn">
+                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
+                    </a>
+                    <a href="../project/post_project.jsp" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
+                    </a>
+                    <a href="../project/project_schedule.jsp" class="menu-btn">
+                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
+                    </a>
+                </div>
+            </li>
+
+            <li class="sidebar-item" id="type-project">
+                <div class="menu-btn">
+                    <a href="service_manage.jsp">
+                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
+                    </a><i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                <div class="sub-menu d-none">
+                    <a href="post_service.jsp" class="menu-btn">
+                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
+                    </a>
+                </div>
+            </li>
+            <li class="sidebar-item" id="contact">
+                <a href="../contact/contact_manage.jsp" class="menu-btn">
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
+                </a>
+            </li>
+            <li class="sidebar-item" id="slide">
+                <a href="../slide/slide_manage.jsp" class="menu-btn">
+                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                </a>
+            </li>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="container p-0">
+            <nav class="" aria-label="breadcrumb">
+                <ol class="breadcrumb p-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="../dashboard.jsp">Thống
+                        kê</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="service_manage.jsp">QL
+                        Dịch vụ</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="post_service.jsp">QL bài viết dịch vụ </a>
+                    </li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa dịch vụ</a></li>
+                </ol>
+            </nav>
+            <main class="container shadow border p-3 h-auto">
+
+                <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center p-0 ">
+                        <h3 class="font-weight-bold main-color m-0">Chỉnh sửa bài viết</h3>
+                    </div>
+
+                    <div class="btn-save flex-center">
+                        <button class="btn btn-warning p-2 waves-effect waves-light" id="save" type="button"> LƯU
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="card card-cascade cascading-admin-card user-card">
+                        <div class="card-body card-body-cascade">
+                            <div class="col-lg-12 col-md-12 p-0">
+                                <div class="form-group">
+                                        <textarea class="form-control rounded-0" name="content" rows="10"
+                                                  id="service-des">${post.content}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </main>
+        </div>
+    </div>
 </div>
 <!--/. Sidebar navigation -->
 
@@ -152,40 +150,58 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
-<img src="" alt="">
 <script>
-  CKEDITOR.replace('service-des');
-  CKEDITOR.config.width = "100%";
-  CKEDITOR.config.height = "800px";
-  CKEDITOR.instances['service-des'].setData('' +
-          '<img src="/template//img/main-service/untitled-3-8307.png" alt="Default Image">' +
-          '<h3>Dịch vụ thi công nhà phần thô</h3> ' +
-          '<p>Để xây dựng một tổ ấm hoàn mỹ, lựa chọn được một đơn vị thi công phần thô nhà phố là yêu cầu tiên quyết. Một đơn vị thi công phù hợp sẽ đảm bảo chất lượng công trình tốt nhất và giúp gia chủ cân đối được nguồn tài chính khi xây nhà.</p>');
-</script>
-<script>
-  let cur ;
-  for (let item of  $('.sidebar-item')) {
-    item.addEventListener('click', function (){
-      if(cur!=null) {
-        cur.classList.remove('d-block');
-        cur.classList.add('d-none');
-      }
-      if(this.children.length===2){
-        this.children[1].classList.remove('d-none')
-        this.children[1].classList.add('d-block')
-        cur=this.children[1];
-      }
+    $('#save').click(function () {
+        let content = CKEDITOR.instances['service-des'].getData();
+        let id = ${post.id};
+        $.ajax({
+            url: "/api/post?action=edit",
+            type: "POST",
+            dataType: "json",
+            data: {
+                content: content,
+                id: ${post.id}
+            },
+            success: function (data) {
+               window.location.href = "/admin/service";
+            },
+            error: function (data) {
+                //thông báo lỗi sys
+                console.log(data)
+            }
+        })
+
     })
-  }
+</script>
+<script>
+    CKEDITOR.replace('service-des');
+    CKEDITOR.config.width = "100%";
+    CKEDITOR.config.height = "800px";
+</script>
+<script>
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
+                cur.classList.remove('d-block');
+                cur.classList.add('d-none');
+            }
+            if (this.children.length === 2) {
+                this.children[1].classList.remove('d-none')
+                this.children[1].classList.add('d-block')
+                cur = this.children[1];
+            }
+        })
+    }
 
 </script>
 <script>
-  $(document).ready(function () {
-    $(".sidebar-btn").click(function () {
-      $(".wrapper").toggleClass("mycollapse");
-    });
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
 
-  });
+    });
 </script>
 </body>
 </html>

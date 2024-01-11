@@ -36,7 +36,7 @@
     <!--    end breadcrumb-->
     <div id="section-2" class="justify-content-center">
         <img class="background"
-             src="https://ircdn.vingroup.net/storage/public/2019/07/DJI_0030-fixed2-mini-20190727T100030844048.jpg">
+             src="/template/img/intro/intro1.jpg">
     </div>
     <div id="section-3" class="black-brown-text">
         <h3 class="text-uppercase font-weight-bold text-center bockdoor text">Xây dựng nhà đẹp - Công ty TNHH</h3>
@@ -67,7 +67,7 @@
             Chúng tôi luôn lắng nghe và hiểu rõ nhu cầu của khách hàng. Dựa trên đó, chúng tôi sáng tạo và đưa ra các
             giải pháp tối ưu, đảm bảo rằng mỗi dự án đều phản ánh sự độc đáo và ước mơ của gia đình.
         </p>
-        <img src="../../../../RealEstateWeb/public/img/intro-img.jpg" class="background">
+        <img src="/template/img/intro/intro-img.jpg" class="background">
         <h6 class="text-uppercase" style="color: black">iv. Chất Lượng Vượt Trội</h6>
         <p>
             Chất lượng không chỉ là mục tiêu mà còn là phương pháp làm việc của chúng tôi. Chúng tôi sử dụng các vật

@@ -112,7 +112,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL Slide</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="add_slider.jsp">
+                        <a href="/admin/slide/add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i>Thêm slide</button>
                         </a>
 
@@ -132,48 +132,29 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Giới thiệu 1</td>
-                        <td><img src="/template/img/slide/xay-dung-nha-xinh-1887.jpg" alt=""
-                                 class="w-100 h-auto"></td>
-                        <td>1</td>
 
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="update_slide_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Giới thiệu 2</td>
-                        <td><img src="/template/img/slide/slide-nha-xinh-1-4581.png" alt=""
-                                 class="w-100 h-auto"></td>
-                        <td>2</td>
+                    <c:forEach items="${sliders}" varStatus="loop" var="slide">
+                        <tr>
+                            <td>${loop.index+1}</td>
+                            <td>${slide.title}</td>
+                            <td><img src="${slide.avatar}" alt="" class="w-100 h-auto"></td>
+                            <td>${slide.sequence}</td>
 
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="update_slide_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Giới thiệu 3</td>
-                        <td><img src="/template/img/slide/slider1440610-6934.png" alt=""
-                                 class="w-100 h-auto"></td>
-                        <td>3</td>
-
-                        <td>
-                            <i class="fa-solid fa-square active-icon" value="0"></i>
-                        </td>
-                        <td>
-                            <a href="update_slide_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
-                    </tr>
+                            <td>
+                        <c:choose>
+                            <c:when test="${slide.status==1}">
+                                <i class="fa-solid fa-square active-icon" value="1"></i>
+                            </c:when>
+                            <c:otherwise>
+                                <i class="fa-solid fa-square inactive-icon" value="0"></i>
+                            </c:otherwise>
+                        </c:choose>
+                            </td>
+                            <td>
+                                <a href="/admin/slide/edit?action=edit&id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
+                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                        </tr>
+                    </c:forEach>
 
                     </tbody>
 
@@ -201,8 +182,16 @@
         scrollX: true,
         "columnDefs": [
             {
+                "targets": 0,
+                "width": "10%",
+
+            }, {
+                "targets": 1,
+                "width": "20%",
+            },
+            {
                 "targets": 2,
-                "width": "30%",
+                "width": "20%",
             },
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 

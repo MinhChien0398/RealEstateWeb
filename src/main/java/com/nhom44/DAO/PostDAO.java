@@ -16,7 +16,7 @@ public interface PostDAO{
 @SqlQuery("select * from posts where content=:content")
     Post getByObject(@BindBean Post post);
 @SqlUpdate("update posts set content=:content,updatedAt=:updatedAt where id=:id")
-    Integer updatePost(Post post);
+    Integer updatePost(@BindBean Post post);
 @SqlQuery("select * from posts where id=:postId")
     Post getById(@Bind("postId") int postId);
 }
