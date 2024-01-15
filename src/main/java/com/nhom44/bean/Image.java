@@ -1,10 +1,11 @@
 package com.nhom44.bean;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Image {
+public class Image implements Serializable {
     private int id;
     private String name;
     private String path;

@@ -1,8 +1,9 @@
 package com.nhom44.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Slider {
+public class Slider implements Serializable {
     private int id;
     private String avatar;
     private String title;

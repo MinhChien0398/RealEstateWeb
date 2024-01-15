@@ -1,19 +1,23 @@
 package com.nhom44.controller;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+import com.nhom44.bean.Service;
+import com.nhom44.services.ServiceOfProjectService;
 
-@WebServlet(name = "ServiceController", value = "/service")
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import java.util.List;
+
+@WebServlet(urlPatterns = "/service")
 public class ServiceController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/views/public/service.jsp");
-        rd.forward(request, response);
+    protected void doGet(javax.servlet.http.HttpServletRequest req, javax.servlet.http.HttpServletResponse resp) throws javax.servlet.ServletException, java.io.IOException {
+        req.setAttribute("page", "service");
+        List<Service> services = ServiceOfProjectService.getInstance().getAllActive();
+        for (Service service : services
+        ) {
+            System.out.println(service);
+        }
+        req.setAttribute("services", services);
+        req.getRequestDispatcher("/views/public/service.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+}

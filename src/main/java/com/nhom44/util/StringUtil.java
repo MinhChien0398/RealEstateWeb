@@ -4,6 +4,8 @@ package com.nhom44.util;
 import com.nhom44.bean.Image;
 import com.nhom44.bean.Project;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class StringUtil {
@@ -19,6 +21,22 @@ public class StringUtil {
         image.setPath(path.substring(0,path.lastIndexOf("/")));
         image.setName(path.substring(path.lastIndexOf("/") + 1));
         return image;
+    }
+    public static String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(password.getBytes());
+            byte[] bytes = md.digest();
+
+            StringBuilder sb = new StringBuilder();
+            for (byte aByte : bytes) {
+                sb.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
     public static String buildJsonUserProject(List<Project> projects,List<String> emails) {
         StringBuilder builder = new StringBuilder();

@@ -44,5 +44,11 @@ public interface UserDAO {
         User getUserByEmail(@Bind("email") String email);
     @SqlQuery("SELECT u.email From users_projects up Left JOIN users u ON u.id=up.userId  right join projects p ON p.id=up.projectId ")
     List<String> getEmailOwner();
-
+    @SqlQuery("SELECT * FROM users WHERE email=:email AND password=:password")
+    User login(@Bind("email") String email,@Bind("password") String password);
+    @SqlUpdate("UPDATE users SET status=1 WHERE id=:id")
+    Boolean updateSuccessVerify(@Bind("id") int id);
+    @SqlQuery("Select u.id, u.fullname, u.email,u.password, u.phone, u.gender,u.status,u.role, u.birthday,p.name as province " +
+            "FROM users u Left Join provinces p ON u.provinceId=p.id where u.email=:email AND u.status=1")
+    User getUserByEmailForCustomer(@Bind("email") String email);
 }

@@ -18,12 +18,18 @@ import java.util.List;
 @WebServlet(urlPatterns = "/project")
 public class ProjectController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher rd = request.getRequestDispatcher("/views/public/project.jsp");
-        rd.forward(request, response);
+    protected void doGet(javax.servlet.http.HttpServletRequest req, javax.servlet.http.HttpServletResponse resp) throws javax.servlet.ServletException, java.io.IOException {
+        req.setAttribute("page", "project");
+       List<Service> services = ServiceOfProjectService.getInstance().getAllActive();
+        req.setAttribute("services", services);
+        List<Category> categories = CategoryService.getInstance().getAllActive();
+        req.setAttribute("categories", categories);
+        List<Province> provinces = ProvinceService.getInstance().getAll();
+        req.setAttribute("provinces", provinces);
+        List<PriceObjectHelper> prices = SearcherProjectUtil.PRICE_SEARCHING;
+        req.setAttribute("prices", prices);
+        List<Integer> acreages = SearcherProjectUtil.ACREAGE;
+        req.setAttribute("acreages", acreages);
+        req.getRequestDispatcher("/views/public/project.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
+}

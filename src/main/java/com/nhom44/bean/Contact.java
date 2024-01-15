@@ -1,8 +1,9 @@
 package com.nhom44.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Contact {
+public class Contact implements Serializable {
     private int id;
     private String fullName;
     private String email;

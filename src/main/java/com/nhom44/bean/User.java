@@ -1,11 +1,12 @@
 package com.nhom44.bean;
 
 import java.beans.ConstructorProperties;
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Objects;
 
-public class User {
+public class User implements Serializable {
     // status 0-> disable, 1-> enable, 2-> block, 3-> not create
     private int id;
     private String avatar;
@@ -90,8 +91,6 @@ public class User {
     public Date getBirthday() {
         return birthday;
     }
-
-
 
     public int getGender() {
         return gender;

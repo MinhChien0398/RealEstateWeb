@@ -36,7 +36,7 @@ public class HomeController extends HttpServlet {
                 List<Project> projects = ProjectService.getInstance().get8ActiveProjectHighestView(i);
                 System.out.println(projects);
                 responseModel.setName("success");
-                responseModel.setData(projects);
+                responseModel.setData(new Gson().toJson(projects));
             } else {
                 responseModel.setName("error");
                 responseModel.setData("id is not number");

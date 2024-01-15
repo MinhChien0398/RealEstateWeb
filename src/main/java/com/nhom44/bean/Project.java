@@ -2,9 +2,10 @@ package com.nhom44.bean;
 
 import org.jdbi.v3.core.mapper.reflect.ColumnName;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Project {
+public class Project implements Serializable {
     private int id;
     private String title;
     private String description;
