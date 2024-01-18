@@ -1,13 +1,15 @@
 package com.nhom44.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Category {
+public class Category implements Serializable {
     private int id;
     private String name;
     private int status;
     private String createdAt;
     private String updatedAt;
+    private int numberOfProject;
 
     public Category() {
     }
@@ -20,6 +22,7 @@ public class Category {
                 ", status=" + status +
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
+                ", numberOfProject=" + numberOfProject +
                 '}';
     }
 
@@ -28,12 +31,12 @@ public class Category {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return id == category.id && status == category.status && Objects.equals(name, category.name) && Objects.equals(createdAt, category.createdAt) && Objects.equals(updatedAt, category.updatedAt);
+        return id == category.id && status == category.status && numberOfProject == category.numberOfProject && Objects.equals(name, category.name) && Objects.equals(createdAt, category.createdAt) && Objects.equals(updatedAt, category.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, status, createdAt, updatedAt);
+        return Objects.hash(id, name, status, createdAt, updatedAt, numberOfProject);
     }
 
     public int getId() {
@@ -76,11 +79,20 @@ public class Category {
         this.updatedAt = updatedAt;
     }
 
-    public Category(int id, String name, int status, String createdAt, String updatedAt) {
+    public int getNumberOfProject() {
+        return numberOfProject;
+    }
+
+    public void setNumberOfProject(int numberOfProject) {
+        this.numberOfProject = numberOfProject;
+    }
+
+    public Category(int id, String name, int status, String createdAt, String updatedAt, int numberOfProject) {
         this.id = id;
         this.name = name;
         this.status = status;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.numberOfProject = numberOfProject;
     }
 }

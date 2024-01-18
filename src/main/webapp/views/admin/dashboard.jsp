@@ -13,7 +13,8 @@
     <%@include file="/layout/public/link.jsp" %>
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/css/admin_Dashboard.css"/>" rel="stylesheet">
     <title>Title</title>
 </head>
@@ -50,12 +51,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="project/project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -114,7 +116,8 @@
                     <div class="col-md-6 col-lg-3 text-center">
                         <h4 class="font-weight-normal mb-3">
                             <i class="fa-solid fa-building indigo-text "></i>
-                            <span class="d-inline-block count-up" data-from="0" data-to="27" data-time="2000">27</span>
+                            <span class="d-inline-block count-up" data-from="0" data-to="${numberProject}"
+                                  data-time="2000">${numberProject}</span>
                         </h4>
                         <p class="font-weight-normal text-muted">Dự án</p>
                     </div>
@@ -122,7 +125,8 @@
                     <div class="col-md-6 col-lg-3 text-center">
                         <h4 class="font-weight-normal mb-3">
                             <i class="fa-solid fa-sitemap indigo-text"></i>
-                            <span class="d-inline-block count1" data-from="0" data-to="2" data-time="2000">2</span>
+                            <span class="d-inline-block count1" data-from="0" data-to="${numberCategory}"
+                                  data-time="2000">${numberCategory}</span>
                         </h4>
                         <p class="font-weight-normal text-muted">Loại dự án</p>
                     </div>
@@ -130,7 +134,8 @@
                     <div class="col-md-6 col-lg-3 text-center">
                         <h4 class=" font-weight-normal mb-3">
                             <i class="fa-solid fa-toolbox indigo-text"></i>
-                            <span class="d-inline-block count2" data-from="0" data-to="25" data-time="2000">4</span>
+                            <span class="d-inline-block count2" data-from="0" data-to="${numberService}"
+                                  data-time="2000">${numberService}</span>
                         </h4>
                         <p class="font-weight-normal text-muted">Loại dịch vụ</p>
                     </div>
@@ -138,7 +143,8 @@
                     <div class="col-md-6 col-lg-3 text-center">
                         <h4 class=" font-weight-normal mb-3">
                             <i class="fa-solid fa-user indigo-text"></i>
-                            <span class="d-inline-block count2" data-from="0" data-to="25" data-time="2000">25</span>
+                            <span class="d-inline-block count2" data-from="0" data-to="${numberUser}"
+                                  data-time="2000">${numberUser}</span>
                         </h4>
                         <p class="font-weight-normal text-muted">Người dùng</p>
                     </div>
@@ -163,31 +169,12 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>Nhà ống phong cách cổ điển</td>
-                                <td>Bùi Minh Chiến</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                                 <td>
                                     <i class="fa-solid fa-square active-icon" title="Đã hoàn thành" value="1"></i>
                                     <p class="d-none">1</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Biệt thự trắng</td>
-                                <td>Vũ Xuân Chiến</td>
-                                <td>
-                                    <i class="fa-solid fa-square pending-icon" title="Đang thi công" value=2></i>
-                                    <p class="d-none">2</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Hoà nhập thiên nhiên</td>
-                                <td>Đặng Minh Tấn</td>
-                                <td>
-                                    <i class="fa-solid fa-square active-icon" title="hoàn thành thi công" value="0"></i>
-                                    <div class="d-none">3</div>
-
                                 </td>
                             </tr>
                             </tbody>
@@ -248,13 +235,47 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-
+    $(document).ready(function () {
+     $.ajax({
+            url: '/api/dashboard/project',
+            type: 'GET',
+            success: function (data) {
+             console.log(data)
+            }
+     })
+    });
+</script>
+<script>
+    let index = 1;
     $('#table1').DataTable({
+        ajax: {
+            url: '/api/dashboard/project',
+            type: 'GET',
+            dataSrc: ''
+        },
         "columns": [
-            {"data": "id"},
-            {"data": "name"},
-            {"data": "email"},
-            {"data": "status"},
+            {
+                render: function () {
+                    return index++
+                },
+            },
+            {
+                data: "title",
+                render: function (title) {
+                    if (title == null || title === "") return "---"; else return title;
+                }
+            },
+            {data: "email",
+                render: function (email) {
+                    if (email == null || email === "null") return "---"; else return email;
+                }
+            },
+            {
+                data: "status",
+                render: function (status) {
+                    return status == 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                }
+            },
         ],
         "columnDefs": [
             {"width": "5%", "targets": 0},

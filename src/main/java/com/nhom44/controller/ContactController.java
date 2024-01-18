@@ -1,20 +1,19 @@
 package com.nhom44.controller;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
-import java.io.IOException;
+import com.nhom44.bean.Category;
+import com.nhom44.services.CategoryService;
 
-@WebServlet(name = "ContactController", value = "/contact")
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import java.util.List;
+
+@WebServlet(urlPatterns = "/contact")
 public class ContactController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       RequestDispatcher rd = request.getRequestDispatcher("/views/public/contact.jsp");
-       rd.forward(request, response);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    protected void doGet(javax.servlet.http.HttpServletRequest req, javax.servlet.http.HttpServletResponse resp) throws javax.servlet.ServletException, java.io.IOException {
+        req.setAttribute("page", "contact");
+        List<Category> categories = CategoryService.getInstance().getAllActive();
+        req.setAttribute("categories", categories);
+        req.getRequestDispatcher("/views/public/contact.jsp").forward(req, resp);
     }
 }

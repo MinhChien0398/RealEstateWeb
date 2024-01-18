@@ -1,6 +1,11 @@
 package com.nhom44.bean;
 
-public class Project {
+import org.jdbi.v3.core.mapper.reflect.ColumnName;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+public class Project implements Serializable {
     private int id;
     private String title;
     private String description;
@@ -18,6 +23,8 @@ public class Project {
     private String category;
     private int provinceId;
     private int categoryId;
+    private int numSave;
+    private int numVisit;
 
     @Override
     public String toString() {
@@ -39,11 +46,25 @@ public class Project {
                 ", category='" + category + '\'' +
                 ", provinceId=" + provinceId +
                 ", categoryId=" + categoryId +
+                ", numSave=" + numSave +
+                ", numVisit=" + numVisit +
                 '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Project project = (Project) o;
+        return id == project.id && price == project.price && Double.compare(acreage, project.acreage) == 0 && status == project.status && postId == project.postId && isAccepted == project.isAccepted && provinceId == project.provinceId && categoryId == project.categoryId && numSave == project.numSave && numVisit == project.numVisit && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(avatar, project.avatar) && Objects.equals(createdAt, project.createdAt) && Objects.equals(updatedAt, project.updatedAt) && Objects.equals(schedule, project.schedule) && Objects.equals(estimated_complete, project.estimated_complete) && Objects.equals(province, project.province) && Objects.equals(category, project.category);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, avatar, price, acreage, status, postId, isAccepted, createdAt, updatedAt, schedule, estimated_complete, province, category, provinceId, categoryId, numSave, numVisit);
+    }
+
     public int getId() {
-        System.out.println("getId");
         return id;
     }
 
@@ -52,7 +73,6 @@ public class Project {
     }
 
     public String getTitle() {
-        System.out.println("getTitle");
         return title;
     }
 
@@ -61,7 +81,6 @@ public class Project {
     }
 
     public String getDescription() {
-        System.out.println("description");
         return description;
     }
 
@@ -78,7 +97,6 @@ public class Project {
     }
 
     public long getPrice() {
-        System.out.println("price");
         return price;
     }
 
@@ -87,7 +105,6 @@ public class Project {
     }
 
     public double getAcreage() {
-        System.out.println("acreage");
         return acreage;
     }
 
@@ -183,10 +200,26 @@ public class Project {
         this.categoryId = categoryId;
     }
 
+    public int getNumSave() {
+        return numSave;
+    }
+
+    public void setNumSave(int numSave) {
+        this.numSave = numSave;
+    }
+
+    public int getNumVisit() {
+        return numVisit;
+    }
+
+    public void setNumVisit(int numVisit) {
+        this.numVisit = numVisit;
+    }
+
     public Project() {
     }
 
-    public Project(int id, String title, String description, String avatar, long price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, String estimated_complete, String province, String category, int provinceId, int categoryId) {
+    public Project(int id, String title, String description, String avatar, long price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, String estimated_complete, String province, String category, int provinceId, int categoryId, int numSave, int numVisit) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -204,5 +237,7 @@ public class Project {
         this.category = category;
         this.provinceId = provinceId;
         this.categoryId = categoryId;
+        this.numSave = numSave;
+        this.numVisit = numVisit;
     }
 }

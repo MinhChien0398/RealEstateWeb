@@ -20,21 +20,14 @@
 <div id="carouselExampleControls" class="carousel slide mb-5" data-ride="carousel">
 
     <div class="container carousel-inner w-100">
-        <div class="carousel-item active w-100">
-            <%--            <img class="d-block w-100 " src="../../../../RealEstateWeb/public/img/slide/slide-nha-xinh-1-4581.png"--%>
-            <img class="d-block w-100 " src=""
-                 alt="First slide">
-        </div>
-        <div class="carousel-item w-100">
-            <%--            <img class="d-block w-100" src="../../../../RealEstateWeb/public/img/slide/slider1440610-6934.png"--%>
-            <img class="d-block w-100" src=""
-                 alt="Second slide">
-        </div>
-        <div class="carousel-item w-100">
-            <img class="d-block w-100" src=""
-            <%--            <img class="d-block w-100" src="../../../../RealEstateWeb/public/img/slide/xay-dung-nha-xinh-1887.jpg"--%>
-                 alt="Third slide">
-        </div>
+        <c:forEach items="${sliders}" var="slide" varStatus="loop">
+            <div class="carousel-item  <c:if test="${loop.index== 0}">active</c:if> w-100">
+                    <%--            <img class="d-block w-100 " src="../../../../RealEstateWeb/public/img/slide/slide-nha-xinh-1-4581.png"--%>
+                <img class="d-block w-100 " src="${slide.avatar}"
+                     alt="${slide.title}">
+            </div>
+        </c:forEach>
+
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -45,7 +38,6 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
 <!--end slide-->
 
 <!--start introdution-->
@@ -78,8 +70,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 about-image hover-image w-100">
-                <img class="w-100 " src="">
-                <%--                <img class="w-100 " src="../../../../RealEstateWeb/public/img/main-intro.png">--%>
+                <img class="w-100 " src="/template/img/main-intro.png">
             </div>
         </div>
     </div>
@@ -97,765 +88,25 @@
             </div>
             <div class="project-category">
                 <ul class="category-menu d-flex align-items-center justify-content-center md-pills">
-                    <li class="category-item">
-                        <a href="">
-                            <button class="item-selector " data-toggle="tab" href="#villa" role="tab" type="vila"
-                                    title="XÂY DỰNG BIỆT THỰ">
-                                XÂY DỰNG BIỆT THỰ
+                    <c:forEach var="category" items="${categories}">
+                        <li class="category-item">
+                            <button class="item-selector "
+                                    role="tab" onclick="getProject(${category.id})"
+                                    title="${category.name}">
+                                XÂY DỰNG ${category.name}
                             </button>
-                        </a>
-                    </li>
-                    <li class="category-item">
-                        <a href="">
-                            <button class="item-selector" data-toggle="tab" href="#townhouse" role="tab"
-                                    type="townhouse" title="XÂY DỰNG NHÀ PHÔ">
-                                XÂY DỰNG NHÀ PHỐ
-                            </button>
-                        </a>
-                    </li>
-                    <li class="category-item">
-                        <a href="">
-                            <button class="item-selector" data-toggle="tab" href="#factory" role="tab" type="factory"
-                                    title="XÂY DỰNG NHÀ XƯỞNG">
-                                XÂY DỰNG NHÀ XƯỞNG
-                            </button>
-                        </a>
-                    </li>
-                    <li class="category-item">
-                        <a href="">
-                            <button class="item-selector" data-toggle="tab" href="#office" role="tab" type="office"
-                                    title="XÂY DỰNG VĂN PHÒNG">
-                                XÂY DỰNG VĂN PHÒNG
-                            </button>
-                        </a>
-                    </li>
+                        </li>
+                    </c:forEach>
                 </ul>
             </div>
             <main class="my-5 mt-0">
                 <div class="container tab-content p-0">
                     <!--Section: Design Block-->
-                    <section class="tab-pane show active" id="villa" role="tabpanel">
-                        <div class="row">
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="#">
-                                        <%--                                    <a href="postProject.jsp">--%>
-                                        <img src=""
-                                        <%--                                        <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-165117-8274.png"--%>
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-                                                <div class="align-items-center flex-column d-flex w-100">
-                                                    <h6 class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                        PHỐI CẢNH AN THIÊN</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0001</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">
-                                                        Là một không gian làm việc đẳng cấp, tạo môi
-                                                        trường khuyến khích sự sáng tạo và đổi mới.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/nhaanhchung-4935.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
+                    <section class="tab-pane show active">
+                        <div class="row" id="project-container">
 
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    NHÀ
-                                                    ANH
-                                                    HƯNG GÒ VẤP</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0002</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Nằm trong khu vực có nhiều tiện ích như
-                                                        trường
-                                                        học,
-                                                        trung tâm thương mại, nhà hàng và giao thông thuận tiện.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-164028-776.png"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    NHÀ
-                                                    ANH
-                                                    TIẾN Q.6</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0003</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Là không gian làm việc độc đáo và đầy sáng
-                                                        tạo,
-                                                        tọa
-                                                        lạc tại trung tâm Thành Phố Sài Gòn. Với thiết kế hiện đại, tiện
-                                                        nghi
-                                                        tiên
-                                                        tiến và không gian mở, văn phòng này tạo nên môi trường làm việc
-                                                        thú
-                                                        vị
-                                                        và
-                                                        tràn đầy ý tưởng mới.</p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-164628-3831.png"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    NHÀ
-                                                    CÔ
-                                                    NGHỆ</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0004</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Nằm trong khu vực có nhiều tiện ích như
-                                                        trường
-                                                        học,
-                                                        trung tâm thương mại, nhà hàng và giao thông thuận lợi.</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/screenshot-20230819-165318-2198.png"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    NHÀ
-                                                    ANH
-                                                    DƯƠNG</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0005</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Khuôn viên của ngôi nhà này không quá rộng
-                                                        nhưng
-                                                        đã
-                                                        được sắp xếp hợp lý. Với một khu vực sân trước có thể trồng cây
-                                                        cảnh, và
-                                                        một
-                                                        khu vực sân sau làm nơi thư giãn và tiếp khách ngoài trời.</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img
-                                                src="../../../../RealEstateWeb/public/img/project-img/Mau-thiet-ke-biet-thu-Chau-Au-e1672026132195.jpg"
-                                                class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    BIỆT
-                                                    THỰ
-                                                    CHÂU ÂU</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0006</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Thiết kế biệt thự theo phong cách Châu Âu
-                                                        đang
-                                                        khá
-                                                        được ưa chuộng hiện nay. Những mẫu biệt thự đẹp theo phong cách
-                                                        Châu
-                                                        Âu
-                                                        thể
-                                                        hiện được sự quý tộc, và nguy nga trong từng đường lối thiết
-                                                        kế.</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-biet-thu-13-1-e1672026065491.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    BIỆT
-                                                    THỰ
-                                                    PHÁP</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0007</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Thiết kế kiến trúc của Pháp rất phổ biến ở
-                                                        Châu Âu
-                                                        và
-                                                        nhiều quốc gia trên thế giới. Những mẫu biệt thự đẹp theo phong
-                                                        cách
-                                                        kiến
-                                                        trúc Pháp thể hiện vẻ đẹp, sự cố kính ở mọi góc nhìn. Người nhìn
-                                                        bị
-                                                        choáng
-                                                        ngớp trước sự tráng lệ, nguy nga của những đường nét kiến trúc
-                                                        độc
-                                                        đáo.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-biet-thu-20-1.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    PHONG
-                                                    CÁCH GẦN GŨI VỚI THIÊN NHIÊN</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0008</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Một ý tưởng độc đáo thiết kế biệt thự đẹp
-                                                        và
-                                                        sang
-                                                        trọng bạn không nên bỏ qua đó là tạo không gian sống gần gũi với
-                                                        thiên
-                                                        nhiên. Bạn chỉ cần bố trí một vài bồn hoa mini, chậu cây cảnh
-                                                        nhỏ để
-                                                        phủ
-                                                        xanh ngôi nhà. Cây xanh không chỉ có tác dụng điều hòa không khí
-                                                        mà
-                                                        nó
-                                                        còn
-                                                        giúp cho cơ thể bạn cảm thấy thoải mái, giảm stress, mệt mỏi mỗi
-                                                        khi
-                                                        về
-                                                        nhà. </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
                         </div>
                     </section>
-                    <section class="tab-pane" id="townhouse" role="tabpanel">
-                        <div class="row">
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-nha-11-2.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    THIẾT KẾ
-                                                    NHÀ MÁI THÁI</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0013</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Thiết kế nhà mái thái đang ngày một
-                                                        thịnh
-                                                        hành
-                                                        ở Việt
-                                                        Nam. Mẫu nhà này thường được xây dựng trên khu đất có diện
-                                                        tích
-                                                        từ
-                                                        1000m2
-                                                        trở lên. Vì thế với các vùng nông thôn đất rộng kiểu nhà này
-                                                        được ví
-                                                        như làn
-                                                        gió mới thổi hồn vào nền kiến trúc nông thôn Việt Nam. </p>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-nha-1-3.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    THIẾT KẾ
-                                                    NHÀ KẾT HỢP KINH DOANH</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0014</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Thiết kế nhà ở kết hợp kinh doanh đang
-                                                        là
-                                                        xu
-                                                        hướng nổi
-                                                        bật được xây dựng rất nhiều cho các lô nhà ở có vị trí trung
-                                                        tâm,
-                                                        đông người
-                                                        qua lại.Đối với xu hướng này, mẫu nhà ở thường được thiết kế
-                                                        từ
-                                                        2-3
-                                                        tầng trở
-                                                        lên.</p></div>
-
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img
-                                                src="../../../../RealEstateWeb/public/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
-                                                class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    NHÀ PHỐ
-                                                    HIỆN ĐẠI TẠI HẢI DƯƠNG</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0015</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Thiết kế kiến trúc nhà phố này không
-                                                        quá
-                                                        cầu
-                                                        kì, tiết
-                                                        kiệm chi phí nhưng vẫn tạo được điểm nhấn thu hút, tính thẩm
-                                                        mỹ
-                                                        cao.
-                                                        Công
-                                                        trình này đã làm gia chủ vô cùng hài lòng và nhận được sự
-                                                        đánh
-                                                        giá
-                                                        cao của
-                                                        nhiều người.</p></div>
-                                            </div>
-
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img
-                                                src="../../../../RealEstateWeb/public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
-                                                class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    biệt thự
-                                                    3 tầng tân cổ điển tại Hưng Yên</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0016</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Sự hòa quyện giữa kiến trúc và ánh
-                                                        sáng
-                                                        giúp
-                                                        cho căn
-                                                        biệt thự thêm phần xa hoa, lộng lẫy, nổi bật. Chắc chắn
-                                                        sẽ
-                                                        thu
-                                                        hút
-                                                        tất cả
-                                                        ánh nhìn khi đi qua nó. Đây cũng là lúc để cho gia chủ
-                                                        thể
-                                                        hiện
-                                                        sự
-                                                        đẳng cấp
-                                                        và sang trọng.</p></div>
-                                            </div>
-
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img
-                                                src="../../../../RealEstateWeb/public/img/project-img/z3847844894352_7861e6b4d68f074f93d76fa303b57940_1671166352-1229x1536.jpg"
-                                                class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div class="align-items-center flex-column d-flex w-100"><h6
-                                                        class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                    Khu đô
-                                                    thị Phú Mỹ Hưng</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0017</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Dự án nhà ở này mang đậm bản
-                                                        sắc kiến
-                                                        trúc
-                                                        hiện đại,
-                                                        với thiết kế đa dạng và hài hòa. Các căn hộ được
-                                                        trang bị
-                                                        tiện
-                                                        nghi
-                                                        hiện
-                                                        đại, phục vụ cuộc sống hàng ngày của cư dân. Khuôn
-                                                        viên xanh
-                                                        mát
-                                                        và
-                                                        tiện ích
-                                                        dịch vụ đa dạng đem lại không gian sống lý
-                                                        tưởng.</p></div>
-                                            </div>
-
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/project1.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div
-                                                        class="align-items-center flex-column d-flex w-100">
-                                                    <h6
-                                                            class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                        Căn hộ
-                                                        Vinhomes Central Park </h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0018</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Hệ thống an ninh 24/7 và
-                                                        đội ngũ quản
-                                                        lý
-                                                        chuyên nghiệp
-                                                        mang đến sự an toàn và tiện lợi cho cư dân. Vị
-                                                        trí thuận lợi
-                                                        gần
-                                                        trung tâm
-                                                        và kết nối giao thông thuận lợi là điểm mạnh của
-                                                        dự án. Chất
-                                                        lượng
-                                                        xây dựng
-                                                        và vật liệu sử dụng cao cấp, đảm bảo tính bền
-                                                        vững và thẩm
-                                                        mỹ.</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/project2.jpg"
-                                             class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div
-                                                        class="align-items-center flex-column d-flex w-100">
-                                                    <h6
-                                                            class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                        NHÀ PHỐ
-                                                        HIỆN ĐẠI</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0019</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Dự án tập trung vào
-                                                        việc xây dựng cộng
-                                                        đồng
-                                                        văn minh,
-                                                        tạo nên một môi trường sống xanh, sạch sẽ và
-                                                        đẳng cấp. Các
-                                                        tiện
-                                                        ích
-                                                        công
-                                                        cộng như trường học, bệnh viện, siêu thị và
-                                                        khu vui chơi
-                                                        giải
-                                                        trí
-                                                        gần kề,
-                                                        mang đến tiện ích hàng ngày cho cư dân.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/project3.jpg"
-                                             class="w-100">
-                                        <div
-                                                class="w-100 position-absolute projectCard-content">
-                                            <div
-                                                    class="mask justify-content-center d-flex h-100"
-                                                    style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div
-                                                        class="align-items-center flex-column d-flex w-100">
-                                                    <h6
-                                                            class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                        NHÀ PHỐ
-                                                        HIỆN ĐẠI TẠI TPHCM</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0020</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Dự án có mức giá
-                                                        hợp lý, phù hợp với
-                                                        đa
-                                                        dạng
-                                                        đối tượng
-                                                        cư dân. Các căn hộ được thiết kế thông
-                                                        minh, tối ưu hóa diện
-                                                        tích sử
-                                                        dụng và
-                                                        tạo không gian thoải mái. Dự án đặc biệt
-                                                        quan tâm đến môi
-                                                        trường
-                                                        và
-                                                        tiết
-                                                        kiệm năng lượng, thể hiện cam kết bảo vệ
-                                                        môi trường
-                                                        xanh.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/project4.jpg"
-                                             class="w-100">
-                                        <div
-                                                class="w-100 position-absolute projectCard-content">
-                                            <div
-                                                    class="mask justify-content-center d-flex h-100"
-                                                    style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div
-                                                        class="align-items-center flex-column d-flex w-100">
-                                                    <h6
-                                                            class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                        biệt thự
-                                                        3 tầng tại Vĩnh Phúc</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0021</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Các khu vực
-                                                        xanh và tiện ích công cộng
-                                                        được
-                                                        quy hoạch
-                                                        hài hòa, mang đến không gian sống
-                                                        gắn kết và phát triển bền
-                                                        vững.
-                                                        Chủ đầu tư
-                                                        dự án đã tính toán kỹ lưỡng về các
-                                                        tiện ích dịch vụ, đáp ứng
-                                                        đầy
-                                                        đủ
-                                                        nhu cầu
-                                                        của cư dân. </p></div>
-                                            </div>
-                                        </div>
-                                    </a></div>
-                            </div>
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-regular fa-bookmark position-absolute"
-                                       style="z-index: 1000"></i>
-                                    <a href="postProject.jsp">
-                                        <img src="../../../../RealEstateWeb/public/img/project-img/project5.jpg"
-                                             class="w-100">
-                                        <div
-                                                class="w-100 position-absolute projectCard-content">
-                                            <div
-                                                    class="mask justify-content-center d-flex h-100"
-                                                    style="background-color: rgba(48, 48, 48, 0.72);">
-
-                                                <div
-                                                        class="align-items-center flex-column d-flex w-100">
-                                                    <h6
-                                                            class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                        biệt thự
-                                                        3 tầng tại Đà Nẵng</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:0022</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">Dự án được
-                                                        xem là lựa chọn lý tưởng
-                                                        cho
-                                                        những
-                                                        người
-                                                        đang tìm kiếm một nơi an cư lâu
-                                                        dài với chất lượng sống cao
-                                                        cấp.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a></div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="tab-pane" id="factory" role="tabpanel"></section>
-                    <section class="tab-pane" id="office" role="tabpanel"></section>
                     <!--Section: Design Block-->
                 </div>
             </main>
@@ -864,82 +115,36 @@
 </section>
 <!-- end project -->
 <!--start service-->
-<section class="service container ">
+<section class="service container pl-0 pr-0">
     <div class="slide-container swiper">
         <div class="slide-content">
             <h4 class="title mb-3 text-uppercase">dịch vụ THI CÔNG</h4>
             <div class="card-wrapper swiper-wrapper">
-                <div class="card-home swiper-slide">
-                    <!--start image-->
-                    <div class="image-content">
-                        <div class="card-image ">
-                            <div href="postService.jsp"
-                                 class="img-container  ">
-                                <div class="img-wrapper hover-image">
-                                    <img src="../../../../RealEstateWeb/public/img/main-service/xaydungphantho1e57-4555.jpg"
-                                         alt=""
-                                         class="card-img  ">
+                <c:forEach var="service" items="${services}" varStatus="loop">
+                    <div class="card-home swiper-slide">
+                            <%--                    <!--start image-->--%>
+                        <div class="image-content">
+                            <div class="card-image ">
+                                <div href="postService.jsp"
+                                     class="img-container  ">
+                                    <div class="img-wrapper hover-image">
+                                        <img src="${service.avatar}"
+                                             alt=""
+                                             class="card-img  ">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- start image title-->
-                    <div class="card-content">
-                        <h4 class="text-uppercase">xây dựng phần thô</h4>
-                    </div>
-                </div>
-                <div class="card-home swiper-slide">
-                    <div class="image-content">
-                        <div class="card-image ">
-                            <a href="postService.jsp"
-                               class="img-container  ">
-                                <div class="img-wrapper hover-image">
-                                    <img src="../../../../RealEstateWeb/public/img/main-service/th2-792.png" alt=""
-                                         class="card-img">
-                                </div>
-                            </a>
+                            <%--                    <!-- start image title-->--%>
+                        <div class="card-content">
+                            <h4 class="text-uppercase">${service.name}</h4>
                         </div>
                     </div>
-                    <div class="card-content">
-                        <h4 class="text-uppercase">xây dựng tầng hầm</h4>
-                    </div>
-                </div>
-                <div class="card-home swiper-slide">
-                    <div class="image-content">
-                        <div class="card-image ">
-                            <a href="postService.jsp"
-                               class="img-container  ">
-                                <div class="img-wrapper hover-image">
-                                    <img src="../../../../RealEstateWeb/public/img/main-service/tang-ham-1-9740.png"
-                                         alt=""
-                                         class="card-img">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="text-uppercase">xây dựng nhà xưởng</h4>
-                    </div>
-                </div>
-                <div class="card-home swiper-slide">
-                    <div class="image-content">
-                        <div class="card-image ">
-                            <a href="postService.jsp"
-                               class="img-container  ">
-                                <div class="img-wrapper hover-image">
-                                    <img src="../../../../RealEstateWeb/public/img/main-service/th2-792.png" alt=""
-                                         class="card-img">
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h4 class="text-uppercase">xây nhà trọn gói</h4>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
         </div>
-        <p class="swiper-pagination"></p>
+    </div>
+    <p class="swiper-pagination"></p>
     </div>
 </section>
 <!--end service-->
@@ -947,9 +152,9 @@
 <section id="section-3">
     <div class="container">
         <!--Section: Contact v.1-->
-        <section class="section pb-4 pt-5">
+        <section class="section pb-4 pt-4">
             <!--Section heading-->
-
+            <h4 class="title mt-2 mb-3 text-uppercase text-center" style="font-weight: 700">Liên hệ với chúng tôi</h4>
             <!--Section description-->
             <div class="row">
                 <!--Grid column-->
@@ -961,43 +166,44 @@
                             <!--Body-->
                             <div class="md-form">
                                 <i class="fas fa-user prefix grey-text"></i>
-                                <input type="text" id="form-name" class="form-control">
-                                <label for="form-name">Họ và tên</label>
+                                <input type="text" id="fullName" class="form-control">
+                                <label for="fullName">Họ và tên</label>
                             </div>
-
-
                             <div class="md-form">
                                 <i class="fas fa-envelope prefix grey-text"></i>
-                                <input type="text" id="form-email" class="form-control">
-                                <label for="form-email">Địa chỉ email</label>
+                                <input type="text" id="email" class="form-control">
+                                <label for="email">Địa chỉ email</label>
                             </div>
                             <div class="md-form">
                                 <i class="fa-solid fa-map-location prefix grey-text"></i>
-                                <input type="text" id="form-address" class="form-control">
-                                <label for="form-address">Địa chỉ(tỉnh/thành phố)</label>
+                                <input type="text" id="address" class="form-control">
+                                <label for="address">Địa chỉ(tỉnh/thành phố)</label>
                             </div>
                             <div class="row">
                                 <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
                                     <!--                            <label>Chủ đề</label>-->
-                                    <select class="browser-default custom-select mb-4">
+                                    <select id="categoryId" class="browser-default custom-select mb-4">
                                         <option value="" disabled="">Loại dự án</option>
-                                        <option value="1" selected="">Nhà phố</option>
-                                        <option value="2">Biệt thự</option>
+                                        <c:forEach var="category" items="${categories}">
+                                            <option value="${category.id}">${category.name}</option>
+                                        </c:forEach>
                                     </select>
 
                                 </div>
                                 <div class="form-outline col-6">
-                                    <input type="text" id="typeText" class="form-control" placeholder="Mã dự án">
+                                    <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">
                                 </div>
                             </div>
 
                             <!-- Message -->
                             <div class="form-group">
-                                <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"
+                                <textarea class="form-control rounded-0" id="content" rows="3"
                                           placeholder="Lời nhắn"></textarea>
                             </div>
                             <div class="text-center mt-4">
-                                <button class="btn btn-red waves-effect waves-light" type="submit">Gửi ngay</button>
+                                <button class="btn btn-red waves-effect waves-light" onclick="saveContact()"
+                                        type="button">Gửi ngay
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -1005,7 +211,7 @@
 
                 </div>
 
-                <div class="col-lg-7 mb-4">
+                <div class="col-lg-7 mb-3">
 
                     <!--Google map-->
                     <div id="map-container-google-11" class="z-depth-1-half map-container-6 h-100"
@@ -1035,5 +241,85 @@
 <script src="<c:url value="/template/js/main.js"/>"></script>
 <script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
 <script src="<c:url value='/template/js/home.js'/>"></script>
+<script>
+    function saveContact() {
+        $.ajax({
+            url: '/api/contact/save',
+            type: 'Post',
+            dataType: 'json',
+            data: {
+                fullName: $('#fullName').val(),
+                email: $('#email').val(),
+                address: $('#address').val(),
+                categoryId: $('#categoryId').val(),
+                projectId: $('#projectId').val(),
+                content: $('#content').val(),
+            },
+            success: function (data) {
+                let resp = JSON.parse(data);
+                if (resp.status === 200) {
+                    alert(resp.message);
+                    window.location.reload();
+                } else {
+                    alert(resp.message);
+                }
+            },
+            error: function (data) {
+                //bắt lỗi email
+                console.log(data);
+            }
+
+        })
+    }
+</script>
+<script>
+    getProject(${categories[0].id});
+
+    function getProject(id) {
+        // event.preventDefault();
+
+        $.ajax({
+            url: '/api/home/projects',
+            type: 'Post',
+            // dataType: 'json',
+            data: {id: id},
+            success: function (data) {
+                resdata= JSON.parse(data)
+                let list = JSON.parse(resdata.data);
+                let containter = document.getElementById('project-container');
+                let project = "";
+                containter.innerHTML = "";
+                for (const x of list) {
+                    project += '<div' +
+                        '  class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">'
+                        + '<div'
+                        + ' class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">'
+                        + '  <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>'
+                        + '  <a href="/project/post?id=' + x.id + '">'
+                        + '<img src="' + x.avatar + '"'
+                        + ' class="w-100">'
+                        + ' <div class="w-100 position-absolute projectCard-content">'
+                        + '  <div class="mask justify-content-center d-flex h-100"'
+                        + ' style="background-color: rgba(48, 48, 48, 0.72);">'
+                        + '<div class="align-items-center flex-column d-flex w-100"><h6'
+                        + ' class="text-white text-center pl-2 pr-2 projectTitle-center text-uppercase">'
+                        + x.title + '</h6>'
+                        + '<p class="text-white p-0 id-project">'
+                        + '<strong>MDA:' + x.id + '</strong>'
+                        + '</p>'
+                        + '<p class="text-white p-4"></p>'
+                        + '</div>'
+                        + '</div></div></a></div></div>'
+                }
+                containter.innerHTML = project;
+                // console.log(project);
+            },
+            error: function (data) {
+                console.log(data);
+            }
+        })
+
+    }
+</script>
 </body>
 </html>

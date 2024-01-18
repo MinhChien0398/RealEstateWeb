@@ -115,16 +115,16 @@
                 </ol>
             </nav>
 
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
 
-                <form action="#" method="post">
+                <form action="/admin/post_project?action=save&id=${post.id}" method="post">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0 ">
                             <h3 class="font-weight-bold main-color m-0">Chỉnh sửa bài viết</h3>
                         </div>
 
                         <div class="btn-save flex-center">
-                            <button type="submit" class="btn btn-warning p-2 waves-effect waves-light" type="button"> LƯU
+                            <button type="submit" class="btn btn-warning p-2 waves-effect waves-light"> LƯU
                             </button>
                         </div>
                     </div>
@@ -133,48 +133,9 @@
                             <div class="card-body card-body-cascade">
                                 <div class="col-lg-12 col-md-12 p-0">
                                     <div class="form-group">
-                                        <textarea class="form-control rounded-0" name="service-des" rows="10"
+                                        <textarea class="form-control rounded-0" name="content" rows="10"
                                                   id="service-des" contenteditable="true">
-                <h6 className="mt-2 mb-2" id="1. Đơn vị thi công phần thô nhà phố đạt tiêu chuẩn 2023">
-
-                    Thiết kế kiến trúc mặt tiền bắt mắt
-                </h6>
-                <p>
-                    Mặt tiền của công trình được sử dụng những vật liệu hiện đại, đem lại sự sang trọng và cuốn hút.
-                    Kết hợp cùng với không gian xanh tự nhiên, tạo cảm giác thông thoáng, dễ chịu cho căn nhà.
-                </p>
-                <div>
-                    <img
-                        src="/template/img/project-img/z3904713175018_2c57fb9ac39d925179c2278269912155_1671524950.jpg"
-                        alt="">
-                        <p>Mặt tiền được thiết kế kiến trúc vuông vắn với những đường nét độc đáo</p>
-                </div>
-                <div>
-                    <img
-                        src="/template/img/project post img/z3904713188335_87a8fb4e1b477eb507e2f7ff61ecd945_1671524950-1032x800.jpg"
-                        alt="">
-                        <p>Kết hợp cùng không gian xanh tạo cảm giác thông thoáng, dễ chịu</p>
-                </div>
-                <h6 className="mt-2 mb-2">
-                    Bố trí cửa sổ đón nhiều ánh sáng tự nhiên
-                </h6>
-                <p>
-                    Những căn nhà phố có mặt tiền hẹp và sâu dễ bị thiếu sáng và không khí. Tuy nhiên với thiết kế kiến
-                    trúc này có hệ thống nhiều cửa sổ
-                    cùng với giếng trời giúp cho ngôi nhà luôn tràn ngập ánh sáng và không khí tự nhiên.
-                </p>
-                <div>
-                    <img
-                        src="/template/img/project post img/z3904713186745_bd7de960470cba9ae042a368cdd52e8b_1671524950.jpg"
-                        alt="">
-                        <p>Hệ thống nhiều cửa sổ giúp ngôi nhà luôn ngập tràn ánh sáng và không khí tự nhiên</p>
-                </div>
-                <div>
-                    <img
-                        src="/template/img/project post img/z3904713175130_7b02a6152c6770ef31910c99ae5d4314_1671524950-1032x800.jpg"
-                        alt="">
-                        <p>Mái tum tầng có thể bố trí làm phòng thờ và sân thượng đẹp mắt</p>
-               </div>
+                                            ${post.content}
                                         </textarea>
                                     </div>
                                 </div>
