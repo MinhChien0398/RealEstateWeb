@@ -1,4 +1,6 @@
 package com.nhom44.bean;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
 }

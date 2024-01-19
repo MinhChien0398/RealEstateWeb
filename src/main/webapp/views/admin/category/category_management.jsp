@@ -118,7 +118,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL LOẠI DỰ ÁN</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="add_category_project.jsp">
+                        <a href="/admin/category_management?action=add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm loại dự
                                 án
                             </button>
@@ -193,9 +193,9 @@
                 }
             },
             {
-                data: "name",
-                render: function (name) {
-                    return (name == null || name === "") ? "---" : name;
+                data: "numberOfProject",
+                render: function (numberOfProject) {
+                    return (numberOfProject == null || numberOfProject === "") ? "---" : numberOfProject;
                 }
             },
             {
@@ -216,7 +216,7 @@
             {
                 data: "id",
                 render: function (id) {
-                    return '<a href="update_project_page.jsp?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                    return '<a href="/admin/category_management?action=edit&id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
                         '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
                 }
             },

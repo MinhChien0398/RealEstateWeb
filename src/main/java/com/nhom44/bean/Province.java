@@ -1,8 +1,9 @@
 package com.nhom44.bean;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Province {
+public class Province implements Serializable {
     private int id;
     private String name;
 

@@ -11,7 +11,8 @@
 <head>
     <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -49,12 +50,13 @@
                     <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
                 </a>
             </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
+            <li class="sidebar-item" id="project">
+                <div class="menu-btn">
+                    <i class="fa-solid fa-building"> </i>
+                    <a href="project_manage.jsp">
+                        <span>QL Dự án</span>
+                    </a> <i
+                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
                 <div class="sub-menu d-none">
                     <a href="../category/category_management.jsp" class="menu-btn">
                         <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
@@ -129,49 +131,20 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach step="1" begin="0" items="${projects}" varStatus="x" var="project">
                     <tr>
-                        <td>1</td>
-                        <td>nguyenvana@gmail.com</td>
-                        <td>#0023</td>
+                        <td>${x.index}</td>
+                        <td>${emails[x.index]}</td>
+                        <td>${project.id}</td>
                         <td>
-                            Đang trong quá trình thiết kế bản vẽ
+                                ${project.schedule}
                         </td>
-                        <td>12/12/2025</td>
+                        <td>${project.estimated_complete}</td>
                         <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
+                            <a href="/admin/project_additional_and_edit?action=edit&id=${project.id}"><i class="icon-action fa-solid fa-edit"></i></a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>nguyenvanb@gmail.com</td>
-                        <td>#0027</td>
-                        <td>
-                            Đang trong quá trình dựng móng
-                        </td><td>12/12/2025</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>vuxuanchien@gmail.com</td>
-                        <td>#0001</td>
-                        <td>
-                            Hoàn thiện cải tạo
-                        </td><td>12/12/2025</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>dangminhtan@gmail.com</td>
-                        <td>#0045</td>
-                        <td>
-                            Hoàn thành chờ kiểm duyệt
-                        </td><td>12/12/2025</td>
-                        <td>
-                            <a href="update_project_page.jsp"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    </tbody>
-
+                    </c:forEach>
                 </table>
 
             </main>
@@ -185,17 +158,20 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <!--<script src="/template/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    <%--console.log(${emails})--%>
+</script>
+<script>
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }

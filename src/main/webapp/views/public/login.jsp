@@ -1,215 +1,92 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Clover
-  Date: 13/12/2023
-  Time: 2:11 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
-<html>
+<%--<%@ page isELIgnored="false" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <link rel="stylesheet" href="<c:url value="/template/lib/fontawesome-free-6.4.2-web/css/all.min.css" />">
-    <link rel="stylesheet" href="<c:url value="/template/css/login.css" />">
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%--    <%@ include file="/layout/link.jsp" %>--%>
+    <link href="<c:url value="/template/lib/fontawesome-free-6.4.2-web/css/all.min.css"/>" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value="/template/css/login.css"/> ">
+    <title>Đăng nhập</title>
 </head>
 <body>
+
 <div class="container" id="container">
     <div class="form-container sign-up">
-        <a class="icon-arrow arrow-sign-up" href="home.jsp"><i
+        <a class="icon-arrow arrow-sign-up" href="home"><i
                 class="fa-solid fa-arrow-left"></i></a>
-        <form>
+        <form id="sign-up">
             <h1>Tạo tài khoản</h1>
             <span>Thông tin đăng nhập</span>
-            <input type="text" placeholder="Tên">
-            <div style="display: flex">
-                <input class="birth" type="date" placeholder="Ngày sinh">
+            <input type="text" name="name" id="fullname" placeholder="Tên">
+            <div style="display: flex;width: 100%">
+                <input class="birth" name="birthday" id="birthday" type="date" placeholder="Ngày sinh">
                 <label style="display: flex;margin-left: 7%;">
-                    <input type="checkbox">
+                    <input name="isMale" id="isMale" type="checkbox" checked>
                     <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nam</p>
                 </label>
                 <label style="display: flex;margin-left: 7%;">
-                    <input type="checkbox">
+                    <input name="isFemale" id="isFemale" type="checkbox">
                     <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nữ</p>
                 </label>
             </div>
             <!--            <input type="address" placeholder="Địa chỉ">-->
-            <select class="mdb-select md-form" id="mdb-select" searchable="Search here..">
+            <select class="mdb-select md-form" name="address" id="mdb-select" searchable="Search here..">
                 <option value="" disabled selected>Chọn tỉnh thành</option>
-
-                <option value="92TTT">Thành phố Cần Thơ</option>
-
-                <option value="91TTT"> Kiên Giang</option>
-
-                <option value="75TTT"> Đồng Nai</option>
-
-                <option value="20TTT"> Lạng Sơn</option>
-
-                <option value="89TTT"> An Giang</option>
-
-                <option value="34TTT"> Thái Bình</option>
-
-                <option value="62TTT"> Kon Tum</option>
-
-                <option value="45TTT"> Quảng Trị</option>
-
-                <option value="58TTT"> Ninh Thuận</option>
-
-                <option value="74TTT"> Bình Dương</option>
-
-                <option value="37TTT"> Ninh Bình</option>
-
-                <option value="31TTT">Thành phố Hải Phòng</option>
-
-                <option value="95TTT"> Bạc Liêu</option>
-
-                <option value="08TTT"> Tuyên Quang</option>
-
-                <option value="14TTT"> Sơn La</option>
-
-                <option value="36TTT"> Nam Định</option>
-
-                <option value="25TTT"> Phú Thọ</option>
-
-                <option value="42TTT"> Hà Tĩnh</option>
-
-                <option value="93TTT"> Hậu Giang</option>
-
-                <option value="82TTT"> Tiền Giang</option>
-
-                <option value="66TTT"> Đắk Lắk</option>
-
-                <option value="80TTT"> Long An</option>
-
-                <option value="17TTT"> Hòa Bình</option>
-
-                <option value="87TTT"> Đồng Tháp</option>
-
-                <option value="19TTT"> Thái Nguyên</option>
-
-                <option value="83TTT"> Bến Tre</option>
-
-                <option value="54TTT"> Phú Yên</option>
-
-                <option value="26TTT"> Vĩnh Phúc</option>
-
-                <option value="94TTT"> Sóc Trăng</option>
-
-                <option value="60TTT"> Bình Thuận</option>
-
-                <option value="51TTT"> Quảng Ngãi</option>
-
-                <option value="64TTT"> Gia Lai</option>
-
-                <option value="77TTT"> Bà Rịa - Vũng Tàu</option>
-
-                <option value="79TTT">Thành phố Hồ Chí Minh</option>
-
-                <option value="02TTT"> Hà Giang</option>
-
-                <option value="68TTT"> Lâm Đồng</option>
-
-                <option value="35TTT"> Hà Nam</option>
-
-                <option value="48TTT">Thành phố Đà Nẵng</option>
-
-                <option value="70TTT"> Bình Phước</option>
-
-                <option value="49TTT"> Quảng Nam</option>
-
-                <option value="38TTT"> Thanh Hóa</option>
-
-                <option value="84TTT"> Trà Vinh</option>
-
-                <option value="11TTT"> Điện Biên</option>
-
-                <option value="27TTT"> Bắc Ninh</option>
-
-                <option value="30TTT"> Hải Dương</option>
-
-                <option value="46TTT"> Thừa Thiên Huế</option>
-
-                <option value="67TTT"> Đắk Nông</option>
-
-                <option value="44TTT"> Quảng Bình</option>
-
-                <option value="22TTT"> Quảng Ninh</option>
-
-                <option value="33TTT"> Hưng Yên</option>
-
-                <option value="96TTT"> Cà Mau</option>
-
-                <option value="10TTT"> Lào Cai</option>
-
-                <option value="56TTT"> Khánh Hòa</option>
-
-                <option value="40TTT"> Nghệ An</option>
-
-                <option value="12TTT"> Lai Châu</option>
-
-                <option value="72TTT"> Tây Ninh</option>
-
-                <option value="86TTT"> Vĩnh Long</option>
-
-                <option value="24TTT"> Bắc Giang</option>
-
-                <option value="04TTT"> Cao Bằng</option>
-
-                <option value="15TTT"> Yên Bái</option>
-
-                <option value="52TTT"> Bình Định</option>
-
-                <option value="01TTT">Thành phố Hà Nội</option>
-
-                <option value="06TTT"> Bắc Kạn</option>
-
+                <c:forEach items="${sessionScope.provinces}" var="province">
+                    <option value="${province.name}">${province.name}</option>
+                </c:forEach>
             </select>
-            <input type="email" placeholder="Tên tài khoản / Email">
-            <input type="password" placeholder="Mật khẩu">
-            <input type="password" placeholder="Xác nhận mật khẩu">
+            <input type="email" name="email" id="email-signup" placeholder="Tên tài khoản / Email">
+            <input type="password" name="password" id="pasword-signup" placeholder="Mật khẩu">
+            <input type="password" name="verifypassword" id="verifypassword-sigup" placeholder="Xác nhận mật khẩu">
+            <input type="text" name="verifypassword" id="phone-sigup" placeholder="Số điện thoại">
             <p id="error-message-signup" style="color: red;"></p>
-            <button>Đăng kí</button>
+            <button type="button" id="sign-up-button">Đăng kí</button>
         </form>
     </div>
     <div class="form-container forgot-password">
         <div class="arrow-container">
-            <a class="icon-arrow" href="home.jsp"><i
+            <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
                     class="fa-solid fa-arrow-left"></i></a>
         </div>
-        <form>
-            <form>
-                <h1>Quên mật khẩu</h1>
-                <span>Nhập email để đặt lại mật khẩu</span>
-                <input id="email-forgot" type="email" placeholder="Email">
-                <a id="showSignInForm" href="#">Đăng nhập ?</a>
-                <p id="error-message-forgot" style="color: red; display: none"></p>
-                <button id="request-button">Gửi yêu cầu đặt lại mật khẩu</button>
-            </form>
+        <form id="forget-password">
+            <h1>Quên mật khẩu</h1>
+            <span>Nhập email để đặt lại mật khẩu</span>
+            <input id="email-forgot" name="email-forgot" type="email" placeholder="Email">
+            <a id="showSignInForm" href="#">Đăng nhập ?</a>
+            <p id="error-message-forgot" style="color: red; display: none"></p>
+            <button type="button" id="request-button">Gửi yêu cầu đặt lại mật khẩu</button>
         </form>
     </div>
     <div class="form-container sign-in">
         <div class="arrow-container">
-            <a class="icon-arrow" href="home.jsp"><i
+            <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
                     class="fa-solid fa-arrow-left"></i></a>
         </div>
-        <form>
+        <form action="/login" method="post" id="sign-in">
+            <input type="hidden" name="action" value="login"/>
             <h1>Đăng Nhập</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
             </div>
             <span>Đã có tài khoản</span>
-            <input type="email" placeholder="Email" id="email-signin">
-            <input type="password" placeholder="Mật khẩu" id="password-signin">
+            <input name="email" type="email" placeholder="Email" id="email-signin">
+            <input name=password type="password" placeholder="Mật khẩu" id="password-signin">
             <a id="showForgotPassword" href="#">Quên mật khẩu?</a>
             <p id="error-message-signin" style="color: red; display: none"></p>
-            <button id="login-button">Đăng Nhập</button>
+            <button id="login-button" type="submit" >Đăng Nhập</button>
         </form>
     </div>
     <div class="toggle-container">
         <div class="toggle">
             <div class="toggle-panel toggle-left">
                 <div class="arrow-container">
-                    <a class="icon-arrow" href="home.jsp"><i
+                    <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
                             class="fa-solid fa-arrow-left"></i></a>
                 </div>
                 <h1>Chào mừng quay trở lại!</h1>
@@ -226,6 +103,101 @@
         </div>
     </div>
 </div>
-<script src="<c:url value="/template/js/login.js"/>"></script>
+
+<%@include file="/layout/public/script.jsp"%>
+<script src="<c:url value="/template/js/login.js"/> "></script>
+<script>
+    if (${error!=null}) {
+       alert('${error}')
+    }
+</script>
+<script>
+    $('#request-button').click(function () {
+        let data = {
+            email: $('#email-forgot').val()
+        }
+        $.ajax({
+            url: '/api/reset-password',
+            type: 'POST',
+            data: data,
+            // contentType: 'application/json',
+            success: function (result) {
+                console.log("success")
+                console.log(result);
+                // if (result == 'success') {
+                //     window.location.href = '/RealEstateWeb_war_exploded/home';
+                // } else {
+                //     $('#error-message-signin').text(result);
+                //     $('#error-message-signin').css('display', 'block');
+            },
+            error: function (error) {
+                console.log("error")
+                console.log(error);
+            }
+        })
+    })
+</script>
+<script>
+    $('#sign-up-button').click(function () {
+        let data = {
+            fullname: $('#fullname').val(),
+            birthday: $('#birthday').val(),
+            isMale: $('#isMale').is(':checked'),
+            isFemale: $('#isFemale').is(':checked'),
+            province: $('#mdb-select').val(),
+            phone: $('#phone-sigup').val(),
+            email: $('#email-signup').val(),
+            password: $('#pasword-signup').val(),
+            verifypassword: $('#verifypassword-sigup').val()
+        }
+        $.ajax({
+            url: '/api/register',
+            type: 'POST',
+            data: data,
+            // contentType: 'application/json',
+            success: function (result) {
+                console.log("success")
+                console.log(result);
+                // if (result == 'success') {
+                //     window.location.href = '/RealEstateWeb_war_exploded/home';
+                // } else {
+                //     $('#error-message-signin').text(result);
+                //     $('#error-message-signin').css('display', 'block');
+            },
+            error: function (error) {
+                console.log("error")
+                console.log(error);
+            }
+        })
+    })
+</script>
+<%--<script>--%>
+<%--    $('#login-button').click(function () {--%>
+<%--        let data = {--%>
+<%--            email: $('#email-signin').val(),--%>
+<%--            password: $('#password-signin').val()--%>
+<%--        }--%>
+<%--        $.ajax({--%>
+<%--            url: '/api/login',--%>
+<%--            type: 'POST',--%>
+<%--            data: data,--%>
+<%--            // contentType: 'application/json',--%>
+<%--            success: function (result) {--%>
+<%--                console.log("success")--%>
+<%--                console.log(result);--%>
+<%--                // if (result == 'success') {--%>
+<%--                //     window.location.href = '/RealEstateWeb_war_exploded/home';--%>
+<%--                // } else {--%>
+<%--                //     $('#error-message-signin').text(result);--%>
+<%--                //     $('#error-message-signin').css('display', 'block');--%>
+<%--            },--%>
+<%--            error: function (error) {--%>
+<%--                console.log("error")--%>
+<%--                console.log(error);--%>
+<%--            }--%>
+<%--        })--%>
+<%--    })--%>
+<%--</script>--%>
+
 </body>
 </html>

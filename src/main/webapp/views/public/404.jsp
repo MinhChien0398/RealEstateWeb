@@ -13,41 +13,7 @@
 
 </head>
 <body>
-<%--<style>--%>
-<%--    body #page-error {--%>
-<%--        /*background-image: url("/template/img/realestate-error-page.png");*/--%>
-<%--        display: flex;--%>
-<%--        justify-content: space-around;--%>
-<%--        height: 541px;--%>
-<%--        background-color: #90a4ae;--%>
-<%--    }--%>
-
-
-<%--</style>--%>
-<%@include file="/layout/public/header.jsp" %>
-<!--start content-->
 <div class="container">
-<%--    <!--        breadcrumb -->--%>
-<%--    <div id="section-1" class="bc-icons-2">--%>
-<%--        <nav aria-label="breadcrumb">--%>
-<%--            <ol class="breadcrumb bg-white small">--%>
-<%--                <li class="breadcrumb-item">--%>
-<%--                    <a class="black-text breadcrumb-size" href="/">--%>
-<%--                        <i class="fa-solid fa-house"></i>--%>
-<%--                    </a>--%>
-<%--                </li>--%>
-<%--                <li>--%>
-<%--                    <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>--%>
-<%--                </li>--%>
-<%--                &lt;%&ndash;                <li class="breadcrumb-item active breadcrumb-size">&ndash;%&gt;--%>
-<%--                &lt;%&ndash;                    <a class="black-text text-uppercase font-weight-bolder" href="#">GIỚI THIỆU CHUNG</a>&ndash;%&gt;--%>
-<%--                &lt;%&ndash;                </li>&ndash;%&gt;--%>
-<%--            </ol>--%>
-<%--        </nav>--%>
-<%--    </div>--%>
-
-
-<%--    <!--    end breadcrumb-->--%>
     <div id="page-error" class="flex-row mt-5" style="display: flex; justify-content: space-evenly">
         <div>
             <h1 style="font-size: 50px">404!</h1>
@@ -62,10 +28,6 @@
 
     </div>
 </div>
-
-<!--end content-->
-<%@include file="/layout/public/footer.jsp" %>
 <%@include file="/layout/public/script.jsp" %>
-<script src="<c:url value="/template/js/main.js"/>"></script>
 </body>
 </html>

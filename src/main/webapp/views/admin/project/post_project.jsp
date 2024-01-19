@@ -110,7 +110,7 @@
                     </li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
                     <div class="col-12 d-flex align-items-center p-0">
                         <h3 class="font-weight-bold main-color m-0">QL BÀI VIẾT DỰ ÁN</h3>
@@ -129,63 +129,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>PHỐI CẢNH AN NHIÊN</td>
-                        <td>10</td>
-                        <td>110</td>
-                        <td>17/09/2023</td>
-                        <td>
-                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>NHÀ ANH HƯNG GÒ VẤP</td>
-                        <td>20</td>
-                        <td>220</td>
-                        <td>14/02/2023</td>
-                        <td>
-                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>BIỆT THỰ CHÂU ÂU</td>
-                        <td>15</td>
-                        <td>80</td>
-                        <td>29/06/2021</td>
-
-                        <td>
-                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>PHONG CÁCH GẦN GŨI VỚI THIÊN NHIÊN</td>
-                        <td>25</td>
-                        <td>80</td>
-                        <td>30/06/2022</td>
-
-                        <td>
-                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>NHÀ PHỐ HIỆN ĐẠI</td>
-                        <td>15</td>
-                        <td>90</td>
-                        <td>10/10/2022</td>
-                        <td>
-                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>NHÀ PHỐ HIỆN ĐẠI</td>
-                        <td>30</td>
-                        <td>50</td>
-                        <td>15/10/2022</td>
-                        <td>
-                            <a href="admin-updateProjectPost.html"><i class="icon-action fa-solid fa-edit"></i></a>
-                    </tr>
-
+                    <c:forEach items="${projects}" var="project" varStatus="s" begin="0" step="1">
+                        <tr>
+                            <td>${s.index}</td>
+                            <td>${project.title}</td>
+                            <td>${project.numSave}</td>
+                            <td>${project.numVisit}</td>
+                            <td>${project.updatedAt}</td>
+                            <td>
+<%--                                <a href="/admin/project_additional_and_edit?action=edit&id=${project.id}"><i class="icon-action fa-solid fa-edit"></i></a>--%>
+                                <a href="/admin/post_project?action=edit&id=${project.id}"><i class="icon-action fa-solid fa-edit"></i></a>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
 
                 </table>
