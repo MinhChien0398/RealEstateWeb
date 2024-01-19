@@ -109,11 +109,11 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.html">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Thêm dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm dự án</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">

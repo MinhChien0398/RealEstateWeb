@@ -103,14 +103,14 @@
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="../dashboard.jsp">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="project_manage.jsp">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="project_manage.jsp">QL Bài viết dự
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/post_project">QL Bài viết dự
                         án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="add_project.jsp">Chỉnh sửa bài viết dự
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa bài viết dự
                         án</a></li>
                 </ol>
             </nav>

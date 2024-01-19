@@ -97,12 +97,12 @@
         <div class="container p-0">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
                     <li class="breadcrumb-item">
-                        <a class="black-text" href="#">QL slide</a>
+                        <a class="black-text" href="/admin/slide">QL slide</a>
                     </li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>

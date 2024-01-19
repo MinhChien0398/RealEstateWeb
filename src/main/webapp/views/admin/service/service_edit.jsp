@@ -107,11 +107,11 @@
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text"
-                                                   href="../dashboard.jsp">Thống
+                                                   href="/admin/dashboard">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text"
-                                                   href="post_service.jsp">QL
+                                                   href="/admin/service">QL
                         Dịch vụ</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa dịch vụ</a></li>

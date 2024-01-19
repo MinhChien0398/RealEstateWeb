@@ -97,11 +97,11 @@
         <div class="container p-0">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="../dashboard.jsp">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
-                    <li class="breadcrumb-item"><a class="black-text" href="#">QL dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL dự án</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
