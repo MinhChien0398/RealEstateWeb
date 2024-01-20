@@ -25,29 +25,18 @@ public class Project implements Serializable {
     private int categoryId;
     private int numSave;
     private int numVisit;
+    private boolean isSave;
+    private int saveBy;
 
     @Override
     public String toString() {
         return "Project{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", avatar='" + avatar + '\'' +
-                ", price=" + price +
-                ", acreage=" + acreage +
-                ", status=" + status +
-                ", postId=" + postId +
-                ", isAccepted=" + isAccepted +
-                ", createdAt='" + createdAt + '\'' +
-                ", updatedAt='" + updatedAt + '\'' +
-                ", schedule='" + schedule + '\'' +
-                ", estimated_complete='" + estimated_complete + '\'' +
-                ", province='" + province + '\'' +
-                ", category='" + category + '\'' +
-                ", provinceId=" + provinceId +
-                ", categoryId=" + categoryId +
                 ", numSave=" + numSave +
                 ", numVisit=" + numVisit +
+                ", isSave=" + isSave +
+                ", saveBy=" + saveBy +
                 '}';
     }
 
@@ -56,12 +45,12 @@ public class Project implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Project project = (Project) o;
-        return id == project.id && price == project.price && Double.compare(acreage, project.acreage) == 0 && status == project.status && postId == project.postId && isAccepted == project.isAccepted && provinceId == project.provinceId && categoryId == project.categoryId && numSave == project.numSave && numVisit == project.numVisit && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(avatar, project.avatar) && Objects.equals(createdAt, project.createdAt) && Objects.equals(updatedAt, project.updatedAt) && Objects.equals(schedule, project.schedule) && Objects.equals(estimated_complete, project.estimated_complete) && Objects.equals(province, project.province) && Objects.equals(category, project.category);
+        return id == project.id && price == project.price && Double.compare(acreage, project.acreage) == 0 && status == project.status && postId == project.postId && isAccepted == project.isAccepted && provinceId == project.provinceId && categoryId == project.categoryId && numSave == project.numSave && numVisit == project.numVisit && isSave == project.isSave && saveBy == project.saveBy && Objects.equals(title, project.title) && Objects.equals(description, project.description) && Objects.equals(avatar, project.avatar) && Objects.equals(createdAt, project.createdAt) && Objects.equals(updatedAt, project.updatedAt) && Objects.equals(schedule, project.schedule) && Objects.equals(estimated_complete, project.estimated_complete) && Objects.equals(province, project.province) && Objects.equals(category, project.category);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, description, avatar, price, acreage, status, postId, isAccepted, createdAt, updatedAt, schedule, estimated_complete, province, category, provinceId, categoryId, numSave, numVisit);
+        return Objects.hash(id, title, description, avatar, price, acreage, status, postId, isAccepted, createdAt, updatedAt, schedule, estimated_complete, province, category, provinceId, categoryId, numSave, numVisit, isSave, saveBy);
     }
 
     public int getId() {
@@ -216,10 +205,26 @@ public class Project implements Serializable {
         this.numVisit = numVisit;
     }
 
+    public boolean isSave() {
+        return isSave;
+    }
+
+    public void setSave(boolean save) {
+        isSave = save;
+    }
+
+    public int getSaveBy() {
+        return saveBy;
+    }
+
+    public void setSaveBy(int saveBy) {
+        this.saveBy = saveBy;
+    }
+
     public Project() {
     }
 
-    public Project(int id, String title, String description, String avatar, long price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, String estimated_complete, String province, String category, int provinceId, int categoryId, int numSave, int numVisit) {
+    public Project(int id, String title, String description, String avatar, long price, double acreage, int status, int postId, int isAccepted, String createdAt, String updatedAt, String schedule, String estimated_complete, String province, String category, int provinceId, int categoryId, int numSave, int numVisit, boolean isSave, int saveBy) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -239,5 +244,7 @@ public class Project implements Serializable {
         this.categoryId = categoryId;
         this.numSave = numSave;
         this.numVisit = numVisit;
+        this.isSave = isSave;
+        this.saveBy = saveBy;
     }
 }

@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-@WebServlet(urlPatterns = {"/login","/logout"})
+@WebServlet(urlPatterns = {"/login", "/logout"})
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -44,7 +44,7 @@ public class LoginController extends HttpServlet {
             System.out.println(password);
             System.out.println(StringUtil.hashPassword(password));
             User user = UserService.getInstance().login(email, password);
-            System.out.println(user!=null);
+            System.out.println(user != null);
             if (user != null && Objects.equals(user.getEmail(), email) && Objects.equals(user.getPassword(), StringUtil.hashPassword(password))) {
                 if (user.getStatus() == 2) {
                     req.setAttribute("error", "Tài khoản của bạn đã bị khóa");

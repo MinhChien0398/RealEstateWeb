@@ -2,7 +2,9 @@ package com.nhom44.api.user;
 
 import com.google.gson.Gson;
 import com.nhom44.bean.Project;
+import com.nhom44.bean.User;
 import com.nhom44.services.ProjectService;
+import com.nhom44.services.UserService;
 import com.nhom44.util.PriceObjectHelper;
 import com.nhom44.util.SearcherProjectUtil;
 import com.nhom44.validator.NumberVallidator;
@@ -17,7 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/api/project/search","/api/project/search/length"})
+@WebServlet(urlPatterns = {"/api/project/search", "/api/project/search/length"})
 public class ProjectController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,7 +33,7 @@ public class ProjectController extends HttpServlet {
         req.setAttribute("prices", prices);
         if (url.equals("/api/project")) {
 //            List<Project> projects = ProjectService.getInstance().getProjetAllActive();
-        } else if (url.equals("/api/project/search")||url.equals("/api/project/search/length")) {
+        } else if (url.equals("/api/project/search") || url.equals("/api/project/search/length")) {
             SingleValidator validator = new NumberVallidator();
             HttpSession session = req.getSession();
             int categoryId = validator.validator(req.getParameter("categoryId")) ? Integer.parseInt(req.getParameter("categoryId")) : 0;
@@ -70,20 +72,22 @@ public class ProjectController extends HttpServlet {
             System.out.println("maxPrice " + maxPrice);
             System.out.println("minAcreage " + minArea);
             System.out.println("maxAcreage " + maxArea);
-            if(url.equals("/api/project/search")){
-            List<Project> projects = ProjectService.getInstance().getProjetAllActive(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minArea, maxArea);
-            for (Project project : projects) {
-                System.out.println(project.toString());
-            }
-                System.out.println(new Gson().toJson(projects));
+            if (url.equals("/api/project/search")) {
+                User user = (User) req.getSession().getAttribute("auth");
+                int userid = user != null ? user.getId() : 0;
+                List<Project> projects = ProjectService.getInstance().getProjetAllActive(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minArea, maxArea, userid);
+//                for (Project project : projects) {
+//                    System.out.println(project.toString());
+//                }
+//                System.out.println(new Gson().toJson(projects));
                 resp.setStatus(200);
                 resp.getWriter().print(new Gson().toJson(projects));
-            } else if (url.equals("/api/project/search/length")){
+            } else if (url.equals("/api/project/search/length")) {
                 int size = ProjectService.getInstance().getProjetAllActiveSize(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minArea, maxArea);
-                System.out.println("size="+size);
-                System.out.println(size/16);
-                                resp.setStatus(200);
-                resp.getWriter().print(new Gson().toJson(size%16>0?size/16+1:size/16));
+                System.out.println("size=" + size);
+                System.out.println(size / 16);
+                resp.setStatus(200);
+                resp.getWriter().print(new Gson().toJson(size % 16 > 0 ? size / 16 + 1 : size / 16));
             }
             System.out.println(categoryId + " " + provinceId + " " + price + " " + area + " " + serviceId);
             resp.getWriter().flush();
