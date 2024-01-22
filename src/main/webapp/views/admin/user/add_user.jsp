@@ -109,7 +109,7 @@
                                                    href="/admin/dashboard">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management">QL người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL người dùng</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
                 </ol>
