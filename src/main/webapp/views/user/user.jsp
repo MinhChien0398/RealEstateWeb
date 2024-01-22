@@ -168,7 +168,7 @@
                                         <!-- Grid row -->
                                         <div class="img-avatar flex-center">
                                             <a class="img-avatar-edit">
-                                                <img src="template\img\cong-trinh-1-tret-2-lau-thu-duc-dep-2-450x600.jpg"
+                                                <img src="../../../../RealEstateWeb/public/img/Avatar/user.png"
                                                      class="rounded-circle"
                                                      alt="User's Profile Picture">
                                                 <div class="edit-icon">
