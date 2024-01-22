@@ -103,7 +103,7 @@
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
-                    <li class="breadcrumb-item main-color"><a class="black-text" href="#">QL liên hệ</a></li>
+                    <li class="breadcrumb-item main-color"><a class="main-color" href="#">QL Liên hệ</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">

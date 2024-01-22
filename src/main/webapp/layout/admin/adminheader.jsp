@@ -18,7 +18,9 @@
 <div class="sidebar">
     <div class="sidebar-menu">
         <center class="logo">
-            <img src="/template/img/logo/logo.png" alt="logo" style="">
+            <a href="/home">
+                <img src="/template/img/logo/logo.png" alt="logo" style="">
+            </a>
         </center>
         <li class="sidebar-item">
             <a href="/admin/dashboard" class="menu-btn">
@@ -55,8 +57,9 @@
             <div class="menu-btn">
                 <a href="/admin/service">
                     <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
-                </a><i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
+                </a>
+                <i class="m-0 fas fa-chevron-circle-down drop-down"></i>
+            </div>
             <div class="sub-menu d-none">
                 <a href="/admin/post_service" class="menu-btn">
                     <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
@@ -64,18 +67,26 @@
             </div>
         </li>
 
-
-        </li>
-
         <li class="sidebar-item" id="contact">
-            <a href="/admin/contact" class="menu-btn">
-                <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
-            </a>
+            <div class="menu-btn">
+                <a href="/admin/contact">
+                    <i class="fa-solid fa-newspaper"></i><span>QL Liên hệ</span>
+                </a>
+                <i class="m-0 fas fa-chevron-circle-down drop-down"></i>
+            </div>
+            <div class="sub-menu d-none">
+                <a href="/admin/order" class="menu-btn">
+                    <i class="fa-solid fa-toolbox"></i> <span>QL Liên hệ bài viết</span>
+                </a>
+            </div>
         </li>
+
+
         <li class="sidebar-item" id="slide">
             <a href="/admin/slide" class="menu-btn">
-                <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
+                <i class="fa-regular fa-clone"></i><span>QL Slide</span></span>
             </a>
         </li>
     </div>
 </div>
+
