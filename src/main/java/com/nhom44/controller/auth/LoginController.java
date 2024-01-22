@@ -25,10 +25,17 @@ import java.util.UUID;
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        String action = req.getParameter("action");
         List<Province> provinces = ProvinceService.getInstance().getAll();
         HttpSession session = req.getSession();
         if (session.getAttribute("provinces") == null) {
             session.setAttribute("provinces", provinces);
+        }
+        if (action != null && action.equals("logout")) {
+            req.getSession().setAttribute("auth",null);
+            resp.sendRedirect(req.getContextPath() + "/login");
+            return;
         }
         req.getRequestDispatcher("/views/public/login.jsp").forward(req, resp);
     }
@@ -75,11 +82,6 @@ public class LoginController extends HttpServlet {
             System.out.println("Sai thông tin đăng nhập hoặc mật khẩu");
             req.getRequestDispatcher("/views/public/login.jsp").forward(req, resp);
 //            resp.sendRedirect(req.getContextPath() + "/login");
-            return;
-        } else if (action != null && action.equals("logout")) {
-            req.getSession().removeAttribute("email");
-            req.getSession().removeAttribute("username");
-            resp.sendRedirect(req.getContextPath() + "/login");
             return;
         }
         req.getRequestDispatcher("/views/login.jsp").forward(req, resp);

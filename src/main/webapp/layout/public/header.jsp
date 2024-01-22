@@ -1,4 +1,4 @@
-<%@include file="/layout/common.jsp"%>
+<%@include file="/layout/common.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-property ">
     <div class="container">
@@ -13,53 +13,75 @@
                 aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse border-left row  align-items-center" id="navbarSupportedContent-555">
-            <ul class="navbar-nav  col-9 border-right">
-                <li class="nav-item nav-menuItem font-weight-bolder " id="nav-menuItem-active">
-                    <a class="nav-link" href="#">Trang Chủ
+        <div class="collapse navbar-collapse border-left row align-items-center" id="navbarSupportedContent-555">
+            <ul class="navbar-nav col-9 border-right">
+                <li class="nav-item nav-menuItem font-weight-bolder"
+                    id="<c:if test="${page=='home'}">nav-menuItem-active</c:if>">
+                    <a class="nav-link" href="/home">Trang Chủ
                     </a>
                 </li>
-                <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link " href="#">Giới Thiệu</a>
+                <li class="nav-item nav-menuItem font-weight-bolder"
+                    id="<c:if test="${page=='intro'}">nav-menuItem-active</c:if>">
+                    <a class="nav-link" href="/intro">Giới Thiệu</a>
                 </li>
                 <li class="nav-item nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
-                >
+                    id="<c:if test="${page=='service'}">nav-menuItem-active</c:if>">
                     <a class="nav-link justify-content-center text-center"
-                       href="#"
+                       href="/service"
                        role="link"
                     >Dịch vụ
                     </a>
-                    <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+                    <i class="fa-solid fa-angle-down position-absolute " style="color: #000000;"></i>
                     <div class="dropdown-menu mt-1 w-100">
-                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Trọn Gói</a>
-                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Thô</a>
-                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Biệt Thự</a>
-                        <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Trọn
+                            Gói</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Thô</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Biệt Thự</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Xưởng</a>
                     </div>
                 </li>
                 <li class=" nav-item
-                nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
-                >
-                <a class="nav-link justify-content-center text-center"
-                   href="#"
-                   role="link"
-                >Dự án
-                </a>
-                <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
+    nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
+                    id="<c:if test="${page=='project'}">nav-menuItem-active</c:if>">
+                    <a class="nav-link justify-content-center text-center"
+                       href="/project"
+                       role="link"
 
-                <div class="dropdown-menu mt-1 w-100">
-                    <a class="dropdown-item text-center" style="font-size: 16px" href="#">Biệt Thự</a>
-                    <a class="dropdown-item text-center" style="font-size: 16px" href="#">Nhà Phố</a>
-                    <a class="dropdown-item text-center" style="font-size: 16px" href="#">Văn Phòng</a>
-                </div>
-                </li>
-                <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="contact.jsp">Liên Hệ</a>
-                </li>
-                <li class="nav-item nav-menuItem font-weight-bolder">
-                    <a class="nav-link" href="login.jsp">Đăng nhập</a>
+                    >Dự án
+                    </a>
+                    <i class="fa-solid fa-angle-down position-absolute " style="color: #000000;"></i>
 
+                    <div class="dropdown-menu mt-1 w-100">
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Biệt Thự</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Nhà Phố</a>
+                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Văn Phòng</a>
+                    </div>
                 </li>
+                <li class="nav-item nav-menuItem font-weight-bolder"
+                    id="<c:if test="${page=='contact'}">nav-menuItem-active</c:if>">
+                    <a class="nav-link"
+                       href="/contact">Liên Hệ</a>
+                </li>
+                <c:choose>
+                    <c:when test="${sessionScope.get('auth') == null}">
+                        <li class="nav-item nav-menuItem font-weight-bolder">
+                            <a class="nav-link" href="/login">Đăng nhập</a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li class="nav-item position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center">
+                            <a class="nav-link justify-content-center text-center"
+                               href="/views/User/user.jsp"
+                               role="link"
+                            >Tài khoản
+                            </a>
+                            <div class="dropdown-menu mt-1 w-100">
+                                <a class="dropdown-item text-center" style="font-size: 16px" href="/logout?action=logout">Đăng
+                                    xuất</a>
+                            </div>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
             <!--icon font ring-->
             <div class="phone-contain flex-center justify-content-center col-3">

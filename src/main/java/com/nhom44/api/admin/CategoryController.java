@@ -98,6 +98,7 @@ public class CategoryController extends HttpServlet {
             printWriter.close();
             return;
         }
+        resp.setStatus(200);
         responseModel = new ResponseModel();
         responseModel.setName("success");
         responseModel.setMessage("Thêm thành công");

@@ -24,104 +24,29 @@
         }
 
     </style>
-    <title>Thêm dự án</title>
+    <title>Chi tiết đơn đặt hàng</title>
 </head>
 <body>
 
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="dashboard.html" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="admin-userManage.html" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-building"> </i>--%>
-<%--                    <a href="admin-projectsManage.html">--%>
-<%--                        <span>QL Dự án</span>--%>
-<%--                    </a> <i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="admin-TypeOfProject.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="admin-PostProject.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="admin-ProjectSchedule.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="servicesManager.html">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="servicePostsManage.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="admin-contactManagement.html" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="admin-slideManagement.html" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
+    <%@include file="/layout/admin/adminheader.jsp" %>
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/order">QL Liên hệ</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Chi tiết đơn đặt hàng</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">
-                <form action="api/project?action=add" enctype="multipart/form-data" method="post" id="add-project">
+                <form action="#" enctype="multipart/form-data" method="post" id="add-project">
                     <div class="border-bottom pb-3 mb-3 ml-1 mr-1 d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Thêm Dự án</h3>
+                            <h3 class="font-weight-bold main-color m-0">Chi tiết đơn đặt hàng</h3>
                         </div>
                         <div class="d-flex">
                             <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
@@ -165,37 +90,7 @@
                                                                    name="email" placeholder="Email chủ đầu tư"
                                                                    value="">
                                                         </div>
-                                                        <div class="mb-4">
-                                                            <label for="title" class="labels">Tiêu đề</label>
-                                                            <input id="title" type="text" class="form-control"
-                                                                   name="title" placeholder="Tiêu đề" value="">
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <label for="category" class="labels">Loại dự án</label>
-                                                            <select name="category" id="category" name="category"
-                                                                    class="form-control">
-                                                                <option value="" selected>Loại dự án</option>
-                                                                <c:forEach var="item" items="${categories}">
-                                                                    <option value="${item.id}"><span
-                                                                            class="text-uppercase">${item.name}</span>
-                                                                    </option>
-                                                                </c:forEach>
 
-                                                            </select>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-6 mb-4">
-                                                                <label for="price" class="labels">Kinh phí</label>
-                                                                <input id="price" type="number" name="price"
-                                                                       class="form-control"
-                                                                       placeholder="Kinh phí" value="">
-                                                            </div>
-                                                            <div class="col-6 mb-4">
-                                                                <label for="acreage" class="labels">Diện tích</label>
-                                                                <input id="acreage" type="number" class="form-control"
-                                                                       placeholder="Diện tích" name="acreage" value="">
-                                                            </div>
-                                                        </div>
                                                         <div class="mb-4">
                                                             <label for="province" class="labels">Địa chỉ</label>
                                                             <select name="province" id="province"
@@ -209,89 +104,68 @@
 
                                                             </select>
                                                         </div>
-                                                        <div class="mb-4">
-                                                            <div class="form-group green-border-focus">
-                                                                <label for="description">Mô tả</label>
-                                                                <textarea class="form-control"
-                                                                          id="description"
-                                                                          name="description"
-                                                                          rows="3" placeholder="Mô tả dự án"></textarea>
+
+
+                                                        <div class="row d-flex justify-content-between m-0 p-0 ">
+                                                            <!--                <div class=" col-lg-5 col-md-5 col-sm-12 mb-3  p-0">-->
+                                                            <select name="category" id="category"
+                                                                    class="form-control col-lg-6 col-md-6 col-sm-12 m-0 mt-2 p-0  p-1">
+                                                                <option value="" disabled="" selected="">Loại dự án
+                                                                </option>
+
+                                                                <option value="92TTT">Nhà Phố</option>
+
+                                                                <option value="92TTT">Biệt thự</option>
+                                                            </select>
+                                                            <!--                                </div>-->
+                                                            <div class="form-outline col-lg-6 col-md-6 col-sm-12  mt-2 p-0 m-0 ">
+                                                                <input name="idProject" type="number" id="itProject"
+                                                                       placeholder="Mã dự án"
+                                                                       class="form-control ml-md-2 p-1">
                                                             </div>
                                                         </div>
-                                                        <div class="mb-4">
-                                                            <label class="mdb-main-label">Dịch vụ</label>
-                                                            <select class="mdb-select md-form" id="service"
-                                                                    name="service[]"
+
+                                                        <div class="row  d-flex justify-content-between m-0 p-0">
+                                                            <div class="form-outline col-lg-6  col-md-6 col-sm-12 p-0 m-0">
+                                                                <label for="area-width" style="font-size: 13px"
+                                                                       class="">
+                                                                    Chiều rộng(<span
+                                                                        class="position-relative m-1">m<span
+                                                                        class="position-absolute top right "
+                                                                        style="font-size: 10px;">2</span></span>
+                                                                    )</label>
+                                                                <input name="width" type="number" id="area-width"
+                                                                       class="form-control mr-2 p-1">
+                                                            </div>
+                                                            <div class="form-outline col-lg-6 col-md-6 col-sm-12 p-0 m-0 ">
+                                                                <label for="area-length" class="ml-md-2"
+                                                                       style="font-size: 13px">
+                                                                    Chiều dài(<span class="position-relative m-1">m<span
+                                                                        class="position-absolute top right "
+                                                                        style="font-size: 10px;">2</span></span>
+                                                                    )</label>
+                                                                <input name="height" type="number" id="area-length"
+                                                                       class="form-control ml-md-2 p-1">
+                                                            </div>
+                                                        </div>
+                                                        <div class="">
+                                                            <label class="mdb-main-label" style="font-size: 13px">Dịch
+                                                                vụ</label>
+                                                            <select name="services" class="mdb-select md-form "
                                                                     multiple>
-                                                                <c:forEach var="item" items="${services}">
-                                                                    <option value="${item.id}" <c:if test="${item.id==1}"> selected </c:if><span
-                                                                            class="text-uppercase">${item.name}</span>
-                                                                    </option>
-                                                                </c:forEach>
+                                                                <option value="1">Xây dựng phần thô</option>
+                                                                <option value="2">Xây nhà trọn gói</option>
+                                                                <option value="3" selected>Thiết kế nội thất</option>
+                                                                <option value="4">Sữa chữa</option>
                                                             </select>
                                                         </div>
-                                                        <div class="mb-4 ">
-                                                            <div class="d-flex">
-                                                                <label>Tiến độ dự án:</label>
-                                                                <div class="form-check">
-                                                                    <input type="checkbox"
-                                                                           name="isComplete" onclick="conpleteProject()"
-                                                                           class="form-check-input"
-                                                                           id="isComplete">
-                                                                    <label class="form-check-label"
-                                                                           for="isComplete">Hoàn thành</label>
-                                                                </div>
-                                                            </div>
-                                                            <div id="projectProgressText">
-                                                                <input type="text" class="form-control  mb-3"
-                                                                       placeholder="Tiến độ dự án" id="schedule"
-                                                                       name="schedule" value="">
-                                                                <div id="date-picker-example"
-                                                                     class="md-form md-outline
-                                                                     input-with-post-icon datepicker"
-                                                                     style="outline: none " inline="true">
-                                                                    <input placeholder="Dự kiến ngày hoàng thành"
-                                                                           type="text" id="estimated_complete"
-                                                                           name="estimated_complete"
-                                                                           class="form-control">
-                                                                    <i class="fas fa-calendar input-prefix"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="mb-4">
-                                                            <div class="d-flex">
-                                                                <label for="status" class="labels">Trạng thái: </label>
-                                                                <div class="form-check">
-                                                                    <input type="checkbox"
-                                                                           name="isAccepted"
-                                                                           onclick="userAccepted()"
-                                                                           class="form-check-input" id="isAccepted">
-                                                                    <label class="form-check-label"
-                                                                           for="isAccepted">Người dùng chấp nhận đăng
-                                                                        bài</label>
-                                                                </div>
-                                                            </div>
-                                                            <select id="status" name="status" class="custom-select">
-                                                                <option value="1">Đăng bài</option>
-                                                                <option value="0" selected>Ẩn</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="mb-4">
-                                                            <div class="input-group mt-2 d-flex align-items-center">
-                                                                <label>Chọn hình đại diện</label>
-                                                                <div class="file-field d-flex align-items-center">
-                                                                    <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
-                                                                        <span>chọn ảnh</span>
-                                                                        <input type="file" name="avatar"
-                                                                               id="avatar"
-                                                                               accept="image/*">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="upload-wrapper d-none avatar">
-                                                                <div class="border d-flex img-container">
+                                                        <div class="input-group mt-2">
+                                                            <div class="file-field d-flex align-items-center">
+                                                                <p class="m-0">khu vực thi công: </p>
+                                                                <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                                    <span>chọn ảnh</span>
+                                                                    <input name="image" type="file" id="file_input"
+                                                                           multiple="">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -299,51 +173,54 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- Card content -->
                                     </div>
-                                    <!-- Card -->
                                 </div>
+                                <!-- Card content -->
                             </div>
+                            <!-- Card -->
                         </div>
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
-                             aria-labelledby="pills-profile-tab">
-                            <div class="edit-profile flex-center">
-                                <div class="col-md-12 mb-12">
-                                    <div class="card card-cascade cascading-admin-card user-card">
-                                        <div class="card-body card-body-cascade">
-                                            <div class=" col-12 mb-4">
-                                                <div class="input-group mt-2 d-flex align-items-center">
-                                                    <label>Hình ảnh mô tả dự án</label>
-                                                    <div class="file-field d-flex align-items-center">
-                                                        <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
-                                                            <span>chọn ảnh</span>
-                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="upload-wrapper d-none avatar">
-                                                    <div class="border d-flex img-container1">
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                         aria-labelledby="pills-profile-tab">
+                        <div class="edit-profile flex-center">
+                            <div class="col-md-12 mb-12">
+                                <div class="card card-cascade cascading-admin-card user-card">
+                                    <div class="card-body card-body-cascade">
+                                        <div class=" col-12 mb-4">
+                                            <div class="input-group mt-2 d-flex align-items-center">
+                                                <label>Hình ảnh mô tả dự án</label>
+                                                <div class="file-field d-flex align-items-center">
+                                                    <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
+                                                        <span>chọn ảnh</span>
+                                                        <input type="file" accept="image/*" name="groupImage"
+                                                               id="file_input1" multiple
+                                                               value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <div class="upload-wrapper d-none avatar">
+                                                <div class="border d-flex img-container1">
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div class="col-12 p-0">
-                                            <div class="form-group">
+                                    </div>
+
+                                    <div class="col-12 p-0">
+                                        <div class="form-group">
                                                     <textarea class="form-control rounded-0" name="post" id="post"
                                                               rows="10"></textarea>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
-            </main>
         </div>
+        </form>
+        </main>
     </div>
+</div>
 </div>
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
@@ -366,14 +243,13 @@
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
-        form.append('action', 'add');
         for (const x of $("#file_input1").prop('files')) {
             form.append('groupImage', x);
         }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
-            url: "/api/project",
+            url: "/api/project?action=add",
             type: "POST",
             dataType: "json",
             processData: false,
@@ -381,9 +257,7 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
-                let obj=JSON.parse(data)
                 if (data.status === 200) {
-                    window.location.href=obj.data;
                 }
             },
             error: function (data) {
@@ -418,10 +292,10 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post",
+            url: "/api/post?action=add",
             type: "POST",
             dataType: "json",
-            data: {content: content, action: "add"},
+            data: {content: content},
             success: function (data) {
                 saveproject(data.data.id)
             },
@@ -432,8 +306,10 @@
                 console.log(data)
                 var err = JSON.parse(data.responseText);
 
+                for (const e of err) {
                     //     console.log email
-                    fetchErr(err.name, err.message);
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })
