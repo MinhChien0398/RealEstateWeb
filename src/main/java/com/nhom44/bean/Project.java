@@ -33,6 +33,21 @@ public class Project implements Serializable {
         return "Project{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", price=" + price +
+                ", acreage=" + acreage +
+                ", status=" + status +
+                ", postId=" + postId +
+                ", isAccepted=" + isAccepted +
+                ", createdAt='" + createdAt + '\'' +
+                ", updatedAt='" + updatedAt + '\'' +
+                ", schedule='" + schedule + '\'' +
+                ", estimated_complete='" + estimated_complete + '\'' +
+                ", province='" + province + '\'' +
+                ", category='" + category + '\'' +
+                ", provinceId=" + provinceId +
+                ", categoryId=" + categoryId +
                 ", numSave=" + numSave +
                 ", numVisit=" + numVisit +
                 ", isSave=" + isSave +

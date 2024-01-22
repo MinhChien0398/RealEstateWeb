@@ -23,7 +23,7 @@ public interface ProjectDAO {
             ":categoryId, :status,:postId)")
     Integer add(@BindBean Project project);
 
-    @SqlUpdate("UPDATE projects SET title=:title, description=:description, " +
+    @SqlUpdate("UPDATE projects SET title=:title, avatar=:avatar ,description=:description, " +
             " price=:price, acreage=:acreage, provinceId=:provinceId, " +
             "isAccepted=:isAccepted, categoryId=:categoryId, status=:status , updatedAt=now() " +
             "WHERE id=:id")
@@ -45,6 +45,14 @@ public interface ProjectDAO {
             " LEFT JOIN excuting_projects ep ON p.id=ep.projectId" +
             " WHERE p.id=:id")
     Project getById(@Bind("id") int id);
+
+    @SqlQuery("Select p.id, p.title,p.description, p.avatar, p.price, p.acreage, pr.name as province, c.name as category, p.isAccepted," +
+            " p.status, p.postId, ep.schedule, ep.estimated_complete, p.provinceId, p.categoryId, p.updatedAt " +
+            " FROM projects p LEFT JOIN categories c ON p.categoryId=c.id" +
+            " LEFT JOIN provinces pr ON p.provinceId=pr.id" +
+            " LEFT JOIN excuting_projects ep ON p.id=ep.projectId" +
+            " WHERE p.id=:id AND p.status=1 AND p.isAccepted=1")
+    Project getActiveById(@Bind("id") int id);
 
     @SqlQuery("SELECT COUNT(projectId) From excuting_projects WHERE projectId=:id")
     boolean isFinishProject(@Bind("id") int id);
@@ -71,7 +79,7 @@ public interface ProjectDAO {
             "FROM Projects p " +
             "JOIN Categories c ON c.id = p.categoryId AND c.status = 1 " +
             "JOIN Posts po On po.id =p.postId " +
-            "LEFT JOIN (select * from saved_projects where userId=:userid) sl ON sl.postId=po.id  "+
+            "LEFT JOIN (select * from saved_projects where userId=:userid) sl ON sl.postId=po.id  " +
             "WHERE  p.status=1 AND p.isAccepted=1 " +
             "AND if(:categoryId <>0 , c.id=:categoryId, c.id=p.categoryId) " +
             "AND if(:provinceId <>0 , p.provinceId=:provinceId, p.provinceId=p.provinceId) " +
@@ -149,8 +157,18 @@ public interface ProjectDAO {
 
     @SqlUpdate("INSERT INTO saved_projects(postId, userId) VALUES(:projectId, :userId)")
     Boolean saveProject(@Bind("projectId") int projectId, @Bind("userId") int userId);
+
     @SqlUpdate("DELETE FROM saved_projects WHERE postId=:projectId AND userId=:userId")
-    Boolean deleteSaveProject(@Bind("projectId") int projectId,@Bind("userId") int id);
-    @SqlUpdate("SELECT count(*) FROM saved_projects WHERE postId=:projectId AND userId=:userId")
-    Boolean isSaveProject(@Bind("projectId") int projectId,@Bind("userId") int id);
+    Boolean deleteSaveProject(@Bind("projectId") int projectId, @Bind("userId") int id);
+
+    @SqlQuery("Select EXISTS(SELECT * FROM saved_projects WHERE postId=:projectId AND userId=:userId)")
+    Boolean isSaveProject(@Bind("projectId") int projectId, @Bind("userId") int id);
+    @SqlQuery("SELECT DISTINCT p.id, p.title, p.avatar,p.updatedAt " +
+            "FROM Projects p  " +
+            "JOIN Categories c ON p.categoryId = c.id AND c.status=1 " +
+            "WHERE p.status=1 AND c.id=:categoryId AND p.id IN( " +
+            "SELECT projectId " +
+            "FROM  Projects_Services ps  " +
+            "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )")
+    List<Project> getSuggestProjects(@Bind("categoryId") int categoryId);
 }

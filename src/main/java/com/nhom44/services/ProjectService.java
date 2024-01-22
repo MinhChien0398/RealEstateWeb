@@ -1,14 +1,11 @@
 package com.nhom44.services;
 
 import com.nhom44.DAO.ProjectDAO;
-import com.nhom44.DAO.ServiceDAO;
 import com.nhom44.bean.Project;
-import com.nhom44.bean.Service;
 import com.nhom44.db.JDBIConnector;
-import com.nhom44.util.SearcherProjectUtil;
 import org.jdbi.v3.core.Jdbi;
 
-import java.util.List;
+import java.util.*;
 
 public class ProjectService {
     private static ProjectService instance;
@@ -64,18 +61,22 @@ public class ProjectService {
         return conn.withExtension(ProjectDAO.class, dao -> dao.getById(id));
     }
 
+    public Project getActiveById(int id) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getActiveById(id));
+    }
+
     public Project getProjectByObject(Project project) {
         return conn.withExtension(ProjectDAO.class, dao -> dao.getProjectByObject(project));
     }
 
     public Project updateProjectAvatar(Project project) {
+        System.out.println("update avatar");
+        System.out.println(project.toString());
         conn.withExtension(ProjectDAO.class, dao -> dao.updateProjectAvatar(project));
         return getById(project.getId());
     }
 
     public Project updateProject(Project project, boolean isComplete) {
-        int s1 = Integer.MIN_VALUE;
-        int s2 = Integer.MIN_VALUE;
         if (isComplete) {
             conn.withExtension(ProjectDAO.class, dao -> dao.deleteInExcuting(project.getId()));
             conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
@@ -117,13 +118,13 @@ public class ProjectService {
 
     public List<Project> getProjetAllActive(int offset, int categoryId, int serviceId, int provinceId, long minPrice, long maxPrice, int minAcreage, int maxAcreage, int userid) {
         return conn.withExtension(ProjectDAO.class, dao -> {
-            System.out.println("userid "+userid);
+            System.out.println("userid " + userid);
             List<Project> res = dao.getProjetAllActive(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minAcreage, maxAcreage, userid);
             for (Project project : res) {
                 System.out.println(project.toString());
             }
             for (Project p : res) {
-                if (p.getSaveBy() == userid && p.getSaveBy() !=0) p.setSave(true);
+                if (p.getSaveBy() == userid && p.getSaveBy() != 0) p.setSave(true);
             }
 //            res.forEach(p -> {
 //                if (p.getSaveBy() == userid) p.setSave(true);
@@ -135,17 +136,6 @@ public class ProjectService {
         });
     }
 
-    public static void main(String[] args) {
-//        List<Project> projects = getInstance().getProjetForPreview();
-//        for (Project project : projects) {
-//            System.out.println(project);
-//        }
-        List<Project> projects = getInstance().getProjetAllActive(0, 0, 0, 0, 0, 0, 0, 0, 24);
-        System.out.println(projects.size());
-        for (Project project : projects) {
-            System.out.println(project);
-        }
-    }
 
     public List<Project> get8ActiveProjectHighestView(int id) {
         return conn.withExtension(ProjectDAO.class, dao -> dao.get8ActiveProjectHighestView(id));
@@ -156,14 +146,38 @@ public class ProjectService {
     }
 
     public boolean saveProject(int projectId, int userId) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.saveProject(projectId,userId));
+        return conn.withExtension(ProjectDAO.class, dao -> dao.saveProject(projectId, userId));
     }
 
     public boolean deleteSaveProject(int projectId, int id) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.deleteSaveProject(projectId,id));
+        return conn.withExtension(ProjectDAO.class, dao -> dao.deleteSaveProject(projectId, id));
     }
 
     public boolean isSaveProject(int projectId, int id) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.isSaveProject(projectId,id));
+        return conn.withExtension(ProjectDAO.class, dao -> {
+            System.out.println(dao.isSaveProject(projectId, id));
+            return dao.isSaveProject(projectId, id);
+        });
+    }
+
+    public List<Project> getSuggestProjects(int categoryId) {
+        List<Project> list = conn.withExtension(ProjectDAO.class, dao -> dao.getSuggestProjects(categoryId));
+        Set<Integer> set = new HashSet<>();
+        while (set.size() < 4 && set.size() < list.size()){
+            Random random = new Random();
+            int i = random.nextInt(list.size());
+            set.add(i);
+        }
+        List<Project> res = new ArrayList<>();
+        set.forEach(i -> res.add(list.get(i)));
+        return res;
+    }
+
+    public static void main(String[] args) {
+        List<Project> projects = getInstance().getSuggestProjects(2);
+        System.out.println(projects.size());
+        for (Project project : projects) {
+            System.out.println(project);
+        }
     }
 }

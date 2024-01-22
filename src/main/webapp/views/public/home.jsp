@@ -291,13 +291,15 @@
                 containter.innerHTML = "";
                 for (const x of list) {
                     project += '<div' +
-                        '  class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">'
+                        ' class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">'
                         + '<div'
-                        + ' class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">'
-                        + '  <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>'
-                        + '  <a href="/project/post?id=' + x.id + '">'
+                        + ' class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">';
+                    if (x.isSave) project += ' <i class="fa-solid fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>'
+                    else project += '<i class="fa-regular fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>';
+                    project += '<a href="/post/project?id=' + x.id + '">'
                         + '<img src="' + x.avatar + '"'
                         + ' class="w-100">'
+                        + ' <input type="hidden" class="project-id" value=' + x.id + '>'
                         + ' <div class="w-100 position-absolute projectCard-content">'
                         + '  <div class="mask justify-content-center d-flex h-100"'
                         + ' style="background-color: rgba(48, 48, 48, 0.72);">'
@@ -319,6 +321,34 @@
             }
         })
 
+    }
+</script>
+<script>
+    function like(project) {
+        let id = $(project).parent().find('.project-id').val();
+        console.log(id);
+        $.ajax({
+            url: "/api/save_project",
+            type: "GET",
+            data: {
+                "projectId": id
+            },
+            success: function (response) {
+                console.log(response);
+                let resp = JSON.parse(response);
+                if (resp.name == 'save') {
+                    project.classList.replace("fa-regular", "fa-solid")
+                } else if (resp.name == 'delete')
+                    project.classList.replace("fa-solid", "fa-regular")
+                //= "fa-solid fa-bookmark position-absolute";
+                // console.log(p);
+            },
+            error: function (response) {
+                console.log(response.responseText)
+                let resp = JSON.parse(response.responseText);
+                window.location.href = resp.data;
+            }
+        })
     }
 </script>
 </body>

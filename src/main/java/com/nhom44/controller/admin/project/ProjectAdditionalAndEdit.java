@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/admin/project_additional_and_edit")
+@WebServlet(urlPatterns = {"/admin/project/add", "/admin/project/edit"})
 public class ProjectAdditionalAndEdit extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -28,11 +28,11 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action") == null || req.getParameter("action").isEmpty() ? "add" : req.getParameter("action");
+        String url = req.getRequestURI();
         resp.addHeader("Access-Control-Allow-Origin", "*");
-        if (action.equals("add")) {
+        if (url.equals("/admin/project/add")) {
             req.getRequestDispatcher("/views/admin/project/add_project.jsp").forward(req, resp);
-        } else if (action.equals("edit")) {
+        } else if (url.equals("/admin/project/edit")) {
             if (req.getParameter("id") == null || req.getParameter("id").isEmpty()) {
              //error
                resp.sendRedirect("/admin/project_management");

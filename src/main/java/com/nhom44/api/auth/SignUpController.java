@@ -192,7 +192,7 @@ public class SignUpController extends HttpServlet {
                     int userId = userService.getIdUserWithEmail(user.getEmail());
                     String token = UUID.randomUUID().toString();
                     VerifyService.getInstance().insert(token, userId);
-                    MailService.getInstance().sendMailToVerify(user.getEmail(), token);
+                    MailService.getInstance().sendMailToVerify(null,user.getEmail(), token);
                     responseModel = new ResponseModel();
                     responseModel.setName("success");
                     responseModel.setMessage("Xin vui lòng truy cập email để xác thực tài khoản của bạn");

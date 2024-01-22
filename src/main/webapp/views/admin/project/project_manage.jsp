@@ -118,7 +118,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="/admin/project_additional_and_edit">
+                        <a href="/admin/project/add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dự án
                             </button>
                         </a>
@@ -249,7 +249,7 @@
             {
                 data: "id",
                 render: function (id) {
-                    return '<a href="/admin/project_additional_and_edit?action=edit&id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                    return '<a href="/admin/project/edit?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
                         '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
                 }
             },
