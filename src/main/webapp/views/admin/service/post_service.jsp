@@ -15,7 +15,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
@@ -24,6 +25,7 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
+
     <%@include file="/layout/admin/adminheader.jsp"%>
 <%--    <div class="header fixed-top ">--%>
 <%--        <div class="header-menu row m-0">--%>
@@ -72,6 +74,7 @@
 <%--                    </a>--%>
 <%--                </div>--%>
 <%--            </li>--%>
+
 
 <%--            <li class="sidebar-item" id="type-project">--%>
 <%--                <div class="menu-btn">--%>
@@ -137,17 +140,15 @@
                         </tr>
                         </thead>
                         <tbody>
-<c:forEach items="${services}" var="service" varStatus="loop" begin="0">
                         <tr>
-                            <td>${loop.index+1}</td>
-                            <td>${service.name}</td>
-                            <td>${service.numberOfView}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td>
-                                <a href="/admin/post_service?action=edit&id=${service.postId}"> <i class="fa-solid fa-pen icon-action p-1"></i>
-                                </a>
+                                <%--                                <a href="/admin/post_service?action=edit&id=${service.postId}"> <i class="fa-solid fa-pen icon-action p-1"></i>--%>
+                                <%--                                </a>--%>
                             </td>
                         </tr>
-</c:forEach>
                         </tbody>
                         <tfoot>
 
@@ -191,17 +192,17 @@
     });
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }
