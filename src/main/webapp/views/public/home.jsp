@@ -281,11 +281,11 @@
         $.ajax({
             url: '/api/home/projects',
             type: 'Post',
-            dataType: 'json',
+            // dataType: 'json',
             data: {id: id},
             success: function (data) {
-                // list= JSON.parse(data)
-                let list = data
+                resdata= JSON.parse(data)
+                let list = JSON.parse(resdata.data);
                 let containter = document.getElementById('project-container');
                 let project = "";
                 containter.innerHTML = "";

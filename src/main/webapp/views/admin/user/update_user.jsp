@@ -1,14 +1,12 @@
-<%@ page import="java.sql.Date" %>
-<%@ page import="com.nhom44.bean.User" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Clover
-  Date: 13/12/2023
-  Time: 2:03 PM
+  Date: 04/12/2023
+  Time: 2:41 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
     <%@include file="/layout/public/link.jsp" %>
@@ -22,6 +20,14 @@
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
+    <!---->
+    <title>Thêm người dùng</title>
+    <style>
+        div.picker.datepicker .picker__box {
+            border: 1px solid;
+            box-shadow: none;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
@@ -44,7 +50,7 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
+                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">
             </center>
             <li class="sidebar-item">
                 <a href="../dashboard.jsp" class="menu-btn">
@@ -90,7 +96,7 @@
             </li>
             <li class="sidebar-item" id="contact">
                 <a href="../contact/contact_manage.jsp" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i><span>QL tương tác</span>
+                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
                 </a>
             </li>
             <li class="sidebar-item" id="slide">
@@ -102,27 +108,30 @@
     </div>
 
     <div class="main-container">
-
-
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="#">Thống kê</a></li>
+                    <li class="breadcrumb-item"><a class="black-text"
+                                                   href="/template//template/dashboard.html">Thống
+                        kê</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text" href="#">QL người dùng</a></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="#">Cập nhật tài khoản</a></li>
+                    <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa người dùng</a></li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
-                <form action="">
+            <main class="container shadow border p-3" style="height: fit-content!important;">
+                <form action="${pageContext.request.contextPath}/admin/user_management?action=edit" method="post">
                     <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
                         <div class="col-6 d-flex align-items-center p-0">
-                            <h3 class="font-weight-bold main-color m-0">Cập nhật tài khoản</h3>
+                            <h3 class="font-weight-bold main-color m-0">Chỉnh sửa người dùng</h3>
                         </div>
                         <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                            <a href="#add">
-                                <button class="btn btn-warning p-2 waves-effect waves-light" type="button">LƯU
+                            <div class="btn-save flex-center">
+                                <button type="button" class="btn btn-warning p-2 waves-effect waves-light"
+                                        id="save">LƯU
                                 </button>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     <div class="">
@@ -133,298 +142,344 @@
                                     <!-- Card content -->
                                     <div class="card-body card-body-cascade">
                                         <!-- Grid row -->
-
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
-
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="email" id="form8" class="form-control form-control-sm"
-                                                           value="${user.email}">
-                                                    <label for="form8" class="active">Email</label>
+                                                        <input type="email" id="form8"
+                                                               class="form-control form-control-sm" name="email"
+                                                               value="${user.email}">
+                                                        <label for="form8" class="">Email</label>
                                                 </div>
-
                                             </div>
                                             <div class="col-lg-6 col-md-6">
-
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="password" id="form9"
-                                                           class="form-control form-control-sm"
-                                                           value="${user.password}">
-                                                    <label
-                                                            for="form9" class="active">Password</label>
+                                                    <c:if test="${passwordErr != null}">
+                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="" placeholder="${passwordErr}">
+                                                    </c:if>
+                                                    <c:if test="${passwordErr == null}">
+                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="${passwordValue}">
+                                                    </c:if>
+                                                    <label for="form9" class="">Password</label>
                                                 </div>
-
                                             </div>
                                         </div>
+
                                         <div class="row d-flex align-items-center">
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
+<%--                                                <div class="md-form form-sm mb-0">--%>
+<%--                                                    <c:if test="${fullnameErr!=null}">--%>
+<%--                                                        <input type="text" id="form12"--%>
+<%--                                                               class="form-control form-control-sm" name="fullname"--%>
+<%--                                                               value="" placeholder="${fullnameErr}">--%>
+<%--                                                    </c:if>--%>
+<%--                                                    <c:if test="${fullnameErr==null}">--%>
+<%--                                                        <input type="text" id="form12"--%>
+<%--                                                               class="form-control form-control-sm" name="fullname">--%>
+<%--                                                    </c:if>--%>
+<%--                                                    <label for="form12" class="">Họ và tên</label>--%>
+<%--                                                </div>--%>
 
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form12" class="form-control form-control-sm"
-                                                           value="${user.fullName}">
-
-                                                    <label for="form12" class="active">Họ và tên</label>
+                                                    <c:if test="${fullnameErr != null}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="" placeholder="${fullnameErr}">
+                                                    </c:if>
+                                                    <c:if test="${fulnameErr == null}">
+                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="${user.fullName}">
+                                                    </c:if>
+                                                    <label for="form12" class="">Họ và tên</label>
                                                 </div>
-
                                             </div>
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
-
                                             <div class="col-lg-4">
-                                                <div id="date-picker-example"
-                                                     class="md-form mb-0 input-with-post-icon datepicker"
-                                                     style="outline: none" inline="true">
-                                                    <input type="text" id="birthday"
-                                                           class="form-control form-control-sm active"
-                                                           value="${user.birthday}"
-                                                    >
+                                                <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
+                                                    <c:if test="${birthdayErr != null}">
+                                                        <input placeholder="${birthdayErr}" type="text" id="birthday" value="" class="form-control form-control-sm" name="birthday">
+                                                    </c:if>
+                                                    <c:if test="${birthdayErr == null}">
+                                                        <input type="text" id="birthday" class="form-control form-control-sm" name="birthday" value="${user.birthday}">
+                                                    </c:if>
                                                     <label for="birthday" class="">Ngày sinh</label>
-                                                    <i class="fas fa-calendar input-prefix"
-                                                       style="font-size: .875rem"></i>
+                                                    <i id="label-birthday" class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
                                                 </div>
-
-
                                             </div>
-
-<%--                                            <div class="col-lg-4">--%>
-<%--                                                <input type="text" value="id ${user.id}">--%>
-<%--                                                <input type="text" value="avatar ${user.avatar}">--%>
-<%--                                                <input type="text" value="fullName ${user.fullName}">--%>
-<%--                                                <input type="text" value="email ${user.email}">--%>
-<%--                                                <input type="text" value="password ${user.password}">--%>
-<%--                                                <input type="text" value="phone ${user.phone}">--%>
-<%--                                                <input type="text" value="birthday ${user.birthday}">--%>
-<%--                                                <input type="text" value="gender ${user.gender}">--%>
-<%--                                                <input type="text" value="status ${user.status}">--%>
-<%--                                                <input type="text" value="createAt ${user.createdAt}">--%>
-<%--                                                <input type="text" value="updateAt ${user.updatedAt}">--%>
-<%--                                                <input type="text" value="province ${user.province}">--%>
-<%--                                                <input type="text" value="role ${user.role}">--%>
-<%--                                            </div>--%>
-<%--                                            <fmt:formatDate pattern="dd-MM-yyyy"--%>
-<%--                                                               value="${user.birthday}"/>${user.birhtday}  --%>
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
 
                                                 <div class="md-form form-sm mb-0">
-                                                    <input type="text" id="form4" class="form-control form-control-sm"
-                                                           value="${user.phone}">
-                                                    <label for="form4" class="active">SĐT</label>
+                                                    <c:if test="${phoneErr != null}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="" placeholder="${phoneErr}">
+                                                    </c:if>
+                                                    <c:if test="${phoneErr == null}">
+                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="${user.phone}">
+                                                    </c:if>
+                                                    <label for="form4" class="">SĐT</label>
                                                 </div>
-
                                             </div>
                                             <!-- Grid column -->
                                         </div>
                                         <div class="row">
-
                                             <!-- Grid column -->
                                             <div class="col-lg-6 col-md-10">
-
                                                 <div class="md-form form-sm mb-0">
-                                                    <select name="address" id="address" class=" custom-select ">
+                                                    <select name="province" id="province" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
                                                         <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.name}"
-                                                                    <c:if test="${item.name == user.province}">
-                                                                        selected
-                                                                    </c:if>
-
-                                                            >${item.name} </option>
+                                                            <option value="${item.name}" <c:if test="${user.province==item.name}">selected</c:if> >${item.name}</option>
                                                         </c:forEach>
+
                                                     </select>
+
                                                 </div>
-
-
                                             </div>
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
 
                                             <div class="col-lg-6 input-group  justify-content-around" role="group">
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material unchecked -->
-                                                    <div class="custom-control custom-radio form-check mt-4">
-                                                        <input name="gender" type="radio" class="form-check-input"
-                                                               id="male"
-                                                               <c:if test="${user.gender == '1'}">checked</c:if>>
+                                                    <div class="form-check mt-4">
+                                                        <input name="isMale" type="checkbox" class="form-check-input"
+                                                               id="materialUnchecked"  <c:if test="${user.gender==1}">checked </c:if> >
                                                         <label class="form-check-label"
-                                                               for="male">Nam</label>
+                                                               for="materialUnchecked">Nam</label>
                                                     </div>
                                                 </div>
                                                 <!-- Grid column -->
                                                 <!-- Grid column -->
                                                 <div class="col-6 col-md-3">
                                                     <!-- Material indeterminate -->
-                                                    <div class="custom-control custom-radio form-check mt-4">
-                                                        <input name="gender" type="radio" class="form-check-input"
-                                                               id="female"
-                                                               <c:if test="${user.gender == '0'}">checked</c:if>>
+                                                    <div class="form-check mt-4">
+                                                        <input name="isFemale" type="checkbox" class="form-check-input"
+                                                               id="materialIndeterminate2"
+                                                               <c:if test="${user.gender==0}">checked </c:if>>
                                                         <label class="form-check-label"
-                                                               for="female">Nữ</label>
+                                                               for="materialIndeterminate2">Nữ</label>
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <!-- Grid column -->
-
                                             <!-- Grid column -->
-
                                             <div class="col-lg-12 col-md-12 d-flex justify-content-between m-auto p-0">
                                                 <div class="col-lg-6 col-md-6">
-
                                                     <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4" id="status">
-                                                            <option disabled>Trạng thái</option>
-                                                            <option value="0"
-                                                                    <c:if test="${user.status == '0'}">selected</c:if>>
-                                                                Chưa kích hoạt
-                                                            </option>
-                                                            <option value="1"
-                                                                    <c:if test="${user.status == '1'}">selected</c:if>>
-                                                                Kích hoạt
-                                                            </option>
-                                                            <option value="2"
-                                                                    <c:if test="${user.status == '2'}">selected</c:if>>
-                                                                Khóa
-                                                            </option>
+                                                        <select name="status"
+                                                                class="browser-default custom-select mb-4">
+                                                            <option value="" disabled>Trạng thái</option>
+                                                            <option value="1"<c:if test="${user.status==1}"> selected</c:if>Chưa kích hoạt</option>
+                                                            <option value="2" <c:if test="${user.status==2}"> selected</c:if>>Kích hoạt</option>
+                                                            <option value="3" <c:if test="${user.status==3}"> selected</c:if>>Khóa</option>
                                                         </select>
                                                     </div>
-
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
-                                                        <select class="browser-default custom-select mb-4" id="role">
-                                                            <option disabled selected>Chọn phân quyền</option>
-                                                            <option value="1"
-                                                                    <c:if test="${user.role == '1'}">selected</c:if> >
-                                                                Người dùng
-                                                            </option>
-                                                            <option value="2"
-                                                                    <c:if test="${user.role == '2'}">selected</c:if>>
-                                                                Admin
-                                                            </option>
+                                                        <select name="role" class="browser-default custom-select mb-4">
+                                                            <option value="" disabled>Chọn phân quyền</option>
+                                                            <option value="0" <c:if test="${user.role==1}"> selected</c:if>selected>Người dùng thường</option>
+                                                            <option value="1" <c:if test="${user.role==2}"> selected</c:if>>Admin</option>
                                                         </select>
                                                     </div>
-
                                                 </div>
                                                 <!-- Grid column -->
                                             </div>
                                         </div>
                                         <!-- Grid row -->
-
                                         <!-- Grid row -->
-
                                     </div>
                                     <!-- Grid row -->
-
                                     <!-- Grid row -->
-
                                 </div>
                                 <!-- Card content -->
-
                             </div>
                             <!-- Card -->
 
                         </div>
-
                     </div>
                 </form>
             </main>
         </div>
     </div>
+    </form>
 </div>
 <!--/. Sidebar navigation -->
-
-
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-    $('#table-user').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
-        "columnDefs": [
-            {
-                "targets": 0,
-                "width": "5%",
+    $('#save').click(function () {
+        $.ajax({
+            url: "http://localhost:8080/api/user?action=edit",
+            type: "POST",
+            dataType: "json",
+            data: {
+                email: $('#form8').val(),
+                password: $('#form9').val(),
+                fullname: $('#form12').val(),
+                birthday: $('#birthday').val(),
+                phone: $('#form4').val(),
+                province: $('#province').val(),
+                isMale: $('#materialUnchecked').val(),
+                isFemale: $('#materialIndeterminate2').val(),
+                status: $('#status').val(),
+                role: $('#role').val(),
             },
-            {
-                "targets": 1,
-                "width": "15%",
+            success: function (data) {
+                console.log(data);
+                if (data.name==="sys") {
+                    alert(data.message);
+                }else {
+                    window.location.href = "/admin/user_management?action=manage";
+                }
             },
-            {
-                "targets": 2,
-                "width": "20%",
-            },
-            {
-                "targets": 3,
-                "width": "10%",
-            },
-            {
-                "targets": 4,
-                "width": "10%",
-            },
-            {
-                "targets": 5,
-                "width": "5%",
-            },
-            {
-                "targets": 6,
-                "width": "5%",
-            },
-            {
-                "targets": 7,
-                "width": "10%",
-            },
-            {
-                "targets": 8,
-                "width": "10%",
-            },
-            {
-                "targets": 9,
-                "width": "1%",
-            },
-            {className: "text-center mt-auto mb-auto", targets: "_all"},
+            error: function (data) {   console.log(err)
+                var err = JSON.parse(data.responseText);
 
-        ],
-        "language": {
-            "lengthMenu": "Hiển thị _MENU_ dòng",
-            "zeroRecords": "Không tìm thấy dữ liệu",
-            "info": "Hiển thị trang _PAGE_ trên _PAGES_",
-            "infoEmpty": "Không có dữ liệu",
-            "infoFiltered": "(lọc từ _MAX_ dòng dữ liệu)",
-            "search": "Tìm kiếm",
-            "paginate": {
-                "previous": "Trước",
-                "next": "Tiếp theo"
+                for (const e of err) {
+                    fetchErr(e.name, e.message);
+                }
             }
-        },
-        "pagingType": "full_numbers",
-        "lengthMenu": [5, 10, 15, 20],
-        "order": [[0, "asc"]],
+        })
     });
-
 </script>
 <script>
-    $(document).ready(function () {
-        $(".sidebar-btn").click(function () {
-            $(".wrapper").toggleClass("mycollapse");
-        });
-
-    });
+    function fetchErr(name, mess) {
+        switch (name) {
+            case "email":
+                let email = document.getElementById('form8');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value="";
+                email.nextElementSibling.classList.add('active');
+                email.setAttribute('value'," ");
+                email.setAttribute('placeholder', mess);
+                console.log("run 1")
+                break;
+            case "password":
+                let password = document.getElementById('form9');
+                password.classList.add('border-danger');
+                password.classList.add('text-danger');
+                password.value="";
+                password.nextElementSibling.classList.add('active');
+                password.setAttribute('placeholder', mess);
+                console.log("run 2");   break;
+            case "fullname":
+                let fullname = document.getElementById('form12');
+                fullname.classList.add('border-danger');
+                fullname.classList.add('text-danger');
+                fullname.value="";
+                fullname.nextElementSibling.classList.add('active');
+                console.log(fullname.nextElementSibling);
+                fullname.setAttribute('placeholder', mess);
+                console.log("run 3");  break;
+            case "phone":
+                let phone = document.getElementById('form4');
+                phone.classList.add('border-danger');
+                phone.classList.add('text-danger');
+                phone.value="";
+                phone.nextElementSibling.classList.add('active');
+                phone.setAttribute('placeholder', mess);
+                console.log("run 4");    break;
+            case "birthday":
+                let birthday = document.getElementById('birthday');
+                birthday.classList.add('border-danger');
+                birthday.classList.add('text-danger');
+                birthday.value="";
+                birthday.nextElementSibling.classList.add('active');
+                console.log(birthday.nextElementSibling);
+                birthday.setAttribute('placeholder', mess);
+                console.log("run 5"); break;
+        }
+    }
 </script>
+<script>
+    <%-- email--%>
+    let email = document.getElementById('form8');
+    if (${emailErr!=null}) {
+        email.classList.add('border-danger');
+        email.classList.add('text-danger');
+    }
+    email.addEventListener('click', function () {
+            email.classList.remove('border-danger');
+            email.classList.remove('text-danger');
+            email.attributes.removeNamedItem("placeholder");
+            email.attributes.removeNamedItem("value");
+            ${requestScope.remove("emailErr")}
+        }
+    )
+    <%-- password--%>
+    let password = document.getElementById('form9');
+    if (${passwordErr!=null}) {
+        password.classList.add('border-danger');
+        password.classList.add('text-danger');
+    }
+    password.addEventListener('click', function () {
+            password.classList.remove('border-danger');
+            password.classList.remove('text-danger');
+            password.attributes.removeNamedItem("placeholder");
+            password.attributes.removeNamedItem("value");
+            ${requestScope.remove("passwordErr")}
+        }
+    )
+    <%-- fullname--%>
+    let fullname = document.getElementById('form12');
+    if (${fullnameErr!=null}) {
+        fullname.classList.add('border-danger');
+        fullname.classList.add('text-danger');
+    }
+    fullname.addEventListener('click', function () {
+            fullname.classList.remove('border-danger');
+            fullname.classList.remove('text-danger');
+            fullname.attributes.removeNamedItem("placeholder");
+            fullname.attributes.removeNamedItem("value");
+            ${requestScope.remove("fullnameErr")}
+        }
+    )
+    <%-- phone--%>
+    let phone = document.getElementById('form4');
+    if (${phoneErr!=null}) {
+        phone.classList.add('border-danger');
+        phone.classList.add('text-danger');
+    }
 
+    phone.addEventListener('click', function () {
+            phone.classList.remove('border-danger');
+            phone.classList.remove('text-danger');
+            phone.attributes.removeNamedItem("placeholder");
+            phone.attributes.removeNamedItem("value");
+            ${requestScope.remove("phoneErr")}
+        }
+    )
+    <%-- birthday--%>
+    let birthday = document.getElementById('birthday');
+    let label = document.getElementById('label-birthday');
+    if (${birthdayErr!=null}) {
+        birthday.classList.add('border-danger');
+        birthday.classList.add('text-danger');
+    }
+    label.addEventListener('click', function () {
+            birthday.classList.remove('border-danger');
+            birthday.classList.remove('text-danger');
+            birthday.attributes.removeNamedItem("placeholder");
+            birthday.attributes.removeNamedItem("value");
+            ${requestScope.remove("birthdayErr")}
+        }
+    )
+    birthday.addEventListener('click', function () {
+            birthday.classList.remove('border-danger');
+            birthday.classList.remove('text-danger');
+            birthday.attributes.removeNamedItem("placeholder");
+            birthday.attributes.removeNamedItem("value");
+            ${requestScope.remove("birthdayErr")}
+        }
+    )
+</script>
 <script>
     $('.datepicker').datepicker({
         inline: true,
         monthsFull: ['Tháng 01', 'Tháng 02', 'Tháng 03', 'Tháng 04', 'Tháng 05', 'Tháng 06', 'Tháng 07', 'Tháng 08', 'Tháng 09', 'Tháng 10',
             'Tháng 11', 'Tháng 12'],
-
         weekdaysFull: ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
         showWeekdaysFull: true,
         today: 'Hôm nay',
@@ -435,7 +490,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'yyyy-mm-dd',
     });
 </script>
 <script>
@@ -454,6 +509,14 @@
         })
     }
 
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".sidebar-btn").click(function () {
+            $(".wrapper").toggleClass("mycollapse");
+        });
+    });
 </script>
 </body>
 </html>

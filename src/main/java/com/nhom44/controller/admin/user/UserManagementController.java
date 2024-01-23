@@ -29,11 +29,7 @@ public class UserManagementController extends HttpServlet {
             req.setAttribute("users", users);
             req.getRequestDispatcher("/views/admin/user/user_manage.jsp").forward(req, resp);
         } else if (action.equalsIgnoreCase("add")) {
-            if (req.getParameter("confirm") != null) {
-
-            }
             req.getRequestDispatcher("/views/admin/user/add_user.jsp").forward(req, resp);
-
         } else if (action.equalsIgnoreCase("edit")) {
             String email = req.getParameter("useremail");
             if(!new EmailSingleValidator().validator(email)){

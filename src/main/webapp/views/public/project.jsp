@@ -165,44 +165,47 @@
             delete data.area;
         }
         getSize(data);
-        getProject(data, 0);
+        getProject($.param(data), 0);
     }
 
     function getSize(data) {
-        if (data == null) {
-            data = {
+        let fdata=data;
+        if (fdata == null) {
+            fdata = {
                 "categoryId": $('#categoryId').val(),
                 "provinceId": $('#provinceId').val(),
                 "serviceId": $('#serviceId').val(),
                 "price": $('#price').val(),
                 "area": $('#area').val(),
             }
-            if (data.categoryId === "") {
-                delete data.categoryId;
+            if (fdata.categoryId === "") {
+                delete fdata.categoryId;
             }
-            if (data.provinceId === "") {
-                delete data.provinceId;
+            if (fdata.provinceId === "") {
+                delete fdata.provinceId;
             }
 
-            if (data.serviceId === "") {
-                delete data.serviceId;
+            if (fdata.serviceId === "") {
+                delete fdata.serviceId;
             }
-            if (data.price === "") {
-                delete data.price;
+            if (fdata.price === "") {
+                delete fdata.price;
             }
-            if (data.area === "") {
-                delete data.area;
+            if (fdata.area === "") {
+                delete fdata.area;
             }
         }
+        console.log($.param(fdata))
         $.ajax({
             url: "/api/project/search/length",
             type: "POST",
             // dataType: "json",
-            data: data,
+            data: fdata,
             success: function (response) {
+                // window.history.pushState(null,null, "?"+$.param(fdata));
                 let data = response;
                 console.log(data)
-                drawButton(response);
+                drawButton($.param(fdata),response);
                 return false;
             },
             error: function (response) {
@@ -215,35 +218,37 @@
     function getProject(data, i) {
         console.log('get project');
         if (data == null) {
-            data = {
-                "categoryId": $('#categoryId').val(),
-                "provinceId": $('#provinceId').val(),
-                "serviceId": $('#serviceId').val(),
-                "price": $('#price').val(),
-                "area": $('#area').val(),
-            }
-            if (data.categoryId === "") {
-                delete data.categoryId;
-            }
-            if (data.provinceId === "") {
-                delete data.provinceId;
-            }
-
-            if (data.serviceId === "") {
-                delete data.serviceId;
-            }
-            if (data.price === "") {
-                delete data.price;
-            }
-            if (data.area === "") {
-                delete data.area;
-            }
-        }
+            data = 'offset='+i;
+            //     {
+            //     "categoryId": $('#categoryId').val(),
+            //     "provinceId": $('#provinceId').val(),
+            //     "serviceId": $('#serviceId').val(),
+            //     "price": $('#price').val(),
+            //     "area": $('#area').val(),
+            // }
+            // if (data.categoryId === "") {
+            //     delete data.categoryId;
+            // }
+            // if (data.provinceId === "") {
+            //     delete data.provinceId;
+            // }
+            //
+            // if (data.serviceId === "") {
+            //     delete data.serviceId;
+            // }
+            // if (data.price === "") {
+            //     delete data.price;
+            // }
+            // if (data.area === "") {
+            //     delete data.area;
+            // }
+        }else data+="&offset="+i;
+        console.log(data)
         $.ajax({
             url: "/api/project/search",
             type: "POST",
             // dataType: "json",
-            data: $.param(data) + "&offset=" + i,
+            data: data,
             success: function (response) {
                 console.log('project');
                 console.log(response);
@@ -261,33 +266,35 @@
     }
 </script>
 <script>
-    function drawButton(size) {
+    function drawButton(fdata,size) {
+        let data=fdata!=null&&fdata!==""?fdata:'null';
         let container = document.getElementById('container-button');
         // container.innerHTML = "";
         let page = '';
         // <li class="page-item"><a class="page-link">1</a></li>
         page +=
             ' <li class="page-item page-0 " >' +
-            '  <a class="page-link " onClick="getProject(null,0)" >Trang đầu</a>' +
-            '    </li>'
+            '  <a class="page-link " onClick="getProject(\''+data+
+            '\',0)" >Trang đầu</a>' +
+            '</li>'
 
         for (let i = 0; i < size; i++) {
             if (i === 0) {
                 page +=
                     '<li class="page-item active page-' + i + '">' +
-                    '<a class="page-link " onclick="getProject(null,' + i + ')">' + i + '</a></li>'
+                    '<a class="page-link " onclick="getProject(\''+data+'\',' + i + ')">' + i + '</a></li>'
 
             } else
                 page += '<li class="page-item page-' + i + '">' +
-                    '<a class="page-link" onclick="getProject(null,' + i + ')">' + i + '</a></li>'
+                    '<a class="page-link" onclick="getProject(\''+data+'\','+ i + ')">' + i + '</a></li>'
         }
         page +=
             ' <li class="page-item page-' + (size - 1) + '" >' +
-            '  <a class="page-link" onClick="getProject(null,' + (size - 1) + ')" >Trang cuối</a>' +
+            '  <a class="page-link" onClick="getProject(\''+data+'\',' + (size - 1) + ')" >Trang cuối</a>' +
             '    </li>'
         console.log(page)
         container.innerHTML = page;
-        console.log(container.innerHTML)
+        console.log('button:'+container.innerHTML)
     }
 
 
