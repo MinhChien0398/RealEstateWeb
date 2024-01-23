@@ -278,7 +278,7 @@
     $(document).ready(function () {
         $('#save').click(function () {
             $.ajax({
-                url: "http://localhost:8080/api/user?action=add",
+                url: "http://localhost:8080/api/admin/user?action=add",
                 type: "POST",
                 dataType: "json",
                 data: {

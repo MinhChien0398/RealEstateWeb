@@ -5,6 +5,7 @@ import com.nhom44.bean.Post;
 import com.nhom44.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 
@@ -21,11 +22,11 @@ public class PostService {
     }
 
     public Post addPost(Post post) {
-        post.setCreatedAt(LocalDateTime.now().toString());
-        post.setUpdatedAt(LocalDateTime.now().toString());
+        LocalDateTime now=LocalDateTime.now();
+        post.setCreatedAt(Timestamp.valueOf(now).toString());
+        post.setUpdatedAt(Timestamp.valueOf(now).toString());
         int status= conn.withExtension(PostDAO.class, dao -> {
             return dao.addPost(post);
-
         });
         return status==1?getByObject(post):null;
     }
@@ -39,7 +40,6 @@ public class PostService {
         int status= conn.withExtension(PostDAO.class, dao -> {
             return dao.updatePost(post);
         });
-
         return status==1?getById(post.getId()):null;
     }
 

@@ -16,9 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 
-@WebServlet(urlPatterns = "/api/post")
-
-
+@WebServlet(urlPatterns = "/api/admin/post")
 public class PostController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,8 +39,9 @@ public class PostController extends HttpServlet {
                 printWriter.close();
                 return;
         }
-        if(action.equalsIgnoreCase("add"))
+        if(action.equalsIgnoreCase("add")){        System.out.println(post.toString());
         post=PostService.getInstance().addPost(post);
+        System.out.println(post.toString());}
         else if (action.equalsIgnoreCase("edit")) {
             post=PostService.getInstance().updatePost(post);
         }

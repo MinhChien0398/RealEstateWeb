@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@WebServlet(urlPatterns = "/api/user")
+@WebServlet(urlPatterns = "/api/admin/user")
 public class UserController extends HttpServlet {
     private Gson gson;
     @Override

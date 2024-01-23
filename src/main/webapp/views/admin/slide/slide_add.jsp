@@ -187,7 +187,7 @@
         form.append('sequence', $('#sequence').val());
         form.append('avatar', $('#avatar').prop('files')[0]);
         $.ajax({
-            url: "/api/slider/add",
+            url: "/api/admin/slider/add",
             type: 'POST',
             dataType: "json",
             contentType: false,

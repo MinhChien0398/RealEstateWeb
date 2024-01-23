@@ -189,17 +189,19 @@
 <script>
     $('#save').click(function () {
 
-        $.ajax({
-            url: '/api/category?action=add',
-            type: 'POST',
-            // processData:false,
-            // contentType:false,
-            data: {
-                name: $('#name').val(),
-                status: $('#status').val()
-            },
-            // dataType: "json",
-            // contentType: 'application/json',
+
+            $.ajax({
+                url: '/api/admin/category?action=add',
+                type: 'POST',
+                // processData:false,
+                // contentType:false,
+                data: {
+                    name: $('#name').val(),
+                    status: $('#status').val()
+                },
+                // dataType: "json",
+                // contentType: 'application/json',
+
 
             success: function (data) {
                 console.log(data.responseText)
