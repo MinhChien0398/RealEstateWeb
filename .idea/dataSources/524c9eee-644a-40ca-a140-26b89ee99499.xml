@@ -1048,92 +1048,77 @@
     </user>
     <table id="336" parent="325" name="categories">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="337" parent="325" name="contacts">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="338" parent="325" name="excuting_projects">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="339" parent="325" name="group_images">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="340" parent="325" name="histories">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="341" parent="325" name="images">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="342" parent="325" name="posts">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="343" parent="325" name="projects">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
     <table id="344" parent="325" name="projects_services">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="345" parent="325" name="provinces">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
     <table id="346" parent="325" name="saved_projects">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="347" parent="325" name="services">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="348" parent="325" name="sliders">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="349" parent="325" name="users">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <table id="350" parent="325" name="users_projects">
       <Engine>InnoDB</Engine>
-      <Options>row_format
-DYNAMIC</Options>
+      <Options>row_format DYNAMIC</Options>
       <CollationName>utf8_unicode_ci</CollationName>
     </table>
     <column id="351" parent="336" name="id">

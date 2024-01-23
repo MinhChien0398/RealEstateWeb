@@ -380,6 +380,7 @@
             success: function (data) {
                 console.log(data.responseText)
                 if (data.status === 200) {
+                    window.location.href = '/admin/project_manage.jsp';
                 }
             },
             error: function (data) {

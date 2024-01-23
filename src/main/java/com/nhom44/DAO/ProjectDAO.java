@@ -6,7 +6,6 @@ import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
-//import org.jdbi.v3.stringtemplate4.UseStringTemplateEngine;
 
 import java.util.List;
 
@@ -102,7 +101,7 @@ public interface ProjectDAO {
     List<Project> getNumOfSavedAndRead();
     @SqlQuery("SELECT p.id, p.title, p.description,p.avatar " +
             "FROM Projects p JOIN Categories c ON c.id=p.categoryId " +
-            "RIGHT JOIN Histories h ON h.postId=p.postId " +
+            "Left JOIN Histories h ON h.postId=p.postId  " +
             "WHERE p.categoryId =:id AND p.isAccepted=1 AND p.status=1 AND c.status = 1 " +
             "GROUP BY p.id, p.title, p.description, p.avatar " +
             "ORDER BY COUNT(p.id) desc LIMIT 8")
