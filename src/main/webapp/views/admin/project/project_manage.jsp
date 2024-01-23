@@ -196,36 +196,36 @@
             {
                 data: "title",
                 render: function (title) {
-                    return (title == null || title === "") ? "---" : title;
+                    return (title==null|| title==="")?"---":title;
                 }
             },
             {
                 data: "avatar",
                 render: function (avatar) {
-                    return (avatar == null || avatar === "") ? "" : "<img src=\"" + avatar + "\" alt=\"\" style=\"\" class=\"w-100\">"
-                },
+        return (avatar==null|| avatar==="")?"":"<img src=\""+avatar+"\" alt=\"\" style=\"\" class=\"w-100\">"
+            },
             },
             {
                 data: "price",
                 render: function (price) {
-                    return (price == null || price === 0) ? 0 : price + "VND";
+                    return (price==null|| price===0)?0:price  + "VND";
                 }
             },
             {
                 data: "province",
                 render: function (province) {
-                    return (province == null || province === "") ? "---" : province;
+                    return (province==null|| province==="")?"---":province;
                 }
             },
             {
                 data: "category",
                 render: function (category) {
-                    return (category == null || category === "") ? "---" : category;
+                    return (category==null|| category==="")?"---":category;
                 }
             },
             {
                 data: "isAccepted", render: function (isAccepted) {
-                    if (isAccepted === 1) {
+                    if (isAccepted === 1 ) {
                         return '<i class="fa-solid fa-square active-icon" value="0"></i>'
                     } else {
                         return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'

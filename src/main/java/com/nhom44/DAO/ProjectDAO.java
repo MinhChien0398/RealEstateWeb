@@ -163,6 +163,7 @@ public interface ProjectDAO {
 
     @SqlQuery("Select EXISTS(SELECT * FROM saved_projects WHERE postId=:projectId AND userId=:userId)")
     Boolean isSaveProject(@Bind("projectId") int projectId, @Bind("userId") int id);
+
     @SqlQuery("SELECT DISTINCT p.id, p.title, p.avatar,p.updatedAt " +
             "FROM Projects p  " +
             "JOIN Categories c ON p.categoryId = c.id AND c.status=1 " +
@@ -171,6 +172,7 @@ public interface ProjectDAO {
             "FROM  Projects_Services ps  " +
             "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )")
     List<Project> getSuggestProjects(@Bind("categoryId") int categoryId);
+
     @SqlQuery("SELECT DISTINCT p.id, p.title, p.avatar,p.description,p.updatedAt, sl.userId as saveBy " +
             "FROM Projects p  " +
             "JOIN saved_projects sl ON sl.postId=p.postId " +
@@ -178,6 +180,16 @@ public interface ProjectDAO {
             "WHERE sl.userId=:id AND p.status=1 AND p.isAccepted=1 AND p.id IN( " +
             "SELECT projectId " +
             "FROM  Projects_Services ps  " +
+            "JOIN Services s ON s.id=ps.serviceId AND s.status=1 ) LIMIT 16 OFFSET :offset")
+    List<Project> getLikedProjectByUserId(@Bind("id") int i,@Bind("offset") int offset);
+
+    @SqlQuery("SELECT DISTINCT count(p.id) " +
+            "FROM Projects p  " +
+            "JOIN saved_projects sl ON sl.postId=p.postId " +
+            "JOIN Categories c ON p.categoryId = c.id AND c.status=1 " +
+            "WHERE sl.userId=:id AND p.status=1 AND p.isAccepted=1 AND p.id IN( " +
+            "SELECT projectId " +
+            "FROM  Projects_Services ps  " +
             "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )")
-    List<Project> getLikedProjectByUserId(@Bind("id")int i);
+    Integer pageSizeProjectByUserId(@Bind("id") int id);
 }
