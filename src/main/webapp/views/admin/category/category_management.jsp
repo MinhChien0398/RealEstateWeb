@@ -160,7 +160,7 @@
 <!--<script src="/template/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
 <script>
     $.ajax({
-        url: "${pageContext.request.contextPath}/api/category",
+        url: "${pageContext.request.contextPath}/api/admin/category",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -175,7 +175,7 @@
     let index = 1;
     $('#project-type-table').dataTable({
         ajax: {
-            url: "${pageContext.request.contextPath}/api/category",
+            url: "${pageContext.request.contextPath}/api/admin/category",
             type: "get",
             dataSrc: "",
             dataType: "json",

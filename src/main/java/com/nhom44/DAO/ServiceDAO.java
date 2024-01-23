@@ -38,5 +38,14 @@ public interface ServiceDAO {
             "on s.id = ps.serviceId " +
             "WHERE ps.projectId=:projectId AND ps.serviceId=:serviceId AND s.status=1)")
     boolean isProjectHaveExsistProject(@Bind("projectId") int projectId,@Bind("serviceId") int serviceId);
+    @SqlQuery("SELECT * FROM services WHERE status=1 AND id=:id")
+    Service getActiveById(@Bind("id") int id);
+    @SqlQuery("SELECT s.id, s.name, s.description,s.avatar, s.postId,count(ps.id) as numberOfProject,  " +
+            "count(h.id) AS numberOfView ,s.status FROM Services s " +
+            "LEFT JOIN Projects_Services ps ON s.id=ps.serviceId JOIN Posts p ON p.id=s.postId   " +
+            "LEFT JOIN Histories h ON h.postId=p.id WHERE s.status=1 " +
+            "GROUP BY s.id, s.name, s.description, s.status " +
+            "order by  numberOfProject desc, numberOfView desc ")
+    List<Service> getSuggestServices();
 }
 

@@ -169,7 +169,7 @@
     }
 
     function getSize(data) {
-        let fdata=data;
+        let fdata = data;
         if (fdata == null) {
             fdata = {
                 "categoryId": $('#categoryId').val(),
@@ -199,13 +199,11 @@
         $.ajax({
             url: "/api/project/search/length",
             type: "POST",
-            // dataType: "json",
             data: fdata,
             success: function (response) {
-                // window.history.pushState(null,null, "?"+$.param(fdata));
                 let data = response;
                 console.log(data)
-                drawButton($.param(fdata),response);
+                drawButton($.param(fdata), response);
                 return false;
             },
             error: function (response) {
@@ -218,31 +216,8 @@
     function getProject(data, i) {
         console.log('get project');
         if (data == null) {
-            data = 'offset='+i;
-            //     {
-            //     "categoryId": $('#categoryId').val(),
-            //     "provinceId": $('#provinceId').val(),
-            //     "serviceId": $('#serviceId').val(),
-            //     "price": $('#price').val(),
-            //     "area": $('#area').val(),
-            // }
-            // if (data.categoryId === "") {
-            //     delete data.categoryId;
-            // }
-            // if (data.provinceId === "") {
-            //     delete data.provinceId;
-            // }
-            //
-            // if (data.serviceId === "") {
-            //     delete data.serviceId;
-            // }
-            // if (data.price === "") {
-            //     delete data.price;
-            // }
-            // if (data.area === "") {
-            //     delete data.area;
-            // }
-        }else data+="&offset="+i;
+            data = 'offset=' + i;
+        } else data += "&offset=" + i;
         console.log(data)
         $.ajax({
             url: "/api/project/search",
@@ -255,7 +230,6 @@
                 let data = JSON.parse(response);
                 console.log(data)
                 drawProject(data);
-                // drawButton(data.length);
                 return false;
             },
             error: function (response) {
@@ -266,15 +240,13 @@
     }
 </script>
 <script>
-    function drawButton(fdata,size) {
-        let data=fdata!=null&&fdata!==""?fdata:'null';
+    function drawButton(fdata, size) {
+        let data = fdata != null && fdata !== "" ? fdata : 'null';
         let container = document.getElementById('container-button');
-        // container.innerHTML = "";
         let page = '';
-        // <li class="page-item"><a class="page-link">1</a></li>
         page +=
             ' <li class="page-item page-0 " >' +
-            '  <a class="page-link " onClick="getProject(\''+data+
+            '  <a class="page-link " onClick="getProject(\'' + data +
             '\',0)" >Trang đầu</a>' +
             '</li>'
 
@@ -282,19 +254,19 @@
             if (i === 0) {
                 page +=
                     '<li class="page-item active page-' + i + '">' +
-                    '<a class="page-link " onclick="getProject(\''+data+'\',' + i + ')">' + i + '</a></li>'
+                    '<a class="page-link " onclick="getProject(\'' + data + '\',' + i + ')">' + i + '</a></li>'
 
             } else
                 page += '<li class="page-item page-' + i + '">' +
-                    '<a class="page-link" onclick="getProject(\''+data+'\','+ i + ')">' + i + '</a></li>'
+                    '<a class="page-link" onclick="getProject(\'' + data + '\',' + i + ')">' + i + '</a></li>'
         }
         page +=
             ' <li class="page-item page-' + (size - 1) + '" >' +
-            '  <a class="page-link" onClick="getProject(\''+data+'\',' + (size - 1) + ')" >Trang cuối</a>' +
+            '  <a class="page-link" onClick="getProject(\'' + data + '\',' + (size - 1) + ')" >Trang cuối</a>' +
             '    </li>'
         console.log(page)
         container.innerHTML = page;
-        console.log('button:'+container.innerHTML)
+        console.log('button:' + container.innerHTML)
     }
 
 
@@ -303,14 +275,17 @@
         container.innerHTML = "";
         let project = '';
         for (const x of data) {
+            console.log(x.isSave);
             project += '<div' +
                 ' class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">'
                 + '<div'
-                + ' class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">'
-                + '  <i class="fa-regular fa-bookmark position-absolute" style="z-index: 1000"></i>'
-                + '  <a href="/project/post?id=' + x.id + '">'
+                + ' class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">';
+            if (x.isSave) project += ' <i class="fa-solid fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>'
+            else project += '<i class="fa-regular fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>';
+            project += '<a href="/post/project?id=' + x.id + '">'
                 + '<img src="' + x.avatar + '"'
                 + ' class="w-100">'
+                + ' <input type="hidden" class="project-id" value=' + x.id + '>'
                 + ' <div class="w-100 position-absolute projectCard-content">'
                 + '  <div class="mask justify-content-center d-flex h-100"'
                 + ' style="background-color: rgba(48, 48, 48, 0.72);">'
@@ -320,7 +295,7 @@
                 + '<p class="text-white p-0 id-project">'
                 + '<strong>MDA:' + x.id + '</strong>'
                 + '</p>'
-                + '<p class="text-white p-4"></p>'
+                + '<p class="text-white p-4">'+x.description+'</p>'
                 + '</div>'
                 + '</div></div></a></div></div>'
         }
@@ -331,12 +306,40 @@
     window.onload = searching();
 </script>
 <script>
+    function like(project) {
+        let id = $(project).parent().find('.project-id').val();
+        console.log(id);
+        $.ajax({
+            url: "/api/save_project",
+            type: "GET",
+            data: {
+                "projectId": id
+            },
+            success: function (response) {
+                console.log(response);
+                let resp = JSON.parse(response);
+                if (resp.name == 'save') {
+                    project.classList.replace("fa-regular", "fa-solid")
+                } else if (resp.name == 'delete')
+                    project.classList.replace("fa-solid", "fa-regular")
+                //= "fa-solid fa-bookmark position-absolute";
+                // console.log(p);
+            },
+            error: function (response) {
+                console.log(response.responseText)
+                let resp = JSON.parse(response.responseText);
+                window.location.href = resp.data;
+            }
+        })
+    }
+</script>
+<script>
     // while click fa-regular fa-bookmark change to fa-solid fa-bookmark
-    $(document).ready(function () {
-        $('.fa-bookmark').click(function () {
-            $(this).toggleClass('fa-regular fa-bookmark fa-solid fa-bookmark');
-        });
-    });
+    // $(document).ready(function () {
+    //     $('.fa-bookmark').click(function () {
+    //         $(this).toggleClass('fa-regular fa-bookmark fa-solid fa-bookmark');
+    //     });
+    // });
 </script>
 </body>
 </html>

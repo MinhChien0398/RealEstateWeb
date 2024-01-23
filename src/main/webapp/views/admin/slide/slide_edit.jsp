@@ -204,7 +204,7 @@
         form.append('avatar', $("#avatar").prop('files')[0]);
     else form.append('notHave', '1');;
         $.ajax({
-            url: "/api/slider/edit?id=${slider.id}",
+            url: "/api/admin/slider/edit?id=${slider.id}",
             type: 'POST',
             dataType: "json",
             contentType: false,

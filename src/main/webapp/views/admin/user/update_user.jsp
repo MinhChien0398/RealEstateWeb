@@ -311,7 +311,7 @@
 <script>
     $('#save').click(function () {
         $.ajax({
-            url: "http://localhost:8080/api/user?action=edit",
+            url: "http://localhost:8080/api/admin/user?action=edit",
             type: "POST",
             dataType: "json",
             data: {

@@ -172,7 +172,7 @@
             let status = $('#status').val();
             let id = ${category.id};
             $.ajax({
-                url: '/api/category?action=edit',
+                url: '/api/admin/category?action=edit',
                 type: 'Post',
                 data: {
                     name: name,
