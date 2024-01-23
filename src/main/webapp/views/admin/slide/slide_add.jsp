@@ -187,7 +187,7 @@
         form.append('sequence', $('#sequence').val());
         form.append('avatar', $('#avatar').prop('files')[0]);
         $.ajax({
-            url: "/api/slider/add",
+            url: "/api/admin/slider/add",
             type: 'POST',
             dataType: "json",
             contentType: false,
@@ -198,10 +198,77 @@
             },
             error: function (data) {
                 console.log(data.responseText)
-                // saveService(data.data.id);
+                var err = JSON.parse(data.responseText);
+                console.log(err)
+                for (let e of err) {
+
+                    console.log(e.name, e.message)
+                    //     console.log email
+                    fetchErr(e.name, e.message);
+
+
+                }
             }
         });
     });
+</script>
+<script>
+    $('#save').click(function () {
+        let content = CKEDITOR.instances.post.getData();
+        $.ajax({
+            url: "/api/post?action=add",
+            type: "POST",
+            dataType: "json",
+            data: {content: content},
+            success: function (data) {
+                // saveproject(data.data.id)
+                console.log(data.responseText)
+            },
+            error: function (data) {
+                //thông báo lỗi sys
+                // console.log(data)
+
+                console.log(data)
+                var err = JSON.parse(data.responseText);
+
+                for (const e of err) {
+                    //     console.log email
+                    fetchErr(e.name, e.message);
+                }
+            }
+        })
+    })
+</script>
+<script>
+    function fetchErr(name, message) {
+    console.log(name, message)
+        switch (name){
+            case "title":
+                let title = document.getElementById('title');
+                title.classList.add('border-danger');
+                title.classList.add('text-danger');
+                title.value = "";
+                title.setAttribute('placeholder', message);
+                break;
+            case "status":
+                let status = document.getElementById('status');
+                status.classList.add('border-danger');
+                status.classList.add('text-danger');
+                status.value = "";
+                status.setAttribute('placeholder', message);
+                break;
+            case "sequence":
+                let sequence = document.getElementById('sequence');
+                sequence.classList.add('border-danger');
+                sequence.classList.add('text-danger');
+                sequence.value = "";
+                sequence.setAttribute('placeholder', message);
+                break;
+            case "avatar":
+                break
+
+    }
+    }
 </script>
 <script>
     $(document).ready(function () {

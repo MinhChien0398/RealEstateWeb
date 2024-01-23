@@ -24,7 +24,9 @@ public interface UserDAO {
     @SqlUpdate("UPDATE users SET fullname =:fullName , email =:email , password =:password, role =:role,avatar=:avatar,phone=:phone, birthday=:birthday," +
             " gender=:gender, status=:status ,updatedAt=now() WHERE email=:oldEmail")
     int updateUser(@BindBean User user,@Bind("oldEmail") String oldEmail);
-
+    @SqlUpdate("UPDATE users SET fullname =:fullName , email =:email , password =:password, role =:role,avatar=:avatar,phone=:phone, birthday=:birthday," +
+            " gender=:gender, status=:status ,updatedAt=now() WHERE id=:id")
+    int updateUser(@BindBean User user);
     @SqlUpdate("UPDATE users SET provinceId=:provinceId WHERE email=:email")
     int updateProvinceForUser(@Bind("provinceId") int provinceId,@Bind("email") String email);
 

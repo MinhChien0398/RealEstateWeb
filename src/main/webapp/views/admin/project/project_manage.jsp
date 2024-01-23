@@ -119,7 +119,7 @@
                         <h3 class="font-weight-bold main-color m-0">QL DỰ ÁN</h3>
                     </div>
                     <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <a href="/admin/project_additional_and_edit">
+                        <a href="/admin/project/add">
                             <button class="btn btn-blue p-2" type="button"><i class="fa-solid fa-plus"></i> Thêm dự án
                             </button>
                         </a>
@@ -166,7 +166,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
     $.ajax({
-        url: "${pageContext.request.contextPath}/api/project",
+        url: "${pageContext.request.contextPath}/api/admin/project",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -181,7 +181,7 @@
     let index = 1;
     $('#project-table').dataTable({
         ajax: {
-            url: "${pageContext.request.contextPath}/api/project",
+            url: "${pageContext.request.contextPath}/api/admin/project",
             type: "get",
             dataSrc: "",
             dataType: "json",
@@ -196,36 +196,36 @@
             {
                 data: "title",
                 render: function (title) {
-                    return (title==null|| title==="")?"---":title;
+                    return (title == null || title === "") ? "---" : title;
                 }
             },
             {
                 data: "avatar",
                 render: function (avatar) {
-        return (avatar==null|| avatar==="")?"":"<img src=\""+avatar+"\" alt=\"\" style=\"\" class=\"w-100\">"
-            },
+                    return (avatar == null || avatar === "") ? "" : "<img src=\"" + avatar + "\" alt=\"\" style=\"\" class=\"w-100\">"
+                },
             },
             {
                 data: "price",
                 render: function (price) {
-                    return (price==null|| price===0)?0:price  + "VND";
+                    return (price == null || price === 0) ? 0 : price + "VND";
                 }
             },
             {
                 data: "province",
                 render: function (province) {
-                    return (province==null|| province==="")?"---":province;
+                    return (province == null || province === "") ? "---" : province;
                 }
             },
             {
                 data: "category",
                 render: function (category) {
-                    return (category==null|| category==="")?"---":category;
+                    return (category == null || category === "") ? "---" : category;
                 }
             },
             {
                 data: "isAccepted", render: function (isAccepted) {
-                    if (isAccepted === 1 ) {
+                    if (isAccepted === 1) {
                         return '<i class="fa-solid fa-square active-icon" value="0"></i>'
                     } else {
                         return '<i class="fa-solid fa-square inactive-icon" value="1"></i>'
@@ -250,7 +250,7 @@
             {
                 data: "id",
                 render: function (id) {
-                    return '<a href="/admin/project_additional_and_edit?action=edit&id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
+                    return '<a href="/admin/project/edit?id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
                         '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
                 }
             },

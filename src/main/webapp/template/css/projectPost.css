@@ -17,6 +17,7 @@
 .post-content div p {
     font-size: 15px;
     font-weight: 400;
+    word-break: break-word;
 }
 
 
@@ -80,7 +81,11 @@ span.caret {
     overflow-x: auto;
     overflow-y: hidden;
 }
-
+.post-content-text p img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 
 .gallery .img {

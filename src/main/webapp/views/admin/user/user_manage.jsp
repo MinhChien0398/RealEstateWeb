@@ -100,7 +100,7 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: "${pageContext.request.contextPath}/api/user",
+            url: "${pageContext.request.contextPath}/api/admin/user",
             type: "post",
             dataType: "json",
             success: function (data) {
@@ -113,7 +113,7 @@
     let index = 1;
     $('#table-user').dataTable({
         ajax: {
-            url: "${pageContext.request.contextPath}/api/user",
+            url: "${pageContext.request.contextPath}/api/admin/user",
             type: "get",
             dataSrc: ''
         },

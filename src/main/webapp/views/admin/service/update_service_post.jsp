@@ -156,7 +156,7 @@
         let content = CKEDITOR.instances['service-des'].getData();
         let id = ${post.id};
         $.ajax({
-            url: "/api/post?action=edit",
+            url: "/api/admin/post?action=edit",
             type: "POST",
             dataType: "json",
             data: {

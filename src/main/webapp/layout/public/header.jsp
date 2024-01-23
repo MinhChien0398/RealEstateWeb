@@ -1,4 +1,3 @@
-<%@include file="/layout/common.jsp" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <nav class="navbar navbar-expand-lg navbar-light sticky-top nav-property ">
     <div class="container">
@@ -25,7 +24,7 @@
                     <a class="nav-link" href="/intro">Giới Thiệu</a>
                 </li>
                 <li class="nav-item nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
-                    id="<c:if test="${page=='service'}">nav-menuItem-active</c:if>">
+                    id="<c:if test="${page=='service'||page=='post-service'}">nav-menuItem-active</c:if>">
                     <a class="nav-link justify-content-center text-center"
                        href="/service"
                        role="link"
@@ -42,7 +41,7 @@
                 </li>
                 <li class=" nav-item
     nav-menuItem position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center"
-                    id="<c:if test="${page=='project'}">nav-menuItem-active</c:if>">
+                    id="<c:if test="${page=='project'||page=='post-project'}">nav-menuItem-active</c:if>">
                     <a class="nav-link justify-content-center text-center"
                        href="/project"
                        role="link"
@@ -69,14 +68,18 @@
                         </li>
                     </c:when>
                     <c:otherwise>
-                        <li class="nav-item position-relative font-weight-bolder nav-dropdownItem d-flex align-items-center">
+                        <li class="nav-item nav-menuItem position-relative font-weight-bolder
+                        nav-dropdownItem d-flex align-items-center"  id="<c:if test="${page=='account'}">nav-menuItem-active</c:if>">
                             <a class="nav-link justify-content-center text-center"
-                               href="/views/User/user.jsp"
-                               role="link"
-                            >Tài khoản
+                               href="/user"
+                               role="link">Tài khoản
                             </a>
                             <div class="dropdown-menu mt-1 w-100">
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="/logout?action=logout">Đăng
+                                <c:if test="${sessionScope.get('auth').getRole() == 1}">
+                                    <a class="dropdown-item text-center" style="font-size: 16px" href="/admin">Quản
+                                        trị</a></c:if>
+                                <a class="dropdown-item text-center" style="font-size: 16px"
+                                   href="/logout?action=logout">Đăng
                                     xuất</a>
                             </div>
                         </li>

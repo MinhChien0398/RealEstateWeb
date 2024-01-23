@@ -1,4 +1,4 @@
 package com.nhom44.DAO;
 
-public class OrderDAO {
+public interface OrderDAO {
 }

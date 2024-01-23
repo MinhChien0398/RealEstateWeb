@@ -62,7 +62,7 @@ public class LoginController extends HttpServlet {
                 if (user.getStatus() == 0) {
                     String token = UUID.randomUUID().toString();
                     VerifyService.getInstance().insert(token, user.getId());
-                    MailService.getInstance().sendMailToAGaig(user.getEmail(), token);
+                    MailService.getInstance().sendMailToAGaig(null,user.getEmail(), token);
                     req.setAttribute("error", "Tài khoản của bạn chưa được kích hoạt vui lòng kiểm tra email để kích hoạt tài khoản");
                     System.out.println("Tài khoản của bạn chưa được kích hoạt vui lòng kiểm tra email để kích hoạt tài khoản");
                     req.getRequestDispatcher("/views/public/login.jsp").forward(req, resp);
@@ -74,7 +74,7 @@ public class LoginController extends HttpServlet {
                     return;
                 }
                 if (user.getRole() == 0) {
-                    resp.sendRedirect(req.getContextPath() + "/home");
+                    resp.sendRedirect(req.getContextPath() + "/user");
                     return;
                 }
             }

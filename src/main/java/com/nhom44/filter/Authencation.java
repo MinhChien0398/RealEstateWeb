@@ -25,8 +25,7 @@ public class Authencation implements Filter {
         this.response = (HttpServletResponse) response;
         this.filterChain = chain;
         String uri = ((HttpServletRequest) request).getRequestURI();
-        System.out.println(uri);
-        if (uri.startsWith("/admin")) {
+        if (uri.startsWith("/admin")||uri.startsWith("/user")) {
             User user = (User) this.request.getSession().getAttribute("auth");
             if (user == null || user.getRole() != 1) {
                 this.response.sendRedirect(this.request.getContextPath() + "/login");

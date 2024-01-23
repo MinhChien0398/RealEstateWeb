@@ -273,7 +273,7 @@
         form.append('postId', id);
         form.append('id', ${service.id});
         $.ajax({
-            url: "/api/service?action=edit",
+            url: "/api/admin/service?action=edit",
             type: "POST",
             // dataType: "json",
             processData: false,
@@ -292,7 +292,7 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post?action=edit",
+            url: "/api/admin/post?action=edit",
             type: 'POST',
             dataType: "json",
             data: {

@@ -366,13 +366,14 @@
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
+        form.append('action', 'add');
         for (const x of $("#file_input1").prop('files')) {
             form.append('groupImage', x);
         }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
-            url: "/api/project?action=add",
+            url: "/api/admin/project",
             type: "POST",
             dataType: "json",
             processData: false,
@@ -382,7 +383,9 @@
                 console.log(data.responseText)
                 let obj=JSON.parse(data)
                 if (data.status === 200) {
+
                     window.location.href=obj.data;
+
                 }
             },
             error: function (data) {
@@ -403,10 +406,7 @@
         })
     }
 </script>
-<script>
 
-
-</script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
@@ -417,10 +417,10 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post?action=add",
+            url: "/api/admin/post",
             type: "POST",
             dataType: "json",
-            data: {content: content},
+            data: {content: content, action: "add"},
             success: function (data) {
                 saveproject(data.data.id)
             },
@@ -431,10 +431,8 @@
                 console.log(data)
                 var err = JSON.parse(data.responseText);
 
-                for (const e of err) {
                     //     console.log email
-                    fetchErr(e.name, e.message);
-                }
+                    fetchErr(err.name, err.message);
             }
         })
     })

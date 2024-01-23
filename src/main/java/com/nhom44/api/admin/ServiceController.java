@@ -22,7 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/api/service")
+@WebServlet(urlPatterns = "/api/admin/service")
 @MultipartConfig(
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 10 * 5,
