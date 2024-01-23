@@ -164,7 +164,7 @@
             <div class="container">
                 <!-- Main Container -->
                 <div class="container">
-                    <div class="row" id="imageProjects">
+                    <div class="row" id="project-container">
 <%--                        <c:forEach items="${projects}" var="project">--%>
 <%--                            <div--%>
 <%--                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">--%>
@@ -199,21 +199,21 @@
                     <div class="d-flex justify-content-center">
                         <ul class="nav md-pills pills-danger" id="contain-button">
                             <li class="page-item page-0 ">
-                                <a class="page-link " onClick="getProject(0)">Trang đầu</a>
+                                <a class="page-link " onClick="getP(0)">Trang đầu</a>
                             </li>
                             <c:forEach begin="0" end="${sizePage-1}" var="i">
                                 <c:if test="${i == 0}">
                                     <li class="page-item active page-i ">
-                                        <a class="page-link " onclick="getProject(i)">${i} </a></li>
+                                        <a class="page-link " onclick="getP(${i})">${i} </a></li>
                                 </c:if>
                                 <c:if test="${i != 0}">
                                     <li class="page-item page-i ">
-                                        <a class="page-link " onclick="getProject(i)">${i}</a></li>
+                                        <a class="page-link " onclick="getP(${i})">${i}</a></li>
                                 </c:if>
 
                             </c:forEach>
                             <li class="page-item page-${sizePage-1}">
-                                <a class="page-link" onClick="getProject(${sizePage-1})">Trang cuối</a>
+                                <a class="page-link" onClick="getP(${sizePage-1})">Trang cuối</a>
                             </li>
                         </ul>
                     </div>
@@ -229,23 +229,28 @@
 </div>
 </div>
 <%@include file="/layout/public/script.jsp" %>
+<%--<script>--%>
+<%--    $('document').ready(function () {--%>
+<%--        $(".button-collapse").sideNav();--%>
+<%--        var sideNavScrollbar = document.querySelector('.custom-scrollbar');--%>
+<%--        var ps = new PerfectScrollbar(sideNavScrollbar);--%>
+<%--    });--%>
+<%--</script>--%>
 <script>
-    $('document').ready(function () {
-        $(".button-collapse").sideNav();
-        var sideNavScrollbar = document.querySelector('.custom-scrollbar');
-        var ps = new PerfectScrollbar(sideNavScrollbar);
-    });
-</script>
-<script>
-    function getProject(offset){
+    $(document).ready(function () {
+        getP(0);
+    })
+    function getP(offset){
         $.ajax({
-            url: "/api/user/saved",
+            url: "https://localhost:8080/api/user/saved",
             type: "GET",
             data: {
+                action: "add",
                 offset: offset
             },
             success: function (data) {
-                drawProject(data);
+                let data1 = JSON.parse(data);
+                drawProject(data1);
             },
             error: function (data){
                 console.log(data);
@@ -256,6 +261,7 @@
 </script>
 <script>
     function drawProject(data) {
+        console.log(data);
         let container = document.getElementById('project-container');
         container.innerHTML = "";
         let project = '';

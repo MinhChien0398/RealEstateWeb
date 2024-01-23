@@ -278,10 +278,11 @@
     $(document).ready(function () {
         $('#save').click(function () {
             $.ajax({
-                url: "http://localhost:8080/api/admin/user?action=add",
+                url: "/api/admin/user",
                 type: "POST",
                 dataType: "json",
                 data: {
+                    action: "add",
                     email: $('#form8').val(),
                     password: $('#form9').val(),
                     fullname: $('#form12').val(),
