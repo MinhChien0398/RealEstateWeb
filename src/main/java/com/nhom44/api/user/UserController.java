@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.nhom44.bean.ResponseModel;
 import com.nhom44.bean.User;
 import com.nhom44.services.UserService;
+import com.nhom44.util.StringUtil;
 import com.nhom44.validator.*;
-import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,13 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @WebServlet(urlPatterns = {"/api/user", "/api/user/update"})
 public class UserController extends HttpServlet {
@@ -42,9 +38,14 @@ public class UserController extends HttpServlet {
         String address = req.getParameter("provinceId") == null ? "" : req.getParameter("provinceId");
         String birthday = req.getParameter("birthday") == null ? "" : req.getParameter("birthday");
         String rePassword = req.getParameter("rePassword") == null ? "" : req.getParameter("rePassword");
-
-        if (email != user.getEmail())
-            if (email != "" && !singleValidator.validator(email)) {
+        if (!email.equals(user.getEmail()))
+            if(UserService.getInstance().isContainEmail(email)){
+                responseModel = new ResponseModel();
+                responseModel.setName("email");
+                responseModel.setMessage("Email đã tồn tại");
+                errMess.add(responseModel);
+            }else
+            if (!email.equals("") && !singleValidator.validator(email)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("email");
                 responseModel.setMessage("Email không hợp lệ");
@@ -52,21 +53,21 @@ public class UserController extends HttpServlet {
             } else user.setEmail(email);
         singleValidator = new TitleOrNameSingleValidator();
         if (fullName != user.getFullName())
-            if (fullName != "" && !singleValidator.validator(fullName)) {
+            if (!fullName.equals("") && !singleValidator.validator(fullName)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("fullName");
                 responseModel.setMessage("Tên không hợp lệ");
                 errMess.add(responseModel);
             } else user.setFullName(fullName);
-        if (password != "")
-            if (!singleValidator.validator(password) && !singleValidator.validator(rePassword) && password != rePassword) {
+        if (!password.equals(""))
+            if (!singleValidator.validator(password) && !singleValidator.validator(rePassword) && password.equals(rePassword)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("password");
                 responseModel.setMessage("Mật khẩu không hợp lệ");
                 errMess.add(responseModel);
-            } else user.setPassword(password);
+            } else user.setPassword(StringUtil.hashPassword(password));
         singleValidator = new PhoneValidator();
-        if (phone != user.getPhone())
+        if (phone.equals(user.getPhone()))
             if (phone != "" && !singleValidator.validator(phone)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("phone");
@@ -74,7 +75,7 @@ public class UserController extends HttpServlet {
                 errMess.add(responseModel);
             } else user.setPhone(phone);
         singleValidator = new NumberVallidator();
-        if (address != user.getProvinceId() + "")
+        if (address.equals(user.getProvinceId() + "") )
             if (address != "" && !singleValidator.validator(address)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("address");
@@ -83,7 +84,7 @@ public class UserController extends HttpServlet {
             } else user.setProvinceId(Integer.parseInt(address));
         singleValidator = new DateValidator();
         java.util.Date dbirthday = null;
-        if (birthday != user.getBirthday().toString())
+        if (birthday.equals(user.getBirthday().toString()))
             if (birthday == null || birthday.trim().isEmpty()) {
                 req.setAttribute("birthday", "Ngày sinh không hợp lệ");
                 responseModel = new ResponseModel();

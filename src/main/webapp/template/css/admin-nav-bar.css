@@ -199,7 +199,7 @@ body {
 }
 
 .wrapper .main-container {
-    /*margin-top: 70px;*/
+    margin-top: 70px;
     width: calc(100% - 225px);
     margin-left: 225px;
     /*padding: 15px;*/

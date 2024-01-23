@@ -14,7 +14,7 @@ import java.util.List;
 public interface ServiceDAO {
     //get all service
 
-    @SqlQuery("SELECT s.id, s.name, s.description,s.avatar, s.postId,count(ps.id) as numberOfProject,  count(h.id) AS numberOfView ,s.status FROM Services s LEFT JOIN Projects_Services ps ON s.id=ps.serviceId JOIN Posts p ON p.id=s.postId   LEFT JOIN Histories h ON h.postId=p.id GROUP BY s.id, s.name, s.description, s.status")
+    @SqlQuery("    SELECT s.id, s.name, s.description,s.avatar, s.postId,count(ps.id) as numberOfProject,  count(h.id) AS numberOfView ,s.status FROM Services s LEFT JOIN Projects_Services ps ON s.id=ps.serviceId JOIN Posts p ON p.id=s.postId   LEFT JOIN Histories h ON h.postId=p.id GROUP BY s.id, s.name, s.description, s.status")
 
     List<Service> getAll();
     @SqlQuery("SELECT s.id, s.name, s.status FROM services s JOIN projects_services sp ON s.id=sp.serviceId AND sp.projectId=:id")

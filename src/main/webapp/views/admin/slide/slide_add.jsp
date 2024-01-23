@@ -198,16 +198,7 @@
             },
             error: function (data) {
                 console.log(data.responseText)
-                var err = JSON.parse(data.responseText);
-                console.log(err)
-                for (let e of err) {
-
-                    console.log(e.name, e.message)
-                    //     console.log email
-                    fetchErr(e.name, e.message);
-
-
-                }
+                // saveService(data.data.id);
             }
         });
     });
