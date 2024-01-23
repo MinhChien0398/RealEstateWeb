@@ -61,7 +61,7 @@ public class UserController extends HttpServlet {
         }
         System.out.println("step 2");
         String password = req.getParameter("password");
-        if (password.length() < 6) {
+         if (password.length() < 6) {
             req.setAttribute("password", "Mật khẩu phải có ít nhất 6 ký tự");
             ResponseModel responseModel = new ResponseModel();
             responseModel.setMessage("Mật khẩu phải có ít nhất 6 ký tự");
@@ -94,7 +94,7 @@ public class UserController extends HttpServlet {
             errMess.add(responseModel);
             isErr = true;
         } else {
-            SimpleDateFormat dmy = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat dmy = new SimpleDateFormat("yyyy/MM/dd");
             dmy.setLenient(false);
             try {
                 birthday = dmy.parse(ip_birthday);
