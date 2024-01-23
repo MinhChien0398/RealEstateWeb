@@ -400,10 +400,7 @@
         })
     }
 </script>
-<script>
 
-
-</script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
