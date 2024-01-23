@@ -16,9 +16,10 @@ import java.util.List;
 @WebServlet(urlPatterns = "/api/user/saved")
 public class SavedController extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String offset= req.getParameter("offset")==null?"0":req.getParameter("offset");
         User user= (User) req.getSession().getAttribute("auth");
+        System.out.println(user.toString());
         List<Project> projects= ProjectService.getInstance().getLikedProjectByUserId(user.getId() ,Integer.parseInt(offset)*16);
         Gson gson= new Gson();
         resp.getWriter().print(gson.toJson(projects));

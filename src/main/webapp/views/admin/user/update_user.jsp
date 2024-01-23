@@ -228,7 +228,7 @@
                                                     <select name="province" id="province" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
                                                         <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.name}" <c:if test="${user.province==item.name}">selected</c:if> >${item.name}</option>
+                                                            <option value="${item.id}" <c:if test="${user.province==item.name}">selected</c:if> >${item.name}</option>
                                                         </c:forEach>
 
                                                     </select>
@@ -311,16 +311,18 @@
 <script>
     $('#save').click(function () {
         $.ajax({
-            url: "http://localhost:8080/api/admin/user?action=edit",
+            url: "http://localhost:8080/api/admin/user",
             type: "POST",
             dataType: "json",
             data: {
+                oldEmail: '${user.email}',
+                action: "edit",
                 email: $('#form8').val(),
                 password: $('#form9').val(),
                 fullname: $('#form12').val(),
                 birthday: $('#birthday').val(),
                 phone: $('#form4').val(),
-                province: $('#province').val(),
+                provinceId: $('#province').val(),
                 isMale: $('#materialUnchecked').val(),
                 isFemale: $('#materialIndeterminate2').val(),
                 status: $('#status').val(),
@@ -331,7 +333,7 @@
                 if (data.name==="sys") {
                     alert(data.message);
                 }else {
-                    window.location.href = "/admin/user_management?action=manage";
+                    window.location.href = "/admin/user_management?action=manager";
                 }
             },
             error: function (data) {   console.log(err)
