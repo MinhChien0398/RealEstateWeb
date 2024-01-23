@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=utf-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
 <head>
@@ -24,96 +24,97 @@
         }
 
     </style>
-    <title>Title</title>
+    <title>Thêm dự án</title>
 </head>
 <body>
 
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <div class="header fixed-top">
-        <div class="header-menu row m-0">
-            <div class="col-11 d-flex align-items-center">
-                <div class="sidebar-btn mr-3">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="title text-uppercase">
-                    Xây dựng <span>Nhà Đẹp</span></div>
-            </div>
-            <ul class="col-1 d-flex align-items-center m-0">
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
-            </ul>
-        </div>
-    </div>
+    <%@include file="/layout/admin/adminheader.jsp"%>
+<%--    <div class="header fixed-top">--%>
+<%--        <div class="header-menu row m-0">--%>
+<%--            <div class="col-11 d-flex align-items-center">--%>
+<%--                <div class="sidebar-btn mr-3">--%>
+<%--                    <i class="fas fa-bars"></i>--%>
+<%--                </div>--%>
+<%--                <div class="title text-uppercase">--%>
+<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
+<%--            </div>--%>
+<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
+<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
+<%--            </ul>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 
-    <div class="sidebar">
-        <div class="sidebar-menu">
-            <center class="logo">
-                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">
-            </center>
-            <li class="sidebar-item">
-                <a href="dashboard.html" class="menu-btn">
-                    <i class="fas fa-desktop"></i><span>Thống kê</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="user">
-                <a href="admin-userManage.html" class="menu-btn">
-                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="project">
-                <div class="menu-btn">
-                    <i class="fa-solid fa-building"> </i>
-                    <a href="admin-projectsManage.html">
-                        <span>QL Dự án</span>
-                    </a> <i
-                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
-                <div class="sub-menu d-none">
-                    <a href="admin-TypeOfProject.html" class="menu-btn">
-                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
-                    </a>
-                    <a href="admin-PostProject.html" class="menu-btn">
-                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
-                    </a>
-                    <a href="admin-ProjectSchedule.html" class="menu-btn">
-                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
-                    </a>
-                </div>
-            </li>
+<%--    <div class="sidebar">--%>
+<%--        <div class="sidebar-menu">--%>
+<%--            <center class="logo">--%>
+<%--                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">--%>
+<%--            </center>--%>
+<%--            <li class="sidebar-item">--%>
+<%--                <a href="dashboard.html" class="menu-btn">--%>
+<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
+<%--                </a>--%>
+<%--            </li>--%>
+<%--            <li class="sidebar-item" id="user">--%>
+<%--                <a href="admin-userManage.html" class="menu-btn">--%>
+<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
+<%--                </a>--%>
+<%--            </li>--%>
+<%--            <li class="sidebar-item" id="project">--%>
+<%--                <div class="menu-btn">--%>
+<%--                    <i class="fa-solid fa-building"> </i>--%>
+<%--                    <a href="admin-projectsManage.html">--%>
+<%--                        <span>QL Dự án</span>--%>
+<%--                    </a> <i--%>
+<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+<%--                <div class="sub-menu d-none">--%>
+<%--                    <a href="admin-TypeOfProject.html" class="menu-btn">--%>
+<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
+<%--                    </a>--%>
+<%--                    <a href="admin-PostProject.html" class="menu-btn">--%>
+<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
+<%--                    </a>--%>
+<%--                    <a href="admin-ProjectSchedule.html" class="menu-btn">--%>
+<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
+<%--                    </a>--%>
+<%--                </div>--%>
+<%--            </li>--%>
 
-            <li class="sidebar-item" id="type-project">
-                <div class="menu-btn">
-                    <a href="servicesManager.html">
-                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
-                    </a><i
-                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
-                <div class="sub-menu d-none">
-                    <a href="servicePostsManage.html" class="menu-btn">
-                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
-                    </a>
-                </div>
-            </li>
-            <li class="sidebar-item" id="contact">
-                <a href="admin-contactManagement.html" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="slide">
-                <a href="admin-slideManagement.html" class="menu-btn">
-                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
-                </a>
-            </li>
-        </div>
-    </div>
+<%--            <li class="sidebar-item" id="type-project">--%>
+<%--                <div class="menu-btn">--%>
+<%--                    <a href="servicesManager.html">--%>
+<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
+<%--                    </a><i--%>
+<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+<%--                <div class="sub-menu d-none">--%>
+<%--                    <a href="servicePostsManage.html" class="menu-btn">--%>
+<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
+<%--                    </a>--%>
+<%--                </div>--%>
+<%--            </li>--%>
+<%--            <li class="sidebar-item" id="contact">--%>
+<%--                <a href="admin-contactManagement.html" class="menu-btn">--%>
+<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
+<%--                </a>--%>
+<%--            </li>--%>
+<%--            <li class="sidebar-item" id="slide">--%>
+<%--                <a href="admin-slideManagement.html" class="menu-btn">--%>
+<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
+<%--                </a>--%>
+<%--            </li>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="dashboard.html">Thống kê</a></li>
+                <ol class="breadcrumb m-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="admin-projectsManage.html">QL Dự án</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL Dự án</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="main-color" href="addProjectsPage.html">Thêm dự án</a></li>
+                    <li class="breadcrumb-item"><a class="main-color" href="#">Thêm dự án</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-auto">
@@ -365,13 +366,14 @@
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         form.append('avatar', $("#avatar").prop('files')[0]);
+        form.append('action', 'add');
         for (const x of $("#file_input1").prop('files')) {
             form.append('groupImage', x);
         }
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
-            url: "/api/project?action=add",
+            url: "/api/admin/project",
             type: "POST",
             dataType: "json",
             processData: false,
@@ -379,8 +381,11 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
+                let obj=JSON.parse(data)
                 if (data.status === 200) {
-                    window.location.href = '/admin/project_manage.jsp';
+
+                    window.location.href=obj.data;
+
                 }
             },
             error: function (data) {
@@ -412,10 +417,10 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post?action=add",
+            url: "/api/admin/post",
             type: "POST",
             dataType: "json",
-            data: {content: content},
+            data: {content: content, action: "add"},
             success: function (data) {
                 saveproject(data.data.id)
             },
@@ -426,10 +431,8 @@
                 console.log(data)
                 var err = JSON.parse(data.responseText);
 
-                for (const e of err) {
                     //     console.log email
-                    fetchErr(e.name, e.message);
-                }
+                    fetchErr(err.name, err.message);
             }
         })
     })

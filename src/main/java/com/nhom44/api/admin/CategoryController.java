@@ -22,7 +22,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.sql.Date;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/api/category")
+@WebServlet(urlPatterns = "/api/admin/category")
 public class CategoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -98,6 +98,7 @@ public class CategoryController extends HttpServlet {
             printWriter.close();
             return;
         }
+        resp.setStatus(200);
         responseModel = new ResponseModel();
         responseModel.setName("success");
         responseModel.setMessage("Thêm thành công");

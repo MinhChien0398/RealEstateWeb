@@ -11,97 +11,26 @@
 <head>
     <%@include file="/layout/public/link.jsp" %>
     <meta charset="UTF-8">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
-    <title>Title</title>
+    <title>Yêu cầu liên hệ</title>
 </head>
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <div class="header fixed-top ">
-        <div class="header-menu row m-0">
-            <div class="col-11 d-flex align-items-center">
-                <div class="sidebar-btn mr-3">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="title text-uppercase">
-                    Xây dựng <span>Nhà Đẹp</span></div>
-            </div>
-            <ul class="col-1 d-flex align-items-center m-0">
-                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="sidebar">
-        <div class="sidebar-menu">
-            <center class="logo">
-                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">
-            </center>
-            <li class="sidebar-item">
-                <a href="../dashboard.jsp" class="menu-btn">
-                    <i class="fas fa-desktop"></i><span>Thống kê</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="user">
-                <a href="../user/user_manage.jsp" class="menu-btn">
-                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="project"><div class="menu-btn">
-                <i class="fa-solid fa-building">  </i>
-                <a href="../project/project_manage.jsp" >
-                    <span>QL Dự án</span>
-                </a> <i
-                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>
-                <div class="sub-menu d-none">
-                    <a href="../category/category_management.jsp" class="menu-btn">
-                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>
-                    </a>
-                    <a href="../project/post_project.jsp" class="menu-btn">
-                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>
-                    </a>
-                    <a href="../project/project_schedule.jsp" class="menu-btn">
-                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>
-                    </a>
-                </div>
-            </li>
-
-            <li class="sidebar-item" id="type-project">
-                <div class="menu-btn">
-                    <a href="../service/service_manage.jsp">
-                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>
-                    </a><i
-                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>
-                <div class="sub-menu d-none">
-                    <a href="../service/post_service.jsp" class="menu-btn">
-                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>
-                    </a>
-                </div>
-            </li>
-            <li class="sidebar-item" id="contact">
-                <a href="contact_manage.jsp" class="menu-btn">
-                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>
-                </a>
-            </li>
-            <li class="sidebar-item" id="slide">
-                <a href="../slide/slide_manage.jsp" class="menu-btn">
-                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>
-                </a>
-            </li>
-        </div>
-    </div>
-
+    <%@include file="/layout/admin/adminheader.jsp" %>
     <div class="main-container">
         <div class="container p-0">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 bg-white">
-                    <li class="breadcrumb-item"><a class="black-text" href="../dashboard.jsp">Thống kê</a></li>
+                <ol class="breadcrumb m-0 bg-white">
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
-                    <li class="breadcrumb-item main-color"><a class="black-text" href="#">QL liên hệ</a></li>
+                    <li class="breadcrumb-item main-color"><a class="main-color" href="#">QL Liên hệ</a></li>
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
@@ -220,17 +149,17 @@
 
 </script>
 <script>
-    let cur ;
-    for (let item of  $('.sidebar-item')) {
-        item.addEventListener('click', function (){
-            if(cur!=null) {
+    let cur;
+    for (let item of $('.sidebar-item')) {
+        item.addEventListener('click', function () {
+            if (cur != null) {
                 cur.classList.remove('d-block');
                 cur.classList.add('d-none');
             }
-            if(this.children.length===2){
+            if (this.children.length === 2) {
                 this.children[1].classList.remove('d-none')
                 this.children[1].classList.add('d-block')
-                cur=this.children[1];
+                cur = this.children[1];
             }
         })
     }
@@ -244,5 +173,7 @@
         });
     });
 </script>
+
+
 </body>
 </html>

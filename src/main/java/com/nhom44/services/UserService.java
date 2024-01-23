@@ -65,7 +65,10 @@ public class UserService {
     private int updateProvinceId(int id, String email) {
         return conn.withExtension(UserDAO.class, dao -> dao.updateProvinceForUser(id, email));
     }
-
+public User update(User user){
+       int check= conn.withExtension(UserDAO.class,dao->dao.updateUser(user));
+       return check==1?conn.withExtension(UserDAO.class,dao->dao.login(user.getEmail(), user.getPassword())):null;
+}
     public int update(String oldEmail, String email, String password, String name, Date birthday, String phone, String province, String isMale, String status, String role) {
         String idProvince = ProvinceService.getInstance().getSpecificId(province);
         try {

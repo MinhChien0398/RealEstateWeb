@@ -1,11 +1,12 @@
 package com.nhom44.services;
 
 import com.nhom44.DAO.ServiceDAO;
+import com.nhom44.bean.Project;
 import com.nhom44.bean.Service;
 import com.nhom44.db.JDBIConnector;
 import org.jdbi.v3.core.Jdbi;
 
-import java.util.List;
+import java.util.*;
 
 public class ServiceOfProjectService {
     private static Jdbi conn;
@@ -28,7 +29,7 @@ public class ServiceOfProjectService {
     }
 
     public static void main(String[] args) {
-        List<Service> services = getInstance().getAll();
+        List<Service> services = getInstance().getAllActive();
         System.out.println(services.size());
         for (Service service : services
              ) {
@@ -64,5 +65,22 @@ public class ServiceOfProjectService {
 
     public List<Service> getAllActive() {
         return conn.withExtension(ServiceDAO.class, dao -> dao.getAllActive());
+    }
+
+    public Service getActiveById(int i) {
+        return conn.withExtension(ServiceDAO.class, dao -> dao.getActiveById(i));
+    }
+
+    public List<Service> getSuggestServices() {
+        List<Service> serivces=conn.withExtension(ServiceDAO.class, dao -> dao.getSuggestServices());
+        Set<Integer> set = new HashSet<>();
+        while (set.size() < 4 && set.size() < serivces.size()){
+            Random random = new Random();
+            int i = random.nextInt(serivces.size());
+            set.add(i);
+        }
+        List<Service> res = new ArrayList<>();
+        set.forEach(i -> res.add(serivces.get(i)));
+        return res;
     }
 }

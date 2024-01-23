@@ -1,7 +1,9 @@
 
 package com.nhom44.services;
 
+import com.nhom44.bean.Cart;
 import com.nhom44.mail.MailProperties;
+
 import java.util.Date;
 import java.util.Properties;
 import javax.mail.Authenticator;
@@ -59,15 +61,21 @@ public class MailService {
 
     }
 
-    public void sendMailToVerify(String to, String verifycode) {
-        String verifyLink = "http://localhost:8080/verify?code=" + verifycode;
+    public void sendMailToVerify(String domain, String to, String verifycode) {
+        if (domain == null) {
+            domain = "localhost:8080";
+        }
+        String verifyLink = "http://" + domain + "/verify?code=" + verifycode;
         String content = "Nhấp vào đường link sau để xác thực tài khoản: " + verifyLink;
         String subject = "Xác thực tài khoản";
         this.sendMail(to, subject, content);
     }
 
-    public void sendMailToAGaig(String to, String verifycode) {
-        String verifyLink =  "http://localhost:8080/verify?code=" + verifycode;
+    public void sendMailToAGaig(String domain, String to, String verifycode) {
+        if (domain == null) {
+            domain = "localhost:8080";
+        }
+        String verifyLink = "http://" + domain + "/verify?code=" + verifycode;
         String content = "Nhấp vào đường link sau để xác thực tài khoản: " + verifyLink;
         String subject = "Xác thực lại tài khoản";
         this.sendMail(to, subject, content);
@@ -77,5 +85,17 @@ public class MailService {
         String content = "Mật khẩu của bạn đã được đổi thành: " + password;
         String subject = "Cấp lại mật khẩu";
         this.sendMail(to, subject, content);
+    }
+
+    public void sendMailToNotiFyCart(String domain, String verifycode, Cart cart) {
+        String content = "Thông tin yêu cầu cuả bạn là :\b" +
+                "\t\tMã yêu cầu :" + cart.getId() + "\n\t\tLoại hình dự án :" + cart.getCategoryId() +
+                "\n\t\tTỉnh thành :" + cart.getProvinceId() + "\n\t\tChiều rộng khu vực xây dựng:" +
+                cart.getWidth() + "\n\t\tChiều dài khu vực xây dựng:" + cart.getHeight() + "\n\t\tDự án mẫu :" +
+                cart.getRepresentProjectId() + "\n\t\tNgày tạo :" + cart.getCreatedAt();
+        String verifyLink = "http://" + domain + "/verify/cart?code=" + verifycode;
+        content += "\n\n" + "Nhấp vào đường link sau để xác thực yêu cầu: " + verifyLink;
+        String subject = "Cấp lại mật khẩu";
+        this.sendMail(cart.getEmail(), subject, content);
     }
 }

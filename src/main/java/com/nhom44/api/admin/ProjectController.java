@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/api/project")
+@WebServlet(urlPatterns = "/api/admin/project")
 @MultipartConfig(
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 10 * 5,
@@ -97,7 +97,7 @@ public class ProjectController extends HttpServlet {
         System.out.println(arr.length);
         if (!new ServiceSelectValidator().validator(arr)) {
             ResponseModel responseModel = new ResponseModel();
-            System.out.println("loi service" + input);
+            System.out.println("lỗi service" + input);
             responseModel.setMessage("Vui lòng chọn loại dịch vụ");
             responseModel.setName("service");
             errMess.add(responseModel);
@@ -197,10 +197,12 @@ public class ProjectController extends HttpServlet {
                 }
                 ProjectService.getInstance().addProjectForUser(project.getId(), user.getId());
                 List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()), "avatar", req);
-                System.out.println(fileNames.toString());
+
                 if (!fileNames.isEmpty()) {
+                    System.out.println("avatar filename : " + fileNames.toString());
                     project.setAvatar(fileNames.get(0));
                     ProjectService.getInstance().updateProject(project, !req.getParameter("isComplete").equals("0"));
+                    System.out.println(project.toString());
                 } else {
                     ResponseModel responseModel = new ResponseModel();
                     resp.setStatus(400);
@@ -231,13 +233,16 @@ public class ProjectController extends HttpServlet {
                         }
                     }
                 }
-                if(req.getParameter("notHaveAvatar")==null){
-                List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()), "avatar", req);
-                System.out.println(fileNames.toString());
-                if (!fileNames.isEmpty()) {
-                    project.setAvatar(fileNames.get(0));
-                    ProjectService.getInstance().updateProjectAvatar(project);
-                }}
+                if (req.getParameter("notHaveAvatar") == null) {
+                    List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()), "avatar", req);
+
+                    if (!fileNames.isEmpty()) {
+
+                        project.setAvatar(fileNames.get(0));
+                        project = ProjectService.getInstance().updateProjectAvatar(project);
+
+                    }
+                }
                 ProjectService.getInstance().updateProjectForUser(project.getId(), user.getId());
             }
             resp.setStatus(200);

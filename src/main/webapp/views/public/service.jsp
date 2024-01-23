@@ -66,7 +66,7 @@
                                             ${service.description}
                                     </p>
                                 </div>
-                                <a href="postService.jsp" class="btn btn-rounded">Xem thêm</a>
+                                <a href="/post/service?id=${service.id}" class="btn btn-rounded">Xem thêm</a>
                             </div>
                         </div>
                     </div>
