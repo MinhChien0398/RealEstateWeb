@@ -158,7 +158,7 @@
         $('#save').click(function () {
 
             $.ajax({
-                url: '/api/category?action=add',
+                url: '/api/admin/category?action=add',
                 type: 'POST',
                 // processData:false,
                 // contentType:false,

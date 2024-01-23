@@ -295,7 +295,7 @@
                 + '<p class="text-white p-0 id-project">'
                 + '<strong>MDA:' + x.id + '</strong>'
                 + '</p>'
-                + '<p class="text-white p-4"></p>'
+                + '<p class="text-white p-4">'+x.description+'</p>'
                 + '</div>'
                 + '</div></div></a></div></div>'
         }

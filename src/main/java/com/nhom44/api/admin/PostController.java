@@ -16,9 +16,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 
-@WebServlet(urlPatterns = "/api/post")
-
-
+@WebServlet(urlPatterns = "/api/admin/post")
 public class PostController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

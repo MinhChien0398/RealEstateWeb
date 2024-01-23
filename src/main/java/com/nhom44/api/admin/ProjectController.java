@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/api/project")
+@WebServlet(urlPatterns = "/api/admin/project")
 @MultipartConfig(
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 10 * 5,

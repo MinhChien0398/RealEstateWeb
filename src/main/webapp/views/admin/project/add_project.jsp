@@ -373,7 +373,7 @@
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
-            url: "/api/project",
+            url: "/api/admin/project",
             type: "POST",
             dataType: "json",
             processData: false,
@@ -418,7 +418,7 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post",
+            url: "/api/admin/post",
             type: "POST",
             dataType: "json",
             data: {content: content, action: "add"},

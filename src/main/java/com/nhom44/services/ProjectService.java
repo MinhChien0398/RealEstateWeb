@@ -174,10 +174,14 @@ public class ProjectService {
     }
 
     public static void main(String[] args) {
-        List<Project> projects = getInstance().getSuggestProjects(2);
+        List<Project> projects = getInstance().getLikedProjectByUserId(1);
         System.out.println(projects.size());
         for (Project project : projects) {
             System.out.println(project);
         }
+    }
+
+    public List<Project> getLikedProjectByUserId(int i) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getLikedProjectByUserId(i));
     }
 }

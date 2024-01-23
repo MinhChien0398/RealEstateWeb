@@ -166,7 +166,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
     $.ajax({
-        url: "${pageContext.request.contextPath}/api/project",
+        url: "${pageContext.request.contextPath}/api/admin/project",
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -181,7 +181,7 @@
     let index = 1;
     $('#project-table').dataTable({
         ajax: {
-            url: "${pageContext.request.contextPath}/api/project",
+            url: "${pageContext.request.contextPath}/api/admin/project",
             type: "get",
             dataSrc: "",
             dataType: "json",

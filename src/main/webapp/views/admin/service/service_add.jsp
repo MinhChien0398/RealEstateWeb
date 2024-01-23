@@ -253,7 +253,7 @@
         form.append('avatar', $("#avatar").prop('files')[0]);
         form.append('postId', id);
         $.ajax({
-            url: "/api/service?action=add",
+            url: "/api/admin/service?action=add",
             type: "POST",
             // dataType: "json",
             processData: false,
@@ -273,7 +273,7 @@
     $('#save').click(function () {
         let content = CKEDITOR.instances.post.getData();
         $.ajax({
-            url: "/api/post?action=add",
+            url: "/api/admin/post?action=add",
             type: 'POST', dataType: "json",
             data: {content: content},
             success: function (data) {

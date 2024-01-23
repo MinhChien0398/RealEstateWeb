@@ -21,7 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/api/slider", "/api/slider/add", "/api/slider/edit", "/api/slider/delete"})
+@WebServlet(urlPatterns = {"/api/admin/slider", "/api/admin/slider/add", "/api/admin/slider/edit", "/api/admin/slider/delete"})
 @MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, maxFileSize = 1024 * 1024 * 50, maxRequestSize = 1024 * 1024 * 50)
 public class SliderController extends HttpServlet {
     @Override
@@ -66,10 +66,10 @@ public class SliderController extends HttpServlet {
         }
         System.out.println(slider.toString());
         int i = Integer.MIN_VALUE;
-        if (req.getRequestURI().startsWith("/api/slider/add")) {
+        if (req.getRequestURI().startsWith("/api/admin/slider/add")) {
 
             i = SliderService.getInstance().add(slider);
-        } else if (req.getRequestURI().startsWith("/api/slider/edit")) {
+        } else if (req.getRequestURI().startsWith("/api/admin/slider/edit")) {
             System.out.println(slider);
             i = SliderService.getInstance().update(slider);
         }
