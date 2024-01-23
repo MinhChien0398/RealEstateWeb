@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" external-system-id="Maven" name="RealEstateWeb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>RealEstateWeb</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="RealEstateWeb.war">
+      <element id="artifact" artifact-name="RealEstateWeb:war exploded" />
+    </root>
+  </artifact>
+</component>
