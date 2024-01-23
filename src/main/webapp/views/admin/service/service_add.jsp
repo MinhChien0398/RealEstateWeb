@@ -157,7 +157,7 @@
                                                     <div class="card-body">
                                                         <div class="mb-4">
                                                             <label for="name" class="labels">Tiêu đề</label>
-                                                            <input id="name" name="name" type="text" class="form-control"
+                                                            <input id="name" type="text" class="form-control"
                                                                    placeholder="Tiêu đề" value="">
                                                         </div>
                                                         <div class="mb-4">
@@ -261,21 +261,9 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
-                if (data.status === 200) {
-                }
             },
             error: function (data) {
                 console.log(data.responseText)
-                var err = JSON.parse(data.responseText);
-                console.log(err)
-                for (let e of err) {
-
-                    console.log(e.name, e.message)
-                    //     console.log email
-                    fetchErr(e.name, e.message);
-
-
-                }
             }
         })
     }
@@ -293,59 +281,13 @@
                 saveService(data.data.id);
             },
             error: function (data) {
-                console.log(data)
-                var err = JSON.parse(data.responseText);
 
-                for (const e of err) {
-                        console.log(e.name, e.message)
-                    // fetchErr(e.name, e.message);
-                    fetchErr(e.name, e.message);
-                }
             }
         })
     })
 
 </script>
-<script>
-    function fetchErr(name, mess) {
-        console.log(name, mess)
-        switch (name) {
-            case "name":
-                let nameErr = document.getElementById("name");
-                nameErr.classList.add("border-danger");
-                nameErr.classList.add("text-danger");
-                nameErr.value = "";
-                nameErr.setAttribute('value', "");
-                nameErr.setAttribute('placeholder', mess);
-                break;
-            case "description":
-                let descriptionErr = document.getElementById("description");
-                descriptionErr.classList.add("border-danger");
-                descriptionErr.classList.add("text-danger");
-                descriptionErr.value = "";
-                descriptionErr.setAttribute('value', "");
-                descriptionErr.setAttribute('placeholder', mess);
-                break;
-            // case "avatar":
-            //     let avatarErr = document.getElementById("avatar");
-            //     avatarErr.classList.add("border-danger");
-            //     avatarErr.classList.add("text-danger");
-            //     avatarErr.value = "";
-            //     avatarErr.setAttribute('value', "");
-            //     avatarErr.setAttribute('placeholder', mess);
-            //     break;
-            // case "content":
-            //     let contentErr = document.getElementById("content");
-            //     contentErr.classList.add("border-danger");
-            //     contentErr.classList.add("text-danger");
-            //     contentErr.value = "";
-            //     contentErr.setAttribute('value', "");
-            //     contentErr.setAttribute('placeholder', mess);
-            //     break;
 
-        }
-    }
-</script>
 <script>
     let cur;
     for (let item of $('.sidebar-item')) {

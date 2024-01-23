@@ -11,6 +11,11 @@
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/user_favourite.css"/>" rel="stylesheet">
     <title>dự án đã lưu</title>
+    <style>
+        .wrapper .main-container{
+            margin-top: 0!important;
+        }
+    </style>
 </head>
 <body>
 <%@include file="/layout/public/header.jsp" %>
@@ -160,40 +165,56 @@
                 <!-- Main Container -->
                 <div class="container">
                     <div class="row" id="imageProjects">
-                        <c:forEach items="${projects}" var="project">
-                            <div
-                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">
-                                <div
-                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">
-                                    <i class="fa-solid fa-bookmark position-absolute" style="z-index: 1000"></i>
-                                    <a href="/post/project?id=${project.id}">
-                                        <img
-                                                src="${project.avatar}"
-                                                class="w-100">
-                                        <div class="w-100 position-absolute projectCard-content">
-                                            <div class="mask justify-content-center d-flex h-100"
-                                                 style="background-color: rgba(48, 48, 48, 0.72);">
-                                                <div class="align-items-center flex-column d-flex w-100">
-                                                    <h6 class="text-white text-center pt-4 projectTitle-center text-uppercase">
-                                                            ${project.title}</h6>
-                                                    <p class="text-white p-0 id-project">
-                                                        <strong>
-                                                            MDA:${project.id}</strong>
-                                                    </p>
-                                                    <p class="text-white p-4">
-                                                            ${project.description}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </c:forEach>
+<%--                        <c:forEach items="${projects}" var="project">--%>
+<%--                            <div--%>
+<%--                                    class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">--%>
+<%--                                <div--%>
+<%--                                        class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">--%>
+<%--                                    <i class="fa-solid fa-bookmark position-absolute" style="z-index: 1000"></i>--%>
+<%--                                    <a href="/post/project?id=${project.id}">--%>
+<%--                                        <img--%>
+<%--                                                src="${project.avatar}"--%>
+<%--                                                class="w-100">--%>
+<%--                                        <div class="w-100 position-absolute projectCard-content">--%>
+<%--                                            <div class="mask justify-content-center d-flex h-100"--%>
+<%--                                                 style="background-color: rgba(48, 48, 48, 0.72);">--%>
+<%--                                                <div class="align-items-center flex-column d-flex w-100">--%>
+<%--                                                    <h6 class="text-white text-center pt-4 projectTitle-center text-uppercase">--%>
+<%--                                                            ${project.title}</h6>--%>
+<%--                                                    <p class="text-white p-0 id-project">--%>
+<%--                                                        <strong>--%>
+<%--                                                            MDA:${project.id}</strong>--%>
+<%--                                                    </p>--%>
+<%--                                                    <p class="text-white p-4">--%>
+<%--                                                            ${project.description}--%>
+<%--                                                    </p>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </a>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </c:forEach>--%>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <ul class="nav md-pills pills-danger " id="contain-button">
+                        <ul class="nav md-pills pills-danger" id="contain-button">
+                            <li class="page-item page-0 ">
+                                <a class="page-link " onClick="getProject(0)">Trang đầu</a>
+                            </li>
+                            <c:forEach begin="0" end="${sizePage-1}" var="i">
+                                <c:if test="${i == 0}">
+                                    <li class="page-item active page-i ">
+                                        <a class="page-link " onclick="getProject(i)">${i} </a></li>
+                                </c:if>
+                                <c:if test="${i != 0}">
+                                    <li class="page-item page-i ">
+                                        <a class="page-link " onclick="getProject(i)">${i}</a></li>
+                                </c:if>
 
+                            </c:forEach>
+                            <li class="page-item page-${sizePage-1}">
+                                <a class="page-link" onClick="getProject(${sizePage-1})">Trang cuối</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -216,36 +237,24 @@
     });
 </script>
 <script>
-    function drawButton(fdata, size) {
-        let data = fdata != null && fdata !== "" ? fdata : 'null';
-        let container = document.getElementById('container-button');
-        let page = '';
-        page +=
-            ' <li class="page-item page-0 " >' +
-            '  <a class="page-link " onClick="getProject(\'' + data +
-            '\',0)" >Trang đầu</a>' +
-            '</li>'
+    function getProject(offset){
+        $.ajax({
+            url: "/api/user/saved",
+            type: "GET",
+            data: {
+                offset: offset
+            },
+            success: function (data) {
+                drawProject(data);
+            },
+            error: function (data){
+                console.log(data);
+            }
+        })
 
-        for (let i = 0; i < size; i++) {
-            if (i === 0) {
-                page +=
-                    '<li class="page-item active page-' + i + '">' +
-                    '<a class="page-link " onclick="getProject(\'' + data + '\',' + i + ')">' + i + '</a></li>'
-
-            } else
-                page += '<li class="page-item page-' + i + '">' +
-                    '<a class="page-link" onclick="getProject(\'' + data + '\',' + i + ')">' + i + '</a></li>'
-        }
-        page +=
-            ' <li class="page-item page-' + (size - 1) + '" >' +
-            '  <a class="page-link" onClick="getProject(\'' + data + '\',' + (size - 1) + ')" >Trang cuối</a>' +
-            '    </li>'
-        console.log(page)
-        container.innerHTML = page;
-        console.log('button:' + container.innerHTML)
     }
-
-
+</script>
+<script>
     function drawProject(data) {
         let container = document.getElementById('project-container');
         container.innerHTML = "";
@@ -256,8 +265,8 @@
                 ' class="col-lg-3 col-md-4 col-sm-6 mb-4 overflow-hidden position-relative projectCard-container">'
                 + '<div'
                 + ' class="bg-image hover-image hover-zoom ripple shadow-1-strong rounded-5 w-100 d-block">';
-            if (x.isSave) project += ' <i class="fa-solid fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>'
-            else project += '<i class="fa-regular fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>';
+            project += ' <i class="fa-solid fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>'
+            // else project += '<i class="fa-regular fa-bookmark position-absolute" onclick="like(this)" style="z-index: 1000"></i>';
             project += '<a href="/post/project?id=' + x.id + '">'
                 + '<img src="' + x.avatar + '"'
                 + ' class="w-100">'
@@ -271,7 +280,7 @@
                 + '<p class="text-white p-0 id-project">'
                 + '<strong>MDA:' + x.id + '</strong>'
                 + '</p>'
-                + '<p class="text-white p-4">'+x.description+'</p>'
+                + '<p class="text-white p-4">' + x.description + '</p>'
                 + '</div>'
                 + '</div></div></a></div></div>'
         }

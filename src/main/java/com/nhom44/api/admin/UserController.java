@@ -23,6 +23,7 @@ import java.util.regex.Pattern;
 @WebServlet(urlPatterns = "/api/admin/user")
 public class UserController extends HttpServlet {
     private Gson gson;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserService userService = UserService.getInstance();
@@ -45,7 +46,7 @@ public class UserController extends HttpServlet {
         List<ResponseModel> errMess = new ArrayList<>();
         String action = req.getParameter("action");
         boolean isErr = false;
-        String email = req.getParameter("email")==null?"":req.getParameter("email");
+        String email = req.getParameter("email") == null ? "" : req.getParameter("email");
         String regex = "^[\\w!#$%&amp;'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&amp;'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
@@ -94,7 +95,7 @@ public class UserController extends HttpServlet {
             errMess.add(responseModel);
             isErr = true;
         } else {
-            SimpleDateFormat dmy = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat dmy = new SimpleDateFormat("yyyy-MM-dd");
             dmy.setLenient(false);
             try {
                 birthday = dmy.parse(ip_birthday);
@@ -160,10 +161,8 @@ public class UserController extends HttpServlet {
         if (action.equalsIgnoreCase("add")) {
             ResponseModel responseModel = null;
             User user = null;
-            try {
-                user = userService.additional(email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
+            if (UserService.getInstance().isContainEmail(email)) {
 
-            } catch (Exception e) {
                 resp.setStatus(400);
                 responseModel = new ResponseModel();
                 responseModel.setName("email");
@@ -171,7 +170,10 @@ public class UserController extends HttpServlet {
                 errMess.add(responseModel);
                 printWriter.print(gson.toJson(errMess));
                 return;
-            }
+            }else
+            user = userService.additional(email, password, name, new java.sql.Date(birthday.getTime()), phone, province, isMale, status, role);
+
+
             if (user.getPassword() == null) {
                 responseModel = new ResponseModel<>();
                 responseModel.setName("success");

@@ -383,9 +383,7 @@
                 console.log(data.responseText)
                 let obj=JSON.parse(data)
                 if (data.status === 200) {
-
                     window.location.href=obj.data;
-
                 }
             },
             error: function (data) {
@@ -406,7 +404,10 @@
         })
     }
 </script>
+<script>
 
+
+</script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
