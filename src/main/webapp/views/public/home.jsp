@@ -41,7 +41,6 @@
 <!--end slide-->
 
 <!--start introdution-->
-<!--start introdution-->
 <div class="section-about justify-content-between">
     <div class="container">
         <div class="row" style="margin: 0">

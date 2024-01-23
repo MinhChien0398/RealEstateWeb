@@ -290,7 +290,7 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="upload-wrapper d-none avatar">
+                                                            <div class="upload-wrapper d-none avatar" id="upload-avatar">
                                                                 <div class="border d-flex img-container">
                                                                 </div>
                                                             </div>
@@ -381,10 +381,17 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
-                let obj=JSON.parse(data)
-                if (data.status === 200) {
-                    window.location.href=obj.data;
+                let obj = JSON.parse(data)
+                if (data.name === "sys") {
+
+                    window.location.href = obj.data;
+
                 }
+                // if (data.name === "sys") {
+                //     alert(data.message);
+                // }else {
+                //     window.location.href = "/admin/user_management?action=manage";
+                // }
             },
             error: function (data) {
                 // console.log(data.responseText)
@@ -533,22 +540,28 @@
             //     status.setAttribute('value', " ");
             //     status.setAttribute('placeholder', mess);
             //     break;
+            <!-- Updated "avatar" case -->
             case "avatar":
-                let avatar = document.getElementById('avatar');
-                avatar.classList.add('border-danger');
-                avatar.classList.add('text-danger');
-                avatar.value = "";
-                avatar.setAttribute('value', " ");
-                avatar.setAttribute('placeholder', mess);
+                // let avatarInput = document.getElementById('avatar');
+                // let avatarUploadWrapper = document.getElementById('upload-avatar');
+                //
+                // avatarInput.classList.add('border-danger');
+                // avatarInput.classList.add('text-danger');
+                // avatarInput.value = "";
+                //
+                // avatarInput.setAttribute('placeholder', mess);
+                //
+                // avatarUploadWrapper.classList.remove('d-none');
+                //
+                // avatarUploadWrapper.innerHTML = "";
+                //
+                // avatarUploadWrapper.innerHTML = '<p class="text-danger">Upload failed. Please try again.</p>';
                 break;
-            // case "groupImage":
-            //     let file_input1 = document.getElementById('file_input1');
-            //     file_input1.classList.add('border-danger');
-            //     file_input1.classList.add('text-danger');
-            //     file_input1.value = "";
-            //     file_input1.setAttribute('value', " ");
-            //     file_input1.setAttribute('placeholder', mess);
-            //     break;
+
+            case "groupImage":
+
+                break;
+
 
         }
     }
