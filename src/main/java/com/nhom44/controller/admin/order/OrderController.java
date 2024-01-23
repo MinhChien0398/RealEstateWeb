@@ -11,7 +11,12 @@ import java.io.IOException;
 public class OrderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String action = req.getParameter("action");
+        if(action != null && action.equals("detail")){
+            req.getRequestDispatcher("/views/admin/order/order_detail.jsp").forward(req,resp);
+            return;
+        }
         req.getRequestDispatcher("/views/admin/order/contact_order.jsp").forward(req,resp);
-//        req.getRequestDispatcher("/views/admin/order/order_detail.jsp").forward(req,resp);
+
     }
 }
