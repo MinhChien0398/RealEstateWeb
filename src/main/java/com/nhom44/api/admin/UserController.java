@@ -23,7 +23,6 @@ import java.util.regex.Pattern;
 @WebServlet(urlPatterns = "/api/user")
 public class UserController extends HttpServlet {
     private Gson gson;
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserService userService = UserService.getInstance();
