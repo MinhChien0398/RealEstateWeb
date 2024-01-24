@@ -37,7 +37,7 @@
             <!--            <input type="address" placeholder="Địa chỉ">-->
             <select class="mdb-select md-form" name="address" id="mdb-select" searchable="Search here..">
                 <option value="" disabled selected>Chọn tỉnh thành</option>
-                <c:forEach items="${sessionScope.provinces}" var="province">
+                <c:forEach items="${allProvinces}" var="province">
                     <option value="${province.name}">${province.name}</option>
                 </c:forEach>
             </select>
@@ -72,7 +72,7 @@
             <input type="hidden" name="action" value="login"/>
             <h1>Đăng Nhập</h1>
             <div class="social-icons">
-                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
             </div>
             <span>Đã có tài khoản</span>
             <input name="email" type="email" placeholder="Email" id="email-signin">

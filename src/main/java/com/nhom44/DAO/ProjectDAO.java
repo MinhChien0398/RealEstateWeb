@@ -7,6 +7,7 @@ import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
+import javax.servlet.annotation.WebServlet;
 import java.util.List;
 
 @RegisterBeanMapper(Project.class)
@@ -39,7 +40,7 @@ public interface ProjectDAO {
 
 
     @SqlQuery("Select p.id, p.title,p.description, p.avatar, p.price, p.acreage, pr.name as province, c.name as category, p.isAccepted," +
-            " p.status, p.postId, ep.schedule, ep.estimated_complete, p.provinceId, p.categoryId" +
+            " p.status, p.postId, ep.schedule, ep.estimated_complete, p.provinceId, p.categoryId,p.updatedAt" +
             " FROM projects p LEFT JOIN categories c ON p.categoryId=c.id" +
             " LEFT JOIN provinces pr ON p.provinceId=pr.id" +
             " LEFT JOIN excuting_projects ep ON p.id=ep.projectId" +
@@ -124,13 +125,14 @@ public interface ProjectDAO {
     )
     List<Project> getNumOfSaved();
 
-    @SqlQuery("SELECT p.id, p.title, p.description,p.avatar " +
+    @SqlQuery("SELECT p.id, p.title, p.description,p.avatar,sl.userId as saveBy " +
             "FROM Projects p JOIN Categories c ON c.id=p.categoryId " +
-            "Left JOIN Histories h ON h.postId=p.postId  " +
+            "Left JOIN Histories h ON h.postId=p.postId " +
+            "Left JOIN (select * from saved_projects where userId=:userid) sl ON sl.postId=p.postId  " +
             "WHERE p.categoryId =:id AND p.isAccepted=1 AND p.status=1 AND c.status = 1 " +
             "GROUP BY p.id, p.title, p.description, p.avatar " +
             "ORDER BY COUNT(p.id) desc LIMIT 8")
-    List<Project> get8ActiveProjectHighestView(@Bind("id") int id);
+    List<Project> get8ActiveProjectHighestView(@Bind("id") int id, @Bind("userid") int userid);
 
     @SqlUpdate("UPDATE users_projects SET userId=:id1, updatedAt=now() WHERE projectId=:id")
     int updateProjectForUser(@Bind("id") int id, @Bind("id1") int id1);
@@ -163,6 +165,7 @@ public interface ProjectDAO {
 
     @SqlQuery("Select EXISTS(SELECT * FROM saved_projects WHERE postId=:projectId AND userId=:userId)")
     Boolean isSaveProject(@Bind("projectId") int projectId, @Bind("userId") int id);
+
     @SqlQuery("SELECT DISTINCT p.id, p.title, p.avatar,p.updatedAt " +
             "FROM Projects p  " +
             "JOIN Categories c ON p.categoryId = c.id AND c.status=1 " +
@@ -171,6 +174,7 @@ public interface ProjectDAO {
             "FROM  Projects_Services ps  " +
             "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )")
     List<Project> getSuggestProjects(@Bind("categoryId") int categoryId);
+
     @SqlQuery("SELECT DISTINCT p.id, p.title, p.avatar,p.description,p.updatedAt, sl.userId as saveBy " +
             "FROM Projects p  " +
             "JOIN saved_projects sl ON sl.postId=p.postId " +
@@ -178,6 +182,58 @@ public interface ProjectDAO {
             "WHERE sl.userId=:id AND p.status=1 AND p.isAccepted=1 AND p.id IN( " +
             "SELECT projectId " +
             "FROM  Projects_Services ps  " +
+            "JOIN Services s ON s.id=ps.serviceId AND s.status=1 ) LIMIT 16 OFFSET :offset")
+    List<Project> getLikedProjectByUserId(@Bind("id") int i, @Bind("offset") int offset);
+
+    @SqlQuery("SELECT DISTINCT count(p.id) " +
+            "FROM Projects p  " +
+            "JOIN saved_projects sl ON sl.postId=p.postId " +
+            "JOIN Categories c ON p.categoryId = c.id AND c.status=1 " +
+            "WHERE sl.userId=:id AND p.status=1 AND p.isAccepted=1 AND p.id IN( " +
+            "SELECT projectId " +
+            "FROM  Projects_Services ps  " +
             "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )")
-    List<Project> getLikedProjectByUserId(@Bind("id")int i);
+    Integer pageSizeProjectByUserId(@Bind("id") int id);
+
+    @SqlQuery("SELECT p.id, p.title, p.avatar,p.description,p.updatedAt, sl.userId as saveBy " +
+            "FROM Projects p  " +
+            "Left JOIN (select * from saved_projects s where s.userId=:id) sl ON sl.postId=p.postId  " +
+            "JOIN histories h on p.postId = h.postId AND h.userId=:id " +
+            "JOIN Categories c ON p.categoryId = c.id AND c.status=1 " +
+            "WHERE " +
+            " p.status=1 AND p.isAccepted=1 AND p.id IN( " +
+            "SELECT projectId " +
+            "FROM  Projects_Services ps  " +
+            "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )" +
+            "ORDER BY h.id DESC" +
+            " LIMIT 16 OFFSET :offset"
+    )
+    List<Project> getHistoryUserProject(@Bind("id") int id, @Bind("offset") int offset);
+
+    @SqlUpdate("INSERT INTO histories(postId, userId) VALUES(:postId, :userId)")
+    Integer addHistory(@Bind("userId") int userId, @Bind("postId") int postId);
+
+    @SqlQuery("SELECT count(p.id) " +
+            "FROM Projects p  " +
+            "Left JOIN (select * from saved_projects s where s.userId=:id) sl ON sl.postId=p.postId  " +
+            "JOIN histories h on p.postId = h.postId AND h.userId=:id " +
+            "JOIN Categories c ON p.categoryId = c.id AND c.status=1 "
+            +
+            "WHERE " +
+            " p.status=1 AND p.isAccepted=1 AND p.id IN( " +
+            "SELECT projectId " +
+            "FROM  Projects_Services ps  " +
+            "JOIN Services s ON s.id=ps.serviceId AND s.status=1 )")
+    Integer pageSizeHistoryProjectByUserId(@Bind("id") int id);
+
+    @SqlQuery("SELECT p.id, p.title, p.avatar,p.updatedAt,p.isAccepted,p.price,pr.name as province ,c.name as category , ep.schedule as schedule , ep.estimated_complete as estimated_complete " +
+            "FROM Projects p " +
+            "JOIN Categories c ON p.categoryId = c.id  " +
+            "JOIN provinces pr ON p.provinceId=pr.id " +
+            "Left JOIN excuting_projects ep ON p.id=ep.projectId " +
+            "JOIN users_projects up ON up.projectId=p.id AND up.userId=:id"
+    )
+    List<Project> getOwnProject(@Bind("id") int id);
+    @SqlUpdate("UPDATE projects SET isAccepted=1 WHERE id=:id")
+    Integer acceptProject(@Bind("id") int idInt);
 }

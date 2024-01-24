@@ -388,7 +388,6 @@
                     {
                         window.location.href=data.data;
                     },3000);
-
                 }
             },
             error: function (data) {
@@ -407,7 +406,10 @@
         })
     }
 </script>
+<script>
 
+
+</script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",

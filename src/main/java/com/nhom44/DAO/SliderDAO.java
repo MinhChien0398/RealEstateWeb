@@ -23,4 +23,7 @@ public interface SliderDAO {
     Slider getById(@Bind("id") int id);
     @SqlQuery("SELECT * FROM sliders WHERE status = 1")
     List<Slider> getAllActive();
+    @SqlUpdate("DELETE FROM sliders WHERE id = :id")
+    Integer delete(@Bind("id") int id);
+
 }

@@ -2,6 +2,7 @@ package com.nhom44.api.web;
 
 import com.google.gson.Gson;
 import com.nhom44.bean.Contact;
+import com.nhom44.bean.User;
 import com.nhom44.bean.Project;
 import com.nhom44.bean.ResponseModel;
 import com.nhom44.services.ContactService;
@@ -27,13 +28,14 @@ public class HomeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURI();
+        User user = (User) req.getSession().getAttribute("auth");
         System.out.println(req.getParameterMap().keySet().toString());
         ResponseModel responseModel = new ResponseModel();
         if (url.equals("/api/home/projects")) {
             String id = req.getParameter("id");
             if (new NumberVallidator().validator(id)) {
                 int i = Integer.parseInt(id);
-                List<Project> projects = ProjectService.getInstance().get8ActiveProjectHighestView(i);
+                List<Project> projects = ProjectService.getInstance().get8ActiveProjectHighestView(i,user==null?0:user.getId());
                 System.out.println(projects);
                 responseModel.setName("success");
                 responseModel.setData(new Gson().toJson(projects));

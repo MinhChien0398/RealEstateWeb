@@ -138,7 +138,31 @@
 <%@include file="/layout/public/footer.jsp" %>
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
+<script>
 
+    function getProject(i) {
+        $.ajax({
+            url: "/api/project/search",
+            type: "POST",
+            // dataType: "json",
+            data: i,
+            success: function (response) {
+                console.log('project');
+                console.log(response);
+                let data = JSON.parse(response);
+                console.log(data)
+                drawProject(data);
+                return false;
+            },
+            error: function (response) {
+                console.log('error');
+                console.log(response);
+            }
+        })
+    }
+
+
+</script>
 <script>
     function searching() {
         let data = {
@@ -241,6 +265,7 @@
 </script>
 <script>
     function drawButton(fdata, size) {
+        console.log(size)
         let data = fdata != null && fdata !== "" ? fdata : 'null';
         let container = document.getElementById('container-button');
         let page = '';

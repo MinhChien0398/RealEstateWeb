@@ -152,8 +152,8 @@
                         </c:choose>
                             </td>
                             <td>
-                                <a href="/admin/slide/edit?action=edit&id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                                <a href="/admin/slide/edit?id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
+                                <a href="/admin/slide/delete?id=${slide.id}"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
                         </tr>
                     </c:forEach>
 

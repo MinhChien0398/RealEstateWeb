@@ -17,10 +17,10 @@ import java.util.List;
 public class SaveListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("page","save-list");
+        req.setAttribute("page","account");
         User user= (User) req.getSession().getAttribute("auth");
-        List<Project> projects = ProjectService.getInstance().getLikedProjectByUserId(user.getId());
-        req.setAttribute("projects",projects);
+       int sizePage= ProjectService.getInstance().pageSizeProjectByUserId(user.getId());
+        req.setAttribute("sizePage",sizePage);
         req.getRequestDispatcher("/views/user/savedList.jsp").forward(req,resp);
     }
 }
