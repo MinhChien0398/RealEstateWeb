@@ -37,7 +37,7 @@
                 <ol class="breadcrumb m-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/order">QL Liên hệ</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/order">QL Order</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chi tiết đơn đặt hàng</a></li>
                 </ol>

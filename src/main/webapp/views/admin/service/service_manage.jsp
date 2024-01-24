@@ -153,7 +153,7 @@
                                 <td><i class="fa-solid fa-square active-icon" title="Đang phục vụ"></i></td>
                                 <td>
                                     <a href="/admin/service?action=edit&id=${service.id}"><i class="fa-solid fa-pen p-1 icon-action"></i></a>
-                                 
+
                                 </td>
                             </tr>
                         </c:forEach>
