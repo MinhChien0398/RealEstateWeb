@@ -236,9 +236,9 @@
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.name == "sys") {
-                        alert(data.message);
-                    } else {
+                    if (data.name === "sys") {
+                       alert(data.message);
+                    }else {
                         window.location.href = "/admin/user_management?action=manage";
                     }
                 },

@@ -25,8 +25,6 @@
 <div class="wrapper">
     <%@include file="/layout/admin/adminheader.jsp" %>
     <div class="main-container">
-
-
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0 bg-white">
@@ -127,7 +125,6 @@
             },
             // dataType: "json",
             // contentType: 'application/json',
-
 
             success: function (data) {
                 console.log(data)
