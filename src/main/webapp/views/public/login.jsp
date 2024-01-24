@@ -37,7 +37,7 @@
             <!--            <input type="address" placeholder="Địa chỉ">-->
             <select class="mdb-select md-form" name="address" id="mdb-select" searchable="Search here..">
                 <option value="" disabled selected>Chọn tỉnh thành</option>
-                <c:forEach items="${allProvinces}" var="province">
+                <c:forEach items="${provinces}" var="province">
                     <option value="${province.name}">${province.name}</option>
                 </c:forEach>
             </select>
@@ -72,14 +72,15 @@
             <input type="hidden" name="action" value="login"/>
             <h1>Đăng Nhập</h1>
             <div class="social-icons">
-                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:"
+                   class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
             </div>
             <span>Đã có tài khoản</span>
             <input name="email" type="email" placeholder="Email" id="email-signin">
             <input name=password type="password" placeholder="Mật khẩu" id="password-signin">
             <a id="showForgotPassword" href="#">Quên mật khẩu?</a>
             <p id="error-message-signin" style="color: red; display: none"></p>
-            <button id="login-button" type="submit" >Đăng Nhập</button>
+            <button id="login-button" type="submit">Đăng Nhập</button>
         </form>
     </div>
     <div class="toggle-container">
@@ -104,11 +105,12 @@
     </div>
 </div>
 
-<%@include file="/layout/public/script.jsp"%>
+<%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/login.js"/> "></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     if (${error!=null}) {
-       alert('${error}')
+        alert('${error}')
     }
 </script>
 <script>
@@ -158,6 +160,11 @@
             success: function (result) {
                 console.log("success")
                 console.log(result);
+                obj = JSON.parse(result);
+                delayNotify(2000, obj.message);
+                if (obj.name == 'success' || obj.name == 'sys') {
+                    delayNotify(2000, obj.message);
+                }
                 // if (result == 'success') {
                 //     window.location.href = '/RealEstateWeb_war_exploded/home';
                 // } else {
@@ -167,6 +174,7 @@
             error: function (error) {
                 console.log("error")
                 console.log(error);
+                delayNotify(2000, 'a');
             }
         })
     })

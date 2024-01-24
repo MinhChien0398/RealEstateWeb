@@ -51,18 +51,6 @@
                         <div class="d-flex">
                             <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
                                 role="tablist">
-                                <li class="">
-                                    <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
-                                       href="#pills-home"
-                                       role="tab"
-                                       aria-controls="pills-home" aria-selected="true">Thông tin</a>
-                                </li>
-                                <li class="">
-                                    <a class="nav-link " id="pills-profile-tab" data-toggle="pill"
-                                       href="#pills-profile"
-                                       role="tab"
-                                       aria-controls="pills-profile" aria-selected="false">Bài viết</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="btn-save flex-center">
