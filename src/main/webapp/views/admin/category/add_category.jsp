@@ -24,11 +24,7 @@
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <%@include file="/layout/admin/adminheader.jsp" %>
-
-
     <div class="main-container">
-
-
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0 bg-white">
@@ -129,9 +125,6 @@
             },
             // dataType: "json",
             // contentType: 'application/json',
-
-
-
             success: function (data) {
                 console.log(data)
                 // save
@@ -149,14 +142,37 @@
             },
             error: function (data) {
                 console.log(data)
-                var err = JSON.parse(data.responseText);
-
+                var err = JSON.parse(data.response
                 for (const e of err) {
                     console.log(e.name, e.message)
                     fetchErr(e.name, e.message);
                 }
             })
-        })
+        }
+    })
+</script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            case 'name':
+                let name = document.getElementById('name');
+                name.classList.add('border-danger');
+                name.classList.add('text-danger');
+                name.value = "";
+                name.setAttribute('value', " ");
+                name.setAttribute('placeholder', mess);
+                break;
+            // case 'status':
+            // let status = document.getElementById('status');
+            // status.classList.add('border-danger');
+            // status.classList.add('text-danger');
+            // status.value = "";
+            // status.setAttribute('value', " ");
+            // status.setAttribute('placeholder', mess);
+            //     break;
+        }
+    }
 </script>
 <script>
     CKEDITOR.replace('service-des');
