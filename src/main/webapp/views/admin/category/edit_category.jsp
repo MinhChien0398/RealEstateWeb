@@ -25,81 +25,81 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top ">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <%@include file="/layout/admin/adminheader.jsp" %>
+    <%--    <div class="header fixed-top ">--%>
+    <%--        <div class="header-menu row m-0">--%>
+    <%--            <div class="col-11 d-flex align-items-center">--%>
+    <%--                <div class="sidebar-btn mr-3">--%>
+    <%--                    <i class="fas fa-bars"></i>--%>
+    <%--                </div>--%>
+    <%--                <div class="title text-uppercase">--%>
+    <%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
+    <%--            </div>--%>
+    <%--            <ul class="col-1 d-flex align-items-center m-0">--%>
+    <%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
+    <%--            </ul>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
 
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="/template/img/logo/logo.png" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="../dashboard.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="../user/user_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-building"> </i>--%>
-<%--                    <a href="../project/project_manage.jsp">--%>
-<%--                        <span>QL Dự án</span>--%>
-<%--                    </a> <i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="category_management.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/post_project.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/project_schedule.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
+    <%--    <div class="sidebar">--%>
+    <%--        <div class="sidebar-menu">--%>
+    <%--            <center class="logo">--%>
+    <%--                <img src="/template/img/logo/logo.png" alt="logo" style="">--%>
+    <%--            </center>--%>
+    <%--            <li class="sidebar-item">--%>
+    <%--                <a href="../dashboard.jsp" class="menu-btn">--%>
+    <%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="user">--%>
+    <%--                <a href="../user/user_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="project">--%>
+    <%--                <div class="menu-btn">--%>
+    <%--                    <i class="fa-solid fa-building"> </i>--%>
+    <%--                    <a href="../project/project_manage.jsp">--%>
+    <%--                        <span>QL Dự án</span>--%>
+    <%--                    </a> <i--%>
+    <%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+    <%--                <div class="sub-menu d-none">--%>
+    <%--                    <a href="category_management.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
+    <%--                    </a>--%>
+    <%--                    <a href="../project/post_project.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
+    <%--                    </a>--%>
+    <%--                    <a href="../project/project_schedule.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
+    <%--                    </a>--%>
+    <%--                </div>--%>
+    <%--            </li>--%>
 
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="../project/project_manage.jsp">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <%--            <li class="sidebar-item" id="type-project">--%>
+    <%--                <div class="menu-btn">--%>
+    <%--                    <a href="../project/project_manage.jsp">--%>
+    <%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
+    <%--                    </a><i--%>
+    <%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+    <%--                <div class="sub-menu d-none">--%>
+    <%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
+    <%--                    </a>--%>
+    <%--                </div>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="contact">--%>
+    <%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="slide">--%>
+    <%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
 
     <div class="main-container">
         <div class="container p-0">
@@ -110,7 +110,8 @@
                     <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL Dự án</a>
                     </li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/category_management">QL loại dự án</a>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/category_management">QL loại dự
+                        án</a>
                     </li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa loại dự
@@ -165,6 +166,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     $(document).ready(function () {
         $('#save').click(function () {
@@ -183,11 +185,20 @@
                 success: function (data) {
                     console.log(data)
                     // alert('Cập nhật thành công');
+                    // must include: /template/js/admin-modal-notify.js
+                    obj = JSON.parse(data);
+                    delayNotify(2000, obj.message);
+                    if (obj.name == 'success') {
+                        setTimeout(() => {
+                            window.location.href = obj.data;
+                        }, 3000);
+                    }
                     // window.location.href = 'http://localhost:8080/admin/category-management.jsp';
                 },
                 error: function (data) {
+                    obj = JSON.parse(data);
                     console.log(data)
-
+                    delayNotify(2000, obj.message);
                 }
             })
         })
