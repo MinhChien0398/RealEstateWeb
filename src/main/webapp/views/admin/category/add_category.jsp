@@ -27,7 +27,7 @@
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
-                <ol class="breadcrumb p-0 bg-white">
+                <ol class="breadcrumb m-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="black-text" href="/admin/project_management">QL Dự án</a></li>
@@ -80,6 +80,37 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
+
+<%--<script>--%>
+<%--    $('#save').click(function () {--%>
+<%--        console.log(123)--%>
+<%--        let form = new FormData();--%>
+<%--        form.append('name', $('#name').val());--%>
+<%--        form.append('status', $('#status').val());--%>
+<%--        $.ajax({--%>
+<%--            url: "/api/category?action=add",--%>
+<%--            type: 'POST',--%>
+<%--            dataType: "json",--%>
+<%--            // contentType: false,--%>
+<%--            // processData: false,--%>
+<%--            // data: form,--%>
+<%--            success: function (data) {--%>
+<%--                console.log(data.responseText)--%>
+<%--            },--%>
+<%--            error: function (data) {--%>
+<%--                console.log(data.responseText)--%>
+<%--                var err = JSON.parse(data.responseText);--%>
+<%--                console.log(err)--%>
+<%--                for (let e of err) {--%>
+<%--                    console.log(e.name, e.message)--%>
+<%--                    fetchErr(e.name, e.message);--%>
+<%--                }--%>
+<%--            }--%>
+<%--        });--%>
+<%--    });--%>
+<%--</script>--%>
+
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
         $('#save').click(function () {
 
@@ -94,19 +125,24 @@
             },
             // dataType: "json",
             // contentType: 'application/json',
-
-
             success: function (data) {
                 console.log(data)
-                let obj = JSON.parse(data)
-                console.log(obj)
-                if (data.name === "sys") {
-                    window.location.href = obj.data;
+                // save
+                obj = JSON.parse(data);
+                delayNotify(0,obj.message);
+                if (obj.name == "success") {
+                    setTimeout(() => {
+                        setTimeout(() => {
+                            $('#centralModalSm').modal('hide');
+                            window.location.href = obj.data;
+                        }, 1000)
+                    }, 2000);
+
                 }
             },
             error: function (data) {
-                console.log(data.responseText)
-                var err = JSON.parse(data.responseText);
+                console.log(data)
+                var err = JSON.parse(data.response
                 for (const e of err) {
                     console.log(e.name, e.message)
                     fetchErr(e.name, e.message);

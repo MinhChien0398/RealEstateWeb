@@ -43,7 +43,6 @@ public class UserService {
         user.setPassword(StringUtil.hashPassword(password));
         user.setFullName(name);
         user.setBirthday(new java.sql.Date(birthday.getTime()));
-        user.setAvatar(null);
         user.setPhone(phone);
         user.setProvince(province);
         user.setGender(isMale != null ? 1 : 0);
@@ -83,7 +82,6 @@ public User update(User user){
             user.setPassword(StringUtil.hashPassword(password));
             user.setFullName(name);
             user.setBirthday(new java.sql.Date(birthday.getTime()));
-            user.setAvatar(null);
             user.setPhone(phone);
             user.setGender(isMale != null ? 1 : 0);
             user.setStatus(Integer.parseInt(status));

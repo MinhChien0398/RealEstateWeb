@@ -142,7 +142,7 @@
 
     function getProject(i) {
         $.ajax({
-            url: "/api/user/saved",
+            url: "/api/project/search",
             type: "POST",
             // dataType: "json",
             data: i,
@@ -265,6 +265,7 @@
 </script>
 <script>
     function drawButton(fdata, size) {
+        console.log(size)
         let data = fdata != null && fdata !== "" ? fdata : 'null';
         let container = document.getElementById('container-button');
         let page = '';

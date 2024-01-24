@@ -3,6 +3,7 @@ package com.nhom44.services;
 import com.nhom44.DAO.ProjectDAO;
 import com.nhom44.bean.Project;
 import com.nhom44.db.JDBIConnector;
+import com.nhom44.util.DateUtil;
 import org.jdbi.v3.core.Jdbi;
 
 import java.util.*;
@@ -33,10 +34,11 @@ public class ProjectService {
         } else {
             int s1 = conn.withExtension(ProjectDAO.class, dao -> {
                 System.out.println("dao\n " + project.toString());
+
                 return dao.add(project);
             });
             Project nProject = getProjectByObject(project);
-            int s2 = conn.withExtension(ProjectDAO.class, dao -> dao.addExcuting(nProject.getId(), project.getSchedule(), project.getEstimated_complete()));
+            int s2 = addExcuting(nProject);
             status = s1 == 1 && s2 == 1 ? 1 : 0;
         }
 
@@ -81,7 +83,8 @@ public class ProjectService {
             conn.withExtension(ProjectDAO.class, dao -> dao.deleteInExcuting(project.getId()));
             conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
         } else {
-            conn.withExtension(ProjectDAO.class, dao -> dao.updateExcuting(project));
+            conn.withExtension(ProjectDAO.class, dao -> dao.deleteInExcuting(project.getId()));
+            addExcuting(project);
             conn.withExtension(ProjectDAO.class, dao -> dao.updateProject(project));
         }
         return getProjectByObject(project);
@@ -137,12 +140,17 @@ public class ProjectService {
     }
 
 
-    public List<Project> get8ActiveProjectHighestView(int id) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.get8ActiveProjectHighestView(id));
+    public List<Project> get8ActiveProjectHighestView(int id, int userid) {
+        List<Project> top8 = conn.withExtension(ProjectDAO.class, dao -> dao.get8ActiveProjectHighestView(id, userid));
+        for (Project p : top8) {
+            if (p.getSaveBy() == userid && p.getSaveBy() != 0) p.setSave(true);
+        }
+        return top8;
     }
 
     public int getProjetAllActiveSize(int offset, int categoryId, int serviceId, int provinceId, long minPrice, long maxPrice, int minArea, int maxArea) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.getProjetAllActiveSize(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minArea, maxArea));
+        int num = conn.withExtension(ProjectDAO.class, dao -> dao.getProjetAllActiveSize(offset, categoryId, serviceId, provinceId, minPrice, maxPrice, minArea, maxArea));
+        return num % 16 == 0 ? num / 16 : num / 16 + 1;
     }
 
     public boolean saveProject(int projectId, int userId) {
@@ -163,7 +171,7 @@ public class ProjectService {
     public List<Project> getSuggestProjects(int categoryId) {
         List<Project> list = conn.withExtension(ProjectDAO.class, dao -> dao.getSuggestProjects(categoryId));
         Set<Integer> set = new HashSet<>();
-        while (set.size() < 4 && set.size() < list.size()){
+        while (set.size() < 4 && set.size() < list.size()) {
             Random random = new Random();
             int i = random.nextInt(list.size());
             set.add(i);
@@ -173,21 +181,59 @@ public class ProjectService {
         return res;
     }
 
+
+    public List<Project> getLikedProjectByUserId(int i, int offset) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.getLikedProjectByUserId(i, offset));
+    }
+
+    public int pageSizeProjectByUserId(int id) {
+        int page = conn.withExtension(ProjectDAO.class, dao -> dao.pageSizeProjectByUserId(id));
+        page = page % 16 == 0 ? page / 16 : page / 16 + 1;
+        return page;
+    }
+
+    public List<Project> getHistoryUserProject(int id, int offset) {
+        List<Project> projects = conn.withExtension(ProjectDAO.class, dao -> dao.getHistoryUserProject(id, offset));
+        for (Project p : projects) {
+            if (p.getSaveBy() == id && p.getSaveBy() != 0) p.setSave(true);
+        }
+        return projects;
+    }
+
+    public void addHistory(int userId, int postId) {
+        conn.withExtension(ProjectDAO.class, dao -> dao.addHistory(userId, postId));
+    }
+
+    public int pageSizeHistoryProjectByUserId(int id) {
+        int page = conn.withExtension(ProjectDAO.class, dao -> dao.pageSizeHistoryProjectByUserId(id));
+        page = page % 16 == 0 ? page / 16 : page / 16 + 1;
+        return page;
+    }
+
+    public List<Project> getOwnProject(int id) {
+        List<Project> projects = conn.withExtension(ProjectDAO.class, dao -> dao.getOwnProject(id));
+        projects.forEach(p -> {
+            p.setUpdatedAt(DateUtil.formatStringDate(p.getUpdatedAt()));
+            if (p.getEstimated_complete() != null) {
+                p.setEstimated_complete(DateUtil.formatStringDate(p.getEstimated_complete()));
+            } else {p.setSchedule("Dự án đã hoàn thành");p.setEstimated_complete(p.getUpdatedAt());}
+        });
+        return projects;
+    }
+
     public static void main(String[] args) {
-//        List<Project> projects = getInstance().getLikedProjectByUserId(24,0);
+//        List<Project> projects = getInstance().getOwnProject(24);
 //        System.out.println(projects.size());
 //        for (Project project : projects) {
 //            System.out.println(project);
 //        }
-        System.out.println(getInstance().pageSizeProjectByUserId(24));
+//        System.out.println(getInstance().pageSizeHistoryProjectByUserId(24));
+        List<Project> projects = ProjectService.getInstance().getOwnProject(24);
+        Map<Integer, String> map = ServiceOfProjectService.getInstance().getServicesForOwnerByProjectIds(projects);
+        map.forEach((k, v) -> System.out.println(k + " " + v));
     }
 
-    public List<Project> getLikedProjectByUserId(int i, int offset) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.getLikedProjectByUserId(i,offset));
+    public void acceptProject(int idInt) {
+        conn.withExtension(ProjectDAO.class, dao -> dao.acceptProject(idInt));
     }
-
-    public int pageSizeProjectByUserId(int id) {
-        return conn.withExtension(ProjectDAO.class, dao -> dao.pageSizeProjectByUserId(id));
-    }
-
 }

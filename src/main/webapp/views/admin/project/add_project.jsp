@@ -350,6 +350,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     function saveproject(idPost) {
         let form = new FormData();
@@ -375,17 +376,18 @@
         $.ajax({
             url: "/api/admin/project",
             type: "POST",
-            dataType: "json",
+            dataType: "json", //if exist this line, do not need to parse under
             processData: false,
             contentType: false,
             data: form,
             success: function (data) {
-                console.log(data.responseText)
-                let obj = JSON.parse(data)
-                if (data.name === "sys") {
-
-                    window.location.href = obj.data;
-
+                console.log(data);
+                delayNotify(2000, data.message);
+                if (data.name == "success") {
+                    setTimeout(()=>
+                    {
+                        window.location.href=data.data;
+                    },3000);
                 }
                 // if (data.name === "sys") {
                 //     alert(data.message);
@@ -394,8 +396,7 @@
                 // }
             },
             error: function (data) {
-                // console.log(data.responseText)
-
+                console.log(data.responseText)
 
                 var err = JSON.parse(data.responseText);
                 console.log(err)
@@ -404,7 +405,6 @@
                     console.log(e.name, e.message)
                     //     console.log email
                     fetchErr(e.name, e.message);
-
 
                 }
             }
@@ -430,15 +430,15 @@
             dataType: "json",
             data: {content: content, action: "add"},
             success: function (data) {
+
                 saveproject(data.data.id)
             },
             error: function (data) {
                 //thông báo lỗi sys
                 // console.log(data)
-
+                // delayNotify(2000,obj.name);
                 console.log(data)
                 var err = JSON.parse(data.responseText);
-
                     //     console.log email
                     fetchErr(err.name, err.message);
             }

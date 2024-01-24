@@ -61,7 +61,7 @@
                     </p>
                 </div>
                 <div class="box-btn d-flex align-items-center p-2 justify-content-center">
-                    <a class="box-btn-left " href="" title="XEM CHI TIẾT">
+                    <a class="box-btn-left " href="/intro" title="XEM CHI TIẾT">
                         <%--                    <a class="box-btn-left " href="../../../../RealEstateWeb/resources/views/template/intro.html" title="XEM CHI TIẾT">--%>
                         XEM CHI TIẾT
                         <i class="fas fa-arrow-right"></i>
@@ -120,7 +120,7 @@
             <h4 class="title mb-3 text-uppercase">dịch vụ THI CÔNG</h4>
             <div class="card-wrapper swiper-wrapper">
                 <c:forEach var="service" items="${services}" varStatus="loop">
-                    <div class="card-home swiper-slide">
+                    <a href="/post/service?id=${service.id}" class="card-home swiper-slide">
                             <%--                    <!--start image-->--%>
                         <div class="image-content">
                             <div class="card-image ">
@@ -138,7 +138,7 @@
                         <div class="card-content">
                             <h4 class="text-uppercase">${service.name}</h4>
                         </div>
-                    </div>
+                    </a>
                 </c:forEach>
             </div>
         </div>

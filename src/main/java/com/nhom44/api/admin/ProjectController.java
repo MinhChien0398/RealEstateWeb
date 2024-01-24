@@ -155,11 +155,13 @@ public class ProjectController extends HttpServlet {
                 isErr = true;
             }
             if (isErr) {
+                System.out.println(1231);
                 resp.setStatus(400);
                 Gson gson = new Gson();
                 PrintWriter printWriter = resp.getWriter();
                 String json = gson.toJson(errMess);
-                printWriter.println(json);
+                System.out.println(json);
+                printWriter.print(json);
                 printWriter.flush();
                 printWriter.close();
                 return;
@@ -247,9 +249,9 @@ public class ProjectController extends HttpServlet {
             }
             resp.setStatus(200);
             ResponseModel responseModel = new ResponseModel();
+            responseModel.setName("success");
             responseModel.setMessage("Thêm thành công");
             responseModel.setData("/admin/project_management");
-            responseModel.setName("success");
             Gson gson = new Gson();
             PrintWriter printWriter = resp.getWriter();
             String json = gson.toJson(responseModel);
@@ -257,7 +259,6 @@ public class ProjectController extends HttpServlet {
             printWriter.flush();
             printWriter.close();
             return;
-
         } catch (Exception e) {
             ResponseModel responseModel = new ResponseModel();
             resp.setStatus(200);

@@ -370,6 +370,7 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <%--<script src="<c:url value="/template/js/inputFile.js"/>"></script>--%>
 <script>
     console.log("${groupImages}")
@@ -465,11 +466,18 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
-                if (data.status === 200) {
+                delayNotify(2000, data.message);
+                if (data.name == "success") {
+                    setTimeout(()=>{
+                        window.location.href = data.data;
+                    },3000 );
+
                 }
             },
             error: function (data) {
-                console.log(data.responseText)
+                console.log(data.responseText);
+                // delayNotify(2000, data.message);
+                delayNotify(2000, "Có lỗi xảy ra");
             }
         })
     }

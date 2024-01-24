@@ -81,7 +81,6 @@
             </div>
         </li>
 
-
         <li class="sidebar-item" id="slide">
             <a href="/admin/slide" class="menu-btn">
                 <i class="fa-regular fa-clone"></i><span>QL Slide</span></span>
@@ -89,4 +88,25 @@
         </li>
     </div>
 </div>
+<!-- Central Modal Small -->
+
+<div id="modal"></div>
+<%--<div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"--%>
+<%--     aria-hidden="true">--%>
+<%--    <!-- Change class .modal-sm to change the size of the modal -->--%>
+<%--    <div class="modal-dialog modal-sm" role="document">--%>
+<%--        <div class="modal-content">--%>
+<%--            <div class="modal-header">--%>
+<%--                <h4 class="modal-title w-100 text-center" id="myModalLabel">Thông báo</h4>--%>
+<%--            </div>--%>
+<%--            <div class="modal-body">--%>
+<%--                <p class="text-center" id="notify"></p>--%>
+<%--            </div>--%>
+<%--            <div class="modal-footer">--%>
+<%--                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
+<!-- Central Modal Small -->
 

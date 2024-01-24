@@ -28,6 +28,11 @@
 <div class="wrapper">
     <%@include file="/layout/admin/adminheader.jsp"%>
     <div class="main-container">
+
+
+
+
+
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
                 <ol class="breadcrumb m-0 bg-white">
@@ -358,7 +363,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'dd-mm-yyyy',
     });
 </script>
 <script>

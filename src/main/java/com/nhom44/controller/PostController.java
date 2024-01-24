@@ -2,6 +2,7 @@ package com.nhom44.controller;
 
 import com.nhom44.DAO.ImageDAO;
 import com.nhom44.bean.Project;
+import com.nhom44.bean.User;
 import com.nhom44.bean.Post;
 import com.nhom44.bean.Image;
 import com.nhom44.bean.Service;
@@ -35,10 +36,14 @@ public class PostController extends HttpServlet {
                 req.setAttribute("page", "post-project");
                 Project project = ProjectService.getInstance().getActiveById(Integer.parseInt(FindingID));
                 project.setUpdatedAt(project.getUpdatedAt().substring(0, 10));
-                List<Service> services = ServiceOfProjectService.getInstance().getServicesByProjectId(Integer.parseInt(FindingID));
+                List<Service> services = ServiceOfProjectService.getInstance().getServicesByProjectId(project.getId());
                 List<String> gallery = ImageService.getInstance().getGroupImagesByProjectId(Integer.parseInt(FindingID));
                 Post post = PostService.getInstance().getById(project.getPostId());
                 List<Project> suggestProjects = ProjectService.getInstance().getSuggestProjects(project.getCategoryId());
+                User user = (User) req.getSession().getAttribute("auth");
+                if (user != null) {
+                    ProjectService.getInstance().addHistory(user.getId(), post.getId());
+                }
                 req.setAttribute("suggestProjects", suggestProjects);
                 req.setAttribute("gallery", gallery);
                 req.setAttribute("services", services);

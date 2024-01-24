@@ -27,14 +27,29 @@ public class ServiceOfProjectService {
     public List<Service> getServicesByProjectId(int id) {
         return conn.withExtension(ServiceDAO.class, dao -> dao.getServicesByProjectId(id));
     }
+    public List<Service> getServicesForOwnerByProjectId(int id) {
+        return conn.withExtension(ServiceDAO.class, dao -> dao.getServicesForOwnerByProjectId(id));
+    }
+    public Map<Integer, String> getServicesForOwnerByProjectIds(List<Project> projects) {
+        Map<Integer, String> map = new HashMap<>();
+        for (Project project : projects) {
+            List<Service> services = getServicesForOwnerByProjectId(project.getId());
+            StringBuilder sb = new StringBuilder();
+            for (Service service : services) {
+                sb.append(service.getName()).append(", ");
+            }
+            if (sb.length() > 0) {
+                sb.delete(sb.length() - 2, sb.length());
+            }
+            map.put(project.getId(), sb.toString());
+        }
+        return map;
+    }
 
     public static void main(String[] args) {
-        List<Service> services = getInstance().getAllActive();
-        System.out.println(services.size());
-        for (Service service : services
-             ) {
-            System.out.println(service);
-        };
+        List<Project> projects = ProjectService.getInstance().getAllProject();
+        Map<Integer, String> map = ServiceOfProjectService.getInstance().getServicesForOwnerByProjectIds(projects);
+        map.forEach((k, v) -> System.out.println(k + " " + v));
     }
 
     public void updateServiceForProject(int id, List<String> services) {

@@ -27,14 +27,25 @@ public class SliderController extends HttpServlet {
             SingleValidator validator = new NumberVallidator();
             if (!validator.validator(req.getParameter("id"))) {
                 //error
-//                resp.sendRedirect("/admin/slide");
+
+                resp.sendRedirect("/404");
                 return;
             }
             req.setAttribute("slider", SliderService.getInstance().getById(Integer.parseInt(req.getParameter("id"))));
             req.getRequestDispatcher("/views/admin/slide/slide_edit.jsp").forward(req, resp);
             return;
         } else if (url.startsWith("/admin/slide/delete")) {
+            System.out.println(req.getParameter("id"));
+            SingleValidator validator = new NumberVallidator();
+            if (!validator.validator(req.getParameter("id"))) {
+                //error
 
+                resp.sendRedirect("/404");
+                return;
+            }
+            SliderService.getInstance().delete(Integer.parseInt(req.getParameter("id")));
+            resp.sendRedirect("/admin/slide");
+            return;
         }
         req.setAttribute("sliders", SliderService.getInstance().getAll());
         req.getRequestDispatcher("/views/admin/slide/slide_manage.jsp").forward(req, resp);

@@ -13,7 +13,7 @@ public interface PostDAO{
 
 @SqlUpdate("insert into posts(content,createdAt,updatedAt) values(:content,:createdAt,:updatedAt)")
     int addPost(@BindBean Post post);
-@SqlQuery("select * from posts where content=:content")
+@SqlQuery("select * from posts where content=:content and createdAt=:createdAt and updatedAt=:updatedAt")
     Post getByObject(@BindBean Post post);
 @SqlUpdate("update posts set content=:content,updatedAt=:updatedAt where id=:id")
     Integer updatePost(@BindBean Post post);
