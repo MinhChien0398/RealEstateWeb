@@ -2,6 +2,11 @@ package com.nhom44.util;
 
 import java.text.SimpleDateFormat;
 
-public class DataUtil {
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+public class DateUtil {
+    public static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static String formatStringDate(String date){
+        date= date.substring(0,10);
+        String []arr=date.split("-");
+        return arr[2]+"-"+arr[1]+"-"+arr[0];
+    }
 }

@@ -159,32 +159,42 @@
 
             <main class="my-body">
                 <div class="container">
+                    <c:forEach items="${projects}" var="project">
                     <div class="border box-project hover-image d-flex">
                         <a class="">
-                            <img src="../../../../RealEstateWeb/public/img/project-img/thiet-ke-nha-1-3.jpg">
+                            <img src="${project.avatar}">
                         </a>
                         <div class="w-100 flex-column">
                             <div class="box-content">
-                                <h4 class=""> Nhà phố hiện đại Q.10 thành phố Hồ Chí Minh</h4>
-                                <p><span>Ngày khởi công: </span> 12/11/2023</p>
-                                <p><span>Chủ đầu tư: </span> Ông Dũ</p>
-                                <p><span>Địa chỉ: </span> Thành phố Hồ Chí Minh</p>
-                                <p><span>Loại dự án: </span> Nhà phố</p>
-                                <p><span>Mã dự án: </span> 0027</p>
-                                <p><span>Dự toán kinh phí: </span> 1,5 tỷ</p>
-                                <p><span>Tiến độ công trình: </span> Đang trong quá trình thi công phần thô</p>
-                                <p><span>Dự kiến thời điểm hoàn thành: </span> 30/1/2024</p>
+                                <h4 class=""> ${project.title}</h4>
+
+                                <p><span>Chủ đầu tư: </span> ${auth.fullName}</p>
+                                <p><span>Địa chỉ: </span> ${project.province}</p>
+                                <p><span>Loại dự án: </span>${project.category}</p>
+                                <p><span>Loại dịch vụ: </span> ${map[project.id]}</p>
+                                <p><span>Mã dự án: </span> ${project.id}</p>
+                                <p><span>Dự toán kinh phí: </span> ${project.price}</p>
+                                <p><span>Tiến độ công trình: </span> ${project.schedule}</p>
+                                <p><span>Dự kiến thời điểm hoàn thành: </span> ${project.estimated_complete}</p>
 
                             </div>
                             <div class="box-button d-flex justify-content-around">
-                                <a href="#">
+                                <a href="/user/own-project/demo-post/${project.id}">
                                     <button class="btn btn-blue font-weight-bold ml-0"> Xem bài viết về dự án</button>
-                                </a><a href="#"> </a>
-                                <button class="btn btn-green font-weight-bold ml-0 p-3"> Cho phép đăng bài viết</button>
                                 </a>
+                                <c:choose>
+                                    <c:when test="${project.isAccepted==1}">
+                                        <button class="btn btn-grey font-weight-bold ml-0"> Đã được duyệt</button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button onclick="accept(${project.id})"  class="btn btn-green font-weight-bold ml-0"> Chờ duyệt</button>
+                                    </c:otherwise>
+                                </c:choose>
+
                             </div>
                         </div>
                     </div>
+                    </c:forEach>
                 </div>
             </main>
 
@@ -194,5 +204,30 @@
     </div>
 </div>
 <%@include file="/layout/public/script.jsp" %>
+<script>
+    function accept(id) {
+        console.log(id)
+        $.ajax({
+            url: "/api/user/accepted",
+            type: "POST",
+            data: {
+                id: id
+            },
+            success: function (data) {
+                let value= JSON.parse(data);
+                if (value.name == "success") {
+                    alert("Đã cho phép đăng bài viết");
+                    location.reload();}
+            },
+            error: function (data) {
+               let value= JSON.parse(data.responseText);
+                if (value.name == "error") {
+                    location.href=value.data;
+                }
+            }
+        })
+    }
+
+</script>
 </body>
 </html>

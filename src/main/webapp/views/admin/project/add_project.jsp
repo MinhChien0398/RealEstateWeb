@@ -380,8 +380,8 @@
             contentType: false,
             data: form,
             success: function (data) {
-                console.log(data.responseText)
-                let obj=JSON.parse(data)
+                console.log(data)
+                // let obj=JSON.parse(data)
                 if (data.status === 200) {
                     window.location.href=obj.data;
                 }

@@ -42,4 +42,8 @@ public class SliderService {
     public List<Slider> getAllActive() {
         return conn.withExtension(SliderDAO.class, dao -> dao.getAllActive());
     }
+
+    public void delete(int id) {
+        conn.withExtension(SliderDAO.class, dao -> dao.delete(id));
+    }
 }

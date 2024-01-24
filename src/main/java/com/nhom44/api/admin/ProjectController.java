@@ -159,7 +159,8 @@ public class ProjectController extends HttpServlet {
                 Gson gson = new Gson();
                 PrintWriter printWriter = resp.getWriter();
                 String json = gson.toJson(errMess);
-                printWriter.println(json);
+                System.out.println(json);
+                printWriter.print(json);
                 printWriter.flush();
                 printWriter.close();
                 return;

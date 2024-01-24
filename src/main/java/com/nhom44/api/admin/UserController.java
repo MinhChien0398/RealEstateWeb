@@ -47,6 +47,7 @@ public class UserController extends HttpServlet {
         PrintWriter printWriter = resp.getWriter();
         List<ResponseModel> errMess = new ArrayList<>();
         String action = req.getParameter("action");
+        System.out.println(action);
         boolean isErr = false;
         if (action.equalsIgnoreCase("add")) {
             String email = req.getParameter("email") == null ? "" : req.getParameter("email");

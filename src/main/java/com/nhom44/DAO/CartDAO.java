@@ -14,6 +14,10 @@ public interface CartDAO {
 
     @SqlQuery("SELECT * From carts WHERE email=:email AND categoryId=:categoryId AND provinceId=:provinceId AND width=:width AND height=:height AND representProjectId=:representProjectId")
     Cart getByObject(@BindBean Cart cart);
+
     @SqlUpdate("INSERT INTO carts_images(cartId, imageId) VALUES(:id, :imageId)")
-    Integer addImage(@Bind("id") int id,@Bind("imageId") int imageId);
+    Integer addImage(@Bind("id") int id, @Bind("imageId") int imageId);
+
+    @SqlUpdate("UPDATE carts SET isCheck=1 WHERE id=:cartId")
+    Integer updateSuccessVerifyCart(@Bind("cartId") int cartId);
 }

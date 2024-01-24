@@ -88,6 +88,9 @@ public class MailService {
     }
 
     public void sendMailToNotiFyCart(String domain, String verifycode, Cart cart) {
+       if (domain == null) {
+            domain = "localhost:8080";
+        }
         String content = "Thông tin yêu cầu cuả bạn là :\b" +
                 "\t\tMã yêu cầu :" + cart.getId() + "\n\t\tLoại hình dự án :" + cart.getCategoryId() +
                 "\n\t\tTỉnh thành :" + cart.getProvinceId() + "\n\t\tChiều rộng khu vực xây dựng:" +

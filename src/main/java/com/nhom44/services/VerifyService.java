@@ -31,4 +31,15 @@ public class VerifyService {
             return dao.getUserIdByCode(code);
         });
     }
+
+    public void insertVerifyCart(String cartCode, int cartId) {
+        this.conn.withExtension(VerifyDAO.class, (dao) -> {
+            return dao.insertVerifyCart(cartCode, cartId);
+        });
+    }
+    public int getCartsIdByCode(String code) {
+        return (Integer)this.conn.withExtension(VerifyDAO.class, (dao) -> {
+            return dao.getCartsIdByCode(code);
+        });
+    }
 }

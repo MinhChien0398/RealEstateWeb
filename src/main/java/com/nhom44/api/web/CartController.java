@@ -5,9 +5,7 @@ import com.nhom44.bean.Cart;
 import com.nhom44.bean.Image;
 import com.nhom44.bean.Project;
 import com.nhom44.bean.ResponseModel;
-import com.nhom44.services.CartService;
-import com.nhom44.services.ImageService;
-import com.nhom44.services.ProjectService;
+import com.nhom44.services.*;
 import com.nhom44.util.StringUtil;
 import com.nhom44.util.Upload;
 import com.nhom44.validator.EmailSingleValidator;
@@ -151,10 +149,13 @@ public class CartController extends HttpServlet {
             CartService.getInstance().addImage(cart.getId(), imageId);
         }
         //gửi mail xác nhận
-        session.setAttribute("cart", null);
+        VerifyService.getInstance().insertVerifyCart(StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart.getId());
+        MailService.getInstance().sendMailToNotiFyCart(req.getServerName(), StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart);
+                session.setAttribute("cart", null);
         resp.setStatus(200);
+
         responseModel = new ResponseModel();
-        responseModel.setMessage("Yêu cầu của bạn đã gửi thành công vui đợi yêu cầu của bạn sẽ được nhanh chống sử lý");
+        responseModel.setMessage("Yêu cầu của bạn đã gửi thành công vui đợi kiểm tra email và xác nhận yêu cầu");
         responseModel.setName("success");
         listResp.add(responseModel);
         String json = new Gson().toJson(listResp);
