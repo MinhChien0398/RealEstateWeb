@@ -164,6 +164,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
@@ -187,7 +188,12 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
-                if (data.status === 200) {
+                obj = JSON.parse(data);
+                if (obj.name == "success" || obj.name == "sys") {
+                    delayNotify(2000,obj.message);
+                    setTimeout(()=>{
+                        window.location.href = 'service';
+                    },3000);
                 }
             },
             error: function (data) {
@@ -195,7 +201,6 @@
                 var err = JSON.parse(data.responseText);
                 console.log(err)
                 for (let e of err) {
-
                     console.log(e.name, e.message)
                     //     console.log email
                     fetchErr(e.name, e.message);
