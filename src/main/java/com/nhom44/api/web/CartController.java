@@ -149,15 +149,16 @@ public class CartController extends HttpServlet {
             CartService.getInstance().addImage(cart.getId(), imageId);
         }
         //gửi mail xác nhận
-        VerifyService.getInstance().insertVerifyCart(StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart.getId());
-        MailService.getInstance().sendMailToNotiFyCart(req.getServerName(), StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart);
-                session.setAttribute("cart", null);
+
         resp.setStatus(200);
 
         responseModel = new ResponseModel();
         responseModel.setMessage("Yêu cầu của bạn đã gửi thành công vui đợi kiểm tra email và xác nhận yêu cầu");
         responseModel.setName("success");
         listResp.add(responseModel);
+        VerifyService.getInstance().insertVerifyCart(StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart.getId());
+        MailService.getInstance().sendMailToNotiFyCart(req.getServerName(), StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart);
+        session.setAttribute("cart", null);
         String json = new Gson().toJson(listResp);
         PrintWriter writer = resp.getWriter();
         writer.println(json);

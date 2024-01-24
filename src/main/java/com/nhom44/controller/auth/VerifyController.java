@@ -22,7 +22,7 @@ public class VerifyController extends HttpServlet {
                 int cartId = VerifyService.getInstance().getCartsIdByCode(token);
                 System.out.println(cartId);
                 CartService.getInstance().updateSuccessVerifyCart(cartId);
-                resp.sendRedirect(req.getContextPath()+"/cart");
+                resp.sendRedirect(req.getContextPath()+"/home");
                 return;
             }
             if (url.equals("/verify")){

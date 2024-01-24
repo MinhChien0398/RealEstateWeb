@@ -432,7 +432,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'dd-mm-yyyy',
     });
 </script>
 <script>
