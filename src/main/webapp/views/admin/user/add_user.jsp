@@ -205,7 +205,6 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-
     $('#materialUnchecked').change(() => {
         if ($('#materialIndeterminate2').is(':checked')) {
             $('#materialIndeterminate2').prop('checked', false);
@@ -216,8 +215,6 @@
             $('#materialUnchecked').prop('checked', false);
         }
     });
-
-
 </script>
 <script>
     $(document).ready(function () {
