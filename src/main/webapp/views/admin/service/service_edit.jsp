@@ -207,6 +207,13 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
+                obj = JSON.parse(data);
+                if(obj.name == "success" || obj.name=="sys"){
+                    delayNotify(2000, obj.message);
+                    setTimeout(()=>{
+                        window.location.href = obj.data;
+                    }, 2000);
+                }
             },
             error: function (data) {
                 console.log(data.responseText)
