@@ -136,8 +136,7 @@
                         <td>200m3</td>
                         <td>100m3</td>
                         <td>xây dựng phần thô</td>
-                        <td><a href="/admin/order?action=detail"><i class='icon-action fa-solid fa-edit'></i></a> <i
-                                class='icon-action fa-solid fa-trash-can'></i></td>
+                        <td><a href="/admin/order?action=detail"><i class='icon-action fa-solid fa-edit'></i></a></td>
 
                     <tr>
                         <td>2</td>
@@ -148,8 +147,7 @@
                         <td>500m3</td>
                         <td>100m3</td>
                         <td>Sửa chữa</td>
-                        <td><a href="/admin/order?action=detail"><i class='icon-action fa-solid fa-edit'></i></a> <i
-                                class='icon-action fa-solid fa-trash-can'></i></td>
+                        <td><a href="/admin/order?action=detail"><i class='icon-action fa-solid fa-edit'></i></a></td>
                     </tbody>
 
                 </table>

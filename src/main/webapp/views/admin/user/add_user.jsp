@@ -26,85 +26,8 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top ">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="/logout?action=logout"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="../dashboard.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="user_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-building"> </i>--%>
-<%--                    <a href="../project/project_manage.jsp">--%>
-<%--                        <span>QL Dự án</span>--%>
-<%--                    </a> <i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../category/category_management.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/post_project.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/project_schedule.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="../service/service_manage.jsp">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
+    <%@include file="/layout/admin/adminheader.jsp" %>
     <div class="main-container">
-
-
-
 
 
         <div class="container p-0">
@@ -114,7 +37,8 @@
                                                    href="/admin/dashboard">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL
+                        người dùng</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
                 </ol>
@@ -226,7 +150,7 @@
                                                     <div class="form-check mt-4">
                                                         <input name="isFemale" type="checkbox" class="form-check-input"
                                                                id="materialIndeterminate2"
-                                                               checked>
+                                                        >
                                                         <label class="form-check-label"
                                                                for="materialIndeterminate2">Nữ</label>
                                                     </div>
@@ -248,7 +172,8 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
-                                                        <select name="role" id="role"class="browser-default custom-select mb-4">
+                                                        <select name="role" id="role"
+                                                                class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
                                                             <option value="0" selected>Người dùng thường</option>
                                                             <option value="1">Admin</option>
@@ -280,6 +205,21 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
+
+    $('#materialUnchecked').change(() => {
+        if ($('#materialIndeterminate2').is(':checked')) {
+            $('#materialIndeterminate2').prop('checked', false);
+        }
+    });
+    $('#materialIndeterminate2').change(() => {
+        if ($('#materialUnchecked').is(':checked')) {
+            $('#materialUnchecked').prop('checked', false);
+        }
+    });
+
+
+</script>
+<script>
     $(document).ready(function () {
         $('#save').click(function () {
             $.ajax({
@@ -301,14 +241,15 @@
                 },
                 success: function (data) {
                     console.log(data);
-                    if (data.name=="sys") {
-                       alert(data.message);
-                    }else {
+                    if (data.name == "sys") {
+                        alert(data.message);
+                    } else {
                         window.location.href = "/admin/user_management?action=manage";
                     }
                 },
-                error: function (data) {   console.log(err)
-                        var err = JSON.parse(data.responseText);
+                error: function (data) {
+                    console.log(err)
+                    var err = JSON.parse(data.responseText);
 
                     for (const e of err) {
                         console.log(e.name, e.message)
@@ -326,9 +267,9 @@
                 let email = document.getElementById('form8');
                 email.classList.add('border-danger');
                 email.classList.add('text-danger');
-                email.value="";
+                email.value = "";
                 email.nextElementSibling.classList.add('active');
-                email.setAttribute('value'," ");
+                email.setAttribute('value', " ");
                 email.setAttribute('placeholder', mess);
                 console.log("run 1")
                 break;
@@ -336,36 +277,40 @@
                 let password = document.getElementById('form9');
                 password.classList.add('border-danger');
                 password.classList.add('text-danger');
-                password.value="";
+                password.value = "";
                 password.nextElementSibling.classList.add('active');
                 password.setAttribute('placeholder', mess);
-                console.log("run 2");   break;
+                console.log("run 2");
+                break;
             case "fullname":
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
-                fullname.value="";
+                fullname.value = "";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
                 fullname.setAttribute('placeholder', mess);
-                console.log("run 3");  break;
+                console.log("run 3");
+                break;
             case "phone":
                 let phone = document.getElementById('form4');
                 phone.classList.add('border-danger');
                 phone.classList.add('text-danger');
-                phone.value="";
+                phone.value = "";
                 phone.nextElementSibling.classList.add('active');
                 phone.setAttribute('placeholder', mess);
-                console.log("run 4");    break;
+                console.log("run 4");
+                break;
             case "birthday":
                 let birthday = document.getElementById('birthday');
                 birthday.classList.add('border-danger');
                 birthday.classList.add('text-danger');
-                birthday.value="";
+                birthday.value = "";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
                 birthday.setAttribute('placeholder', mess);
-                console.log("run 5"); break;
+                console.log("run 5");
+                break;
         }
     }
 </script>
@@ -375,7 +320,7 @@
     email.addEventListener('click', function () {
             email.classList.remove('border-danger');
             email.classList.remove('text-danger');
-            email.placeholder="";
+            email.placeholder = "";
             // email.value;
         }
     )
@@ -384,7 +329,7 @@
     password.addEventListener('click', function () {
             password.classList.remove('border-danger');
             password.classList.remove('text-danger');
-            password.placeholder="";
+            password.placeholder = "";
             // password.attributes.removeNamedItem("value");
         }
     )
