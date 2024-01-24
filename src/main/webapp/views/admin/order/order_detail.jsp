@@ -204,11 +204,10 @@
                             </div>
                         </div>
                     </div>
+                </form>
+            </main>
         </div>
-        </form>
-        </main>
     </div>
-</div>
 </div>
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>

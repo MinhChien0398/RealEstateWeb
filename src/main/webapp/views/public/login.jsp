@@ -160,10 +160,10 @@
             success: function (result) {
                 console.log("success")
                 console.log(result);
-                obj = JSON.parse(result);
+                obj = JSON.parse(result.name);
                 delayNotify(2000, obj.message);
                 if (obj.name == 'success' || obj.name == 'sys') {
-                    delayNotify(2000, obj.message);
+                    // delayNotify(2000, obj.message);
                 }
                 // if (result == 'success') {
                 //     window.location.href = '/RealEstateWeb_war_exploded/home';
@@ -173,8 +173,9 @@
             },
             error: function (error) {
                 console.log("error")
+
                 console.log(error);
-                delayNotify(2000, 'a');
+                // delayNotify(2000, 'abv');
             }
         })
     })
