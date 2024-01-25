@@ -174,8 +174,7 @@
             },
             {
                 data: 'email', render: function (email) {
-                    return "<a href='${pageContext.request.contextPath}/admin/user_management?action=edit&useremail=" + email + "'><i class='icon-action fa-solid fa-edit'></i></a>\n" +
-                        "<a href='${pageContext.request.contextPath}/admin/user_management?action=delete&useremail=" + email + "'><i class='icon-action fa-solid fa-trash-can'></i></a>"
+                    return "<a href='${pageContext.request.contextPath}/admin/user_management?action=edit&useremail=" + email + "'><i class='icon-action fa-solid fa-edit'></i></a>\n"
                 }
             },
         ],

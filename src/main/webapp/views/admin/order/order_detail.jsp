@@ -37,7 +37,7 @@
                 <ol class="breadcrumb m-0 bg-white">
                     <li class="breadcrumb-item"><a class="black-text" href="/admin/dashboard">Thống kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/order">QL Liên hệ</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/order">QL Order</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chi tiết đơn đặt hàng</a></li>
                 </ol>
@@ -51,18 +51,6 @@
                         <div class="d-flex">
                             <ul class="nav nav-pills  d-flex font-weight-bold align-items-center" id="pills-tab"
                                 role="tablist">
-                                <li class="">
-                                    <a class="nav-link active " id="pills-home-tab" data-toggle="pill"
-                                       href="#pills-home"
-                                       role="tab"
-                                       aria-controls="pills-home" aria-selected="true">Thông tin</a>
-                                </li>
-                                <li class="">
-                                    <a class="nav-link " id="pills-profile-tab" data-toggle="pill"
-                                       href="#pills-profile"
-                                       role="tab"
-                                       aria-controls="pills-profile" aria-selected="false">Bài viết</a>
-                                </li>
                             </ul>
                         </div>
                         <div class="btn-save flex-center">
@@ -216,11 +204,10 @@
                             </div>
                         </div>
                     </div>
+                </form>
+            </main>
         </div>
-        </form>
-        </main>
     </div>
-</div>
 </div>
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
