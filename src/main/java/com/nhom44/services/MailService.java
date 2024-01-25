@@ -88,14 +88,17 @@ public class MailService {
     }
 
     public void sendMailToNotiFyCart(String domain, String verifycode, Cart cart) {
+       if (domain.equals("localhost")) {
+            domain += ":8080";
+        }
         String content = "Thông tin yêu cầu cuả bạn là :\b" +
-                "\t\tMã yêu cầu :" + cart.getId() + "\n\t\tLoại hình dự án :" + cart.getCategoryId() +
+                "\n\t\tMã yêu cầu :" + cart.getId() + "\n\t\tLoại hình dự án :" + cart.getCategoryId() +
                 "\n\t\tTỉnh thành :" + cart.getProvinceId() + "\n\t\tChiều rộng khu vực xây dựng:" +
                 cart.getWidth() + "\n\t\tChiều dài khu vực xây dựng:" + cart.getHeight() + "\n\t\tDự án mẫu :" +
                 cart.getRepresentProjectId() + "\n\t\tNgày tạo :" + cart.getCreatedAt();
         String verifyLink = "http://" + domain + "/verify/cart?code=" + verifycode;
         content += "\n\n" + "Nhấp vào đường link sau để xác thực yêu cầu: " + verifyLink;
-        String subject = "Cấp lại mật khẩu";
+        String subject = "Xác thực yêu cầu";
         this.sendMail(cart.getEmail(), subject, content);
     }
 }

@@ -21,79 +21,6 @@
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top ">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="../dashboard.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="../user/user_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project"><div class="menu-btn">--%>
-<%--                <i class="fa-solid fa-building">  </i>--%>
-<%--                <a href="../project/project_manage.jsp" >--%>
-<%--                    <span>QL Dự án</span>--%>
-<%--                </a> <i--%>
-<%--                    class="m-0 fas fa-chevron-circle-down drop-down"></i> </div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../category/category_management.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/post_project.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/project_schedule.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="../service/service_manage.jsp">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="slide_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
     <div class="main-container">
         <div class="container p-0">
             <nav aria-label="breadcrumb">
@@ -127,7 +54,6 @@
                         <th class="font-weight-bold" scope="col">Tiêu đề</th>
                         <th class="font-weight-bold" scope="col">Hình ảnh</th>
                         <th class="font-weight-bold" scope="col">Thứ tự</th>
-
                         <th class="font-weight-bold" scope="col">Trạng thái</th>
                         <th class="font-weight-bold" scope="col">Hành động</th>
                     </tr>
@@ -152,8 +78,8 @@
                         </c:choose>
                             </td>
                             <td>
-                                <a href="/admin/slide/edit?action=edit&id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
-                                <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
+                                <a href="/admin/slide/edit?id=${slide.id}"><i class="icon-action fa-solid fa-edit"></i></a>
+                                <a href="/admin/slide/delete?id=${slide.id}"><i class="icon-action fa-solid fa-trash-can"></i></a></td>
                         </tr>
                     </c:forEach>
 
@@ -169,6 +95,7 @@
 
 
 <%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <!--<script src="/template/lib/DataTables/FixedColumns-4.3.0/js/dataTables.fixedColumns.min.js"></script>-->
 <script>

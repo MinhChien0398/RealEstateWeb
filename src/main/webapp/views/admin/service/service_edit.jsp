@@ -27,7 +27,7 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp" %>
+    <%@include file="/layout/admin/adminheader.jsp"%>
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
@@ -174,6 +174,7 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <%--<script src="<c:url value="/template/js/inputFile.js"/>"></script>--%>
 <script>
     const srcToFile = async (src, fileName) => {
@@ -204,10 +205,13 @@
             contentType: false,
             data: form,
             success: function (data) {
-                console.log(data)
-                let obj = JSON.parse(data);
-                if (obj.name === "sys") {
-                    window.location.href = obj.data;
+                console.log(data.responseText)
+                obj = JSON.parse(data);
+                if(obj.name == "success" || obj.name=="sys"){
+                    delayNotify(2000, obj.message);
+                    setTimeout(()=>{
+                        window.location.href = obj.data;
+                    }, 2000);
                 }
             },
             error: function (data) {

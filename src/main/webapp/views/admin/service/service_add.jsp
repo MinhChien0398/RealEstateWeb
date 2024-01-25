@@ -26,7 +26,8 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp" %>
+    <%@include file="/layout/admin/adminheader.jsp"%>
+
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
@@ -163,6 +164,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     CKEDITOR.replace('post', {
         width: "100%",
@@ -186,20 +188,24 @@
             data: form,
             success: function (data) {
                 console.log(data.responseText)
-                let obj = JSON.parse(data)
-                if (data.name === "sys") {
-
-                    window.location.href = obj.data;
-
+                obj = JSON.parse(data);
+                if (obj.name == "success" || obj.name == "sys") {
+                    delayNotify(2000,obj.message);
+                    setTimeout(()=>{
+                        window.location.href = 'service';
+                    },3000);
                 }
             },
             error: function (data) {
                 console.log(data.responseText)
                 var err = JSON.parse(data.responseText);
-
-                for (const e of err) {
+                console.log(err)
+                for (let e of err) {
                     console.log(e.name, e.message)
+                    //     console.log email
                     fetchErr(e.name, e.message);
+
+
                 }
             }
         })

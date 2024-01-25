@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.nhom44.bean.ResponseModel;
 import com.nhom44.services.UserService;
 import com.nhom44.bean.User;
+import com.nhom44.util.DateUtil;
 import com.nhom44.util.StringUtil;
 import com.nhom44.validator.*;
 
@@ -47,6 +48,7 @@ public class UserController extends HttpServlet {
         PrintWriter printWriter = resp.getWriter();
         List<ResponseModel> errMess = new ArrayList<>();
         String action = req.getParameter("action");
+        System.out.println(action);
         boolean isErr = false;
         if (action.equalsIgnoreCase("add")) {
             String email = req.getParameter("email") == null ? "" : req.getParameter("email");
@@ -98,6 +100,7 @@ public class UserController extends HttpServlet {
                 errMess.add(responseModel);
                 isErr = true;
             } else {
+                ip_birthday= DateUtil.formatStringDate(ip_birthday);
                 SimpleDateFormat dmy = new SimpleDateFormat("yyyy-MM-dd");
                 dmy.setLenient(false);
                 try {

@@ -203,12 +203,12 @@
                             </li>
                             <c:forEach begin="0" end="${sizePage-1}" var="i">
                                 <c:if test="${i == 0}">
-                                    <li class="page-item active page-i ">
-                                        <a class="page-link " onclick="getP(${i})">${i} </a></li>
+                                    <li class="page-item active page-${i} ">
+                                        <a class="page-link " onclick="getP(${i})">${i+1} </a></li>
                                 </c:if>
                                 <c:if test="${i != 0}">
-                                    <li class="page-item page-i ">
-                                        <a class="page-link " onclick="getP(${i})">${i}</a></li>
+                                    <li class="page-item page-${i}">
+                                        <a class="page-link " onclick="getP(${i})">${i+1}</a></li>
                                 </c:if>
 
                             </c:forEach>
@@ -237,12 +237,13 @@
 <%--    });--%>
 <%--</script>--%>
 <script>
+    console.log(${sizePage})
     $(document).ready(function () {
         getP(0);
     })
     function getP(offset){
         $.ajax({
-            url: "https://localhost:8080/api/user/saved",
+            url: "/api/user/saved",
             type: "GET",
             data: {
                 action: "add",
@@ -291,6 +292,34 @@
                 + '</div></div></a></div></div>'
         }
         container.innerHTML = project;
+    }
+</script>
+<script>
+    function like(project) {
+        let id = $(project).parent().find('.project-id').val();
+        console.log(id);
+        $.ajax({
+            url: "/api/save_project",
+            type: "GET",
+            data: {
+                "projectId": id
+            },
+            success: function (response) {
+                console.log(response);
+                let resp = JSON.parse(response);
+                if (resp.name == 'save') {
+                    project.classList.replace("fa-regular", "fa-solid")
+                } else if (resp.name == 'delete')
+                    project.classList.replace("fa-solid", "fa-regular")
+                //= "fa-solid fa-bookmark position-absolute";
+                // console.log(p);
+            },
+            error: function (response) {
+                console.log(response.responseText)
+                let resp = JSON.parse(response.responseText);
+                window.location.href = resp.data;
+            }
+        })
     }
 </script>
 </body>

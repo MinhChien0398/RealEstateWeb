@@ -74,6 +74,7 @@
 
 
 <%@include file="/layout/public/script.jsp" %>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script>
@@ -89,7 +90,13 @@
                 id: ${post.id}
             },
             success: function (data) {
-               window.location.href = "/admin/service";
+               if(data.name == "success" || data.name == "sys"){
+                   delayNotify(2000, data.message);
+                   setTimeout(()=>{
+                       window.location.href = "/admin/service";
+                       // window.location.href = data.data;
+                   }, 2000);
+               }
             },
             error: function (data) {
                 //thông báo lỗi sys

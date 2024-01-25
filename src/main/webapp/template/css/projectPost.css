@@ -8,9 +8,9 @@
     font-weight: 400;
 }
 
-.post-content > div > img {
-    width: 100%;
-    height: auto;
+.post-content > div >p> img {
+    width: 100%!important;
+    height: auto!important;
     object-fit: cover;
 }
 

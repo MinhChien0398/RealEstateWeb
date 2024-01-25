@@ -116,7 +116,7 @@
                                                    href="/admin/dashboard">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management">QL người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL người dùng</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa người dùng</a></li>
                 </ol>
@@ -309,6 +309,18 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
+    $('#materialUnchecked').change(() => {
+        if ($('#materialIndeterminate2').is(':checked')) {
+            $('#materialIndeterminate2').prop('checked', false);
+        }
+    });
+    $('#materialIndeterminate2').change(() => {
+        if ($('#materialUnchecked').is(':checked')) {
+            $('#materialUnchecked').prop('checked', false);
+        }
+    });
+</script>
+<script>
     $('#save').click(function () {
         $.ajax({
             url: "http://localhost:8080/api/admin/user",
@@ -493,7 +505,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'dd-mm-yyyy',
     });
 </script>
 <script>

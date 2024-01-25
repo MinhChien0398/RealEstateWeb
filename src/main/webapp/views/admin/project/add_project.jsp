@@ -31,81 +31,6 @@
 <!-- Sidebar navigation -->
 <div class="wrapper">
     <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="dashboard.html" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="admin-userManage.html" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-building"> </i>--%>
-<%--                    <a href="admin-projectsManage.html">--%>
-<%--                        <span>QL Dự án</span>--%>
-<%--                    </a> <i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="admin-TypeOfProject.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="admin-PostProject.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="admin-ProjectSchedule.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="servicesManager.html">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="servicePostsManage.html" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="admin-contactManagement.html" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="admin-slideManagement.html" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
@@ -350,6 +275,7 @@
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
 <script src="<c:url value="/template/js/inputFile.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     function saveproject(idPost) {
         let form = new FormData();
@@ -375,17 +301,18 @@
         $.ajax({
             url: "/api/admin/project",
             type: "POST",
-            dataType: "json",
+            dataType: "json", //if exist this line, do not need to parse under
             processData: false,
             contentType: false,
             data: form,
             success: function (data) {
-                console.log(data.responseText)
-                let obj = JSON.parse(data)
-                if (data.name === "sys") {
-
-                    window.location.href = obj.data;
-
+                console.log(data);
+                delayNotify(2000, data.message);
+                if (data.name == "success") {
+                    setTimeout(()=>
+                    {
+                        window.location.href=data.data;
+                    },3000);
                 }
                 // if (data.name === "sys") {
                 //     alert(data.message);
@@ -394,8 +321,7 @@
                 // }
             },
             error: function (data) {
-                // console.log(data.responseText)
-
+                console.log(data.responseText)
 
                 var err = JSON.parse(data.responseText);
                 console.log(err)
@@ -404,7 +330,6 @@
                     console.log(e.name, e.message)
                     //     console.log email
                     fetchErr(e.name, e.message);
-
 
                 }
             }
@@ -430,15 +355,15 @@
             dataType: "json",
             data: {content: content, action: "add"},
             success: function (data) {
+
                 saveproject(data.data.id)
             },
             error: function (data) {
                 //thông báo lỗi sys
                 // console.log(data)
-
+                // delayNotify(2000,obj.name);
                 console.log(data)
                 var err = JSON.parse(data.responseText);
-
                     //     console.log email
                     fetchErr(err.name, err.message);
             }

@@ -35,7 +35,8 @@
                                                    href="/admin/dashboard">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL
+                        người dùng</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Đăng kí người dùng</a></li>
                 </ol>
@@ -147,7 +148,7 @@
                                                     <div class="form-check mt-4">
                                                         <input name="isFemale" type="checkbox" class="form-check-input"
                                                                id="materialIndeterminate2"
-                                                               checked>
+                                                        >
                                                         <label class="form-check-label"
                                                                for="materialIndeterminate2">Nữ</label>
                                                     </div>
@@ -169,7 +170,8 @@
                                                 </div>
                                                 <div class="col-lg-6 col-md-6">
                                                     <div class="md-form form-sm mb-0">
-                                                        <select name="role" id="role"class="browser-default custom-select mb-4">
+                                                        <select name="role" id="role"
+                                                                class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
                                                             <option value="0" selected>Người dùng thường</option>
                                                             <option value="1">Admin</option>
@@ -201,6 +203,18 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
+    $('#materialUnchecked').change(() => {
+        if ($('#materialIndeterminate2').is(':checked')) {
+            $('#materialIndeterminate2').prop('checked', false);
+        }
+    });
+    $('#materialIndeterminate2').change(() => {
+        if ($('#materialUnchecked').is(':checked')) {
+            $('#materialUnchecked').prop('checked', false);
+        }
+    });
+</script>
+<script>
     $(document).ready(function () {
         $('#save').click(function () {
             $.ajax({
@@ -228,8 +242,9 @@
                         window.location.href = "/admin/user_management?action=manage";
                     }
                 },
-                error: function (data) {   console.log(err)
-                        var err = JSON.parse(data.responseText);
+                error: function (data) {
+                    console.log(err)
+                    var err = JSON.parse(data.responseText);
 
                     for (const e of err) {
                         console.log(e.name, e.message)
@@ -247,9 +262,9 @@
                 let email = document.getElementById('form8');
                 email.classList.add('border-danger');
                 email.classList.add('text-danger');
-                email.value="";
+                email.value = "";
                 email.nextElementSibling.classList.add('active');
-                email.setAttribute('value'," ");
+                email.setAttribute('value', " ");
                 email.setAttribute('placeholder', mess);
                 console.log("run 1")
                 break;
@@ -257,36 +272,40 @@
                 let password = document.getElementById('form9');
                 password.classList.add('border-danger');
                 password.classList.add('text-danger');
-                password.value="";
+                password.value = "";
                 password.nextElementSibling.classList.add('active');
                 password.setAttribute('placeholder', mess);
-                console.log("run 2");   break;
+                console.log("run 2");
+                break;
             case "fullname":
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
-                fullname.value="";
+                fullname.value = "";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
                 fullname.setAttribute('placeholder', mess);
-                console.log("run 3");  break;
+                console.log("run 3");
+                break;
             case "phone":
                 let phone = document.getElementById('form4');
                 phone.classList.add('border-danger');
                 phone.classList.add('text-danger');
-                phone.value="";
+                phone.value = "";
                 phone.nextElementSibling.classList.add('active');
                 phone.setAttribute('placeholder', mess);
-                console.log("run 4");    break;
+                console.log("run 4");
+                break;
             case "birthday":
                 let birthday = document.getElementById('birthday');
                 birthday.classList.add('border-danger');
                 birthday.classList.add('text-danger');
-                birthday.value="";
+                birthday.value = "";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
                 birthday.setAttribute('placeholder', mess);
-                console.log("run 5"); break;
+                console.log("run 5");
+                break;
         }
     }
 </script>
@@ -296,7 +315,7 @@
     email.addEventListener('click', function () {
             email.classList.remove('border-danger');
             email.classList.remove('text-danger');
-            email.placeholder="";
+            email.placeholder = "";
             // email.value;
         }
     )
@@ -305,7 +324,7 @@
     password.addEventListener('click', function () {
             password.classList.remove('border-danger');
             password.classList.remove('text-danger');
-            password.placeholder="";
+            password.placeholder = "";
             // password.attributes.removeNamedItem("value");
         }
     )
@@ -358,7 +377,7 @@
         labelMonthPrev: 'Tháng trước',
         labelMonthSelect: 'Chọn tháng',
         labelYearSelect: 'Chọn năm',
-        format: 'dd/mm/yyyy',
+        format: 'dd-mm-yyyy',
     });
 </script>
 <script>

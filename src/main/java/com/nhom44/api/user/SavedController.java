@@ -17,6 +17,7 @@ import java.util.List;
 public class SavedController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         String offset= req.getParameter("offset")==null?"0":req.getParameter("offset");
         User user= (User) req.getSession().getAttribute("auth");
         System.out.println(user.toString());
