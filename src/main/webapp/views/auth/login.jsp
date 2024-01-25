@@ -1,4 +1,4 @@
-<%@include file="/layout/common.jsp" %>
+ <%@include file="/layout/common.jsp" %>
 <%--<%@ page isELIgnored="false" %>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>

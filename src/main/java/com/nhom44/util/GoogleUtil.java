@@ -26,7 +26,7 @@ public class GoogleUtil {
     }
 
     public static GoogleAccount getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
-        String link = GoogleProperties.getLinkGetToken() + accessToken;
+        String link = GoogleProperties.getLinkGetUserInfo() + accessToken;
         String response = Request.Get(link).execute().returnContent().asString();
 
         GoogleAccount googlePojo = new Gson().fromJson(response, GoogleAccount.class);
