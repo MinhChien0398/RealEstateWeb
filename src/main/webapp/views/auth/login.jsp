@@ -37,7 +37,7 @@
             <!--            <input type="address" placeholder="Địa chỉ">-->
             <select class="mdb-select md-form" name="address" id="mdb-select" searchable="Search here..">
                 <option value="" disabled selected>Chọn tỉnh thành</option>
-                <c:forEach items="${provinces}" var="province">
+                <c:forEach items="${allProvinces}" var="province">
                     <option value="${province.name}">${province.name}</option>
                 </c:forEach>
             </select>
