@@ -224,13 +224,40 @@
                 saveService(data.data.id);
             },
             error: function (data) {
+                var err = JSON.parse(data.responseText);
 
+                for (const e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })
 
 </script>
+<script>
+    function fetchErr(name, mess) {
+        switch (name) {
+            case 'name' :
+                let name = document.getElementById('name');
+                name.classList.add('border-danger');
+                name.classList.add('text-danger');
+                name.value = "";
+                name.setAttribute('value', "");
+                name.setAttribute('placeholder', mess);
+                break;
+            case 'description' :
+                let description = document.getElementById('description');
+                description.classList.add('border-danger');
+                description.classList.add('text-danger');
+                description.value = "";
+                description.setAttribute('value', "");
+                description.setAttribute('placeholder', mess);
+                break;
 
+        }
+    }
+</script>
 <script>
     let cur;
     for (let item of $('.sidebar-item')) {

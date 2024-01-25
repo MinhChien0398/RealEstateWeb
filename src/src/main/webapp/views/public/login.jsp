@@ -1,0 +1,203 @@
+<%@include file="/layout/common.jsp" %>
+<%--<%@ page isELIgnored="false" %>--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%--    <%@ include file="/layout/link.jsp" %>--%>
+    <link href="<c:url value="/template/lib/fontawesome-free-6.4.2-web/css/all.min.css"/>" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value="/template/css/login.css"/> ">
+    <title>Đăng nhập</title>
+</head>
+<body>
+
+<div class="container" id="container">
+    <div class="form-container sign-up">
+        <a class="icon-arrow arrow-sign-up" href="home"><i
+                class="fa-solid fa-arrow-left"></i></a>
+        <form id="sign-up">
+            <h1>Tạo tài khoản</h1>
+            <span>Thông tin đăng nhập</span>
+            <input type="text" name="name" id="fullname" placeholder="Tên">
+            <div style="display: flex;width: 100%">
+                <input class="birth" name="birthday" id="birthday" type="date" placeholder="Ngày sinh">
+                <label style="display: flex;margin-left: 7%;">
+                    <input name="isMale" id="isMale" type="checkbox" checked>
+                    <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nam</p>
+                </label>
+                <label style="display: flex;margin-left: 7%;">
+                    <input name="isFemale" id="isFemale" type="checkbox">
+                    <p style="margin: auto; padding: 6%; top:6%; font-size: 16px">Nữ</p>
+                </label>
+            </div>
+            <!--            <input type="address" placeholder="Địa chỉ">-->
+            <select class="mdb-select md-form" name="address" id="mdb-select" searchable="Search here..">
+                <option value="" disabled selected>Chọn tỉnh thành</option>
+                <c:forEach items="${sessionScope.provinces}" var="province">
+                    <option value="${province.name}">${province.name}</option>
+                </c:forEach>
+            </select>
+            <input type="email" name="email" id="email-signup" placeholder="Tên tài khoản / Email">
+            <input type="password" name="password" id="pasword-signup" placeholder="Mật khẩu">
+            <input type="password" name="verifypassword" id="verifypassword-sigup" placeholder="Xác nhận mật khẩu">
+            <input type="text" name="verifypassword" id="phone-sigup" placeholder="Số điện thoại">
+            <p id="error-message-signup" style="color: red;"></p>
+            <button type="button" id="sign-up-button">Đăng kí</button>
+        </form>
+    </div>
+    <div class="form-container forgot-password">
+        <div class="arrow-container">
+            <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
+                    class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <form id="forget-password">
+            <h1>Quên mật khẩu</h1>
+            <span>Nhập email để đặt lại mật khẩu</span>
+            <input id="email-forgot" name="email-forgot" type="email" placeholder="Email">
+            <a id="showSignInForm" href="#">Đăng nhập ?</a>
+            <p id="error-message-forgot" style="color: red; display: none"></p>
+            <button type="button" id="request-button">Gửi yêu cầu đặt lại mật khẩu</button>
+        </form>
+    </div>
+    <div class="form-container sign-in">
+        <div class="arrow-container">
+            <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
+                    class="fa-solid fa-arrow-left"></i></a>
+        </div>
+        <form action="/login" method="post" id="sign-in">
+            <input type="hidden" name="action" value="login"/>
+            <h1>Đăng Nhập</h1>
+            <div class="social-icons">
+                <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            </div>
+            <span>Đã có tài khoản</span>
+            <input name="email" type="email" placeholder="Email" id="email-signin">
+            <input name=password type="password" placeholder="Mật khẩu" id="password-signin">
+            <a id="showForgotPassword" href="#">Quên mật khẩu?</a>
+            <p id="error-message-signin" style="color: red; display: none"></p>
+            <button id="login-button" type="submit" >Đăng Nhập</button>
+        </form>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-left">
+                <div class="arrow-container">
+                    <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
+                            class="fa-solid fa-arrow-left"></i></a>
+                </div>
+                <h1>Chào mừng quay trở lại!</h1>
+                <p>Đăng nhập với thông tin cá nhân của bạn</p>
+                <button class="hidden" id="showSignIn">Đăng nhập</button>
+                <!--                <button class="hidden" id="login">Đăng nhập</button>-->
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Xin chào!</h1>
+                <p>Đăng ký với thông tin cá nhân của bạn</p>
+                <button class="hidden" id="showSignUp">Đăng kí</button>
+                <!--                <button class="hidden" id="register">Đăng kí</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<%@include file="/layout/public/script.jsp"%>
+<script src="<c:url value="/template/js/login.js"/> "></script>
+<script>
+    if (${error!=null}) {
+       alert('${error}')
+    }
+</script>
+<script>
+    $('#request-button').click(function () {
+        let data = {
+            email: $('#email-forgot').val()
+        }
+        $.ajax({
+            url: '/api/reset-password',
+            type: 'POST',
+            data: data,
+            // contentType: 'application/json',
+            success: function (result) {
+                console.log("success")
+                console.log(result);
+                // if (result == 'success') {
+                //     window.location.href = '/RealEstateWeb_war_exploded/home';
+                // } else {
+                //     $('#error-message-signin').text(result);
+                //     $('#error-message-signin').css('display', 'block');
+            },
+            error: function (error) {
+                console.log("error")
+                console.log(error);
+            }
+        })
+    })
+</script>
+<script>
+    $('#sign-up-button').click(function () {
+        let data = {
+            fullname: $('#fullname').val(),
+            birthday: $('#birthday').val(),
+            isMale: $('#isMale').is(':checked'),
+            isFemale: $('#isFemale').is(':checked'),
+            province: $('#mdb-select').val(),
+            phone: $('#phone-sigup').val(),
+            email: $('#email-signup').val(),
+            password: $('#pasword-signup').val(),
+            verifypassword: $('#verifypassword-sigup').val()
+        }
+        $.ajax({
+            url: '/api/register',
+            type: 'POST',
+            data: data,
+            // contentType: 'application/json',
+            success: function (result) {
+                console.log("success")
+                console.log(result);
+                // if (result == 'success') {
+                //     window.location.href = '/RealEstateWeb_war_exploded/home';
+                // } else {
+                //     $('#error-message-signin').text(result);
+                //     $('#error-message-signin').css('display', 'block');
+            },
+            error: function (error) {
+                console.log("error")
+                console.log(error);
+            }
+        })
+    })
+</script>
+<%--<script>--%>
+<%--    $('#login-button').click(function () {--%>
+<%--        let data = {--%>
+<%--            email: $('#email-signin').val(),--%>
+<%--            password: $('#password-signin').val()--%>
+<%--        }--%>
+<%--        $.ajax({--%>
+<%--            url: '/api/login',--%>
+<%--            type: 'POST',--%>
+<%--            data: data,--%>
+<%--            // contentType: 'application/json',--%>
+<%--            success: function (result) {--%>
+<%--                console.log("success")--%>
+<%--                console.log(result);--%>
+<%--                // if (result == 'success') {--%>
+<%--                //     window.location.href = '/RealEstateWeb_war_exploded/home';--%>
+<%--                // } else {--%>
+<%--                //     $('#error-message-signin').text(result);--%>
+<%--                //     $('#error-message-signin').css('display', 'block');--%>
+<%--            },--%>
+<%--            error: function (error) {--%>
+<%--                console.log("error")--%>
+<%--                console.log(error);--%>
+<%--            }--%>
+<%--        })--%>
+<%--    })--%>
+<%--</script>--%>
+
+</body>
+</html>
