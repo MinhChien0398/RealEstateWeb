@@ -217,8 +217,7 @@
             {
                 data: "id",
                 render: function (id) {
-                    return '<a href="/admin/category_management?action=edit&id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n' +
-                        '                            <a href="#delete"><i class="icon-action fa-solid fa-trash-can"></i></a>'
+                    return '<a href="/admin/category_management?action=edit&id=' + id + '"><i class="icon-action fa-solid fa-edit"></i></a>\n'
                 }
             },
         ],

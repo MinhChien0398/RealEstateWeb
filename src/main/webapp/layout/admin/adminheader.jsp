@@ -72,11 +72,13 @@
                 <a href="/admin/contact">
                     <i class="fa-solid fa-newspaper"></i><span>QL Liên hệ</span>
                 </a>
-                <i class="m-0 fas fa-chevron-circle-down drop-down"></i>
             </div>
-            <div class="sub-menu d-none">
-                <a href="/admin/order" class="menu-btn">
-                    <i class="fa-solid fa-toolbox"></i> <span>QL Liên hệ bài viết</span>
+        </li>
+
+        <li class="sidebar-item" id="order">
+            <div class="menu-btn">
+                <a href="/admin/order">
+                    <i class="fa-solid fa-toolbox"></i> <span>QL Order</span>
                 </a>
             </div>
         </li>
