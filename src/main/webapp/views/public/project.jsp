@@ -46,8 +46,8 @@
                         <div class="form-outline">
                             <select name="category" id="categoryId" class="form-control">
                                 <option value="">Loại</option>
-                                <c:forEach items="${categories}" var="category">
-                                    <option value="${category.id}">${category.name}</option>
+                                <c:forEach items="${sessionScope.categories}" var="cat">
+                                    <option value="${cat.id}" <c:if test="${category.id==cat.id}"> selected</c:if>>${cat.name}</option>
                                 </c:forEach>
                             </select>
                         </div>
@@ -56,7 +56,7 @@
                         <div class="form-outline">
                             <select name="service" id="serviceId" class="form-control">
                                 <option value="">Loại dịch vụ</option>
-                                <c:forEach var="service" items="${services}">
+                                <c:forEach var="service" items="${sessionScope.services}">
                                     <option value="${service.id}">${service.name}</option>
                                 </c:forEach>
                             </select>
@@ -228,6 +228,7 @@
                 let data = response;
                 console.log(data)
                 drawButton($.param(fdata), response);
+                window.history.replaceState(null, null, "/project?" + $.param(fdata));
                 return false;
             },
             error: function (response) {

@@ -269,9 +269,9 @@
                                                         <select name="status"
                                                                 class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Trạng thái</option>
-                                                            <option value="1"<c:if test="${user.status==1}"> selected</c:if>Chưa kích hoạt</option>
-                                                            <option value="2" <c:if test="${user.status==2}"> selected</c:if>>Kích hoạt</option>
-                                                            <option value="3" <c:if test="${user.status==3}"> selected</c:if>>Khóa</option>
+                                                            <option value="0"<c:if test="${user.status==0}"> selected</c:if>Chưa kích hoạt</option>
+                                                            <option value="1" <c:if test="${user.status==1}"> selected</c:if>>Kích hoạt</option>
+                                                            <option value="2" <c:if test="${user.status==2}"> selected</c:if>>Khóa</option>
                                                         </select>
                                                     </div>
                                                 </div>
