@@ -7,6 +7,7 @@ import com.nhom44.services.ImageService;
 import com.nhom44.services.PostService;
 import com.nhom44.services.ProjectService;
 import com.nhom44.services.ServiceOfProjectService;
+import com.nhom44.util.LoadSession;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +21,7 @@ import java.util.List;
 public class DemoPostController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LoadSession.loadSession(req);
         req.setAttribute("page", "account");
         String path = req.getPathInfo();
         System.out.println("path: " + path);

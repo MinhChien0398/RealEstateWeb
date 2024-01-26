@@ -18,6 +18,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @WebServlet(urlPatterns = {"/api/user", "/api/user/update"})
 public class UserController extends HttpServlet {
@@ -52,7 +53,7 @@ public class UserController extends HttpServlet {
                 errMess.add(responseModel);
             } else user.setEmail(email);
         singleValidator = new TitleOrNameSingleValidator();
-        if (fullName != user.getFullName())
+        if (!Objects.equals(fullName, user.getFullName()))
             if (!fullName.equals("") && !singleValidator.validator(fullName)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("fullName");
@@ -60,15 +61,26 @@ public class UserController extends HttpServlet {
                 errMess.add(responseModel);
             } else user.setFullName(fullName);
         if (!password.equals(""))
-            if (!singleValidator.validator(password) && !singleValidator.validator(rePassword) && password.equals(rePassword)) {
+            if (!singleValidator.validator(password)  ) {
                 responseModel = new ResponseModel();
                 responseModel.setName("password");
-                responseModel.setMessage("Mật khẩu không hợp lệ");
+                responseModel.setMessage("Mật khẩu mới không hợp lệ");
                 errMess.add(responseModel);
-            } else user.setPassword(StringUtil.hashPassword(password));
+            }else if(!singleValidator.validator(rePassword) ){
+                responseModel = new ResponseModel();
+                responseModel.setName("rePassword");
+                responseModel.setMessage("Mật khẩu nhập xác nhận không hợp lệ");
+                errMess.add(responseModel);
+            }else if(password.equals(rePassword)){
+                responseModel = new ResponseModel();
+                responseModel.setName("rePassword");
+                responseModel.setMessage("Mật khẩu nhập xác nhận không trùng khớp");
+                errMess.add(responseModel);
+            }
+        else user.setPassword(StringUtil.hashPassword(password));
         singleValidator = new PhoneValidator();
         if (phone.equals(user.getPhone()))
-            if (phone != "" && !singleValidator.validator(phone)) {
+            if (!phone.equals("") && !singleValidator.validator(phone)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("phone");
                 responseModel.setMessage("Số điện thoại không hợp lệ");
@@ -76,7 +88,7 @@ public class UserController extends HttpServlet {
             } else user.setPhone(phone);
         singleValidator = new NumberVallidator();
         if (address.equals(user.getProvinceId() + "") )
-            if (address != "" && !singleValidator.validator(address)) {
+            if (!address.equals("") && !singleValidator.validator(address)) {
                 responseModel = new ResponseModel();
                 responseModel.setName("address");
                 responseModel.setMessage("Địa chỉ không hợp lệ");

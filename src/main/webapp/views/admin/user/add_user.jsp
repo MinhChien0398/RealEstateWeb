@@ -162,9 +162,9 @@
                                                         <select name="status" id="status"
                                                                 class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Trạng thái</option>
-                                                            <option value="1" selected>Chưa kích hoạt</option>
-                                                            <option value="2">Kích hoạt</option>
-                                                            <option value="3">Khóa</option>
+                                                            <option value="0" selected>Chưa kích hoạt</option>
+                                                            <option value="1">Kích hoạt</option>
+                                                            <option value="2">Khóa</option>
                                                         </select>
                                                     </div>
                                                 </div>

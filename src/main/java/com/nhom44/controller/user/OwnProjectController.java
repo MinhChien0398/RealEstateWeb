@@ -4,6 +4,7 @@ import com.nhom44.bean.Project;
 import com.nhom44.bean.User;
 import com.nhom44.services.ProjectService;
 import com.nhom44.services.ServiceOfProjectService;
+import com.nhom44.util.LoadSession;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,7 @@ public class OwnProjectController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("page", "account");
+        LoadSession.loadSession(req);
         User user= (User) req.getSession().getAttribute("auth");
         List<Project> projects= ProjectService.getInstance().getOwnProject(user.getId());
         req.setAttribute("projects", projects);
