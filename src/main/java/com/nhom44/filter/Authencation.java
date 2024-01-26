@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Authencation implements Filter {
+public class  Authencation implements Filter {
     private HttpServletRequest request;
     private HttpServletResponse response;
     private FilterChain filterChain;

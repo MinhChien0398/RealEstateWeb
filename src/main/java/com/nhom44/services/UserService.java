@@ -126,4 +126,9 @@ public User update(User user){
     public User getUserByEmailForCustomer(String email) {
         return conn.withExtension(UserDAO.class, dao -> dao.getUserByEmailForCustomer(email));
     }
+
+    public void GoogleAdditional(User user) {
+        user.setPassword(StringUtil.hashPassword(user.getPassword()));
+        conn.withExtension(UserDAO.class, dao -> dao.insertGoogleUser(user));
+    }
 }

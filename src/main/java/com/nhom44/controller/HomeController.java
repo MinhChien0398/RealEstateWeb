@@ -8,6 +8,7 @@ import com.nhom44.services.CategoryService;
 import com.nhom44.services.ProvinceService;
 import com.nhom44.services.ServiceOfProjectService;
 import com.nhom44.services.SliderService;
+import com.nhom44.util.LoadSession;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,16 +24,10 @@ import java.util.List;
 public class HomeController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session= req.getSession();
+
         List<Slider> sliders = SliderService.getInstance().getAllActive();
         req.setAttribute("sliders", sliders);
-        List<Service> services = ServiceOfProjectService.getInstance().getAllActive();
-        session.setAttribute("services", services);
-        List<Category> categories = CategoryService.getInstance().getAllActive();
-        session.setAttribute("categories", categories);
-        List<Province> provinces = ProvinceService.getInstance().getAll();
-        session.setAttribute("provinces", provinces);
-
+        LoadSession.loadSession(req);
         req.setAttribute("page", "home");
         RequestDispatcher rd = req.getRequestDispatcher("/views/public/home.jsp");
         rd.forward(req, resp);

@@ -6,6 +6,7 @@ import com.nhom44.services.ProvinceService;
 import com.nhom44.services.UserService;
 import com.nhom44.bean.User;
 import com.nhom44.services.VerifyService;
+import com.nhom44.util.LoadSession;
 import com.nhom44.util.StringUtil;
 import com.nhom44.validator.EmailSingleValidator;
 import org.apache.commons.beanutils.BeanUtils;
@@ -27,17 +28,13 @@ public class LoginController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String action = req.getParameter("action");
-        List<Province> provinces = ProvinceService.getInstance().getAll();
-        HttpSession session = req.getSession();
-        if (session.getAttribute("provinces") == null) {
-            session.setAttribute("provinces", provinces);
-        }
+        LoadSession.loadSession(req);
         if (action != null && action.equals("logout")) {
             req.getSession().setAttribute("auth",null);
             resp.sendRedirect(req.getContextPath() + "/login");
             return;
         }
-        req.getRequestDispatcher("/views/public/login.jsp").forward(req, resp);
+        req.getRequestDispatcher("/views/auth/login.jsp").forward(req, resp);
     }
 
     @Override
