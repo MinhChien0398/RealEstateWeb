@@ -132,7 +132,7 @@
                 console.log(data)
                 // save
                 obj = JSON.parse(data);
-                delayNotify(0,obj.message);
+                delayNotify(0, obj.message);
                 if (obj.name == "success") {
                     setTimeout(() => {
                         setTimeout(() => {
@@ -151,8 +151,9 @@
                     fetchErr(e.name, e.message);
                 }
             }
-        },);
-    })
+
+        })
+    });
 </script>
 <script>
     function fetchErr(name, mess) {
@@ -162,8 +163,8 @@
                 let name = document.getElementById('name');
                 name.classList.add('border-danger');
                 name.classList.add('text-danger');
-                name.value = " ";
-                // name.setAttribute('value', " ");
+                name.value = "";
+                name.setAttribute('value', " ");
                 name.setAttribute('placeholder', mess);
                 break;
             // case 'status':
@@ -176,14 +177,6 @@
             //     break;
         }
     }
-</script>
-<script>
-    let name = document.getElementById('name');
-    name.addEventListener('click', function () {
-        name.classList.remove('border-danger');
-        name.classList.remove('text-danger');
-        name.setAttribute('placeholder', "Tên dự án");
-    })
 </script>
 <script>
     CKEDITOR.replace('service-des');
