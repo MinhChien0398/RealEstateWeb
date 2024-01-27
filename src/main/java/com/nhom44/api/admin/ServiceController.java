@@ -38,6 +38,7 @@ public class ServiceController extends HttpServlet {
         ResponseModel errModel;
         boolean isErr = false;
         if (!validator.validator(req.getParameter("name"))) {
+            resp.setStatus(400);
             errModel = new ResponseModel();
             errModel.setName("name");
             errModel.setMessage("Tên dịch vụ không hợp lệ");
@@ -54,7 +55,9 @@ public class ServiceController extends HttpServlet {
             isErr = true;
         }
         if (isErr) {
+            resp.setStatus(400);
             resp.getWriter().print(new Gson().toJson(errList));
+            resp.getWriter().flush();
             return;
         }
 
@@ -73,6 +76,7 @@ public class ServiceController extends HttpServlet {
                     errModel.setMessage("Vui lòng chọn ảnh cho dịch vụ");
                     errList.add(errModel);
                     resp.getWriter().print(new Gson().toJson(errList));
+                    resp.getWriter().flush();
                 }
                 int i = ServiceOfProjectService.getInstance().add(service);
                 if (i == -1) {
@@ -82,6 +86,7 @@ public class ServiceController extends HttpServlet {
                     errModel.setMessage("dịch vụ đã tồn tại");
                     errList.add(errModel);
                     resp.getWriter().print(new Gson().toJson(errList));
+                    resp.getWriter().flush();
                     return;
                 }
             } else if (action.equals("edit")) {
@@ -102,17 +107,21 @@ public class ServiceController extends HttpServlet {
 //                ServiceOfProjectService.getInstance().delete(id);
             }
         } catch (IllegalAccessException | UnableToExecuteStatementException | InvocationTargetException e) {
+            resp.setStatus(200);
             errModel = new ResponseModel();
             errModel.setName("sys");
             errModel.setMessage("Lỗi hệ thống");
             errList.add(errModel);
             resp.getWriter().print(new Gson().toJson(errList));
+            resp.getWriter().flush();
             return;
         }
+        resp.setStatus(200);
         errModel = new ResponseModel();
         errModel.setName("success");
         errModel.setMessage("Thành công");
         errModel.setData("/admin/service");
         resp.getWriter().print(new Gson().toJson(errModel));
+        resp.getWriter().flush();
     }
 }
