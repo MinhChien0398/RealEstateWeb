@@ -96,26 +96,30 @@
                             <input type="text" id="address" class="form-control">
                             <label for="address">Địa chỉ(tỉnh/thành phố)</label>
                         </div>
-                        <div class="row">
-                            <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
-                                <!--                            <label>Chủ đề</label>-->
-                                <select id="categoryId" class="browser-default custom-select mb-4">
-                                    <option value="" disabled="">Loại dự án</option>
-                                    <c:forEach var="category" items="${categories}">
-                                        <option value="${category.id}">${category.name}</option>
-                                    </c:forEach>
-                                </select>
-
-                            </div>
-                            <div class="form-outline col-6">
-                                <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">
-                            </div>
+                        <div class="md-form">
+                            <i class="fa-solid  fa-phone prefix grey-text"></i>
+                            <input type="text" id="phone" class="form-control">
+                            <label for="phone">Số điện thoại</label>
                         </div>
+                        <%--                            <div class="row">--%>
+                        <%--                                <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">--%>
+                        <%--                                    <!--                            <label>Chủ đề</label>-->--%>
+                        <%--                                    <select id="categoryId" class="browser-default custom-select mb-4">--%>
+                        <%--                                        <option value="" disabled="">Loại dự án</option>--%>
+                        <%--                                        <c:forEach var="category" items="${categories}">--%>
+                        <%--                                            <option value="${category.id}">${category.name}</option>--%>
+                        <%--                                        </c:forEach>--%>
+                        <%--                                    </select>--%>
+                        <%--                                </div>--%>
+                        <%--                                <div class="form-outline col-6">--%>
+                        <%--                                    <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">--%>
+                        <%--                                </div>--%>
+                        <%--                            </div>--%>
 
                         <!-- Message -->
                         <div class="form-group">
                                 <textarea class="form-control rounded-0" id="content" rows="3"
-                                          placeholder="Lời nhắn"></textarea>
+                                          placeholder="Lời nhắn" style="height: 250px"></textarea>
                         </div>
                         <div class="text-center mt-4">
                             <button class="btn btn-red waves-effect waves-light" onclick="saveContact()"
@@ -165,8 +169,7 @@
                 fullName: $('#fullName').val(),
                 email: $('#email').val(),
                 address: $('#address').val(),
-                categoryId: $('#categoryId').val(),
-                projectId: $('#projectId').val(),
+                phone: $('#phone').val(),
                 content: $('#content').val(),
             },
             success: function (data) {

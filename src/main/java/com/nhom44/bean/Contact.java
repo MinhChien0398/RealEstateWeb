@@ -7,8 +7,8 @@ public class Contact implements Serializable {
     private int id;
     private String fullName;
     private String email;
-    private int categoryId;
-    private int projectId;
+    private String phone;
+    private String address;
     private String content;
     private String createdAt;
     private String updatedAt;
@@ -19,8 +19,8 @@ public class Contact implements Serializable {
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
-                ", categoryId=" + categoryId +
-                ", projectId=" + projectId +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
                 ", content='" + content + '\'' +
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
@@ -32,12 +32,12 @@ public class Contact implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contact contact = (Contact) o;
-        return id == contact.id && categoryId == contact.categoryId && projectId == contact.projectId && Objects.equals(fullName, contact.fullName) && Objects.equals(email, contact.email) && Objects.equals(content, contact.content) && Objects.equals(createdAt, contact.createdAt) && Objects.equals(updatedAt, contact.updatedAt);
+        return id == contact.id && Objects.equals(fullName, contact.fullName) && Objects.equals(email, contact.email) && Objects.equals(phone, contact.phone) && Objects.equals(address, contact.address) && Objects.equals(content, contact.content) && Objects.equals(createdAt, contact.createdAt) && Objects.equals(updatedAt, contact.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fullName, email, categoryId, projectId, content, createdAt, updatedAt);
+        return Objects.hash(id, fullName, email, phone, address, content, createdAt, updatedAt);
     }
 
     public int getId() {
@@ -64,20 +64,20 @@ public class Contact implements Serializable {
         this.email = email;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public int getProjectId() {
-        return projectId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getContent() {
@@ -107,12 +107,12 @@ public class Contact implements Serializable {
     public Contact() {
     }
 
-    public Contact(int id, String fullName, String email, int categoryId, int projectId, String content, String createdAt, String updatedAt) {
+    public Contact(int id, String fullName, String email, String phone, String address, String content, String createdAt, String updatedAt) {
         this.id = id;
         this.fullName = fullName;
         this.email = email;
-        this.categoryId = categoryId;
-        this.projectId = projectId;
+        this.phone = phone;
+        this.address = address;
         this.content = content;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;

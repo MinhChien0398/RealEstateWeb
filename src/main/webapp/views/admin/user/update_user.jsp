@@ -33,80 +33,80 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top ">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="../dashboard.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="user_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-building"> </i>--%>
-<%--                    <a href="../project/project_manage.jsp">--%>
-<%--                        <span>QL Dự án</span>--%>
-<%--                    </a> <i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../category/category_management.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/post_project.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="../project/project_schedule.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
+    <%@include file="/layout/admin/adminheader.jsp" %>
+    <%--    <div class="header fixed-top ">--%>
+    <%--        <div class="header-menu row m-0">--%>
+    <%--            <div class="col-11 d-flex align-items-center">--%>
+    <%--                <div class="sidebar-btn mr-3">--%>
+    <%--                    <i class="fas fa-bars"></i>--%>
+    <%--                </div>--%>
+    <%--                <div class="title text-uppercase">--%>
+    <%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
+    <%--            </div>--%>
+    <%--            <ul class="col-1 d-flex align-items-center m-0">--%>
+    <%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
+    <%--            </ul>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
+    <%--    <div class="sidebar">--%>
+    <%--        <div class="sidebar-menu">--%>
+    <%--            <center class="logo">--%>
+    <%--                <img src="<c:url value="/template/img/logo/logo.png"></c:url>" alt="logo" style="">--%>
+    <%--            </center>--%>
+    <%--            <li class="sidebar-item">--%>
+    <%--                <a href="../dashboard.jsp" class="menu-btn">--%>
+    <%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="user">--%>
+    <%--                <a href="user_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="project">--%>
+    <%--                <div class="menu-btn">--%>
+    <%--                    <i class="fa-solid fa-building"> </i>--%>
+    <%--                    <a href="../project/project_manage.jsp">--%>
+    <%--                        <span>QL Dự án</span>--%>
+    <%--                    </a> <i--%>
+    <%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+    <%--                <div class="sub-menu d-none">--%>
+    <%--                    <a href="../category/category_management.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
+    <%--                    </a>--%>
+    <%--                    <a href="../project/post_project.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
+    <%--                    </a>--%>
+    <%--                    <a href="../project/project_schedule.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
+    <%--                    </a>--%>
+    <%--                </div>--%>
+    <%--            </li>--%>
 
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="../service/service_manage.jsp">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <%--            <li class="sidebar-item" id="type-project">--%>
+    <%--                <div class="menu-btn">--%>
+    <%--                    <a href="../service/service_manage.jsp">--%>
+    <%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
+    <%--                    </a><i--%>
+    <%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+    <%--                <div class="sub-menu d-none">--%>
+    <%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
+    <%--                    </a>--%>
+    <%--                </div>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="contact">--%>
+    <%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="slide">--%>
+    <%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
 
     <div class="main-container">
         <div class="container p-0">
@@ -116,7 +116,8 @@
                                                    href="/admin/dashboard">Thống
                         kê</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL người dùng</a></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="/admin/user_management?action=manager">QL
+                        người dùng</a></li>
                     <li><i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item"><a class="main-color" href="#">Chỉnh sửa người dùng</a></li>
                 </ol>
@@ -146,19 +147,23 @@
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="md-form form-sm mb-0">
-                                                        <input type="email" id="form8"
-                                                               class="form-control form-control-sm" name="email"
-                                                               value="${user.email}">
-                                                        <label for="form8" class="">Email</label>
+                                                    <input type="email" id="form8"
+                                                           class="form-control form-control-sm" name="email"
+                                                           value="${user.email}">
+                                                    <label for="form8" class="">Email</label>
                                                 </div>
                                             </div>
                                             <div class="col-lg-6 col-md-6">
                                                 <div class="md-form form-sm mb-0">
                                                     <c:if test="${passwordErr != null}">
-                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="" placeholder="${passwordErr}">
+                                                        <input type="password" id="form9"
+                                                               class="form-control form-control-sm" name="password"
+                                                               value="" placeholder="${passwordErr}">
                                                     </c:if>
                                                     <c:if test="${passwordErr == null}">
-                                                        <input type="password" id="form9" class="form-control form-control-sm" name="password" value="${passwordValue}">
+                                                        <input type="password" id="form9"
+                                                               class="form-control form-control-sm" name="password"
+                                                               value="${passwordValue}">
                                                     </c:if>
                                                     <label for="form9" class="">Password</label>
                                                 </div>
@@ -168,25 +173,29 @@
                                         <div class="row d-flex align-items-center">
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
-<%--                                                <div class="md-form form-sm mb-0">--%>
-<%--                                                    <c:if test="${fullnameErr!=null}">--%>
-<%--                                                        <input type="text" id="form12"--%>
-<%--                                                               class="form-control form-control-sm" name="fullname"--%>
-<%--                                                               value="" placeholder="${fullnameErr}">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <c:if test="${fullnameErr==null}">--%>
-<%--                                                        <input type="text" id="form12"--%>
-<%--                                                               class="form-control form-control-sm" name="fullname">--%>
-<%--                                                    </c:if>--%>
-<%--                                                    <label for="form12" class="">Họ và tên</label>--%>
-<%--                                                </div>--%>
+                                                <%--                                                <div class="md-form form-sm mb-0">--%>
+                                                <%--                                                    <c:if test="${fullnameErr!=null}">--%>
+                                                <%--                                                        <input type="text" id="form12"--%>
+                                                <%--                                                               class="form-control form-control-sm" name="fullname"--%>
+                                                <%--                                                               value="" placeholder="${fullnameErr}">--%>
+                                                <%--                                                    </c:if>--%>
+                                                <%--                                                    <c:if test="${fullnameErr==null}">--%>
+                                                <%--                                                        <input type="text" id="form12"--%>
+                                                <%--                                                               class="form-control form-control-sm" name="fullname">--%>
+                                                <%--                                                    </c:if>--%>
+                                                <%--                                                    <label for="form12" class="">Họ và tên</label>--%>
+                                                <%--                                                </div>--%>
 
                                                 <div class="md-form form-sm mb-0">
                                                     <c:if test="${fullnameErr != null}">
-                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="" placeholder="${fullnameErr}">
+                                                        <input type="text" id="form12"
+                                                               class="form-control form-control-sm" name="fullname"
+                                                               value="" placeholder="${fullnameErr}">
                                                     </c:if>
                                                     <c:if test="${fulnameErr == null}">
-                                                        <input type="text" id="form12" class="form-control form-control-sm" name="fullname" value="${user.fullName}">
+                                                        <input type="text" id="form12"
+                                                               class="form-control form-control-sm" name="fullname"
+                                                               value="${user.fullName}">
                                                     </c:if>
                                                     <label for="form12" class="">Họ và tên</label>
                                                 </div>
@@ -194,15 +203,22 @@
                                             <!-- Grid column -->
                                             <!-- Grid column -->
                                             <div class="col-lg-4">
-                                                <div id="date-picker-example" class="md-form mb-0 input-with-post-icon datepicker" style="outline: none" inline="true">
+                                                <div id="date-picker-example"
+                                                     class="md-form mb-0 input-with-post-icon datepicker"
+                                                     style="outline: none" inline="true">
                                                     <c:if test="${birthdayErr != null}">
-                                                        <input placeholder="${birthdayErr}" type="text" id="birthday" value="" class="form-control form-control-sm" name="birthday">
+                                                        <input placeholder="${birthdayErr}" type="text" id="birthday"
+                                                               value="" class="form-control form-control-sm"
+                                                               name="birthday">
                                                     </c:if>
                                                     <c:if test="${birthdayErr == null}">
-                                                        <input type="text" id="birthday" class="form-control form-control-sm" name="birthday" value="${user.birthday}">
+                                                        <input type="text" id="birthday"
+                                                               class="form-control form-control-sm" name="birthday"
+                                                               value="${user.birthday}">
                                                     </c:if>
                                                     <label for="birthday" class="">Ngày sinh</label>
-                                                    <i id="label-birthday" class="fas fa-calendar input-prefix" style="font-size: .875rem"></i>
+                                                    <i id="label-birthday" class="fas fa-calendar input-prefix"
+                                                       style="font-size: .875rem"></i>
                                                 </div>
                                             </div>
                                             <!-- Grid column -->
@@ -211,10 +227,14 @@
 
                                                 <div class="md-form form-sm mb-0">
                                                     <c:if test="${phoneErr != null}">
-                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="" placeholder="${phoneErr}">
+                                                        <input type="text" id="form4"
+                                                               class="form-control form-control-sm" name="phone"
+                                                               value="" placeholder="${phoneErr}">
                                                     </c:if>
                                                     <c:if test="${phoneErr == null}">
-                                                        <input type="text" id="form4" class="form-control form-control-sm" name="phone" value="${user.phone}">
+                                                        <input type="text" id="form4"
+                                                               class="form-control form-control-sm" name="phone"
+                                                               value="${user.phone}">
                                                     </c:if>
                                                     <label for="form4" class="">SĐT</label>
                                                 </div>
@@ -228,7 +248,8 @@
                                                     <select name="province" id="province" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
                                                         <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.id}" <c:if test="${user.province==item.name}">selected</c:if> >${item.name}</option>
+                                                            <option value="${item.id}"
+                                                                    <c:if test="${user.province==item.name}">selected</c:if> >${item.name}</option>
                                                         </c:forEach>
 
                                                     </select>
@@ -243,7 +264,8 @@
                                                     <!-- Material unchecked -->
                                                     <div class="form-check mt-4">
                                                         <input name="isMale" type="checkbox" class="form-check-input"
-                                                               id="materialUnchecked"  <c:if test="${user.gender==1}">checked </c:if> >
+                                                               id="materialUnchecked"
+                                                               <c:if test="${user.gender==1}">checked </c:if> >
                                                         <label class="form-check-label"
                                                                for="materialUnchecked">Nam</label>
                                                     </div>
@@ -269,9 +291,16 @@
                                                         <select name="status"
                                                                 class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Trạng thái</option>
-                                                            <option value="0"<c:if test="${user.status==0}"> selected</c:if>Chưa kích hoạt</option>
-                                                            <option value="1" <c:if test="${user.status==1}"> selected</c:if>>Kích hoạt</option>
-                                                            <option value="2" <c:if test="${user.status==2}"> selected</c:if>>Khóa</option>
+                                                            <option value="0"<c:if
+                                                                    test="${user.status==0}"> selected</c:if>Chưa kích
+                                                                    hoạt
+                                                            </option>
+                                                            <option value="1" <c:if
+                                                                    test="${user.status==1}"> selected</c:if>>Kích hoạt
+                                                            </option>
+                                                            <option value="2" <c:if
+                                                                    test="${user.status==2}"> selected</c:if>>Khóa
+                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -279,8 +308,13 @@
                                                     <div class="md-form form-sm mb-0">
                                                         <select name="role" class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
-                                                            <option value="0" <c:if test="${user.role==1}"> selected</c:if>selected>Người dùng thường</option>
-                                                            <option value="1" <c:if test="${user.role==2}"> selected</c:if>>Admin</option>
+                                                            <option value="0" <c:if
+                                                                    test="${user.role==1}"> selected</c:if>selected>
+                                                                Người dùng thường
+                                                            </option>
+                                                            <option value="1" <c:if
+                                                                    test="${user.role==2}"> selected</c:if>>Admin
+                                                            </option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -307,7 +341,7 @@
 </div>
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
-<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     $('#materialUnchecked').change(() => {
         if ($('#materialIndeterminate2').is(':checked')) {
@@ -342,13 +376,17 @@
             },
             success: function (data) {
                 console.log(data);
-                if (data.name==="sys") {
-                    alert(data.message);
-                }else {
-                    window.location.href = "/admin/user_management?action=manager";
+                if (data.name === "sys") {
+                    delayNotify(2000, data.message)
+                } else {
+                    delayNotify(2000, data.message)
+                    setTimeout(() => {
+                        window.location.href = data.data;
+                    }, 3000);
                 }
             },
-            error: function (data) {   console.log(err)
+            error: function (data) {
+                console.log(err)
                 var err = JSON.parse(data.responseText);
 
                 for (const e of err) {
@@ -365,9 +403,9 @@
                 let email = document.getElementById('form8');
                 email.classList.add('border-danger');
                 email.classList.add('text-danger');
-                email.value="";
+                email.value = "";
                 email.nextElementSibling.classList.add('active');
-                email.setAttribute('value'," ");
+                email.setAttribute('value', " ");
                 email.setAttribute('placeholder', mess);
                 console.log("run 1")
                 break;
@@ -375,36 +413,40 @@
                 let password = document.getElementById('form9');
                 password.classList.add('border-danger');
                 password.classList.add('text-danger');
-                password.value="";
+                password.value = "";
                 password.nextElementSibling.classList.add('active');
                 password.setAttribute('placeholder', mess);
-                console.log("run 2");   break;
+                console.log("run 2");
+                break;
             case "fullname":
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
-                fullname.value="";
+                fullname.value = "";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
                 fullname.setAttribute('placeholder', mess);
-                console.log("run 3");  break;
+                console.log("run 3");
+                break;
             case "phone":
                 let phone = document.getElementById('form4');
                 phone.classList.add('border-danger');
                 phone.classList.add('text-danger');
-                phone.value="";
+                phone.value = "";
                 phone.nextElementSibling.classList.add('active');
                 phone.setAttribute('placeholder', mess);
-                console.log("run 4");    break;
+                console.log("run 4");
+                break;
             case "birthday":
                 let birthday = document.getElementById('birthday');
                 birthday.classList.add('border-danger');
                 birthday.classList.add('text-danger');
-                birthday.value="";
+                birthday.value = "";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
                 birthday.setAttribute('placeholder', mess);
-                console.log("run 5"); break;
+                console.log("run 5");
+                break;
         }
     }
 </script>

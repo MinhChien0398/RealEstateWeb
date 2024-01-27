@@ -37,16 +37,20 @@ public class CartController extends HttpServlet {
         List<ResponseModel> listResp = new ArrayList<>();
         ResponseModel responseModel = null;
         SingleValidator singleValidator = new EmailSingleValidator();
-        if (session.getAttribute("cart") != null){
-            cart = (Cart) session.getAttribute("cart");
-        if (ProjectService.getInstance().getById(cart.getRepresentProjectId()) == null) {
-            resp.setStatus(400);
-            responseModel = new ResponseModel();
-            responseModel.setMessage("dự án mẫu không tồn tại");
-            responseModel.setData(null);
-            responseModel.setName("representProjectId");
-            listResp.add(responseModel);
-        }} else {
+//        if (session.getAttribute("cart") != null) {
+//            cart = (Cart) session.getAttribute("cart");
+//            if (ProjectService.getInstance().getById(cart.getRepresentProjectId()) == null) {
+//                resp.setStatus(400);
+//                responseModel = new ResponseModel();
+//                responseModel.setMessage("dự án mẫu không tồn tại");
+//                responseModel.setData(null);
+//                responseModel.setName("representProjectId");
+//                listResp.add(responseModel);
+//            }
+//
+//        } else
+        {
+
             cart = new Cart();
             String email = req.getParameter("email");
             if (!singleValidator.validator(email)) {
@@ -126,6 +130,25 @@ public class CartController extends HttpServlet {
             } else {
                 cart.setHeight(Double.parseDouble(height));
             }
+            String services = req.getParameter("services");
+
+            if (services == null || services.isEmpty()) {
+                resp.setStatus(400);
+                responseModel = new ResponseModel();
+                responseModel.setMessage("vui lòng chọn dịch vụ");
+                responseModel.setData(null);
+                responseModel.setName("services");
+                listResp.add(responseModel);
+            } else {
+                String[] arrservices = services.split(",");
+                List<Integer> serviceIds = new ArrayList<>();
+                singleValidator = new NumberVallidator();
+                for (String serviceId : arrservices) {
+                    System.out.println("serviceId: "+serviceId);
+                    if (singleValidator.validator(serviceId)) serviceIds.add(Integer.parseInt(serviceId));
+                }
+                cart.setServices(serviceIds);
+            }
         }
         if (!listResp.isEmpty()) {
             String json = new Gson().toJson(listResp);
@@ -137,7 +160,10 @@ public class CartController extends HttpServlet {
             return;
         }
         cart = CartService.getInstance().add(cart);
-
+        System.out.println(cart.getServices().toString());
+        for (int serviceId : cart.getServices()) {
+            CartService.getInstance().addService(cart.getId(), serviceId);
+        }
         System.out.println(cart);
         List<String> image = Upload.uploadFile(Upload.UPLOAD_CART + "\\" + cart.getId() + "_" + cart.getEmail(), "image", req);
         cart.setImages(image);
@@ -155,8 +181,8 @@ public class CartController extends HttpServlet {
         responseModel.setMessage("Yêu cầu của bạn đã gửi thành công vui đợi kiểm tra email và xác nhận yêu cầu");
         responseModel.setName("success");
         listResp.add(responseModel);
-        VerifyService.getInstance().insertVerifyCart(StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart.getId());
-        MailService.getInstance().sendMailToNotiFyCart(req.getServerName(), StringUtil.hashPassword(cart.getId()+cart.getEmail()), cart);
+        VerifyService.getInstance().insertVerifyCart(StringUtil.hashPassword(cart.getId() + cart.getEmail()), cart.getId());
+        MailService.getInstance().sendMailToNotiFyCart(req.getServerName(), StringUtil.hashPassword(cart.getId() + cart.getEmail()), cart);
         session.setAttribute("cart", null);
         String json = new Gson().toJson(listResp);
         PrintWriter writer = resp.getWriter();

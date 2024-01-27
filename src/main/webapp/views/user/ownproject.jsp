@@ -205,6 +205,7 @@
 </div>
 <%@include file="/layout/public/script.jsp" %>
 <script>
+
     function accept(id) {
         console.log(id)
         $.ajax({

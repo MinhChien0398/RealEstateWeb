@@ -116,7 +116,7 @@
 <!--start service-->
 <section class="service container pl-0 pr-0">
     <div class="slide-container swiper">
-        <div class="slide-content">
+        <div class="slide-content" id="catch">
             <h4 class="title mb-3 text-uppercase">dịch vụ THI CÔNG</h4>
             <div class="card-wrapper swiper-wrapper">
                 <c:forEach var="service" items="${services}" varStatus="loop">
@@ -141,9 +141,10 @@
                     </a>
                 </c:forEach>
             </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
-    <p class="swiper-pagination"></p>
+
     </div>
 </section>
 <!--end service-->
@@ -178,26 +179,30 @@
                                 <input type="text" id="address" class="form-control">
                                 <label for="address">Địa chỉ(tỉnh/thành phố)</label>
                             </div>
-                            <div class="row">
-                                <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
-                                    <!--                            <label>Chủ đề</label>-->
-                                    <select id="categoryId" class="browser-default custom-select mb-4">
-                                        <option value="" disabled="">Loại dự án</option>
-                                        <c:forEach var="category" items="${categories}">
-                                            <option value="${category.id}">${category.name}</option>
-                                        </c:forEach>
-                                    </select>
-
-                                </div>
-                                <div class="form-outline col-6">
-                                    <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">
-                                </div>
+                            <div class="md-form">
+                                <i class="fa-solid  fa-phone prefix grey-text"></i>
+                                <input type="text" id="phone" class="form-control">
+                                <label for="phone">Số điện thoại</label>
                             </div>
+<%--                            <div class="row">--%>
+<%--                                <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">--%>
+<%--                                    <!--                            <label>Chủ đề</label>-->--%>
+<%--                                    <select id="categoryId" class="browser-default custom-select mb-4">--%>
+<%--                                        <option value="" disabled="">Loại dự án</option>--%>
+<%--                                        <c:forEach var="category" items="${categories}">--%>
+<%--                                            <option value="${category.id}">${category.name}</option>--%>
+<%--                                        </c:forEach>--%>
+<%--                                    </select>--%>
+<%--                                </div>--%>
+<%--                                <div class="form-outline col-6">--%>
+<%--                                    <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
 
                             <!-- Message -->
                             <div class="form-group">
                                 <textarea class="form-control rounded-0" id="content" rows="3"
-                                          placeholder="Lời nhắn"></textarea>
+                                          placeholder="Lời nhắn" style="height: 250px"></textarea>
                             </div>
                             <div class="text-center mt-4">
                                 <button class="btn btn-red waves-effect waves-light" onclick="saveContact()"
@@ -235,10 +240,10 @@
 </section>
 
 
-<%@include file="/layout/public/footer.jsp" %>
+<%@include file="/layout/public/footer.jsp" %><script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
-<script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
+
 <script src="<c:url value='/template/js/home.js'/>"></script>
 <script>
     function saveContact() {
@@ -250,8 +255,7 @@
                 fullName: $('#fullName').val(),
                 email: $('#email').val(),
                 address: $('#address').val(),
-                categoryId: $('#categoryId').val(),
-                projectId: $('#projectId').val(),
+                phone: $('#phone').val(),
                 content: $('#content').val(),
             },
             success: function (data) {

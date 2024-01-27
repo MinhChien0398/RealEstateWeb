@@ -38,6 +38,7 @@ public class PostController extends HttpServlet {
                 List<Project> suggestProjects = ProjectService.getInstance().getSuggestProjects(project.getCategoryId());
                 User user = (User) req.getSession().getAttribute("auth");
                 if (user != null) {
+                    project.setSaveBy(ProjectService.getInstance().isLikeByUser(user.getId(), post.getId()) ? user.getId() : 0);
                     ProjectService.getInstance().addHistory(user.getId(), post.getId());
                 }
                 req.setAttribute("suggestProjects", suggestProjects);
@@ -59,6 +60,10 @@ public class PostController extends HttpServlet {
                 service.setUpdatedAt(service.getUpdatedAt().substring(0, 10));
                 Post post = PostService.getInstance().getById(service.getPostId());
                 List<Service> suggestServices = ServiceOfProjectService.getInstance().getSuggestServices();
+                User user = (User) req.getSession().getAttribute("auth");
+                if (user != null) {
+                    ProjectService.getInstance().addHistory(user.getId(), post.getId());
+                }
                 req.setAttribute("suggestServices", suggestServices);
                 req.setAttribute("post", post);
                 req.setAttribute("service", service);

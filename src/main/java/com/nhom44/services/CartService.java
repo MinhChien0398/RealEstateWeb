@@ -7,6 +7,7 @@ import org.jdbi.v3.core.Jdbi;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class CartService implements Serializable {
     private static CartService instance;
@@ -24,9 +25,14 @@ public class CartService implements Serializable {
         String now = Timestamp.valueOf(java.time.LocalDateTime.now()).toString();
         cart.setCreatedAt(now);
         cart.setUpdatedAt(now);
-        System.out.println(cart.toString());
-       int check= conn.withExtension(CartDAO.class, dao -> dao.add(cart));
-       return check==1?getByObject(cart):null;
+        int check = conn.withExtension(CartDAO.class, dao -> dao.add(cart));
+        cart.setId(check == 1 ? getByObject(cart).getId() : 0);
+        return cart;
+    }
+
+
+    public void addService(int cartId, int serviceId) {
+        conn.withExtension(CartDAO.class, dao -> dao.addService(cartId,serviceId));
     }
 
     private Cart getByObject(Cart cart) {
@@ -39,5 +45,26 @@ public class CartService implements Serializable {
 
     public void updateSuccessVerifyCart(int cartId) {
         conn.withExtension(CartDAO.class, dao -> dao.updateSuccessVerifyCart(cartId));
+    }
+
+    public List<Cart> getAll() {
+        return conn.withExtension(CartDAO.class, dao -> dao.getAll());
+    }
+
+    public static void main(String[] args) {
+        List<Cart> carts = CartService.getInstance().getAll();
+
+    }
+
+    public Cart getById(int cartId) {
+        return conn.withExtension(CartDAO.class, dao -> dao.getById(cartId));
+    }
+
+    public List<Integer> getServices(int id) {
+        return conn.withExtension(CartDAO.class, dao -> dao.getServices(id));
+    }
+
+    public List<String> getImages(int id) {
+        return conn.withExtension(CartDAO.class, dao -> dao.getImages(id));
     }
 }

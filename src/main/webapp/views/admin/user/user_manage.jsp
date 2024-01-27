@@ -60,7 +60,6 @@
                             <th class="font-weight-bold" scope="col">#</th>
                             <th class="font-weight-bold" scope="col">Tên</th>
                             <th class="font-weight-bold" scope="col">Email</th>
-                            <th class="font-weight-bold" scope="col">Mât Khẩu</th>
                             <th class="font-weight-bold" scope="col">Số điện thoại</th>
                             <th class="font-weight-bold" scope="col">Địa Chỉ</th>
                             <!--                            <th class="font-weight-bold" scope="col">Avatar</th>-->
@@ -72,7 +71,6 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -134,12 +132,6 @@
                 data: 'email',
                 render: function (email) {
                     if (email == null || email === "") return "---"; else return email;
-                }
-            },
-            {
-                data: 'password',
-                render: function (password) {
-                    if (password == null || password === "") return "---"; else return password;
                 }
             },
 
@@ -204,16 +196,12 @@
                 "targets": 3,
                 "width": "10%",
             },
-            {
-                "targets": 4,
-                "width": "10%",
-            },
             // {
             //     "targets": 3,
             //     "width": "90px",
             // },
             {
-                "targets": 5,
+                "targets": 4,
                 "width": "10%",
             },
             // {
@@ -229,7 +217,7 @@
             //     "width": "65px",
             // },
             {
-                "targets": 6,
+                "targets": 5,
                 "width": "10%",
             },
             // {
@@ -237,7 +225,7 @@
             //     "width": "90px",
             // },
             {
-                "targets": 7,
+                "targets": 6,
                 "width": "10%",
             },
             // {
@@ -245,7 +233,7 @@
             //     "width": "75px",
             // },
             {
-                "targets": 8,
+                "targets": 7,
                 "width": "7%",
             },
             // {
@@ -253,7 +241,7 @@
             //     "width": "75px",
             // },
             {
-                "targets": 9,
+                "targets": 8,
                 "width": "7%",
             },
             // {

@@ -24,7 +24,7 @@ public interface ProjectDAO {
             ":categoryId, :status,:postId)")
     Integer add(@BindBean Project project);
 
-    @SqlUpdate("UPDATE projects SET title=:title, avatar=:avatar ,description=:description, " +
+    @SqlUpdate("UPDATE projects SET title=:title, description=:description, " +
             " price=:price, acreage=:acreage, provinceId=:provinceId, " +
             "isAccepted=:isAccepted, categoryId=:categoryId, status=:status , updatedAt=now() " +
             "WHERE id=:id")
@@ -128,7 +128,7 @@ public interface ProjectDAO {
     @SqlQuery("SELECT p.id, p.title, p.description,p.avatar,sl.userId as saveBy " +
             "FROM Projects p JOIN Categories c ON c.id=p.categoryId " +
             "Left JOIN Histories h ON h.postId=p.postId " +
-            "Left JOIN (select * from saved_projects where userId=:userid) sl ON sl.postId=p.postId  " +
+            "Left JOIN (select * from saved_projects) sl ON sl.postId=p.postId  " +
             "WHERE p.categoryId =:id AND p.isAccepted=1 AND p.status=1 AND c.status = 1 " +
             "GROUP BY p.id, p.title, p.description, p.avatar " +
             "ORDER BY COUNT(p.id) desc LIMIT 8")
@@ -236,4 +236,6 @@ public interface ProjectDAO {
     List<Project> getOwnProject(@Bind("id") int id);
     @SqlUpdate("UPDATE projects SET isAccepted=1 WHERE id=:id")
     Integer acceptProject(@Bind("id") int idInt);
+@SqlQuery("SELECT EXISTS(SELECT * FROM saved_projects WHERE userId=:userid AND postId=:postid)")
+    Boolean isLikeByUser(@Bind("userid")int userid,@Bind("postid") int postid);
 }

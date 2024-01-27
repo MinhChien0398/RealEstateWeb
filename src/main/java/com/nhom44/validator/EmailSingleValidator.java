@@ -9,7 +9,7 @@ public class EmailSingleValidator implements SingleValidator {
 
     @Override
     public boolean validator(String input) {
-        if (input==null) return false;
+        if (input==null||input.isEmpty()) return false;
         String regex = "^[\\w!#$%&amp;'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&amp;'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(input);

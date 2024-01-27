@@ -27,17 +27,20 @@ ul {
 .main-color {
     color: #E90808 !important;
 }
+
 .bg-main-color {
     background-color: #E90808 !important;
 }
-.fa-bookmark{
+
+.fa-bookmark {
     color: #ffd500;
     position: absolute;
-    top:0.5%;
+    top: 0.5%;
     right: 0.5%;
     font-size: 30px;
 
 }
+
 nav .container {
     max-width: 1440px;
     margin: 0;
@@ -106,9 +109,11 @@ nav .container {
     font-size: 18px;
     font-weight: bold !important;
 }
-.nav-menuItem .dropdown-menu{
+
+.nav-menuItem .dropdown-menu {
     margin-top: 3px;
 }
+
 .icon-phone-ring {
     margin-left: 25px;
     margin-top: 0px;
@@ -120,7 +125,7 @@ nav .container {
 }
 
 
-.fa-phone {
+nav > div > div .fa-phone {
     height: 30px;
     width: 30px;
     z-index: 2;
@@ -144,6 +149,7 @@ nav .container {
     }
 
 }
+
 .phone-contain {
 
 }
@@ -178,15 +184,18 @@ nav .container {
 
 }
 
- .recommend-box{
-     height:fit-content;
- }
+.recommend-box {
+    height: fit-content;
+}
+
 .bc-icons-2 .breadcrumb-item + .breadcrumb-item::before {
     content: none;
 }
-.breadcrumb-item a{
+
+.breadcrumb-item a {
     font-weight: 500;
 }
+
 .bc-icons-2 .breadcrumb-item.active {
     color: #455a64;
 }
@@ -229,8 +238,9 @@ p {
         left: 125%
     }
 }
-.my-body .projectCard-container:hover .projectCard-content p.id-project{
-    padding: 0!important;
+
+.my-body .projectCard-container:hover .projectCard-content p.id-project {
+    padding: 0 !important;
 }
 
 .map-container-6 {
@@ -252,6 +262,7 @@ p {
     background-color: #E90808;
     color: #E90808;
 }
+
 /*.md-form label.active:focus,.md-form label.active{*/
 /*    color: #E90808!important;*/
 /*}*/
@@ -262,8 +273,8 @@ p {
 /*    border-bottom: 1px solid #E90808 !important;*/
 /*}*/
 @media only screen and (max-width: 1212px) {
-    .nav-link{
-        padding: unset!important;
+    .nav-link {
+        padding: unset !important;
     }
 }
 

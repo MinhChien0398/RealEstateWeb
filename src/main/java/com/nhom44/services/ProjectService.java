@@ -228,12 +228,15 @@ public class ProjectService {
 //            System.out.println(project);
 //        }
 //        System.out.println(getInstance().pageSizeHistoryProjectByUserId(24));
-        List<Project> projects = ProjectService.getInstance().getOwnProject(24);
-        Map<Integer, String> map = ServiceOfProjectService.getInstance().getServicesForOwnerByProjectIds(projects);
-        map.forEach((k, v) -> System.out.println(k + " " + v));
+        System.out.println(getInstance().isLikeByUser(29, 187));
     }
 
     public void acceptProject(int idInt) {
         conn.withExtension(ProjectDAO.class, dao -> dao.acceptProject(idInt));
     }
+
+    public boolean isLikeByUser(int userid, int postid) {
+        return conn.withExtension(ProjectDAO.class, dao -> dao.isLikeByUser(userid, postid));
+    }
+
 }

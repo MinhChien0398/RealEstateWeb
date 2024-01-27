@@ -45,8 +45,17 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8 post-content position-relative">
-                <i class="fa-regular fa-bookmark position-absolute "
-                   style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
+                <c:choose>
+                    <c:when test="${project.saveBy==auth.id}">
+                        <i  class="fa-solid fa-bookmark position-absolute " onclick="like(this)"
+                           style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
+                    </c:when>
+                    <c:otherwise>
+                        <i class="fa-regular fa-bookmark position-absolute " onclick="like(this)"
+                           style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
+
+                    </c:otherwise>
+                </c:choose>
                 <h1 class="text-center mb-3 mt-3 post-title text-uppercase">${project.title}</h1>
                 <div class="row">
 
@@ -81,12 +90,13 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4 recommed-box ">
                 <div class="wrapper-feature-news mt-3 mb-1 h-100">
+                    <div class="feature-news-header">
+                        <p class="text-uppercase main-color"><i class="fa-solid fa-caret-right mr-2">
+                        </i>Đặt ngay cho bạn</p>
+                    </div>
                     <div class="sticky-top" style="z-index: 1; top:80px">
-                        <div class="feature-news-header">
-                            <p class="text-uppercase main-color"><i class="fa-solid fa-caret-right mr-2">
-                            </i>Đặt ngay cho bạn</p>
-                        </div>
-                        <form class="card" action="post?action=cast" method="post">
+
+                        <form class="card " action="post?action=cast" method="post">
                             <div class="card-body pl-3 pr-3">
                                 <!--Header-->
                                 <!--Body-->
@@ -279,6 +289,7 @@
         let form = new FormData;
         form.append('email', $('#form-email').val())
         form.append('address', $('#address').val())
+        form.append('representProjectId', $('#itProject').val())
         form.append('category', $('#category').val())
         form.append('width', $('#area-width').val())
         form.append('height', $('#area-length').val())
@@ -286,7 +297,7 @@
         for (const x of $("#file_input").prop('files')) {
             form.append('image', x)
         }
-        console.log(form)
+
         $.ajax({
             url: '/api/cart',
             type: 'post',
@@ -348,6 +359,32 @@
 
     });
 </script>
-
+<script>
+    function like(project) {
+        console.log(project.classList)
+        $.ajax({
+            url: "/api/save_project",
+            type: "GET",
+            data: {
+                "projectId":${project.id}
+            },
+            success: function (response) {
+                console.log(response);
+                let resp = JSON.parse(response);
+                if (resp.name == 'save') {
+                    project.classList.replace("fa-regular", "fa-solid")
+                } else if (resp.name == 'delete')
+                    project.classList.replace("fa-solid", "fa-regular")
+                //= "fa-solid fa-bookmark position-absolute";
+                // console.log(p);
+            },
+            error: function (response) {
+                console.log(response.responseText)
+                let resp = JSON.parse(response.responseText);
+                window.location.href = resp.data;
+            }
+        })
+    }
+</script>
 </body>
 </html>
