@@ -15,10 +15,8 @@
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/addProjectPage.css"/>" rel="stylesheet">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
-          rel="stylesheet">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css"/>"
-          rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/dataTables.bootstrap4.css"/>" rel="stylesheet">
 
     <title>Thêm loại dự án</title>
 </head>
@@ -43,35 +41,35 @@
                 </ol>
             </nav>
             <main class="container shadow border p-3 h-100">
-                <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
-                    <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">Thêm Loại dự án</h3>
+                    <div class="row border-bottom pb-3 mb-3 ml-1 mr-1  justify-content-lg-between">
+                        <div class="col-6 d-flex align-items-center p-0">
+                            <h3 class="font-weight-bold main-color m-0">Thêm Loại dự án</h3>
+                        </div>
+                        <div class="col-6 d-flex justify-content-end align-items-center p-0">
+                                <button class="btn btn-warning p-2 waves-effect waves-light" id="save" type="button">LƯU
+                                </button>
+                        </div>
                     </div>
-                    <div class="col-6 d-flex justify-content-end align-items-center p-0">
-                        <button class="btn btn-warning p-2 waves-effect waves-light" id="save" type="button">LƯU
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <div class="row flex-center h-auto">
-                        <div class="card col-lg-10 mb-4">
-                            <div class="card-body">
-                                <div class="mb-4">
-                                    <label for="name" class="labels">Tên dự án</label>
-                                    <input id="name" type="text" class="form-control"
-                                           placeholder="Tên dự án" value="">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="status" class="labels">Trạng thái</label>
-                                    <select id="status" class="browser-default custom-select">
-                                        <option value="1" selected>Kích hoạt</option>
-                                        <option value="2">Ẩn</option>
-                                    </select>
+                    <div>
+                        <div class="row flex-center h-auto">
+                            <div class="card col-lg-10 mb-4">
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <label for="name" class="labels">Tên dự án</label>
+                                        <input id="name" type="text" class="form-control"
+                                               placeholder="Tên dự án" value="">
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="status" class="labels">Trạng thái</label>
+                                        <select id="status"  class="browser-default custom-select">
+                                            <option value="1" selected>Kích hoạt</option>
+                                            <option value="2">Ẩn</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
             </main>
         </div>
     </div>
@@ -114,7 +112,7 @@
 
 <script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
-    $('#save').click(function () {
+        $('#save').click(function () {
 
         $.ajax({
             url: '/api/admin/category?action=add',
@@ -132,7 +130,7 @@
                 console.log(data)
                 // save
                 obj = JSON.parse(data);
-                delayNotify(0, obj.message);
+                delayNotify(0,obj.message);
                 if (obj.name == "success") {
                     setTimeout(() => {
                         setTimeout(() => {
@@ -150,10 +148,9 @@
                     console.log(e.name, e.message)
                     fetchErr(e.name, e.message);
                 }
-            }
-
-        })
-    });
+            })
+        }
+    })
 </script>
 <script>
     function fetchErr(name, mess) {
