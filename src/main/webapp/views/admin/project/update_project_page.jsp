@@ -477,7 +477,13 @@
             error: function (data) {
                 console.log(data.responseText);
                 // delayNotify(2000, data.message);
-                delayNotify(2000, "Có lỗi xảy ra");
+                // delayNotify(2000, "Có lỗi xảy ra");
+                var err = JSON.parse(data.responseText);
+                //     console.log email
+                for (let e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     }
@@ -513,9 +519,11 @@
                 //thông báo lỗi sys
                 console.log(data)
                 var err = JSON.parse(data.responseText);
-
                 //     console.log email
-                fetchErr(err.name, err.message);
+                for (let e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })
