@@ -642,8 +642,6 @@
     }
 
 </script>
-
-
 <script>
     let allFiles1 = [];
     let input1 = document.getElementById("file_input1");

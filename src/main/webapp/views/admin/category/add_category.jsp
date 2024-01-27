@@ -178,6 +178,14 @@
     }
 </script>
 <script>
+    let name = document.getElementById('name');
+    name.addEventListener('click', function () {
+        name.classList.remove('border-danger');
+        name.classList.remove('text-danger');
+        name.setAttribute('placeholder', "Tên dự án");
+    })
+</script>
+<script>
     CKEDITOR.replace('service-des');
     CKEDITOR.config.width = "100%";
     CKEDITOR.config.height = "400px";

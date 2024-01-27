@@ -30,7 +30,7 @@
 
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
+    <%@include file="/layout/admin/adminheader.jsp" %>
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
@@ -149,8 +149,9 @@
                                                                     name="service[]"
                                                                     multiple>
                                                                 <c:forEach var="item" items="${services}">
-                                                                    <option value="${item.id}" <c:if test="${item.id==1}"> selected </c:if><span
-                                                                            class="text-uppercase">${item.name}</span>
+                                                                    <option value="${item.id}" <c:if
+                                                                        test="${item.id==1}"> selected </c:if><span
+                                                                        class="text-uppercase">${item.name}</span>
                                                                     </option>
                                                                 </c:forEach>
                                                             </select>
@@ -215,7 +216,8 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="upload-wrapper d-none avatar" id="upload-avatar">
+                                                            <div class="upload-wrapper d-none avatar"
+                                                                 id="upload-avatar">
                                                                 <div class="border d-flex img-container">
                                                                 </div>
                                                             </div>
@@ -242,7 +244,9 @@
                                                     <div class="file-field d-flex align-items-center">
                                                         <div class="btn btn-primary btn-sm float-left waves-effect waves-light">
                                                             <span>chọn ảnh</span>
-                                                            <input type="file" accept="image/*" name="groupImage" id="file_input1" multiple value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
+                                                            <input type="file" accept="image/*" name="groupImage"
+                                                                   id="file_input1" multiple
+                                                                   value="http://localhost:8080/template/img/projects/0083/1704372892882 Screenshot (6) - Copy.png">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -309,10 +313,9 @@
                 console.log(data);
                 delayNotify(2000, data.message);
                 if (data.name == "success") {
-                    setTimeout(()=>
-                    {
-                        window.location.href=data.data;
-                    },3000);
+                    setTimeout(() => {
+                        window.location.href = data.data;
+                    }, 3000);
                 }
                 // if (data.name === "sys") {
                 //     alert(data.message);
@@ -364,8 +367,11 @@
                 // delayNotify(2000,obj.name);
                 console.log(data)
                 var err = JSON.parse(data.responseText);
-                    //     console.log email
-                    fetchErr(err.name, err.message);
+                //     console.log email
+                for (let e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })

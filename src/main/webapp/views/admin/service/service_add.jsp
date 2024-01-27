@@ -8,21 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@include file="/layout/common.jsp" %>
 <html>
-<head>
-    <%@include file="/layout/public/link.jsp" %>
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
-          rel="stylesheet">
-    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
-    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
-    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
-    <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
-    <title>Title</title>
-</head>
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
@@ -259,6 +244,20 @@
     }
 </script>
 <script>
+    let name = document.getElementById('name');
+    name.addEventListener('click', function () {
+        name.classList.remove('border-danger');
+        name.classList.remove('text-danger');
+        name.setAttribute('placeholder', "Tiêu đề");
+    })
+    let description = document.getElementById('description');
+    description.addEventListener('click', function () {
+        description.classList.remove('border-danger');
+        description.classList.remove('text-danger');
+        description.setAttribute('placeholder', "Mô tả");
+    })
+</script>
+<script>
     let cur;
     for (let item of $('.sidebar-item')) {
         item.addEventListener('click', function () {
@@ -285,4 +284,19 @@
     });
 </script>
 </body>
+<head>
+    <%@include file="/layout/public/link.jsp" %>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href=" <c:url value="/template/lib/DataTables/DataTables-1.13.6/css/jquery.dataTables.min.css"/>"
+          rel="stylesheet">
+    <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
+    <link href=" <c:url value="/template/css/fileInput.css"/>" rel="stylesheet">
+    <title>Title</title>
+</head>
 </html>
