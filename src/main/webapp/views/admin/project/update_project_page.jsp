@@ -23,81 +23,81 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
-<%--    <div class="header fixed-top">--%>
-<%--        <div class="header-menu row m-0">--%>
-<%--            <div class="col-11 d-flex align-items-center">--%>
-<%--                <div class="sidebar-btn mr-3">--%>
-<%--                    <i class="fas fa-bars"></i>--%>
-<%--                </div>--%>
-<%--                <div class="title text-uppercase">--%>
-<%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
-<%--            </div>--%>
-<%--            <ul class="col-1 d-flex align-items-center m-0">--%>
-<%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
-<%--            </ul>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <%@include file="/layout/admin/adminheader.jsp" %>
+    <%--    <div class="header fixed-top">--%>
+    <%--        <div class="header-menu row m-0">--%>
+    <%--            <div class="col-11 d-flex align-items-center">--%>
+    <%--                <div class="sidebar-btn mr-3">--%>
+    <%--                    <i class="fas fa-bars"></i>--%>
+    <%--                </div>--%>
+    <%--                <div class="title text-uppercase">--%>
+    <%--                    Xây dựng <span>Nhà Đẹp</span></div>--%>
+    <%--            </div>--%>
+    <%--            <ul class="col-1 d-flex align-items-center m-0">--%>
+    <%--                <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li>--%>
+    <%--            </ul>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
 
-<%--    <div class="sidebar">--%>
-<%--        <div class="sidebar-menu">--%>
-<%--            <center class="logo">--%>
-<%--                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">--%>
-<%--            </center>--%>
-<%--            <li class="sidebar-item">--%>
-<%--                <a href="../dashboard.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="user">--%>
-<%--                <a href="../user/user_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-building"> </i>--%>
-<%--                    <a href="project_manage.jsp">--%>
-<%--                        <span>QL Dự án</span>--%>
-<%--                    </a> <i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../category/category_management.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="post_project.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
-<%--                    </a>--%>
-<%--                    <a href="project_schedule.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
+    <%--    <div class="sidebar">--%>
+    <%--        <div class="sidebar-menu">--%>
+    <%--            <center class="logo">--%>
+    <%--                <img src="../../../../RealEstateWeb/public/img/logo/logo.png" alt="logo" style="">--%>
+    <%--            </center>--%>
+    <%--            <li class="sidebar-item">--%>
+    <%--                <a href="../dashboard.jsp" class="menu-btn">--%>
+    <%--                    <i class="fas fa-desktop"></i><span>Thống kê</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="user">--%>
+    <%--                <a href="../user/user_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fas fa-user-circle"></i><span>QL Người dùng</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="project">--%>
+    <%--                <div class="menu-btn">--%>
+    <%--                    <i class="fa-solid fa-building"> </i>--%>
+    <%--                    <a href="project_manage.jsp">--%>
+    <%--                        <span>QL Dự án</span>--%>
+    <%--                    </a> <i--%>
+    <%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+    <%--                <div class="sub-menu d-none">--%>
+    <%--                    <a href="../category/category_management.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-building m-0"> </i> <i class="fa-solid fa-folder-tree"></i><span>QL loại dự án</span>--%>
+    <%--                    </a>--%>
+    <%--                    <a href="post_project.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dự án</span>--%>
+    <%--                    </a>--%>
+    <%--                    <a href="project_schedule.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-bars-progress"></i><span>QL Dự án thi công</span>--%>
+    <%--                    </a>--%>
+    <%--                </div>--%>
+    <%--            </li>--%>
 
-<%--            <li class="sidebar-item" id="type-project">--%>
-<%--                <div class="menu-btn">--%>
-<%--                    <a href="../service/service_manage.jsp">--%>
-<%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
-<%--                    </a><i--%>
-<%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
-<%--                <div class="sub-menu d-none">--%>
-<%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
-<%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="contact">--%>
-<%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--            <li class="sidebar-item" id="slide">--%>
-<%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
-<%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
-<%--                </a>--%>
-<%--            </li>--%>
-<%--        </div>--%>
-<%--    </div>--%>
+    <%--            <li class="sidebar-item" id="type-project">--%>
+    <%--                <div class="menu-btn">--%>
+    <%--                    <a href="../service/service_manage.jsp">--%>
+    <%--                        <i class="fa-solid fa-toolbox"></i><span>QL Dịch vụ</span>--%>
+    <%--                    </a><i--%>
+    <%--                        class="m-0 fas fa-chevron-circle-down drop-down"></i></div>--%>
+    <%--                <div class="sub-menu d-none">--%>
+    <%--                    <a href="../service/post_service.jsp" class="menu-btn">--%>
+    <%--                        <i class="fa-solid fa-newspaper"></i><span>QL Bài viết dịch vụ</span>--%>
+    <%--                    </a>--%>
+    <%--                </div>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="contact">--%>
+    <%--                <a href="../contact/contact_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fa-solid fa-file-contract"></i></i><span>QL tương tác</span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--            <li class="sidebar-item" id="slide">--%>
+    <%--                <a href="../slide/slide_manage.jsp" class="menu-btn">--%>
+    <%--                    <i class="fa-regular fa-clone"></i><span>QL slide</span></span>--%>
+    <%--                </a>--%>
+    <%--            </li>--%>
+    <%--        </div>--%>
+    <%--    </div>--%>
 
     <div class="main-container">
         <div class="container p-0">
@@ -137,7 +137,7 @@
                         </div>
                         <div class="btn-save flex-center">
                             <button form="addproject" class="btn btn-warning p-2 waves-effect waves-light"
-                                  id="save"  type="button"> LƯU
+                                    id="save" type="button"> LƯU
                             </button>
                         </div>
                     </div>
@@ -448,13 +448,13 @@
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
         if ($("#avatar").prop('files').length !== 0)
-        form.append('avatar', $("#avatar").prop('files')[0]);
+            form.append('avatar', $("#avatar").prop('files')[0]);
         else form.append('notHaveAvatar', '1');
-       if ($("#file_input1").prop('files').length !== 0)
-        for (const x of $("#file_input1").prop('files')) {
-            console.log(x)
-            form.append('groupImage', x);
-        } else form.append('notHaveGroupImages', '1');
+        if ($("#file_input1").prop('files').length !== 0)
+            for (const x of $("#file_input1").prop('files')) {
+                console.log(x)
+                form.append('groupImage', x);
+            } else form.append('notHaveGroupImages', '1');
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
@@ -477,7 +477,13 @@
             error: function (data) {
                 console.log(data.responseText);
                 // delayNotify(2000, data.message);
-                delayNotify(2000, "Có lỗi xảy ra");
+                // delayNotify(2000, "Có lỗi xảy ra");
+                var err = JSON.parse(data.responseText);
+                //     console.log email
+                for (let e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     }
@@ -487,7 +493,7 @@
 
 </script>
 <script>
-  let editor= CKEDITOR.replace('post', {
+    let editor = CKEDITOR.replace('post', {
         width: "100%",
         height: "400px",
     });
@@ -502,7 +508,8 @@
             // contentType: "application/json",
             // processData: false,
 
-            data: {content: content,
+            data: {
+                content: content,
                 id: ${post.id}
             },
             success: function (data) {
@@ -511,11 +518,138 @@
             error: function (data) {
                 //thông báo lỗi sys
                 console.log(data)
+                var err = JSON.parse(data.responseText);
+                //     console.log email
+                for (let e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })
 </script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            case "email":
+                let email = document.getElementById('email');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', " ");
+                email.setAttribute('placeholder', mess);
+                break;
+            case "title":
+                let title = document.getElementById('title');
+                title.classList.add('border-danger');
+                title.classList.add('text-danger');
+                title.value = "";
+                title.setAttribute('value', " ");
+                title.setAttribute('placeholder', mess);
+                break;
+            case "category":
+                let category = document.getElementById('category');
+                category.classList.add('border-danger');
+                category.classList.add('text-danger');
+                category.value = "";
+                category.setAttribute('value', " ");
+                category.setAttribute('placeholder', mess);
+                break;
+            case "price":
+                let price = document.getElementById('price');
+                price.classList.add('border-danger');
+                price.classList.add('text-danger');
+                price.value = "";
+                // price.setAttribute('value', " ");
+                price.setAttribute('placeholder', mess);
+                // price.value("");
+                // price.placeholder(mess);
+                break;
+            case "acreage":
+                let acreage = document.getElementById('acreage');
+                acreage.classList.add('border-danger');
+                acreage.classList.add('text-danger');
+                acreage.value = "";
+                // acreage.setAttribute('value', " ");
+                acreage.value = "";
+                acreage.setAttribute('placeholder', mess);
+                break;
+            case "province":
+                let province = document.getElementById('province');
+                province.classList.add('border-danger');
+                province.classList.add('text-danger');
+                province.value = "";
+                province.setAttribute('value', " ");
+                province.setAttribute('placeholder', mess);
+                break;
+            case "description":
+                let description = document.getElementById('description');
+                description.classList.add('border-danger');
+                description.classList.add('text-danger');
+                description.value = "";
+                description.setAttribute('value', " ");
+                description.setAttribute('placeholder', mess);
+                break;
+            case "service":
+                let service = document.getElementById('service');
+                service.classList.add('border-danger');
+                service.classList.add('text-danger');
+                service.value = "";
+                service.setAttribute('value', " ");
+                service.setAttribute('placeholder', mess);
+                break;
+            case "schedule":
+                let schedule = document.getElementById('schedule');
+                schedule.classList.add('border-danger');
+                schedule.classList.add('text-danger');
+                schedule.value = "";
+                schedule.setAttribute('value', " ");
+                schedule.setAttribute('placeholder', mess);
+                break;
+            case "estimated_complete":
+                let estimated_complete = document.getElementById('estimated_complete');
+                estimated_complete.classList.add('border-danger');
+                estimated_complete.classList.add('text-danger');
+                estimated_complete.value = "";
+                estimated_complete.setAttribute('value', " ");
+                estimated_complete.setAttribute('placeholder', mess);
+                break;
+            // case "status":
+            //     let status = document.getElementById('status');
+            //     status.classList.add('border-danger');
+            //     status.classList.add('text-danger');
+            //     status.value = "";
+            //     status.setAttribute('value', " ");
+            //     status.setAttribute('placeholder', mess);
+            //     break;
+            <!-- Updated "avatar" case -->
+            case "avatar":
+                // let avatarInput = document.getElementById('avatar');
+                // let avatarUploadWrapper = document.getElementById('upload-avatar');
+                //
+                // avatarInput.classList.add('border-danger');
+                // avatarInput.classList.add('text-danger');
+                // avatarInput.value = "";
+                //
+                // avatarInput.setAttribute('placeholder', mess);
+                //
+                // avatarUploadWrapper.classList.remove('d-none');
+                //
+                // avatarUploadWrapper.innerHTML = "";
+                //
+                // avatarUploadWrapper.innerHTML = '<p class="text-danger">Upload failed. Please try again.</p>';
+                break;
 
+            case "groupImage":
+
+                break;
+
+
+        }
+    }
+
+</script>
 <script>
     let allFiles1 = [];
     let input1 = document.getElementById("file_input1");
