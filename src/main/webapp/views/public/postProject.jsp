@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8 post-content position-relative">
                 <i class="fa-regular fa-bookmark position-absolute "
-                   style="z-index: 1000; left: 5%; top:22px; font-size: 25px"></i>
+                   style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
                 <h1 class="text-center mb-3 mt-3 post-title text-uppercase">${project.title}</h1>
                 <div class="row">
 
