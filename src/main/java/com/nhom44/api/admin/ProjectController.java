@@ -146,8 +146,8 @@ public class ProjectController extends HttpServlet {
             ConvertUtils.register(dateTimeConverter, Date.class);
             BeanUtils.populate(project, req.getParameterMap());
             BeanUtils.populate(user, req.getParameterMap());
-            System.out.println(req.getParameter("id"));
-            project.setPostId(req.getParameter("id") == null ? 0 : Integer.parseInt(req.getParameter("id")));
+            System.out.println(req.getParameter("postId"));
+            project.setPostId(req.getParameter("postId") == null ? 0 : Integer.parseInt(req.getParameter("postId")));
             user = UserService.getInstance().getUserByEmail(user.getEmail());
             if (user == null) {
                 ResponseModel responseModel = new ResponseModel();

@@ -56,6 +56,7 @@ public class PostController extends HttpServlet {
             resp.setStatus(200);
             responseModel = new ResponseModel();
             responseModel.setMessage("Thêm thành công");
+            responseModel.setData(post);
             responseModel.setName("success");
         }
         printWriter.println(new Gson().toJson(responseModel));

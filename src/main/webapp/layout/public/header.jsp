@@ -33,13 +33,13 @@
                     <i class="fa-solid fa-angle-down position-absolute " style="color: #000000;"></i>
                     <div class="dropdown-menu mt-0 ">
                         <c:forEach items="${sessionScope.services}" var="service">
-                            <a class="dropdown-item text-center text-break" style="font-size: 16px"
+                            <a class="dropdown-item text-center text-break text-uppercase" style="font-size: 16px"
                                href="/post/service?id=${service.id}">${service.name}</a></c:forEach>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Trọn--%>
-<%--                            Gói</a>--%>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Thô</a>--%>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Biệt Thự</a>--%>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Xưởng</a>--%>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Trọn--%>
+                        <%--                            Gói</a>--%>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Thô</a>--%>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Biệt Thự</a>--%>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/service">Xây Nhà Xưởng</a>--%>
                     </div>
                 </li>
                 <li class=" nav-item
@@ -54,12 +54,12 @@
                     <i class="fa-solid fa-angle-down position-absolute " style="color: #000000;"></i>
 
                     <div class="dropdown-menu mt-0">
-                            <c:forEach items="${sessionScope.categories}" var="category">
-                                <a class="dropdown-item text-center" style="font-size: 16px"
-                                   href="/project?category=${category.id}">${category.name}</a></c:forEach>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Biệt Thự</a>--%>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Nhà Phố</a>--%>
-<%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Văn Phòng</a>--%>
+                        <c:forEach items="${sessionScope.categories}" var="category">
+                            <a class="dropdown-item text-center text-uppercase" style="font-size: 16px"
+                               href="/project?category=${category.id}">${category.name}</a></c:forEach>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Biệt Thự</a>--%>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Nhà Phố</a>--%>
+                        <%--                        <a class="dropdown-item text-center" style="font-size: 16px" href="/project">Văn Phòng</a>--%>
                     </div>
                 </li>
                 <li class="nav-item nav-menuItem font-weight-bolder"
@@ -75,7 +75,8 @@
                     </c:when>
                     <c:otherwise>
                         <li class="nav-item nav-menuItem position-relative font-weight-bolder
-                        nav-dropdownItem d-flex align-items-center"  id="<c:if test="${page=='account'}">nav-menuItem-active</c:if>">
+                        nav-dropdownItem d-flex align-items-center"
+                            id="<c:if test="${page=='account'}">nav-menuItem-active</c:if>">
                             <a class="nav-link justify-content-center text-center"
                                href="/user"
                                role="link">Tài khoản

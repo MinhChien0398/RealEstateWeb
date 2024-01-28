@@ -433,6 +433,7 @@
 </script>
 <script>
     function saveproject(idPost) {
+        console.log(idPost)
         let form = new FormData();
         form.append('id', ${project.id});
         form.append('email', $("#email").val())
@@ -498,7 +499,7 @@
     }
 </script>
 <script>
-
+<%--console.log(${post.id})--%>
 
 </script>
 <script>
@@ -522,7 +523,8 @@
                 id: ${post.id}
             },
             success: function (data) {
-                saveproject(data?.data?.id)
+                console.log(data)
+                saveproject(data.data.id)
             },
             error: function (data) {
                 //thông báo lỗi sys
