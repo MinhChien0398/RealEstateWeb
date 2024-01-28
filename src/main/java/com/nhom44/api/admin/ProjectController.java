@@ -146,7 +146,8 @@ public class ProjectController extends HttpServlet {
             ConvertUtils.register(dateTimeConverter, Date.class);
             BeanUtils.populate(project, req.getParameterMap());
             BeanUtils.populate(user, req.getParameterMap());
-            project.setPostId(req.getParameter("postId") == null ? 0 : Integer.parseInt(req.getParameter("postId")));
+            System.out.println(req.getParameter("id"));
+            project.setPostId(req.getParameter("id") == null ? 0 : Integer.parseInt(req.getParameter("id")));
             user = UserService.getInstance().getUserByEmail(user.getEmail());
             if (user == null) {
                 ResponseModel responseModel = new ResponseModel();
@@ -265,6 +266,7 @@ public class ProjectController extends HttpServlet {
             ResponseModel responseModel = new ResponseModel();
             resp.setStatus(200);
             responseModel.setMessage("Lỗi không xác định");
+            e.printStackTrace();
             responseModel.setData(null);
             responseModel.setName("sys");
             Gson gson = new Gson();
