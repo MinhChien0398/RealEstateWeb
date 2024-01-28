@@ -522,7 +522,7 @@
                 id: ${post.id}
             },
             success: function (data) {
-                saveproject(data.data.id)
+                saveproject(data?.data?.id)
             },
             error: function (data) {
                 //thông báo lỗi sys
