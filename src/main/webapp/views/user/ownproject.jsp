@@ -15,111 +15,112 @@
 </head>
 <body>
 <div class="wrapper position-relative">
+    <%@include file="/layout/public/header.jsp" %>
     <!--start Navigation-->
-    <div class="wrapper position-relative">
+<%--    <div class="wrapper position-relative">--%>
         <!--start Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light nav-property position-fixed w-100"
-             style="z-index: 1000; top:0">
-            <div class="container">
-                <a class="navbar-brand "
-                   href="../../../../RealEstateWeb/resources/views/template/main.html">
-                    <div class="navbar-brand flex-center justify-content-between">
-                        <img class="mr-3 ml-4 " src="../../../../RealEstateWeb/public/img/logo/logo.png"
-                             style="width: 50px">
-                        <h5 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h5>
-                    </div>
-                </a>
-                <div class="collapse navbar-collapse border-left row  align-items-center"
-                     id="navbarSupportedContent-555">
-                    <ul class="navbar-nav  col-9 border-right">
-                        <li class="nav-item nav-menuItem font-weight-bolder ">
-                            <a class="nav-link text-center"
-                               href="../../../../RealEstateWeb/resources/views/template/main.html">Trang Chủ
-                            </a>
-                        </li>
-                        <li class="nav-item nav-menuItem font-weight-bolder">
-                            <a class="nav-link text-center"
-                               href="../../../../RealEstateWeb/resources/views/template/intro.html">Giới Thiệu</a>
-                        </li>
-                        <li class="d-flex align-items-center nav-item
-                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
-                        >
-                            <a class="nav-link text-center"
-                               href="../../../../RealEstateWeb/resources/views/template/services.html"
-                               role="link"
-                            >Dịch vụ
-                            </a>
-                            <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
-                            <div class="dropdown-menu w-100">
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Trọn
-                                    Gói</a>
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Thô</a>
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Biệt Thự</a>
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>
-                            </div>
+<%--        <nav class="navbar navbar-expand-lg navbar-light nav-property position-fixed w-100"--%>
+<%--             style="z-index: 1000; top:0">--%>
+<%--            <div class="container">--%>
+<%--                <a class="navbar-brand "--%>
+<%--                   href="../../../../RealEstateWeb/resources/views/template/main.html">--%>
+<%--                    <div class="navbar-brand flex-center justify-content-between">--%>
+<%--                        <img class="mr-3 ml-4 " src="../../../../RealEstateWeb/public/img/logo/logo.png"--%>
+<%--                             style="width: 50px">--%>
+<%--                        <h5 class=" text-uppercase mb-2 mt-2 font-weight-bold main-color">XÂY DỰNG NHÀ ĐẸP</h5>--%>
+<%--                    </div>--%>
+<%--                </a>--%>
+<%--                <div class="collapse navbar-collapse border-left row  align-items-center"--%>
+<%--                     id="navbarSupportedContent-555">--%>
+<%--                    <ul class="navbar-nav  col-9 border-right">--%>
+<%--                        <li class="nav-item nav-menuItem font-weight-bolder ">--%>
+<%--                            <a class="nav-link text-center"--%>
+<%--                               href="../../../../RealEstateWeb/resources/views/template/main.html">Trang Chủ--%>
+<%--                            </a>--%>
+<%--                        </li>--%>
+<%--                        <li class="nav-item nav-menuItem font-weight-bolder">--%>
+<%--                            <a class="nav-link text-center"--%>
+<%--                               href="../../../../RealEstateWeb/resources/views/template/intro.html">Giới Thiệu</a>--%>
+<%--                        </li>--%>
+<%--                        <li class="d-flex align-items-center nav-item--%>
+<%--                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"--%>
+<%--                        >--%>
+<%--                            <a class="nav-link text-center"--%>
+<%--                               href="../../../../RealEstateWeb/resources/views/template/services.html"--%>
+<%--                               role="link"--%>
+<%--                            >Dịch vụ--%>
+<%--                            </a>--%>
+<%--                            <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>--%>
+<%--                            <div class="dropdown-menu w-100">--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Trọn--%>
+<%--                                    Gói</a>--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Thô</a>--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Biệt Thự</a>--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Xây Nhà Xưởng</a>--%>
+<%--                            </div>--%>
 
-                        </li>
-                        <li class="d-flex align-items-center nav-item
-                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"
-                        >
-                            <a class="nav-link text-center"
-                               href="../../../../RealEstateWeb/resources/views/template/project.html"
-                               role="link"
-                            >Dự án
-                            </a>
-                            <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>
-                            <div class="dropdown-menu w-100">
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Biệt Thự</a>
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Nhà Phố</a>
-                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Văn Phòng</a>
-                            </div>
-                        </li>
-                        <li class="nav-item nav-menuItem font-weight-bolder">
-                            <a class="nav-link text-center"
-                               href="../../../../RealEstateWeb/resources/views/template/contact.html">Liên Hệ</a>
-                        </li>
-                        <li class="nav-item nav-menuItem font-weight-bolder" id="nav-menuItem-active">
-                            <a class="nav-link text-center" href="#">TK của tôi</a>
-                        </li>
-                    </ul>
-                    <!--icon font ring-->
-                    <div class="phone-contain flex-center justify-content-center col-3">
+<%--                        </li>--%>
+<%--                        <li class="d-flex align-items-center nav-item--%>
+<%--                nav-menuItem position-relative font-weight-bolder nav-dropdownItem"--%>
+<%--                        >--%>
+<%--                            <a class="nav-link text-center"--%>
+<%--                               href="../../../../RealEstateWeb/resources/views/template/project.html"--%>
+<%--                               role="link"--%>
+<%--                            >Dự án--%>
+<%--                            </a>--%>
+<%--                            <i class="fa-solid fa-angle-down position-absolute  " style="color: #000000;"></i>--%>
+<%--                            <div class="dropdown-menu w-100">--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Biệt Thự</a>--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Nhà Phố</a>--%>
+<%--                                <a class="dropdown-item text-center" style="font-size: 16px" href="#">Văn Phòng</a>--%>
+<%--                            </div>--%>
+<%--                        </li>--%>
+<%--                        <li class="nav-item nav-menuItem font-weight-bolder">--%>
+<%--                            <a class="nav-link text-center"--%>
+<%--                               href="../../../../RealEstateWeb/resources/views/template/contact.html">Liên Hệ</a>--%>
+<%--                        </li>--%>
+<%--                        <li class="nav-item nav-menuItem font-weight-bolder" id="nav-menuItem-active">--%>
+<%--                            <a class="nav-link text-center" href="#">TK của tôi</a>--%>
+<%--                        </li>--%>
+<%--                    </ul>--%>
+<%--                    <!--icon font ring-->--%>
+<%--                    <div class="phone-contain flex-center justify-content-center col-3">--%>
 
-                        <div class="icon-phone-ring col-lg-6 col-md-6 col-sm-12 ">
-                            <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-phone"></i>
-                                <i class="circle-1"></i>
-                            </div>
-                        </div>
-                        <div>
-                            <a class=" col-lg-6 col-md-6">0352033199</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
+<%--                        <div class="icon-phone-ring col-lg-6 col-md-6 col-sm-12 ">--%>
+<%--                            <div class="w-100 h-100 d-flex justify-content-center align-items-center">--%>
+<%--                                <i class="fa-solid fa-phone"></i>--%>
+<%--                                <i class="circle-1"></i>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <div>--%>
+<%--                            <a class=" col-lg-6 col-md-6">0352033199</a>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </nav>--%>
 
 
         <!--end Navigation-->
         <div class="sidebar">
             <div class="sidebar-menu">
                 <li class="sidebar-item" id="user">
-                    <a href="../../../../RealEstateWeb/resources/views/template/user.html" class="menu-btn">
+                    <a href="/user" class="menu-btn">
                         <i class="fas fa-user-circle"></i><span>Thông tin cá nhân</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="favourite">
-                    <a href="../../../../RealEstateWeb/resources/views/template/user_favourite.html" class="menu-btn">
+                    <a href="/user/save-list" class="menu-btn">
                         <i class="fa-solid fa-star"></i><span>Dự án đã lưu</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="history">
-                    <a href="../../../../RealEstateWeb/resources/views/template/user_history.html" class="menu-btn">
+                    <a href="/user/history" class="menu-btn">
                         <i class="fa-solid fa-clock-rotate-left"></i><span>Lịch sử truy cập</span>
                     </a>
                 </li>
                 <li class="sidebar-item" id="my-projcet">
-                    <a href="../../../../RealEstateWeb/resources/views/template/user_Projects.html" class="menu-btn">
+                    <a href="/user/own-project" class="menu-btn">
                         <i class="fa-solid fa-layer-group"></i><span>Dự án của tôi</span>
                     </a>
                 </li>
@@ -127,14 +128,14 @@
         </div>
 
 
-        <div class="main-container">
+        <div class="main-container mt-0">
 
             <div id="section-1" class="bc-icons-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-white small">
                         <li class="breadcrumb-item">
                             <a class="black-text breadcrumb-size"
-                               href="../../../../RealEstateWeb/resources/views/template/main.html">
+                               href="/home">
                                 <i class="fa-solid fa-house"></i>
                             </a>
                         </li>
@@ -143,14 +144,14 @@
                         </li>
                         <li class="breadcrumb-item active breadcrumb-size">
                             <a class="black-text text-uppercase "
-                               href="../../../../RealEstateWeb/resources/views/template/user.html">Tài khoản cá nhân</a>
+                               href="/user">Tài khoản cá nhân</a>
                         </li>
                         <li>
                             <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                         </li>
                         <li class="breadcrumb-item active breadcrumb-size">
                             <a class="black-text text-uppercase font-weight-bolder"
-                               href="../../../../RealEstateWeb/resources/views/template/user_Projects.html">Dự án của
+                               href="#">Dự án của
                                 tôi</a>
                         </li>
                     </ol>
