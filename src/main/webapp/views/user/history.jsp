@@ -105,22 +105,22 @@
     <div class="sidebar">
         <div class="sidebar-menu">
             <li class="sidebar-item" id="user">
-                <a href="../../../../RealEstateWeb/resources/views/template/user.html" class="menu-btn">
+                <a href="/user" class="menu-btn">
                     <i class="fas fa-user-circle"></i><span>Thông tin cá nhân</span>
                 </a>
             </li>
             <li class="sidebar-item" id="favourite">
-                <a href="../../../../RealEstateWeb/resources/views/template/user_favourite.html" class="menu-btn">
+                <a href="/user/save-list" class="menu-btn">
                     <i class="fa-solid fa-star"></i><span>Dự án đã lưu</span>
                 </a>
             </li>
             <li class="sidebar-item" id="history">
-                <a href="../../../../RealEstateWeb/resources/views/template/user_history.html" class="menu-btn">
+                <a href="/user/history" class="menu-btn">
                     <i class="fa-solid fa-clock-rotate-left"></i><span>Lịch sử truy cập</span>
                 </a>
             </li>
             <li class="sidebar-item" id="my-projcet">
-                <a href="../../../../RealEstateWeb/resources/views/template/user_Projects.html" class="menu-btn">
+                <a href="/user/own-project" class="menu-btn">
                     <i class="fa-solid fa-layer-group"></i><span>Dự án của tôi</span>
                 </a>
             </li>
@@ -135,7 +135,7 @@
                 <ol class="breadcrumb bg-white small">
                     <li class="breadcrumb-item">
                         <a class="black-text breadcrumb-size"
-                           href="../../../../RealEstateWeb/resources/views/template/main.html">
+                           href="/home">
                             <i class="fa-solid fa-house"></i>
                         </a>
                     </li>
@@ -144,14 +144,14 @@
                     </li>
                     <li class="breadcrumb-item active breadcrumb-size">
                         <a class="black-text text-uppercase "
-                           href="../../../../RealEstateWeb/resources/views/template/user.html">Tài khoản cá nhân</a>
+                           href="/user">Tài khoản cá nhân</a>
                     </li>
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
                     <li class="breadcrumb-item active breadcrumb-size">
                         <a class="black-text text-uppercase font-weight-bolder"
-                           href="../../../../RealEstateWeb/resources/views/template/user_favourite.html">Lưu trữ</a>
+                           href="#">Lưu trữ</a>
                     </li>
                 </ol>
             </nav>
