@@ -150,10 +150,45 @@
             error: function (data) {
                 console.log(data.responseText)
                 // saveService(data.data.id);
+                let err = JSON.parse(data.responseText);
+                for (let key of err) {
+                    fetchErr(key.name, key.message)
+                }
             }
         });
     });
 
+</script>
+<script>
+    function fetchErr(name, message) {
+        console.log(name, message)
+        switch (name){
+            case "title":
+                let title = document.getElementById('title');
+                title.classList.add('border-danger');
+                title.classList.add('text-danger');
+                title.value = "";
+                title.setAttribute('placeholder', message);
+                break;
+            case "status":
+                let status = document.getElementById('status');
+                status.classList.add('border-danger');
+                status.classList.add('text-danger');
+                status.value = "";
+                status.setAttribute('placeholder', message);
+                break;
+            case "sequence":
+                let sequence = document.getElementById('sequence');
+                sequence.classList.add('border-danger');
+                sequence.classList.add('text-danger');
+                sequence.value = "";
+                sequence.setAttribute('placeholder', message);
+                break;
+            case "avatar":
+                break
+
+        }
+    }
 </script>
 <script>
     let allFiles = [];

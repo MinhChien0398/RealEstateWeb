@@ -82,14 +82,14 @@ public class CartController extends HttpServlet {
             } else {
                 cart.setProvinceId(Integer.parseInt(provinceId));
             }
-            String representProjectId = req.getParameter("representProjectId");
+            String representProjectId = req.getParameter("itProject");
             Project project;
             if (!singleValidator.validator(representProjectId)) {
                 resp.setStatus(400);
                 responseModel = new ResponseModel();
                 responseModel.setMessage("vui lòng chọn dự án mẫu");
                 responseModel.setData(null);
-                responseModel.setName("representProjectId");
+                responseModel.setName("itProject");
                 listResp.add(responseModel);
             } else if ((project = ProjectService.getInstance().getById(Integer.parseInt(representProjectId))) == null) {
                 System.out.println(project);
@@ -97,7 +97,7 @@ public class CartController extends HttpServlet {
                 responseModel = new ResponseModel();
                 responseModel.setMessage("dự án mẫu không tồn tại");
                 responseModel.setData(null);
-                responseModel.setName("representProjectId");
+                responseModel.setName("itProject");
                 listResp.add(responseModel);
             } else {
                 System.out.println(project);

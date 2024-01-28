@@ -181,11 +181,54 @@
             error: function (data) {
                 //bắt lỗi email
                 console.log(data);
+                var e = JSON.parse(data.responseText);
+                console.log(e.name, e.message)
+                fetchErr(e.name, e.message);
+
             }
 
         })
     }
 </script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            // case 'fullName':
+            //     let fullName = document.getElementById('fullName');
+            //     fullName.classList.add('border-danger');
+            //     fullName.classList.add('text-danger');
+            //     fullName.value = "";
+            //     fullName.setAttribute('value', "");
+            //     fullName.setAttribute('placeholder', mess);
+            //     break;
+            case 'email':
+                let email = document.getElementById('email');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', "");
+                // email.setAttribute('placeholder', mess);
+                break;
+            // case 'address':
+            //     let address = document.getElementById('address');
+            //     address.classList.add('border-danger');
+            //     address.classList.add('text-danger');
+            //     address.value = "";
+            //     address.setAttribute('value', " ");
+            //     address.setAttribute('placeholder', mess);
+            //     break;
 
+        }
+    }
+</script>
+<script>
+    let fullName = document.getElementById('email');
+    fullName.addEventListener('click', function () {
+        fullName.classList.remove('border-danger');
+        fullName.classList.remove('text-danger');
+        fullName.setAttribute('placeholder', "Email");
+    })
+</script>
 </body>
 </html>

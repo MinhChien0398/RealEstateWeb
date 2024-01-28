@@ -298,8 +298,13 @@
                 console.log(data)
             },
             error: function (e) {
-                console.log("false")
-                console.log(e)
+                // console.log("false")
+                console.log(e.responseText)
+                let err = JSON.parse(e.responseText);
+                for (let key of err) {
+                    console.log(key.name, key.message)
+                    fetchErr(key.name, key.message)
+                }
             }
         })
 
@@ -348,6 +353,118 @@
 
     });
 </script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            case'email':
+                let email = document.getElementById('form-email')
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', "");
+                // email.setAttribute('placeholder', mess);
+                break;
+            case'address':
+                let address = document.getElementById('address')
+                address.classList.add('border-danger');
+                address.classList.add('text-danger');
+                address.value = "";
+                address.setAttribute('value', "");
+                address.setAttribute('placeholder', mess);
+                break;
+            case'category':
+                let category = document.getElementById('category')
+                category.classList.add('border-danger');
+                category.classList.add('text-danger');
+                category.value = "";
+                category.setAttribute('value', "");
+                category.setAttribute('placeholder', mess);
+                break;
+            case'width':
+                let width = document.getElementById('area-width')
+                width.classList.add('border-danger');
+                width.classList.add('text-danger');
+                width.value = "";
+                width.setAttribute('value', "");
+                width.setAttribute('placeholder', mess);
+                break;
+            case'height':
+                let height = document.getElementById('area-length')
+                height.classList.add('border-danger');
+                height.classList.add('text-danger');
+                height.value = "";
+                height.setAttribute('value', "");
+                height.setAttribute('placeholder', mess);
+                break;
+            case'services':
+                let services = document.getElementById('services')
+                services.classList.add('border-danger');
+                services.classList.add('text-danger');
+                services.value = "";
+                services.setAttribute('value', "");
+                services.setAttribute('placeholder', mess);
+                break;
+            case'itProject':
+                let itProject = document.getElementById('itProject')
+                itProject.classList.add('border-danger');
+                itProject.classList.add('text-danger');
+                itProject.value = "";
+                itProject.setAttribute('value', "");
+                itProject.setAttribute('placeholder', mess);
+                break;
+        }
+    }
+</script>
+<script>
+    let email = document.getElementById('form-email')
+    email.addEventListener('click', function () {
+        email.classList.remove('border-danger');
+        email.classList.remove('text-danger');
+        email.setAttribute('placeholder', "");
+    })
 
+    let address = document.getElementById('address')
+    address.addEventListener('click', function () {
+        address.classList.remove('border-danger');
+        address.classList.remove('text-danger');
+        address.setAttribute('placeholder', "");
+    })
+
+    let category = document.getElementById('category')
+    category.addEventListener('click', function () {
+        category.classList.remove('border-danger');
+        category.classList.remove('text-danger');
+        category.setAttribute('placeholder', "");
+    })
+
+    let width = document.getElementById('area-width')
+    width.addEventListener('click', function () {
+        width.classList.remove('border-danger');
+        width.classList.remove('text-danger');
+        width.setAttribute('placeholder', "");
+    })
+
+    let height = document.getElementById('area-length')
+    height.addEventListener('click', function () {
+        height.classList.remove('border-danger');
+        height.classList.remove('text-danger');
+        height.setAttribute('placeholder', "");
+    })
+
+    let services = document.getElementById('services')
+    services.addEventListener('click', function () {
+        services.classList.remove('border-danger');
+        services.classList.remove('text-danger');
+        services.setAttribute('placeholder', "");
+    })
+
+    let itProject = document.getElementById('itProject')
+    itProject.addEventListener('click', function () {
+        itProject.classList.remove('border-danger');
+        itProject.classList.remove('text-danger');
+        itProject.setAttribute('placeholder', "");
+    })
+</script>
 </body>
 </html>

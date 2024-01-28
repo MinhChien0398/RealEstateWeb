@@ -323,7 +323,7 @@
 <script>
     $('#save').click(function () {
         $.ajax({
-            url: "http://localhost:8080/api/admin/user",
+            url: "/api/admin/user",
             type: "POST",
             dataType: "json",
             data: {
@@ -348,10 +348,11 @@
                     window.location.href = "/admin/user_management?action=manager";
                 }
             },
-            error: function (data) {   console.log(err)
+            error: function (data) {   console.log(data)
                 var err = JSON.parse(data.responseText);
 
                 for (const e of err) {
+                    console.log(e.name, e.message);
                     fetchErr(e.name, e.message);
                 }
             }
@@ -371,14 +372,14 @@
                 email.setAttribute('placeholder', mess);
                 console.log("run 1")
                 break;
-            case "password":
-                let password = document.getElementById('form9');
-                password.classList.add('border-danger');
-                password.classList.add('text-danger');
-                password.value="";
-                password.nextElementSibling.classList.add('active');
-                password.setAttribute('placeholder', mess);
-                console.log("run 2");   break;
+            // case "password":
+            //     let password = document.getElementById('form9');
+            //     password.classList.add('border-danger');
+            //     password.classList.add('text-danger');
+            //     password.value="";
+            //     password.nextElementSibling.classList.add('active');
+            //     password.setAttribute('placeholder', mess);
+            //     console.log("run 2");   break;
             case "fullname":
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
