@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2024 at 07:29 AM
+-- Generation Time: Jan 28, 2024 at 07:33 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -52,6 +52,18 @@ CREATE TABLE `carts_images` (
   `id` int(11) NOT NULL,
   `cartId` int(11) DEFAULT NULL,
   `imageId` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carts_services`
+--
+
+CREATE TABLE `carts_services` (
+  `id` int(11) NOT NULL,
+  `cartId` int(11) DEFAULT NULL,
+  `serviceId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- --------------------------------------------------------
@@ -1057,6 +1069,14 @@ ALTER TABLE `carts_images`
   ADD KEY `fk_cartid_id` (`cartId`) USING BTREE;
 
 --
+-- Indexes for table `carts_services`
+--
+ALTER TABLE `carts_services`
+  ADD PRIMARY KEY (`id`) USING BTREE,
+  ADD KEY `fk_cartId_services` (`cartId`) USING BTREE,
+  ADD KEY `fk_services_cartId` (`serviceId`) USING BTREE;
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
@@ -1194,6 +1214,12 @@ ALTER TABLE `carts_images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `carts_services`
+--
+ALTER TABLE `carts_services`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -1313,6 +1339,13 @@ ALTER TABLE `carts`
 ALTER TABLE `carts_images`
   ADD CONSTRAINT `fk_cartid_id` FOREIGN KEY (`cartId`) REFERENCES `carts` (`id`),
   ADD CONSTRAINT `fk_imageid_id` FOREIGN KEY (`imageId`) REFERENCES `images` (`id`);
+
+--
+-- Constraints for table `carts_services`
+--
+ALTER TABLE `carts_services`
+  ADD CONSTRAINT `fk_cartId_services` FOREIGN KEY (`cartId`) REFERENCES `carts` (`id`),
+  ADD CONSTRAINT `fk_services_cartId` FOREIGN KEY (`serviceId`) REFERENCES `services` (`id`);
 
 --
 -- Constraints for table `excuting_projects`
