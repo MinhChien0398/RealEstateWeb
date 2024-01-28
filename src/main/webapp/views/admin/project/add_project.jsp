@@ -359,7 +359,7 @@
             data: {content: content, action: "add"},
             success: function (data) {
 
-                saveproject(data.data.id)
+                saveproject(data?.data?.id)
             },
             error: function (data) {
                 //thông báo lỗi sys

@@ -300,6 +300,7 @@ public class UserController extends HttpServlet {
             if (errMess.size() > 0) {
                 resp.setStatus(400);
                 printWriter.print(gson.toJson(errMess));
+                System.out.println(gson.toJson(errMess));
 
             } else {
                 user = UserService.getInstance().update(user);

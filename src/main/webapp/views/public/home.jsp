@@ -115,6 +115,7 @@
 <!-- end project -->
 <!--start service-->
 <section class="service container pl-0 pr-0">
+    <div id="modal"></div>
     <div class="slide-container swiper">
         <div class="slide-content" id="catch">
             <h4 class="title mb-3 text-uppercase">dịch vụ THI CÔNG</h4>
@@ -243,6 +244,7 @@
 <%@include file="/layout/public/footer.jsp" %><script src="<c:url value="/template/js/swiper-bundle.min.js"/>"></script>
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 
 <script src="<c:url value='/template/js/home.js'/>"></script>
 <script>
@@ -259,12 +261,18 @@
                 content: $('#content').val(),
             },
             success: function (data) {
-                let resp = JSON.parse(data);
-                if (resp.status === 200) {
-                    alert(resp.message);
-                    window.location.reload();
-                } else {
-                    alert(resp.message);
+                // let resp = JSON.parse(data);
+                // if (resp.status === 200) {
+                //     alert(resp.message);
+                //     window.location.reload();
+                // } else {
+                //     alert(resp.message);
+                // }
+                delayNotify(1000, data.message);
+                if(data.name == 'success'){
+                    setTimeout(()=>{
+                        window.location.reload();
+                    },1000);
                 }
             },
             error: function (data) {
@@ -315,7 +323,7 @@
                         + '<p class="text-white p-0 id-project">'
                         + '<strong>MDA:' + x.id + '</strong>'
                         + '</p>'
-                        + '<p class="text-white p-4">'+x.description+'</p>'
+                        + '<p class="text-white p-4 vanBan">'+x.description+'</p>'
                         + '</div>'
                         + '</div></div></a></div></div>'
                 }
@@ -326,7 +334,7 @@
                 console.log(data);
             }
         })
-
+        setTimeout(()=>{gioiHanChuVaThemDauCham('vanBan', gioiHanSoChu)},200);
     }
 </script>
 <script>
@@ -379,6 +387,34 @@
         fullName.classList.remove('text-danger');
         fullName.setAttribute('placeholder', "Email");
     })
+</script>
+<script>
+    function gioiHanChuVaThemDauCham(className, gioiHan) {
+        var elements = document.getElementsByClassName(className);
+
+        if (!elements || elements.length === 0) {
+            console.error("Không tìm thấy phần tử với class: " + className);
+            return;
+        }
+
+        for (var i = 0; i < elements.length; i++) {
+            var vanBan = elements[i].textContent;
+
+            if (vanBan.length > gioiHan) {
+                // Cắt đoạn văn bản và thêm dấu ba chấm
+                var vanBanGioiHan = vanBan.slice(0, gioiHan) + '...' + ' xem thêm';
+                elements[i].textContent = vanBanGioiHan;
+            }
+        }
+    }
+
+    // Sử dụng hàm
+    var className = "vanBan"; // Class của thẻ p
+    var gioiHanSoChu = 220;
+
+    setTimeout(()=>{
+        gioiHanChuVaThemDauCham(className, gioiHanSoChu);
+    },400);
 </script>
 </body>
 </html>

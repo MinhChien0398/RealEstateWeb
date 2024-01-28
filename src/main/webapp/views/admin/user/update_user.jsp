@@ -386,10 +386,9 @@
                 }
             },
             error: function (data) {
-                console.log(err)
                 var err = JSON.parse(data.responseText);
-
-                for (const e of err) {
+                console.log(err)
+                for (let e of err) {
                     console.log(e.name, e.message);
                     fetchErr(e.name, e.message);
                 }
@@ -407,7 +406,7 @@
                 email.value = "";
                 email.nextElementSibling.classList.add('active');
                 email.setAttribute('value', " ");
-                email.setAttribute('placeholder', mess);
+                // email.setAttribute('placeholder', mess);
                 console.log("run 1")
                 break;
             case "password":
@@ -416,17 +415,17 @@
                 password.classList.add('text-danger');
                 password.value = "";
                 password.nextElementSibling.classList.add('active');
-                password.setAttribute('placeholder', mess);
+                // password.setAttribute('placeholder', mess);
                 console.log("run 2");
                 break;
-            case "fullname":
+            case "fullName":
                 let fullname = document.getElementById('form12');
                 fullname.classList.add('border-danger');
                 fullname.classList.add('text-danger');
                 fullname.value = "";
                 fullname.nextElementSibling.classList.add('active');
                 console.log(fullname.nextElementSibling);
-                fullname.setAttribute('placeholder', mess);
+                // fullname.setAttribute('placeholder', mess);
                 console.log("run 3");
                 break;
             case "phone":
@@ -435,7 +434,7 @@
                 phone.classList.add('text-danger');
                 phone.value = "";
                 phone.nextElementSibling.classList.add('active');
-                phone.setAttribute('placeholder', mess);
+                // phone.setAttribute('placeholder', mess);
                 console.log("run 4");
                 break;
             case "birthday":
@@ -445,7 +444,7 @@
                 birthday.value = "";
                 birthday.nextElementSibling.classList.add('active');
                 console.log(birthday.nextElementSibling);
-                birthday.setAttribute('placeholder', mess);
+                // birthday.setAttribute('placeholder', mess);
                 console.log("run 5");
                 break;
         }
