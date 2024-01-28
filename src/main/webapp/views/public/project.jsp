@@ -332,7 +332,7 @@
                 + '<p class="text-white p-0 id-project">'
                 + '<strong>MDA:' + x.id + '</strong>'
                 + '</p>'
-                + '<p class="text-white p-4">'+x.description+'</p>'
+                + '<p class="text-white p-4 vanBan" name="test">'+x.description+'</p>'
                 + '</div>'
                 + '</div></div></a></div></div>'
         }
@@ -377,6 +377,34 @@
     //         $(this).toggleClass('fa-regular fa-bookmark fa-solid fa-bookmark');
     //     });
     // });
+</script>
+<script>
+    function gioiHanChuVaThemDauCham(className, gioiHan) {
+        var elements = document.getElementsByClassName(className);
+
+        if (!elements || elements.length === 0) {
+            console.error("Không tìm thấy phần tử với class: " + className);
+            return;
+        }
+
+        for (var i = 0; i < elements.length; i++) {
+            var vanBan = elements[i].textContent;
+
+            if (vanBan.length > gioiHan) {
+                // Cắt đoạn văn bản và thêm dấu ba chấm
+                var vanBanGioiHan = vanBan.slice(0, gioiHan) + '...' + ' xem thêm';
+                elements[i].textContent = vanBanGioiHan;
+            }
+        }
+    }
+
+    // Sử dụng hàm
+    var className = "vanBan"; // Class của thẻ p
+    var gioiHanSoChu = 220;
+
+    setTimeout(()=>{
+        gioiHanChuVaThemDauCham(className, gioiHanSoChu);
+    },400);
 </script>
 </body>
 </html>
