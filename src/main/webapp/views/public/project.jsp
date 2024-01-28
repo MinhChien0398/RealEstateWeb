@@ -139,7 +139,17 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
 <script>
-
+    function effectButton(){
+        let pageItem= document.getElementsByClassName('page-item');
+        for (let i = 0; i < pageItem.length; i++) {
+            pageItem[i].addEventListener('click', function () {
+                for (let j = 0; j < pageItem.length; j++) {
+                    if(pageItem[j].classList.contains('active') ) pageItem[j].classList.remove('active');
+                }
+                this.classList.add('active');
+            })
+        }
+    }
     function getProject(i) {
         $.ajax({
             url: "/api/project/search",
@@ -292,6 +302,7 @@
             '    </li>'
         console.log(page)
         container.innerHTML = page;
+        effectButton();
         console.log('button:' + container.innerHTML)
     }
 

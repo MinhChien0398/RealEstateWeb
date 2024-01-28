@@ -20,6 +20,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -183,8 +184,9 @@ public class UserController extends HttpServlet {
             if (user.getPassword() == null) {
                 responseModel = new ResponseModel<>();
                 responseModel.setName("success");
+                responseModel.setData("/admin/user_management?action=manager");
                 responseModel.setMessage("Thêm thành công");
-                responseModel.setData(user);
+//                responseModel.setData(user);
                 resp.setStatus(200);
                 printWriter.print(gson.toJson(responseModel));
             } else if (user.getPassword() != null) {
@@ -219,38 +221,50 @@ public class UserController extends HttpServlet {
                     responseModel.setName("email");
                     responseModel.setMessage("Email đã tồn tại");
                     errMess.add(responseModel);
-                } else if (!email.equals("") && !singleValidator.validator(email)) {
+                } else if (email.isEmpty() || !singleValidator.validator(email)) {
                     responseModel = new ResponseModel();
                     responseModel.setName("email");
                     responseModel.setMessage("Email không hợp lệ");
                     errMess.add(responseModel);
                 } else user.setEmail(email);
             singleValidator = new TitleOrNameSingleValidator();
-            if (fullName != user.getFullName())
-                if (!fullName.equals("") && !singleValidator.validator(fullName)) {
+            if (!Objects.equals(fullName, user.getFullName()))
+                if (fullName.isEmpty() || !singleValidator.validator(fullName)) {
                     responseModel = new ResponseModel();
                     responseModel.setName("fullName");
                     responseModel.setMessage("Tên không hợp lệ");
                     errMess.add(responseModel);
                 } else user.setFullName(fullName);
             if (!password.equals(""))
-                if (!singleValidator.validator(password) && !singleValidator.validator(rePassword) && password.equals(rePassword)) {
+
+                    if (!singleValidator.validator(password)  ) {
+                        responseModel = new ResponseModel();
+                        responseModel.setName("password");
+                        responseModel.setMessage("Mật khẩu mới không hợp lệ");
+                        errMess.add(responseModel);
+                }else if(!singleValidator.validator(rePassword) ){
                     responseModel = new ResponseModel();
-                    responseModel.setName("password");
-                    responseModel.setMessage("Mật khẩu không hợp lệ");
+                    responseModel.setName("rePassword");
+                    responseModel.setMessage("Mật khẩu nhập xác nhận không hợp lệ");
                     errMess.add(responseModel);
-                } else user.setPassword(StringUtil.hashPassword(password));
+                }else if(password.equals(rePassword)){
+                    responseModel = new ResponseModel();
+                    responseModel.setName("rePassword");
+                    responseModel.setMessage("Mật khẩu nhập xác nhận không trùng khớp");
+                    errMess.add(responseModel);
+                }
+                else user.setPassword(StringUtil.hashPassword(password));
             singleValidator = new PhoneValidator();
-            if (phone.equals(user.getPhone()))
-                if (phone != "" && !singleValidator.validator(phone)) {
+            if (!phone.equals(user.getPhone()))
+                if (phone.equals("") || !singleValidator.validator(phone)) {
                     responseModel = new ResponseModel();
                     responseModel.setName("phone");
                     responseModel.setMessage("Số điện thoại không hợp lệ");
                     errMess.add(responseModel);
                 } else user.setPhone(phone);
             singleValidator = new NumberVallidator();
-            if (province.equals(user.getProvinceId() + ""))
-                if (province != "" && !singleValidator.validator(province)) {
+            if (!province.equals(user.getProvinceId() + ""))
+                if (province.equals("") || !singleValidator.validator(province)) {
                     responseModel = new ResponseModel();
                     responseModel.setName("address");
                     responseModel.setMessage("Địa chỉ không hợp lệ");
@@ -258,7 +272,8 @@ public class UserController extends HttpServlet {
                 } else user.setProvinceId(Integer.parseInt(province));
             singleValidator = new DateValidator();
             java.util.Date dbirthday = null;
-            if (birthday.equals(user.getBirthday().toString()))
+
+            if (!birthday.equals(user.getBirthday().toString()))
                 if (birthday == null || birthday.trim().isEmpty()) {
                     req.setAttribute("birthday", "Ngày sinh không hợp lệ");
                     responseModel = new ResponseModel();
@@ -267,10 +282,12 @@ public class UserController extends HttpServlet {
                     responseModel.setName("birthday");
                     errMess.add(responseModel);
                 } else {
+                    birthday = DateUtil.formatStringDate(birthday);
                     SimpleDateFormat dmy = new SimpleDateFormat("yyyy-MM-dd");
                     dmy.setLenient(false);
                     try {
                         dbirthday = dmy.parse(birthday);
+                        user.setBirthday(new java.sql.Date(dbirthday.getTime()));
                     } catch (Exception e) {
                         req.setAttribute("birthday", "Ngày sinh không hợp lệ");
                         responseModel = new ResponseModel();
@@ -291,7 +308,8 @@ public class UserController extends HttpServlet {
                     resp.setStatus(200);
                     responseModel = new ResponseModel<>();
                     responseModel.setName("success");
-                    responseModel.setMessage("Thêm thành công");
+
+                    responseModel.setMessage("Lưu thành công");
                     resp.setStatus(200);
                     printWriter.print(gson.toJson(errMess));
 

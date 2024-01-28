@@ -35,7 +35,7 @@ public class ProjectAdditionalAndEdit extends HttpServlet {
         } else if (url.equals("/admin/project/edit")) {
             if (req.getParameter("id") == null || req.getParameter("id").isEmpty()) {
              //error
-               resp.sendRedirect("/admin/project_management");
+               resp.sendRedirect("/404");
                 return;
             }
             try {

@@ -447,14 +447,23 @@
         form.append('schedule', $("#schedule").val());
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
-        if ($("#avatar").prop('files').length !== 0)
+        if ($("#avatar").prop('files').length !== 0){
             form.append('avatar', $("#avatar").prop('files')[0]);
-        else form.append('notHaveAvatar', '1');
+        console.log("notHaveAvatar");}
+    else
+        {
+
+            form.append('notHaveAvatar', '1');
+        }
         if ($("#file_input1").prop('files').length !== 0)
             for (const x of $("#file_input1").prop('files')) {
-                console.log(x)
+                console.log(x);
+                console.log("nothavegroupimages");
                 form.append('groupImage', x);
-            } else form.append('notHaveGroupImages', '1');
+            } else {
+            form.append('notHaveGroupImages', '1')
+        }
+        ;
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
@@ -468,9 +477,9 @@
                 console.log(data.responseText)
                 delayNotify(2000, data.message);
                 if (data.name == "success") {
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         window.location.href = data.data;
-                    },3000 );
+                    }, 3000);
 
                 }
             },

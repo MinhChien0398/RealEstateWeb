@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Upload {
-    public static final String UPLOAD_DIR = "E:\\projectweb\\RealEstateWeb\\src\\main\\webapp\\template\\img";
+    public static final String UPLOAD_DIR = "D:\\User\\Project JSP\\RealEstateWeb\\src\\main\\webapp\\template\\img";
     public static final String UPLOAD_SILDER = "slide";
     public static final String UPLOAD_USER_AVATAR = "user";
     public static final String UPLOAD_PROJECT = "projects";

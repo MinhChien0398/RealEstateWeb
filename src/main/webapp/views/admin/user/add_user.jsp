@@ -26,7 +26,7 @@
 <body>
 <!-- Sidebar navigation -->
 <div class="wrapper">
-    <%@include file="/layout/admin/adminheader.jsp"%>
+    <%@include file="/layout/admin/adminheader.jsp" %>
     <div class="main-container">
         <div class="container p-0">
             <nav class="" aria-label="breadcrumb">
@@ -120,8 +120,10 @@
                                                 <div class="md-form form-sm mb-0">
                                                     <select name="province" id="province" class=" custom-select ">
                                                         <option value="" disabled>Chọn tỉnh thành</option>
-                                                        <c:forEach var="item" items="${sessionScope.get('provinces')}">
-                                                            <option value="${item.name}">${item.name}</option>
+                                                        <c:forEach var="item" varStatus="loop"
+                                                                   items="${sessionScope.get('provinces')}">
+                                                            <option value="${item.name}"<c:if
+                                                                    test="${loop.index==1}"> selected</c:if>  >${item.name}</option>
                                                         </c:forEach>
 
                                                     </select>
@@ -174,7 +176,7 @@
                                                                 class="browser-default custom-select mb-4">
                                                             <option value="" disabled>Chọn phân quyền</option>
                                                             <option value="0" selected>Người dùng thường</option>
-                                                            <option value="1">Admin</option>
+                                                            <option value="1"><Ad></Ad>min</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -201,7 +203,7 @@
 </div>
 <!--/. Sidebar navigation -->
 <%@include file="/layout/public/script.jsp" %>
-<script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     $('#materialUnchecked').change(() => {
         if ($('#materialIndeterminate2').is(':checked')) {
@@ -237,9 +239,13 @@
                 success: function (data) {
                     console.log(data);
                     if (data.name === "sys") {
-                       alert(data.message);
-                    }else {
-                        window.location.href = "/admin/user_management?action=manage";
+                        delayNotify(2000, data.message)
+                    } else {
+                        delayNotify(2000, data.message)
+                        setTimeout(() => {
+                            window.location.href = data.data;
+                        }, 3000);
+                        // window.location.href = "/admin/user_management?action=manage";
                     }
                 },
                 error: function (data) {

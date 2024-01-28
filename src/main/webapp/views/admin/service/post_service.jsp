@@ -57,7 +57,7 @@
                         <tr>
                             <th class="font-weight-bold" scope="col">STT</th>
                             <th class="font-weight-bold" scope="col">Tên bài viết</th>
-                            <th class="font-weight-bold" scope="col">Lượt xem</th>
+                            <th class="font-weight-bold" scope="col">Số lượng người xem</th>
                             <th class="font-weight-bold" scope="col">Thao tác</th>
                         </tr>
                         </thead>

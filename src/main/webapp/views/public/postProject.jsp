@@ -45,8 +45,17 @@
 
         <div class="row">
             <div class="col-sm-12 col-md-8 col-lg-8 post-content position-relative">
-                <i class="fa-regular fa-bookmark position-absolute "
-                   style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
+                <c:choose>
+                    <c:when test="${project.saveBy==auth.id}">
+                        <i  class="fa-solid fa-bookmark position-absolute " onclick="like(this)"
+                           style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
+                    </c:when>
+                    <c:otherwise>
+                        <i class="fa-regular fa-bookmark position-absolute " onclick="like(this)"
+                           style="z-index: 1000; left: 1%; top:22px; font-size: 25px"></i>
+
+                    </c:otherwise>
+                </c:choose>
                 <h1 class="text-center mb-3 mt-3 post-title text-uppercase">${project.title}</h1>
                 <div class="row">
 
@@ -81,12 +90,13 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4 recommed-box ">
                 <div class="wrapper-feature-news mt-3 mb-1 h-100">
+                    <div class="feature-news-header">
+                        <p class="text-uppercase main-color"><i class="fa-solid fa-caret-right mr-2">
+                        </i>Đặt ngay cho bạn</p>
+                    </div>
                     <div class="sticky-top" style="z-index: 1; top:80px">
-                        <div class="feature-news-header">
-                            <p class="text-uppercase main-color"><i class="fa-solid fa-caret-right mr-2">
-                            </i>Đặt ngay cho bạn</p>
-                        </div>
-                        <form class="card" action="post?action=cast" method="post">
+
+                        <form class="card " action="post?action=cast" method="post">
                             <div class="card-body pl-3 pr-3">
                                 <!--Header-->
                                 <!--Body-->
@@ -279,6 +289,7 @@
         let form = new FormData;
         form.append('email', $('#form-email').val())
         form.append('address', $('#address').val())
+        form.append('representProjectId', $('#itProject').val())
         form.append('category', $('#category').val())
         form.append('width', $('#area-width').val())
         form.append('height', $('#area-length').val())
@@ -286,7 +297,7 @@
         for (const x of $("#file_input").prop('files')) {
             form.append('image', x)
         }
-        console.log(form)
+
         $.ajax({
             url: '/api/cart',
             type: 'post',
@@ -354,117 +365,31 @@
     });
 </script>
 <script>
-    function fetchErr(name, mess) {
-        console.log(name, mess)
-        switch (name) {
-            case'email':
-                let email = document.getElementById('form-email')
-                email.classList.add('border-danger');
-                email.classList.add('text-danger');
-                email.value = "";
-                email.setAttribute('value', "");
-                // email.setAttribute('placeholder', mess);
-                break;
-            case'address':
-                let address = document.getElementById('address')
-                address.classList.add('border-danger');
-                address.classList.add('text-danger');
-                address.value = "";
-                address.setAttribute('value', "");
-                address.setAttribute('placeholder', mess);
-                break;
-            case'category':
-                let category = document.getElementById('category')
-                category.classList.add('border-danger');
-                category.classList.add('text-danger');
-                category.value = "";
-                category.setAttribute('value', "");
-                category.setAttribute('placeholder', mess);
-                break;
-            case'width':
-                let width = document.getElementById('area-width')
-                width.classList.add('border-danger');
-                width.classList.add('text-danger');
-                width.value = "";
-                width.setAttribute('value', "");
-                width.setAttribute('placeholder', mess);
-                break;
-            case'height':
-                let height = document.getElementById('area-length')
-                height.classList.add('border-danger');
-                height.classList.add('text-danger');
-                height.value = "";
-                height.setAttribute('value', "");
-                height.setAttribute('placeholder', mess);
-                break;
-            case'services':
-                let services = document.getElementById('services')
-                services.classList.add('border-danger');
-                services.classList.add('text-danger');
-                services.value = "";
-                services.setAttribute('value', "");
-                services.setAttribute('placeholder', mess);
-                break;
-            case'itProject':
-                let itProject = document.getElementById('itProject')
-                itProject.classList.add('border-danger');
-                itProject.classList.add('text-danger');
-                itProject.value = "";
-                itProject.setAttribute('value', "");
-                itProject.setAttribute('placeholder', mess);
-                break;
-        }
+    function like(project) {
+        console.log(project.classList)
+        $.ajax({
+            url: "/api/save_project",
+            type: "GET",
+            data: {
+                "projectId":${project.id}
+            },
+            success: function (response) {
+                console.log(response);
+                let resp = JSON.parse(response);
+                if (resp.name == 'save') {
+                    project.classList.replace("fa-regular", "fa-solid")
+                } else if (resp.name == 'delete')
+                    project.classList.replace("fa-solid", "fa-regular")
+                //= "fa-solid fa-bookmark position-absolute";
+                // console.log(p);
+            },
+            error: function (response) {
+                console.log(response.responseText)
+                let resp = JSON.parse(response.responseText);
+                window.location.href = resp.data;
+            }
+        })
     }
-</script>
-<script>
-    let email = document.getElementById('form-email')
-    email.addEventListener('click', function () {
-        email.classList.remove('border-danger');
-        email.classList.remove('text-danger');
-        email.setAttribute('placeholder', "");
-    })
-
-    let address = document.getElementById('address')
-    address.addEventListener('click', function () {
-        address.classList.remove('border-danger');
-        address.classList.remove('text-danger');
-        address.setAttribute('placeholder', "");
-    })
-
-    let category = document.getElementById('category')
-    category.addEventListener('click', function () {
-        category.classList.remove('border-danger');
-        category.classList.remove('text-danger');
-        category.setAttribute('placeholder', "");
-    })
-
-    let width = document.getElementById('area-width')
-    width.addEventListener('click', function () {
-        width.classList.remove('border-danger');
-        width.classList.remove('text-danger');
-        width.setAttribute('placeholder', "");
-    })
-
-    let height = document.getElementById('area-length')
-    height.addEventListener('click', function () {
-        height.classList.remove('border-danger');
-        height.classList.remove('text-danger');
-        height.setAttribute('placeholder', "");
-    })
-
-    let services = document.getElementById('services')
-    services.addEventListener('click', function () {
-        services.classList.remove('border-danger');
-        services.classList.remove('text-danger');
-        services.setAttribute('placeholder', "");
-    })
-
-    let itProject = document.getElementById('itProject')
-    itProject.addEventListener('click', function () {
-        itProject.classList.remove('border-danger');
-        itProject.classList.remove('text-danger');
-        itProject.setAttribute('placeholder', "");
-    })
 </script>
 </body>
 </html>

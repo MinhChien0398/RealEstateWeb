@@ -131,7 +131,7 @@
         </div>
     </div>
 
-    <div class="main-container">
+    <div class="main-container mt-0">
 
         <div id="section-1" class="bc-icons-2">
             <nav aria-label="breadcrumb">
@@ -237,6 +237,18 @@
 <%--    });--%>
 <%--</script>--%>
 <script>
+    function effectButton(){
+        let pageItem= document.getElementsByClassName('page-item');
+        for (let i = 0; i < pageItem.length; i++) {
+            pageItem[i].addEventListener('click', function () {
+                for (let j = 0; j < pageItem.length; j++) {
+                    if(pageItem[j].classList.contains('active') ) pageItem[j].classList.remove('active');
+                }
+                this.classList.add('active');
+            })
+        }
+    }
+    effectButton();
     console.log(${sizePage})
     $(document).ready(function () {
         getP(0);
@@ -294,6 +306,7 @@
         container.innerHTML = project;
     }
 </script>
+
 <script>
     function like(project) {
         let id = $(project).parent().find('.project-id').val();

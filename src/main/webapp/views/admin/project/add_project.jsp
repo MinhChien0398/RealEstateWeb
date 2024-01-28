@@ -140,7 +140,7 @@
                                                                 <textarea class="form-control"
                                                                           id="description"
                                                                           name="description"
-                                                                          rows="3" placeholder="Mô tả dự án"></textarea>
+                                                                          rows="3" maxlength="250" placeholder="Mô tả dự án"></textarea>
                                                             </div>
                                                         </div>
                                                         <div class="mb-4">
