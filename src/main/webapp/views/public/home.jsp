@@ -270,6 +270,9 @@
             error: function (data) {
                 //bắt lỗi email
                 console.log(data);
+                var e = JSON.parse(data.responseText);
+                console.log(e.name, e.message)
+                fetchErr(e.name, e.message);
             }
 
         })
@@ -353,6 +356,29 @@
             }
         })
     }
+</script>
+<script>
+    function fetchErr(name, mess){
+        console.log(name, mess)
+        switch (name) {
+            case 'email':
+                let email = document.getElementById('email');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', "");
+                // email.setAttribute('placeholder', mess);
+                break;
+        }
+    }
+</script>
+<script>
+    let fullName = document.getElementById('email');
+    fullName.addEventListener('click', function () {
+        fullName.classList.remove('border-danger');
+        fullName.classList.remove('text-danger');
+        fullName.setAttribute('placeholder', "Email");
+    })
 </script>
 </body>
 </html>

@@ -309,8 +309,13 @@
                 console.log(data)
             },
             error: function (e) {
-                console.log("false")
-                console.log(e)
+                // console.log("false")
+                console.log(e.responseText)
+                let err = JSON.parse(e.responseText);
+                for (let key of err) {
+                    console.log(key.name, key.message)
+                    fetchErr(key.name, key.message)
+                }
             }
         })
 

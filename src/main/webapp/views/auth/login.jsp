@@ -51,7 +51,7 @@
     </div>
     <div class="form-container forgot-password">
         <div class="arrow-container">
-            <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
+            <a class="icon-arrow" href="home"><i
                     class="fa-solid fa-arrow-left"></i></a>
         </div>
         <form id="forget-password">
@@ -65,7 +65,7 @@
     </div>
     <div class="form-container sign-in">
         <div class="arrow-container">
-            <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
+            <a class="icon-arrow" href="home"><i
                     class="fa-solid fa-arrow-left"></i></a>
         </div>
         <form action="/login" method="post" id="sign-in">
@@ -88,7 +88,7 @@
         <div class="toggle">
             <div class="toggle-panel toggle-left">
                 <div class="arrow-container">
-                    <a class="icon-arrow" href="../../../../RealEstateWeb/resources/views/template/main.html"><i
+                    <a class="icon-arrow" href="home"><i
                             class="fa-solid fa-arrow-left"></i></a>
                 </div>
                 <h1>Chào mừng quay trở lại!</h1>

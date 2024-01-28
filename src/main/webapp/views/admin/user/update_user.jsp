@@ -357,7 +357,7 @@
 <script>
     $('#save').click(function () {
         $.ajax({
-            url: "http://localhost:8080/api/admin/user",
+            url: "/api/admin/user",
             type: "POST",
             dataType: "json",
             data: {
@@ -390,6 +390,7 @@
                 var err = JSON.parse(data.responseText);
 
                 for (const e of err) {
+                    console.log(e.name, e.message);
                     fetchErr(e.name, e.message);
                 }
             }
