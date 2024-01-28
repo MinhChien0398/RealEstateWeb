@@ -14,6 +14,7 @@ public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("page", "account");
+        System.out.println("bla bla");
         LoadSession.loadSession(req);
         req.getRequestDispatcher("/views/user/user.jsp").forward(req, resp);
     }
