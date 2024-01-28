@@ -34,8 +34,9 @@ public class ContactController extends HttpServlet {
             }
             System.out.println(contact.toString());
             SingleValidator validator = new EmailSingleValidator();
-            if(validator.validator(contact.getEmail())){
-                responseModel.setName("eamil");
+            if(!validator.validator(contact.getEmail())){
+                resp.setStatus(400);
+                responseModel.setName("email");
                 responseModel.setData("email không hợp lệ vui lòng nhập lại");
                 PrintWriter printWriter = resp.getWriter();
                 printWriter.print(new Gson().toJson(responseModel));

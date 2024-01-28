@@ -182,20 +182,19 @@
             responseType: "blob",
         });
         const mimeType = response.headers["content-type"];
-        return new File([response.data], fileName, { type: mimeType });
+        return new File([response.data], fileName, {type: mimeType});
     };
 
 </script>
 <script>
     function saveService(id) {
-        console.log(213123)
         let form = new FormData();
         form.append('name', $("#name").val());
         form.append('status', $("#status").val());
         form.append('description', $("#description").val());
         if ($("#avatar").prop('files').length !== 0)
             form.append('avatar', $("#avatar").prop('files')[0]);
-        else form.append('notHave', '1');;
+        else form.append('notHave', '1');
         form.append('postId', id);
         form.append('id', ${service.id});
         $.ajax({
@@ -217,6 +216,12 @@
             },
             error: function (data) {
                 console.log(data.responseText)
+                var err = JSON.parse(data.responseText);
+
+                for (const e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     }
@@ -237,12 +242,41 @@
                 saveService(data.data.id);
             },
             error: function (data) {
-                console.log(data.responseText)
+                console.log(data)
                 // saveService(data.data.id);
+                var err = JSON.parse(data.responseText);
+
+                for (const e of err) {
+                    console.log(e.name, e.message)
+                    fetchErr(e.name, e.message);
+                }
             }
         })
     })
 
+</script>
+<script>
+    function fetchErr(name, mess) {
+        switch (name) {
+            case 'name' :
+                let name = document.getElementById('name');
+                name.classList.add('border-danger');
+                name.classList.add('text-danger');
+                name.value = "";
+                name.setAttribute('value', "");
+                name.setAttribute('placeholder', mess);
+                break;
+            case 'description' :
+                let description = document.getElementById('description');
+                description.classList.add('border-danger');
+                description.classList.add('text-danger');
+                description.value = "";
+                description.setAttribute('value', "");
+                description.setAttribute('placeholder', mess);
+                break;
+
+        }
+    }
 </script>
 <script>
     let allFiles = [];

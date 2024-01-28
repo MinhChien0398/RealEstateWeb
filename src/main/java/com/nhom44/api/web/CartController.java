@@ -47,7 +47,6 @@ public class CartController extends HttpServlet {
             responseModel.setName("representProjectId");
             listResp.add(responseModel);
         }} else {
-
             cart = new Cart();
             String email = req.getParameter("email");
             if (!singleValidator.validator(email)) {

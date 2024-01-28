@@ -132,42 +132,16 @@
                 }
             },
             error: function (data) {
-                console.log(data)
+                console.log(data.responseText)
+                let err = JSON.parse(data.responseText);
                 // saveService(data.data.id);
+                for (let key of err) {
+                    fetchErr(key.name, key.message);
+                }
+                // fetchErr(data.responseJSON.name, data.responseJSON.message);
             }
         });
     });
-</script>
-<script>
-    $('#save').click(function () {
-        let content = CKEDITOR.instances.post.getData();
-        $.ajax({
-            url: "/api/post?action=add",
-            type: "POST",
-            dataType: "json",
-            data: {content: content},
-            success: function (data) {
-                // saveproject(data.data.id)
-                console.log(data.responseText)
-                let obj = JSON.parse(data)
-                if (data.status === 200) {
-                    window.location.href = obj.data;
-                }
-            },
-            error: function (data) {
-                //thông báo lỗi sys
-                // console.log(data)
-
-                console.log(data)
-                var err = JSON.parse(data.responseText);
-
-                for (const e of err) {
-                    //     console.log email
-                    fetchErr(e.name, e.message);
-                }
-            }
-        })
-    })
 </script>
 <script>
     function fetchErr(name, message) {
@@ -199,6 +173,26 @@
 
     }
     }
+</script>
+<script>
+    let title = document.getElementById('title');
+    title.addEventListener('click', function () {
+        title.classList.remove('border-danger');
+        title.classList.remove('text-danger');
+        title.setAttribute('placeholder', 'Tiêu đề');
+    })
+    let status = document.getElementById('status');
+    status.addEventListener('click', function () {
+        status.classList.remove('border-danger');
+        status.classList.remove('text-danger');
+        status.setAttribute('placeholder', 'Trạng thái');
+    })
+    let sequence = document.getElementById('sequence');
+    sequence.addEventListener('click', function () {
+        sequence.classList.remove('border-danger');
+        sequence.classList.remove('text-danger');
+        sequence.setAttribute('placeholder', 'STT');
+    })
 </script>
 <script>
     $(document).ready(function () {

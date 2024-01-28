@@ -163,7 +163,7 @@
             {
                 data: 'status',
                 render: function (status) {
-                    return status == 0 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                    return status == 0 ? "<i class='fa-solid fa-square inactive-icon'></i>" : "<i class='fa-solid fa-square active-icon'></i>"
                 }
             },
             {
