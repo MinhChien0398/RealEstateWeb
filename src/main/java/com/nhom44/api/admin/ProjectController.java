@@ -120,6 +120,7 @@ public class ProjectController extends HttpServlet {
             isErr = true;
         }
         String isComplete = req.getParameter("isComplete");
+        System.out.println(isComplete);
         if (isComplete.equals("0")) {
             validator = new TitleOrNameSingleValidator();
             if (!validator.validator(req.getParameter("schedule"))) {
@@ -235,6 +236,7 @@ public class ProjectController extends HttpServlet {
                         }
                     }
                 }
+                System.out.println(req.getParameter("notHaveAvatar") );
                 if (req.getParameter("notHaveAvatar") == null) {
                     List<String> fileNames = Upload.uploadFile(Upload.UPLOAD_PROJECT + "/" + StringUtil.projectFolder(project.getId()), "avatar", req);
 

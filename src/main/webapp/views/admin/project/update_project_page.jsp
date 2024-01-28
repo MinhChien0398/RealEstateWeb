@@ -447,14 +447,23 @@
         form.append('schedule', $("#schedule").val());
         form.append('estimated_complete', $("#estimated_complete").val());
         form.append('status', $("#status").val());
-        if ($("#avatar").prop('files').length !== 0)
+        if ($("#avatar").prop('files').length !== 0){
             form.append('avatar', $("#avatar").prop('files')[0]);
-        else form.append('notHaveAvatar', '1');
+        console.log("notHaveAvatar");}
+    else
+        {
+
+            form.append('notHaveAvatar', '1');
+        }
         if ($("#file_input1").prop('files').length !== 0)
             for (const x of $("#file_input1").prop('files')) {
-                console.log(x)
+                console.log(x);
+                console.log("nothavegroupimages");
                 form.append('groupImage', x);
-            } else form.append('notHaveGroupImages', '1');
+            } else {
+            form.append('notHaveGroupImages', '1')
+        }
+        ;
         form.append('isAccepted', $("#isAccepted").is(":checked") ? 1 : 0);
         form.append('isComplete', $("#isComplete").is(":checked") ? 1 : 0);
         $.ajax({
@@ -468,9 +477,9 @@
                 console.log(data.responseText)
                 delayNotify(2000, data.message);
                 if (data.name == "success") {
-                    setTimeout(()=>{
+                    setTimeout(() => {
                         window.location.href = data.data;
-                    },3000 );
+                    }, 3000);
 
                 }
             },
@@ -649,6 +658,74 @@
         }
     }
 
+</script>
+<script>
+    let email = document.getElementById('email');
+    email.addEventListener('click', function () {
+        email.classList.remove('border-danger');
+        email.classList.remove('text-danger');
+        email.setAttribute('placeholder', "Email chủ đầu tư");
+    })
+    let title = document.getElementById('title');
+    title.addEventListener('click', function () {
+        title.classList.remove('border-danger');
+        title.classList.remove('text-danger');
+        title.setAttribute('placeholder', "Tiêu đề");
+    })
+    let category = document.getElementById('category');
+    category.addEventListener('click', function () {
+        category.classList.remove('border-danger');
+        category.classList.remove('text-danger');
+        category.setAttribute('placeholder', "Loại dự án");
+    })
+    let price = document.getElementById('price');
+    price.addEventListener('click', function () {
+        price.classList.remove('border-danger');
+        price.classList.remove('text-danger');
+        price.setAttribute('placeholder', "Kinh phí");
+    })
+    let acreage = document.getElementById('acreage');
+    acreage.addEventListener('click', function () {
+        acreage.classList.remove('border-danger');
+        acreage.classList.remove('text-danger');
+        acreage.setAttribute('placeholder', "Diện tích");
+    })
+    let province = document.getElementById('province');
+    province.addEventListener('click', function () {
+        province.classList.remove('border-danger');
+        province.classList.remove('text-danger');
+        province.setAttribute('placeholder', "Chọn tỉnh thành");
+    })
+    let description = document.getElementById('description');
+    description.addEventListener('click', function () {
+        description.classList.remove('border-danger');
+        description.classList.remove('text-danger');
+        description.setAttribute('placeholder', "Mô tả dự án");
+    })
+    let service = document.getElementById('service');
+    service.addEventListener('click', function () {
+        service.classList.remove('border-danger');
+        service.classList.remove('text-danger');
+        service.setAttribute('placeholder', "Dịch vụ");
+    })
+    let schedule = document.getElementById('schedule');
+    schedule.addEventListener('click', function () {
+        schedule.classList.remove('border-danger');
+        schedule.classList.remove('text-danger');
+        schedule.setAttribute('placeholder', "Tiến độ dự án");
+    })
+    let estimated_complete = document.getElementById('estimated_complete');
+    estimated_complete.addEventListener('click', function () {
+        estimated_complete.classList.remove('border-danger');
+        estimated_complete.classList.remove('text-danger');
+        estimated_complete.setAttribute('placeholder', "Dự kiến ngày hoàng thành");
+    })
+    let status = document.getElementById('status');
+    status.addEventListener('click', function () {
+        status.classList.remove('border-danger');
+        status.classList.remove('text-danger');
+        status.setAttribute('placeholder', "Trạng thái");
+    })
 </script>
 <script>
     let allFiles1 = [];

@@ -171,6 +171,7 @@
     $(document).ready(function () {
         $('#save').click(function () {
             let name = $('#name').val();
+            console.log(name)
             let status = $('#status').val();
             let id = ${category.id};
             $.ajax({
@@ -195,10 +196,16 @@
                     }
                     // window.location.href = 'http://localhost:8080/admin/category-management.jsp';
                 },
+                // error: function (data) {
+                //     obj = JSON.parse(data);
+                //     console.log(data)
+                //     delayNotify(2000, obj.message);
+                // }
                 error: function (data) {
-                    obj = JSON.parse(data);
-                    console.log(data)
-                    delayNotify(2000, obj.message);
+                    console.log(data.responseText)
+                    var err = JSON.parse(data.responseText);
+                        // console.log(e.name, e.message)
+                        fetchErr(err.name, err.message);
                 }
             })
         })
@@ -216,6 +223,30 @@
         });
     });
 </script>
+<script>
+    function fetchErr(name, mess) {
+        // console.log(name, mess)
+        switch (name) {
+            case 'name':
+                let name = document.getElementById('name');
+                name.classList.add('border-danger');
+                name.classList.add('text-danger');
+                name.value = "";
+                name.setAttribute('value', " ");
+                name.setAttribute('placeholder', mess);
+                break;
+            // case 'status':
+            // let status = document.getElementById('status');
+            // status.classList.add('border-danger');
+            // status.classList.add('text-danger');
+            // status.value = "";
+            // status.setAttribute('value', " ");
+            // status.setAttribute('placeholder', mess);
+            //     break;
+        }
+    }
+</script>
+
 <script>
     let cur;
     for (let item of $('.sidebar-item')) {

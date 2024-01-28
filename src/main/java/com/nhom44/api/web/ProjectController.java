@@ -87,7 +87,7 @@ public class ProjectController extends HttpServlet {
                 System.out.println("size=" + size);
                 System.out.println(size / 16);
                 resp.setStatus(200);
-                resp.getWriter().print(new Gson().toJson(size % 16 > 0 ? size / 16 + 1 : size / 16));
+                resp.getWriter().print(new Gson().toJson(size));
             }
             System.out.println(categoryId + " " + provinceId + " " + price + " " + area + " " + serviceId);
             resp.getWriter().flush();

@@ -16,7 +16,7 @@
     <link href=" <c:url value="/template/lib/DataTables/datatables.min.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-nav-bar.css"/>" rel="stylesheet">
     <link href=" <c:url value="/template/css/admin-datatable.css"/>" rel="stylesheet">
-    <title>Yêu cầu liên hệ</title>
+    <title>Quản lý yêu cầu</title>
 </head>
 <body>
 <!-- Sidebar navigation -->
@@ -30,51 +30,42 @@
                     <li>
                         <i class="fas fa-caret-right mx-2 black-brown-text" aria-hidden="true"></i>
                     </li>
-                    <li class="breadcrumb-item main-color"><a class="main-color" href="#">QL Order</a></li>
+                    <li class="breadcrumb-item main-color"><a class="main-color" href="#">QL yêu cầu</a></li>
                 </ol>
             </nav>
-            <main class="container shadow border p-3 h-100">
+            <main class="container shadow border p-3 h-auto">
                 <div class="row border-bottom pb-3 mb-3 ml-1 mr-1   ">
                     <div class="col-6 d-flex align-items-center p-0">
-                        <h3 class="font-weight-bold main-color m-0">QL Liên hệ bài viết</h3>
+                        <h3 class="font-weight-bold main-color m-0">QL yêu cầu</h3>
                     </div>
                 </div>
-                <table id="project-post-table" class="table table-hover table-striped table-bordered m-0 " style="">
+                <table id="project-cart-table" class="table table-hover table-striped table-bordered m-0 " style="">
                     <thead>
                     <tr>
                         <th class="font-weight-bold" scope="col">#</th>
-                        <th class="font-weight-bold" scope="col">Email</th>
-                        <th class="font-weight-bold" scope="col">Địa chỉ</th>
+                        <th class="font-weight-bold" scope="col">Email yêu cầu</th>
+                        <th class="font-weight-bold" scope="col">Tỉnh thành</th>
                         <th class="font-weight-bold" scope="col">Loại dự án</th>
-                        <th class="font-weight-bold" scope="col">Mã dự án</th>
+                        <th class="font-weight-bold" scope="col">Mẫu dự án</th>
                         <th class="font-weight-bold" scope="col">Chiều rộng</th>
                         <th class="font-weight-bold" scope="col">Chiều dài</th>
-                        <th class="font-weight-bold" scope="col">Dịch vụ</th>
+                        <th class="font-weight-bold" scope="col">Người dùng xác nhận</th>
                         <th class="font-weight-bold" scope="col">Thao tác</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>buiminhchien@gmail.com</td>
-                        <td>TP.HCM</td>
-                        <td>Nhà phố</td>
-                        <td>#0010</td>
-                        <td>200m3</td>
-                        <td>100m3</td>
-                        <td>xây dựng phần thô</td>
-                        <td><a href="/admin/order?action=detail"><i class="fa-solid fa-eye"></i></i></a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
 
-                    <tr>
-                        <td>2</td>
-                        <td>chien@gmail.com</td>
-                        <td>TP.HCM</td>
-                        <td>Biệt thự</td>
-                        <td>#0011</td>
-                        <td>500m3</td>
-                        <td>100m3</td>
-                        <td>Sửa chữa</td>
-                        <td><a href="/admin/order?action=detail"><i class="fa-solid fa-eye"></i></i></a></td>
                     </tbody>
 
                 </table>
@@ -92,11 +83,59 @@
 
 </script>
 <script>
-    $('#project-post-table').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
+    let x = 0;
+    $('#project-cart-table').dataTable({
+        "ajax": {
+            "url": "/api/admin/cart",
+            "type": "GET",
+            "dataSrc": ""
+        },
+        "columns": [
+            {
+                "data": "id",
+                "render": function (data) {
+                    x++;
+                    return x;
+                }
+            },
+            {
+                "data": "email",
+                "render": function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+            {"data": "province",
+                "render": function (data) {
+                    return data == null ? "" : data;
+                }},
+            {"data": "category",
+                "render": function (data) {
+                    return data == null ? "" : data;
+                }},
+            {"data": "representProjectId",
+                "render": function (data) {
+                    return data == null ? "" : data;
+                }},
+            {"data": "width",
+                        "render": function (data) {
+                        return data == null ? "" : data;
+                }},
+            {"data": "height",
+                "render": function (data) {
+                    return data == null ? "" : data;
+                }},
+            {"data": "isCheck",
+                "render": function (data) {
+                    return data == 1 ? "<i class='fa-solid fa-square active-icon'></i>" : "<i class='fa-solid fa-square inactive-icon'></i>"
+                }},
+            {"data": "id",
+                "render": function (data) {
+                console.log(data)
+                    return "<a href='/admin/cart/detail/" + data + "'><i class='fa-solid fa-eye'></i></a>";
+                }
+            }
+
+        ],
         // scrollX: true,
         "columnDefs": [
 
@@ -134,6 +173,7 @@
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],
+        "order": [[ 7, 'asc' ]],
         "language": {
             "lengthMenu": "Hiển thị _MENU_ dòng",
             "zeroRecords": "Không tìm thấy dữ liệu",

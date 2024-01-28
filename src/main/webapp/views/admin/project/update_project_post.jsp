@@ -82,6 +82,8 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script src="<c:url value="/template/lib/ckeditor_4.22.1_standard/ckeditor/ckeditor.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
+
 <img src="" alt="">
 <script>
     CKEDITOR.replace('service-des');
@@ -94,11 +96,16 @@
 </script>
 
 <script>
+
     $(document).ready(function () {
         $(".sidebar-btn").click(function () {
             $(".wrapper").toggleClass("mycollapse");
         });
+    <c:if test="${error!=null}">
+        delayNotify(2000, ${error});
 
+
+        </c:if>
     });
 </script>
 <script>

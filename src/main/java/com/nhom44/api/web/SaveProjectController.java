@@ -19,6 +19,7 @@ public class SaveProjectController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = req.getRequestURI();
+        System.out.println(1231213);
         int projectId = Integer.parseInt(req.getParameter("projectId"));
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("auth");

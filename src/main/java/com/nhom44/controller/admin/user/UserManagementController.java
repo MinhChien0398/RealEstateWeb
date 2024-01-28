@@ -33,11 +33,11 @@ public class UserManagementController extends HttpServlet {
         } else if (action.equalsIgnoreCase("edit")) {
             String email = req.getParameter("useremail");
             if(!new EmailSingleValidator().validator(email)){
-                // error
+           resp.sendRedirect("/404");
             }
             User user = userService.getUserByEmail(email);
             if(user==null){
-                // error
+                resp.sendRedirect("/404");
             }
             System.out.println(user.toString());
             req.setAttribute("user", user);

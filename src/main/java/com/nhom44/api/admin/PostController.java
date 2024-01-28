@@ -30,7 +30,7 @@ public class PostController extends HttpServlet {
 
         } catch (IllegalAccessException | InvocationTargetException e) {
            responseModel= new ResponseModel();
-           resp.setStatus(400);
+
               responseModel.setMessage("Lỗi không xác định");
                 responseModel.setData(null);
                 responseModel.setName("sys");
@@ -39,14 +39,14 @@ public class PostController extends HttpServlet {
                 printWriter.close();
                 return;
         }
-        if(action.equalsIgnoreCase("add")){        System.out.println(post.toString());
+        if(action.equalsIgnoreCase("add")){
         post=PostService.getInstance().addPost(post);
         System.out.println(post.toString());}
         else if (action.equalsIgnoreCase("edit")) {
             post=PostService.getInstance().updatePost(post);
         }
         if(post==null){
-            resp.setStatus(400);
+            resp.setStatus(200);
             responseModel = new ResponseModel();
             responseModel.setMessage("Lỗi hệ thống");
             responseModel.setData(null);
@@ -57,7 +57,6 @@ public class PostController extends HttpServlet {
             resp.setStatus(200);
             responseModel = new ResponseModel();
             responseModel.setMessage("Thêm thành công");
-            responseModel.setData(post);
             responseModel.setName("success");
         }
         printWriter.println(new Gson().toJson(responseModel));

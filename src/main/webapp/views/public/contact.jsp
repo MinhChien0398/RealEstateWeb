@@ -96,26 +96,30 @@
                             <input type="text" id="address" class="form-control">
                             <label for="address">Địa chỉ(tỉnh/thành phố)</label>
                         </div>
-                        <div class="row">
-                            <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">
-                                <!--                            <label>Chủ đề</label>-->
-                                <select id="categoryId" class="browser-default custom-select mb-4">
-                                    <option value="" disabled="">Loại dự án</option>
-                                    <c:forEach var="category" items="${categories}">
-                                        <option value="${category.id}">${category.name}</option>
-                                    </c:forEach>
-                                </select>
-
-                            </div>
-                            <div class="form-outline col-6">
-                                <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">
-                            </div>
+                        <div class="md-form">
+                            <i class="fa-solid  fa-phone prefix grey-text"></i>
+                            <input type="text" id="phone" class="form-control">
+                            <label for="phone">Số điện thoại</label>
                         </div>
+                        <%--                            <div class="row">--%>
+                        <%--                                <div class=" black-brown-text font-weight-bold text-uppercase text-lg-center col-6 flex-center">--%>
+                        <%--                                    <!--                            <label>Chủ đề</label>-->--%>
+                        <%--                                    <select id="categoryId" class="browser-default custom-select mb-4">--%>
+                        <%--                                        <option value="" disabled="">Loại dự án</option>--%>
+                        <%--                                        <c:forEach var="category" items="${categories}">--%>
+                        <%--                                            <option value="${category.id}">${category.name}</option>--%>
+                        <%--                                        </c:forEach>--%>
+                        <%--                                    </select>--%>
+                        <%--                                </div>--%>
+                        <%--                                <div class="form-outline col-6">--%>
+                        <%--                                    <input type="text" id="projectId" class="form-control" placeholder="Mã dự án">--%>
+                        <%--                                </div>--%>
+                        <%--                            </div>--%>
 
                         <!-- Message -->
                         <div class="form-group">
                                 <textarea class="form-control rounded-0" id="content" rows="3"
-                                          placeholder="Lời nhắn"></textarea>
+                                          placeholder="Lời nhắn" style="height: 250px"></textarea>
                         </div>
                         <div class="text-center mt-4">
                             <button class="btn btn-red waves-effect waves-light" onclick="saveContact()"
@@ -165,8 +169,7 @@
                 fullName: $('#fullName').val(),
                 email: $('#email').val(),
                 address: $('#address').val(),
-                categoryId: $('#categoryId').val(),
-                projectId: $('#projectId').val(),
+                phone: $('#phone').val(),
                 content: $('#content').val(),
             },
             success: function (data) {
@@ -181,11 +184,54 @@
             error: function (data) {
                 //bắt lỗi email
                 console.log(data);
+                var e = JSON.parse(data.responseText);
+                console.log(e.name, e.message)
+                fetchErr(e.name, e.message);
+
             }
 
         })
     }
 </script>
+<script>
+    function fetchErr(name, mess) {
+        console.log(name, mess)
+        switch (name) {
+            // case 'fullName':
+            //     let fullName = document.getElementById('fullName');
+            //     fullName.classList.add('border-danger');
+            //     fullName.classList.add('text-danger');
+            //     fullName.value = "";
+            //     fullName.setAttribute('value', "");
+            //     fullName.setAttribute('placeholder', mess);
+            //     break;
+            case 'email':
+                let email = document.getElementById('email');
+                email.classList.add('border-danger');
+                email.classList.add('text-danger');
+                email.value = "";
+                email.setAttribute('value', "");
+                // email.setAttribute('placeholder', mess);
+                break;
+            // case 'address':
+            //     let address = document.getElementById('address');
+            //     address.classList.add('border-danger');
+            //     address.classList.add('text-danger');
+            //     address.value = "";
+            //     address.setAttribute('value', " ");
+            //     address.setAttribute('placeholder', mess);
+            //     break;
 
+        }
+    }
+</script>
+<script>
+    let fullName = document.getElementById('email');
+    fullName.addEventListener('click', function () {
+        fullName.classList.remove('border-danger');
+        fullName.classList.remove('text-danger');
+        fullName.setAttribute('placeholder', "Email");
+    })
+</script>
 </body>
 </html>

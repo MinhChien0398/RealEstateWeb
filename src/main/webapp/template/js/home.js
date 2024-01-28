@@ -1,9 +1,10 @@
-let swiper = new Swiper(".slide-content", {
+let swiper = new Swiper('#catch', {
     slidesPerView: 1,
     // spaceBetween: 30,
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+
     },
     breakpoints: {
         675: {

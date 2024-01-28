@@ -45,32 +45,22 @@
                         <th class="font-weight-bold" scope="col">#</th>
                         <th class="font-weight-bold" scope="col">Tên người gửi</th>
                         <th class="font-weight-bold" scope="col">Email</th>
-                        <th class="font-weight-bold" scope="col">Địa chỉ</th>
+                        <th class="font-weight-bold" scope="col">Tỉnh/thành phố</th>
+                        <th class="font-weight-bold" scope="col">Số điện thoại</th>
                         <th class="font-weight-bold" scope="col">Nội dung</th>
-                        <th class="font-weight-bold" scope="col">Loại dự án</th>
-                        <th class="font-weight-bold" scope="col">Mã dự án mẫu</th>
-                        <th class="font-weight-bold" scope="col">Ngày cập nhập</th>
+                        <th class="font-weight-bold" scope="col">Ngày gửi</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Bùi Minh Chiến</td>
-                        <td>buiminhchien@gmail.com</td>
-                        <td>TP.HCM</td>
                         <td></td>
-                        <td>Nhà phố</td>
-                        <td>#0010</td>
-                        <td>10/05/2023</td>
-                    <tr>
-                        <td>2</td>
-                        <td>Đặng Minh Tấn</td>
-                        <td>dangminhtan@gmail.com</td>
-                        <td>Bình Dương</td>
-                        <td>Chi phí để thiết kế và xây dựng cho một biệt thự với nhiều cây xanh trên khoản 1000m2</td>
-                        <td>Biệt thư</td>
-                        <td>#0011</td>
-                        <td>10/05/2023</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                     </tbody>
 
                 </table>
@@ -85,16 +75,67 @@
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/lib/DataTables/DataTables-1.13.6/js/jquery.dataTables.min.js"/>"></script>
 <script>
-
+$(document).ready(function (){
+    $.ajax({
+        url:'/api/admin/contact',
+        type: 'get',
+        dataType:'json',
+        success: function (data){
+            console.log(data)
+        }
+    })
+})
 </script>
 <script>
+    let index = 0;
     $('#project-post-table').dataTable({
-        // "ajax": {
-        //     // "url": "http://localhost/RealEstateWeb/userManage" ,
-        //     "dataSrc": ""
-        // },
+        ajax: {
+            type: "GET",
+            url: "/api/admin/contact",
+            dataSrc: "",
+            //     "dataSrc": ""
+        },
+        columns: [
+            {
+                data:
+                'id', render: function (data) {
+                    index++;
+                    return index;
+                }
+            },
+            {
+                data: 'fullName', render: function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+            {
+                data: 'email', render: function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+            {
+                data:'address', render: function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+            {
+                data: 'phone', render: function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+            {
+                data: 'content', render: function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+            {
+                data: "updatedAt", render: function (data) {
+                    return data == null ? "" : data;
+                }
+            },
+        ],
         // scrollX: true,
-        "columnDefs": [
+        columnDefs: [
 
             {
                 "targets": 0,
@@ -114,19 +155,19 @@
             },
             {
                 "targets": 4,
-                "width": "30%",
+                "width": "17%",
             }, {
                 "targets": 5,
-                "width": "10%",
+                "width": "30%",
             },
             {
                 "targets": 6,
                 "width": "7%",
             },
-            {
-                "targets": 7,
-                "width": "7%",
-            },
+            // {
+            //     "targets": 7,
+            //     "width": "7%",
+            // },
             {className: "text-center mt-auto mb-auto", targets: "_all"},
 
         ],

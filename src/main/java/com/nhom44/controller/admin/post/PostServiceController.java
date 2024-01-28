@@ -21,6 +21,7 @@ public class PostServiceController extends HttpServlet {
             if(!new NumberVallidator().validator(req.getParameter("id"))){
 //                req.setAttribute("service", ServiceOfProjectService.getInstance().getById(Integer.parseInt(req.getParameter("id"))));
                 //error
+                resp.sendRedirect("/404");
             }
             int id = Integer.parseInt(req.getParameter("id"));
         Post post = PostService.getInstance().getById(id);
@@ -28,6 +29,7 @@ public class PostServiceController extends HttpServlet {
             System.out.println(post.toString());
         if(post==null){
             //error
+            resp.sendRedirect("/404");
         }
             req.setAttribute("post", post);
             req.getRequestDispatcher("/views/admin/service/update_service_post.jsp").forward(req, resp);
