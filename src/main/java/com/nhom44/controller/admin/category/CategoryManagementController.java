@@ -23,12 +23,12 @@ public class CategoryManagementController extends HttpServlet {
         }
         if(action.equalsIgnoreCase("edit")){
             if(!new NumberVallidator().validator(req.getParameter("id"))){
-                // error
+                resp.sendRedirect("/404");
             }
                 int id = Integer.parseInt(req.getParameter("id"));
                 Category category = CategoryService.getInstance().getById(id);
                 if(category==null){
-                    // error
+                    resp.sendRedirect("/404");
                 }
                 req.setAttribute("category", category);
                 req.getRequestDispatcher("/views/admin/category/edit_category.jsp").forward(req, resp);

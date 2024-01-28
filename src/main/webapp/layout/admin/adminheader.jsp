@@ -77,8 +77,8 @@
 
         <li class="sidebar-item" id="order">
             <div class="menu-btn">
-                <a href="/admin/order">
-                    <i class="fa-solid fa-toolbox"></i> <span>QL Order</span>
+                <a href="/admin/cart">
+                    <i class="fa-solid fa-toolbox"></i> <span>QL Yêu cầu</span>
                 </a>
             </div>
         </li>

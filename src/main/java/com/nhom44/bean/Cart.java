@@ -15,6 +15,8 @@ public class Cart implements Serializable {
     private String createdAt;
     private String updatedAt;
     private int isCheck;
+    private String province;
+    private String category;
     private List<Integer> services;
     private List<String> images;
 
@@ -31,6 +33,8 @@ public class Cart implements Serializable {
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
                 ", isCheck=" + isCheck +
+                ", province='" + province + '\'' +
+                ", category='" + category + '\'' +
                 ", services=" + services +
                 ", images=" + images +
                 '}';
@@ -41,12 +45,12 @@ public class Cart implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cart cart = (Cart) o;
-        return id == cart.id && categoryId == cart.categoryId && provinceId == cart.provinceId && representProjectId == cart.representProjectId && Double.compare(width, cart.width) == 0 && Double.compare(height, cart.height) == 0 && isCheck == cart.isCheck && Objects.equals(email, cart.email) && Objects.equals(createdAt, cart.createdAt) && Objects.equals(updatedAt, cart.updatedAt) && Objects.equals(services, cart.services) && Objects.equals(images, cart.images);
+        return id == cart.id && categoryId == cart.categoryId && provinceId == cart.provinceId && representProjectId == cart.representProjectId && Double.compare(width, cart.width) == 0 && Double.compare(height, cart.height) == 0 && isCheck == cart.isCheck && Objects.equals(email, cart.email) && Objects.equals(createdAt, cart.createdAt) && Objects.equals(updatedAt, cart.updatedAt) && Objects.equals(province, cart.province) && Objects.equals(category, cart.category) && Objects.equals(services, cart.services) && Objects.equals(images, cart.images);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, categoryId, provinceId, representProjectId, width, height, createdAt, updatedAt, isCheck, services, images);
+        return Objects.hash(id, email, categoryId, provinceId, representProjectId, width, height, createdAt, updatedAt, isCheck, province, category, services, images);
     }
 
     public int getId() {
@@ -129,6 +133,22 @@ public class Cart implements Serializable {
         this.isCheck = isCheck;
     }
 
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public List<Integer> getServices() {
         return services;
     }
@@ -148,7 +168,7 @@ public class Cart implements Serializable {
     public Cart() {
     }
 
-    public Cart(int id, String email, int categoryId, int provinceId, int representProjectId, double width, double height, String createdAt, String updatedAt, int isCheck, List<Integer> services, List<String> images) {
+    public Cart(int id, String email, int categoryId, int provinceId, int representProjectId, double width, double height, String createdAt, String updatedAt, int isCheck, String province, String category, List<Integer> services, List<String> images) {
         this.id = id;
         this.email = email;
         this.categoryId = categoryId;
@@ -159,6 +179,8 @@ public class Cart implements Serializable {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.isCheck = isCheck;
+        this.province = province;
+        this.category = category;
         this.services = services;
         this.images = images;
     }

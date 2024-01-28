@@ -58,8 +58,10 @@ public class CategoryController extends HttpServlet {
             if (action.equals("add")) {
                 BeanUtils.populate(category, req.getParameterMap());
                 System.out.println(category.toString());
+
                 int status = CategoryService.getInstance().add(category);
                 if (status == -1) {
+                    resp.setStatus(400);
                     responseModel = new ResponseModel();
                     responseModel.setName("name");
                     responseModel.setMessage("Tên danh mục đã tồn tại");
@@ -73,8 +75,12 @@ public class CategoryController extends HttpServlet {
                 }
             } else if (action.equals("edit")) {
                 BeanUtils.populate(category, req.getParameterMap());
-                int status = CategoryService.getInstance().update(category);
+                Category old = CategoryService.getInstance().getById(category.getId());
+                int status = 1;
+                if (!old.getName().equals(category.getName()))
+                    status = CategoryService.getInstance().update(category);
                 if (status == -1) {
+                    resp.setStatus(400);
                     responseModel = new ResponseModel();
                     responseModel.setName("name");
                     responseModel.setMessage("Tên danh mục đã tồn tại");
@@ -88,7 +94,7 @@ public class CategoryController extends HttpServlet {
                 }
             }
         } catch (IllegalAccessException | UnableToExecuteStatementException | InvocationTargetException e) {
-            responseModel = new ResponseModel();
+            responseModel = new ResponseModel();    resp.setStatus(200);
             responseModel.setName("sys");
             responseModel.setMessage("Hệ thống đang bận");
             Gson gson = new Gson();

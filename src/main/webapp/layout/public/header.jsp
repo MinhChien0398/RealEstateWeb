@@ -31,7 +31,7 @@
                     >Dịch vụ
                     </a>
                     <i class="fa-solid fa-angle-down position-absolute " style="color: #000000;"></i>
-                    <div class="dropdown-menu mt-1 ">
+                    <div class="dropdown-menu mt-0 ">
                         <c:forEach items="${sessionScope.services}" var="service">
                             <a class="dropdown-item text-center text-break" style="font-size: 16px"
                                href="/post/service?id=${service.id}">${service.name}</a></c:forEach>
@@ -53,7 +53,7 @@
                     </a>
                     <i class="fa-solid fa-angle-down position-absolute " style="color: #000000;"></i>
 
-                    <div class="dropdown-menu mt-1">
+                    <div class="dropdown-menu mt-0">
                             <c:forEach items="${sessionScope.categories}" var="category">
                                 <a class="dropdown-item text-center" style="font-size: 16px"
                                    href="/project?category=${category.id}">${category.name}</a></c:forEach>
@@ -80,7 +80,7 @@
                                href="/user"
                                role="link">Tài khoản
                             </a>
-                            <div class="dropdown-menu mt-1 w-100">
+                            <div class="dropdown-menu mt-0 w-100">
                                 <c:if test="${sessionScope.get('auth').getRole() == 1}">
                                     <a class="dropdown-item text-center" style="font-size: 16px" href="/admin">Quản
                                         trị</a></c:if>

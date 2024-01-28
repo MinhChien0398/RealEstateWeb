@@ -113,7 +113,7 @@
                                             ${project.title}</h6>
                                             <p class="text-white p-0 id-project">
                                                 <strong>MDA:${project.id}</strong></p>
-                                            <p class="text-white p-4"> ${project.description}</p>
+                                            <p class="text-white p-4 text-break"> ${project.description}</p>
                                         </div>
                                     </div>
                                 </div>
