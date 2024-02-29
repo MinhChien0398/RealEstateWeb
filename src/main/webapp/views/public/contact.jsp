@@ -68,6 +68,7 @@
 </div>
 <!--    end wraper contact-->
 <div id="section-3" class="container">
+    <div id="modal"></div>
     <!--Section: Contact v.1-->
     <section class="section pb-4 pt-5">
         <!--Section heading-->
@@ -159,6 +160,7 @@
 <%@include file="/layout/public/footer.jsp" %>
 <%@include file="/layout/public/script.jsp" %>
 <script src="<c:url value="/template/js/main.js"/>"></script>
+<script src="<c:url value="/template/js/admin-modal-notify.js"/>"></script>
 <script>
     function saveContact() {
         $.ajax({
@@ -173,13 +175,20 @@
                 content: $('#content').val(),
             },
             success: function (data) {
-                let resp = JSON.parse(data);
-                if (resp.status === 200) {
-                    alert(resp.message);
-                    window.location.reload();
-                } else {
-                    alert(resp.message);
+                // let resp = JSON.parse(data);
+                // if (resp.status === 200) {
+                //     alert(resp.message);
+                //     window.location.reload();
+                // } else {
+                //     alert(resp.message);
+                // }
+                delayNotify(1000, data.message);
+                if(data.name == "success"){
+                    setTimeout(()=>{
+                        window.location.reload();
+                    }, 1000);
                 }
+
             },
             error: function (data) {
                 //bắt lỗi email
