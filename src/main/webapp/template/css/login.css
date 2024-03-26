@@ -5,6 +5,8 @@
     font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
+
+
 body {
     background: #c9d6ff linear-gradient(to right, #e2e2e2, #c9d6ff);
     display: flex;
@@ -235,6 +237,30 @@ body {
     outline: none;
 }
 
+#district {
+    margin: 8px 0;
+    width: 420px;
+    height: 32px;
+    background-color: #eee;
+    border: none;
+    padding: 0 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: none;
+}
+
+#ward {
+    margin: 8px 0;
+    width: 420px;
+    height: 32px;
+    background-color: #eee;
+    border: none;
+    padding: 0 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    outline: none;
+}
+
 .arrow-sign-up {
     display: none;
 }
@@ -357,6 +383,32 @@ body {
         border-radius: 8px;
         outline: none;
     }
+
+    #district {
+        margin: 8px 0;
+        width: 365px;
+        height: 32px;
+        background-color: #eee;
+        border: none;
+        padding: 0 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    #ward {
+        margin: 8px 0;
+        width: 365px;
+        height: 32px;
+        background-color: #eee;
+        border: none;
+        padding: 0 15px;
+        font-size: 13px;
+        border-radius: 8px;
+        outline: none;
+    }
+
+
 
     .social-icons {
         margin: 0;
